@@ -1,0 +1,154 @@
+\section{The Circle}
+
+The unit circle $\ring{C}_1$ in the complex plane $\ring{C}$ is a
+group under complex multiplication, or equivalently under the addition
+of angles in polar coordinates:
+\begin{equation}\label{eqn:cx}
+(x_1,y_1) * (x_2,y_2) = (x_1 x_2 - y_1 y_2,x_1 y_2 + x_2 y_1).
+\end{equation}
+We write $\iota(x,y) = (x,-y)$ for complex conjugation, the inverse in
+$\ring{C}_1$.
+
+We give an unusual interpretation of the group law on the unit circle
+that we call {\it hyperbolic addition}.  We consider the family of
+hyperbolas in the plane that pass through the point $z=(-1,0)$ and
+whose asymptotes are parallel to the coordinate axes.  The equation of
+such a hyperbola has the form
+\begin{equation}\label{eqn:hyp}
+x y + p (x+1) + q y = 0.
+\end{equation}
+All hyperbolas in this article are assumed to be of this form.  As
+special cases (such as $x y=0$), this family includes pairs of lines.
+ 
+Every two points $z_1$ and $z_2$ on the unit circle intersect some
+hyperbola within the family.  This incidence condition uniquely
+determines $p$ and $q$ when $(-1,0)$, $z_1$ and $z_2$ are not
+collinear.  As illustrated in Figure~\ref{fig:fig1}, the hyperbola
+meets the unit circle in one additional point $z_3 = (x_3,y_3)$.  The
+following remarkable relationship holds among the three points $z_1$,
+$z_2$, and $z_3$ on the intersection of the circle and hyperbola.
+
+\begin{lemma}[hyperbolic addition on the circle] \label{lemma:ha} Let
+  $z_0=(-1,0)$, $z_1$, $z_2$ and $z_3$ be four distinct points on the
+  intersection of the unit circle with a hyperbola in the family (\ref{eqn:hyp}).  
+  Then $z_1 z_2 z_3 = 1$ in $\ring{C}_1$.
+\end{lemma}
+
+The lemma is a special case of a more general lemma
+(Lemma~\ref{lemma:hyperbola}) that is proved later in this article.
+
+This gives a geometric construction of the group law: the product of
+the two points $z_1$ and $z_2$ on the unit circle is $\iota(z_3)$.
+Rather than starting with the standard formula for addition in
+$\ring{C}_1$, we can reverse the process, defining a binary operation
+$(\oplus)$ on the circle by setting
+\[
+z_1 \oplus z_2 = \iota(z_3)
+\]
+whenever $z_1$, $z_2$, and $z_3$ are related by the circle and
+hyperbola construction.  We call the binary operation $\oplus$ {\it
+  hyperbolic addition} on the circle.
+
+It might seem that there is no point in reinterpreting complex
+multiplication on the unit circle as hyperbolic addition, because they
+are actually the same binary operation, and the group $\ring{C}_1$ is
+already perfectly well-understood.  However, in the next section, we
+will see that hyperbolic addition generalizes in ways that ordinary
+multiplication does not.  In this sense, we have found a better
+description of the group law on the circle.  The same description
+works for elliptic curves!
+
+
+% Fig1
+
+\tikzfig{fig1}{A unit circle centered at the origin
+and hyperbola meet at four points $z_0 = (-1,0)$, $z_1$, $z_2$, and $z_3$,
+where $z_1 z_2 z_3 = 1$, which we write alternatively in additive notation 
+as $z_1\oplus z_2 = \iota(z_3)$.}{
+{
+\draw (0,0) circle (1);
+\draw plot[smooth] file {figC1.table};
+\draw plot[smooth] file {figC2.table};
+\smalldot {-1,0} node[anchor=east] {$z_0$};
+\smalldot {12/13,5/13} node[anchor=west] {$z_1$};
+\smalldot {7/25,24/25} node[anchor=south west] {$z_2$};
+\smalldot {-36/325,-323/325} node[anchor=north east] {$z_3$};
+}
+}
+
+\section{Deforming the Circle}
+
+We can use exactly the same hyperbola construction to define a binary
+operation $\oplus$ on other curves.  We call this {\it hyperbolic
+  addition} on a curve.  We replace the unit circle with a more
+general algebraic curve $C$, defined by the zero set of
+\begin{equation}\label{eqn:ed}
+x^2 + c y^2 - 1 - d x^2 y^2
+\end{equation} for some parameters $c$ and $d$.
+This zero locus of this polynomial is called an {\it Edwards curve}.%
+\footnote{This definition is more inclusive than definitions stated
+  elsewhere.  Most writers prefer to restrict to curves of genus one
+  and generally call a curve with $c\ne 1$ a {\it twisted Edwards
+    curve}.  We have interchanged the $x$ and $y$ coordinates on the
+  Edwards curve to make it consistent with the group law on the
+  circle.}  The unit circle corresponds to parameter values $c=1$ and
+$d=0$.
+
+ % Fig 2.
+\tikzfig{fig2}{The figure on the left is an Edwards curve (with
+  parameters $c=0$ and $d=-8$).  An Edwards curve and hyperbola meet
+  at four points $z_0 = (-1,0)$, $z_1$, $z_2$, and $z_3$.  By
+  construction, hyperbolic addition satisfies $z_1 \oplus z_2 =
+  \iota(z_3)$.}
+{
+{
+\begin{scope}[xshift=0]
+\draw plot[smooth] file {figE1.table};
+\draw plot[smooth] file {figE2.table};
+\end{scope}
+\begin{scope}[xshift=5cm]
+\draw plot[smooth] file {figE1.table};
+\draw plot[smooth] file {figE2.table};
+\draw plot[smooth] file {figE3.table};
+\draw plot[smooth] file {figE4.table};
+\smalldot {-1,0} node[anchor=east] {$z_0$};
+\smalldot {0.9,0.158} node[anchor=west] {$z_1$};
+\smalldot {0.2,0.853} node[anchor=south west] {$z_2$};
+\smalldot {0.037,-0.993} node[anchor=north east] {$z_3$};
+\end{scope}
+}
+}
+
+We define a binary operation on the Edwards curve by the hyperbolic
+addition law described above.  Let $(-1,0)$, $z_1 = (x_1,y_1)$ and
+$z_2=(x_2,y_2)$ be three points on an Edwards curve that are not
+collinear (to avoid degenerate cases).  We fit a hyperbola of the
+usual form (\ref{eqn:hyp}) through these three points, and let $z_3$
+be the fourth point of intersection of the hyperbola with the curve.
+We define the hyperbolic sum $z_1\oplus z_2$ of $z_1$ and $z_2$ to be
+$\iota(z_3)$.  The following lemma gives an explicit formula for
+$z_1\oplus z_2 = \iota(z_3)$.
+ 
+ \begin{lemma}\label{lemma:hyp} 
+In this construction, the coordinates are given explicitly by
+ \begin{equation}\label{eqn:sum}
+ \iota(z_3) = \left(\frac{x_1 x_2 - c y_1 y_2}{1 - d x_1 x_2 y_1 y_2},
+\frac{x_1 y_2 + y_1 x_2}{1+d x_1 x_2 y_1 y_2}\right)
+ \end{equation}
+ \end{lemma}
+
+ This lemma will be proved below (Lemma~\ref{lemma:hyperbola}).  Until
+ now, we have assumed the points $(-1,0)$, $z_1$, and $z_2$ are not
+ collinear.  Dropping the assumption of non-collinearity, we turn
+ formula (\ref{eqn:sum}) of Lemma~\ref{lemma:hyp} into a definition
+ and define the hyperbolic sum
+\[
+ z_1\oplus z_2 := \iota(z_3).
+\]
+algebraically by that formula in all cases.  We prove below an affine
+closure result (Lemma~\ref{lemma:affine}) showing that the
+denominators are always nonzero for suitable parameters $c$ and $d$.
+In the case of a circle ($c=1$, $d=0$), the formula (\ref{eqn:sum})
+reduces to the usual group law (\ref{eqn:cx}).
+
+
