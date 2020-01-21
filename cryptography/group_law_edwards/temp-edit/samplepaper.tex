@@ -34,9 +34,9 @@
 
 \section{Formalization in Isabelle/HOL}
 
-In this section, the proof encoding in Isabelle/HOL is described. It uses two different locales: one for the affine and one for the projective case.
+In this section, we describe the proof implementation in Isabelle/HOL. It uses two different locales: one for the affine and one for the projective case.
 
-Let $k$ be the underlying curve field. $k$ is introduced as the type class \textit{field} with the assumption that $2 \neq 0$ (characteristic different from $2$) \cite{Elliptic_Curves_Group_Law-AFP}. This is not included in the simplification set, but used when needed during the proof.   
+Let $k$ be the underlying curve field. $k$ is introduced as the type class \textit{field} with the assumption that $2 \neq 0$ (characteristic different from $2$). This is not included in the simplification set, but used when needed during the proof.   
 
 \subsection{Affine Edwards curves}
 
@@ -50,7 +50,7 @@ The proof starts fixing the curve parameters $c,d \in k$. The group addition $\o
 
 Most of the proofs in this section are straight-forward. The only difficulty was to combine the Mathematica computations of [2] and their certificates, originally given in HOL Light, into a single process using the Isabelle distribution.
 
-In figure \ref{fig:2}, an excerpt of the proof of associativity is considered. The following notation is used: $$e_i = x_i^2 + c * y_i^2 - 1 - d * x_i^2 * y_i^2 = 0$$ since the involved points lie on the curve and: $$gxpoly = ((p_1 \oplus_0 p_2) \oplus_0 p_3 - p_1 \oplus_0 (p_2 \oplus p_3))_1*\Delta_x$$ stands for a normalized version of the associativity equation that removes denominators. Since the points $p_i$ are assumed to be addable, $\Delta_x \neq 0$. As a consequence, the property stated in \ref{fig:2} immediately implies that associativity holds in the first component of the addition.
+In figure \ref{fig:2}, we show an excerpt of the proof of associativity. We use the following abbreviations: \[e_i = x_i^2 + c * y_i^2 - 1 - d * x_i^2 * y_i^2 \] where $e_i = 0$, since the involved points lie on the curve and: \[\text{gxpoly} = ((p_1 \oplus_0 p_2) \oplus_0 p_3 - p_1 \oplus_0 (p_2 \oplus p_3))_1*\Delta_x\] which stands for a normalized version of the associativity law removing denominators. Since the points $p_i$ are assumed to be addable, $\Delta_x \neq 0$. As a consequence, the property stated in figure \ref{fig:2} immediately implies that associativity holds in the first component of the addition.
 
 
 \begin{figure}
@@ -59,21 +59,11 @@ In figure \ref{fig:2}, an excerpt of the proof of associativity is considered. T
 	\label{fig:2}
 \end{figure}
 
-Briefly, the proof unfolds the relevant definitions and then normalizes to eliminate denominators. The remaining terms of $\Delta_x$ are then distributed on each addend which are themselves normalized on the sub-lemmas \textit{simp1gx} and \textit{simp2gx}. Finally, a polynomial expression is obtained and the \textit{algebra} method can prove it. Note that no computation was required from an external tool. 
+Briefly, the proof unfolds the relevant definitions and then normalizes to eliminate denominators. The remaining terms of $\Delta_x$ are then distributed on each addend. The unfolding and normalization for these addends is repeated in the sub-lemmas \textit{simp1gx} and \textit{simp2gx}. Finally, a polynomial expression is obtained and the \textit{algebra} method can prove it. Note that no computation was required from an external tool. 
 
-For the normalization of terms, the \textit{rewrite} tactic \cite{noschinskipattern} was chosen. It allows to modify a goal in several locations (specified with a pattern) and using different rewrite rules. Specifying that the rewriting happens in the denominators is sufficient for our needs.
+For the normalization of terms, the \textit{rewrite} tactic \cite{noschinskipattern} was chosen. It allows to modify a goal in several locations (specified with a pattern) and using several rewrite rules. Specifying that rewriting happens in the denominators is sufficient for our needs.
 
-For proving the resulting polynomial expression, the \textit{algebra} proof method \cite{chaieb2007context} is used. If $e_1,\ldots,e_n$ and $p_{ij}$ are multivariate polynomials with coefficients over a semiring, the method can solve the following formula:
-
-\begin{align*}
-\forall x_1 \ldots x_n. &  \\        
-& e_1(x_1,\ldots,x_n) = 0 \land \ldots \land e_m(x_1,\ldots,x_n) = 0 \to \\
-& (\exists y_1, \ldots, y_k. \\
-& p_{11}(x_1,\ldots,x_n) y_1 + \ldots + p_{1k}(x_1,\ldots,x_n) y_k = 0 \, \land \\
-& \ldots \land \\
-& p_{t1}(x_1,\ldots,x_n) y_1 + \ldots + p_{tk}(x_1,\ldots,x_n) y_k = 0) \\
-&
-\end{align*}
+For proving the resulting polynomial expression, the \textit{algebra} proof method \cite{chaieb2008automated} is used. There are two applications of the method. First, it addresses universally quantified formulas with equations or disequations as atoms. In this case, the method is only complete for algebraically closed fields \cite{wenzel2019isabelle}. Second, for $e_i(x_1,\ldots,x_n), p_{ij}(x_1,\ldots,x_n),a_i(x_1,\ldots,x_n) \in R[x_1,\ldots,x_n]$ where $R$ is a commutative ring, the method can solve the formula:  \[\; \forall \overline{x}. \bigwedge_{i = 1}^n e_i(\overline{x}) = 0 \to \exists \overline{y}. \bigwedge_{i = 1}^k \sum_{j = 1}^m p_{ij}(\overline{x}) y_j = a_i(\overline{x})\] and the method is complete for properties that hold over all commutative rings with unit \cite{harrison2007automating}. 
 
 \subsection{Projective Edwards curves}
 
@@ -81,29 +71,16 @@ Following the change of variables performed in section 4.1 of \cite{hales2016gro
 
 \subsubsection{Gr\"{o}ebner basis}
 
-The proof of dichotomy required in its original form the computation of certain Gr\"{o}bner basis \cite{hales2016group}. However, Isabelle's formalization of Gr\"{o}bner basis \cite{maletzky2018grobner} does not seem to provide an interface to reuse it in our formalization. Moreover, while the \textit{algebra} method computes Gr\"{o}bner basis for the purpose of proving whether a polynomial is in the generated ideal, this computation is done outside the logic and cannot be used in our setting.
-
-Instead, a hand computation is performed. Here is a sample computation for equation 19 of \cite{hales2016group}: $$(x_0^2 - x_1^2,y_0^2 - x_1^2,x_0y_0 - x_1 y_1) \equiv (0,0,0) \; mod \; S_{\pm}$$ where $S_{\pm}$ is the Gr\"{o}bner basis of some polynomials that evaluate to zero. To start, the third equality is deduced: $$\delta' x_0 y_0  = x_0 y_0 \delta_{0x} x_1 y_1 \Big(\frac{1}{t x_0}\Big) \Big(\frac{1}{t y_0}\Big) = 
-x_0 y_0 \Big(1 - \frac{t^2 x_1 y_1}{t^2 x_0 y_0}\Big) = x_0y_0 - x_1 y_1$$ By assumption $\delta_{0x} x_1 y_1 \Big(\frac{1}{t x_0}\Big) \Big(\frac{1}{t y_0}\Big) = 0$ and $x_0,y_0,x_1,y_1 \neq 0$, therefore: $$(1) \; x_0 = x_1 \Big(\frac{y_1}{y_0}\Big)$$
-
-For the second, since $\delta_{+} x_0 y_0 = 0$: 
-
-\begin{align*}
-0 = \delta_{+} x_0 y_0 &= t x_0 y_0 \delta_{1x} x_1 y_1 \Big(\frac{1}{tx_0}\Big) \Big(\frac{1}{ty_0}\Big) = \\ &= t x_0 y_0 \Big(\frac{y_1}{t x_0} - \frac{x_1}{t y_0}\Big) = y_0 y_1 - x_0 x_1 
-\stackrel{1}{=} y_0 y_1 - x_1^2 \Big(\frac{y_1}{y_0}\Big) = \frac{y_1}{y_0} (y_0^2 - x_1^2)
-\end{align*} yielding:
-
-$$(2) \; \frac{y_1}{y_0} (y_0^2 - x_1^2) = 0$$
-
-Finally, the third equation is obtained as follows:
-
-$$x_0^2 - y_1^2 \stackrel{1}{=} x_1^2 \frac{y_1^2}{y_0^2} - y_1^2 = \Big(\frac{y_1^2}{y_0^2}\Big) (x_1^2 - y_0^2) \stackrel{2}{=} \frac{y_1^2}{y_0^2} (x_1^2 - y_0^2) \stackrel{2}{=} 0$$
-
-Note that not all the polynomials of $S_{\pm}$ were used. The other goals can be solved similarly.
+The proof of dichotomy requires solving particular instances of the ideal membership problem \cite{hales2016group}. In our practice, we found that the \textit{algebra} method requires some hints to solve some of these problems. For instance, in one occasion for the goal: \[\exists q_1 \, q_2 \, q_3 \, q_4.
+y_0^2 - x_1^2 = 
+q_1 e(x_0,y_0) +
+q_2 e(x_1,y_1) +
+q_3 \delta' +
+q_4 \delta_{-} \]  it was necessary to multiply $y_0^2 - x_1^2$ by the invertible elements $2,x_0$ and $y_0$, in order for the proof to succeed. In another sub-case, it was necessary to strengthen the hypothesis $\delta_{+} = 0$ to $\delta_{-} \neq 0$. So, with some help, \textit{algebra} is able to solve of the required ideal membership problems.
 
 \subsubsection{Definition of the group addition}
 
-The definition of addition is done in three stages. This is convenient for some of the theorems, like covering. In a first stage, we define the addition on projective points, see figure \ref{fig3}. At a later stage, one adds classes of points by applying the basic addition function on any two pair of the classes. Finally, one extract the unique obtained class from the set of classes that could have been obtained after applying the gluing relation. This is specified in figure \ref{fig4}.
+We defined the addition in three stages. This is convenient for some theorems, like covering. First, we define the addition on projective points (figure \ref{fig3}). Then, we add two classes of points by applying the basic addition to any pair of points coming from each class. Finally, we apply the gluing relation and obtain as a result a set of classes with a unique element, which is then defined as the resulting class (figure \ref{fig4}).
 
 \begin{figure}
 {\input{proj-add-1.tex}}
@@ -117,13 +94,13 @@ The definition of addition is done in three stages. This is convenient for some 
 	\label{fig4}
 \end{figure}
 
-The definitions use Isabelle's ability to encode partial functions. However, it is possible to obtain an equivalent definition more suitable for execution. In particular, it is easy to compute the gluing relation (see lemmas $\text{e\_proj\_elim\_1}$, $\text{e\_proj\_elim\_2}$ and $\text{e\_proj\_aff}$).
+The definitions use Isabelle's ability to encode partial functions. However, it is possible to obtain an equivalent definition more suitable for execution. In particular, it is easy to compute the gluing relation (see lemmas $\text{e\_proj\_elim\_1}$, $\text{e\_proj\_elim\_2}$ and $\text{e\_proj\_aff}$). 
 
-Finally, since projective addition works with classes, it is fundamental to show that the definition does not depend on the class representative used. The proofs are largely facilitated once this is shown.
+Finally, since projective addition works with classes, we had to show that its definition does not depend on the representative used. 
 
-\subsubsection{The associativity proof}
+\subsubsection{Proof of the associativity law}
 
-During development, several relations between $\delta$ expressions were found, see table \ref{table:1}. While they were proven in order to show associativity, the upper group can rather be used to establish the independence of class representative and the lower group is crucial to establish associativity.
+During development, we found several relations between $\delta$ expressions (see table \ref{table:1}). While they were proven in order to show associativity, the upper group can rather be used to establish the independence of class representative and the lower group is crucial to establish the associativity law.
 
 \begin{table}
 \begin{center}
@@ -143,12 +120,11 @@ During development, several relations between $\delta$ expressions were found, s
 	\caption{List of $\delta$ relations}
 	\label{table:1}
 \end{table}
-In particular, the lower part of the table is fundamental to establish goal 22 of [2], i.e., $([P,0] \oplus [Q,0]) \oplus [iQ,0] = [P,0]$. Here is how it was established. The proof development showed that it was necessary to perform a triple dichotomy. The first dichotomy is performed on $P$, $Q$. The non-addable case (see meaning of dichotomy in the formalization) was easy. Therefore, we set $R = P \oplus Q$. On each of the resulting branches, a dichotomy on $R$, $iQ$ is performed. This time the addable cases were easy, but the non-addable case required a third dichotomy on $R,\tau i Q$. The non-addable case was solved using the no-fixed-point theorem but for the addable subcases the following expression is obtained: $$([P,0] \oplus [Q,0]) \oplus [\tau i Q,0] = [(P \oplus Q) \oplus \tau i Q,0]$$ Unfortunately, associativity cannot be used in this context since it is necessary that all used additions are defined. However, $Q$ and $\tau i Q$ cannot be added (lemma $\text{not\_add\_self}$). Instead, the equations on the lower part of the table are used, in contradiction with the second dichotomy hypothesis.
+In particular, the lower part of the table is fundamental to establish goal 22 of \cite{hales2016group}, i.e., $([P,0] \oplus [Q,0]) \oplus [iQ,0] = [P,0]$. Here is how we established it. The proof development showed that it was necessary to perform a triple dichotomy. The first dichotomy is performed on $P$, $Q$. The non-addable case was easy. Therefore, we set $R = P \oplus Q$. On each of the resulting branches, a dichotomy on $R$, $iQ$ is performed. This time the addable cases were easy, but the non-addable case required a third dichotomy on $R,\tau i Q$. The non-addable case was solved using the no-fixed-point theorem but for the addable subcases the following expression is obtained: $$([P,0] \oplus [Q,0]) \oplus [\tau i Q,0] = [(P \oplus Q) \oplus \tau i Q,0]$$ Unfortunately, here we cannot use associativity since all the involved additions must be defined and $Q$, $\tau i Q$ cannot be added (lemma $\text{not\_add\_self}$). Instead, we use the equations on the lower part of the table and together with the hypothesis of the second dichotomy, we get a contradiction. 
 
 \section{Conclusion}
 
-In this section, it has been shown that Isabelle can subsume the process of defining, computing and certifying intensive algebraic calculations. The encoding in a proof-assistant allows a better comprehension of the methods used and helps to clarify its structure. On the other hand, we mentioned that giving an interface to use Gr\"{o}bner basis to reason about polynomial ideal membership could be a useful direction in the proof-assistant to deal with similar case studies.
-
+In this section, we have shown that Isabelle can subsume the process of defining, computing and certifying intensive algebraic calculations. The encoding in a proof-assistant allows a better comprehension of the methods used and helps to clarify its structure.
 %
 % ---- Bibliography ----
 %
