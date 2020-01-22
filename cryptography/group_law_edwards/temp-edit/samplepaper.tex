@@ -105,26 +105,45 @@ During development, we found several relations between $\delta$ expressions (see
 \begin{table}
 \begin{center}
 	\begin{tabular}{ r c l }
-		$\delta \; \tau p_1 \; \tau p_2 \neq 0$ & $\implies$ & $\; \delta \; p_1 \; p_2 \neq 0$ \\ 
-		$\delta' \; \tau p_1 \; \tau p_2 \neq 0$ & $\implies$ & $\; \delta' \; p_1 \; p_2 \neq 0$ \\ 
-		$\delta \; p_1 \; p_2 \neq 0$,$\; \delta \; p_1 \; \tau p_2 \neq 0$ & $\implies$ & $\delta' \; p_1 \; p_2 \neq 0$ \\ 
-		$\delta' \; p_1 \; p_2 \neq 0$,$\; \delta' \; p_1 \; \tau p_2 \neq 0$ & $\implies$ & $\delta \; p_1 \;p_2 \neq 0$ \\ 
-		\hline
-	    $\delta' \; (p_1 \oplus_1 p_2) \; \tau i p_2 \neq 0$ & $\implies$ & $\; \delta \; (p_1 \oplus_1 p_2) \; i p_2 \neq 0$ \\ 
-	    $\delta \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_1 \oplus_0 p_2) \; \tau i p_2 \neq 0$ & $\implies$ & $\; \delta' (p_1 \oplus_0 p_2) \; i p_2 \neq 0$ \\ 
-	    $\delta \; p_1 \; p_2 \neq 0$,$\; \delta' \; (p_0 \oplus_0 p_1) \; \tau i p_2 \neq 0$ & $\implies$ & $\; \delta \; (p_0 \oplus_0 p_1) \; i p_2 \neq 0$ \\ 
-	    
-	    $\delta' \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_0 \oplus_1 p_1) \; \tau i p_2 \neq 0$ & $\implies$ & $\; \delta' \; (p_0 \oplus_1 p_1) \; i p_2 \neq 0$ \\
+ $\delta \; \tau p_1 \; \tau p_2 \neq 0$ & $\implies$ & $\; \delta \; p_1 \; p_2 \neq 0$ \\ 
+ $\delta' \; \tau p_1 \; \tau p_2 \neq 0$ & $\implies$ & $\; \delta' \; p_1 \; p_2 \neq 0$ \\ 
+ $\delta \; p_1 \; p_2 \neq 0$,$\; \delta \; p_1 \; \tau p_2 \neq 0$ & $\implies$ & $\delta' \; p_1 \; p_2 \neq 0$ \\ 
+ $\delta' \; p_1 \; p_2 \neq 0$,$\; \delta' \; p_1 \; \tau p_2 \neq 0$ & $\implies$ & $\delta \; p_1 \;p_2 \neq 0$ \\ 
+ \hline
+ $\delta' \; (p_1 \oplus_1 p_2) \; \tau i p_2 \neq 0$ & $\implies$ & $\; \delta \; (p_1 \oplus_1 p_2) \; i p_2 \neq 0$ \\ 
+ $\delta \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_1 \oplus_0 p_2) \; \tau i p_2 \neq 0$ & $\implies$ & $\; \delta' (p_1 \oplus_0 p_2) \; i p_2 \neq 0$ \\ 
+ $\delta \; p_1 \; p_2 \neq 0$,$\; \delta' \; (p_0 \oplus_0 p_1) \; \tau i p_2 \neq 0$ & $\implies$ & $\; \delta \; (p_0 \oplus_0 p_1) \; i p_2 \neq 0$ \\     
+ $\delta' \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_0 \oplus_1 p_1) \; \tau i p_2 \neq 0$ & $\implies$ & $\; \delta' \; (p_0 \oplus_1 p_1) \; i p_2 \neq 0$ \\
 	\end{tabular}
 \end{center}
 	\caption{List of $\delta$ relations}
 	\label{table:1}
 \end{table}
-In particular, the lower part of the table is fundamental to establish goal 22 of \cite{hales2016group}, i.e., $([P,0] \oplus [Q,0]) \oplus [iQ,0] = [P,0]$. Here is how we established it. The proof development showed that it was necessary to perform a triple dichotomy. The first dichotomy is performed on $P$, $Q$. The non-addable case was easy. Therefore, we set $R = P \oplus Q$. On each of the resulting branches, a dichotomy on $R$, $iQ$ is performed. This time the addable cases were easy, but the non-addable case required a third dichotomy on $R,\tau i Q$. The non-addable case was solved using the no-fixed-point theorem but for the addable subcases the following expression is obtained: $$([P,0] \oplus [Q,0]) \oplus [\tau i Q,0] = [(P \oplus Q) \oplus \tau i Q,0]$$ Unfortunately, here we cannot use associativity since all the involved additions must be defined and $Q$, $\tau i Q$ cannot be added (lemma $\text{not\_add\_self}$). Instead, we use the equations on the lower part of the table and together with the hypothesis of the second dichotomy, we get a contradiction. 
+%
+In particular, the lower part of the table is fundamental to establish
+goal 22 of \cite{hales2016group}, i.e., $([P,0] \oplus [Q,0]) \oplus
+[iQ,0] = [P,0]$. Here is how we established it. The proof development
+showed that it was necessary to perform a triple dichotomy. The first
+dichotomy is performed on $P$, $Q$. The non-addable case was
+easy. Therefore, we set $R = P \oplus Q$. On each of the resulting
+branches, a dichotomy on $R$, $iQ$ is performed. This time the addable
+cases were easy, but the non-addable case required a third dichotomy
+on $R,\tau i Q$. The non-addable case was solved using the
+no-fixed-point theorem but for the addable subcases the following
+expression is obtained: $$([P,0] \oplus [Q,0]) \oplus [\tau i Q,0] =
+[(P \oplus Q) \oplus \tau i Q,0]$$ Unfortunately, here we cannot use
+associativity since all the involved additions must be defined and
+$Q$, $\tau i Q$ cannot be added (lemma
+$\text{not\_add\_self}$). Instead, we use the equations on the lower
+part of the table and together with the hypothesis of the second
+dichotomy, we get a contradiction.
 
 \section{Conclusion}
 
-In this section, we have shown that Isabelle can subsume the process of defining, computing and certifying intensive algebraic calculations. The encoding in a proof-assistant allows a better comprehension of the methods used and helps to clarify its structure.
+In this section, we have shown that Isabelle can subsume the process
+of defining, computing and certifying intensive algebraic
+calculations. The encoding in a proof-assistant allows a better
+comprehension of the methods used and helps to clarify its structure.
 %
 % ---- Bibliography ----
 %
