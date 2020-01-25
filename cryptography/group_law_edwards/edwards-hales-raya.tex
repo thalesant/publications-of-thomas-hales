@@ -6,13 +6,8 @@
 % Aug 2016. Projective curves added.
 % October 5, 2016. Rewritten to remove MAA expository style.
 % October 17, 2016. upload to ArXiv.
-% December 18, 2019. Hales-Raya version
+% December 18-Jan 25, 2019. Hales-Raya version
 
-%% TODO: replace HOL Light timings with Isabelle/HOL.
-%% Add references.
-%% Why can't we just take y_j=0 in schema?
-%% Doesn't Wenzel give Grobner bases?
-%% Final conclusion of formalization,
 
 %\documentclass[runningheads]{llncs}
 \documentclass{llncs}
@@ -86,8 +81,9 @@
 \newcommand\XX[1]{[XX fix: #1]}
 
 \title{Formal Proof of the Group Law for Edwards Elliptic Curves}
-\author{Thomas Hales\\Rodrigo Raya}
+\author{Thomas Hales\inst{1}\and Rodrigo Raya\inst{2}}
 \date{}
+\institute{University of Pittsburgh\and Technical University of Munich}
 %\date{October 17, 2016}
 
 \begin{document}
@@ -188,9 +184,9 @@ characteristic other than $2$) satisfies the axioms of an abelian
 group.%
 %
 \footnote{Mathematica calculations are available at\\
-  \url{github.com/thalesant/publications-of-thomas-hales/cryptography/edwards}.
+  \url{https://github.com/thalesant/publications-of-thomas-hales/tree/master/cryptography/group_law_edwards}.
   The Isabelle/HOL formalization is available at\\
-  \url{github.com/rjraya/Isabelle/curves/Hales.thy}.}
+  \url{https://github.com/rjraya/Isabelle/blob/master/curves/Hales.thy}.}
 
 
 It is natural to ask whether the proof of the associative law also
@@ -208,7 +204,7 @@ and translated into many different proof assistants.
 
 \section{Published Literature}
 
-A number of calculations are reworkings of calculations found in
+A number of our calculations are reworkings of calculations found in
 Edwards, Bernstein, Lange et al.~\cite{edwards2007normal},
 \cite{bernstein2008twisted}, \cite{bernstein2007faster}.  A geometric
 interpretation of addition for Edwards elliptic curves appears in
@@ -220,7 +216,7 @@ computer algebra system (in Cocoa using Gr\"obner bases)
 \cite{friedl}, \cite{friedl2017elementary}.  He writes, ``The
 verification of some identities took several hours on a modern
 computer; this proof could not have been carried out before the
-1980s.''  These identities were formalized in Coq with runtime 1
+1980s.''  These identities were later formalized in Coq with runtime one
 minute and 20 seconds \cite{thery2007proving}.  A non-computational
 Coq formalization based on the Picard group appears in
 \cite{bartzia2014formal}.  By shifting to Edwards curves, we have
@@ -438,7 +434,7 @@ P_1 \oplus_0 (P_2\oplus_0 P_3).
 \end{lemma}
 
 The lemma is sometimes called completeness, in conflict with the
-definition of \emph{complete} varieties in algebraic geometry.  To avoid
+usual definition of \emph{complete} varieties in algebraic geometry.  To avoid
 possible confusion, we avoid this terminology.  We use the lemma in
 contrapositive form to give conditions on $\bar d$ and $\bar c\bar d$
 that imply $\phi(\delta)\ne0$.
@@ -505,14 +501,14 @@ class \textit{field} with the assumption that $2 \neq 0$
 simplification set, but used when needed during the proof.
 
 
-\subsection{Affine Edwards curves}
+\subsection{affine Edwards curves}
 
-The formal proof fixes the curve parameters $c,d \in k$ (without the bars). The group
-addition $\oplus_0$ (of Equation~\ref{eqn:add})
-can be written as in Figure~\ref{fig:1}. 
-In Isabelle's division ring theory, the result of division by zero is
-defined as zero. This has no impact on validity of final results, but gives cleaner
-simplifications in some proofs.
+The formal proof fixes the curve parameters $c,d \in k$ (dropping the
+bar accents from notation). The group addition $\oplus_0$ (of
+Equation~\ref{eqn:add}) can be written as in Figure~\ref{fig:1}.  In
+Isabelle's division ring theory, the result of division by zero is
+defined as zero. This has no impact on validity of final results, but
+gives cleaner simplifications in some proofs.
 
 \begin{figure}
 	{\input{proj-add-0.tex}}
@@ -631,7 +627,7 @@ commutative rings with unit \cite{harrison2007automating}.
 
 By proving the group laws for a large class of elliptic curves,
 Theorem \ref{thm:group} is sufficiently general for many applications
-to cryptography.  Nevertheless, to achieve complete generality, we
+to cryptography.  Nevertheless, to achieve full generality, we
 push forward.
 
 This section show how to remove the restriction $\bar d\not\in
@@ -651,7 +647,7 @@ can be expressed as polynomial identities.
 
 
 
-\subsection{definitions}
+\subsection{definitions}\label{sec:defs}
 
 In this section, we assume that $c\ne 0$ and that $c$ and $d$ are both
 squares.  Let $t^2 = d/c$.  By a change of variable $y\mapsto
@@ -682,50 +678,52 @@ $\tau$.
 
 \subsection{extended addition}
 
+%% XX was \delta_1, \nu_1
 We extend the binary operation $\oplus_0$ using the automorphism $\tau$.
-We also write $\delta_1$ for
-$\delta$, $\nu_1$ for $\nu$ and so forth.
+We also write $\delta_0$ for
+$\delta$, $\nu_0$ for $\nu$ and so forth.
 
 Set
 \begin{equation}\label{eqn:tauplus}
   z_1\oplus_1 z_2 := \tau((\tau z_1)\oplus_0 z_2)=
   \left(\frac{x_1y_1 - x_2 y_2}{x_2
     y_1-x_1 y_2},\frac{x_1 y_1 + x_2 y_2}{x_1 x_2 + y_1 y_2}\right) 
-= (\frac{\nu_{1x}}{\delta_{1x}},\frac{\nu_{2x}}{\delta_{2x}})
+= (\frac{\nu_{1x}}{\delta_{1x}},\frac{\nu_{1y}}{\delta_{1y}})
+%% XX was \nu_{2x} \delta_{2x}
 \end{equation}
 in $R_2[\f{\delta_1}]^2$ where $\delta_1 = \delta_{1x}\delta_{1y}$.
 
 We have the following easy identities of rational functions that are
 proved by simplification of rational functions:
-
-\noindent{\it inversion invariance}
 \begin{align}\label{eqn:r-tau}
+\text{\it inversion invariance:}\quad\quad
 \tau (z_1)\oplus_i z_2 &= z_1 \oplus_i \tau z_2;
 \end{align}
-\noindent{\it rotation invariance}
 \begin{align}\label{eqn:r-rho}
+\text{\it rotation invariance:}\quad\quad
 \begin{split}
 \rho(z_1)\oplus_i z_2 &= \rho(z_1\oplus_i z_2);\\
 \delta_i(z_1,\rho z_2) &= \pm \delta_i(z_1,z_2);
 \end{split}
 \end{align}
-\noindent{\it inverse rules  for $\sigma=\tau,\rho$}
-\begin{align}\label{eqn:r-iota}
+\begin{align}\label{eqn:r-iota}%
+\text{\it inverses for $\sigma=\tau,\rho$:}\quad
 \begin{split}
 \iota \sigma(z_1) &= \sigma^{-1} \iota (z_1);\\
 \iota (z_1\oplus_i z_2) &= (\iota z_1)\oplus_i (\iota z_2).
 \end{split}
 \end{align}
-
-The following coherence rule and closure hold by polynomial division:
+%
+%The following coherence rule and closure hold by polynomial division:
 \begin{align}\label{eqn:r-coh}
+  \text{\it coherence:}\quad\quad
 \begin{split}
 z_1 \oplus_0 z_2 \equiv z_1 \oplus_1 z_2 &\mod \{e_1,e_2\};\\
 e(z_1\oplus_1 z_2) \equiv 0 &\mod \{e_1,e_2\}.
 \end{split}
 \end{align}
-The first identity requires inverting $\delta_0\delta_1$ and the
-second requires inverting $\delta_1$.
+The first identity of (\ref{eqn:r-coh}) inverts $\delta_0\delta_1$, and the
+second inverts $\delta_1$. Proofs use polynomial division.
 
 \subsection{projective curve and dichotomy}\label{sec:dichot}
 
@@ -771,7 +769,7 @@ The domain of $\oplus_i$ is
 \Eaf{i} := \{(P,Q)\in \Eaff^2\mid \delta_i(P,Q)\ne0\}.
 \]
 Whenever we write $P\oplus_i Q$, it is always accompanied by the
-implicit assertion that $(P,Q)\in \Eaf{i}$.
+implicit assertion of addability; that is, $(P,Q)\in \Eaf{i}$.
 
 There is a group isomorphism $\ang{\rho}\to \Eaff\setminus\Eoo$ given by
 \[
@@ -799,14 +797,17 @@ We have two cases $\pm$, according to $\delta_{\pm}=0$.  In each case,
 let
 \[
 S_\pm = \text{Gr\"obner basis of } \{e_1,e_2, 
-\delta',\delta_{\pm},q x_0 x_1 y_0 y_1 - 1\},
+\delta',\delta_{\pm} %%q x_0 x_1 y_0 y_1 - 1
+\}.
 \]
-where $q$ is a new variable, used to make $x_i,y_i$ invertible.
-The polynomial $q x_0 x_1 y_0 y_1-1$ is included to encode the
-condition $a_0,b_0,a_1,b_1\ne 0$, which holds on $\Eoo$.  Polynomial
-division gives
+%where $q$ is a new variable, used to make $x_i,y_i$ invertible.
+%The polynomial $q x_0 x_1 y_0 y_1-1$ is included to encode the
+%condition $a_0,b_0,a_1,b_1\ne 0$, which holds on $\Eoo$.  
+%Polynomial
+%division gives
 \begin{equation}\label{eqn:dichot}
-(x_0^2-x_1^2,y_0^2-x_1^2,x_0 y_0 - x_1 y_1) \equiv (0,0,0) \mod S_\pm.
+(x_0^2-y_1^2,y_0^2-x_1^2,x_0 y_0 - x_1 y_1) \equiv (0,0,0) \mod S_\pm\quad 
+\text{(polynomial division)}.
 \end{equation}
 These equations immediately yield $(a_0,b_0) = \pm (b_1,a_1)$.  
 This gives the needed identity.  In summary, we have $\tau Q =
@@ -817,10 +818,12 @@ The second statement of the lemma has a similar proof.  Polynomial
 division gives for $i\in \ring{F}_2$:
 \[
 z_1 \equiv \iota (z_2) \mod \text{Gr\"obner} 
-\{ e_1,e_2,q x_1 y_1 x_2 y_2 -1,\nu_{i y},\nu_{i x}-\delta_{i x} \}.
+\{ e_1,e_2,
+%%q x_1 y_1 x_2 y_2 -1, %%XX Dropped 1/25/2020
+\nu_{i y},\nu_{i x}-\delta_{i x} \}.
 \]
-Note that $\nu_{i y}=\nu_{i x}-\delta_{i x}=0$ is the condition for
-the sum to be the identity element:
+Here $\nu_{i y}=\nu_{i x}-\delta_{i x}=0$ specifies
+the identity:
 $(1,0)=(\nu_{ix}/\delta_{ix},\nu_{iy}/\delta_{iy})$.
 \qed\end{proof}
 
@@ -903,12 +906,12 @@ which reduces in each case to (\ref{eqn:assoc-affine}) or
 (\ref{eqn:semi}).
 \qed\end{proof}
 
-\subsection{Formalization in Isabelle/HOL of Projective Edwards curves}
+\subsection{formalization in Isabelle/HOL of projective Edwards curves}
 
-Following the change of variables performed in section 4.1 of
-\cite{hales2016group}, it is assumed that $c = 1$ and $d = t^2$ where
-$t \neq -1,0,1$. The resulting proof is more challenging. In the
-following, some key insights are emphasised.
+Following the change of variables performed in Section~\ref{sec:defs}, 
+it is assumed that $c = 1$ and $d = t^2$ where
+$t \neq -1,0,1$. The resulting formalization is more challenging. In the
+following, some key insights are emphasized.
 
 \subsubsection{Gr\"{o}bner basis}
 
@@ -969,13 +972,13 @@ following, some key insights are emphasised.
 %Note that not all the polynomials of $S_{\pm}$ were used. The other
 %goals can be solved similarly.
 
-The proof of dichotomy requires solving particular instances of the
-ideal membership problem \cite{hales2016group}. In our practice, we
-found that the \textit{algebra} method requires some hints to solve
+The proof of Lemma~\ref{lemma:noco} (dichotomy) requires solving
+particular instances of the ideal membership problem. In our practice,
+we found that the \textit{algebra} method requires some hints to solve
 some of these problems. For instance, in one occasion for the goal
 \[
-\exists q_1 \, q_2 \, q_3 \, q_4.
-y_0^2 - x_1^2 = q_1 e(x_0,y_0) + q_2 e(x_1,y_1) + q_3 \delta' + q_4
+\exists r_1 \, r_2 \, r_3 \, r_4.
+y_0^2 - x_1^2 = r_1 e(x_0,y_0) + r_2 e(x_1,y_1) + r_3 \delta' + r_4
 \delta_{-} 
 \] 
 it was necessary to multiply $y_0^2 - x_1^2$ by the
@@ -986,7 +989,7 @@ help, \textit{algebra} is able to solve of the required ideal
 membership problems.
 
 
-\subsubsection{Definition of the group addition}
+\subsubsection{definition of the group addition}
 
 We defined the addition in three stages. This is convenient for some
 theorems, like covering. First, we define the addition on projective
@@ -1039,7 +1042,7 @@ Finally, since projective addition works with classes, we had to show
 that its definition does not depend on the representative used.
 
 
-\subsubsection{Proof of associativity}
+\subsubsection{proof of associativity}
 
 During development, we found several relations between $\delta$
 expressions (see table \ref{table:1}). While they were proven in order
@@ -1061,14 +1064,14 @@ crucial to establish the associativity law.
 %  
   \hline
 %
-  $\delta' \; (p_1 \oplus_1 p_2) \; \tau i p_2 \neq 0$
-  & $\implies$ & $\; \delta \; (p_1 \oplus_1 p_2) \; i p_2 \neq 0$ \\ 
-  $\delta \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_1 \oplus_0 p_2) \; \tau i p_2 \neq 0$
-  & $\implies$ & $\; \delta' (p_1 \oplus_0 p_2) \; i p_2 \neq 0$ \\ 
-  $\delta \; p_1 \; p_2 \neq 0$,$\; \delta' \; (p_0 \oplus_0 p_1) \; \tau i p_2 \neq 0$
-  & $\implies$ & $\; \delta \; (p_0 \oplus_0 p_1) \; i p_2 \neq 0$ \\ 	    
-  $\delta' \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_0 \oplus_1 p_1) \; \tau i p_2 \neq 0$
-  & $\implies$ & $\; \delta' \; (p_0 \oplus_1 p_1) \; i p_2 \neq 0$ \\
+  $\delta' \; (p_1 \oplus_1 p_2) \; \tau \iota p_2 \neq 0$
+  & $\implies$ & $\; \delta \; (p_1 \oplus_1 p_2) \; \iota p_2 \neq 0$ \\ 
+  $\delta \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_1 \oplus_0 p_2) \; \tau \iota p_2 \neq 0$
+  & $\implies$ & $\; \delta' (p_1 \oplus_0 p_2) \; \iota p_2 \neq 0$ \\ 
+  $\delta \; p_1 \; p_2 \neq 0$,$\; \delta' \; (p_0 \oplus_0 p_1) \; \tau \iota p_2 \neq 0$
+  & $\implies$ & $\; \delta \; (p_0 \oplus_0 p_1) \; \iota p_2 \neq 0$ \\ 	    
+  $\delta' \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_0 \oplus_1 p_1) \; \tau \iota p_2 \neq 0$
+  & $\implies$ & $\; \delta' \; (p_0 \oplus_1 p_1) \; \iota p_2 \neq 0$ \\
 \end{tabular}
 \end{center}
 	\caption{List of $\delta$ relations}
@@ -1076,40 +1079,40 @@ crucial to establish the associativity law.
 \end{table}
 %
 %In particular, the lower part of the table is fundamental to establish
-%goal 22 of [2], i.e., $([P,0] \oplus [Q,0]) \oplus [iQ,0] =
+%goal 22 of [2], i.e., $([P,0] \oplus [Q,0]) \oplus [\iota Q,0] =
 %[P,0]$. Here is how it was established. The proof development showed
 %that it was necessary to perform a triple dichotomy. The first
 %dichotomy is performed on $P$, $Q$. The non-addable case (see meaning
 %of dichotomy in the formalization) was easy. Therefore, we set $R = P
-%\oplus Q$. On each of the resulting branches, a dichotomy on $R$, $iQ$
+%\oplus Q$. On each of the resulting branches, a dichotomy on $R$, $\iota Q$
 %is performed. This time the addable cases were easy, but the
-%non-addable case required a third dichotomy on $R,\tau i Q$. The
+%non-addable case required a third dichotomy on $R,\tau \iota Q$. The
 %non-addable case was solved using the no-fixed-point theorem but for
 %the addable subcases the following expression is obtained:
 %\[
-%([P,0] \oplus [Q,0]) \oplus [\tau i Q,0] =
-%  [(P \oplus Q) \oplus \tau i Q,0]
+%([P,0] \oplus [Q,0]) \oplus [\tau \iota Q,0] =
+%  [(P \oplus Q) \oplus \tau \iota Q,0]
 %\]
 %Unfortunately, associativity cannot be used in this context since it
 %is necessary that all used additions are defined. However, $Q$ and
-%$\tau i Q$ cannot be added (lemma $\text{not\_add\_self}$). Instead,
+%$\tau \iota Q$ cannot be added (lemma $\text{not\_add\_self}$). Instead,
 %the equations on the lower part of the table are used, in
 %contradiction with the second dichotomy hypothesis.
 
 In particular, the lower part of the table is fundamental to establish
 goal 22 of \cite{hales2016group}, i.e., $([P,0] \oplus [Q,0]) \oplus
-[iQ,0] = [P,0]$. Here is how we established it. The proof development
+[\iota Q,0] = [P,0]$. Here is how we established it. The proof development
 showed that it was necessary to perform a triple dichotomy. The first
 dichotomy is performed on $P$, $Q$. The non-addable case was
 easy. Therefore, we set $R = P \oplus Q$. On each of the resulting
-branches, a dichotomy on $R$, $iQ$ is performed. This time the addable
+branches, a dichotomy on $R$, $\iota Q$ is performed. This time the addable
 cases were easy, but the non-addable case required a third dichotomy
-on $R,\tau i Q$. The non-addable case was solved using the
+on $R,\tau \iota Q$. The non-addable case was solved using the
 no-fixed-point theorem but for the addable subcases the following
-expression is obtained: $$([P,0] \oplus [Q,0]) \oplus [\tau i Q,0] =
-[(P \oplus Q) \oplus \tau i Q,0]$$ Unfortunately, here we cannot use
+expression is obtained: $$([P,0] \oplus [Q,0]) \oplus [\tau \iota Q,0] =
+[(P \oplus Q) \oplus \tau \iota Q,0]$$ Unfortunately, here we cannot use
 associativity since all the involved additions must be defined and
-$Q$, $\tau i Q$ cannot be added (lemma
+$Q$, $\tau \iota Q$ cannot be added (lemma
 $\text{not\_add\_self}$). Instead, we use the equations on the lower
 part of the table and together with the hypothesis of the second
 dichotomy, we get a contradiction.
