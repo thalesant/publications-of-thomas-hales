@@ -6,13 +6,8 @@
 % Aug 2016. Projective curves added.
 % October 5, 2016. Rewritten to remove MAA expository style.
 % October 17, 2016. upload to ArXiv.
-% December 18, 2019. Hales-Raya version
+% December 18-Jan 25, 2019-2020. Hales-Raya version for submission.
 
-%% TODO: replace HOL Light timings with Isabelle/HOL.
-%% Add references.
-%% Why can't we just take y_j=0 in schema?
-%% Doesn't Wenzel give Grobner bases?
-%% Final conclusion of formalization,
 
 %\documentclass[runningheads]{llncs}
 \documentclass{llncs}
@@ -86,8 +81,9 @@
 \newcommand\XX[1]{[XX fix: #1]}
 
 \title{Formal Proof of the Group Law for Edwards Elliptic Curves}
-\author{Thomas Hales\\Rodrigo Raya}
+\author{Thomas Hales\inst{1}\and Rodrigo Raya\inst{2}}
 \date{}
+\institute{University of Pittsburgh\and Technical University of Munich}
 %\date{October 17, 2016}
 
 \begin{document}
@@ -104,8 +100,8 @@
   has been formalized in the Isabelle/HOL proof assistant.
 \end{abstract}
 
-\parskip=0.8\baselineskip
-\baselineskip=1.05\baselineskip
+%\parskip=0.8\baselineskip
+%\baselineskip=1.05\baselineskip
 
 \newenvironment{blockquote}{%
   \par%
@@ -151,13 +147,13 @@ polynomial equations.  The different presentations are known variously
 as the Weierstrass curve $(y^2 = \text{cubic in } x)$, Jacobi curve
 $(y^2 = \text{quartic in } x)$, and Edwards curve (discussed below).
 
-The set of points on an elliptic curve is an abelian group.  Explicit
+The set of points on an elliptic curve forms an abelian group.  Explicit
 formulas for addition are given in detail below.  The Weierstrass
 curve is the most familiar presentation of an elliptic curve, but it
 suffers from the shortcoming that the group law is not given by a
 uniform formula on all inputs.  For example, special treatment must be
-given to the point at infinity and to the doubling of points $x
-\mapsto 2x$).  Exceptional cases are bad; they are the source of 
+given to the point at infinity and to point doubling: $P
+\mapsto 2P$.  Exceptional cases are bad; they are the source of 
 hazards such as side-channel attacks (timing attacks) by
 adversaries and implementation bugs \cite{brier2002weierstrass}.
 
@@ -169,30 +165,34 @@ passing to a quadratic extension).  Thus, there is little loss of
 generality in considering elliptic curves in Edwards form.  For most
 cryptographic applications, Edwards curves suffice.
 
-
-
 The original contributions of this article are both mathematical and
 formal.  Our proof that elliptic curve addition satisfies the axioms
 of an abelian group is new (but see the literature survey below for
-prior work).  To our knowledge, our proof of
-associativity in Section \ref{sec:assoc} is the most elementary proof
-that exists anywhere in the published literature (in a large
-mathematical literature on elliptic curves extending back to Euler's
-work on elliptic integrals).  Our proof avoids the usual machinery
-found in proofs of associativity (such as intersection numbers,
-B\'ezout's theorem, projective geometry, divisors, or Riemann Roch).
-Our algebraic manipulations require little more than multivariate
-polynomial division with remainders, even avoiding Gr\"obner bases.
-Based on this elementary proof, we give a formal proof in the
-Isabelle/HOL proof assistant that every Edwards elliptic curve (in
-characteristic other than $2$) satisfies the axioms of an abelian
-group.
+prior work).  Our proofs were designed with formalization specifically
+in mind.  To our knowledge, our proof of associativity in Section
+\ref{sec:assoc} is the most elementary proof that exists anywhere in
+the published literature (in a large mathematical literature on
+elliptic curves extending back to Euler's work on elliptic integrals).
+Our proof avoids the usual machinery found in proofs of associativity
+(such as intersection numbers, B\'ezout's theorem, projective
+geometry, divisors, or Riemann Roch).  Our algebraic manipulations
+require little more than multivariate polynomial division with
+remainders, even avoiding Gr\"obner bases in most places.  Based on
+this elementary proof, we give a formal proof in the Isabelle/HOL
+proof assistant that every Edwards elliptic curve (in characteristic
+other than $2$) satisfies the axioms of an abelian group.%
+%
+\footnote{Mathematica calculations are available at\\
+  \url{https://github.com/thalesant/publications-of-thomas-hales/tree/master/cryptography/group_law_edwards}.\\
+  The Isabelle/HOL formalization is available at\\
+  \url{https://github.com/rjraya/Isabelle/blob/master/curves/Hales.thy}.}
+
 
 It is natural to ask whether the proof of the associative law also
 avoids exceptional cases (encountered in Weierstrass curves)
 when expressed in terms of Edwards curves.
 Indeed, this article gives a two-line proof of the associative law for
-``complete'' Edwards curves that avoids case splits and all
+so-called \emph{complete} Edwards curves that avoids case splits and all
 the usual machinery.
 
 By bringing significant simplification to the fundamental proofs in
@@ -203,7 +203,7 @@ and translated into many different proof assistants.
 
 \section{Published Literature}
 
-A number of calculations are reworkings of calculations found in
+A number of our calculations are reworkings of calculations found in
 Edwards, Bernstein, Lange et al.~\cite{edwards2007normal},
 \cite{bernstein2008twisted}, \cite{bernstein2007faster}.  A geometric
 interpretation of addition for Edwards elliptic curves appears in
@@ -215,31 +215,35 @@ computer algebra system (in Cocoa using Gr\"obner bases)
 \cite{friedl}, \cite{friedl2017elementary}.  He writes, ``The
 verification of some identities took several hours on a modern
 computer; this proof could not have been carried out before the
-1980s.''  These identities were formalized in Coq with runtime 1
+1980s.''  These identities were later formalized in Coq with runtime one
 minute and 20 seconds \cite{thery2007proving}.  A non-computational
 Coq formalization based on the Picard group appears in
 \cite{bartzia2014formal}.  By shifting to Edwards curves, we have
 eliminated case splits and significantly improved the speed of the
 computational proof.
 
-Our earlier unpublished note contains more detailed motivation,
+An earlier unpublished note contains more detailed motivation,
 geometric interpretation, pedagogical notes, and expanded proofs
 \cite{hales2016group}.  The earlier version does not include
-formalization in Isabelle/HOL.
+formalization in Isabelle/HOL.  Our formalization uncovered and
+corrected some errors in the ideal membership problems in
+\cite{hales2016group} (reaffirming the pervasive conclusion that
+formalization catches errors that mathematicians miss).
 
 Other formalizations of elliptic curve cryptography are found in Coq
 and ACL2 by different methods \cite{russinoff2017computationally}.
-After our posting to the arXiv, another formalization was given in Coq
-along our same idea \cite{erbsen2017crafting}.  It goes further by including
-formalization of implementation of code, 
-but it falls short of our work by not including the more
-challenging projective curves considered here
-\cite{erbsen2017systematic}.
+After we posted our work to the arXiv, another formalization was given
+in Coq along our same idea \cite{erbsen2017crafting}
+\cite{erbsen2017systematic}.  It goes further by including
+formalization of implementation of code, but it falls substantially
+short of our work by not including the far more challenging and
+interesting case of projective curves.
 
 We do not attempt to survey the various formalizations of
 cryptographic algorithms built on top of elliptic curves.  Because of
 the critical importance of cryptography to the security industry, the
-formalization of cryptographic algorithms is certainly a priority.
+formalization of cryptographic algorithms is rightfully a priority
+within the formalization community.
 
 \section{Group Axioms}\label{sec:axiom}
 
@@ -252,19 +256,21 @@ proofs, because our approach is not previously published.
 \subsection{rings and homomorphisms}
 
 In this section, we work algebraically over an arbitrary field $k$.
-We will assume a basic background in abstract algebra at the level of
+We assume a basic background in abstract algebra at the level of
 a first course (rings, fields, homomorphisms, and kernels).  We set
 things up in a way that all of the main identities to be proved are
 identities of polynomials with integer coefficients.
 
-If $R$ is a ring (specifically, a ring of polynomials with integer
-coefficients), and if $\delta\in R$, then we write $R[\f{\delta}]$ for
+If $R$ is a ring 
+%(specifically, a ring of polynomials with integer
+%coefficients), 
+and if $\delta\in R$, then we write $R[\f{\delta}]$ for
 the localization of $R$ with respect to the multiplicative set
-$S=\{1,\delta,\delta^2,\ldots\}$.  That is, $R[\f{\delta}]$ is the
-ring of fractions with numerators in $R$ and denominators in $S$.  We
+$S=\{1,\delta,\delta^2,\ldots\}$; that is, the set of 
+fractions with numerators in $R$ and denominators in $S$.  We
 will need the well-known fact that if $\phi:R\to A$ is a ring
-homomorphism that sends $\delta$ to a unit in $A$, then $\phi$ extends
-uniquely to a homomorphism $R[\f{\delta}]\to A$ that maps a fraction
+homomorphism sending $\delta$ to a unit in $A$, then $\phi$ extends
+uniquely to a map $R[\f{\delta}]\to A$ that maps a fraction
 $r/\delta^i$ to $\phi(r)\phi(\delta^i)^{-1}$.
 
 \begin{lemma}[kernel property] Suppose that an identity $r = r_1 e_1 +
@@ -283,15 +289,14 @@ Edwards curve.  Let
 \begin{equation}
 e(x,y) = x^2 + c y^2 -1 - d x^2 y^2 \in  R_0[x,y].
 \end{equation}
-(The zero set of the polynomial $e(x,y)$ is the set of points on the
-Edwards elliptic curve.  When specialized to $c=1$ and $d=0$ the
-polynomial reduces to the circle, $x^2 + y^2 - 1$, and the group law
-becomes the usual group law for a circle.)
+%(When specialized to $c=1$ and $d=0$ the
+%polynomial $x^2 +y^2-1$ reduces to the circle, and the group law
+%becomes the usual group law for a circle.)
 
 We write $e_i = e(x_i,y_i)$ for the image of the polynomial in $R_j$,
 for $i\le j$, under $x\mapsto x_i$ and $y\mapsto y_i$.  Set
 $\delta_x = \delta^-$ and $\delta_y = \delta^+$, where
-\[\delta^{\pm} (x_1,y_1,x_2,y_2) = 1\pm d x_1 y_1 x_2 y_2\] and
+\[\delta^{\pm} (x_1,y_1,x_2,y_2) = 1\pm d x_1 y_1 x_2 y_2\quad\text{and}\] 
 \[
 \delta(x_1,y_1,x_2,y_2) = \delta_x\delta_y\in R_2.
 \]
@@ -309,8 +314,11 @@ z_1 \oplus_0 z_2 =  \left(\frac{x_1 x_2 - c y_1 y_2}{1 - d x_1 x_2 y_1 y_2},
 \frac{x_1 y_2 + y_1 x_2}{1+d x_1 x_2 y_1 y_2}\right) 
 \in R_2[\f{\delta}]\times R_2[\f{\delta}].
 \end{equation}
-(Again, by inspection, when $c=1$ and $d=0$, this reduces to the familiar group
-law on a circle.)
+When specialized to $c=1$ and $d=0$, the polynomial $e(x,y)=x^2+y^2-1$ reduces to
+a circle, and (\ref{eqn:add}) reduces to the standard group
+law on a circle.
+%, obtained by writing the multiplication of complex numbers 
+%in real and imaginary parts.)
 Commutativity is a consequence of the subscript symmetry
 $1\leftrightarrow 2$ evident in the pair of rational functions:
 \[
@@ -321,8 +329,8 @@ $P_1\oplus_0 P_2\in A^2$ for the image of $z_1\oplus_0 z_2$.  We write
 $e(P_i)\in A$ for the image of $e_i=e(z_i)$ under $\phi$.  We often
 mark the image $\bar r=\phi(r)$ of an element with a bar accent.
 
-Let $\iota(z_i) =\iota(x_i,y_i) = (x_i,-y_i)$.  The involution $z_i\to \iota(z_i)$ gives us an inverse
-with properties developed below.
+Let $\iota(z_i) =\iota(x_i,y_i) = (x_i,-y_i)$.  The involution $z_i\to
+\iota(z_i)$ gives us an inverse with properties developed below.
 
 There is an obvious identity element $(1,0)$, expressed as follows.
 Under a homomorphism $\phi:R_2[\f{\delta}]\to A$, mapping $z_1\mapsto
@@ -368,19 +376,20 @@ The result now follows from the kernel property and
 giving ${e}(P_1\oplus_0 P_2)=0$.
 \qed\end{proof}
 
-Mathematica's {\tt PolynomialReduce} is an implementation of a naive multivariate division algorithm
-such as \cite{cox1992ideals}.  In particular, our approach does not
-require the use of Gr\"obner bases.  We write
+Mathematica's {\tt PolynomialReduce} is an implementation of a naive
+multivariate division algorithm \cite{cox1992ideals}.  In particular,
+our approach does not require the use of Gr\"obner bases until
+Section~\ref{sec:dichot}.  We write
 \[
 r \equiv r' \mod S,
 \]
 where $r-r'$ is a rational function and $S$ is a set of polynomials,
 to indicate that the numerator of $r-r'$ has zero remainder when
-reduced by polynomial division with respect to $S$ using {\tt PolynomialReduce}.  We
-also require the denominator of $r-r'$ to be invertible in the
-localized polynomial ring.  The zero remainder will give
-$\phi(r)=\phi(r')$ in each application.  We extend the notation to
-$n$-tuples
+reduced by polynomial division with respect to $S$ using {\tt
+  PolynomialReduce}.  We also require the denominator of $r-r'$ to be
+invertible in the localized polynomial ring.  The zero remainder will
+give $\phi(r)=\phi(r')$ in each application.  We extend the notation
+to $n$-tuples
 \[
 (r_1,\ldots,r_n) \equiv (r_1',\ldots,r_n') \mod S,
 \]
@@ -430,11 +439,11 @@ P_1 \oplus_0 (P_2\oplus_0 P_3).
   d$ is a nonzero square in $k$.
 \end{lemma}
 
-The lemma is sometimes called completeness, in conflict with the
-definition of \emph{complete} varieties in algebraic geometry.  To avoid
-possible confusion, we avoid this terminology.  We use the lemma in
-contrapositive form to give conditions on $\bar d$ and $\bar c\bar d$
-that imply $\phi(\delta)\ne0$.
+The lemma is sometimes called completeness, in conflict with the usual
+definition of \emph{complete} varieties in algebraic geometry.  To
+avoid possible confusion, we avoid this terminology.  We use the lemma
+in contrapositive form to give conditions on $\bar d$ and $\bar c\bar
+d$ that imply $\phi(\delta)\ne0$.
 
 \begin{proof} 
   Let $r = (1 - c d y_1^2 y_2 ^2) (1 - d y_1^2 x_2^2)$.  By polynomial
@@ -488,24 +497,26 @@ a 2.13 GHz processor.
 
 \section{Formalization in Isabelle/HOL}
 
-In this section, the proof encoding in Isabelle/HOL is described. It
-uses two different locales: one for the affine and one for the
-projective case (discussed in Section~\ref{sec:proj}).
+In this section, we describe the proof implementation in Isabelle/HOL.
+We have formalized the two main theorems (Theorem~\ref{thm:group} and
+Theorem~\ref{thm:proj-group}).  Formalization uses two different
+locales: one for the affine and one for the projective case. (The
+projective case will be discussed in Section~\ref{sec:proj}.)
 
-Let $k$ be the underlying field, which is introduced as the type
+Let $k$ be the underlying curve field. $k$ is introduced as the type
 class \textit{field} with the assumption that $2 \neq 0$
-(characteristic different from $2$)
-\cite{Elliptic_Curves_Group_Law-AFP}. This is not included in the
+(characteristic different from $2$). This is not included in the
 simplification set, but used when needed during the proof.
 
-\subsection{Affine Edwards curves}
 
-The formal proof fixes the curve parameters $c,d \in k$ (without the bars). The group
-addition $\oplus_0$ 
-can be written as in Figure~\ref{fig:1}. 
-In Isabelle's division ring theory, the result of division by zero is
-defined as zero. This has no impact on validity of final results, but gives cleaner
-simplifications in some proofs.
+\subsection{affine Edwards curves}
+
+The formal proof fixes the curve parameters $c,d \in k$ (dropping the
+bar accents from notation). The group addition $\oplus_0$ (of
+Equation~\ref{eqn:add}) can be written as in Figure~\ref{fig:1}.  In
+Isabelle's division ring theory, the result of division by zero is
+defined as zero. This has no impact on validity of final results, but
+gives cleaner simplifications in some proofs.
 
 \begin{figure}
 	{\input{proj-add-0.tex}}
@@ -517,21 +528,25 @@ Most of the proofs in this section are straight-forward. The only
 difficulty was to combine the Mathematica certificates of computation, 
 into a single process in Isabelle.
 
-In Figure~\ref{fig:2}, an excerpt of the proof of associativity is
-considered. The following notation is used.  We have
+In Figure~\ref{fig:2}, we show an excerpt of the proof of
+associativity. We use the following abbreviations: 
 \[
-e_i = x_i^2 + c * y_i^2 - 1 - d * x_i^2 * y_i^2 = 0
-\]
-because the involved points lie on the curve, and
+e_i = x_i^2 + c *
+y_i^2 - 1 - d * x_i^2 * y_i^2 
+\] 
+where $e_i = 0$, since the involved
+points lie on the curve and 
 \[
-\textit{gxpoly} := ((p_1\oplus_0 p_2) \oplus_0 p_3 - p_1 \oplus_0 (p_2 \oplus
-p_3))_1*\Delta_x
-\]
-stands for a normalized version of the associativity equation that
-clears denominators. The points $p_i$ are assumed to be
-addable; more precisely, $\Delta_x \neq 0$. As a consequence, the property stated in
-Figure~\ref{fig:2} immediately implies that associativity holds in the first
-component of the addition.
+\text{gxpoly} = ((p_1 \oplus_0 p_2)
+\oplus_0 p_3 - p_1 \oplus_0 (p_2 \oplus p_3))_1*\Delta_x
+\] 
+which stands for a normalized version of the associativity law after
+clearing denominators. We say that points are \emph{summable}, if the
+rational functions defining their sum have nonzero denominators.
+Since the points $p_i$ are assumed to be summable, $\Delta_x \neq
+0$. As a consequence, the property stated in Figure~\ref{fig:2}
+immediately implies that associativity holds in the first component of
+the addition.
 
 
 \begin{figure}
@@ -541,53 +556,37 @@ component of the addition.
 \end{figure}
 
 Briefly, the proof unfolds the relevant definitions and then
-normalizes to eliminate denominators. The remaining terms of
-$\Delta_x$ are then distributed over each addend which are themselves
-normalized by the sublemmas \textit{simp1gx} and
-\textit{simp2gx}. Finally, a polynomial identity is obtained, which
-is proved by the
-\textit{algebra} method. Note that no computation was
+normalizes to clear denominators. The remaining terms of $\Delta_x$
+are then distributed over addends. The unfolding and normalization of
+addends is repeated in the lemmas \textit{simp1gx} and
+\textit{simp2gx}. Finally, the resulting polynomial identity is proved
+using the \textit{algebra} method.  Note that no computation was
 required from an external tool.
 
-For the normalization of terms, the \textit{rewrite} tactic
-\cite{noschinskipattern} was chosen. It allows to modify a goal in
-several locations (specified with a pattern) and using different
-rewrite rules. Specifying that the rewriting happens in the
-denominators is sufficient for our needs.
+The \emph{rewrite} tactic, which can modify a goal with various
+rewrite rules in various locations (specified with a pattern), is
+used to normalized terms \cite{noschinskipattern}.  Rewriting
+in the denominators is sufficient for our needs.
 
 For proving the resulting polynomial expression, the \textit{algebra}
-proof method \cite{chaieb2007context} is used. If $e_k$ and
-$p_{ij}$ are multivariate polynomials with coefficients in a
-semiring, the method verify true instances of the following schema.
-%XX why not y_j=0?
-\begin{align*}
-\forall x_1 \ldots x_n. &  \\        
-& e_1(x_1,\ldots,x_n) = \cdots = e_m(x_1,\ldots,x_n) = 0 \to \\
-& (\exists y_1, \ldots, y_k.\ \text{for all } j=1,\ldots,m.\ 
-\sum_{i=1}^k p_{ji}(x_1,\ldots,x_n) y_i = 0).
-%& p_{11}(x_1,\ldots,x_n) y_1 + \ldots + p_{1k}(x_1,\ldots,x_n) y_k = 0 \, \land \\
-%& \ldots \land \\
-%& p_{t1}(x_1,\ldots,x_n) y_1 + \ldots + p_{tk}(x_1,\ldots,x_n) y_k = 0) \\
-%&
-\end{align*}
-%can solve the following formula:
-
-%\begin{align*}
-%\forall x_1 \ldots x_n. &  \\        
-%& e_1(x_1,\ldots,x_n) = 0 \land \ldots \land e_m(x_1,\ldots,x_n) = 0 \to \\
-%& (\exists y_1, \ldots, y_k. \\
-%& p_{11}(x_1,\ldots,x_n) y_1 + \ldots + p_{1k}(x_1,\ldots,x_n) y_k = 0 \, \land \\
-%& \ldots \land \\
-%& p_{t1}(x_1,\ldots,x_n) y_1 + \ldots + p_{tk}(x_1,\ldots,x_n) y_k = 0) \\
-%&
-%\end{align*}
-
+proof method is used \cite{chaieb2007context}
+\cite{chaieb2008automated} \cite{wenzel2019isabelle}.  Given
+$e_i(x),\ p_{ij}(x),\ a_i(x) \in R[x_1,\ldots,x_n]$, where $R$ is a
+commutative ring and $x=(x_1,\ldots,x_n)$, the method verifies
+formulas
+\[
+\; \forall x.\ \bigwedge_{i = 1}^L
+e_i({x}) = 0 \to \exists{y}.\ \bigwedge_{i = 1}^M
+\left(a_i(x) = \sum_{j = 1}^N p_{ij}({x}) y_j \right)
+\] 
+The method is complete for such formulas that hold over all
+commutative rings with unit \cite{harrison2007automating}.
 
 \section{Group law for projective Edwards curves}\label{sec:proj}
 
 By proving the group laws for a large class of elliptic curves,
 Theorem \ref{thm:group} is sufficiently general for many applications
-to cryptography.  Nevertheless, to achieve complete generality, we
+to cryptography.  Nevertheless, to achieve full generality, we
 push forward.
 
 This section show how to remove the restriction $\bar d\not\in
@@ -597,7 +596,8 @@ for all elliptic curves in characteristics different from $2$.
 Unfortunately, in this section, some case-by-case arguments are
 needed, but no hard cases are hidden from the reader.  The level of
 exposition here is less elementary than in the previous section.
-Again, we include proofs, because our approach is not previously published.
+Again, we include proofs, because our approach is designed with
+formalization in mind and has not been previously published.
 
 The basic idea of our construction is that the projective
 curve $E$ is obtained by gluing two affine curves $\Eaff$
@@ -607,7 +607,7 @@ can be expressed as polynomial identities.
 
 
 
-\subsection{definitions}
+\subsection{definitions}\label{sec:defs}
 
 In this section, we assume that $c\ne 0$ and that $c$ and $d$ are both
 squares.  Let $t^2 = d/c$.  By a change of variable $y\mapsto
@@ -618,7 +618,7 @@ e(x,y)= x^2 + y^2 -1 - t^2 x^2 y^2.
 
 We assume $t^2\ne 1$.  Note if $t^2=1$, then 
 the curve degenerates to a product of intersecting lines, which
-cannot be a group.  We also assume that $t\ne 0$, which excludes the
+cannot be a group.  We also assume that $t\ne 0$, which only excludes the
 circle, which has already been fully treated.  Shifting notation for
 this new setting, let
 \[
@@ -638,52 +638,55 @@ $\tau$.
 
 \subsection{extended addition}
 
+%% XX was \delta_1, \nu_1
 We extend the binary operation $\oplus_0$ using the automorphism $\tau$.
-We also write $\delta_1$ for
-$\delta$, $\nu_1$ for $\nu$ and so forth.
+We also write $\delta_0$ for
+$\delta$, $\nu_0$ for $\nu$ and so forth.
 
 Set
 \begin{equation}\label{eqn:tauplus}
   z_1\oplus_1 z_2 := \tau((\tau z_1)\oplus_0 z_2)=
   \left(\frac{x_1y_1 - x_2 y_2}{x_2
     y_1-x_1 y_2},\frac{x_1 y_1 + x_2 y_2}{x_1 x_2 + y_1 y_2}\right) 
-= (\frac{\nu_{1x}}{\delta_{1x}},\frac{\nu_{2x}}{\delta_{2x}})
+= (\frac{\nu_{1x}}{\delta_{1x}},\frac{\nu_{1y}}{\delta_{1y}})
+%% XX was \nu_{2x} \delta_{2x}
 \end{equation}
 in $R_2[\f{\delta_1}]^2$ where $\delta_1 = \delta_{1x}\delta_{1y}$.
 
 We have the following easy identities of rational functions that are
 proved by simplification of rational functions:
-
-\noindent{\it inversion invariance}
 \begin{align}\label{eqn:r-tau}
+\text{\it inversion invariance:}\quad\quad
 \tau (z_1)\oplus_i z_2 &= z_1 \oplus_i \tau z_2;
 \end{align}
-\noindent{\it rotation invariance}
 \begin{align}\label{eqn:r-rho}
+\text{\it rotation invariance:}\quad\quad
 \begin{split}
 \rho(z_1)\oplus_i z_2 &= \rho(z_1\oplus_i z_2);\\
 \delta_i(z_1,\rho z_2) &= \pm \delta_i(z_1,z_2);
 \end{split}
 \end{align}
-\noindent{\it inverse rules  for $\sigma=\tau,\rho$}
-\begin{align}\label{eqn:r-iota}
+\begin{align}\label{eqn:r-iota}%
+\text{\it inverses for $\sigma=\tau,\rho$:}\quad
 \begin{split}
 \iota \sigma(z_1) &= \sigma^{-1} \iota (z_1);\\
 \iota (z_1\oplus_i z_2) &= (\iota z_1)\oplus_i (\iota z_2).
 \end{split}
 \end{align}
-
-The following coherence rule and closure hold by polynomial division:
+%
+%The following coherence rule and closure hold by polynomial division:
 \begin{align}\label{eqn:r-coh}
+  \text{\it coherence:}\quad\quad
 \begin{split}
 z_1 \oplus_0 z_2 \equiv z_1 \oplus_1 z_2 &\mod \{e_1,e_2\};\\
 e(z_1\oplus_1 z_2) \equiv 0 &\mod \{e_1,e_2\}.
 \end{split}
 \end{align}
-The first identity requires inverting $\delta_0\delta_1$ and the
-second requires inverting $\delta_1$.
+The first identity of (\ref{eqn:r-coh}) inverts $\delta_0\delta_1$,
+and the second inverts $\delta_1$. Proofs of (\ref{eqn:r-coh}) use
+polynomial division.
 
-\subsection{projective curve and dichotomy}
+\subsection{projective curve and dichotomy}\label{sec:dichot}
 
 Let $k$ be a field of characteristic different from two.  We let
 $\Eaff$ be the set of zeros of Equation (\ref{eqn:t}) in $k^2$.  Let
@@ -717,17 +720,20 @@ is well-defined by the inverse rules (\ref{eqn:r-iota}).
   $\Eoo$.  That is, $g P = P$ implies that $g=1_G\in G$.
 \end{lemma}
 
-\begin{proof} Consider cases $g = \rho^k\ne 1_G$
-and $g=\tau\rho^k$ and each case compute the fixed points $P=(x,y)$ finding they
-are not points on the curve. 
-\qed\end{proof}
+\begin{proof} Write $P=(x,y)$.  If $g = \rho^k\ne 1_G$, then $g P = P$
+  implies that $2x=2y=0$ and and $x=y=0$ (if the characteristic is not
+  two), which is not a point on the curve.  If $g = \tau \rho^k$, then
+  the fixed-point condition $g P = P$ leads to $2t x y=0$ or $t x^2 =
+  t y^2 =\pm 1$.  Then $e(x,y) = 2 (\pm1-t)/t\ne0$, and again $P$ is
+  not a point on the curve.\qed
+\end{proof}
 
 The domain of $\oplus_i$ is
 \[
 \Eaf{i} := \{(P,Q)\in \Eaff^2\mid \delta_i(P,Q)\ne0\}.
 \]
 Whenever we write $P\oplus_i Q$, it is always accompanied by the
-implicit assertion that $(P,Q)\in \Eaf{i}$.
+implicit assertion of summability; that is, $(P,Q)\in \Eaf{i}$.
 
 There is a group isomorphism $\ang{\rho}\to \Eaff\setminus\Eoo$ given by
 \[
@@ -735,52 +741,89 @@ g\mapsto g(1,0)\in\{\pm (1,0),\pm (0,1)\} = \Eaff\setminus \Eoo.
 \]
 
 \begin{lemma}[dichotomy]\label{lemma:noco} 
-\par
-\noindent  
+%\par
+%\noindent  
 Let $P,Q\in \Eaff$.  Then either $P\in \Eoo$ and $Q=g \iota\, P$ for
 some $g\in \tau\ang{\rho}$, or $(P,Q)\in \Eaf{i}$ for some $i$.
 Moreover, assume that $P\oplus_i Q = (1,0)$ for some $i$, then $Q =
 \iota\,P$.
 \end{lemma}
 
-\begin{proof}  We skip the details of the proof except to describe
+\begin{proof}  
+We start with the first claim.
+We analyze the denominators in the formulas for $\oplus_i$.  
+We have $(P,Q)\in\Eaf{0}$ for all $P$ or $Q\in \Eaff\setminus\Eoo$.
+That case completed,  we may assume that $P,Q\in \Eoo$.
+  Assuming
+  \[
+  \delta_0(P,Q) = \delta_{0x}(P,Q)\delta_{0y}(P,Q)=0,\quad\text{and}\quad
+  \delta_1(P,Q) = \delta_{1x}(P,Q)\delta_{1y}(P,Q)=0,
+  \]
+  we show that $Q = g \iota P$ for some $g\in \tau\ang{\rho}$.
+  Replacing $Q$ by $\rho Q$ if needed, which exchanges
+  $\delta_{0x}\leftrightarrow \delta_{0y}$, we may assume that
+  $\delta_{0x}(P,Q)=0$.  Set $\tau Q = Q_0 = (a_0,b_0)$ and
+  $P=(a_1,b_1)$.  
+
+We claim that
+\begin{equation}\label{eqn:gp-}
+(a_0,b_0) \in \{\pm (b_1,a_1)\} \subset \Go\iota\,P.
+\end{equation}
+We describe
 the main polynomial identity that must be verified.
 Write $\delta',\delta_{+},\delta_{-}$ for $x_0 y_0\delta_{0x}$, $t x_0
 y_0\delta_{1x}$, and $t x_0 y_0 \delta_{1y}$ respectively, each
-evaluated at $(P,\tau(Q_0))=(x_1,y_1,1/(t x_0),1/(t y_0))$.  (The
+evaluated at $(P,\tau(Q_0))=(x_1,y_1,1/(t x_0),1/(t y_0))$.  The
 nonzero factors $x_0y_0$ and $t x_0 y_0$ have been included to clear
-denominators, leaving us with polynomials.)
+denominators, leaving us with polynomials.
 
 We have two cases $\pm$, according to $\delta_{\pm}=0$.  In each case,
 let
 \[
 S_\pm = \text{Gr\"obner basis of } \{e_1,e_2, 
-\delta',\delta_{\pm},q x_0 x_1 y_0 y_1 - 1\},
+\delta',\delta_{\pm} %%q x_0 x_1 y_0 y_1 - 1
+\}.
 \]
-where $q$ is a new variable, used to make $x_i,y_i$ invertible.
-The polynomial $q x_0 x_1 y_0 y_1-1$ is included to encode the
-condition $a_0,b_0,a_1,b_1\ne 0$, which holds on $\Eoo$.  Polynomial
-division gives
-\begin{equation}\label{eqn:dichot}
-(x_0^2-x_1^2,y_0^2-x_1^2,x_0 y_0 - x_1 y_1) \equiv (0,0,0) \mod S_\pm.
-\end{equation}
-These equations immediately yield $(a_0,b_0) = \pm (b_1,a_1)$.  
-This gives the needed identity.  In summary, we have $\tau Q =
+By Gr\"obner basis algorithms,
+\begin{align}\label{eqn:dichot}
+\begin{split}
+(x_0^2-y_1^2, %IM1
+ y_0^2-x_1^2, %IM1
+ x_0 y_0 - x_1 y_1 %delta'
+) &\equiv (0,0,0) \mod S_+\\
+(2 x_0 y_0 (x_0^2-y_1^2), %IM2 
+2 (1-t^2) x_0 y_0 (y_0^2-x_1^2), %IM 
+x_0 y_0 - x_1 y_1 %delta'
+) &\equiv (0,0,0) \mod S_-.
+\end{split}
+\end{align}
+In fact, $\delta' = x_0 y_0-x_1 y_1$, so that the ideal membership for
+this polynomial is immediate.  The factors $2$, $1-t^2$, and $x_0 y_0$
+are nonzero and can be removed from the left-hand side.
+These equations then immediately yield $(a_0,b_0) = \pm (b_1,a_1)$.  
+This gives the needed identity:  $\tau Q =
 Q_0 = (a_0,b_0) = g \iota\,P$, for some $g\in \Go$.  Then $Q = \tau g
 \iota\,P$.
 
 The second statement of the lemma has a similar proof.  Polynomial
 division gives for $i\in \ring{F}_2$:
 \[
-z_1 \equiv \iota (z_2) \mod \text{Gr\"obner} 
-\{ e_1,e_2,q x_1 y_1 x_2 y_2 -1,\nu_{i y},\nu_{i x}-\delta_{i x} \}.
+%z_1 - \iota (z_2) \equiv 
+(x_1-x_2,y_1+y_2)\equiv (0,0) \mod \text{Gr\"obner} 
+\{ e_1,e_2,q_x \delta_{ix}-1,q_y \delta_{iy}-1,
+%%q x_1 y_1 x_2 y_2 -1, %%XX Dropped 1/25/2020
+\nu_{i y},\nu_{i x}-\delta_{i x} \}.
 \]
-Note that $\nu_{i y}=\nu_{i x}-\delta_{i x}=0$ is the condition for
-the sum to be the identity element:
-$(1,0)=(\nu_{ix}/\delta_{ix},\nu_{iy}/\delta_{iy})$.
+In fact, both $x_1-x_2$ and $y_1+y_2$ (which specify the condition $Q
+=\iota\,P$) are already members of the Gr\"obner basis.  The fresh
+variables $q_x,q_y$ force the denominators $\delta_{ix}$ and
+$\delta_{iy}$ to be invertible.  Here the equations $\nu_{i y}=\nu_{i
+  x}-\delta_{i x}=0$ specify the sum
+$(1,0)=(\nu_{ix}/\delta_{ix},\nu_{iy}/\delta_{iy})$ of $Q$ and $P$.
 \qed\end{proof}
 
-\begin{lemma}[covering] The rule (\ref{eqn:add-proj}) defining
+\begin{lemma}[covering]\label{lemma:cov} 
+  The rule (\ref{eqn:add-proj}) defining
   $\oplus$ assigns at least one value for every pair of points in $E$.
 \end{lemma}
 
@@ -817,9 +860,9 @@ $[Q,j]=[\tau Q,j+1]$:
 \]
 \qed\end{proof}
 
-\subsection{group}
+\subsection{group law}
 
-\begin{theorem}  $E$ is an abelian group.
+\begin{theorem}\label{thm:proj-group}  $E$ is an abelian group.
 \end{theorem}
 
 \begin{proof} We have already shown the existence of an identity and
@@ -859,82 +902,49 @@ which reduces in each case to (\ref{eqn:assoc-affine}) or
 (\ref{eqn:semi}).
 \qed\end{proof}
 
-\subsection{Formalization in Isabelle/HOL of Projective Edwards curves}
+\subsection{formalization in Isabelle/HOL of projective Edwards curves}
 
-Following the change of variables performed in section 4.1 of
-\cite{hales2016group}, it is assumed that $c = 1$ and $d = t^2$ where
-$t \neq -1,0,1$. The resulting proof is more challenging. In the
-following, some key insights are emphasised.
+Following the change of variables performed in Section~\ref{sec:defs}, 
+it is assumed that $c = 1$ and $d = t^2$ where
+$t \neq -1,0,1$. The resulting formalization is more challenging. In the
+following, some key insights are emphasized.
 
 \subsubsection{Gr\"{o}bner basis}
 
-The proof of dichotomy required in its original form the computation
-of certain Gr\"{o}bner basis \cite{hales2016group}. However,
-Isabelle's formalization of Gr\"{o}bner basis
-\cite{maletzky2018grobner} does not seem to provide an interface to
-reuse it in our formalization. Moreover, while the \textit{algebra}
-method computes Gr\"{o}bner basis for the purpose of proving whether a
-polynomial is in the generated ideal, this computation is done outside
-the logic and cannot be used in our setting.
-
-Instead, a hand computation is performed. Here is a sample computation
-for equation 19 of \cite{hales2016group}:
+The proof of Lemma~\ref{lemma:noco} (dichotomy) requires solving
+particular instances of the ideal membership problem.  Formalization
+caught and corrected some ideal membership errors in
+\cite{hales2016group}, which resulted from an incorrect interpretation
+of computer algebra calculations.  For instance, a goal
 \[
-(x_0^2 - x_1^2,y_0^2 -
-x_1^2,x_0y_0 - x_1 y_1) \equiv (0,0,0) \; \mod \; S_{\pm}
-\]
-where
-$S_{\pm}$ is the Gr\"{o}bner basis of some polynomials that evaluate
-to zero. To start, the third equality is deduced:
+\exists r_1 \, r_2 \, r_3 \, r_4.\ 
+y_0^2 - x_1^2 = r_1 e(x_0,y_0) + r_2 e(x_1,y_1) + r_3 \delta' + r_4
+\delta_{-} 
+\] 
+(derived from \cite{hales2016group})
+had to be corrected to 
 \[
-\delta' x_0 y_0 =
-x_0 y_0 \delta_{0x} x_1 y_1 \Big(\frac{1}{t x_0}\Big) \Big(\frac{1}{t
-  y_0}\Big) = x_0 y_0 \Big(1 - \frac{t^2 x_1 y_1}{t^2 x_0 y_0}\Big) =
-x_0y_0 - x_1 y_1
+\exists r_1 \, r_2 \, r_3 \, r_4.\ 
+2 x_0 y_0 (y_0^2 - x_1^2) = r_1 e(x_0,y_0) + r_2 e(x_1,y_1) + r_3 \delta' + r_4
+\delta_{-}
 \]
-By assumption $\delta_{0x} x_1 y_1 \Big(\frac{1}{t
-  x_0}\Big) \Big(\frac{1}{t y_0}\Big) = 0$ and $x_0,y_0,x_1,y_1 \neq
-0$, therefore:
-\begin{equation}\label{eqn:1}
-x_0 = x_1 \Big(\frac{y_1}{y_0}\Big)
-\end{equation}
+to prove (\ref{eqn:dichot}).
+In another subcase, it was necessary to strengthen the hypothesis
+$\delta_{+} = 0$ to $\delta_{-} \neq 0$. Eventually, after some reworking,
+\textit{algebra} solved the required ideal membership
+problems.
 
-For the second, since $\delta_{+} x_0 y_0 = 0$: 
 
-\begin{align*}
-  0 = \delta_{+} x_0 y_0 &= t x_0 y_0
-  \delta_{1x} x_1 y_1 \Big(\frac{1}{tx_0}\Big) \Big(\frac{1}{ty_0}\Big) =\\
-  &= t x_0 y_0 \Big(\frac{y_1}{t x_0} - \frac{x_1}{t y_0}\Big) =
-  y_0 y_1 - x_0 x_1 
-  \stackrel{1}{=} y_0 y_1 - x_1^2 \Big(\frac{y_1}{y_0}\Big) =
-  \frac{y_1}{y_0} (y_0^2 - x_1^2)
-\end{align*} yielding:
+\subsubsection{definition of the group addition}
 
-\begin{equation}\label{eqn:2}
-\frac{y_1}{y_0} (y_0^2 - x_1^2) = 0
-\end{equation}
-
-Finally, the third equation is obtained as follows:
-
-\[
-x_0^2 - y_1^2 \stackrel{1}{=} x_1^2 \frac{y_1^2}{y_0^2} - y_1^2 =
-\Big(\frac{y_1^2}{y_0^2}\Big) (x_1^2 - y_0^2) \stackrel{2}{=}
-\frac{y_1^2}{y_0^2} (x_1^2 - y_0^2) \stackrel{2}{=} 0
-\]
-
-Note that not all the polynomials of $S_{\pm}$ were used. The other
-goals can be solved similarly.
-
-\subsubsection{Definition of the group addition}
-
-The definition of addition is done in three stages. This is convenient
-for some of the theorems, like covering. In a first stage, we define
-the addition on projective points, see Figure~\ref{fig3}. At a later
-stage, one adds classes of points by applying the basic addition
-function on any two pair of the classes. Finally, one extract the
-unique obtained class from the set of classes that could have been
-obtained after applying the gluing relation. This is specified in
-Figure~\ref{fig4}.
+We defined the addition in three stages. This is convenient for some
+lemmas like covering (Lemma~\ref{lemma:cov}). 
+First, we define the addition on projective
+points (Figure~\ref{fig3}). Then, we add two classes of points by
+applying the basic addition to any pair of points coming from each
+class. Finally, we apply the gluing relation and obtain as a result a
+set of classes with a unique element, which is then defined as the
+resulting class (Figure~\ref{fig4}).
 
 \begin{figure}
 {\input{proj-add-1.tex}}
@@ -952,86 +962,78 @@ The definitions use Isabelle's ability to encode partial
 functions. However, it is possible to obtain an equivalent definition
 more suitable for execution. In particular, it is easy to compute the
 gluing relation (see lemmas $\text{e\_proj\_elim\_1}$,
-$\text{e\_proj\_elim\_2}$ and $\text{e\_proj\_aff}$).
+$\text{e\_proj\_elim\_2}$ and $\text{e\_proj\_aff}$ in the
+formalization scripts).
 
-Finally, since projective addition works with classes, it is
-fundamental to show that the definition does not depend on the class
-representative used. The proofs are largely facilitated once this is
-shown.
+Finally, since projective addition works with classes, we had to show
+that its definition does not depend on the representative used.
 
-\subsubsection{The associativity proof}
 
-During development, several relations between $\delta$ expressions
-were found, see table \ref{table:1}. While they were proven in order
-to show associativity, the upper group can rather be used to establish
-the independence of class representative and the lower group is
-crucial to establish associativity.
+\subsubsection{proof of associativity}
 
 \begin{table}
 \begin{center}
 \begin{tabular}{ r c l }
-  $\delta \; \tau p_1 \; \tau p_2 \neq 0$
-  & $\implies$ & $\; \delta \; p_1 \; p_2 \neq 0$ \\ 
-  $\delta' \; \tau p_1 \; \tau p_2 \neq 0$
-  & $\implies$ & $\; \delta' \; p_1 \; p_2 \neq 0$ \\ 
-  $\delta \; p_1 \; p_2 \neq 0$,$\; \delta \; p_1 \; \tau p_2 \neq 0$
-  & $\implies$ & $\delta' \; p_1 \; p_2 \neq 0$ \\ 
-  $\delta' \; p_1 \; p_2 \neq 0$,$\; \delta' \; p_1 \; \tau p_2 \neq 0$
-  & $\implies$ & $\delta \; p_1 \;p_2 \neq 0$ \\
+  $\delta \; \tau P_1 \; \tau P_2 \neq 0$
+  & $\implies$ & $\; \delta \; P_1 \; P_2 \neq 0$ \\ 
+  $\delta' \; \tau P_1 \; \tau P_2 \neq 0$
+  & $\implies$ & $\; \delta' \; P_1 \; P_2 \neq 0$ \\ 
+  $\delta \; P_1 \; P_2 \neq 0$,\quad $\; \delta \; P_1 \; \tau P_2 \neq 0$
+  & $\implies$ & $\delta' \; P_1 \; P_2 \neq 0$ \\ 
+  $\delta' \; P_1 \; P_2 \neq 0$,\quad $\; \delta' \; P_1 \; \tau P_2 \neq 0$
+  & $\implies$ & $\delta \; P_1 \;P_2 \neq 0$ \\
 %  
   \hline
 %
-  $\delta' \; (p_1 \oplus_1 p_2) \; \tau i p_2 \neq 0$
-  & $\implies$ & $\; \delta \; (p_1 \oplus_1 p_2) \; i p_2 \neq 0$ \\ 
-  $\delta \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_1 \oplus_0 p_2) \; \tau i p_2 \neq 0$
-  & $\implies$ & $\; \delta' (p_1 \oplus_0 p_2) \; i p_2 \neq 0$ \\ 
-  $\delta \; p_1 \; p_2 \neq 0$,$\; \delta' \; (p_0 \oplus_0 p_1) \; \tau i p_2 \neq 0$
-  & $\implies$ & $\; \delta \; (p_0 \oplus_0 p_1) \; i p_2 \neq 0$ \\ 	    
-  $\delta' \; p_1 \; p_2 \neq 0$,$\; \delta \; (p_0 \oplus_1 p_1) \; \tau i p_2 \neq 0$
-  & $\implies$ & $\; \delta' \; (p_0 \oplus_1 p_1) \; i p_2 \neq 0$ \\
+  $\delta' \; (P_1 \oplus_1 P_2) \; \tau \iota P_2 \neq 0$
+  & $\implies$ & $\; \delta \; (P_1 \oplus_1 P_2) \; \iota P_2 \neq 0$ \\ 
+  $\delta \; P_1 \; P_2 \neq 0$,\quad $\; \delta \; (P_1 \oplus_0 P_2) \; \tau \iota P_2 \neq 0$
+  & $\implies$ & $\; \delta' (P_1 \oplus_0 P_2) \; \iota P_2 \neq 0$ \\ 
+  $\delta \; P_1 \; P_2 \neq 0$,\quad $\; \delta' \; (P_0 \oplus_0 P_1) \; \tau \iota P_2 \neq 0$
+  & $\implies$ & $\; \delta \; (P_0 \oplus_0 P_1) \; \iota P_2 \neq 0$ \\ 	    
+  $\delta' \; P_1 \; P_2 \neq 0$,\quad $\; \delta \; (P_0 \oplus_1 P_1) \; \tau \iota P_2 \neq 0$
+  & $\implies$ & $\; \delta' \; (P_0 \oplus_1 P_1) \; \iota P_2 \neq 0$ \\
 \end{tabular}
 \end{center}
 	\caption{List of $\delta$ relations}
 	\label{table:1}
 \end{table}
-%
-In particular, the lower part of the table is fundamental to establish
-goal 22 of [2], i.e., $([P,0] \oplus [Q,0]) \oplus [iQ,0] =
-[P,0]$. Here is how it was established. The proof development showed
-that it was necessary to perform a triple dichotomy. The first
-dichotomy is performed on $P$, $Q$. The non-addable case (see meaning
-of dichotomy in the formalization) was easy. Therefore, we set $R = P
-\oplus Q$. On each of the resulting branches, a dichotomy on $R$, $iQ$
-is performed. This time the addable cases were easy, but the
-non-addable case required a third dichotomy on $R,\tau i Q$. The
-non-addable case was solved using the no-fixed-point theorem but for
-the addable subcases the following expression is obtained:
+
+During formalization, we found several relations between $\delta$
+expressions (see Table~\ref{table:1}). While they were proven in order
+to show associativity, the upper group can rather be used to establish
+the independence of class representative and the lower group is
+crucial to establish the associativity law.
+
+
+In particular, the lower part of the table is fundamental to the formal
+proof of
+Equation~(\ref{eqn:semi}).
+In more detail, the formal proof development showed that it was
+necessary to perform a dichotomy (Lemma~\ref{lemma:noco}) three
+times. The first dichotomy is performed on $P$, $Q$. The non-summable
+case was easy. Therefore, we set $R = P \oplus Q$. On each of the
+resulting branches, a dichotomy on $R$, $\iota Q$ is performed. This
+time the summable cases were easy, but the non-summable case required a
+third dichotomy on $R,\tau \iota Q$. The non-summable case was solved
+using the no-fixed-point theorem but for the summable subcases the
+following expression is obtained:
 \[
-([P,0] \oplus [Q,0]) \oplus [\tau i Q,0] =
-  [(P \oplus Q) \oplus \tau i Q,0]
-\]
-Unfortunately, associativity cannot be used in this context since it
-is necessary that all used additions are defined. However, $Q$ and
-$\tau i Q$ cannot be added (lemma $\text{not\_add\_self}$). Instead,
-the equations on the lower part of the table are used, in
-contradiction with the second dichotomy hypothesis.
+([P,0] \oplus [Q,0]) \oplus [\tau \iota Q,0] =
+[(P \oplus Q) \oplus \tau \iota Q,0]
+\] 
+Here we cannot invoke associativity because $Q$, $\tau \iota Q$ are
+non-summable (lemma $\text{not\_add\_self}$).  Instead, we use the
+equations from the lower part of the table and the hypothesis of the
+second dichotomy to get a contradiction.
 
 \section{Conclusion}
 
-In this section, it has been shown that Isabelle can subsume the
-process of defining, computing and certifying intensive algebraic
+We have shown that Isabelle can encompass the process
+of defining, computing and certifying intensive algebraic
 calculations. The encoding in a proof-assistant allows a better
-comprehension of the methods used and helps to clarify its
-structure. On the other hand, we mentioned that giving an interface to
-use Gr\"{o}bner basis to reason about polynomial ideal membership
-could be a useful direction in the proof-assistant to deal with
-similar case studies.
+comprehension of the methods used and helps to clarify its structure.
 
-\footnote{Our computer algebra
-  calculations are available at \url{www.github.com/flyspeck}
-   This
-  includes a formal verification in HOL Light of key polynomial
-  identities.}
 
 \newpage
 
