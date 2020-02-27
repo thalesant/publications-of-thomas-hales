@@ -1,0 +1,255 @@
+% Thomas Hales
+% The Formal Proof of the Kepler Conjecture in Retrospective
+% February 17, 2020. started.
+
+
+%\documentclass[runningheads]{llncs}
+%\documentclass{llncs}
+\documentclass{amsart}
+
+\usepackage{graphicx}
+\usepackage{pdfpages}
+%\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{alltt}
+\usepackage{url}
+\usepackage{ellipsis}
+
+% For code snippets
+\usepackage{isabelle}
+\usepackage{isabellesym}
+\usepackage{isabelletags}
+\usepackage{comment}
+\usepackage{pdfsetup}
+\usepackage{railsetup}
+\usepackage{wasysym}
+
+% Bibliography
+% Change style to the requested style of the template
+%\usepackage[backend=bibtex, style=numeric]{biblatex}
+%\addbibresource{refs.bib}
+
+% 
+%tikz graphics
+%\usepackage{xcolor} % to remove color.
+\usepackage{tikz} % 
+\usetikzlibrary{chains,shapes,arrows,%
+ trees,matrix,positioning,decorations}
+%\usepackage[framemethod=TikZ]{mdframed}
+
+\def\tikzfig#1#2#3{%
+\begin{figure}[htb]%
+  \centering
+\begin{tikzpicture}#3
+\end{tikzpicture}
+  \caption{#2}
+  \label{fig:#1}%
+\end{figure}%
+}
+\def\smalldot#1{\draw[fill=black] (#1) %
+ node [inner sep=1.3pt,shape=circle,fill=black] {}}
+
+%\newtheorem{theorem}{Theorem}[subsection]
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\ring}[1]{\mathbb{#1}}
+\newcommand{\op}[1]{\hbox{#1}}
+
+\title{The Formal Proof of the Kepler Conjecture in Retrospective}
+\author{Thomas Hales}
+\date{}
+%\institute{University of Pittsburgh}
+\date{February 20, 2020}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract} 
+  The Kepler conjecture asserts that no packing of congruent balls in
+  Euclidean three-space has density greater than that of the
+  face-centered cubic packing.  In 1998, Samuel Ferguson and Thomas
+  Hales announced a computer-assisted proof of this conjecture.  Long
+  delays in the refereeing process sparked a project to give a formal
+  proof of the Kepler conjecture.  This article gives an overview of
+  the formal proof of the Kepler Conjecture.
+\end{abstract}
+
+\parskip=0.8\baselineskip
+\baselineskip=1.05\baselineskip
+
+\newenvironment{blockquote}{%
+  \par%
+  \medskip%
+  \baselineskip=0.7\baselineskip%
+  \leftskip=2em\rightskip=2em%
+  \noindent\ignorespaces}{%
+  \par\medskip}
+
+\section{Introduction}
+
+In the late 16th century, Walter Raleigh asked his assistant Thomas
+Harriot to compute the number of cannonballs piled in a pyramid (in
+defense against the Spanish Armada).  Thomas Harriot obtained a
+general formula (as the binomial coefficient $\choose{a}{b}$) for the
+number of congruent balls piled in a pyramid of any size $k$ in any
+dimension $d$.  In two dimensions, Harriot's formula reduces to the
+formula $k(k+1)/2$ for triangular numbers.  In three dimensions,
+Harriot's formula reduces to a formula known from antiquity in a
+Sanskrit source.  The cannonball pyramid is known in chemistry as the
+face-centered cubic packing.
+
+Harriot was an early proponent of the atomic theory, and he viewed
+atoms as small balls -- which might almost be viewed as miniature
+cannonballs.  Harriot and Kepler shared an interest in optics, and
+they corresponded during the first decade of the 17th century.
+Harriot pushed the atomic theory in their correspondence, but Kepler
+remained skeptical.
+
+However, one evening crossing the Charles bridge in Prague, as it
+started to snow, Kepler started to contemplate why snowflakes have six
+sides.  His contemplations led to a booklet ``The Six-Cornered
+Snowflake,'' which can be described as an early essay in
+crystallography, explaining observable symmetries in nature by
+arrangements of invisibly small particles.  In this booklet, published
+in 1611, Kepler describes the face-centered cubic packing and asserts
+that it will be the ``tightest possible, so that in no other
+arrangement can more pellets be stuffed into the same space.'' The
+notion of density was suggested to him by the tightly packed seeds of
+a pomegranite, and the face-centered cubic packing was suggested to
+him by the structure of honeycomb cells.
+
+Kepler's assertion has come to be known as the Kepler conjecture.
+Hilbert made the Kepler conjecture part of the 18th problem, one among
+the influential list of problems he proposed at the international
+congress in Paris in 1900.
+
+The two-dimensional analogue of the Kepler conjecture asserts that the
+densest packing of congruent circular disks in the plane is achieved
+by the hexagonal lattice packing.  A. Thue is often credited with the
+proof, although the first careful proofs do not appear until much
+later.
+
+The first detailed strategy to prove the Kepler conjecture was
+formulated by L. Fejes T\'oth in 1953.  He was also the first to
+suggest a computer-assisted proof.
+
+Over the years, there were some notorious false claims of a proof.
+Buckminster Fuller (the creator of the geodesic dome) claimed a proof,
+but his claim lacked any substance.  Around 1990, a Berkeley professor
+W.-Y. Hsiang claimed a proof.  In rebuttal to his claimed proof, in a
+heated debate, I published a paper containing explicit counterexamples
+to his work.  For a few years in the early 1990s, the research area
+became toxic, until the debate was eventually settled in my favor.
+
+Samuel Ferguson and I annouced a solution to the Kepler conjecture in
+August 1998.  Our solution was contained in a series of preprints
+posted to the ArXiv.  Because of the conjecture's notorious history, I
+had hoped that publication of our papers would be swift. This was not
+to be.  A panel of 12 referees was assigned the review.  Because of
+lingering doubts among the referees, the full publication of the proof
+did not occur until 2006, nearly eight years after submission.
+
+During those years in delay, growing out of my frustration, in an
+effort to bypass the referees, I launched a project to give a formal
+proof of the Kepler conjecture.  Although the project was born out of
+frustration, in truth, it was also
+shaped by a broader vision of the central importance of
+computer-assisted mathematics in years to come.  In a large group
+collaboration, the formal proof of the Kepler conjecture was completed
+in 2014.
+
+\section{Why HOL Light?}
+
+I made the decision as a non-expert.  HOL Light had decisive
+advantages: a well-developed theory of real analysis, no boundaries
+between programming and proof script-writing, etc.
+
+\section{Alignment between formal and informal}
+
+(Euler example)
+
+\section{A next generation proof}
+
+The formalization of the Kepler conjecture was far from optimal.  This
+final section points towards a second generation proof.
+
+\subsection{nonlinear inequalities}
+It was understood from the very beginning of the formalization of the
+Kepler conjecture that the largest challenge would be the
+formalization of the nonlinear inequalities.  Specifically,
+floating-point arithmetic is slower by orders of magnitude when
+executed as logical rules in HOL Light than in a native processor.
+
+The proof of the Kepler conjecture relies on about a thousand
+nonlinear inequalities over the real numbers.  These inequalities
+are proved by computer using interval arithmetic. The inequalities
+have the general form 
+\begin{equation}\label{eqn:ineq}
+\forall x \in D,\quad f_1(x) < 0 \lor f_2(x) < 0 \lor \ldots f_k(x) < 0.
+\end{equation}
+Each function $f_i : R_i \to \ring{R}$ is defined on a subset $R_i$ of the
+domain $D\subset \ring{R}^n$.
+The inequality (\ref{eqn:ineq}) means more precisely that 
+at each point $x\in D$, there exists $1\le i\le k$ such that
+$x \in R_i$ and $f_i(x) < 0$. 
+
+The domain $D$ is a product of 
+compact intervals $[a,b]$, and $n$ is small (usually $n\le 6$).  
+The dimension $n=6$ of the domain $D$ occurs naturally, because a
+simplex in three dimensions is determined by its six edges.
+
+There was an extraordinary amount of freedom in the creation
+of a finite set of nonlinear inequalities that collectively imply
+the Kepler conjecture.  In no sense is the current collection
+optimal.  Further research is justified.
+
+
+
+Tricks used.
+
+Tricks not used.
+
+
+
+Isabelle-HOL-Light interface.
+
+Multiple list libraries and uniform style.
+
+DRY Alignment.
+
+Search - Zumkeller.
+
+Tools - Libraries (Harrison), standalone nonlinear (Solovyev), linear programming (Solovyev).
+
+Tactic styles (no distinction between Ocaml code and proof scripts).
+
+Overlap of definitions (list libraries Isabelle, HOL Light, Coq).
+
+
+
+\section{Concluding Remarks}
+
+Some have expressed an ambition to use artificial intelligence to
+\emph{solve math} in 
+the coming years.  To the ambitious, we offer the more modest
+challenge of using AI to develop a next-generation proof of the Kepler
+conjecture.  The current proof is now over 22 years old.
+
+
+\newpage
+
+%\printbibliography
+
+\bibliography{refs} 
+\bibliographystyle{alpha}
+
+\end{document}
+
