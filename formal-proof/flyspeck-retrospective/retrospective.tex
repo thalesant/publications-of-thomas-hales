@@ -193,7 +193,7 @@ nonlinear inequalities over the real numbers.  These inequalities
 are proved by computer using interval arithmetic. The inequalities
 have the general form 
 \begin{equation}\label{eqn:ineq}
-\forall x \in D,\quad f_1(x) < 0 \lor f_2(x) < 0 \lor \ldots f_k(x) < 0.
+\forall x \in D,\quad f_1(x) < 0 \lor f_2(x) < 0 \lor \cdots \lor f_k(x) < 0.
 \end{equation}
 Each function $f_i : R_i \to \ring{R}$ is defined on a subset $R_i$ of the
 domain $D\subset \ring{R}^n$.
@@ -210,6 +210,170 @@ There was an extraordinary amount of freedom in the creation
 of a finite set of nonlinear inequalities that collectively imply
 the Kepler conjecture.  In no sense is the current collection
 optimal.  Further research is justified.
+
+Starting in January 1994, I devoted all my efforts to the proof of the
+Kepler conjecture.  My decision to put full energies behind the
+conjecture was shaped by a key factor among others: I first learned in
+1993 that interval arithmetic provided a reliable way to prove
+nonlinear inequalities.  Sam Ferguson joined me, and much of our
+research between 1995-1998 went into the development of efficient
+algorithms for proving nonlinear inequalities.  Eventually, we settled
+on using automatic differentiation to compute second order Taylor
+expansions of the nonlinear functions with certified bounds on the
+error terms.  When a Taylor expansion fails to give sufficient
+accuracy on a given box-shaped domain, we branch and bound (by adaptively bisecting the
+box and recursing on the smaller domains).  When a partial
+derivative has fixed sign over the box, the function is
+monotone, and the inequality is implied by a restricted inequality over a face
+of the box, and the dimension drops.  (We do not claim
+originality in these techniques, but considerable work went into
+efficient implementation.)
+
+Sam and I gave independent implementations of the algorithms (in C and
+C++) that we used to cross-check our code for bugs. Sam finished his
+thesis in 1997, but returned to University of Michigan for an
+extended visit in 1998 to prove the final outstanding nonlinear
+inequalities as we prepared to announce the solution.
+
+To prepare for formalization, I ported the code to OCaml, and spent
+months reworking the nonlinear inequalities until the programs
+terminated in about 10 hours (of intensive floating-point
+calculations).  In the end, the collection of nonlinear inequalites
+used for the formalization is completely different from the collection
+of inequalites that was used in the original 1998 proof.
+The algorithms remained very close to those used earlier.
+
+Solovyev was entirely responsible for the implementation of the
+formalization in HOL Light.  As we understood all along, this was the
+largest single challenge of the whole project.  An enormous amount of
+code optimization was necessary to bring the formal calculation within
+the reach of a large cloud computation.  Some of Solovyev's
+optimizations included performing arithmetic in a large base rather
+than base $2$, building massive addition and multiplication tables
+inside HOL-Light so that each arithmetic operation could be done by a
+simple look-up, precomputing the number of digits precision needed for
+each calculation and using the minimum possible, computing all the
+decision points informally and then replaying the decision-point
+scripts in the formal verification, and caching intermediate
+expressions to avoid recomputation.  He carefully crafted certain
+inner loops to use the minimal number of primitive HOL Light
+operations.
+
+Solovyev's formalization has excellent benchmarks
+when compared with formalizations of nonlinear inequalities in
+other systems.  He has developed and document an independent tool
+that can be used separately from the Flyspeck project.
+
+Further major optimizations are certainly possible, and it would be an
+interesting future project, to optimize to the point of moving the
+entire formalization of the Kepler conjecture from the cloud to a
+single laptop computer.  Some suggestions for further optimization
+include implementing backchaining algorithms to compute partial
+derivatives, exploiting common structures shared among inequalities to
+verify inequalities in batches, precomputing second derivative bounds
+on functions that appear in multiple inequalities (this was an
+important technique in the 1998 proof that we later abandoned for no
+good reason; in current the implementation, second derivative bounds
+are wastefully recomputed every time the algorithm branches into two
+sub-boxes), redesigning the collection of nonlinear inequalities,
+precomputing lookup tables for inverse trig and other transcendental
+functions, automatic generation of linear combinations (if $\sum_i a_i
+f_i(x) < 0$ with $a_i\ge 0$, then for some $i$, we have the desired
+conclusion $f_i(x) < 0$ in Equation (\ref{eqn:ineq})), better
+decisions about partitioning boxes into sub-boxes, and generally any
+number of techniques for global optimization developed during the past
+twenty years (since our proof still relies on 1990s era technology).
+
+
+The lion's share of the time is spent on computations near the
+inequality \emph{``hot spots''}: small boxes where the functions
+$f_i(x)$ are nearly $0$.  Speeding up the hot-spot computations would
+bring significant gains.  One technique that should help would be to
+center the Taylor expansion at the spot where $f_i(x)$ is maximized,
+rather than at the center of the box (as we do now).
+
+Machine learning might be tried.  We can view the space of proofs of
+the Kepler conjecture as parametrized by various finite collections
+$C$ of nonlinear inequalities.  To each collection $C$ there is a cost
+as measured by the time required to verify the collection of
+inequalities.  We wish to learn a collection $C$ that minimizes cost.
+
+\subsection{Tame graphs}
+
+The first major success in the formalization of the Kepler conjecture
+was the Bauer-Nipkow formalization of the classification of tame
+planar graphs in Isabelle.  (The word \emph{tame} has a technical
+meaning in the proof.  A tame graph is one that satisfies a long list
+of technical conditions that means that the graph encodes the
+combinatorial structure of a potential counterexample to the Kepler
+conjecture. Thus, the classification of tame planar graphs gives the
+classification of possible counterexamples.)
+
+The Bauer-Nipkow formalization was crucial in launching the Flyspeck
+project and in galvinizing interest.  However, as the earliest part of
+the project, it is currently the least compatible piece of the entire
+Flyspeck project.  A reimplementation of their work is sorely needed.
+
+The Bauer-Nipkow classification is the only part of the proof done in
+Isabelle.  There have been many discussions about merging all parts of
+the Flyspeck project into the same proof assistant, but this is still
+work in progress.  Currently the statement of the classification
+theorem is translated by hand from Isabelle to HOL Light, and the
+translated statement is accepted as an unproved postulate in the HOL
+Light part of the formalization.  The Isabelle proof is not translated
+into HOL Light.  This hand translation is the weakest link in the
+entire Flyspeck project.
+
+As a step towards verifying the classification in HOL Light, in
+unpublished work from 2018, Freek Wiedijk has produced an automated
+translation of the tame graph classification from Isabelle to OCaml,
+which John Harrison then (semi-manually) translated to definitions in HOL Light.
+(Someone needs to check the compatibility of Harrison's translation with mine.)
+Solovyev then created a tool that translates HOL Light equational theorems
+into optimized executable OCaml code that computes using primitive inference rules.%
+\footnote{\url{https://github.com/monadius/compute-hol-light}} His
+experiments suggest that a verification of the tame graph
+classification might be done in HOL Light in a 3000 hours computation.
+(Isabelle is much faster because it exports code to ML, then executes
+without the overhead of HOL primitive inferences.)
+% Private communication 2018, R--Flyspeck.
+
+A major inefficiency in the tame graph classification comes through
+the definition of \emph{planar graph}.  The definition of planar graph
+is treated as a black box in the Isabelle formalization: a planar
+graph is any graph generated by algorithm $X$, where algorithm $X$ is
+an edge-adding algorithm that I designed and implemented in
+Mathematica (and later in Java) to generate all planar graphs (with
+constraints on the number of faces, nodes, and degrees of the nodes)
+around 1993.  The Bauer-Nipkow procedure filters the list of planar
+graphs (generated by a black box algorithm) to produce the sublist of
+tame graphs.  One of the cardinal rules of code verification is never
+to verify code that has not been written with verification in mind.
+The cardinal rule is violated for algorithm $X$.  It was a very
+unpleasant experience for me to verify correctness in HOL Light of a
+HOL Light translation of an Isabelle translation of an ML translation
+of an old Java program written without formalization in mind.  In
+retrospect, there would have been much better ways to proceed.  In
+particular, the data structures used to represent planar graphs in
+algorithm $X$ are entirely inappropriate for formalization.  (The data
+encoding a graph is highly redundant, and the formalization has to
+give a series of lemmas proving that the redundant data remains
+\emph{in sync}.)  Moreover, other planar graph generating algorithms
+are available, such as \emph{plaintri}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
