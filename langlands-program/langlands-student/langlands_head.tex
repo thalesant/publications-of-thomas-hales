@@ -1,0 +1,60 @@
+\documentclass[12pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{tikz} % Needs pgf version >= 2.10.
+\usetikzlibrary{chains,shapes,arrows,trees,matrix,positioning,backgrounds,fit,calc,fadings}
+
+\def\tikzfig#1#2#3{%
+\begin{figure}[htb]%
+  \centering
+\begin{tikzpicture}#3
+\end{tikzpicture}
+  \caption{#2}
+  \label{fig:#1}%
+\end{figure}%
+}
+\def\smalldot#1{\draw[fill=black] (#1) %
+node [inner sep=1.3pt,shape=circle,fill=black] {}}
+
+\def\op#1{\text{#1}}
+\def\ring#1{{\Bbb #1}}
+\def\VR{V_{\ring{R}}}
+
+
+\title{Reminiscences by a student of Langlands}
+\author{Thomas Hales}
+%\date{June 26, 2019}                                           % Activate to display a given date or no date
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\maketitle
+
+\lhead{Hales}
+\rhead{Reminiscences}
+
+\parskip=0.8\baselineskip
+
+\input{langlands}
+%\bibliographystyle{plain}      
+
+
+%\bibliography{ref} 
+
+\end{document}  
