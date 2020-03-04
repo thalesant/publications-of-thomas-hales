@@ -53,8 +53,8 @@
 \def\smalldot#1{\draw[fill=black] (#1) %
  node [inner sep=1.3pt,shape=circle,fill=black] {}}
 
-%\newtheorem{theorem}{Theorem}[subsection]
-%\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
 %\newtheorem{corollary}[theorem]{Corollary}
 %\newtheorem{proposition}[theorem]{Proposition}
 %\newtheorem{definition}[theorem]{Definition}
@@ -75,11 +75,12 @@
 \begin{abstract} 
   The Kepler conjecture asserts that no packing of congruent balls in
   Euclidean three-space has density greater than that of the
-  face-centered cubic packing.  In 1998, Samuel Ferguson and Thomas
-  Hales announced a computer-assisted proof of this conjecture.  Long
-  delays in the refereeing process sparked a project to give a formal
-  proof of the Kepler conjecture.  This article gives an overview of
-  the formal proof of the Kepler Conjecture.
+  face-centered cubic packing.  In 1998, Samuel Ferguson and I
+  announced a computer-assisted proof of this conjecture.  Long delays
+  in the refereeing process sparked a project to give a formal proof
+  of the Kepler conjecture, which was completed in a large
+  collaborative effort in 2014.  This article gives a critical
+  reappraisal of the formal proof of the Kepler Conjecture.
 \end{abstract}
 
 \parskip=0.8\baselineskip
@@ -95,59 +96,59 @@
 
 \section{Introduction}
 
-In the late 16th century, Walter Raleigh asked his assistant Thomas
+In the late sixteenth century, Walter Raleigh asked his assistant Thomas
 Harriot to compute the number of cannonballs piled in a pyramid (in
 defense against the Spanish Armada).  Thomas Harriot obtained a
-general formula (as the binomial coefficient $\choose{a}{b}$) for the
+general formula as the binomial coefficient ${k+d-1\choose d}$ for the
 number of congruent balls piled in a pyramid of any size $k$ in any
-dimension $d$.  In two dimensions, Harriot's formula reduces to the
-formula $k(k+1)/2$ for triangular numbers.  In three dimensions,
-Harriot's formula reduces to a formula known from antiquity in a
-Sanskrit source.  The cannonball pyramid is known in chemistry as the
-face-centered cubic packing.
+dimension $d$.  In two dimensions $d=2$, Harriot's formula reduces to
+the formula $k(k+1)/2$ for triangular numbers.  In three dimensions,
+Harriot's formula reduces to a formula for pyramidal numbers known
+from antiquity in a Sanskrit source.  The cannonball pyramid is known
+in chemistry as the face-centered cubic packing.
 
 Harriot was an early proponent of the atomic theory, and he viewed
 atoms as small balls -- which might almost be viewed as miniature
 cannonballs.  Harriot and Kepler shared an interest in optics, and
-they corresponded during the first decade of the 17th century.
+they corresponded during the first decade of the seventeenth century.
 Harriot pushed the atomic theory in their correspondence, but Kepler
 remained skeptical.
 
 However, one evening crossing the Charles bridge in Prague, as it
 started to snow, Kepler started to contemplate why snowflakes have six
 sides.  His contemplations led to a booklet ``The Six-Cornered
-Snowflake,'' which can be described as an early essay in
-crystallography, explaining observable symmetries in nature by
-arrangements of invisibly small particles.  In this booklet, published
-in 1611, Kepler describes the face-centered cubic packing and asserts
-that it will be the ``tightest possible, so that in no other
-arrangement can more pellets be stuffed into the same space.'' The
-notion of density was suggested to him by the tightly packed seeds of
-a pomegranite, and the face-centered cubic packing was suggested to
-him by the structure of honeycomb cells.
+Snowflake,'' an early essay in crystallography, which posits that
+arrangements of invisibly small particles explain observable
+symmetries in nature.  In this booklet from 1611, Kepler
+describes the face-centered cubic packing and asserts that it will be
+the ``tightest possible, so that in no other arrangement can more
+pellets be stuffed into the same space.'' The notion of density was
+suggested to him by the tightly packed seeds of a pomegranite, and the
+face-centered cubic packing was suggested to him by the structure of
+honeycomb cells.
 
 Kepler's assertion has come to be known as the Kepler conjecture.
-Hilbert made the Kepler conjecture part of the 18th problem, one among
+Hilbert made the Kepler conjecture part of the eighteenth problem, one among
 the influential list of problems he proposed at the international
 congress in Paris in 1900.
 
 The two-dimensional analogue of the Kepler conjecture asserts that the
 densest packing of congruent circular disks in the plane is achieved
 by the hexagonal lattice packing.  A. Thue is often credited with the
-proof, although the first careful proofs do not appear until much
-later.
+proof in the late nineteenth century, although the first careful
+proofs do not appear until much later.
 
 The first detailed strategy to prove the Kepler conjecture was
 formulated by L. Fejes T\'oth in 1953.  He was also the first to
 suggest a computer-assisted proof.
 
 Over the years, there were some notorious false claims of a proof.
-Buckminster Fuller (the creator of the geodesic dome) claimed a proof,
+Buckminster Fuller, the creator of the geodesic dome, claimed a proof,
 but his claim lacked any substance.  Around 1990, a Berkeley professor
 W.-Y. Hsiang claimed a proof.  In rebuttal to his claimed proof, in a
 heated debate, I published a paper containing explicit counterexamples
-to his work.  For a few years in the early 1990s, the research area
-became toxic, until the debate was eventually settled in my favor.
+to his work.  For a few years, the research area became toxic, until
+the debate was eventually settled in my favor.
 
 Samuel Ferguson and I annouced a solution to the Kepler conjecture in
 August 1998.  Our solution was contained in a series of preprints
@@ -155,16 +156,18 @@ posted to the ArXiv.  Because of the conjecture's notorious history, I
 had hoped that publication of our papers would be swift. This was not
 to be.  A panel of 12 referees was assigned the review.  Because of
 lingering doubts among the referees, the full publication of the proof
-did not occur until 2006, nearly eight years after submission.
+did not occur until nearly eight years after submission.
 
 During those years in delay, growing out of my frustration, in an
 effort to bypass the referees, I launched a project to give a formal
 proof of the Kepler conjecture.  Although the project was born out of
-frustration, in truth, it was also
-shaped by a broader vision of the central importance of
-computer-assisted mathematics in years to come.  In a large group
-collaboration, the formal proof of the Kepler conjecture was completed
-in 2014.
+frustration, in truth, it was also shaped by a broader vision of the
+central importance of computer-assisted mathematics and formalization
+in years to come.  In a large group collaboration, the formal proof of
+the Kepler conjecture was completed in 2014.  The formal proof
+contains of about a half million lines of proof scripts.  We called
+the project \emph{Flyspeck}, for \emph{Formal Proof of the Kepler
+  conjecture}.
 
 \section{Statement}
 
@@ -202,15 +205,15 @@ The Kepler conjecture is defined formally in HOL Light by the statement
                          ==> &(CARD(V INTER ball(vec 0,r))) <=
                              pi * r pow 3 / sqrt(&18) + c * r pow 2))`
 \end{verbatim}
-In HOL Light, ascii replacements of logical symbols are used:
+In HOL Light, ASCII replacements of logical symbols are used:
 the character $!$ stands for a universal quantifier $\forall$,
-the character $?$ stands for an existential quantifier $\exists$.
+and $?$ stands for an existential quantifier $\exists$.
 Also, \& stands for the explicit embedding of the set $\ring{N}$ of natural
 numbers into the field $\ring{R}$ of real numbers.  In a slightly
-cleaned up version of the formal statement given above, we might write
+cleaned up version of the formal statement, we might write
 \begin{align*}
 &\op{the\_kepler\_conjecture} \iff\\
-&\quad (\forall V.\ \op{packing}\ V\\
+&\quad (\forall\, V.\ \op{packing}\ V\\
 &\quad\quad \Longrightarrow (\exists c.\ \forall r.\ 1 \le r \Longrightarrow
 \op{card}(V \cap B(0,r)) \le
 \frac{\pi r^3}{\sqrt{18}} + c r^2)).
@@ -220,43 +223,46 @@ conjecture is formulated as a statement about a finite
 packing of balls within a large spherical container of radius $r$.  By
 considering finite packings in a bounded container, boundary effects
 of the container come into play, and an error term $c/r$ enters into
-the main estimate (after dividing both sides of the inequality by $r^3$).  
+the inequality (after dividing both sides of the inequality by $r^3$).  
 The error $c/r$ tends to zero as the radius $r$ of
 the container tends to infinity.
 The condition $1\le r$ is an explicit way of encoding the
 condition that $r$ should be sufficiently large.  
 
-The constant $c$ in
-the error term depends on the packing $V$ and is not explicit.  In
-fact, the constant $c$ can be chosen to be independent of $V$ and one
-nonoptimal value has been calculated to be $c=24373$ in an informal
-calculation \cite{XX}.
+To push simplicity further, even
+$\pi$ might have been eliminated from the statement, if we had used a
+large cubical container rather than a large spherical container.
+
+
+As stated in the theorem, the constant $c$ in the error term depends
+on the packing $V$ and is not explicit.  As a matter of fact, the
+constant $c$ can actually be chosen to be independent of $V$ and one nonoptimal
+value has been calculated to be $c=24373$ in an informal calculation
+\cite{XX}.
 % Nadja Sharf.
 % https://arxiv.org/pdf/1712.03568.pdf
 
-For simplicity, we took pains to remove all mention of
-measure, which would naturally appear when speaking of densities.  To
-push simplicity further, even $\pi$ might have been eliminated from
-the statement, if we had used a large cubical container rather than a
-large spherical container.
+We took pains to remove all mention of measure from the theorem, which
+would naturally appear when speaking of densities.
 
 
 
-\section{proof sketch}
 
-\subsection{Partitioning space}
+\section{Proof Sketch}
 
-In a major reduction, the proof is reduced to a local statement
-about a single ball and its immediately neighboring balls.
+\subsection{partitioning space}
+
+The first major step of the proof is to reduce the theorem to a local
+statement about a single ball and its immediately neighboring balls.
 This reduction relies on a geometric partition of space into cells,
-which is adapted to the packing $V$ (viewed as always as the set of centers
-of balls).
+which is adapted to the packing $V$ (viewed as always as the set of
+centers of balls).
 
 There is an enormous amount of freedom in choosing the partition
 of space.  Much of Sam's and my effort in proving the Kepler conjecture
 went into the design of a good partition of space.  
 
-The most obvious choice of partition is the Voronoi cells
+The most obvious choice of partition is the Voronoi cell
 decomposition, which assigns (to each point in a packing $V$) the
 polyhedral region of all points closer to that point than to any other
 point in the packing $V$. This leads to a proof of the two-dimensional
@@ -266,14 +272,14 @@ Voronoi cells (such as a regular dodecahedron) that have smaller
 volume than the volume of the Voronoi cell (a rhombic dodecahedron) of
 the face-centered cubic packing.
 
-In 1953, L. Fejes T\'oth modified the Voronoi cells so that to each
+In 1953, L. Fejes T\'oth modified the approach slightly so that to each
 point he associates a weighted linear combination of two layers of
 truncated Voronoi cells.  In this form, he conjectured that the
 corresponding bound on density is sharp.  Fejes T\'oth's conjecture is
 plausible, but still unproved.  From a both combinatorial and
-computational points of view, it is unwieldy.  A slight modification
-of Fejes T\'oth's conjecture (that truncates Voronoi cells in a
-polyhedral way) can be formulated as a first-order statement for
+computational points of view, his conjecture is unwieldy.  A slight modification
+of Fejes T\'oth's conjecture (that truncates Voronoi cells by
+polyhedra rather than balls) can be formulated as a first-order statement for
 real-closed fields.  Thus, Tarski's algorithm could in principle be
 applied to decide the modified Fejes T\'oth conjecture, which implies
 the Kepler conjecture.  However, this is thoroughly impractical.
@@ -283,60 +289,288 @@ of space.  The Delaunay decomposition (which is dual to the Voronoi
 cell decomposition) was one of my first attempts.  In 1994, I started
 to experiment with hybrid partitions that combined the best features
 of both the Voronoi and Delaunay partitions.  We called the cells of
-the hybrid partitions \emph{decomposition stars}.  A good partition
-enabled computer calculations that ran in acceptable time.
+the hybrid partitions \emph{decomposition stars}.  
 
-The original proof from 1998 was based on decomposition stars.  As I
-revised the text in preparation for formalization, 
-the text started to grow to alarming lengths.  At one point, as I 
-recall, the revised proof text was nearly 600 pages, and I feared that it would
-reach 1000.  Much of this length stemmed from the complexity of
-the decomposition star decomposition.  
+The original proof from 1998 was based on decomposition stars.  This
+partition enabled computer calculations that ran in acceptable time.
+As I revised the text in preparation for formalization, the text
+started to grow to alarming lengths.  At one point, as I recall, the
+revised proof text reached nearly 600 pages, and I feared that it would
+reach 1000.  Much of this length stemmed from the complexity of the
+decomposition star decomposition, when expressed more formally.
 
 The situation abrubtly changed in 2007, when C. Marchal introduced a
 remarkable new geometric partition of space, tailored to the Kepler
 conjecture.  His partition functioned in much the same way as
-decomposition stars, but they had the effect of moving the
+decomposition stars, but they had the effect of removing the
 complexities from the text part of the proof (at the expense of more
 cases and longer computer calculations).  At first, Marchal claimed to
 have a new proof of the Kepler conjecture, but inspection of his work
 showed that the computer calculations were highly incomplete, and he
-backed away from the claim.\footnote{Marchal's work contains ingenious
-  ideas, but on superficial inspection, his paper looked suspicious:
-  an $18$-page paper with hand-drawn figures, poor typesetting, and
-  trivial appearance, which nonetheless claimed a new proof of the
-  Kepler conjecture. It is a great reminder not to judge too quickly.}
-Starting in 2007, abandoning the decomposition stars, I adapted the my
-proof and calculations to Marchal's partition, and this resulted in a
-much shorter final text.  The formalization project owes a great deal
-to Marchal's improved geometric partition of space and to several of
-his key lemmas.
+backed away from the claim.  
+
+Nevertheless, his research contains ingenious ideas that brought a
+beneficial transformation in the formalization project.  Starting in
+2007, abandoning the decomposition stars, I adapted the proof and
+calculations to Marchal's partition, and this resulted in a much
+shorter final text.
+%The formalization project owes a great deal to
+%Marchal's improved geometric partition of space and to several of his
+%key lemmas.
 % https://hal.archives-ouvertes.fr/file/index/docid/160350/filename/070615_Kepler.pdf
+%\footnote{Marchal's work contains ingenious
+%  ideas, but on superficial inspection, his paper looked suspicious:
+%  an $18$-page paper with hand-drawn figures, poor typesetting, and
+%  trivial appearance, which nonetheless claimed a new proof of the
+%  Kepler conjecture. It is a great reminder not to judge too quickly.}
+
+\subsection{outline}
+
+An outline of the proof of the Kepler conjecture goes as follows.
+First, a geometric partition of space is used to reduce the conjecture
+to a statement about a single sphere and its immediate neighbors.  The
+combinatorial structure of the neighboring spheres is encoded as a
+planar graph.  A list of combinatorial properties is established that
+must hold of any planar graph that encodes a counterexample to the
+Kepler conjecture.  A graph with these properties is called a
+\emph{tame} planar graph.  A computer search enumerates all tame
+planar graphs, up to isomorphism.
+
+The remaining steps, analyze the planar graph one at a time, to rule
+out each one as a potential counterexample.  The planar graph is a
+combinatorial object.  To realize a counterexample, it would be
+necessary to realize the graph as a geometric configuration in
+Euclidean space, with nodes realized as centers of nonoverlapping
+spheres and edges realized as metric conditions between neighboring
+spheres.  This geometric configuration is highly constrained by
+nonlinear constraints.  The constraints can be relaxed to linear
+constraints, and linear programming is used to rule out each potential
+counterexample.  When a single linear program does not suffice, branch
+and bound is used.  When every potential counterexample is eliminated,
+the Kepler conjecture is proved.
+
+Throughout the proof, various nonlinear inequalities are used that are
+established by computer.  Thus, the full proof of the Kepler
+conjecture consists of a 300-page text and three separate computer
+programs: one to classify tame planar graphs, one to run linear
+programs, and one to prove nonlinear inequalities.  The formalization
+project verified both the text and the computer programs.
 
 
 
+Formalizers fall into two subgroups: the scribes and the revisionists.
+The scribes see it their duty to make a faithful copy of the original
+proof text.  They proudly set the original side-by-side against the
+original to display their likeness. The revisionists, on the other
+hand, strive to make a complete overhaul of the original proof, to
+achieve something better.
 
-\section{Why HOL Light?}
+I am a revisionist; the original proof of the Kepler conjecture was
+completely transformed during formalization. Marchal cells replaced
+decomposition stars, and we undertook a systematic investigation of
+the properties of the cells.  Inpired by Gonthier's formalization of
+the four-color theorem, we replaced planar graphs with hypermaps.  A
+new concept, called fans, were used to describe the geometric
+realization of planar graphs.  The proof was modularized by breaking
+it into largely independent sections.  It took an entire book
+\emph{Dense Sphere Packings} to describe the transformed proof.
 
-I made the decision as a non-expert.  HOL Light had decisive
-advantages: a well-developed theory of real analysis, no boundaries
-between programming and proof script-writing, etc.
+Week by week, concerning my part in the collaboration, I asked which
+would most advance the formalization: revising the mathematical proof
+or formalizing the existing proof.  Until shortly before the end,
+revision was always the better option.  One obvious reason for my
+focus on mathematics is that I am a mathematician.  But another reason
+is that our project (unlike many others that formalize polished
+second-generation proofs) was handling a freshly announced proof that
+lacked the usual review from referees.
 
-\section{tactics}
+\section{Formalizatoin}
+
+
+I made the decision to use HOL Light, based on advice from Freek
+Wiedijk.  HOL Light had its advantages: it has a well-developed theory
+of real analysis; the system is easy to learn; and no boundaries
+separate programming from proof script-writing.  A HOL Light proof
+script is actually OCaml programming language code, with preprocessing
+of expressions written between backquotes.  (In other words, the
+tactic language is a major programming language.)  For example, $0$
+denotes an OCaml integer, and backquoted $`0`$ denotes the
+(axiomatically constructed) natural number in HOL Light.
+
+
+The proof scripts amount to about a half million lines of code.
+The project took an estimated 20 work years to complete.
+The main part of the verification can be processed on a laptop computer
+in about 5 hours.  Three separate auxiliary verifications are also
+required. The correspond to the three computer-assisted portions of the
+proof: linear program verification, tame graph classification, and
+nonlinear inequality verification.  The first two auxiliary verifications
+take less than one day each.  The verification of nonlinear inequalities
+takes about 5000 CPU hours.
+
+All parts of the verification (including the long nonlinear inequality
+verifications) have been checked by at least three groups:
+the Flyspeck team before announcement, Urban's group, and an anonymous
+referee.  As part of a systematic audit of the formalization,
+Mark Adams exported the main part of the verification to the HOL-Zero
+system and confirmed our results.
+
+The full Flyspeck project is freely available at our github page.  
+
+
+
+\subsection{libraries}
+
+John Harrison was the primary contributor to the HOL Light libraries.
+He contributed libraries in multivariate calculus, especially
+multivariate integration, a library of convex sets and polyhedra, XXX.
+He contributed powerful tactics such as \emph{Without Loss of
+  Generality}, which automates some of what mathematicians accomplish
+in proofs with those words.
+
+For the most part, to simplify proofs and to complete the Flyspeck
+project in reasonable time, each lemma was formulated minimally rather
+than in generality.  For example, the formalization avoids matrices,
+integration on manifolds (such as a sphere), and the general Jordan
+curve theorem (using only a special case for hypermaps).
+
+One post-completion update of the proof scripts has been required.
+John Harrison converted limits in his analysis library from nets to
+filters in 201XX, and this required the proof scripts to be updated.
+There has been nothing comparable to the Mathematical Components
+Library in Coq, which systematized the material from the Feit-Thompson
+Odd Order formalization.
+
+\subsection{international collaboration}
+
+Formalization is an activity that naturally lends itself to
+international collaboration.  The definitions and statements of lemmas
+act as a specification of the project.  The top-level architecture of
+the project shows how the main theorem follows from the lemmas.  Any
+formal proof of a lemma -- no matter where, how, or by whom it is
+produced -- advances the project.  
+
+
+The Flyspeck project was a large international collaboration.  The
+main centers were the Isabelle group in Munich (Nipkow, Bauer, Obua),
+the Hanoi group, the Pittsburgh group (Hales, Solovyev, Zumkeller),
+and independent contributors (Harrison at Intel, Magron in Paris).
+One of the happiest pieces of news from the Flyspeck project is that
+this collaboration worked.
+
+The Munich group was directed by Nipkow.  Coordination was obtained by
+email contact and by extended visits (by Nipkow and Obua) to
+Pittsburgh.
+
+Ta Thi Hoi An and Mark Adams were the managers in Hanoi.  There was
+extensive US-Vietnam contact during the project: I went on sabbatical
+to Hanoi in 2007.  We organized a major two-month program in Hanoi in
+2999?, and a follow-up workshop the next summer.  Hoang Le Truong and
+Tran Nam Trung made extended visits to the US.  Nguyen Quang Truong
+came to Pitt as a graduate student.  Adams organized weekly Flyspeck
+meetings in Hanoi.  I traveled to Vietnam about two times per year
+during that period.
+
+Following its loose collaborative style, the project includes several
+different tactic and proof styles: John Harrison's efficient compact
+proofs; Solovyev's port of SSReflect to HOL Light; a large collection
+Hanoi tactics (sometimes expressed in Vietnamese, such as the
+\emph{nhanh} tactic, which is Vietnamese for fast); and my own
+idiosyncratic collection of tactic macros, which allowed me to quickly
+generate long proof scripts with few keystrokes.
+
+Occasionally loose collaboration became problematic, and the anarchy
+was barely controlled.  For example, we had three libraries for lists
+with subtle differences to contend with: an imported library from
+Isabelle that came with the tame graphs, an imported library from Coq
+that came with Solovyev's port of SSReflect, and Harrison's native HOL
+Light list library.
+
+\subsection{tactics}
 
 A HOL Light proof script is written directly as code in the
 OCaml programming language, except that any phrase enclosed between
 backquotes is parsed directly as a term in HOL Light.  
 
+%Solovyev developed a SSReflect mode for HOL Light and imported
+%several libraries from the Coq SSReflect library.
 
-\section{Alignment between formal and informal}
 
-(Euler example)
 
-\section{A next generation proof}
+\subsection{alignment between informal and formal}
 
-The formalization of the Kepler conjecture was far from optimal.  This
-final section points towards a second generation proof.
+The informal text was aligned with formal scripts through randomly
+generated seven letter tracking codes.  As the informal and formal
+texts were edited and rearranged, the tracking codes gave persistent
+names to lemmas.  For example, the code OUIJTWY appears in both the
+\LaTeX\ source file of Dense Sphere Packings (Lemma~2.25 from that
+book) and in the HOL Light scripts for the following inverse trig
+identity (which asserts that the two acute angles of a right triangle
+have sum $\pi/2$).
+
+\begin{lemma}{\tt [OUIJTWY]} If $y\in [-1,1]$, then
+\[
+\arccos(y) + \arctan_2\left(\sqrt{1-y^2},y\right) = \pi/2.
+\]
+\end{lemma}
+
+\begin{verbatim}
+let OUIJTWY = Trigonometry2.acs_atn2
+
+let acs_atn2_t = 
+  `!y. (-- &1 <= y /\ y <=  &1) 
+       ==> (acs y = pi/(&2) - atn2(sqrt(&1 - y pow 2),y))`
+\end{verbatim}
+
+The \LaTeX\ source files also label each definition with the
+corresponding term in the formal proof. For example, here is a snippet
+of the \LaTeX\ source of Dense Sphere Packings asserting the alignment
+of the informal function $\arccos$ with the HOL Light function {\tt
+  acs}:
+
+\begin{verbatim}
+  \begin{definition}[arccos]\guid{QZTBJMH}
+  \formaldef{$\arccos$}{acs}
+  \label{def:arccos}\formal{acs,\ ACS\_COS,\ COS\_ACS}
+  ...
+\end{verbatim}
+
+This alignment is useful for documentation of the proof scripts and
+for machine learning projects aimed at informal to formal translation.
+
+The \emph{DRY} acronym of software engineering stands for \emph{Don't
+  Repeat Yourself}: each piece of knowledge should have a single
+authoritative representation in software.  By creating both informal
+and formal texts, we violate the principle, even if they are aligned.
+Considerable effort was required to maintain alignment across edits.
+Recently, my interests have shifted to controlled natural languages,
+which are capable of automatically generating formal text from
+informal \LaTeX\ source files.  In a second generation formal proof of
+the Kepler conjecture, one of my requirements would be automated
+alignment.
+
+\subsection{search}
+
+Much of the time spent composing formal proof scripts is consumed
+by search.  Each theorem has a name, and with few exceptions,
+every invocation of the theorem requires the theorem to be cited
+by name.  
+
+Zumkeller and Harrison made a heavily used search tool for HOL Light.
+Theorems can be searched by for name (according to any regular
+expression) and by matching subterms (including type information) in
+the theorem statement or conclusion.  Boolean operations combine
+searches.  The type information is part of the term, so that XX
+(example).
+
+
+
+
+\section{Verifying the computer-assisted proof}
+
+Although other made some contributions, Solovyev deserves enormous
+credit for his work to verify the computer-assisted portions of the
+proof (the linear programs and nonlinear inequalities).
 
 \subsection{nonlinear inequalities}
 It was understood from the very beginning of the formalization of the
@@ -378,11 +612,11 @@ algorithms for proving nonlinear inequalities.  Eventually, we settled
 on using automatic differentiation to compute second order Taylor
 expansions of the nonlinear functions with certified bounds on the
 error terms.  When a Taylor expansion fails to give sufficient
-accuracy on a given box-shaped domain, we branch and bound (by adaptively bisecting the
-box and recursing on the smaller domains).  When a partial
-derivative has fixed sign over the box, the function is
-monotone, and the inequality is implied by a restricted inequality over a face
-of the box, and the dimension drops.  (We do not claim
+accuracy on a given box-shaped domain, we branch and bound (by
+adaptively bisecting the box and recursing on the smaller domains).
+When a partial derivative has fixed sign over the box, the function is
+monotone, and the inequality is implied by a restricted inequality
+over a face of the box, and the dimension drops.  (We do not claim
 originality in these techniques, but considerable work went into
 efficient implementation.)
 
@@ -455,7 +689,7 @@ $C$ of nonlinear inequalities.  To each collection $C$ there is a cost
 as measured by the time required to verify the collection of
 inequalities.  We wish to learn a collection $C$ that minimizes cost.
 
-\subsection{Tame graphs}
+\subsection{tame graphs}
 
 The first major success in the formalization of the Kepler conjecture
 was the Bauer-Nipkow formalization of the classification of tame
@@ -518,51 +752,31 @@ give a series of lemmas proving that the redundant data remains
 \emph{in sync}.)  Moreover, other planar graph generating algorithms
 are available, such as \emph{plaintri}.
 
+\subsection{linear programs}
+
+Steven Obua's thesis initiated the verification of linear program for
+the Flyspeck project. The verification of linear programs was
+completed by Solovyev's thesis.  Solovyev has developed a stand-alone
+tool for the verification of linear programming certificates in HOL
+Light.  His tool is highly optimized.
+
+The linear programming part of the proof is not just a matter of
+running linear programs.  The linear programs are generated from the
+combinatorial structure of the tame planar graphs.  There are
+challenges in formalizing the exact relationship between the output of
+a linear programs and the nonlinear optimization problem that is
+combinatorially generated from a planar graph.
 
 
 
 
+%\section{Concluding Remarks}
 
-
-
-
-
-
-
-
-
-
-
-
-Tricks used.
-
-Tricks not used.
-
-
-
-Isabelle-HOL-Light interface.
-
-Multiple list libraries and uniform style.
-
-DRY Alignment.
-
-Search - Zumkeller.
-
-Tools - Libraries (Harrison), standalone nonlinear (Solovyev), linear programming (Solovyev).
-
-Tactic styles (no distinction between Ocaml code and proof scripts).
-
-Overlap of definitions (list libraries Isabelle, HOL Light, Coq).
-
-
-
-\section{Concluding Remarks}
-
-Some have expressed an ambition to use artificial intelligence to
-\emph{solve math} in 
-the coming years.  To the ambitious, we offer the more modest
-challenge of using AI to develop a next-generation proof of the Kepler
-conjecture.  The current proof is now over 22 years old.
+%Some have expressed an ambition to use artificial intelligence to
+%\emph{solve math} in 
+%the coming years.  To the ambitious, we offer the more modest
+%challenge of using AI to develop a next-generation proof of the Kepler
+%conjecture.  The current proof is now over 22 years old.
 
 
 \newpage
