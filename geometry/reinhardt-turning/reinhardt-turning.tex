@@ -1,0 +1,204 @@
+% Thomas Hales
+% Nov 8, 2016
+% arXiv version, Mar 3, 2017.
+% Reinhardt Conjecture 2, control theory
+%[12pt]
+
+% hexameral -> hexagonally symmetric
+% domain -> disk
+
+% http://english.stackexchange.com/questions/79847/parametrise-or-parameterise-a-curve
+% parameter spell, using parametrization.
+
+
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{amsthm,xcolor}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{alltt}
+\usepackage{url}
+\usepackage{ellipsis}
+% 
+%tikz graphics
+%\usepackage{xcolor} % to remove color.
+\usepackage{tikz} % 
+\usetikzlibrary{chains,shapes,arrows,%
+ trees,matrix,positioning,decorations,fadings}
+%\usepackage[framemethod=TikZ]{mdframed}
+
+\def\tikzfig#1#2#3{%
+\begin{figure}[htb]%
+  \centering
+\begin{tikzpicture}#3
+\end{tikzpicture}
+  \caption{#2}
+  \label{fig:#1}%
+\end{figure}%
+}
+\def\smalldot#1{\draw[fill=black] (#1) %
+ node [inner sep=1.3pt,shape=circle,fill=black] {}}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{working}[theorem]{Working Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}[equation]{Remark}%[subsection]
+
+
+\newcommand{\ring}[1]{\mathbb{#1}}
+\newcommand{\op}[1]{\hbox{#1}}
+\newcommand{\f}[1]{\frac{1}{#1}}
+\newcommand{\ang}[1]{\left\langle{#1}\right\rangle}
+\def\error{e__r__r__o__r}
+\def\cong{\error}
+\def\sl{\mathfrak{sl}_2(\ring{R})}
+\def\SL{\op{SL}_2(\ring{R})}
+\def\SO{\op{SO}_2(\ring{R})}
+\def\h{\mathfrak h}
+\def\hstar{{\mathfrak h}^\star}
+\def\Mstar{M^\star}
+\def\D{\ring{D}}
+\def\Hcost{H_{cost}}
+\def\Hlie{H_{Lie}}
+\def\Hh{H_{\h}}
+\def\DR{D_{min}}
+\def\tmax{t_{max}}
+
+\newcommand\Lsing{\Lambda_{sing}}
+\newcommand\lsing{\lambda_{sing}}
+\newcommand\ee[1]{e_{#1}^*}
+\newcommand{\partials}[2]{\frac{\partial #1}{\partial #2}}
+
+%\newcommand\XX[1]{[XX fix: #1]}
+%\newcommand\FIGXX{{\tt [XX Insert figure here]}}
+%\newcommand{\rif}[1]{\ref{#1}{\tt-#1}}
+%\newcommand{\cat}[1]{\cite{#1}{\tt-#1}}
+%\newcommand{\libel}[1]{\label{#1}{\tt(#1)~}}
+
+
+\title{The Turning number for critical points of the Reinhardt optimal control problem}
+\author{Thomas C. Hales}  
+\date{} 
+\date{February 26, 2020}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract} [Tentative. This hasn't been proved.] We define the turning number of curve
+satisfying the optimal control problem attached to the Reinhardt conjecture.
+ \end{abstract}
+
+\parskip=0.8\baselineskip
+\baselineskip=1.05\baselineskip
+
+\newenvironment{blockquote}{%
+  \par%
+  \medskip%
+  \baselineskip=0.7\baselineskip%
+  \leftskip=2em\rightskip=2em%
+  \noindent\ignorespaces}{%
+  \par\medskip}
+
+\section{Introduction}
+
+In 1934, Reinhardt conjectured that the shape of centrally symmetric
+body in the plane whose densest lattice packing has the smallest
+density is a smoothed octagon.  
+
+This conjecture has been formulated as a problem in optimal control theory.
+The Pontrjagin maximum principle gives a set of conditions defining critical
+points of the optimal control problem.  We show that an integer called the turning number can
+be attached to each critical point, provided the it avoids the singular locus
+of the problem.
+
+Let $\lambda=(g,X,\Lambda,\lambda,\nu)$ be a trajectory of the
+Reinhardt optimal control that avoids the singular locus and that
+satisfies Pointrjagin's conditions.    
+
+The group $\SL$ acts on the upper half-plane $H$ by linear fractional transformations.
+Let $i = \sqrt{-1}\in H$. 
+The element $g$ is a path in $\SL$ that satisfies $g(t_0) =I$, $g(t_1)=R\in SO(2)$.
+Thus, $g(t_0).i = g(t_1).i = i$.  In particular $t\mapsto g(t).i$ traces a closed curve in $H$.
+We show that the turning number of this closed curve can be defined.  
+
+This is not immediate, because
+the curve is not known to be differentiable. 
+The curve $g$ is differentiable with a Lipschitz continuous derivative.   
+Writing $f:\SL\to H$, $h\mapsto h.i$, if $v \in T_{g(t)} \SL$, we have
+$Df(v) \in T_{g(t).i} H$.  If $Df(v)$ is nonzero, then the curve $g(t).i$ is differentiable at $t$.
+
+Recall $g' = g X$.   Write $g = b r$, using the Iwasawa decomposition,
+with $b \in B$ the upper triangular subgroup and $r \in SO(2)$.
+Write $r = \exp(J\theta)$.
+Then
+\begin{equation}\label{eqn:XJ}
+g^{-1} g' = X= r^{-1} b^{-1} b' r + r^{-1} r' = r^{-1} b^{-1} b' r + J \theta'.
+\end{equation}
+
+
+
+\begin{lemma}
+ $Df(v) = 0$ iff $X = J$. 
+\end{lemma}
+
+We remark that $X = J$ iff $z = i$.     That is, the closed curve is not regular at $t$ iff the derivative (view in $H$) is
+the point $i\in H$, under the usual identification of Lie algebra elements with $H$.
+
+\begin{proof}
+Assume that $X=J$.  Then (\ref{eqn:XJ}) implies that $b^{-1} b'$ is a multiple of $J$, which implies that $b'=0$.
+We have $g.i = b.i$.  So $(g.i)' = (b.i)'  =0$.    
+
+Conversely, if $(b.i)'=0$, then $b^{-1} b'=0$, so that $X = J\theta'$.  The unit speed condition and clockwise rotation
+give $\theta'=1$.  Thus $X=J$.
+\end{proof}
+
+It follows from the lemma that there is a well-defined turning number of the closed curve except possibly if the
+derivative $z\in H$ is a trajectory passing through $i\in H$.
+
+We have shown that a Pointrjagin optimal trajectory that does not pass through the singular locus is a bang-bang
+solution with finitely many switching points.  
+
+We first consider the case that the trajectory $z$ does not have a switching point at $i$.
+By symmetry of the control triangle, and the explicit solutions, we may assume that the solution is
+\[
+x = -m + c_0 e^{\alpha t},\quad y = c_0 \alpha e^{\alpha t}.
+\]
+The condition that this passes through $i$ at $t=0$ gives 
+\[
+m= c_0=1/\sqrt{3},\quad  \alpha = 1/c_0.
+\]
+Solving the ODE for the trajectory $g$ in a power series gives
+\[
+g(t).i  = -\sqrt{3} t^2 + i (1 + t^2) \mod t^3. 
+\] 
+This is not regular at $t=0$. (PLOT)
+However, if we perturb $\alpha$ to $\alpha = 1/c_0(1+ s)$, for small $s$, we obtain
+\[
+(-2 s t  -\sqrt{3} (1+s)t^2)  \quad + i (1 + 2 s) t^2 \mod (s^2,t^3).
+\]
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{refs} 
+\bibliographystyle{alpha}
+
+
+\end{document}
