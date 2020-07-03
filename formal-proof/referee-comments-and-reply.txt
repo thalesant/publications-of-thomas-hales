@@ -1,0 +1,214 @@
+General comments:
+- I suggest adding more bibliographical references to your text here
+  and there, in order to reference the publication by you and by your
+  collaborators. It would be very useful for readers who want to delve
+  into further details. Suggestions below.
+
+-- fixed
+  
+- It seems to me that the way you treat names is not uniform
+  (e.g. Thomas Harriot vs Hilbert vs W.-Y. Hsiang). Also, would you
+  insist on calling Samuel Ferguson Sam p4?
+
+-- I now give the full name on first mention, then last name on subsequent
+mentions.
+
+In order:
+
+- p.2, "series of preprints posted to the ArXiv". Consider inserting
+  references.
+
+-- fixed
+  
+- p3: it was not obvious to me what (the type of) V is in the formal
+  statement, although you clearly use V for the set of centers of
+  balls at the top of the page. May be a few words like "where $V$ is
+  a set of points in R^3" (or whatever correct variant).
+
+-- fixed
+
+
+- p4: I did not understand the 1st paragraph "To push simplicity ..."
+  Naive question: pi is involved in the classical statement about the
+  optimal density given p3, in which the large spherical container is
+  irrelevant, isn't it?
+
+-- explanation added
+
+- p4 Reference [Sch] lacks a venue or url.
+
+-- fixed
+
+- p4 See my comment above about "Sam", the reader might not see
+  immediately who it is.
+
+-- fixed
+
+- p4 About the relevance of QE. It is not clear to me why it is
+  necessary to truncate cells with polyhedra, rather than balls, to
+  make the problem fall in the 1st order theory of real closed
+  fields. I do not have a precise idea about the precise mathematics
+  involved behind this paragraph but the a change of polyhedra for
+  balls looks like one which preserves definability, and partitions
+  thus shall remain described by semi-algebraic functions.
+
+-- explanation added. The issue is essentially the same as with the "push simplicity" issue above.
+   The Tarski statement must encode volumes (via their algebraic formulas), and this
+   cannot be done for ball-based truncation.
+  
+- p5 l.1 hybrid decomposition -> hybrid partition?
+
+-- fixed
+
+- p5 end of 1st paragraph "decomposition star decomposition" (typo)
+
+-- fixed
+
+- p5 l.3 of 2nd paragraph, "His partition" missing "s" (plural)
+
+-- fixed
+
+- p5 l.5 of 3rd paragraph "that must hold of any planar graph" for any
+  planar graph?
+
+-- fixed
+
+- p6, 2nd paragraph "Gonthier's formalization" : note for ourselves,
+  editors, a cross-reference could be inserted here to the
+  corresponding section of the book.
+  I enjoyed this section 3.3.
+
+-- no change
+
+- note for ourselves, editors, insert a citation for systems
+  (HOL-Light, Isabelle)
+  I guess it is a deliberate choice not to mention Isabelle in the
+  header of section 4.
+
+-- no change
+
+- p7 Consider citing Harrison's paper about wlog
+
+@inproceedings{DBLP:conf/tphol/Harrison09,
+  author    = {John Harrison},
+  editor    = {Stefan Berghofer and
+               Tobias Nipkow and
+               Christian Urban and
+               Makarius Wenzel},
+  title     = {Without Loss of Generality},
+  booktitle = {Theorem Proving in Higher Order Logics, 22nd International Conference,
+               TPHOLs 2009, Munich, Germany, August 17-20, 2009. Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {5674},
+  pages     = {43--59},
+  publisher = {Springer},
+  year      = {2009},
+  url       = {https://doi.org/10.1007/978-3-642-03359-9\_3},
+  doi       = {10.1007/978-3-642-03359-9\_3},
+  timestamp = {Thu, 05 Sep 2019 14:51:32 +0200},
+  biburl    = {https://dblp.org/rec/conf/tphol/Harrison09.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+-- added
+
+- p7 consider citing Harrison's paper about the revision of HOL-Light
+  libraries triggered by Flyspeck
+
+@article{DBLP:journals/jar/Harrison13,
+  author    = {John Harrison},
+  title     = {The {HOL} Light Theory of Euclidean Space},
+  journal   = {J. Autom. Reasoning},
+  volume    = {50},
+  number    = {2},
+  pages     = {173--190},
+  year      = {2013},
+  url       = {https://doi.org/10.1007/s10817-012-9250-9},
+  doi       = {10.1007/s10817-012-9250-9},
+  timestamp = {Thu, 05 Sep 2019 14:51:32 +0200},
+  biburl    = {https://dblp.org/rec/journals/jar/Harrison13.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+-- added
+
+
+- p7 : note for ourselves, editor, insert cross-reference to the
+  section about odd order.
+
+-- no change
+
+- p9 consider citing Bauer, Nipkow and Schultz's paper 
+
+@inproceedings{DBLP:conf/cade/NipkowBS06,
+  author    = {Tobias Nipkow and
+               Gertrud Bauer and
+               Paula Schultz},
+  editor    = {Ulrich Furbach and
+               Natarajan Shankar},
+  title     = {Flyspeck {I:} Tame Graphs},
+  booktitle = {Automated Reasoning, Third International Joint Conference, {IJCAR}
+               2006, Seattle, WA, USA, August 17-20, 2006, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {4130},
+  pages     = {21--35},
+  publisher = {Springer},
+  year      = {2006},
+  url       = {https://doi.org/10.1007/11814771\_4},
+  doi       = {10.1007/11814771\_4},
+  timestamp = {Tue, 14 May 2019 10:00:39 +0200},
+  biburl    = {https://dblp.org/rec/conf/cade/NipkowBS06.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+-- added 
+
+p10-11 (section 5.2) I guess that citing Solovyev's papers, or may be
+his PhD thesis if it is available online, would be very relevant.
+
+-- added
+
+p10 to 12 : what about swapping sections 5.2 and 5.3?
+
+-- fixed
+
+p12, section 5.3 What about citing publication(s) by Obua? May be
+
+@article{DBLP:journals/amai/ObuaN09,
+  author    = {Steven Obua and
+               Tobias Nipkow},
+  title     = {Flyspeck {II:} the basic linear programs},
+  journal   = {Ann. Math. Artif. Intell.},
+  volume    = {56},
+  number    = {3-4},
+  pages     = {245--272},
+  year      = {2009},
+  url       = {https://doi.org/10.1007/s10472-009-9168-z},
+  doi       = {10.1007/s10472-009-9168-z},
+  timestamp = {Wed, 25 Sep 2019 17:45:17 +0200},
+  biburl    = {https://dblp.org/rec/journals/amai/ObuaN09.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+or
+
+@inproceedings{DBLP:conf/tphol/Obua05,
+  author    = {Steven Obua},
+  editor    = {Joe Hurd and
+               Thomas F. Melham},
+  title     = {Proving Bounds for Real Linear Programs in Isabelle/HOL},
+  booktitle = {Theorem Proving in Higher Order Logics, 18th International Conference,
+               TPHOLs 2005, Oxford, UK, August 22-25, 2005, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {3603},
+  pages     = {227--244},
+  publisher = {Springer},
+  year      = {2005},
+  url       = {https://doi.org/10.1007/11541868\_15},
+  doi       = {10.1007/11541868\_15},
+  timestamp = {Tue, 14 May 2019 10:00:48 +0200},
+  biburl    = {https://dblp.org/rec/conf/tphol/Obua05.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+-- added

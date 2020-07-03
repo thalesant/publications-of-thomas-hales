@@ -1,6 +1,7 @@
 % Thomas Hales
 % The Formal Proof of the Kepler Conjecture in Retrospective
 % February 17, 2020. started.
+% July 3, 2020, referee report edits
 
 
 %\documentclass[runningheads]{llncs}
@@ -66,7 +67,7 @@
 \author{Thomas Hales}
 \date{}
 %\institute{University of Pittsburgh}
-\date{March 4, 2020}
+\date{July 3, 2020}
 
 \begin{document}
 
@@ -75,7 +76,7 @@
 \begin{abstract} 
   The Kepler conjecture asserts that no packing of congruent balls in
   three-dimensional Euclidean space has density greater than that of the
-  face-centered cubic packing.  In 1998, Samuel Ferguson and I
+  face-centered cubic packing.  In 1998, Sam Ferguson and I
   announced a computer-assisted proof of this conjecture.  Long delays
   in the refereeing process sparked a project to give a formal proof
   of the Kepler conjecture, which was completed in a large
@@ -108,57 +109,55 @@ numbers known in antiquity from a Sanskrit source.  The cannonball
 pyramid is properly known as the face-centered cubic packing.
 
 Harriot was an early proponent of the atomic theory, and he viewed
-atoms as small balls.  Harriot and Kepler shared an interest in optics, and
-they corresponded during the first decade of the seventeenth century.
-Harriot pushed the atomic theory in their correspondence, but Kepler
-remained skeptical.
+atoms as small balls.  Harriot and Johannes Kepler shared an interest in
+optics, and they corresponded during the first decade of the
+seventeenth century.  Harriot pushed the atomic theory in their
+correspondence, but Kepler remained skeptical.
 
 However, one evening crossing the Charles bridge in Prague, as it
 started to snow, Kepler started to contemplate why snowflakes have six
 sides.  His contemplations led to a booklet ``The Six-Cornered
 Snowflake,'' an early essay in crystallography, which posits that
-arrangements of minute particles explain observable
-symmetries in nature.  In this booklet from 1611, Kepler
-described the face-centered cubic packing and asserted that it will be
-the ``tightest possible, so that in no other arrangement could more
-pellets be stuffed into the same container.'' The notion of density was
-suggested to him by the tightly packed seeds of a pomegranite, and the
-face-centered cubic packing was suggested to him by the three-dimensional structure of
+arrangements of minute particles explain observable symmetries in
+nature.  In this booklet from 1611, Kepler described the face-centered
+cubic packing and asserted that it will be the ``tightest possible, so
+that in no other arrangement could more pellets be stuffed into the
+same container.'' The notion of density was suggested to him by the
+tightly packed seeds of a pomegranite, and the face-centered cubic
+packing was suggested to him by the three-dimensional structure of
 honeycomb cells.
 
-Hilbert made the Kepler conjecture part of the eighteenth problem, in his
-influential list of problems proposed at the International
+David Hilbert made the Kepler conjecture part of the eighteenth problem, in
+his influential list of problems proposed at the International
 Congress in Paris in 1900.
 
 The two-dimensional analogue of the Kepler conjecture asserts that the
 densest packing of congruent circular disks in the plane is achieved
-by the hexagonal lattice packing.  Although the first careful
-proofs do not appear until much later,
-Thue is often credited with a
+by the hexagonal lattice packing.  Although the first careful proofs
+do not appear until much later, Axel Thue is often credited with a
 nineteenth century proof.
 
 The first detailed strategy to prove the Kepler conjecture was
-formulated by L. Fejes T\'oth in 1953 \cite{Fej53}.  He was also the first to
-suggest a computer-assisted proof.
+formulated by L\'aszl\'o Fejes T\'oth in 1953 \cite{Fej53}.  He was also the
+first to suggest a computer-assisted proof.
 
 Over the years, there were some notorious false claims of a proof.
 Buckminster Fuller, the creator of the geodesic dome, claimed a proof,
 but his claim lacked any credibility.  Around 1990, a Berkeley
-professor W.-Y. Hsiang claimed a proof.  In rebuttal to his claimed
+professor Wu-Yi Hsiang claimed a proof.  In rebuttal to his claimed
 proof, in a heated debate, I published a paper containing explicit
 counterexamples to his work \cite{Hales:1994:MI}.  For a few years,
 the research area became toxic, until the debate was settled in my
 favor.
 
-Samuel Ferguson and I annouced a solution to the Kepler conjecture in
-August 1998.  Our solution appeared in a series of preprints
-posted to the ArXiv.  Because of the conjecture's notorious history, I
-had hoped that publication of our papers would be swift. This was not
-to be.  A panel of twelve referees was assigned the review. Review
-dragged on for years, until the referees became exhausted and quit.
-Because of
-lingering doubts, the full publication of the proof
-did not occur until nearly eight years after submission.
+Sam Ferguson and I annouced a solution to the Kepler conjecture in
+August 1998.  Our solution appeared in a series of preprints posted to
+the ArXiv \cite{hales1998kepler}.  Because of the conjecture's
+notorious history, I had hoped that publication of our papers would be
+swift. This was not to be.  A panel of twelve referees was assigned
+the review. Review dragged on for years, until the referees became
+exhausted and quit.  Because of lingering doubts, the full publication
+of the proof did not occur until nearly eight years after submission.
 %
 Concurrent
 with publication, the editors of the \emph{Annals of Mathematics}
@@ -189,16 +188,17 @@ Euclidean three-space has density greater than that of the
 face-centered cubic packing.  This section gives the formal statement
 of the theorem.
 
-The statement is invariant under rescalings of the radius of the balls,
-and it is convenient to normalize the radius of each ball at $R=1$.
-The congruent balls do not enter directly. Rather we identify the packing
-with the set $V$ of centers of the balls.  The radius normalization implies
-that every two distinct points in $V$ are separated by distance at least
-the diameter $2$.
+The statement is invariant under rescalings of the radius of the
+balls, and it is convenient to normalize the radius of each ball at
+$R=1$.  The congruent balls do not enter directly. Rather we identify
+the packing with the set $V$ of centers of the balls.  The radius
+normalization implies that every two distinct points in $V$ are
+separated by distance at least the diameter $2$.  In the formal
+statement, $V$ is a set of points in $\ring{R}^3$.
 
-As was known to Gauss, the face-centered cubic packing is the densest
-possible among lattices (that is the set $V$ of integer linear
-combinations of a vector-space basis).
+As was known to Carl Friedrich Gauss, the face-centered cubic packing
+is the densest possible among lattices (that is the set $V$ of integer
+linear combinations of a vector-space basis).
 
 The face-centered cubic packing is not the only packing of congruent
 balls that achieves the density $\pi/\sqrt{18} \approx 0.74$ of the
@@ -233,7 +233,7 @@ cleaned up version of the above, we might write
 \frac{\pi r^3}{\sqrt{18}} + c r^2)).
 \end{align*}
 We took pains to remove all mention of measure from the theorem, which
-would naturally appear when speaking of densities.
+might naturally appear when speaking of densities.
 
 To simplify the main statement as much as possible, the Kepler
 conjecture is formulated as a statement about a finite
@@ -246,16 +246,17 @@ the container tends to infinity.
 The condition $1\le r$ is an explicit way of encoding the
 condition that the container's radius $r$ should be sufficiently large.  
 
-To push simplicity further, even
-$\pi$ might have been eliminated from the statement, if we had used a
-large cubical container rather than a large spherical container.
-
+To push simplicity further, even $\pi$ might have been eliminated from
+the statement, if we had used a large cubical container rather than a
+large spherical container.  (By stating the Kepler conjecture in terms
+of the number of balls, rather than the volume of the balls, the
+constant $\pi$ drops out.)
 
 As stated in the theorem, the constant $c$ in the error term depends
 on the packing $V$ and is not explicit.  As a matter of fact, the
-constant $c$ can actually be chosen to be independent of $V$ and one nonoptimal
-value has been calculated to be $c=24373$ in an informal calculation
-\cite{Scharf}.
+constant $c$ can actually be chosen to be independent of $V$ and one
+nonoptimal value has been calculated to be $c=24373$ in an informal
+calculation \cite{Scharf}.
 % Nadja Sharf.
 % https://arxiv.org/pdf/1712.03568.pdf
 
@@ -274,18 +275,18 @@ which is adapted to the packing $V$ (viewed as always as the set of
 centers of balls).
 
 There is an enormous amount of freedom in choosing the partition
-of space.  Much of Sam's and my effort in proving the Kepler conjecture
+of space.  Much of our effort in proving the Kepler conjecture
 went into the design of a good partition of space.  
 
 The most obvious choice of partition is the Voronoi cell
 decomposition, which assigns (to each point in a packing $V$) the
 polyhedral region of all points closer to that point than to any other
-point in the packing $V$. This approach leads to a proof of the two-dimensional
-analogue of the Kepler conjecture.  However, this approach does not
-give the desired sharp bound in three dimensions, because there are
-Voronoi cells (such as a regular dodecahedron) that have smaller
-volume than the volume of the Voronoi cell (a rhombic dodecahedron) of
-the face-centered cubic packing.
+point in the packing $V$. This approach leads to a proof of the
+two-dimensional analogue of the Kepler conjecture.  However, this
+approach does not give the desired sharp bound in three dimensions,
+because there are Voronoi cells (such as a regular dodecahedron) that
+have smaller volume than the volume of the Voronoi cell (a rhombic
+dodecahedron) of the face-centered cubic packing.
 
 In 1953, L. Fejes T\'oth modified the approach slightly so that to
 each point he associated a weighted linear combination of two layers
@@ -295,11 +296,13 @@ plausible, but still unproved.  From a both combinatorial and
 computational points of view, his conjecture is unwieldy.  A slight
 modification of Fejes T\'oth's conjecture (that truncates Voronoi
 cells by polyhedra rather than balls) can be formulated as a
-first-order statement for real-closed fields.  Thus, Tarski's
-quantifier elimination (QE) algorithm could in principle be applied to
-decide the modified Fejes T\'oth conjecture, which implies the Kepler
-conjecture (by a short argument).  However, QE is thoroughly
-impractical on a problem of this size.
+first-order statement for real-closed fields.  (Truncation by balls
+introduces volumes that depend on the transcendental $\pi$, but
+polyhedral truncation gives volumes that can be encoded with algebraic
+formulas.)  Thus, Tarski's quantifier elimination (QE) algorithm could
+in principle be applied to decide the modified Fejes T\'oth
+conjecture, which implies the Kepler conjecture (by a short argument).
+However, QE is thoroughly impractical on a problem of this size.
 
 Starting around 1989, I started toying with other geometric partitions
 of space.  The Delaunay decomposition (which is dual to the Voronoi
@@ -308,63 +311,55 @@ to experiment with hybrid partitions that combined the best features
 of both the Voronoi and Delaunay partitions.  We called the cells of
 the hybrid partitions \emph{decomposition stars}.  
 
-The original proof from 1998 was based on a hybrid decomposition.  This
+The original proof from 1998 was based on a hybrid partition.  This
 partition enabled computer calculations that ran in acceptable time.
 However, as I revised the text in preparation for formalization, the text
 started to grow to alarming lengths.  At one point, as I recall, the
 revised proof text reached nearly 600 pages, and I feared that it would
 reach 1000.  Much of this length stemmed from the complexity of the
-decomposition star decomposition, when expressed more formally.
+decomposition star, when expressed more formally.
 
-The situation abrubtly changed in 2007, when C. Marchal introduced a
-remarkable new geometric partition of space, adapted to the Kepler
-conjecture.  His partition functioned in much the same way as
-decomposition stars, but they had the effect of removing the
+The situation abrubtly changed in 2007, when Christian Marchal
+introduced a remarkable new geometric partition of space, adapted to
+the Kepler conjecture.  His partition functioned in much the same way
+as decomposition stars, but it had the effect of removing the
 complexities from the text part of the proof (at the expense of more
-cases and longer computer calculations).  At first, Marchal claimed to
-have a new proof of the Kepler conjecture, but inspection of his work
-showed that the calculations were incomplete, and he backed away from
-the claim \cite{marchal:2007}.
+cases and longer computer calculations).  At first, Marchal appeared
+to claim to have a new proof of the Kepler conjecture, but inspection
+of his work showed that the calculations were incomplete, and he
+backed away from the claim \cite{marchal:2007}.
 
 Nevertheless, his research contains ingenious ideas that brought a
 beneficial transformation in the formalization project.  Starting in
 2007, abandoning the decomposition stars, I adapted the proof and
 calculations to Marchal's partition, and this resulted in a much
 shorter final text.
-%The formalization project owes a great deal to
-%Marchal's improved geometric partition of space and to several of his
-%key lemmas.
 % https://hal.archives-ouvertes.fr/file/index/docid/160350/filename/070615_Kepler.pdf
-%\footnote{Marchal's work contains ingenious
-%  ideas, but on superficial inspection, his paper looked suspicious:
-%  an $18$-page paper with hand-drawn figures, poor typesetting, and
-%  trivial appearance, which nonetheless claimed a new proof of the
-%  Kepler conjecture. It is a great reminder not to judge too quickly.}
 
 \subsection{outline}
 
 An outline of the proof of the Kepler conjecture goes as follows.
 First, as explained already, a geometric partition of space is used to
-reduce the conjecture to a statement about a single congruent ball and its
-immediate neighbors.  The combinatorial structure of the neighboring
-congruent balls is encoded as a planar graph.  A list of combinatorial
-properties is established that must hold of any planar graph that
-encodes a counterexample to the Kepler conjecture.  A graph with these
-properties is called a \emph{tame} planar graph.  A computer search
-enumerates all tame planar graphs, up to isomorphism.
+reduce the conjecture to a statement about a single congruent ball and
+its immediate neighbors.  The combinatorial structure of the
+neighboring congruent balls is encoded as a planar graph.  A list of
+combinatorial properties is established that must hold for any planar
+graph that encodes a counterexample to the Kepler conjecture.  A graph
+with these properties is called a \emph{tame} planar graph.  A
+computer search enumerates all tame planar graphs, up to isomorphism.
 
 The remaining steps analyze one tame planar graph at a time, to rule
 out each one as a potential counterexample.  The planar graph is a
 combinatorial object.  To realize a counterexample, it would be
 necessary to realize the graph as a geometric configuration in
 Euclidean space, with nodes realized as centers of nonoverlapping
-congruent balls and edges realized as metric conditions between neighboring
-congruent balls.  This geometric configuration is highly constrained by
-nonlinear constraints.  The constraints can be relaxed to linear
-constraints, and linear programming is used to rule out each potential
-counterexample.  When a single linear program does not suffice, branch
-and bound algorithms are used.  When every potential counterexample is eliminated,
-the Kepler conjecture is proved.
+congruent balls and edges realized as metric conditions between
+neighboring congruent balls.  This geometric configuration is highly
+constrained by nonlinear constraints.  The constraints can be relaxed
+to linear constraints, and linear programming is used to rule out each
+potential counterexample.  When a single linear program does not
+suffice, branch and bound algorithms are used.  When every potential
+counterexample is eliminated, the Kepler conjecture is proved.
 
 Throughout the proof, various nonlinear inequalities are used that are
 checked by computer.  Thus, the full proof of the Kepler
@@ -385,12 +380,13 @@ achieve something better.
 I am a revisionist; the original proof of the Kepler conjecture was
 completely transformed during formalization. Marchal cells replaced
 decomposition stars, and we undertook a systematic investigation of
-the properties of the cells.  Inspired by Gonthier's formalization of
-the Four-Color theorem, we replaced planar graphs with hypermaps.  A
-new concept, called fans, was used to describe the geometric
-realization of planar graphs.  The proof was modularized by breaking
-it into largely independent sections.  It took an entire book
-\emph{Dense Sphere Packings} to describe the transformed proof \cite{DSP}.
+the properties of the cells.  Inspired by Georges Gonthier's
+formalization of the Four-Color theorem, we replaced planar graphs
+with hypermaps.  A new concept, called fans, was used to describe the
+geometric realization of planar graphs.  The proof was modularized by
+breaking it into largely independent sections.  It took an entire book
+\emph{Dense Sphere Packings} to describe the transformed proof
+\cite{DSP}.
 
 Week by week, concerning my part in the collaboration, I asked which
 would most advance the formalization: revising the mathematical proof
@@ -434,7 +430,8 @@ long nonlinear inequality verifications) have been checked by at least
 three groups: the Flyspeck team before announcement, Josef Urban, and
 an anonymous referee.  As part of a systematic audit of the
 formalization, Mark Adams exported the main part of the verification
-to the HOL Zero system and reconfirmed our results \cite{adams2014flyspecking}.
+to the HOL Zero system and reconfirmed our results
+\cite{adams2014flyspecking}.
 
 The full Flyspeck project is freely available at our github page.%
 \footnote{\url{https://github.com/flyspeck/flyspeck}}
@@ -446,9 +443,10 @@ The full Flyspeck project is freely available at our github page.%
 John Harrison was the primary contributor to HOL Light libraries.  He
 contributed libraries in trigonometry, multivariate differential
 calculus, measure and integration in $\ring{R}^n$, convex sets, and
-polyhedra.  He contributed powerful tactics such as the
-\emph{without-loss-of-generality} tactic, which automates some of what
-mathematicians mean in proofs when they write those words.
+polyhedra \cite{DBLP:journals/jar/Harrison13}.  He contributed
+powerful tactics such as the \emph{without-loss-of-generality} tactic,
+which automates some of what mathematicians mean in proofs when they
+write those words \cite{DBLP:conf/tphol/Harrison09}.
 
 Aside from Harrison's libraries, most lemmas
 were formulated minimally rather
@@ -458,7 +456,7 @@ library development.  For example, the formalization avoids matrices,
 integration on manifolds (such as a sphere), and the general Jordan
 curve theorem (using only a special case).
 
-After the project was completed, John Harrison converted limits in his
+After the project was completed, Harrison converted limits in his
 analysis library from nets to filters to bring the library more in
 line with other proof assistants.  This change required the proof
 scripts to be updated.
@@ -466,9 +464,6 @@ Our project would benefit from further work to organize the project
 and to make it available for other purposes (along the lines
 of the Math Components Library that organized the Feit-Thompson
 Odd Order theorem).
-%There has been nothing comparable to the
-%Mathematical Components Library in Coq, which systematized the
-%material from the Feit-Thompson Odd Order formalization.
 
 \subsection{international collaboration}
 
@@ -477,42 +472,29 @@ international collaboration.  The definitions and statements of lemmas
 act as a specification of the project.  The top-level architecture of
 the project shows how the main theorem follows from the lemmas.  Any
 formal proof of a lemma -- no matter where, how, or by whom it is
-produced -- advances the project.  
+produced -- advances the project.
 
 
 The Flyspeck project was a large international collaboration.  The
-main centers were the Isabelle group in Munich (directed by Nipkow),
-the Hanoi group (managed by Mark Adams and led by Hoang Le Truong), my
-Pittsburgh group, and various independent contributors.  The
-collaboration was sustained by significant amounts of travel between
-Munich, Pittsburgh, and Hanoi.  Some of the happiest news
-from the Flyspeck project is that this collaboration worked.
-
-%The Munich group was directed by Nipkow.  Coordination was obtained by
-%email contact and by extended visits (by Nipkow and Obua) to
-%Pittsburgh.
-
-%Ta Thi Hoi An and Mark Adams were the managers in Hanoi.  There was
-%extensive US-Vietnam contact during the project: I went on sabbatical
-%to Hanoi in 2007.  We organized a major two-month program in Hanoi in
-%2999?, and a follow-up workshop the next summer.  Hoang Le Truong and
-%Tran Nam Trung made extended visits to the US.  Nguyen Quang Truong
-%came to Pitt as a graduate student.  Adams organized weekly Flyspeck
-%meetings in Hanoi.  I traveled to Vietnam about two times per year
-%during that period.
+main centers were the Isabelle group in Munich (directed by Tobias
+Nipkow), the Hanoi group (managed by Adams and led by Hoang Le
+Truong), my Pittsburgh group, and various independent contributors.
+The collaboration was sustained by significant amounts of travel
+between Munich, Pittsburgh, and Hanoi.  Some of the happiest news from
+the Flyspeck project is that this collaboration worked.
 
 Following its loose collaborative style, the project includes several
-different tactic and proof styles: John Harrison's efficient compact
-proofs; Solovyev's port of SSReflect to HOL Light;\footnote{SSReflect
-  is a collection of tactics developed by Georges Gonthier for the
-  formal proof in Coq of the Four-Color theorem and used subsequently
-  in the formalization of the Odd Order theorem. Solovyev ported
-  SSReflect and several of its libraries to HOL Light.};
-a large
-collection Hanoi tactics (sometimes expressed in Vietnamese, such as
-the popular \emph{nhanh} tactic, which is Vietnamese for \emph{fast});
-and my own idiosyncratic collection of tactic macros, which allowed me
-to quickly generate long proof scripts with few keystrokes.
+different tactic and proof styles: Harrison's efficient compact
+proofs; Alexey Solovyev's port of SSReflect to HOL
+Light;\footnote{SSReflect is a collection of tactics developed by
+  Gonthier for the formal proof in Coq of the Four-Color theorem and
+  used subsequently in the formalization of the Odd Order
+  theorem. Solovyev ported SSReflect and several of its libraries to
+  HOL Light \cite{solovyev2013thesis}.}; a large collection Hanoi
+tactics (sometimes expressed in Vietnamese, such as the popular
+\emph{nhanh} tactic, which is Vietnamese for \emph{fast}); and my own
+idiosyncratic collection of tactic macros, which allowed me to quickly
+generate long proof scripts with few keystrokes.
 
 Occasionally loose collaboration became problematic, and the anarchy
 was barely controlled.  For example, we had to grapple with three
@@ -520,17 +502,6 @@ libraries for lists that had subtle differences: an imported library from
 Isabelle that came bundled with the tame graphs, an imported library
 from Coq that arrived with Solovyev's port of SSReflect, and
 Harrison's native HOL Light library.
-
-%\subsection{tactics}
-
-%A HOL Light proof script is written directly as code in the
-%OCaml programming language, except that any phrase enclosed between
-%backquotes is parsed directly as a term in HOL Light.  
-
-%Solovyev developed a SSReflect mode for HOL Light and imported
-%several libraries from the Coq SSReflect library.
-
-
 
 \subsection{alignment between informal and formal}
 
@@ -594,13 +565,13 @@ invocation of the theorem requires the theorem to be cited by name.
 Some systems have turned to hammers as a way to relieve the burden
 that the cite-by-name paradigm imposes on users.
 
-Zumkeller and Harrison developed a heavily used search tool for HOL
-Light.  Theorems can be searched by for name (according to any regular
-expression) and by matching subterms (including type information) in
-the theorem statement or conclusion.  The theorem name includes the
-module name, permitting localized search within a given module.
-Boolean operations combine searches.  With practice, the tool is
-very effective.
+Roland Zumkeller and Harrison developed a heavily used search tool for
+HOL Light.  Theorems can be searched by for name (according to any
+regular expression) and by matching subterms (including type
+information) in the theorem statement or conclusion.  The theorem name
+includes the module name, permitting localized search within a given
+module.  Boolean operations combine searches.  With practice, the tool
+is very effective.
 
 I recorded about ten thousand of my searches.  In many
 cases, we can guess the lemma sought from the search term:
@@ -622,14 +593,14 @@ cases, we can guess the lemma sought from the search term:
 \subsection{tame graphs}
 
 The first major success in the formalization of the Kepler conjecture
-was the Bauer-Nipkow formalization of the classification of tame
-planar graphs in Isabelle.  (As mentioned above, the word \emph{tame}
-has a technical meaning in the proof.  A tame graph is one that
-satisfies a long list of technical conditions that means that the
-graph encodes the combinatorial structure of a potential
-counterexample to the Kepler conjecture. Thus, the classification of
-tame planar graphs gives the classification of possible
-counterexamples.)
+was the Gertrud Bauer-Nipkow formalization of the classification of
+tame planar graphs in Isabelle \cite{DBLP:conf/cade/NipkowBS06}.  (As
+mentioned above, the word \emph{tame} has a technical meaning in the
+proof.  A tame graph is one that satisfies a long list of technical
+conditions that means that the graph encodes the combinatorial
+structure of a potential counterexample to the Kepler
+conjecture. Thus, the classification of tame planar graphs gives the
+classification of possible counterexamples.)
 
 The Bauer-Nipkow formalization was crucial in launching the Flyspeck
 project and in galvinizing interest.  However, as the earliest part of
@@ -647,9 +618,9 @@ proof is not translated into HOL Light.  This hand translation is the
 weakest link in the entire Flyspeck project.
 
 As a step towards verifying the classification in HOL Light, in
-unpublished work from 2018, Freek Wiedijk has produced an automated
+unpublished work from 2018, Wiedijk has produced an automated
 translation of the tame graph classification from Isabelle to OCaml,
-which John Harrison then (semi-manually) translated to definitions in HOL Light.
+which Harrison then (semi-manually) translated to definitions in HOL Light.
 (Someone needs to check the compatibility of Harrison's translation with mine.)
 Solovyev then created a tool that translates HOL Light equational theorems
 into optimized executable OCaml code that computes using primitive inference rules.%
@@ -685,10 +656,28 @@ give a series of lemmas proving that the redundant data remains
 in sync.)  Moreover, other planar graph generating algorithms
 are available, such as \emph{plaintri}.
 
+\subsection{linear programs}
+
+Steven Obua's thesis initiated the verification of linear program for
+the Flyspeck project
+\cite{DBLP:conf/tphol/Obua05}\cite{DBLP:journals/amai/ObuaN09}.  The
+verification of linear programs was completed by Solovyev's thesis
+\cite{solovyev2013formal}.  Solovyev has developed a stand-alone tool
+for the verification of linear programming certificates in HOL Light.
+His tool is highly optimized \cite{solovyev2011efficient}.
+
+The linear programming part of the proof is not simply a matter of
+running linear programs.  The linear programs are generated by a
+complex procedure from the combinatorial structure of the tame planar
+graphs.  The output from the linear program must be translated back
+into bounds on an underlying nonlinear optimization generated from the
+graph.
+
 \subsection{nonlinear inequalities}
-Although other made contributions, Solovyev deserves enormous
-credit for the verification of the computer-assisted portions of the
-proof (the linear programs and nonlinear inequalities).
+Although others made contributions, Solovyev deserves enormous credit
+for the verification of the computer-assisted portions of the proof
+(the linear programs and nonlinear inequalities)
+\cite{solovyev2013formal}.
 
 It was understood from the very beginning of the formalization of the
 Kepler conjecture that the largest challenge would be the
@@ -719,28 +708,27 @@ of a finite set of nonlinear inequalities that collectively imply
 the Kepler conjecture.  In no sense is the current collection
 optimal.  Much further research is justified.
 
-Starting in January 1994, I directed all my efforts toward a proof of the
-Kepler conjecture.  My decision to put full energies behind the
+Starting in January 1994, I directed all my efforts toward a proof of
+the Kepler conjecture.  My decision to put full energies behind the
 conjecture was shaped by a key factor among others: I first learned in
 1993 that interval arithmetic provided a reliable way to prove
-nonlinear inequalities.  Sam Ferguson joined me, and much of our
-research between 1995-1998 went into the development of efficient
-algorithms for proving nonlinear inequalities.  Eventually, we settled
-on using automatic differentiation to compute second order Taylor
-expansions of the nonlinear functions with certified bounds on the
-error terms.  When a Taylor expansion fails to give sufficient
-accuracy on a given box-shaped domain, we branch and bound (by
-adaptively bisecting the box and recursing on the smaller domains).
-When a partial derivative has fixed sign over the box, the function is
-monotone, and the inequality is implied by a restricted inequality
-over a face of the box, and the dimension drops.  (We do not claim
-originality in these techniques, but considerable work went into
-efficient implementation.)
+nonlinear inequalities.  Ferguson joined me, and much of our research
+between 1995-1998 went into the development of efficient algorithms
+for proving nonlinear inequalities.  Eventually, we settled on using
+automatic differentiation to compute second order Taylor expansions of
+the nonlinear functions with certified bounds on the error terms.
+When a Taylor expansion fails to give sufficient accuracy on a given
+box-shaped domain, we branch and bound (by adaptively bisecting the
+box and recursing on the smaller domains).  When a partial derivative
+has fixed sign over the box, the function is monotone, and the
+inequality is implied by a restricted inequality over a face of the
+box, and the dimension drops.  (We do not claim originality in these
+techniques, but considerable work went into efficient implementation.)
 
-Sam and I gave independent implementations of the algorithms (in C and
-C++) that we used to cross-check our code for bugs. Sam finished his
-thesis in 1997, but returned to University of Michigan for an
-extended visit in 1998 to prove the final outstanding nonlinear
+Ferguson and I gave independent implementations of the algorithms (in
+C and C++) that we used to cross-check our code for bugs. Ferguson
+finished his thesis in 1997, but returned to University of Michigan
+for an extended visit in 1998 to prove the final outstanding nonlinear
 inequalities as we prepared to announce the solution.
 
 To prepare for formalization, I ported the code to OCaml, and spent
@@ -748,17 +736,14 @@ months reworking the nonlinear inequalities until the programs
 terminated in about 10 hours (of intensive floating-point
 calculations).  In the end, the collection of nonlinear inequalites
 used for the formalization is completely different from the collection
-of inequalites that was used in the original 1998 proof.
-The algorithms remained very close to those used earlier.
+of inequalites that was used in the original 1998 proof.  The
+algorithms remained very close to those used earlier.
 
-Solovyev was entirely responsible for 
-formalization in HOL Light.
-%As we understood all along, this was the
-%largest single challenge of the whole project.
-An enormous amount of code optimization was necessary to bring the
-formal calculation within the reach of a large cloud computation.
-Some of Solovyev's optimizations included performing arithmetic in a
-large base rather than base $2$, building massive addition and
+Solovyev was entirely responsible for formalization in HOL Light.  An
+enormous amount of code optimization was necessary to bring the formal
+calculation within the reach of a large cloud computation.  Some of
+Solovyev's optimizations included performing arithmetic in a large
+base rather than base $2$, building massive addition and
 multiplication tables inside HOL-Light so that each arithmetic
 operation could be done by a simple look-up, precomputing the number
 of digits precision needed for each calculation and using the minimum
@@ -806,33 +791,6 @@ the Kepler conjecture as parametrized by various finite collections
 $C$ of nonlinear inequalities.  To each collection $C$ there is a cost
 as measured by the time required to verify the collection of
 inequalities.  We wish to learn a collection $C$ that minimizes cost.
-
-\subsection{linear programs}
-
-Steven Obua's thesis initiated the verification of linear program for
-the Flyspeck project. The verification of linear programs was
-completed by Solovyev's thesis.  Solovyev has developed a stand-alone
-tool for the verification of linear programming certificates in HOL
-Light.  His tool is highly optimized.
-
-The linear programming part of the proof is not simply a matter of
-running linear programs.  The linear programs are generated by a
-complex procedure from the combinatorial structure of the tame planar
-graphs.  The output from the linear program must be translated back
-into bounds on an underlying nonlinear optimization generated from the
-graph.
-
-
-
-
-%\section{Concluding Remarks}
-
-%Some have expressed an ambition to use artificial intelligence to
-%\emph{solve math} in 
-%the coming years.  To the ambitious, we offer the more modest
-%challenge of using AI to develop a next-generation proof of the Kepler
-%conjecture.  The current proof is now over 22 years old.
-
 
 \newpage
 
