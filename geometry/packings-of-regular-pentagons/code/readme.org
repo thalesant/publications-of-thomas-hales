@@ -1,0 +1,3 @@
+# M-x org-md-export-to-markdown
+* This directory contains the computer code that is used in the proof of the pentagonal ice-ray conjecture of Henley, Kuperberg, and Kuperberg.
+

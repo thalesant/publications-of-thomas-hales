@@ -1,0 +1,25 @@
+Minor comments of report_Y_on_v2.pdf.
+
+P.1. Fixed
+P.3. Fixed
+P.3. 2.1.
+P.3. 2.1. Fixed throughout.
+P.7  XX TODO
+P.12. XX TODO
+p.13. Fixed.
+p. 15. XX TODO.
+p. 18. XX TODO.
+p. 20. XX TODO.
+p. 24. Fixed.
+p 26. XX TODO
+p 27. Fixed throughout.
+p 28. Fixed.
+p 29. XX TODO
+p 30.1.8 XX TODO
+p 30.71 Fixed.
+p 30.1.72 XX TODO
+...
+p 55. Fixed.
+p 55. Fixed.
+...
+p. 59. Fixed.

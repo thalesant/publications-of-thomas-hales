@@ -119,7 +119,7 @@ article solves that problem.
 
 Henley and Kuperberg and Kuperberg have conjectured that the densest
 packing of congruent regular pentagons in the plane is achieved by a
-double-lattice arrangement: verticals column of aligned pentagons
+double-lattice arrangement: vertical columns of aligned pentagons
 pointing upward, alternating with vertical columns of aligned
 pentagons pointing downward (Figure~\rif{fig:double-lattice})
 \cite{Kup} \cite[p.801]{henley}.  This packing of pentagons is called
@@ -218,7 +218,7 @@ assume this fixed context.
 
 Initially, pentagons in a packing play two roles: they constrain the
 shapes of the Delaunay triangles and they carry mass for the density.
-We prefer to we change our model slightly so pentagons are only used
+We prefer to change our model slightly so pentagons are only used
 to constrain the shapes of triangles.  We replace the mass of each
 pentagon by a small, massive, circular disk (each of the same small
 radius) centered at the center of the pentagon, and of uniform density
@@ -256,7 +256,7 @@ single nonobtuse triangle.  Let $\epsM = 0.008$.
 % Numerical page 8. of nonobtuse notes.
 % numerical min checked 2016/2/18 in Mathematica.
 
-\subsection{examples}
+\subsection{Examples}
 
 While reading this article, it is useful to carry along a series of examples,
 illustrated in Figures~\rif{fig:KKtriangle} -- \rif{fig:obtuse}.
@@ -495,7 +495,7 @@ numerically minimum area (right). }
 
 
 
-\subsection{attachment, modified area, and clusters}
+\subsection{Attachment, modified area, and clusters}
 
 As mentioned above, our strategy for proving the pentagonal ice-ray
 conjecture is to collect triangles into finite clusters such that the
@@ -712,7 +712,7 @@ We give some simple consequences of our definitions.
   $\N$ is nonobtuse by definition, so $n_+(T)=0$.
 \end{proof}
 
-\begin{corollary}\libel{lemma:obtuse-b-arrow} 
+\begin{corollary}\libel{cor:obtuse-b-arrow} 
   If $(T_+,T_-)\in\N$ with nonobtuse target $T_-$, then there exists
   an obtuse triangle $T$ such that $T\rab T_-$.
 \end{corollary}
@@ -752,7 +752,7 @@ We give some simple consequences of our definitions.
 
 
 
-\subsection{the main inequality}
+\subsection{The main inequality}
 
 \begin{lemma}\libel{lemma:main}  
 If  every cluster $\C$ in every saturated packing of regular
@@ -846,7 +846,7 @@ unique periodic packing that achieves maximal density.
 \section{Pentagons in Contact}\libel{sec:contact}
 
 
-\subsection{notation}
+\subsection{Notation}
 
 By way of general notation, we use uppercase $A,B,C,\ldots$ for
 pentagons; $\v_A,\v_B,\ldots$ for the vertices of pentagons;
@@ -867,7 +867,7 @@ calculated angle.  We write $\area(T)= \area(d_1,d_2,d_3)$ for the
 area of triangle $T$ with edge lengths $d_1,d_2,d_3$.
 
 
-\subsection{triple contact}
+\subsection{Triple contact}
 
 In this subsection, we describe possible contacts between pentagons.
 
@@ -1137,7 +1137,7 @@ classified as a degenerate $LJ$-junction below.
   See Figure~\rif{fig:pin1}.
 \end{definition}
 
-\begin{definition} Let $T$ be a $3C$-triangle.  FIx the pointer
+\begin{definition} Let $T$ be a $3C$-triangle.  Fix the pointer
   directions on $T$, if ambiguous. We say $T$ has type {\it pin}-$k$,
   for $k\in \{0,1,2,3\}$ if $A$ points into $B$, $B$ points into $C$,
   $C$ points into $A$, and if there are exactly $k$ pentagons among
@@ -1240,7 +1240,7 @@ various types can be found in the appendix
 
 \section{Delaunay Triangle Areas}
 
-As an application of the classification from the previous section,
+As an application of the classification from the Section~\ref{sec:dimer-pair},
 this section makes a computer calculation of a lower bound on the
 longest edge length of a subcritical triangle.  We also obtain a lower
 bound on the area of a nonobtuse Delaunay triangle.
@@ -1676,7 +1676,7 @@ going into details.  Here is the proof sketch:
   minimizer along $\Gamma$ for $|t|<M$.
 \end{enumerate}
 
-\subsection{reduction to $O2C$ or long isosceles}
+\subsection{Reduction to $O2C$ or long isosceles}
 
 In this section, we show that each of $T=T_0$ and $T=T_1$ can be
 deformed in an area decreasing way until $T$ is either $O2C$ (that is,
@@ -1697,7 +1697,7 @@ with either $A$ or $C$ and that is non-increasing in triangle area
 until double contact is achieved.  This is $O2C$.  We do this for both
 $T=T_0$ and $T=T_1$.
 
-\subsection{reduction to $O2C$}\libel{sec:O2C}
+\subsection{Reduction to $O2C$}\libel{sec:O2C}
 
 In this subsection we show that each of $T=T_0$ and $T=T_1$ can be
 deformed in an area decreasing way so that it is $O2C$.
@@ -1820,7 +1820,7 @@ compute\footnote{calculations iso\_2C and iso\_2C'} with interval
 arithmetic to show that no such triangle is subcritical.  This
 completes this reduction.
 
-\subsection{reduction to triple contact}\libel{sec:squeeze}
+\subsection{Reduction to triple contact}\libel{sec:squeeze}
 
 In this stage, we initially assume that both triangles $T_0$ and $T_1$
 are $O2C$.  We deform so that both triangles are triple contact.
@@ -1910,7 +1910,7 @@ deformation until $A$ comes into contact with $C$.  This completes the
 reduction to $3C$ contact.
 
 
-\subsection{reduction to a small neighborhood of the ice-ray
+\subsection{Reduction to a small neighborhood of the ice-ray
   dimer}\libel{sec:nbd}
 
 From this stage forward, $T_0$ and $T_1$ are both triangles with
@@ -1948,7 +1948,7 @@ Because $T_0$ and $T_1$ both have triple contact, the dimer pair
 $(T_1,T_0)$ lies in a four-dimensional configuration space.  The
 strategy of the proof is to check by computer that there does not
 exist a dimer pair outside a small explicit neighborhood of the
-ice-ray dimer.  In other words, the area constrains $\area(T_1)\le
+ice-ray dimer.  In other words, the area constraints $\area(T_1)\le
 \acrit$ and $\area\{T_0,T_1\}\le2\acrit$ are impossible to satisfy
 when the longest edge on both triangles is the shared edge.  We run
 over $64 = 8\times 8$ cases depending on the combinatorial types of
@@ -2005,7 +2005,7 @@ Section~\rif{sec:pint}, and the fourth variable $x_4$ is determined by
 the type of $T_0$.  These computer calculations are used to complete this
 stage of the optimization.
 
-\subsection{defining a curve}\libel{sec:gamma}
+\subsection{Defining a curve}\libel{sec:gamma}
 
 At this stage, we define a curve $\Gamma$ in the configuration space
 of triple contact dimer pairs such that the ice-ray dimer is defined
@@ -2066,7 +2066,7 @@ define a $\Gamma$-triangle to be a $P$-triangle that occurs as one of
 the two triangles in a $\Gamma$-dimer.
 
 
-\subsection{reduction to the curve}\libel{sec:curve}
+\subsection{Reduction to the curve}\libel{sec:curve}
 
 At this stage, we show that we can reduce to points on the curve in
 the following sense.  Working with triple contact triangles in a small
@@ -2095,7 +2095,7 @@ Section~\rif{sec:auto-diff}.  This completes the reduction to points
 on the curve $\Gamma(t)$.
 % calculations in autodiff.ml
 
-\subsection{global minimization along the curve}
+\subsection{Global minimization along the curve}
 
 The final stage of the proof of Theorem~\rif{thm:dimer-area} is the
 minimization of the area of a $\Gamma$-dimer, for parameters
@@ -2203,7 +2203,7 @@ If $(T_1,T_0)\in\PD$, then $n_-(T_0)=0$.
 \begin{proof} 
   Suppose for a contradiction that $n_-(T_0)>0$.  Then $(T_+,T_0)\in
   \N$ for some $T_+$.  Because $T_0$ is nonobtuse,
-  Lemma~\rif{lemma:obtuse-b-arrow} implies that there exists some
+  Corollary~\rif{cor:obtuse-b-arrow} implies that there exists some
   obtuse triangle $T$ such that $T\Ra T_0$.  This is contrary to the
   previous lemma.
 \end{proof}
@@ -2221,7 +2221,7 @@ If $(T_1,T_0)\in\PD$, then $n_-(T_0)=0$.
   which has length less than $1.8$.  This gives the claim.
 
   Next we claim that $n_+(T_1)=0$.  Otherwise, $(T_1,T_0)\in \N$.
-  Because $T_0$ is nonobtuse, Lemma~\rif{lemma:obtuse-b-arrow} 
+  Because $T_0$ is nonobtuse, Corollary~\rif{cor:obtuse-b-arrow} 
   implies that there exists an obtuse
   triangle $T$ such that $T\Ra T_0$.  This contradicts
   Lemma~\rif{lemma:pd-obtuse}.
@@ -2316,7 +2316,7 @@ treat the easy case of singletons.
   $b(T) > \acrit$.  The result follows.
 \end{proof}
 
-\subsection{interaction of dimers and pseudo-dimers}
+\subsection{Interaction of dimers and pseudo-dimers}
 
 Next, we show the disjointness of dimers from pseudo-dimers.
 
@@ -2365,7 +2365,7 @@ Next, we show the disjointness of dimers from pseudo-dimers.
 \end{proof}
 
 
-\subsection{interaction with obtuse triangles}
+\subsection{Interaction with obtuse triangles}
 
 \begin{lemma}\libel{lemma:t2b-nonobtuse}
   If $T_1$ is obtuse, $T_0$ is nonobtuse, and if $T_1 \Ra T_0$, then
@@ -2442,7 +2442,7 @@ the definition of $\M$ and $m_-$.
 Thus, $m_-(T) >0$.  By the definition of $\M$, there exists
 $(T'_1,T'_0)\in\PD$ with $(T'_0,T)\in\M$ and $T'_0\Ra T$.  By
 Corollary~\rif{lemma:egress'}, we have $\area(T) >
-\acrit+\epsM$. Combined with Inequality ~\rif{eqn:2-ac}, this gives
+\acrit+\epsM$. Combined with Inequality ~\eqref{eqn:2-ac}, this gives
 $m_-(T)\ge 2$.  Repeating the argument, we have $(T''_1,T''_0)\in \PD$
 with $(T''_0,T)\in \M$ and $T''_0\Ra T$.  The triangles $T'$, $T'_0$,
 and $T''_0$ are distinct, because for example $b(T'_0) > \acrit \ge
@@ -2507,7 +2507,7 @@ We are finally in a position to prove Theorem~\rif{thm:dimer}.
 \end{proof}
 
 
-\subsection{cluster structure}
+\subsection{Cluster structure}
 
 
 % Fig 1. 1-obtuse.pdf page 13b.
@@ -3263,7 +3263,7 @@ $1.72$.
 \end{lemma}
 
 \begin{proof} 
-  If $n_-(T_0)>0$, then by Corollary~\rif{lemma:obtuse-b-arrow} there
+  If $n_-(T_0)>0$, then by Corollary~\rif{cor:obtuse-b-arrow} there
   exists an obtuse triangle $T'$ such that $T'\rab T_0$ and the
   cluster $\C$ contains an obtuse triangle.
 \end{proof}
@@ -3459,7 +3459,7 @@ We combine the proof with a proof of Theorem~\rif{thm2:main}.
 \libel{sec:appendix}
 
 
-\subsection{two pentagons in contact}\libel{sec:two}
+\subsection{Two pentagons in contact}\libel{sec:two}
 
 Let $A$ and $B$ be pentagons in contact, with $B$ the pointer at
 vertex $\v_B$ to the receptor pentagon $A$.  Label vertices
@@ -3512,7 +3512,7 @@ are particularly convenient, because they present the configuration
 space as a rectangle $[0,2\sigma]\times[0,2\pi/5]$.
 
 
-\subsection{angles of two pentagons in contact}\libel{sec:xalpha}
+\subsection{Angles of two pentagons in contact}\libel{sec:xalpha}
 
 Let $A$ and $B$ be two pentagons in contact, given in coordinates by
 $(x_\alpha,\alpha)$ as in the previous subsection.  Referring to
@@ -3637,7 +3637,7 @@ node[anchor=west] {$~\w$};
 %deg23 (ethetax (m 0.8) (pi25 - m 0.0));;
 %deg23 (ethetax (m 0.8) (pi25 + m 0.25));;
 
-\subsection{two pentagons in contact, alternative
+\subsection{Two pentagons in contact, alternative
   coordinates}\libel{sec:banana}
 
 Inversely, $d_{AB} = \norm{\c_A}{\c_B}$, $\theta$, and $\theta'$
@@ -3688,7 +3688,7 @@ boundary.
 
 
 
-\subsection{pentagon existence test}\libel{sec:pet}
+\subsection{Pentagon existence test}\libel{sec:pet}
 
 The values $(\dx{AB},\theta,\theta')$ can be defined for a pair of
 nonoverlapping pentagons, even when $A$ and $B$ do not touch.  The
@@ -3702,7 +3702,7 @@ whose values lie in the given intervals.  The interested reader can
 consult the computer code for the details of the test.
 
 
-\subsection{coordinates for zero, single, and double contact
+\subsection{Coordinates for zero, single, and double contact
   triangles}
 
 The configuration space of $P$-triangles in which no pair of pentagons
@@ -3800,7 +3800,7 @@ $\theta_{BCA}$, $\theta_{CBA}$.  Once again, we can algorithmically
 test whether a given four-tuple $(x_\alpha,\alpha,x_\gamma,\gamma)$
 comes from a $P$-triangle.
 
-\subsection{triple contact}
+\subsection{Triple contact}
 
 If we have coordinates on a $3C$-triangle that determine the variables
 $(x_\alpha,\alpha)$ for each of the pairs $\{A,B\}$, $\{B,C\}$, and
@@ -3917,7 +3917,7 @@ $\Gamma$.
 
 
 
-\subsection{triple contact at a $\Delta$-junction}
+\subsection{Triple contact at a $\Delta$-junction}
 
 We describe a coordinate system on $3C$-triangles of $\Delta$-junction
 type.  As indicated in Figure~\rif{fig:cord-delta}, we use coordinates
@@ -3974,7 +3974,7 @@ in this case.
 -- ++ (126+90 - 5.16:0.5);
 }
 
-\subsection{triple contact at a pinwheel type}
+\subsection{Triple contact at a pinwheel type}
 
 We describe a coordinate system on $3C$-triangles of pinwheel type.
 We assume that $C$ points into $B$, that $B$ points into $A$, and that
@@ -4015,7 +4015,7 @@ $3C$-triangle have lengths
 }
 
 
-\subsubsection{pinwheel type with a shared edge}
+\subsubsection{Pinwheel type with a shared edge}
 
 Now we specialize this discussion of Section \rif{sec:shared} to
 pinwheels.  Pinwheels have a rotational symmetry, so we may assume
@@ -4026,7 +4026,7 @@ variables are $(\bar x_\beta,\bar\beta)=(x_\beta,\beta)$.  The
 nonshared variable is $\bar\alpha=\alpha$.
 
 
-\subsection{triple contact at a $LJ$-junction type}
+\subsection{Triple contact at a $LJ$-junction type}
 
 We describe a coordinate system on $3C$-triangles of $LJ$-junction
 type.  As indicated in Figure~\rif{fig:cord-L}, we use coordinates
@@ -4111,7 +4111,7 @@ There does not exist an ice-ray triangle with longest edge along the
 edge $(A,B)$.
 
 
-\subsection{triple contact at a $TJ$-junction type}
+\subsection{Triple contact at a $TJ$-junction type}
 
 We describe a coordinate system on $3C$-triangles of $TJ$-junction
 type.  As indicated in Figure~\rif{fig:cord-T}, we use coordinates
@@ -4200,7 +4200,7 @@ angles by triangulating the $TJ$-region by extending the receptor edge
 of $A$ (of $B\to A$) and extending the receptor edge of $C$ (of $A\to
 C$).
 
-\subsection{triple contact at a pin-$T$ junction type}\libel{sec:pint}
+\subsection{Triple contact at a pin-$T$ junction type}\libel{sec:pint}
 We describe a coordinate system on $3C$-triangles of pin-$T$ junction
 type.  As indicated in Figure~\rif{fig:cord-pint}, we use coordinates
 $\alpha$, $\beta$, and $x_\alpha$.  The angles $\alpha$ and $\beta$
@@ -4294,7 +4294,7 @@ x_\alpha \le 2\sigma(1/\sin(2\pi/5) - 1) < 0.0605.
 % checked in calcs.ml 2016/9
 \end{proof}
 
-\subsubsection{pin-$T$-junction type}\libel{sec:one-pintx}
+\subsubsection{Pin-$T$-junction type}\libel{sec:one-pintx}
 
 A computer calculation\footnote{one\_pintx} shows that the longest
 edge in a pint-$T$-junction is always $B\to C$.  We specialize to
@@ -4316,7 +4316,7 @@ hashtables occupy between  1 and 2 GB of memory.
 
 
 
-\subsection{interval arithmetic}
+\subsection{Interval arithmetic}
 
 To control rounding errors on the computer, we use an interval
 arithmetic package for OCaml by Alliot and Gotteland, which runs on
@@ -4325,7 +4325,7 @@ are represented as pairs $(a,b)$ of floating point numbers, giving the
 lower $a$ and upper $b$ endpoints of the interval.
 
 
-\subsection{automatic differentiation}\libel{sec:auto-diff}
+\subsection{Automatic differentiation}\libel{sec:auto-diff}
 
 Recall that there are several ways to compute derivatives by computer,
 such as numerical approximation by a difference quotient
@@ -4381,7 +4381,7 @@ pentagonal ice-ray conjecture are not differentiable.  Our use of
 automatic differentiation is restricted to a small neighborhood of the
 ice-ray dimer, where all the relevant functions are analytic.
 
-\subsection{meet-in-the-middle}\libel{sec:mitm}
+\subsection{Meet-in-the-middle}\libel{sec:mitm}
 
 A common algorithmic technique for reducing the time complexity of an
 algorithms through greater space complexity is called {\it
@@ -4418,7 +4418,7 @@ including the Rubik's cube.
 
 We obtain computational bounds on the area of clusters of Delaunay
 triangles (or more accurately, $P$-triangles).  Each of our clusters
-will be assume to consist of one triangle (called the {\it central
+will be assumed to consist of one triangle (called the {\it central
 triangle}), flanked by one, two, or three additional triangles along
 its edges.  We call the flanking triangles {\it peripheral triangles}.
 The aim of each computation is to give a lower bound on the sum of the
@@ -4449,7 +4449,7 @@ generally beyond our computational reach when $k>0$.
 
 We can use MITM techniques to reduce to order $(1/\epsilon)^6$ cubes,
 and this puts all our computations (barely) within the reach of a
-laptop computer.  Specifically, we fix a edge size $\epsilon$ and
+laptop computer.  Specifically, we fix an edge size $\epsilon$ and
 cover the configuration space of peripheral triangles by cubes of size
 $\epsilon$, calculating area, edge lengths, inclination angles, and
 other relevant quantities (using interval arithmetic) over each cube.
@@ -4483,7 +4483,7 @@ carried into the next iteration.  In practice, to achieve our bounds
 in Section~\rif{sec:calc}, the smallest $\epsilon$ that was required
 was approximately $0.00024$.
 
-\subsection{preparation of the inequalities}
+\subsection{Preparation of the inequalities}
 
 Section~\rif{sec:calc} gives a sequence of inequalities that have been
 proved by MITM algorithms.  We organize these calculations to permit a
@@ -4538,7 +4538,7 @@ In the rest of this section, we describe how each calculation has been
 prepared, to reduce the dimension of the configuration space, prior to
 computation.
 
-\subsubsection{calculation~of Lemma~\rif{calc:pseudo1}} 
+\subsubsection{Calculation~of Lemma~\rif{calc:pseudo1}} 
 
 We repeat Lemma~\rif{calc:pseudo1}.  Let $(T_1,T_0)\in \PD$.  The edge
 shared between $T_0$ and $T_1$ has length less than $1.8$.  (The
@@ -4567,7 +4567,7 @@ to three subcases:
 \item $B$ has slider contact with $A$ and $\max(\dx{AB},\dx{BC})=1.8$.
 \end{enumerate}
 
-\subsubsection{calculation~of Lemma~\rif{calc:pseudo2}} 
+\subsubsection{Calculation~of Lemma~\rif{calc:pseudo2}} 
 
 We repeat the statement of Lemma~\rif{calc:pseudo2}.
 Let $(T_1,T_0)\in \PD$.  The longest edge of $T_0$
@@ -4584,7 +4584,7 @@ the shared pentagons, and we reduce to three cases:
 \item $B$ has slider contact with $A$, and $T_0$ is long isosceles.
 \end{enumerate}
 
-\subsubsection{calculation~of Lemma~\rif{calc:pseudo-area}} 
+\subsubsection{Calculation~of Lemma~\rif{calc:pseudo-area}} 
 
 We repeat the statement of Lemma~\rif{calc:pseudo-area}.
 Let $(T_1,T_0)\in\PD$.  Then $\area\{T_0,T_1\} \ge 2\acrit - \epsM$
@@ -4609,7 +4609,7 @@ were carried out with assumptions that were sufficiently relaxed to
 include this case of pseudo-dimer triple contact.
 % see dimer.ml run_group4.
 
-\subsubsection{calculation~of Lemma~\rif{calc:pseudo-area3}}
+\subsubsection{Calculation~of Lemma~\rif{calc:pseudo-area3}}
 
 We repeat the statement of Lemma~\rif{calc:pseudo-area3}.  Let
 $(T_1,T_0)\in\PD$. Assume $T_0\Ra T_-$.  Then $\area\{T_0,T_1,T_-\} >
@@ -4635,7 +4635,7 @@ consider six cases: each permutation on three letters determines a
 choice for the edge of $T_0$ shared with $T_1$, and a choice of the
 edge of $T_0$ shared with $T_-$.
 
-\subsubsection{calculation~of Lemma~\rif{calc:dimer-isosc}}
+\subsubsection{Calculation~of Lemma~\rif{calc:dimer-isosc}}
 
 We repeat the statement of Lemma~\rif{calc:dimer-isosc}.  Let
 $(T_1,T_0)\in DP$.  Then $T_1$ is not both $O2C$ and long isosceles
@@ -4645,7 +4645,7 @@ Negating the conclusion, we may assume that $T_1$ is $O2C$ and long
 isosceles and that $T_0$ is $O2C$.  We perform the calculation without
 further preparation.
 
-\subsubsection{calculation~of Lemma~\rif{calc:large}} %FHB.
+\subsubsection{Calculation~of Lemma~\rif{calc:large}} %FHB.
 
 We repeat the statement of Lemma~\rif{calc:large}.  Let $\{T_0,T_1\}$
 be given $P$-triangles (not necessarily a pseudo-dimer) such that
@@ -4678,7 +4678,7 @@ falls into one of the last four cases.  If the $1.8$ constraint does
 not bind, then we may translate $\bar B$ until $T_0$ is $O2C$.  Here
 $\{\bar A,\bar B,\bar C\}=\{A,B,C\}$ is a relabeling of the pentagons.
 
-\subsubsection{calculation~of Lemma~\rif{calc:pent3}} %HUQ.
+\subsubsection{Calculation~of Lemma~\rif{calc:pent3}} %HUQ.
 
 We repeat the statement of Lemma~\rif{calc:pent3}.  Let $T_1^i\Ra T_0$
 and $\area(T_1^i)\le\acrit$ for $i=0,1$ for distinct $P$-triangles
@@ -4698,7 +4698,7 @@ consider four cases:
   isosceles.
 \end{enumerate}  
 
-\subsubsection{calculation~of Lemma~\rif{calc:pent4}} 
+\subsubsection{Calculation~of Lemma~\rif{calc:pent4}} 
 
 We repeat the statement of Lemma~\rif{calc:pent4}.  Let $T_1^i\Ra T_0$
 and $\area(T_1^i)\le\acrit$ for $i=0,1,2$ for distinct $P$-triangles
