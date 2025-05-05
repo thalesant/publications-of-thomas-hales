@@ -1,3 +1,28 @@
 # M-x org-md-export-to-markdown
-* This directory contains the computer code that is used in the proof of the pentagonal ice-ray conjecture of Henley, Kuperberg, and Kuperberg.
+* Pentagon computer code
+
+- This directory contains the computer code that is used in the proof of
+the pentagonal ice-ray conjecture of Henley, Kuperberg, and Kuperberg.
+
+- The source code was written in 2016 in Objective Caml (.ml) and Mathematica (.m).
+  
+- The Objective Caml interval arithmetic code relies on Jean-Marc Alliot's
+    interval arithmetic package.  This library only works on Intel processors.
+
+        - The init.ml file gives a few comments about how to initialize Alliot's package.
+
+
+    Alliot's source code: https://www.alliot.fr/fbbdet.html.fr
+    Source code republished by Christope Troestler on github https://github.com/Chris00/ocaml-interval/
+
+- There are no other dependencies on outside packages.
+
+
+
+    
+
+** lib.ml Convenient Library functions.
+
+This file was written by John Harrison and is part of the HOL Light distribution.
+It contains a number of useful list processing functions.  
 
