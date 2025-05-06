@@ -1,7 +1,8 @@
 
 % The Optimal Packing of Regular Pentagons in the Plane, I
 % Tex file started June 23, 2015.
-
+% Revisions May 2025
+% See XX for issues.
 % 
 
 %Title: Packings of Regular Pentagons in the Plane,
@@ -14,7 +15,7 @@
 % global check of calculations in calcs.ml completed 2016/9/11.
 
 \def\area{\op{area}}
-\def\areta{\op{area}_\eta}
+\def\areta{\op{area}^\circ}
 \def\ao{a_\text{min}}
 \def\acrit{a_\text{crit}}
 \def\loc{\op{loc}}
@@ -246,13 +247,22 @@ We say that a Delaunay triangle (in any pentagon packing) is {\it
   subcritical} if its area is at most $\acrit$.  We will obtain a
 lower bound $\ao := 1.237$ on the area of a nonobtuse Delaunay
 triangle (Lemma~\rif{lemma:a0}).  This is a very good bound.  It is
-very close to the numerically smallest achievable area, which is
-approximately $1.23719$.\footnote{In the notation of the appendix, the
+very close to the numerically smallest achievable area,%
+\footnote{In the notation of the appendix, the
   numerical minimum is achieved by a pinwheel with parameters
-  $\alpha=\beta=0$ and $x_\gamma\approx 0.16246$.}  We write $\epsN :=
-\acrit - \ao \approx 0.05336$, for the difference between the desired
+  $\alpha=\beta=0$ and $x_\gamma\approx 0.16246$.}
+%
+ which is
+approximately $1.23719$.  We write 
+\begin{equation}\label{eqn:epsN}
+\epsN :=
+\acrit - \ao \approx 0.05336,
+\end{equation} for the difference between the desired
 bound $\acrit$ on averages of triangles and the bound $\ao$ for a
-single nonobtuse triangle.  Let $\epsM = 0.008$.
+single nonobtuse triangle.  Set
+\begin{equation}\label{eqn:epsM}
+\epsM := 0.008.
+\end{equation}
 % Numerical page 8. of nonobtuse notes.
 % numerical min checked 2016/2/18 in Mathematica.
 
@@ -372,7 +382,7 @@ Experimentally, the first triangle has the smallest area among all
 acute Delaunay triangles.  The second triangle is a cloverleaf that
 has two edges of minimal length $2\kappa$.  Experimentally, the
 third triangle minimizes the longest edge among subcritical acute Delaunay triangles.
-It is equalateral with edge length about $1.72256$.}
+It is equilateral with edge length about $1.72256$.}
 {
 \begin{scope}[scale=0.5]
 \threepent{0.00}{0.00}{85.23}{0.93}{1.33}{265.23}{1.86}{0.00}{229.23};
@@ -592,9 +602,9 @@ Define $\N_{\text{obtuse}}$ to be the set of pairs $(T_+,T_-)$ of
 Delaunay triangles such that
 \begin{enumerate}
 \item $T_-$ is obtuse;
-\item $T_+\Ra T_-$.
+\item $T_+\Ra T_-$;
 \item $T_+$ is nonobtuse and the longest edge of $T_+$ has length at
-  least $1.72$;
+  least $1.72$.
 \end{enumerate}
 
 Define  $\N_{\text{nonobtuse}}$ to 
@@ -635,11 +645,13 @@ n_-(T) = n_-(T,\N).
 \end{remark}
 
 
-We define the modified area function
+We define the modified area function using the constants $\epsN,\epsM$
+in Equations \eqref{eqn:epsN}, \eqref{eqn:epsM}:
 \begin{equation}
 b(T) := \op{area}(T) + \epsN (n_+(T) - n_-(T)) + \epsM (m_+(T) - m_-(T)).
 \end{equation}
-We say that $T$ is {\it $b$-subcritical} if $b(T) \le \acrit$.  We write
+We say that $T$ is {\it $b$-subcritical} if $b(T) \le \acrit$.  We define
+a relation $(\rab)$, writing
 $T_1\rab T_2$, if $T_1\Ra T_2$ and $T_1$ is $b$-subcritical.  An
 equivalence classes of triangles under the corresponding equivalence
 relation $(\equiv_b)$ is called a {\it cluster}.
@@ -2502,7 +2514,7 @@ We are finally in a position to prove Theorem~\rif{thm:dimer}.
   into the same cluster.  This is the full cluster, for otherwise, we
   would have say $T\rab T_0\rab T_1$, which is impossible by
   Lemma~\rif{lemma:rab-sequence}, for $T'$ nonobtuse.  And if $T'$ is
-  obtuse, this contradicts Lemma~\rif{lemma:t2b-nonobtuse}).
+  obtuse, this contradicts Lemma~\rif{lemma:t2b-nonobtuse}.
   This gives the proof.
 \end{proof}
 
@@ -2585,7 +2597,7 @@ pseudo-dimer $(T'_1,T'_0)$ such that $T'_0\Ra T_+$.  We have
 by Lemma~\rif{lemma:m2-area},
 \[
 b(T_+) \ge \area(T_+)+\epsN - \epsM m_-(T_+) 
-> (\acrit + \epsM) + \epsN -\epsM  3 \ge \acrit.
+> (\acrit + \epsM) + \epsN -3\epsM  \ge \acrit.
 \]
 \end{proof}
 
@@ -2710,7 +2722,9 @@ Here, $d_1 = \norm{\p}{\q}$.}{
   triangles (Remark~\rif{rem:delaunay}), Delaunay triangles never join
   along an edge that is the longest on both triangles.  Thus, $T_1$
   attaches to $T_0$ along an edge adjacent to the obtuse angle of
-  $T_0$.  The shared edge has length at least $\kappa\sqrt8$.  To
+  $T_0$.  The shared edge has length at least $\kappa\sqrt8$.  
+  Recall that the circumradius of a Delaunay triangle is at most $2$,
+  because of the saturation assumption.  To
   bound the area of $T_0$, we deform $T_0$ decreasing its area and
   increasing its longest edge and its circumradius, until we obtain a
   triangle of circumradius $\eta=2$, and shortest edges $2\kappa$ and

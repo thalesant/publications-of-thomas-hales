@@ -8,7 +8,7 @@ was posted to the archive, and Sept 9, 2016.
 
 *)
 
-#directory "/Users/namaste/Desktop/git/publications-of-thomas-hales/geometry/packings-of-regular-pentagons/code/";;
+#directory "(INSERT PATH TO)/code/";;
 #use "obsolete_interval.ml";;
 #use "init.ml";;
 

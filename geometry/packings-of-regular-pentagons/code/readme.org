@@ -4,25 +4,26 @@
 - This directory contains the computer code that is used in the proof of
 the pentagonal ice-ray conjecture of Henley, Kuperberg, and Kuperberg.
 
-- The source code was written in 2016 in Objective Caml (.ml) and Mathematica (.m).
+- The source code was written in 2016 in Objective Caml (.ml) and Mathematica (.m).  There was a slight cleanup in 2025.
   
 - The Objective Caml interval arithmetic code relies on Jean-Marc Alliot's
     interval arithmetic package.  This library only works on Intel processors.
 
-        - The init.ml file gives a few comments about how to initialize Alliot's package.
-
-
-    Alliot's source code: https://www.alliot.fr/fbbdet.html.fr
-    Source code republished by Christope Troestler on github https://github.com/Chris00/ocaml-interval/
+    - The init.ml file gives a few comments about how to initialize Alliot's package.
+    - Alliot's source code: https://www.alliot.fr/fbbdet.html.fr
+    - Source code republished by Christope Troestler on github https://github.com/Chris00/ocaml-interval/
 
 - There are no other dependencies on outside packages.
 
+- Some path directives need to be inserted in order to run.  From the /code directory
+  > grep -r "INSERT PATH"
+  to see where paths need to be inserted.
 
 
-    
+** ocaml directory.
 
-** lib.ml Convenient Library functions.
+- Library files:
+  - lib.ml Convenient Library functions. This file was written by John Harrison and is part of the HOL Light distribution. It contains a number of useful list processing functions.  
 
-This file was written by John Harrison and is part of the HOL Light distribution.
-It contains a number of useful list processing functions.  
+  - autodiff.ml This file implements automatic differentiation. See https://en.wikipedia.org/wiki/Automatic_differentiation.  Only first derivatives are computed.  The code is written specifically for the needs of the pentagon packing problem.
 

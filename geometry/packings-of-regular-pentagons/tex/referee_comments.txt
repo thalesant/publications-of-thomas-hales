@@ -19,6 +19,13 @@ p 30.1.8 XX TODO
 p 30.71 Fixed.
 p 30.1.72 XX TODO
 ...
+p 31.68 fixed.
+...
+p 32.3 fixed.
+p 32.eta fixed.
+p 33.how XX TODO
+p 33.2 fixed.
+...
 p 55. Fixed.
 p 55. Fixed.
 ...

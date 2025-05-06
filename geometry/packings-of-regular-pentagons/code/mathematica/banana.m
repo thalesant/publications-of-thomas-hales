@@ -10,7 +10,7 @@
 *)
    
 (* read in pentca.m before using these functions *)
-(* << "~/Desktop/git/publications-of-thomas-hales/geometry/packings-of-regular-pentagons/code/pentca.m"; *)
+(* << "(INSERT PATH TO)/code/mathematica/pentca.m"; *)
 
 mm[x_] := Mod[x, 2 Pi/5, -Pi/5];
 

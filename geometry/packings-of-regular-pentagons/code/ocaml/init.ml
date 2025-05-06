@@ -1,16 +1,17 @@
 (* 
 Need to run ocamlfpu from
-~/Desktop/interval directory
+(INSERT PATH TO INTERVAL)/interval directory
 
 If starting *ocaml-toplevel*, 
 start with ocamlfpu in *shell*
 then rename buffer to *ocaml-toplevel*
 
-#directory "/home/hasty/Desktop/git/publications-of-thomas-hales/geometry/packings-of-regular-pentagons/code/";;
+
+#directory "(INSERT PATH TO)/code/ocaml/";;
 #use "init.ml";;
 *)
 
-#directory "/home/hasty/Desktop/git/publications-of-thomas-hales/geometry/packings-of-regular-pentagons/code/";;
+#directory "(INSERT PATH TO)/code/ocaml";;
 (*
 #use "topfind";;
 #list;;
@@ -33,8 +34,8 @@ let hol_expand_directory s =
   else s;;
 
 let load_path = ref ["."; "$";
-"/home/hasty/Desktop/git/publications-of-thomas-hales/geometry/packings-of-regular-pentagons/code/";
-"/Users/namaste/Desktop/git/publications-of-thomas-hales/geometry/packings-of-regular-pentagons/code/";
+"(INSERT PATH TO)/code/ocaml";
+"(INSERT PATH TO)/code/ocaml";
 ];;
 
 let loaded_files = ref [];;
