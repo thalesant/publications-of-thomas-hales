@@ -1,10 +1,39 @@
 Minor comments of report_Y_on_v2.pdf.
 
+General.
+
+1. At the end of Section 2, it would make sense to include the
+detailed structure of the proof (of Theorem 14) explaining what in
+particular will be done in each of Sections 3-10.
+
+2. As mentioned above, Sections 7-10 are very tough to read. Whenever
+possible, motivations for lemmas and illustrations should be added.
+
+3. I tried to check numerical calculations provided in the project
+code repository. The way they are contained in the repository is
+fairly disorganized. There are different folders for the project in
+different places with a bunch of files in each. It is really hard to
+determine where a particular calculation can be found. I realize that
+the files were created 9 years ago so they may not be as organized as
+initially intended but, for the reader’s convenience, this should be
+fixed.
+
+I suggest a uniform approach: for each computer-assisted statement it
+should be clearly mentioned that it is computer-assisted (this is
+already done for some statements but not for all); each computer-
+assisted statement in the paper should contain a concrete path to the
+respective calculation in the repository, that is,
+folderX-folderY-fileZ-placeinfileT, not just a footnote ``calculation
+x" (where? how do I find it?). Files should be properly commented as
+well to see the clear correspondence to the place in the paper. There
+are some comments in the files now but that’s not enough.
+
+
+
 P.1. Fixed
 P.3. Fixed
-P.3. 2.1.
 P.3. 2.1. Fixed throughout.
-P.7  XX TODO
+P.7. Fixed.
 P.12. XX TODO
 p.13. Fixed.
 p. 15. XX TODO.
