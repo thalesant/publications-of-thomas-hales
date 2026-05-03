@@ -2,13 +2,14 @@
 % The Optimal Packing of Regular Pentagons in the Plane, I
 % Tex file started June 23, 2015.
 % Revisions May 2025
+% Revisions May 2026
 % See XX for issues.
 % 
 
 %Title: Packings of Regular Pentagons in the Plane,
 % draft Nov, 2015.
 % version 2, June 2016
-%Authors: Thomas Hales, Woden Kusner.
+% Authors: Thomas Hales, Woden Kusner.
 
 % global spellcheck (done Aug 27 2016).
 % Notation: kappa = c = rho = cos pi /5.
@@ -129,21 +130,23 @@ the {\it pentagonal ice-ray} in Dye's book on Chinese lattice designs
 pentagonal ice-ray, originating from Chengdu, China around 1900 CE.
 % also Y, symmetry Ice-ray.
 
- We call this the {\it pentagonal ice-ray  conjecture}.
+We call this the {\it pentagonal ice-ray  conjecture}.
 This packing has density
 \[
 \frac{5 - \sqrt{5}}3 \approx 0.921311.
 \] % Checked 2016/2/18. In Vallentin, p.3.  calcs.ml.
+% Mathematica densityK
 Before our work, the best known bound on the density of packings of
 regular pentagons was $0.98103$, obtained through the representation
 theory of the group of isometries of the plane \cite{Val}.  Our
 research is a continuation of W. Kusner's thesis \cite{Kus}, which
 proves the local optimality of the pentagonal ice-ray.
-% 0.98103 page 27 of Vallentin. Checked 2016/2/18.
+% 0.98103 page 27 of Vallentin. Checked 2016/2/18 and 5/2025.
 
 As far as we know, our methods are adequate for the solution of other
 related problems in geometric optimization.  The limiting factor seems
 to be the availability of sufficient computer resources.
+
 
 \tikzfig{double-lattice}{The pentagonal ice-ray.  All figures show
 pentagons in red and Delaunay triangles in blue.}
@@ -172,7 +175,9 @@ pentagons in red and Delaunay triangles in blue.}
 %\section{Introduction}
 
 This article gives a computer-assisted proof of the pentagonal ice-ray
-conjecture.  The proof appears at the end of Section~\rif{sec:nonobtuse}.
+conjecture.  A discussion of the computer calculations appears in
+Appendix~\ref{appendix:cc}.
+The proof of the theorem appears at the end of Section~\rif{sec:nonobtuse}.
 
 
 \begin{theorem}\libel{thm:main}  
@@ -192,6 +197,7 @@ $2\sigma$.  (All of the numerical calculations in this article have
 been checked in a file {\tt calcs.ml}, which is available for download
 from the project code repository \cite{Git}.)
 % checked 2016/2/18 in calcs.ml.
+% Mathematica kapp, sigma. rechecked 5/2025.
 
 All pentagon packings will be assumed to be saturated; that is, no
 further regular pentagons can be added to the packing without overlap.
@@ -205,9 +211,10 @@ vertices of the triangles are alway taken to be the centers of the
 pentagons.  The saturation hypothesis implies that no Delaunay
 triangle has circumradius greater than $2$.  This property of Delaunay
 triangles is crucial.   Every edge of a Delaunay
-triangle has length at most $4$.
+triangle has length at most $4$; that is, the maximum diameter of
+a Delaunay triangle.
 
-A Delaunay triangle in a pentagon packing has edge lengths at least
+Each Delaunay triangle in a pentagon packing has edge lengths at least
 $2\kappa$.  This minimum Delaunay edge length is attained exactly when
 the the two pentagons have a full edge in common.
 
@@ -231,8 +238,10 @@ minimization.
 
 We write 
 \[
-\acrit := \frac{3}{2}{ \sigma \kappa(1+\kappa)} \approx 1.29036
+\acrit := \frac{3}{2}{ \sigma \kappa(1+\kappa)} =
+\frac{3}{16}\sqrt{5(5+2\sqrt5)}\approx 1.29036
 \] % checked 2016/2/18 in calcs.ml
+% Mathematica aK
 for the common (critical) area of every Delaunay triangle in the 
 pentagonal ice-ray.
 
@@ -266,6 +275,22 @@ single nonobtuse triangle.  Set
 % Numerical page 8. of nonobtuse notes.
 % numerical min checked 2016/2/18 in Mathematica.
 
+Key constants are displayed in the following table.
+\bigskip
+\fig{constant}{Key real constants}%
+{
+\begin{tabular}{llll}
+{\bf Constant} & {\bf Approx. Value} & {\bf Note} \\
+$\kappa$ & $\cos(\pi/5)\approx 0.809$ & pentagon inradius \\
+$\sigma$ &$\sin(\pi/5)\approx 0.5878$ & pentagon half-edge \\
+$\acrit$ &1.29 & ice-ray triangle area\\
+$\ao$ & 1.237 & non-obtuse triangle area lower bound\\
+$\epsN$ & 0.05336 & correction term\\
+$\epsM$ & 0.008 & correction term\\
+\end{tabular}
+}
+
+
 \subsection{Examples}
 
 While reading this article, it is useful to carry along a series of examples,
@@ -277,10 +302,6 @@ problem.  These different examples can interact with one another in
 potentially complicated ways.  The proof of the main theorem must sort
 through these interactions.
 
-(Another essential ingredient in the understanding of the proof is a
-rather large body of computer code that is used to carry out the
-computer-assisted portions of the proof.  We will have more to say
-about this later.)
 
 
 
@@ -564,6 +585,8 @@ $n_\pm$, $m_\pm$, $b(T)$, $(\rab)$, and cluster.
 We write $DP$ for the set of dimer pairs.
 \end{definition}
 
+In particular, the two triangles in a dimer pair attach to each other.
+
 \begin{definition}[pseudo-dimer]
   We define a pseudo-dimer to be an ordered pair $(T_1,T_0)$ of
   Delaunay triangles such that
@@ -594,7 +617,7 @@ n_-(T_-,\S)
 
 We define $\N$ as the disjoint union of two sets of ordered pairs: $\N
 = \N_{\text{obtuse}} \sqcup \N_{\text{nonobtuse}}$.  The set
-$\N_{\text{obtuse}}$ consists of those pairs with obtuse target and
+$\N_{\text{obtuse}}$ consists of those pairs with obtuse target, and
 $\N_{\text{nonobtuse}}$ are those pairs with nonobtuse target $T_-$,
 as follows.
 
@@ -603,7 +626,7 @@ Delaunay triangles such that
 \begin{enumerate}
 \item $T_-$ is obtuse;
 \item $T_+\Ra T_-$;
-\item $T_+$ is nonobtuse and the longest edge of $T_+$ has length at
+\item $T_+$ is nonobtuse, and the longest edge of $T_+$ has length at
   least $1.72$.
 \end{enumerate}
 
@@ -652,9 +675,15 @@ b(T) := \op{area}(T) + \epsN (n_+(T) - n_-(T)) + \epsM (m_+(T) - m_-(T)).
 \end{equation}
 We say that $T$ is {\it $b$-subcritical} if $b(T) \le \acrit$.  We define
 a relation $(\rab)$, writing
-$T_1\rab T_2$, if $T_1\Ra T_2$ and $T_1$ is $b$-subcritical.  An
-equivalence classes of triangles under the corresponding equivalence
+$T_1\rab T_0$, if $T_1\Ra T_0$ and $T_1$ is $b$-subcritical.  An
+equivalence class of triangles under the corresponding equivalence
 relation $(\equiv_b)$ is called a {\it cluster}.
+
+When $(T_+,T_-)\in\N$, the formula for $b(T)$ adds to $\op{area}(T_+)$
+and subtracts from $\op{area}(T_-)$. Although $b(T)$ is defined
+by a formula, we can visualize the modified area geometrically
+as an actual transfer of area.  Similarly, when $(T_+,T_-)\in\M$,
+we visualize a transfer of area.
 
 We note that $(\rab)$ is given by a translation-invariant rule.  The
 function $b(T)$ is also translation invariant and depends only on
@@ -1257,6 +1286,12 @@ this section makes a computer calculation of a lower bound on the
 longest edge length of a subcritical triangle.  We also obtain a lower
 bound on the area of a nonobtuse Delaunay triangle.
 
+An essential ingredient in the understanding of the proof is a
+rather large body of computer code that is used to carry out the
+computer-assisted portions of the proof.  We discuss
+computer code in Appendix~\ref{appendix:cc}.
+
+
 \begin{lemma}\libel{lemma:21} 
   A nonobtuse subcritical Delaunay triangle has edge lengths at most $2.1$.
 \end{lemma}
@@ -1296,7 +1331,7 @@ which is not subcritical.
 In a $P$-triangle, we say that a pentagon $A$ has {\it primary
   contact} if one or more of the following three conditions hold:
 \begin{enumerate}
-\item (slider contact) The pentagon $A$ and one $B$ of the other two
+\item (slider contact) The pentagon $A$ and one of the other two pentagons
    share a positive length edge segment;
 \item (midpointer contact) A vertex of one of the other two pentagons
   is the midpoint of one of the edges of the pentagon $A$; or
@@ -1325,7 +1360,7 @@ them together.
   $\kappa\sqrt{8}$.  Then the $P$-triangle can be continuously
   deformed until $A$ is in primary contact, while preserving the
   following constraints: the deformation (1) maintains nonobtuseness,
-  (2) fixes the edge length $\dx{AB}$ and does not increasing the area
+  (2) fixes the edge length $\dx{AB}$ and does not increase the area
   of the triangle, and (3) keeps fixed the other two pentagons $B$ and
   $C$.
 \end{lemma}
@@ -1635,7 +1670,10 @@ The proof will fill the entire section.  The strategy of the proof is
 to give a sequence of area decreasing deformations to $(T_1,T_0)$,
 until the ice-ray dimer is reached.
 
-We fix notation that will be used throughout this section. Let
+
+\noindent
+{\bf Context and Notation.} We fix context and
+notation that will be used throughout this section. Let
 $(T_1,T_0)$ be a dimer pair.  The $P$-triangle $T_1$ has a pentagon
 centered at each vertex.  We label the pentagons of $T_1$ as $A$, $B$,
 $C$, with $A$ and $C$ shared with $T_0$.  We call $B$ the outer
@@ -4328,6 +4366,8 @@ article take about 60 hours in total to run on an Intel quad 2.6 GHz
 processor with 3.7GB memory, running the Ubuntu operating system.  The
 hashtables occupy between  1 and 2 GB of memory.
 
+Mathematica was also used for secondary tasks such as computing numerical
+constants and generating figures for this article.
 
 
 \subsection{Interval arithmetic}
