@@ -26,7 +26,7 @@
 \def\rab{\Ra_{b}}
 
 \def\C{\mathcal C}
-\def\S{\mathcal S}
+\def\SS{\mathcal S}
 \def\N{\mathcal N}
 \def\M{\mathcal M}
 \def\T{\mathcal T}
@@ -275,7 +275,7 @@ single nonobtuse triangle.  Set
 % Numerical page 8. of nonobtuse notes.
 % numerical min checked 2016/2/18 in Mathematica.
 
-Key constants are displayed in the following table.
+Key constants are displayed in Figure~\ref{fig:constant}.
 \bigskip
 \fig{constant}{Key real constants}%
 {
@@ -606,13 +606,13 @@ $T_-$ by the condition $T_0\Ra T_-$.  The shared edge of $T_0$ and
 $T_-$, leading out of the pseudo-dimer is called the {\it egressive} edge of
 the pseudo-dimer or of the triangle $T_0$.
 
-For any set $\S$ of ordered pairs, and any Delaunay triangles $T_+$
+For any set $\SS$ of ordered pairs, and any Delaunay triangles $T_+$
 and $T_-$, let
 \[
-n_+(T_+,\S) = \card \{T_-\mid (T_+,T_-)\in \S\}
+n_+(T_+,\SS) = \card \{T_-\mid (T_+,T_-)\in \SS\}
 \quad\text{ and }\quad
-n_-(T_-,\S)
-= \card \{T_+\mid (T_+,T_-)\in \S\}.
+n_-(T_-,\SS)
+= \card \{T_+\mid (T_+,T_-)\in \SS\}.
 \]
 
 We define $\N$ as the disjoint union of two sets of ordered pairs: $\N
@@ -679,12 +679,6 @@ $T_1\rab T_0$, if $T_1\Ra T_0$ and $T_1$ is $b$-subcritical.  An
 equivalence class of triangles under the corresponding equivalence
 relation $(\equiv_b)$ is called a {\it cluster}.
 
-When $(T_+,T_-)\in\N$, the formula for $b(T)$ adds to $\op{area}(T_+)$
-and subtracts from $\op{area}(T_-)$. Although $b(T)$ is defined
-by a formula, we can visualize the modified area geometrically
-as an actual transfer of area.  Similarly, when $(T_+,T_-)\in\M$,
-we visualize a transfer of area.
-
 We note that $(\rab)$ is given by a translation-invariant rule.  The
 function $b(T)$ is also translation invariant and depends only on
 local information in the pentagon packing near the triangle $T$.
@@ -719,7 +713,42 @@ with a correction term to make it satisfy the main inequality
 the neighbor of the pseudo-dimer has area to spare
 (Corollary~\rif{lemma:egress'}).
 
-The correction terms allow us to keep the size of each cluster small.
+\tikzfig{visual}{The area modification $b(T)$ can
+be visualized as a small semicircular 
+knob (of area $\epsM$) or triangular notch (of area $\epsN$) 
+that transfers area
+from one Delaunay triangle to an adjacent one.
+}
+{
+\begin{scope}[scale=2,xshift=0cm]
+\coordinate (T) at (0.5706,-0.38541);
+\coordinate (U) at (0,0.7236);
+\coordinate (T') at ($(T)+(U)$);
+\draw[blue] (U) -- ++ (T) -- ++ ($-1.0*(T')$) -- ++ ($-1.0*(T)$) -- ++ (T');
+\draw[blue] (0,0) -- ++ ($0.5*(U)-(0,0.08)$);
+\draw[blue] (0, 0.5*0.7236 - 0.08)
+  arc[start angle=-90, end angle=90, radius=0.08];
+\draw[blue] ($0.5*(U)+(0,0.08)$) -- (U);
+\end{scope}
+\begin{scope}[scale=2,xshift=1.5cm]
+\coordinate (T) at (0.5706,-0.38541);
+\coordinate (U) at (0,0.7236);
+\coordinate (T') at ($(T)+(U)$);
+\draw[blue] (U) -- ++ (T) -- ++ ($-1.0*(T')$) -- ++ ($-1.0*(T)$) -- ++ (T');
+\draw[blue] (0,0) -- ++ ($0.5*(U)-(0,0.055/2.0)$) -- ++ (30:0.055) --++ (150:0.055)--(U) ;
+\end{scope}
+}
+
+
+When $(T_+,T_-)\in\N$, the formula for $b(T)$ adds to $\op{area}(T_+)$
+and subtracts from $\op{area}(T_-)$. Although $b(T)$ is defined by a
+formula, we can visualize the modified area geometrically as an actual
+transfer in the shape of a knob (or some other shape) of area $\epsN$.
+Similarly, when $(T_+,T_-)\in\M$, we visualize a transfer of area in
+the shape of a notch of area $\epsM$.  (See Figure~\ref{fig:visual}.)
+
+
+The modification terms allow us to keep the size of each cluster small.
 Eventually, we show that each cluster contains at most four triangles
 (Lemma~\rif{lemma:card4}).  This small size will be helpful when we
 turn to the computer calculations.  If $(T_+,T_-)$ is a member of $\N$
@@ -731,7 +760,7 @@ precise (for example, Lemma~\rif{lemma:Nb}).
 
 We give some simple consequences of our definitions.
 
-\begin{lemma} 
+\begin{lemma}\label{lemma:M-nonobtuse}
   If $(T_+,T_-)\in \M$, then both $T_+$ and $T_-$ are nonobtuse.
 \end{lemma}
 
@@ -780,15 +809,18 @@ We give some simple consequences of our definitions.
 \end{lemma}
 
 \begin{proof}
-  If $T_-$ is obtuse, then $m_-(T_-)=0$ by Lemma~\rif{lemma:obtuse-b}.
-  We may assume that $T_-$ is nonobtuse.  By the definition of $\N$
-  (nonobtuse target), the inequality $n_-(T_-) >0$ implies the
-  existence of an obtuse $T$ with $T\Ra T_-$ (by $\N$ condition 4).
-  If (for a contradiction) $m_-(T_-)>0$, then there exists
-  $(T_+,T_-)\in\M$.  We complete the proof by checking that
-  $(T_+,T_-)$ satisfies each membership condition of $\N$ (nonobtuse
-  target), so that $(T_+,T_-)\in\N$.  This contradicts disjointness:
-  $(T_+,T_-)\in \N\cap\M = \emptyset$.
+Assume for a contradiction that $n_-(T_-)>0$ and $m_-(T_-)>0$.  The
+inequality $m_-(T_-)>0$ gives the existence of a Delaunay triangle
+$T_+$ such that $(T_+,T_-)\in\M$.  By Lemma~\ref{lemma:M-nonobtuse},
+triangles $T_+$ and $T_-$ are nonobtuse.  We complete the proof by
+checking that $(T_+,T_-)$ satisfies each membership condition of $\N$
+(nonobtuse target), so that $(T_+,T_-)\in\N$.  All membership
+conditions except (4) are elementary. To obtain condition (4), we use
+the definition of $\N$ (nonobtuse target) and the inequality
+$n_-(T_-)>0$ to obtain the existence of some $(T'_+,T_-)\in\N$ and of
+an obtuse $T$ with $T\Ra T_-$ (by $\N$ condition 4 for $(T'_+,T_-)$).  Thus,
+$(T_+,T_-)\in\N$. Disjointness gives the contradiction
+$(T_+,T_-)\in\M\cap\N=\emptyset$.
 \end{proof}
 
 
@@ -832,14 +864,15 @@ the {\it strict main inequality} (for $\C$).
   $\N$ is translation invariant, and $\N$ descends to the torus.  On
   the torus, the set of pentagons, the set of triangles, and the set
   $\N$ are finite.  The equivalence relation $(\equiv_b)$ defining
-  clusters is translation invariant, and each cluster is finite, so
-  that no cluster contains both a triangle and a translate of the
-  triangle under a nonzero element of $\Lambda$.  Thus, each cluster
-  $\C$ in $\ring{R}^2$ maps bijectively to a cluster $\C$ in the flat
-  torus.  The functions $b$, $n_\pm$, $m_\pm$ are the same whether
-  computed on $\ring{R}^2$ or $\ring{R}^2/\Lambda$.  Let $p$ be the
-  number of pentagons in the torus.  By the Euler formula for a torus
-  triangulation, the number of Delaunay triangles is $2p$.  We have
+  clusters is translation invariant, and each cluster is finite by
+  assumption, so that no cluster contains both a triangle and a
+  translate of the triangle under a nonzero element of $\Lambda$.
+  Thus, each cluster $\C$ in $\ring{R}^2$ maps bijectively to a
+  cluster $\C$ in the flat torus.  The functions $b$, $n_\pm$, $m_\pm$
+  are the same whether computed on $\ring{R}^2$ or
+  $\ring{R}^2/\Lambda$.  Let $p$ be the number of pentagons in the
+  torus.  By the Euler formula for a torus triangulation, the number
+  of Delaunay triangles is $2p$.  We have
 \[
 \sum_{T} n_-(T) =  \sum_{T} n_+(T) = \card(\N);\qquad
 \sum_{T} m_-(T) =  \sum_{T} m_+(T) = \card(\M).
@@ -974,19 +1007,34 @@ There are two possibilities for the directed graph.
 As indicated in parentheses, we have named each of the various contact
 types.  An example of each of the contact types is shown in
 Figure~\rif{fig:3C-type}.  An exact description of these contact types
-appears later.  The name $LJ$-junction is suggested by the $L$-shaped
-region bounded by the three pentagons.  Similarly, the name
-$TJ$-junction is suggested by the $T$-shaped region bounded by the
-three pentagons.  Similarly, for $\Delta$-junctions.  This section
-shows that the types in the figure exhaust the geometric types of
-$3C$ contact.
+appears later.  The \emph{inner polygon} of a 3C P-triangle refers to
+the bounded region delimited by the three pentagons.  The inner
+polygon is a $(3+n)$-gon, and has an nonconvex angle at $n$ vertices
+(formed by freestanding pentagon vertices). The name $LJ$-junction is
+suggested by the $L$-shaped inner polygon.  Similarly, the name
+$TJ$-junction is suggested by the concave $T$-shaped inner polygon.
+Similarly, the $\Delta$-junctions is for the triangular inner polygon.
+This section shows that the types in the figure exhaust the geometric
+types of $3C$ contact.
 
 
-\tikzfig{3C-type}{Types of $3C$-contact from left-to-right:
+\tikzfig{3C-type}{Types of $3C$-contact from top-to-bottom:
 a pinwheel, a pin-$T$ junction, 
-a $\Delta$-junction, an $LJ$-junction, and a $TJ$-junction.}
+a $\Delta$-junction, an $LJ$-junction, and a $TJ$-junction.
+In the first two types, arrows form a directed cycle. In the other
+three types, both arrows point outward from the pentagon on top.
+The second column gives \emph{distorted} representations of the
+inner polygons.
+In the pin-$T$, the inner polygon, which is
+a nonconvex pentagon, is difficult to discern because of a 
+necessarily small angle and
+short edge.   
+}%
+% scale was 0.6.
 {
-[scale=0.6]
+[scale=0.8] 
+% pinwheel:
+\begin{scope}[yshift=20cm]
 \threepentnoD{0.00}{0.00}{46.69}{0.82}{1.53}{218.09}{1.73}{0.00}{163.28};
 \coordinate (A) at (0,0);
 \coordinate (B) at (0.82,1.53);
@@ -994,7 +1042,14 @@ a $\Delta$-junction, an $LJ$-junction, and a $TJ$-junction.}
 \draw[->] ($0.8*(A) + 0.2*(B)$) -- ($0.2*(A) + 0.8*(B)$);
 \draw[->] ($0.8*(B) + 0.2*(C)$) -- ($0.2*(B) + 0.8*(C)$);
 \draw[->] ($0.8*(C) + 0.2*(A)$) -- ($0.2*(C) + 0.8*(A)$);
-\begin{scope}[xshift=4.5cm,yshift=1.5cm]
+\end{scope}
+% pinwheel inner:
+\begin{scope}[xshift=4.5cm,yshift=20cm,scale=0.8]
+\draw[red] (0,0) -- ++ (30:1cm)  
+-- ++ (150:1cm) node[black,anchor=south] {\hbox{pinwheel}} -- (0,0);
+\end{scope}
+%
+\begin{scope}[yshift=17.5cm]
 \threepentnoD{0.00}{0.00}{90}{1.40}{-1.377}{0}{-0.35}{-1.628}{-18.89};
 \coordinate (A) at (0,0);
 \coordinate (B) at (1.40,-1.377);
@@ -1003,7 +1058,13 @@ a $\Delta$-junction, an $LJ$-junction, and a $TJ$-junction.}
 \draw[<-] ($0.8*(B) + 0.2*(C)$) -- ($0.2*(B) + 0.8*(C)$);
 \draw[<-] ($0.8*(C) + 0.2*(A)$) -- ($0.2*(C) + 0.8*(A)$);
 \end{scope}
-\begin{scope}[xshift=8cm]
+% pin-T inner:
+\begin{scope}[xshift=5.5cm,yshift=15.5cm,scale=0.8]
+\draw[red] (0,0) -- ++ (90:2cm) 
+-- ++ (245:0.5cm) 
+-- node[anchor=south,black] {pin-$T$} ++ (180:1.5cm) -- ++ (350:1.2cm) -- (0,0);
+\end{scope}
+\begin{scope}[yshift=12cm]
 \threepentnoD{0.00}{0.00}{-5.16}{0.99}{1.70}{235.38}{1.98}{0.00}{183.43};
 \coordinate (A) at (0,0);
 \coordinate (B) at (0.99,1.7);
@@ -1012,7 +1073,13 @@ a $\Delta$-junction, an $LJ$-junction, and a $TJ$-junction.}
 \draw[->] ($0.8*(B) + 0.2*(C)$) -- ($0.2*(B) + 0.8*(C)$);
 \draw[->] ($0.8*(C) + 0.2*(A)$) -- ($0.2*(C) + 0.8*(A)$);
 \end{scope}
-\begin{scope}[xshift=12cm]
+% Delta inner:
+\begin{scope}[xshift=5cm,yshift=12cm,scale=1.3]
+\draw[red] (0,0) -- ++ (60:1cm)  
+-- node[black,anchor=south] {$\Delta$} ++ (180:1cm)  -- (0,0);
+\end{scope}
+% LJ pents:
+\begin{scope}[yshift=8cm]
 \threepentnoD{0.00}{0.00}{80.86}{0.97}{1.58}{232.21}{1.82}{0.00}{223.24};
 \coordinate (A) at (0,0);
 \coordinate (B) at (0.97,1.58);
@@ -1021,7 +1088,14 @@ a $\Delta$-junction, an $LJ$-junction, and a $TJ$-junction.}
 \draw[->] ($0.8*(B) + 0.2*(C)$) -- ($0.2*(B) + 0.8*(C)$);
 \draw[<-] ($0.8*(C) + 0.2*(A)$) -- ($0.2*(C) + 0.8*(A)$);
 \end{scope}
-\begin{scope}[xshift=16cm]
+% LJ inner:
+\begin{scope}[xshift=5cm,yshift=8cm,scale=0.7]
+\draw[red] (0,0) -- ++ (95:0.8cm)  
+-- ++ (30:1cm) 
+-- node[black,anchor=south] {\hbox{LJ}} ++ (180:2cm) 
+-- (0,0);
+\end{scope}
+\begin{scope}[yshift=4cm]
 \threepentnoD{0.00}{0.00}{114.48}{0.90}{1.59}{237.18}{1.66}{0.00}{219.24};
 \coordinate (A) at (0,0);
 \coordinate (B) at (0.9,1.59);
@@ -1029,6 +1103,14 @@ a $\Delta$-junction, an $LJ$-junction, and a $TJ$-junction.}
 \draw[<-] ($0.8*(A) + 0.2*(B)$) -- ($0.2*(A) + 0.8*(B)$);
 \draw[->] ($0.8*(B) + 0.2*(C)$) -- ($0.2*(B) + 0.8*(C)$);
 \draw[<-] ($0.8*(C) + 0.2*(A)$) -- ($0.2*(C) + 0.8*(A)$);
+\end{scope}
+% TJ inner:
+\begin{scope}[xshift=5cm,yshift=3.5cm,scale=0.65]
+\draw[red] (0,0) -- ++ (90:1.8cm)  
+-- ++ (20:1.2cm) 
+-- node[black,anchor=south] {\hbox{TJ}} ++ (180:2.5cm) 
+-- ++ (345:1.2cm)
+-- (0,0);
 \end{scope}
 }
 %
@@ -1077,12 +1159,10 @@ vertices of $B$.
 \end{lemma}
 
 \begin{lemma}\libel{lemma:sep2}  
-Let $T$ be a $3C$-triangle with pentagons $A$, $B$, and $C$.
-Suppose that pentagon
-$A$ is a pointer to $B$ at $\v_A$ and that $B$ is a pointer to $C$
-at $\v_B$.  Then on $B$, the vertex
-$\v_B$ is not opposite to the edge of $B$ containing
-$\v_A$.
+Let $T$ be a $3C$-triangle with pentagons $A$, $B$, and $C$.  Suppose
+that pentagon $A$ is a pointer to $B$ at $\v_A$ and that $B$ is a
+pointer to $C$ at $\v_B$.  Then some edge of $B$ containing $\v_A$ is
+equal or adjacent to some edge of $B$ containing $\v_B$.
 \end{lemma}
 
 \begin{lemma}\libel{lemma:sep3} 
@@ -1133,11 +1213,11 @@ pentagons $A$ and $C$.}{
 \end{proof}
 
 \begin{definition}[$\Delta$]
-  We say that a $3C$-triangle has type $\Delta$ if we are in the first
-  case of Lemma~\rif{lemma:sep3} (the two pointer vertices $\v_A$ and
-  $\v_C$ of $A$ and $C$ lie on the same edge of $B$) provided the line
-  $\lambda$ through that edge of $B$ separates $B$ from $A$ and
-  $C$. (See Figure~\rif{fig:delta}.)
+We say that a $3C$-triangle has type $\Delta$ if we are in the first
+  case of Lemma~\rif{lemma:sep3} (that is, the two pointer vertices
+  $\v_A$ and $\v_C$ of $A$ and $C$ lie on the same edge of $B$) and if
+  the line $\lambda$ through that edge of $B$ separates $B$ from $A$
+  and $C$. (See Figure~\rif{fig:delta}.)
 \end{definition}
 
 \tikzfig{delta}{In type $\Delta$, a line separates pentagon 
@@ -1272,7 +1352,10 @@ impossible.
 
 We can be more precise about the structure of a $TJ$-junction.  In the
 context of the definition, Lemma~\rif{lemma:sep2} implies that $\v$
-and $\v_C$ lie on adjacent pentagon edges of $C$.
+and $\v_C$ lie on adjacent pentagon edges of $C$.  An $LJ$-junction
+has one inner vertex, and the inner polygon is a nonconvex quadrilateral.
+A $TJ$-junction has two inner vertices, and the inner polygon is a
+nonconvex pentagon.
 
 This completes the classification of $3C$-triangles: $\Delta$,
 pinwheel, pin-$T$, $LJ$, and $TJ$.  Useful coordinate systems for the
@@ -1383,7 +1466,7 @@ them together.
 \end{proof}
 
 % page 30.
-\begin{lemma}\libel{lemma:delta} 
+\begin{lemma}[computer-assisted]\libel{lemma:delta} 
   A subcritical $3C$-triangle does not have type $\Delta$.  In fact,
   such a $P$-triangle $T$ has area greater than $1.5$.
 \end{lemma}
@@ -1416,7 +1499,7 @@ them together.
 \] % checked 2016/2/18 in calcs.ml
 \end{proof}
 
-\begin{lemma}\libel{lemma:172}
+\begin{lemma}[computer-assisted]\libel{lemma:172}
   If every edge of a $P$-triangle $T$ is at most $1.72$, then the
   triangle is not subcritical.
 \end{lemma}
@@ -1479,7 +1562,7 @@ follows.
 \end{proof}
 
 
-\begin{lemma}\libel{lemma:a0}  
+\begin{lemma}[computer-assisted]\libel{lemma:a0}  
 A nonobtuse $P$-triangle $T$ has area greater than $\ao$.
 \end{lemma}
 
@@ -1503,6 +1586,32 @@ the end of the article in Section~\rif{appendix:cc}.  In this section,
 we make use of the following lemmas, which are proved by computer.
 (Although further discussion appears at the end of the article, there
 is no circular reasoning involved in using those calculations here.)
+
+
+\begin{table}[htbp]
+\centering
+\caption{Table of computer-assisted lemmas.  The source code label
+identifies the location of the calculation in the git repository~\cite{Git}.
+This table does not include lemmas that use a computer merely as a calculator
+or for simple Mathematica calculations.}
+\label{tab:computer-assisted}
+\begin{tabular}{ll}
+{\bf lemma} & {\bf source code location} \\
+\ref{lemma:delta} & ? \\
+\ref{lemma:172} & ? \\
+\ref{lemma:a0} & ? \\
+\ref{calc:pseudo1} & NKQNXUN \\
+\ref{calc:pseudo2} & RWWHLQT\\
+\ref{calc:pseudo-area} & BXZBPJW\\
+ \ref{calc:pseudo-area3} & JQMRXTH \\
+\ref{calc:dimer-isosc} & KUGAKIK \\
+\ref{calc:large} & FHBGHHY \\
+\ref{calc:pent3} & HUQEJAT \\
+\ref{calc:pent4} & QPJDYDB \\
+\S\ref{sec:O2C} & ?
+\end{tabular}
+\end{table}
+
 
 \begin{lemma}[computer-assisted]\libel{NKQNXUN} \libel{calc:pseudo1} 
 Let $(T_1,T_0)\in \PD$.  The edge shared between
@@ -1747,7 +1856,7 @@ with either $A$ or $C$ and that is non-increasing in triangle area
 until double contact is achieved.  This is $O2C$.  We do this for both
 $T=T_0$ and $T=T_1$.
 
-\subsection{Reduction to $O2C$}\libel{sec:O2C}
+\subsection{Reduction to $O2C$ (computer-assisted)}\libel{sec:O2C}
 
 In this subsection we show that each of $T=T_0$ and $T=T_1$ can be
 deformed in an area decreasing way so that it is $O2C$.
