@@ -3,6 +3,7 @@
 % Tex file started June 23, 2015.
 % Revisions May 2025
 % Revisions May 2026
+
 % See XX for issues.
 % 
 
@@ -245,7 +246,108 @@ We write
 for the common (critical) area of every Delaunay triangle in the 
 pentagonal ice-ray.
 
-\section{Clusters of Delaunay Triangles}
+This article is organized as follows.  The aim is to show that on
+average, every Delaunay triangle has area at least $\acrit$.  There
+are two primary averaging strategies.  One strategy is to transfer
+small areas from one triangle to another in a way that preserves the
+total area.  Areas of two different sizes $\epsN$ and $\epsM$ are
+moved between triangles. (See Figure~\ref{fig:visual}.)  Section~\ref{sec:cluster}
+defines the constants $\epsN,\epsM$ and gives the rules that govern
+these transfers of area.  The modified area of a triangle after area
+transfer is denoted $b(T)$.  A second strategy is to define finite
+disjoint clusters of triangles such that the average of the modified
+areas $b(T)$ over each cluster is at least $\acrit$.  Lemma~\ref{lemma:main}
+states the main inequality:
+lower bounds on averages of modified areas over finite
+clusters imply the pentagonal ice-ray conjecture.
+Section~\ref{sec:cluster} also gives the definition of these clusters.
+Two particularly important types of pairs of adjacent triangles are
+called dimer pairs and pseudo-dimer pairs.  A dimer pair is a pair of
+triangles that share a common longest edge and that have properties
+similar to pairs of triangles in the ice-ray packing.
+A pseudo-dimer pair is a pair of adjacent triangles that has properties
+somewhat less similar to triangles in the ice-ray packing.  Yet the area
+of pseudo-dimers is so small that they require special attention.
+Section~\ref{sec:cluster} also gives a long list of examples.
+
+A $P$-triangle is a Delaunay triangle together with the three pentagons
+at the three vertices. Section~\ref{sec:contact} makes a detailed
+study of the structure of $P$-triangles.  Of particular interest are
+$P$-triangles in which each pentagon is in contact with the other two.
+The section gives a classification of the possible combinatorial types
+of such $P$-triangles.
+
+The purpose of Section~\ref{sec:area} is to give lower bounds
+on the areas of Delaunay triangles -- especially acute triangles.
+To simplify the area estimates, 
+the section introduces some deformations of $P$-triangles that
+are monotonic in area.  The section also contains estimates on
+the lengths of edges of various Delaunay triangle.
+
+Section~\ref{sec:calc} states a series of lemmas whose proofs are
+computer assisted.  The proofs are delayed until 
+Appendix~\ref{appendix:cc}.  The computer part of these proofs has
+been organized as a github repository~\cite{Git}.
+
+Section~\ref{sec:dimer-pair} proves the local optimality of the
+pentagonal ice-ray.  This is stated as optimization problem involving
+pairs of acute Delaunay triangles (called dimer pairs), which share
+their common longest edge.  The unique dimer pair that minimizes area
+is the dimer pair found in the pentagonal ice-ray packing.
+
+This local optimality result does not in itself give local optimality
+in the form that is needed for the pentagonal ice-ray conjecture.  We
+need to supplement this result with lemmas that state the
+compatibility of dimer pairs with the partition into finite clusters
+of Delaunay triangles made in Section~\ref{sec:cluster}.  We also need
+to show that the modified area $b(T)$ equals the unmodified area
+$\op{area}(T)$ for triangles in dimer pairs.  These supplementary
+results about dimer pairs are established in
+Section~\ref{sec:dimer-main}.
+
+Section~\ref{sec:pseudo} proves a series of preliminary lemmas about
+pseudo-dimers.  Pseudo-dimers are pairs of Delaunay triangles that
+fail to satisfy all the properties of a dimer pair, yet they have such
+small area that they require special consideration.  Among other
+results, the section proves that pseudo-dimer pairs are disjoint from
+one another, that the area of one of the triangles in the pair is
+unmodified: $b(T_1)=\area(T_1)$, and that the other triangle in the
+pair has modified area greater than the target area: $b(T_0)>\acrit$.
+These lemmas will be used in Section~\ref{sec:nonobtuse}.
+
+The final two sections~\ref{sec:obtuse} and \ref{sec:nonobtuse}
+complete the proof of the pentagonal ice-ray conjecture by proving the
+main inequality: the modified area averages over clusters of Delaunay
+triangles are at least the area of the Delaunay triangle in the
+pentagonal-ice ray.  Section~\ref{sec:obtuse} treats the case when at
+least one Delaunay triangle in the cluster is obtuse, and
+Section~\ref{sec:nonobtuse} treats the remaining case: no Delaunay
+triangle in the cluster is obtuse.
+
+There are two appendices.  The first, Appendix~\ref{sec:coords},
+introduces explicit coordinate systems for configurations of
+pentagons, including pairs of pentagons, and $P$-triangles (triples of
+pentagons).  These coordinate systems are not explicitly used in this
+article.  However, they are used heavily in the computer code to give
+explicit implementations of geometric objects and functions that are
+needed for computer proofs.  This section serves as
+documentation of geometric aspects of the computer code.
+
+Appendix~\ref{appendix:cc} also serves as documentation of
+the computer code.  It describes computer algorithms such as interval
+arithmetic, automatic differentiation, and meet-in-the-middle.  A
+final subsection~\ref{sec:calc-prep} briefly discusses each of the
+computer-assisted lemmas that are stated (without proof) in
+Section~\ref{sec:calc}.  This subsection gives reduction arguments,
+showing how simpler computer calculations can be used to prove the
+lemmas in their stated generality.  
+
+
+
+
+
+
+\section{Clusters of Delaunay Triangles}\label{sec:cluster}
 
 The area of a Delaunay triangle in a saturated pentagon packing can be
 smaller than $\acrit$.  Our strategy for proving the pentagonal
@@ -717,7 +819,7 @@ the neighbor of the pseudo-dimer has area to spare
 be visualized as a small semicircular 
 knob (of area $\epsM$) or triangular notch (of area $\epsN$) 
 that transfers area
-from one Delaunay triangle to an adjacent one.
+from one Delaunay triangle to an adjacent one. XX backwards?
 }
 {
 \begin{scope}[scale=2,xshift=0cm]
@@ -1362,7 +1464,7 @@ pinwheel, pin-$T$, $LJ$, and $TJ$.  Useful coordinate systems for the
 various types can be found in the appendix
 (Section~\rif{sec:appendix}).
 
-\section{Delaunay Triangle Areas}
+\section{Delaunay Triangle Areas}\libel{sec:area}
 
 As an application of the classification from the Section~\ref{sec:dimer-pair},
 this section makes a computer calculation of a lower bound on the
@@ -1587,6 +1689,7 @@ we make use of the following lemmas, which are proved by computer.
 (Although further discussion appears at the end of the article, there
 is no circular reasoning involved in using those calculations here.)
 
+% XX make double column
 
 \begin{table}[htbp]
 \centering
@@ -1692,13 +1795,52 @@ $\area(T_-) > \acrit+\epsM$.
   isosceles.
 \end{lemma}
 
+
+\begin{lemma}[computer-assisted]\libel{HUQEJAT}\libel{calc:pent3}
+  Let $T_1^i\Ra T_0$ and $\area(T_1^i)\le\acrit$  for
+  distinct $P$-triangles $T_1^0$ and $T_1^1$.  Then
+  $\area\{T_0,T_1^0,T_1^1\} > 3\acrit + \epsM$.
+\end{lemma}
+
+\begin{lemma}[computer-assisted]\libel{QPJDYDB}\libel{calc:pent4}
+  Let $T_1^i\Ra T_0$ and $\area(T_1^i)\le\acrit$ for distinct
+  $P$-triangles $T_1^0$, $T_1^1$, and $T_1^2$.  Then
+  $\area\{T_0,T_1^0,T_1^1,T_1^2\} > 4\acrit$.
+\end{lemma}
+
+The final lemma in this section uses the notion of a \emph{large
+angle}, which we now describe.  Let $A$
+and $B$ be two pentagons in the plane.  Translate one of the pentagons
+$B$ until the pentagons do not overlap and are situated so that some
+vertex $\v_B$ of $B$ lies on the relative interior of an edge of $A$.
+The four angles at $\v_B$ are $\pi$ (the straight angle), $3\pi/5$
+(the interior angle), $\alpha\ge0$, and $\alpha'\ge0$, with
+$\alpha+\alpha'=2\pi/5$.  The unordered pair $\alpha,\alpha'$ is
+independent of the (constrained) choice of translation.  Clearly, the
+same pair of angles is obtained if $A$ is translated rather than $B$.
+In the limiting case when the pentagons are in slider contact,
+$\{\alpha,\alpha'\}=\{0,2\pi/5\}$.
+
+By ordering $(A,B)$, we obtain an order on
+$(\alpha,\alpha')$ as follows.  After the translation described in the
+previous paragraph, we may apply an orientation-preserving rigid
+motion of the plane so that $A$ is centered at the origin and $B$ is
+centered along the positive $x$-axis.  The cone over one angle $\alpha$
+meets the upper half-plane in an unbounded region, and the cone over
+the other angle $\alpha'$ meets the lower half-plane in an unbounded
+region. In this way, we disambiguate $\alpha,\alpha'$.
+
 \begin{definition}[large angle]\libel{def:large}  
-  Let $T$ be a $P$-triangle.  Let $e$ be an edge of the triangle with
-  pentagons $A$ and $B$ at its endpoints.  Let $\alpha = \alpha(T,e)$
-  be the angle between the edges of the two pentagons $A$ and $B$.  (See
-  Figure~\rif{fig:large}.)  Modulo $2\pi/5$, we can assume that
-  $\alpha\in [0,2\pi/5]$.  We say that the angle is {\it large} along
-  $(T,e)$ if $\pi/5<\alpha < 2\pi/5$.  
+  Let $T$ be a $P$-triangle.  Orient the edges of $T$ by the clockwise
+  orientation of the triangle.  Let $(A,B)$ be a pair of pentagons in
+  the $P$-triangle, ordered by the orientation on the edge $e$ of $T$
+  between their centers.  Let $\alpha = \alpha(T,e)$, where $(\alpha,\alpha')$
+  is the ordered pair of angles
+  attached to the ordered pair $(A,B)$.  We say that the angle is
+  {\it large} along $(T,e)$ if $\pi/5<\alpha(T,e) < 2\pi/5$.  (See
+  Figure~\rif{fig:large}.)
+%%Modulo $2\pi/5$, we can assume that
+%%  $\alpha\in [0,2\pi/5]$.  
 % N.B.
 % The way the code deals with alpha=2pi/5 is somewhat subtle.
 % The test in the code is just alpha >> pi15, and periodize_pent
@@ -1724,12 +1866,12 @@ with a large angle $\alpha$ along $(T,e)$.}
 
 Let $T$ be a $P$-triangle and let $T'$ be the adjacent $P$-triangle
 along edge $e$.  We have the invariant
-$\alpha(T,e)+\alpha(T',e)=2\pi/5$.  Hence if the angle is large along
-$(T,e)$ then it is not large along $(T',e)$.
+$\alpha+\alpha'=\alpha(T,e)+\alpha(T',e)=2\pi/5$.  Hence if the angle
+is large along $(T,e)$ then it is not large along $(T',e)$.
 
 
 \begin{lemma}[computer-assisted]\libel{FHBGHHY}\libel{calc:large}
-  Let $\{T_0,T_1\}$ be given $P$-triangles (not necessarily a
+  Let $P$-triangles $\{T_0,T_1\}$ be given (not necessarily a
   pseudo-dimer) such that $\area(T_1)\le \acrit$ and $T_1\Ra T_0$.
   Assume that there is a nonshared edge $e$ of $T_0$ of length greater
   than $1.8$ and such that the angle is not large along $(T_0,e)$.  Then
@@ -1747,17 +1889,6 @@ $(T,e)$ then it is not large along $(T',e)$.
   which contradicts one of the defining properties of a pseudo-dimer.
 \end{proof}
 
-\begin{lemma}[computer-assisted]\libel{HUQEJAT}\libel{calc:pent3}
-  Let $T_1^i\Ra T_0$ and $\area(T_1^i)\le\acrit$  for
-  distinct $P$-triangles $T_1^0$ and $T_1^1$.  Then
-  $\area\{T_0,T_1^0,T_1^1\} > 3\acrit + \epsM$.
-\end{lemma}
-
-\begin{lemma}[computer-assisted]\libel{QPJDYDB}\libel{calc:pent4}
-  Let $T_1^i\Ra T_0$ and $\area(T_1^i)\le\acrit$ for distinct
-  $P$-triangles $T_1^0$, $T_1^1$, and $T_1^2$.  Then
-  $\area\{T_0,T_1^0,T_1^1,T_1^2\} > 4\acrit$.
-\end{lemma}
 
 
 \section{Dimer Pairs}\libel{sec:dimer-pair}
@@ -2268,7 +2399,7 @@ geometry, it is clear that the area function has derivative zero along
 $\Gamma$ at $t=0$.  (See Figure~\rif{fig:Gamma}.) The global
 minimum is therefore given at $t=0$, which is the ice-ray dimer.
 
-\section{Pseudo-Dimers}
+\section{Pseudo-Dimers}\label{sec:pseudo}
 
 In this section, we determine the structure of pseudo-dimers and
 specialize the function $b$ to this context.
@@ -2431,7 +2562,7 @@ This completes the proof.
 \end{proof}
 
 
-\section{Main inequality for dimers}
+\section{Main inequality for dimers}\label{sec:dimer-main}
 
 Recall that the previous section shows that there exists a unique
 dimer pair (up to congruence): the ice-ray dimer.  In particular, if
@@ -4646,7 +4777,7 @@ carried into the next iteration.  In practice, to achieve our bounds
 in Section~\rif{sec:calc}, the smallest $\epsilon$ that was required
 was approximately $0.00024$.
 
-\subsection{Preparation of the inequalities}
+\subsection{Preparation of the inequalities}\label{sec:calc-prep}
 
 Section~\rif{sec:calc} gives a sequence of inequalities that have been
 proved by MITM algorithms.  We organize these calculations to permit a

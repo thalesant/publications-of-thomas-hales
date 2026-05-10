@@ -1,15 +1,44 @@
+(* ::Package:: *)
+
+(* 
+Basic Mathematica Library of Functions for "Packings of Regular Pentagons"
+
+Notational dictionary with LaTeX:
+
+kappa = $\kappa$.
+sigma = $\sigma$
+aK = $a_{crit}$
+densityK = density of the ice-ray packing
+amin = $a_{min}$
+epso = $\epsilon_N$
+
+rads[r,theta] = $(r\cos\theta,r\sin\theta)$
+area[x,y,z] = area of triangle with sides x,y,z
+
+*)
+
 kappa = Cos[Pi/5]; 
 sigma = Sin[Pi/5];
 aK = (1 + kappa) (3 kappa sigma)/2.0;
 densityK = (5 - Sqrt[5])/3 // N;
-epso = aK - 1.237;
+amin = 1.237;
+epso = aK - amin;
+
 
 rads[r_, theta_] := r {Cos[theta], Sin[theta]};
 
-area[x_, y_, z_] := x*y*Sin[arc[x, y, z]]/2;
+(* law of cosines for angle *)
+arc[a_, b_, c_] := ArcCos[(a^2 + b^2 - c^2)/(2 a b)];
+
 
 (* law of cosines *)
 loc[x_, y_, alpha_] := Sqrt[x^2 + y^2 - 2 x*y*Cos[alpha]];
+
+(* circumradius, Heron's formula *)
+eta[x_, y_, z_] := Module[{s = (x + y + z)/2}, x y z/4/Sqrt[s (s - x)(
+      s - y)(s - z)]] // Ns;
+      
+area[x_, y_, z_] := x*y*Sin[arc[x, y, z]]/2;
 
 (* areta *)
 aretaEdge[a_, b_, r_] := 
@@ -34,7 +63,7 @@ lawsines[a_, alpha_, beta_, gamma_] :=
    
 thetax[xalpha_, alpha_] := 
   Module[{ h, r, phi,psi, psip, elx, ely, 
-    theta, thetap},
+    theta, thetap,phip,delta,},
    h = xalpha - sigma;
    r = Sqrt[h^2 + kappa^2];
    phip = ArcSin[h/r];
@@ -137,6 +166,4 @@ tjedge[alpha_, beta_, xgamma_] :=
 tjarea[alpha_, beta_, xgamma_] := Module[{a, b, c},
   {a, b, c} = tjedge[alpha, beta, xgamma];
   area[a, b, c]];
-
-
 

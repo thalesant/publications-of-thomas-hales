@@ -1,13 +1,17 @@
-(* Mathematica for "Packings of Regular Pentagons in the Plane "*)
+(* ::Package:: *)
 
+(* Mathematica for "Packings of Regular Pentagons in the Plane "*)
+(* Uses pentca.m. Run that package first *)
 (* Section 1. Introduction *)
 Clear[NPrec];
 Claim[x_, msg_] := If[Not[TrueQ[x]], Echo[{x, msg}]];
 NZero[x_, d_] := Abs[x] < 0.5*10^-d;
+
 kappa = Cos[Pi/5];
 sigma = Sin[Pi/5];
 aK = Echo[FullSimplify[(1 + kappa) (3 kappa sigma)/2]] // N;
 aK2 = (3/16) Sqrt[(5 (5 + 2 Sqrt[5]))];
+amin = 1.237;
 densityK = (5 - Sqrt[5])/3 // N;
 pentarea = 5 kappa sigma;
 Claim[NZero[aK2 - aK, 5], "radicals aK"];
@@ -20,6 +24,7 @@ Claim[NZero[(1/2) (pentarea)/aK - densityK, 14],
 Claim[NZero[kappa Sqrt[8] - 2.288, 3], "kappa sqrt8. Lemma 28"];
 Claim[NZero[Sqrt[(2 kappa)^2 + sigma^2] - 1.72149, 5], 
   "Lemma 34, lemma:mid-172"];
+Claim[area[1.72,1.8,1.8]> (2 aK - amin),"Lemma 40"]
 
 
 Module[{v0, v1, v2, cis, x, y, d1, d2, iceraytri},
