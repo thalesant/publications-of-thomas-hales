@@ -1642,7 +1642,7 @@ edge lengths of the triangles using interval arithmetic.  The result
 follows.
 \end{proof}
 
-\begin{lemma}\libel{lemma:2C} 
+\begin{lemma}[computer-assisted]\libel{lemma:2C} 
   Let $T$ be a subcritical nonobtuse $P$-triangle with pentagons $A$,
   $B$, and $C$.  Then fixing $B$ and $C$, we may deform $T$ by moving
   the third pentagon $A$, without increasing the area of $T$, until
@@ -1650,7 +1650,7 @@ follows.
 \end{lemma}
 
 \begin{proof}
-  By Lemma~\rif{lemma:right}, the edge lengths of $T$ are at most
+  By Lemma~\rif{lemma:right}, the edge lengths of $T$ are less than
   $\kappa\sqrt8$.  By Lemma~\rif{lemma:primary}, we may assume that
   the pentagon $A$ has primary contact.  If the primary contact of a
   pentagon $A$ is slider contact, we may slide $A$ along the edge
@@ -1659,6 +1659,7 @@ follows.
   contact, then we may rotate $A$ about the point of contact with a
   second pentagon $B$, in the direction to decrease the area of $T$
   until it has double contact.  These area-decreasing deformations
+  might increase edge lengths, but they
   never transform the nonobtuse subcritical triangle into a right
   triangle (Lemma~\rif{lemma:right}).
 \end{proof}
@@ -1700,9 +1701,9 @@ or for simple Mathematica calculations.}
 \label{tab:computer-assisted}
 \begin{tabular}{ll}
 {\bf lemma} & {\bf source code location} \\
-\ref{lemma:delta} & ? \\
-\ref{lemma:172} & ? \\
-\ref{lemma:a0} & ? \\
+\ref{lemma:delta} & XX? \\
+\ref{lemma:172} & XX? \\
+\ref{lemma:a0} & XX? \\
 \ref{calc:pseudo1} & NKQNXUN \\
 \ref{calc:pseudo2} & RWWHLQT\\
 \ref{calc:pseudo-area} & BXZBPJW\\
@@ -1711,7 +1712,7 @@ or for simple Mathematica calculations.}
 \ref{calc:large} & FHBGHHY \\
 \ref{calc:pent3} & HUQEJAT \\
 \ref{calc:pent4} & QPJDYDB \\
-\S\ref{sec:O2C} & ?
+\S\ref{sec:O2C} & XX?
 \end{tabular}
 \end{table}
 
@@ -1721,10 +1722,16 @@ Let $(T_1,T_0)\in \PD$.  The edge shared between
 $T_0$ and $T_1$ has length less than $1.8$. 
 \end{lemma}
 
+\begin{proof} See Section~\ref{sec:pseudo1}.
+\end{proof}
+
 \begin{lemma}[computer-assisted]\libel{RWWHLQT}\libel{calc:pseudo2} 
   Let $(T_1,T_0)\in \PD$.  The longest edge of $T_0$ (that is, its
   egressive edge) has length greater than $1.8$.
 \end{lemma}
+
+\begin{proof} See Section~\ref{sec:pseudo2}.
+\end{proof}
 
 \begin{lemma}\libel{calc:pseudo3}  
   Let $(T_1,T_0)\in \PD$.  The two edges of $T_0$ other than the
@@ -1736,23 +1743,31 @@ $T_0$ and $T_1$ has length less than $1.8$.
   by Lemma~\rif{calc:pseudo1}.  It has length at least $1.72$ by
   Lemma~\rif{lemma:172}.  If (for a contradiction) the third edge of
   $T_0$ has length at least $1.8$, then by the previous lemmas, its
-  three edges have lengths at least $1.72$, $1.8$, $1.8$.  Then
+  three edges have lengths at least $1.72$, $1.8$, $1.8$.  
+By monotonicity of area in edge lengths for acute triangles, a calculation gives
 \[
 \area\{T_1,T_0\} > \ao + \area(1.72,1.8,1.8) 
-> \ao + (\acrit + \epsN) = 2\acrit.
+> \ao + (2\acrit -\ao) = 2\acrit.
 \]
 % checked in calc.ml 2016/9
-This area inequality contradicts a defining property of pseudo-dimers.
+This area inequality contradicts the subcritical property of pseudo-dimers.
 \end{proof}
 
 \begin{lemma}[computer-assisted]\libel{BXZBPJW}\libel{calc:pseudo-area}
 Let $(T_1,T_0)\in\PD$.  Then $\area\{T_0,T_1\} \ge 2\acrit - \epsM$.
 \end{lemma}
 
+\begin{proof} See Section~\ref{sec:pseudo-area}.
+\end{proof}
+
 \begin{lemma}[computer-assisted]\libel{JQMRXTH}\libel{calc:pseudo-area3}
 Let $(T_1,T_0)\in\PD$. Assume $T_0\Ra T_-$.  
 Then $\area\{T_0,T_1,T_-\} > 3\acrit + \epsM$.
 \end{lemma}
+
+\begin{proof} See Section~\ref{sec:pseudo-area3}.
+\end{proof}
+
 
 \begin{corollary}\libel{lemma:egress'} 
 Let $(T_1,T_0)\in\PD$.  Assume that $T_0\Ra T_-$.  Then
@@ -1783,10 +1798,15 @@ $\area(T_-) > \acrit+\epsM$.
   a special case of long isosceles.
 \end{definition}
 
+The isosceles constraint occurs because of the way we have defined
+certain structures (such as dimer pairs) in terms of a longest edge of a
+triangle.  Isosceles triangles occur naturally as boundary cases in
+such structures.
+
 \begin{definition}[O2C]
   We say that a triangle $T=T_0$ or $T=T_1$ in a dimer pair or a
   pseudo-dimer pair has outside double contact $(O2C)$ if the pentagon
-  $A$ at the vertex of $T$ that is not shared with the other triangle in the
+  at the vertex of $T$ that is not shared with the other triangle in the
   pair has double contact.
 \end{definition}
 
@@ -1795,6 +1815,9 @@ $\area(T_-) > \acrit+\epsM$.
   isosceles.
 \end{lemma}
 
+\begin{proof} See Section~\ref{sec:dimer-isosc}.
+\end{proof}
+
 
 \begin{lemma}[computer-assisted]\libel{HUQEJAT}\libel{calc:pent3}
   Let $T_1^i\Ra T_0$ and $\area(T_1^i)\le\acrit$  for
@@ -1802,11 +1825,19 @@ $\area(T_-) > \acrit+\epsM$.
   $\area\{T_0,T_1^0,T_1^1\} > 3\acrit + \epsM$.
 \end{lemma}
 
+\begin{proof} See Section~\ref{sec:pent3}.
+\end{proof}
+
+
 \begin{lemma}[computer-assisted]\libel{QPJDYDB}\libel{calc:pent4}
   Let $T_1^i\Ra T_0$ and $\area(T_1^i)\le\acrit$ for distinct
   $P$-triangles $T_1^0$, $T_1^1$, and $T_1^2$.  Then
   $\area\{T_0,T_1^0,T_1^1,T_1^2\} > 4\acrit$.
 \end{lemma}
+
+\begin{proof} See Section~\ref{sec:pent4}.
+\end{proof}
+
 
 The final lemma in this section uses the notion of a \emph{large
 angle}, which we now describe.  Let $A$
@@ -1878,6 +1909,9 @@ is large along $(T,e)$ then it is not large along $(T',e)$.
   $\area\{T_0,T_1\} > 2\acrit + \epsM$.
 \end{lemma}
 
+\begin{proof} See Section~\ref{sec:large}.
+\end{proof}
+
 \begin{corollary}\libel{lemma:large}
   If $(T_1,T_0)\in \PD$ and $e$ is the longest (that is, egressive)
   edge of $T_0$.  Then the angle is large along $(T_0,e)$.
@@ -1924,7 +1958,7 @@ $C$, $D$, with outer pentagon $D$ of $T_0$.
 \begin{lemma}  
   Let $(T_1,T_0)$ be a dimer pair, then every edge of $T_1$ and $T_0$
   has length less than $\kappa\sqrt8$.  In particular $T_1$ and $T_0$
-  are both acute (and not just merely nonobtuse).
+  are both acute (and not merely nonobtuse).
 \end{lemma}
 
 \begin{proof}  
@@ -1934,7 +1968,7 @@ $C$, $D$, with outer pentagon $D$ of $T_0$.
   triangle $T_1$. The result follows from Lemma~\rif{lemma:right}.
 \end{proof}
 
-In particular, area non-increasing deformations of a dimer pair, never
+In particular, non-increasing deformations of the area of a dimer pair never
 transform an acute triangle into a right or obtuse triangle.  In other
 words, the nonobtuseness constraint in the definition of a dimer pair
 is never a binding constraint in a deformation.
@@ -1966,18 +2000,19 @@ going into details.  Here is the proof sketch:
   minimizer along $\Gamma$ for $|t|<M$.
 \end{enumerate}
 
-\subsection{Reduction to $O2C$ or long isosceles}
+\subsection{Reduction to $O2C$ or long isosceles (stage 1)}
 
 In this section, we show that each of $T=T_0$ and $T=T_1$ can be
 deformed in an area decreasing way until $T$ is either $O2C$ (that is,
 the outer pentagon has double contact) or long isosceles (that is, the
 two longest edges of the triangle have the same length).
 
-To show this, we assume that $T$ and its deformations are not long
-isosceles; that is, it and its deformations have a unique longest edge
+To show this, we assume that $T$ and the deformations (described
+in the next paragraph) are not long
+isosceles; that is, the $P$-triangles have a unique longest edge
 that is shared with the other triangle.  Fixing the two pentagons of
 $T$ ($A$ and $C$) along the shared edge, we show we can deform the
-outer pentagon until it has $2C$ contact.
+outer pentagon ($B$ or $D$) until it has $2C$ contact.
 
 This is easy to carry out.  By Lemmas~\rif{lemma:primary}
 and~\rif{lemma:primary2}, we can move $B$ in an area decreasing way
@@ -1987,17 +2022,20 @@ with either $A$ or $C$ and that is non-increasing in triangle area
 until double contact is achieved.  This is $O2C$.  We do this for both
 $T=T_0$ and $T=T_1$.
 
-\subsection{Reduction to $O2C$ (computer-assisted)}\libel{sec:O2C}
+\subsection{Reduction to $O2C$ (computer-assisted) (stage 2)}\libel{sec:O2C}
 
 In this subsection we show that each of $T=T_0$ and $T=T_1$ can be
 deformed in an area decreasing way so that it is $O2C$.
+In other words, we eliminate the possibility of a long isosceles triangle.
 
 We begin with the case $T=T_0$.  If the deformations in the previous
 section made $T_0$ into a long isosceles triangle, then $(T_1,T_0)$ is
 a boundary case that can also be classified as a pseudo-dimer.  By
-earlier calculations, the longest edge of a pseudo-dimer is greater
-than $1.8$ and has strictly greater length than the shared edge
-between $T_0$ and $T_1$.  Thus, it is not long isosceles.
+Lemmas~\ref{calc:pseudo2} and ~\ref{calc:pseudo3} for pseudo-dimers,
+$T_0$ is not long isosceles.
+%earlier calculations, the longest edge of a pseudo-dimer is greater
+%than $1.8$ and has strictly greater length than the shared edge
+%between $T_0$ and $T_1$.  Thus, it is not long isosceles.
 
 We now consider the case $T=T_1$.  In view of the reductions of the
 previous subsection, we may assume that $T_1$ has primary contact and
@@ -2018,7 +2056,7 @@ The proof is computer assisted.  We deform $T_1$ in an area decreasing
 way into a configuration that can be easily computed.  Without loss of
 generality, we assume that the outer pentagon $B$ is in contact with
 pentagon $A$.  Because we are now disregarding $T_0$, we may deform the
-triangle $T_1$ by moving $C$, preserving the long isosceles constraint
+triangle $T_1$ by translating $C$, preserving the long isosceles constraint
 and decreasing area, until $C$ has primary contact.  In particular,
 $C$ is in contact with $A$ or $B$.
 
@@ -2081,7 +2119,7 @@ edges of the isosceles triangle.
   Let $T$ be a subcritical nonobtuse $P$-triangle with pentagons $A$,
   $B$, and $C$.  Assume that $A$ has midpointer contact with $B$, with
   $A$ pointing to $B$ at $\v_{AB}$.  Then the rotation of $B$ about
-  the point of contact in the direction to decrease the area also
+  the point $\v_{AB}$ in the direction to decrease the area also
   decreases the distance $\dx{BC}$.
 \end{lemma}
 
@@ -2110,21 +2148,19 @@ compute\footnote{calculations iso\_2C and iso\_2C'} with interval
 arithmetic to show that no such triangle is subcritical.  This
 completes this reduction.
 
-\subsection{Reduction to triple contact}\libel{sec:squeeze}
+\subsection{Reduction to triple contact (stage 3)}\libel{sec:squeeze}
 
 In this stage, we initially assume that both triangles $T_0$ and $T_1$
 are $O2C$.  We deform so that both triangles are triple contact.
 
-We briefly describe the argument.  Our deformations will preserve the
-$O2C$ contacts.  By an argument made in the second paragraph of
-Section~\rif{sec:O2C}, we may assume without loss of generality that
-the triangle $T_0$ is not long isosceles.  By
-Lemma~\rif{calc:dimer-isosc}, we have that $T_1$ is not long
-isosceles.  Assuming that neither triangle is long isosceles, we show
-that both triangles can be brought into triple contact.  Because both
-triangles are already $O2C$, this amounts to decreasing the edge
-between $\c_A$ and $\c_C$ until the pentagons $A$ and $C$ come into
-contact.  This deformation consists of a translation of all four
+We describe a deformation that we call \emph{squeezing}.  It involves
+two adjacent $P$-triangles $T_0$ and $T_1$.  All pentagons move by
+translation.  We describe the deformation in terms that sufficiently
+general to include squeezing that occurs in
+Sections~\ref{sec:pseudo-area}, \ref{sec:pseudo-area3},
+and \ref{sec:pent3}.
+
+This deformation consists of a translation of all four
 pentagons in a motion we call {\it squeezing}.  It suffices to
 describe the deformation separately on each triangle $T_0$ and $T_1$
 and to prove that this deformation decreases area.
@@ -2142,7 +2178,23 @@ right and $C$ to the left to maintain double contact at $B$.  Note
 that $A$ and $C$ move by translation along the $x$-axis.  It is clear
 that by adjusting the rates at which $B$ (on $T_1$) moves upward and
 $D$ (on $T_0$) moves downward, the motions of $T_0$ and $T_1$ are
-concordant and give a motion of a dimer pair.
+concordant and give a motion of a dimer pair. 
+
+[XX fix so squeezing is sufficiently general.]
+
+
+This completes our description of the squeezing motion, and we continue
+with the reduction to triple contact.
+We briefly describe the argument.  Our deformations will preserve the
+$O2C$ contacts.  By an argument made in the second paragraph of
+Section~\rif{sec:O2C}, we may assume without loss of generality that
+the triangle $T_0$ is not long isosceles.  By
+Lemma~\rif{calc:dimer-isosc}, we have that $T_1$ is not long
+isosceles.  Assuming that neither triangle is long isosceles, we show
+that both triangles can be brought into triple contact.  Because both
+triangles are already $O2C$, this amounts to decreasing the edge
+between $\c_A$ and $\c_C$ until the pentagons $A$ and $C$ come into
+contact.  
 
 \begin{lemma}  
   Let $T$ be a nonobtuse $P$-triangle with pentagons $A$, $B$, and
@@ -4832,12 +4884,12 @@ In the rest of this section, we describe how each calculation has been
 prepared, to reduce the dimension of the configuration space, prior to
 computation.
 
-\subsubsection{Calculation~of Lemma~\rif{calc:pseudo1}} 
+\subsubsection{Calculation~of Lemma~\rif{calc:pseudo1}} \label{sec:pseudo1}
 
-We repeat Lemma~\rif{calc:pseudo1}.  Let $(T_1,T_0)\in \PD$.  The edge
-shared between $T_0$ and $T_1$ has length less than $1.8$.  (The
-reference code [NKQNXUN] links this statement to the relevant body of
-computer code.)
+We repeat the statement of Lemma~\rif{calc:pseudo1}.  Let
+$(T_1,T_0)\in \PD$.  The edge shared between $T_0$ and $T_1$ has
+length less than $1.8$.  (The reference code [NKQNXUN] links this
+statement to the relevant body of computer code.)
 
 Negating the conclusion, we may assume that the shared edge between
 triangles has length at least $1.8$.  Let $A,B,C$ be the pentagons of
@@ -4861,7 +4913,7 @@ to three subcases:
 \item $B$ has slider contact with $A$ and $\max(\dx{AB},\dx{BC})=1.8$.
 \end{enumerate}
 
-\subsubsection{Calculation~of Lemma~\rif{calc:pseudo2}} 
+\subsubsection{Calculation~of Lemma~\rif{calc:pseudo2}} \label{sec:pseudo2}
 
 We repeat the statement of Lemma~\rif{calc:pseudo2}.
 Let $(T_1,T_0)\in \PD$.  The longest edge of $T_0$
@@ -4878,7 +4930,7 @@ the shared pentagons, and we reduce to three cases:
 \item $B$ has slider contact with $A$, and $T_0$ is long isosceles.
 \end{enumerate}
 
-\subsubsection{Calculation~of Lemma~\rif{calc:pseudo-area}} 
+\subsubsection{Calculation~of Lemma~\rif{calc:pseudo-area}} \label{sec:pseudo-area}
 
 We repeat the statement of Lemma~\rif{calc:pseudo-area}.
 Let $(T_1,T_0)\in\PD$.  Then $\area\{T_0,T_1\} \ge 2\acrit - \epsM$
@@ -4903,7 +4955,7 @@ were carried out with assumptions that were sufficiently relaxed to
 include this case of pseudo-dimer triple contact.
 % see dimer.ml run_group4.
 
-\subsubsection{Calculation~of Lemma~\rif{calc:pseudo-area3}}
+\subsubsection{Calculation~of Lemma~\rif{calc:pseudo-area3}}\label{sec:pseudo-area3}
 
 We repeat the statement of Lemma~\rif{calc:pseudo-area3}.  Let
 $(T_1,T_0)\in\PD$. Assume $T_0\Ra T_-$.  Then $\area\{T_0,T_1,T_-\} >
@@ -4929,7 +4981,7 @@ consider six cases: each permutation on three letters determines a
 choice for the edge of $T_0$ shared with $T_1$, and a choice of the
 edge of $T_0$ shared with $T_-$.
 
-\subsubsection{Calculation~of Lemma~\rif{calc:dimer-isosc}}
+\subsubsection{Calculation~of Lemma~\rif{calc:dimer-isosc}}\label{sec:dimer-isosc}
 
 We repeat the statement of Lemma~\rif{calc:dimer-isosc}.  Let
 $(T_1,T_0)\in DP$.  Then $T_1$ is not both $O2C$ and long isosceles
@@ -4939,7 +4991,7 @@ Negating the conclusion, we may assume that $T_1$ is $O2C$ and long
 isosceles and that $T_0$ is $O2C$.  We perform the calculation without
 further preparation.
 
-\subsubsection{Calculation~of Lemma~\rif{calc:large}} %FHB.
+\subsubsection{Calculation~of Lemma~\rif{calc:large}}\label{sec:large} %FHB.
 
 We repeat the statement of Lemma~\rif{calc:large}.  Let $\{T_0,T_1\}$
 be given $P$-triangles (not necessarily a pseudo-dimer) such that
@@ -4972,7 +5024,7 @@ falls into one of the last four cases.  If the $1.8$ constraint does
 not bind, then we may translate $\bar B$ until $T_0$ is $O2C$.  Here
 $\{\bar A,\bar B,\bar C\}=\{A,B,C\}$ is a relabeling of the pentagons.
 
-\subsubsection{Calculation~of Lemma~\rif{calc:pent3}} %HUQ.
+\subsubsection{Calculation~of Lemma~\rif{calc:pent3}}\label{sec:pent3} %HUQ.
 
 We repeat the statement of Lemma~\rif{calc:pent3}.  Let $T_1^i\Ra T_0$
 and $\area(T_1^i)\le\acrit$ for $i=0,1$ for distinct $P$-triangles
@@ -4992,7 +5044,7 @@ consider four cases:
   isosceles.
 \end{enumerate}  
 
-\subsubsection{Calculation~of Lemma~\rif{calc:pent4}} 
+\subsubsection{Calculation~of Lemma~\rif{calc:pent4}} \label{sec:pent4}
 
 We repeat the statement of Lemma~\rif{calc:pent4}.  Let $T_1^i\Ra T_0$
 and $\area(T_1^i)\le\acrit$ for $i=0,1,2$ for distinct $P$-triangles
