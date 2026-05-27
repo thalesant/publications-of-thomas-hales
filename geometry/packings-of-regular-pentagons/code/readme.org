@@ -1,16 +1,17 @@
 # M-x org-md-export-to-markdown
 * Pentagon computer code
 
-- This directory contains the computer code that is used in the proof of
-the pentagonal ice-ray conjecture of Henley, Kuperberg, and Kuperberg.
+- This directory contains the computer code that is used in the proof of the pentagonal ice-ray conjecture of Henley, Kuperberg, and Kuperberg.
 
-- The source code was written in 2016 in Objective Caml (.ml) and Mathematica (.m).  There was a slight cleanup in 2025.
+- [[https://arxiv.org/abs/1602.07220][ArXiv version of the paper]] "Packings of Regular Pentagons in the Plane" by Thomas Hales and Wöden Kusner.
+
+- The source code was written in 2016 in Objective Caml (.ml) and Mathematica (.m).  There was a slight cleanup in 2026.
   
 - The Objective Caml interval arithmetic code relies on Jean-Marc Alliot's
     interval arithmetic package.  This library only works on Intel processors.
 
     - The init.ml file gives a few comments about how to initialize Alliot's package.
-    - Alliot's source code: https://www.alliot.fr/fbbdet.html.fr
+    - [[https://www.alliot.fr/fbbdet.html.fr][Alliot's source code]]
     - Source code republished by Christope Troestler on github https://github.com/Chris00/ocaml-interval/
 
 - There are no other dependencies on outside packages.
@@ -23,7 +24,21 @@ the pentagonal ice-ray conjecture of Henley, Kuperberg, and Kuperberg.
 ** ocaml directory.
 
 - Library files:
-  - lib.ml Convenient Library functions. This file was written by John Harrison and is part of the HOL Light distribution. It contains a number of useful list processing functions.  
+  - lib.ml Convenient Library functions. This file was written by John
+    Harrison and is part of the HOL Light distribution. It contains a
+    number of useful list processing functions.
 
-  - autodiff.ml This file implements automatic differentiation. See https://en.wikipedia.org/wiki/Automatic_differentiation.  Only first derivatives are computed.  The code is written specifically for the needs of the pentagon packing problem.
+  - autodiff.ml This file implements automatic differentiation. See 
+    https://en.wikipedia.org/wiki/Automatic_differentiation.  Only
+    first derivatives are computed.  The code is written specifically
+    for the needs of the pentagon packing problem.
+
+** Mathematica code.
+
+* Code following paper section numbers.
+
+Some calculations have both a Mathematica [M] and [O] O'Caml implementation.
+
+- Sec. 1.
+  | numerical density 0.92... |  [[./mathematica/pentagon2026.m#L15][pentagon2026.m, line 15]]  |
 
