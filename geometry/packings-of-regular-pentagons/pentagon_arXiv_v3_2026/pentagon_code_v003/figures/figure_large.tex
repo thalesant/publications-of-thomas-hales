@@ -1,0 +1,14 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{large}{A Delaunay triangle $T$ 
+with a large angle $\alpha$ along $(T,e)$.}
+{
+\begin{scope}[scale=0.8]
+\threepent{0.00}{0.00}{50.58}{1.10}{1.49}{181.07}{1.73}{0.00}{217.07};
+\draw (0,0) node[anchor=north] {$A$};
+\draw (0,0) node[anchor=south] {$e\ $};
+\draw (1.1,1.49) node[anchor=south] {$B$};
+\draw[black] (50.58:1) -- ++ ($2*(50.58+72:1) - 2*(50.58:1)$);
+\draw[black] (50.58:1) -- ++ ($2*(1.1,1.49)+2*(181.07:1) - 2*(50.58:1)$);
+\draw (-0.8,1.4) node {$\alpha$};
+\end{scope}
+}

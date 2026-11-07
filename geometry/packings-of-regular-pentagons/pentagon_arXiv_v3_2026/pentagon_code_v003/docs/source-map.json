@@ -1,0 +1,6002 @@
+{
+  "autodiff.ml:test_near": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_near",
+    "start": 18,
+    "end": 19
+  },
+  "autodiff.ml:test_neare2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_neare2",
+    "start": 21,
+    "end": 22
+  },
+  "autodiff.ml:test_nearfst": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_nearfst",
+    "start": 24,
+    "end": 24
+  },
+  "autodiff.ml:test_nearff": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_nearff",
+    "start": 26,
+    "end": 28
+  },
+  "autodiff.ml:test_addD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_addD",
+    "start": 30,
+    "end": 33
+  },
+  "autodiff.ml:x": {
+    "file": "ocaml/autodiff.ml",
+    "function": "x",
+    "start": 31,
+    "end": 33
+  },
+  "autodiff.ml:y": {
+    "file": "ocaml/autodiff.ml",
+    "function": "y",
+    "start": 32,
+    "end": 33
+  },
+  "autodiff.ml:test_multD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_multD",
+    "start": 41,
+    "end": 44
+  },
+  "autodiff.ml:sqrtD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "sqrtD",
+    "start": 46,
+    "end": 47
+  },
+  "autodiff.ml:test_sqrtD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_sqrtD",
+    "start": 49,
+    "end": 52
+  },
+  "autodiff.ml:sinD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "sinD",
+    "start": 54,
+    "end": 55
+  },
+  "autodiff.ml:cosD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "cosD",
+    "start": 57,
+    "end": 58
+  },
+  "autodiff.ml:acosD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "acosD",
+    "start": 60,
+    "end": 61
+  },
+  "autodiff.ml:asinD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "asinD",
+    "start": 63,
+    "end": 64
+  },
+  "autodiff.ml:test_sinD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_sinD",
+    "start": 66,
+    "end": 69
+  },
+  "autodiff.ml:test_cosD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_cosD",
+    "start": 71,
+    "end": 74
+  },
+  "autodiff.ml:iD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "iD",
+    "start": 76,
+    "end": 76
+  },
+  "autodiff.ml:mk_intervalD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "mk_intervalD",
+    "start": 78,
+    "end": 78
+  },
+  "autodiff.ml:mD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "mD",
+    "start": 80,
+    "end": 80
+  },
+  "autodiff.ml:mkD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "mkD",
+    "start": 82,
+    "end": 82
+  },
+  "autodiff.ml:zeroD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "zeroD",
+    "start": 84,
+    "end": 84
+  },
+  "autodiff.ml:oneD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "oneD",
+    "start": 86,
+    "end": 86
+  },
+  "autodiff.ml:twoD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "twoD",
+    "start": 88,
+    "end": 88
+  },
+  "autodiff.ml:fourD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "fourD",
+    "start": 90,
+    "end": 90
+  },
+  "autodiff.ml:i16D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "i16D",
+    "start": 92,
+    "end": 92
+  },
+  "autodiff.ml:piD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "piD",
+    "start": 94,
+    "end": 94
+  },
+  "autodiff.ml:pi2D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi2D",
+    "start": 96,
+    "end": 96
+  },
+  "autodiff.ml:twopiD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "twopiD",
+    "start": 98,
+    "end": 98
+  },
+  "autodiff.ml:ratpiD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ratpiD",
+    "start": 100,
+    "end": 100
+  },
+  "autodiff.ml:pi15D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi15D",
+    "start": 102,
+    "end": 102
+  },
+  "autodiff.ml:pi25D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi25D",
+    "start": 104,
+    "end": 104
+  },
+  "autodiff.ml:pi35D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi35D",
+    "start": 106,
+    "end": 106
+  },
+  "autodiff.ml:pi45D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi45D",
+    "start": 108,
+    "end": 108
+  },
+  "autodiff.ml:ratD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ratD",
+    "start": 110,
+    "end": 110
+  },
+  "autodiff.ml:kappaD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "kappaD",
+    "start": 112,
+    "end": 112
+  },
+  "autodiff.ml:sigmaD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "sigmaD",
+    "start": 114,
+    "end": 114
+  },
+  "autodiff.ml:aKD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "aKD",
+    "start": 116,
+    "end": 116
+  },
+  "autodiff.ml:ice_ray_nbd": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ice_ray_nbd",
+    "start": 118,
+    "end": 118
+  },
+  "autodiff.ml:epsN_D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "epsN_D",
+    "start": 120,
+    "end": 120
+  },
+  "autodiff.ml:test_epsN_D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_epsN_D",
+    "start": 122,
+    "end": 123
+  },
+  "autodiff.ml:ups_D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ups_D",
+    "start": 125,
+    "end": 127
+  },
+  "autodiff.ml:test_ups_D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_ups_D",
+    "start": 129,
+    "end": 131
+  },
+  "autodiff.ml:area_D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "area_D",
+    "start": 133,
+    "end": 137
+  },
+  "autodiff.ml:x1": {
+    "file": "ocaml/autodiff.ml",
+    "function": "x1",
+    "start": 134,
+    "end": 137
+  },
+  "autodiff.ml:x2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "x2",
+    "start": 135,
+    "end": 137
+  },
+  "autodiff.ml:x3": {
+    "file": "ocaml/autodiff.ml",
+    "function": "x3",
+    "start": 136,
+    "end": 137
+  },
+  "autodiff.ml:test_area_D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_area_D",
+    "start": 139,
+    "end": 141
+  },
+  "autodiff.ml:arcD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "arcD",
+    "start": 143,
+    "end": 144
+  },
+  "autodiff.ml:test_arcD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_arcD",
+    "start": 146,
+    "end": 148
+  },
+  "autodiff.ml:lawsinesD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "lawsinesD",
+    "start": 150,
+    "end": 152
+  },
+  "autodiff.ml:aa": {
+    "file": "ocaml/autodiff.ml",
+    "function": "aa",
+    "start": 151,
+    "end": 152
+  },
+  "autodiff.ml:test_lawsinesD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_lawsinesD",
+    "start": 154,
+    "end": 160
+  },
+  "autodiff.ml:locD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "locD",
+    "start": 162,
+    "end": 164
+  },
+  "autodiff.ml:costh": {
+    "file": "ocaml/autodiff.ml",
+    "function": "costh",
+    "start": 163,
+    "end": 164
+  },
+  "autodiff.ml:test_locD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_locD",
+    "start": 166,
+    "end": 169
+  },
+  "autodiff.ml:ell_auxD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ell_auxD",
+    "start": 171,
+    "end": 174
+  },
+  "autodiff.ml:r": {
+    "file": "ocaml/autodiff.ml",
+    "function": "r",
+    "start": 172,
+    "end": 174
+  },
+  "autodiff.ml:theta": {
+    "file": "ocaml/autodiff.ml",
+    "function": "theta",
+    "start": 173,
+    "end": 174
+  },
+  "autodiff.ml:ellD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ellD",
+    "start": 176,
+    "end": 179
+  },
+  "autodiff.ml:pi310D": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi310D",
+    "start": 177,
+    "end": 179
+  },
+  "autodiff.ml:test_ellD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_ellD",
+    "start": 181,
+    "end": 184
+  },
+  "autodiff.ml:pinwheeledgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pinwheeledgeD",
+    "start": 186,
+    "end": 190
+  },
+  "autodiff.ml:gamma": {
+    "file": "ocaml/autodiff.ml",
+    "function": "gamma",
+    "start": 187,
+    "end": 190
+  },
+  "autodiff.ml:test_nearedge": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_nearedge",
+    "start": 192,
+    "end": 197
+  },
+  "autodiff.ml:test_pinwheeledgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_pinwheeledgeD",
+    "start": 199,
+    "end": 203
+  },
+  "autodiff.ml:ljedge_extendedD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ljedge_extendedD",
+    "start": 205,
+    "end": 216
+  },
+  "autodiff.ml:alpha'": {
+    "file": "ocaml/autodiff.ml",
+    "function": "alpha'",
+    "start": 207,
+    "end": 216
+  },
+  "autodiff.ml:beta'": {
+    "file": "ocaml/autodiff.ml",
+    "function": "beta'",
+    "start": 208,
+    "end": 216
+  },
+  "autodiff.ml:gamma'": {
+    "file": "ocaml/autodiff.ml",
+    "function": "gamma'",
+    "start": 209,
+    "end": 216
+  },
+  "autodiff.ml:delta'": {
+    "file": "ocaml/autodiff.ml",
+    "function": "delta'",
+    "start": 210,
+    "end": 216
+  },
+  "autodiff.ml:s2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "s2",
+    "start": 212,
+    "end": 216
+  },
+  "autodiff.ml:xbeta": {
+    "file": "ocaml/autodiff.ml",
+    "function": "xbeta",
+    "start": 214,
+    "end": 216
+  },
+  "autodiff.ml:ljedgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ljedgeD",
+    "start": 218,
+    "end": 220
+  },
+  "autodiff.ml:test_ljedgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_ljedgeD",
+    "start": 222,
+    "end": 226
+  },
+  "autodiff.ml:shared_pinwheeledgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "shared_pinwheeledgeD",
+    "start": 228,
+    "end": 231
+  },
+  "autodiff.ml:test_shared_pinwheeledgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_shared_pinwheeledgeD",
+    "start": 233,
+    "end": 237
+  },
+  "autodiff.ml:shared_lj1edge_extendedD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "shared_lj1edge_extendedD",
+    "start": 239,
+    "end": 252
+  },
+  "autodiff.ml:pi25": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi25",
+    "start": 240,
+    "end": 252
+  },
+  "autodiff.ml:pi35": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi35",
+    "start": 241,
+    "end": 252
+  },
+  "autodiff.ml:alpha": {
+    "file": "ocaml/autodiff.ml",
+    "function": "alpha",
+    "start": 243,
+    "end": 252
+  },
+  "autodiff.ml:xa": {
+    "file": "ocaml/autodiff.ml",
+    "function": "xa",
+    "start": 250,
+    "end": 252
+  },
+  "autodiff.ml:xc": {
+    "file": "ocaml/autodiff.ml",
+    "function": "xc",
+    "start": 251,
+    "end": 252
+  },
+  "autodiff.ml:shared_lj1edgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "shared_lj1edgeD",
+    "start": 254,
+    "end": 256
+  },
+  "autodiff.ml:test_shared_lj1edgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_shared_lj1edgeD",
+    "start": 258,
+    "end": 262
+  },
+  "autodiff.ml:shared_lj2edgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "shared_lj2edgeD",
+    "start": 264,
+    "end": 266
+  },
+  "autodiff.ml:shared_lj2edge_extendedD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "shared_lj2edge_extendedD",
+    "start": 268,
+    "end": 270
+  },
+  "autodiff.ml:test_shared_lj2edgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_shared_lj2edgeD",
+    "start": 272,
+    "end": 276
+  },
+  "autodiff.ml:shared_tj3edgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "shared_tj3edgeD",
+    "start": 278,
+    "end": 290
+  },
+  "autodiff.ml:eps'": {
+    "file": "ocaml/autodiff.ml",
+    "function": "eps'",
+    "start": 283,
+    "end": 290
+  },
+  "autodiff.ml:xalpha": {
+    "file": "ocaml/autodiff.ml",
+    "function": "xalpha",
+    "start": 289,
+    "end": 290
+  },
+  "autodiff.ml:test_shared_tj3edgeD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_shared_tj3edgeD",
+    "start": 292,
+    "end": 296
+  },
+  "autodiff.ml:one_twist_claim_lj1": {
+    "file": "ocaml/autodiff.ml",
+    "function": "one_twist_claim_lj1",
+    "start": 298,
+    "end": 305
+  },
+  "autodiff.ml:dummybool": {
+    "file": "ocaml/autodiff.ml",
+    "function": "dummybool",
+    "start": 307,
+    "end": 307
+  },
+  "autodiff.ml:twist_claim_lj1": {
+    "file": "ocaml/autodiff.ml",
+    "function": "twist_claim_lj1",
+    "start": 309,
+    "end": 313
+  },
+  "autodiff.ml:ee": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ee",
+    "start": 310,
+    "end": 313
+  },
+  "autodiff.ml:eps_domain": {
+    "file": "ocaml/autodiff.ml",
+    "function": "eps_domain",
+    "start": 312,
+    "end": 313
+  },
+  "autodiff.ml:one_twist_claim_lj2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "one_twist_claim_lj2",
+    "start": 315,
+    "end": 324
+  },
+  "autodiff.ml:beta_t": {
+    "file": "ocaml/autodiff.ml",
+    "function": "beta_t",
+    "start": 318,
+    "end": 324
+  },
+  "autodiff.ml:alpha_t": {
+    "file": "ocaml/autodiff.ml",
+    "function": "alpha_t",
+    "start": 319,
+    "end": 324
+  },
+  "autodiff.ml:xbeta_t": {
+    "file": "ocaml/autodiff.ml",
+    "function": "xbeta_t",
+    "start": 320,
+    "end": 324
+  },
+  "autodiff.ml:twist_claim_lj2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "twist_claim_lj2",
+    "start": 326,
+    "end": 330
+  },
+  "autodiff.ml:one_dimerD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "one_dimerD",
+    "start": 332,
+    "end": 350
+  },
+  "autodiff.ml:alphaB_s": {
+    "file": "ocaml/autodiff.ml",
+    "function": "alphaB_s",
+    "start": 337,
+    "end": 350
+  },
+  "autodiff.ml:betaB_s": {
+    "file": "ocaml/autodiff.ml",
+    "function": "betaB_s",
+    "start": 338,
+    "end": 350
+  },
+  "autodiff.ml:aABC": {
+    "file": "ocaml/autodiff.ml",
+    "function": "aABC",
+    "start": 340,
+    "end": 350
+  },
+  "autodiff.ml:betaD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "betaD",
+    "start": 342,
+    "end": 350
+  },
+  "autodiff.ml:xbetaD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "xbetaD",
+    "start": 343,
+    "end": 350
+  },
+  "autodiff.ml:alphaD_s": {
+    "file": "ocaml/autodiff.ml",
+    "function": "alphaD_s",
+    "start": 344,
+    "end": 350
+  },
+  "autodiff.ml:betaD_s": {
+    "file": "ocaml/autodiff.ml",
+    "function": "betaD_s",
+    "start": 345,
+    "end": 350
+  },
+  "autodiff.ml:aADC": {
+    "file": "ocaml/autodiff.ml",
+    "function": "aADC",
+    "start": 347,
+    "end": 350
+  },
+  "autodiff.ml:i_m1": {
+    "file": "ocaml/autodiff.ml",
+    "function": "i_m1",
+    "start": 352,
+    "end": 352
+  },
+  "autodiff.ml:dimerD_toptypes": {
+    "file": "ocaml/autodiff.ml",
+    "function": "dimerD_toptypes",
+    "start": 354,
+    "end": 359
+  },
+  "autodiff.ml:dimerD_bottypes": {
+    "file": "ocaml/autodiff.ml",
+    "function": "dimerD_bottypes",
+    "start": 361,
+    "end": 367
+  },
+  "autodiff.ml:dimerD_domain": {
+    "file": "ocaml/autodiff.ml",
+    "function": "dimerD_domain",
+    "start": 369,
+    "end": 379
+  },
+  "autodiff.ml:top": {
+    "file": "ocaml/autodiff.ml",
+    "function": "top",
+    "start": 370,
+    "end": 379
+  },
+  "autodiff.ml:bottom": {
+    "file": "ocaml/autodiff.ml",
+    "function": "bottom",
+    "start": 372,
+    "end": 379
+  },
+  "autodiff.ml:eps": {
+    "file": "ocaml/autodiff.ml",
+    "function": "eps",
+    "start": 374,
+    "end": 379
+  },
+  "autodiff.ml:epstop": {
+    "file": "ocaml/autodiff.ml",
+    "function": "epstop",
+    "start": 375,
+    "end": 379
+  },
+  "autodiff.ml:epsbottom": {
+    "file": "ocaml/autodiff.ml",
+    "function": "epsbottom",
+    "start": 376,
+    "end": 379
+  },
+  "autodiff.ml:alphaBdomain": {
+    "file": "ocaml/autodiff.ml",
+    "function": "alphaBdomain",
+    "start": 377,
+    "end": 379
+  },
+  "autodiff.ml:dtypeD_labels": {
+    "file": "ocaml/autodiff.ml",
+    "function": "dtypeD_labels",
+    "start": 381,
+    "end": 383
+  },
+  "autodiff.ml:recurse_dimerD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "recurse_dimerD",
+    "start": 385,
+    "end": 391
+  },
+  "autodiff.ml:_": {
+    "file": "ocaml/autodiff.ml",
+    "function": "_",
+    "start": 387,
+    "end": 391
+  },
+  "autodiff.ml:recurseD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "recurseD",
+    "start": 393,
+    "end": 393
+  },
+  "autodiff.ml:test_neare3": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_neare3",
+    "start": 395,
+    "end": 397
+  },
+  "autodiff.ml:e": {
+    "file": "ocaml/autodiff.ml",
+    "function": "e",
+    "start": 396,
+    "end": 397
+  },
+  "autodiff.ml:test_addD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_addD2",
+    "start": 406,
+    "end": 409
+  },
+  "autodiff.ml:d1": {
+    "file": "ocaml/autodiff.ml",
+    "function": "d1",
+    "start": 415,
+    "end": 417
+  },
+  "autodiff.ml:test_multD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_multD2",
+    "start": 419,
+    "end": 422
+  },
+  "autodiff.ml:sqrtD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "sqrtD2",
+    "start": 424,
+    "end": 426
+  },
+  "autodiff.ml:s": {
+    "file": "ocaml/autodiff.ml",
+    "function": "s",
+    "start": 425,
+    "end": 426
+  },
+  "autodiff.ml:test_sqrtD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_sqrtD2",
+    "start": 428,
+    "end": 431
+  },
+  "autodiff.ml:sinD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "sinD2",
+    "start": 433,
+    "end": 436
+  },
+  "autodiff.ml:c": {
+    "file": "ocaml/autodiff.ml",
+    "function": "c",
+    "start": 435,
+    "end": 436
+  },
+  "autodiff.ml:cosD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "cosD2",
+    "start": 438,
+    "end": 441
+  },
+  "autodiff.ml:acosD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "acosD2",
+    "start": 443,
+    "end": 446
+  },
+  "autodiff.ml:asinD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "asinD2",
+    "start": 448,
+    "end": 451
+  },
+  "autodiff.ml:test_sinD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_sinD2",
+    "start": 453,
+    "end": 456
+  },
+  "autodiff.ml:test_cosD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_cosD2",
+    "start": 458,
+    "end": 461
+  },
+  "autodiff.ml:iD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "iD2",
+    "start": 463,
+    "end": 463
+  },
+  "autodiff.ml:mk_intervalD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "mk_intervalD2",
+    "start": 465,
+    "end": 465
+  },
+  "autodiff.ml:mD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "mD2",
+    "start": 467,
+    "end": 467
+  },
+  "autodiff.ml:mkD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "mkD2",
+    "start": 469,
+    "end": 469
+  },
+  "autodiff.ml:zeroD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "zeroD2",
+    "start": 471,
+    "end": 471
+  },
+  "autodiff.ml:oneD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "oneD2",
+    "start": 473,
+    "end": 473
+  },
+  "autodiff.ml:twoD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "twoD2",
+    "start": 475,
+    "end": 475
+  },
+  "autodiff.ml:fourD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "fourD2",
+    "start": 477,
+    "end": 477
+  },
+  "autodiff.ml:i16D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "i16D2",
+    "start": 479,
+    "end": 479
+  },
+  "autodiff.ml:piD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "piD2",
+    "start": 481,
+    "end": 481
+  },
+  "autodiff.ml:pi2D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi2D2",
+    "start": 483,
+    "end": 483
+  },
+  "autodiff.ml:twopiD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "twopiD2",
+    "start": 485,
+    "end": 485
+  },
+  "autodiff.ml:ratpiD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ratpiD2",
+    "start": 487,
+    "end": 487
+  },
+  "autodiff.ml:pi15D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi15D2",
+    "start": 489,
+    "end": 489
+  },
+  "autodiff.ml:pi25D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi25D2",
+    "start": 491,
+    "end": 491
+  },
+  "autodiff.ml:pi35D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi35D2",
+    "start": 493,
+    "end": 493
+  },
+  "autodiff.ml:pi45D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi45D2",
+    "start": 495,
+    "end": 495
+  },
+  "autodiff.ml:ratD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ratD2",
+    "start": 497,
+    "end": 497
+  },
+  "autodiff.ml:kappaD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "kappaD2",
+    "start": 499,
+    "end": 499
+  },
+  "autodiff.ml:sigmaD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "sigmaD2",
+    "start": 501,
+    "end": 501
+  },
+  "autodiff.ml:aKD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "aKD2",
+    "start": 503,
+    "end": 503
+  },
+  "autodiff.ml:epsN_D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "epsN_D2",
+    "start": 505,
+    "end": 505
+  },
+  "autodiff.ml:ups_D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ups_D2",
+    "start": 507,
+    "end": 509
+  },
+  "autodiff.ml:test_ups_D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_ups_D2",
+    "start": 511,
+    "end": 514
+  },
+  "autodiff.ml:area_D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "area_D2",
+    "start": 516,
+    "end": 520
+  },
+  "autodiff.ml:test_area_D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_area_D2",
+    "start": 522,
+    "end": 525
+  },
+  "autodiff.ml:arcD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "arcD2",
+    "start": 527,
+    "end": 529
+  },
+  "autodiff.ml:test_arcD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_arcD2",
+    "start": 531,
+    "end": 534
+  },
+  "autodiff.ml:lawsinesD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "lawsinesD2",
+    "start": 536,
+    "end": 538
+  },
+  "autodiff.ml:test_lawsinesD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_lawsinesD2",
+    "start": 540,
+    "end": 545
+  },
+  "autodiff.ml:locD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "locD2",
+    "start": 547,
+    "end": 549
+  },
+  "autodiff.ml:test_locD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_locD2",
+    "start": 551,
+    "end": 554
+  },
+  "autodiff.ml:ell_auxD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ell_auxD2",
+    "start": 556,
+    "end": 559
+  },
+  "autodiff.ml:ellD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "ellD2",
+    "start": 561,
+    "end": 564
+  },
+  "autodiff.ml:pi310D2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pi310D2",
+    "start": 562,
+    "end": 564
+  },
+  "autodiff.ml:test_ellD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_ellD2",
+    "start": 566,
+    "end": 569
+  },
+  "autodiff.ml:pinwheeledgeD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "pinwheeledgeD2",
+    "start": 571,
+    "end": 576
+  },
+  "autodiff.ml:test_nearedgeD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_nearedgeD2",
+    "start": 578,
+    "end": 583
+  },
+  "autodiff.ml:test_pinwheeledgeD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_pinwheeledgeD2",
+    "start": 585,
+    "end": 588
+  },
+  "autodiff.ml:shared_pinwheeledgeD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "shared_pinwheeledgeD2",
+    "start": 590,
+    "end": 592
+  },
+  "autodiff.ml:test_shared_pinwheeledgeD2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "test_shared_pinwheeledgeD2",
+    "start": 594,
+    "end": 598
+  },
+  "autodiff.ml:one_dimer2": {
+    "file": "ocaml/autodiff.ml",
+    "function": "one_dimer2",
+    "start": 601,
+    "end": 617
+  },
+  "autodiff.ml:alphaB": {
+    "file": "ocaml/autodiff.ml",
+    "function": "alphaB",
+    "start": 602,
+    "end": 617
+  },
+  "autodiff.ml:betaB": {
+    "file": "ocaml/autodiff.ml",
+    "function": "betaB",
+    "start": 603,
+    "end": 617
+  },
+  "autodiff.ml:xbetaB": {
+    "file": "ocaml/autodiff.ml",
+    "function": "xbetaB",
+    "start": 604,
+    "end": 617
+  },
+  "autodiff.ml:alphaD": {
+    "file": "ocaml/autodiff.ml",
+    "function": "alphaD",
+    "start": 606,
+    "end": 617
+  },
+  "autodiff.ml:edge": {
+    "file": "ocaml/autodiff.ml",
+    "function": "edge",
+    "start": 607,
+    "end": 617
+  },
+  "autodiff.ml:gamma_convexity_diagnostic": {
+    "file": "ocaml/autodiff.ml",
+    "function": "gamma_convexity_diagnostic",
+    "start": 621,
+    "end": 623
+  },
+  "autodiff.ml:diagnostic_tests": {
+    "file": "ocaml/autodiff.ml",
+    "function": "diagnostic_tests",
+    "start": 624,
+    "end": 656
+  },
+  "banana.ml:theta_hpos": {
+    "file": "ocaml/banana.ml",
+    "function": "theta_hpos",
+    "start": 12,
+    "end": 21
+  },
+  "banana.ml:ly": {
+    "file": "ocaml/banana.ml",
+    "function": "ly",
+    "start": 13,
+    "end": 21
+  },
+  "banana.ml:r": {
+    "file": "ocaml/banana.ml",
+    "function": "r",
+    "start": 14,
+    "end": 21
+  },
+  "banana.ml:h": {
+    "file": "ocaml/banana.ml",
+    "function": "h",
+    "start": 15,
+    "end": 21
+  },
+  "banana.ml:xa": {
+    "file": "ocaml/banana.ml",
+    "function": "xa",
+    "start": 16,
+    "end": 21
+  },
+  "banana.ml:delta": {
+    "file": "ocaml/banana.ml",
+    "function": "delta",
+    "start": 17,
+    "end": 21
+  },
+  "banana.ml:phi'": {
+    "file": "ocaml/banana.ml",
+    "function": "phi'",
+    "start": 18,
+    "end": 21
+  },
+  "banana.ml:alpha": {
+    "file": "ocaml/banana.ml",
+    "function": "alpha",
+    "start": 19,
+    "end": 21
+  },
+  "banana.ml:theta": {
+    "file": "ocaml/banana.ml",
+    "function": "theta",
+    "start": 20,
+    "end": 21
+  },
+  "banana.ml:theta_hsign": {
+    "file": "ocaml/banana.ml",
+    "function": "theta_hsign",
+    "start": 23,
+    "end": 25
+  },
+  "banana.ml:curveIt": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIt",
+    "start": 28,
+    "end": 28
+  },
+  "banana.ml:curveIIt": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIIt",
+    "start": 30,
+    "end": 30
+  },
+  "banana.ml:curveIIIt": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIIIt",
+    "start": 32,
+    "end": 32
+  },
+  "banana.ml:curveIVtpos": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIVtpos",
+    "start": 34,
+    "end": 34
+  },
+  "banana.ml:curveIVtneg": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIVtneg",
+    "start": 36,
+    "end": 36
+  },
+  "banana.ml:curveVt": {
+    "file": "ocaml/banana.ml",
+    "function": "curveVt",
+    "start": 38,
+    "end": 38
+  },
+  "banana.ml:curveIth": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIth",
+    "start": 40,
+    "end": 40
+  },
+  "banana.ml:curveIIth": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIIth",
+    "start": 42,
+    "end": 42
+  },
+  "banana.ml:curveIIIth": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIIIth",
+    "start": 44,
+    "end": 44
+  },
+  "banana.ml:curveIVth": {
+    "file": "ocaml/banana.ml",
+    "function": "curveIVth",
+    "start": 46,
+    "end": 46
+  },
+  "banana.ml:curveVth": {
+    "file": "ocaml/banana.ml",
+    "function": "curveVth",
+    "start": 48,
+    "end": 48
+  },
+  "banana.ml:square_I": {
+    "file": "ocaml/banana.ml",
+    "function": "square_I",
+    "start": 50,
+    "end": 50
+  },
+  "banana.ml:someinter_I": {
+    "file": "ocaml/banana.ml",
+    "function": "someinter_I",
+    "start": 54,
+    "end": 55
+  },
+  "banana.ml:ks": {
+    "file": "ocaml/banana.ml",
+    "function": "ks",
+    "start": 57,
+    "end": 57
+  },
+  "banana.ml:theta'ks": {
+    "file": "ocaml/banana.ml",
+    "function": "theta'ks",
+    "start": 59,
+    "end": 59
+  },
+  "banana.ml:k1s": {
+    "file": "ocaml/banana.ml",
+    "function": "k1s",
+    "start": 61,
+    "end": 61
+  },
+  "banana.ml:box0": {
+    "file": "ocaml/banana.ml",
+    "function": "box0",
+    "start": 63,
+    "end": 63
+  },
+  "banana.ml:box1": {
+    "file": "ocaml/banana.ml",
+    "function": "box1",
+    "start": 65,
+    "end": 65
+  },
+  "banana.ml:box2": {
+    "file": "ocaml/banana.ml",
+    "function": "box2",
+    "start": 67,
+    "end": 67
+  },
+  "banana.ml:box3": {
+    "file": "ocaml/banana.ml",
+    "function": "box3",
+    "start": 69,
+    "end": 69
+  },
+  "banana.ml:box4": {
+    "file": "ocaml/banana.ml",
+    "function": "box4",
+    "start": 71,
+    "end": 71
+  },
+  "banana.ml:box5": {
+    "file": "ocaml/banana.ml",
+    "function": "box5",
+    "start": 73,
+    "end": 73
+  },
+  "banana.ml:ridgeless_boxes": {
+    "file": "ocaml/banana.ml",
+    "function": "ridgeless_boxes",
+    "start": 76,
+    "end": 81
+  },
+  "banana.ml:restrict_to_box": {
+    "file": "ocaml/banana.ml",
+    "function": "restrict_to_box",
+    "start": 83,
+    "end": 89
+  },
+  "banana.ml:x1": {
+    "file": "ocaml/banana.ml",
+    "function": "x1",
+    "start": 84,
+    "end": 89
+  },
+  "banana.ml:y1": {
+    "file": "ocaml/banana.ml",
+    "function": "y1",
+    "start": 85,
+    "end": 89
+  },
+  "banana.ml:max_theta_box0": {
+    "file": "ocaml/banana.ml",
+    "function": "max_theta_box0",
+    "start": 91,
+    "end": 96
+  },
+  "banana.ml:lx": {
+    "file": "ocaml/banana.ml",
+    "function": "lx",
+    "start": 92,
+    "end": 96
+  },
+  "banana.ml:th'": {
+    "file": "ocaml/banana.ml",
+    "function": "th'",
+    "start": 93,
+    "end": 96
+  },
+  "banana.ml:critical_theta_box0": {
+    "file": "ocaml/banana.ml",
+    "function": "critical_theta_box0",
+    "start": 98,
+    "end": 102
+  },
+  "banana.ml:some_function": {
+    "file": "ocaml/banana.ml",
+    "function": "some_function",
+    "start": 104,
+    "end": 107
+  },
+  "banana.ml:find_critical_points": {
+    "file": "ocaml/banana.ml",
+    "function": "find_critical_points",
+    "start": 110,
+    "end": 131
+  },
+  "banana.ml:left_corner_filter": {
+    "file": "ocaml/banana.ml",
+    "function": "left_corner_filter",
+    "start": 117,
+    "end": 131
+  },
+  "banana.ml:right_corner_filter": {
+    "file": "ocaml/banana.ml",
+    "function": "right_corner_filter",
+    "start": 118,
+    "end": 131
+  },
+  "banana.ml:corners": {
+    "file": "ocaml/banana.ml",
+    "function": "corners",
+    "start": 119,
+    "end": 131
+  },
+  "banana.ml:curve_filter": {
+    "file": "ocaml/banana.ml",
+    "function": "curve_filter",
+    "start": 121,
+    "end": 131
+  },
+  "banana.ml:curve_points": {
+    "file": "ocaml/banana.ml",
+    "function": "curve_points",
+    "start": 122,
+    "end": 131
+  },
+  "banana.ml:add_horiz": {
+    "file": "ocaml/banana.ml",
+    "function": "add_horiz",
+    "start": 125,
+    "end": 131
+  },
+  "banana.ml:horiz_point": {
+    "file": "ocaml/banana.ml",
+    "function": "horiz_point",
+    "start": 128,
+    "end": 131
+  },
+  "banana.ml:compress": {
+    "file": "ocaml/banana.ml",
+    "function": "compress",
+    "start": 133,
+    "end": 141
+  },
+  "banana.ml:t": {
+    "file": "ocaml/banana.ml",
+    "function": "t",
+    "start": 138,
+    "end": 141
+  },
+  "banana.ml:critical_points_box": {
+    "file": "ocaml/banana.ml",
+    "function": "critical_points_box",
+    "start": 143,
+    "end": 147
+  },
+  "banana.ml:critical_points_banana": {
+    "file": "ocaml/banana.ml",
+    "function": "critical_points_banana",
+    "start": 150,
+    "end": 166
+  },
+  "banana.ml:v1": {
+    "file": "ocaml/banana.ml",
+    "function": "v1",
+    "start": 151,
+    "end": 166
+  },
+  "banana.ml:meets_global_max": {
+    "file": "ocaml/banana.ml",
+    "function": "meets_global_max",
+    "start": 154,
+    "end": 166
+  },
+  "banana.ml:meets_global_min": {
+    "file": "ocaml/banana.ml",
+    "function": "meets_global_min",
+    "start": 155,
+    "end": 166
+  },
+  "banana.ml:v": {
+    "file": "ocaml/banana.ml",
+    "function": "v",
+    "start": 156,
+    "end": 166
+  },
+  "banana.ml:rectangle_boundary_filter": {
+    "file": "ocaml/banana.ml",
+    "function": "rectangle_boundary_filter",
+    "start": 158,
+    "end": 166
+  },
+  "banana.ml:global_points": {
+    "file": "ocaml/banana.ml",
+    "function": "global_points",
+    "start": 162,
+    "end": 166
+  },
+  "banana.ml:vv": {
+    "file": "ocaml/banana.ml",
+    "function": "vv",
+    "start": 165,
+    "end": 166
+  },
+  "banana.ml:theta_banana": {
+    "file": "ocaml/banana.ml",
+    "function": "theta_banana",
+    "start": 169,
+    "end": 174
+  },
+  "banana.ml:theta_values": {
+    "file": "ocaml/banana.ml",
+    "function": "theta_values",
+    "start": 171,
+    "end": 174
+  },
+  "banana.ml:theta_banana_neg": {
+    "file": "ocaml/banana.ml",
+    "function": "theta_banana_neg",
+    "start": 176,
+    "end": 179
+  },
+  "banana.ml:theta'_acute": {
+    "file": "ocaml/banana.ml",
+    "function": "theta'_acute",
+    "start": 181,
+    "end": 187
+  },
+  "banana.ml:s": {
+    "file": "ocaml/banana.ml",
+    "function": "s",
+    "start": 182,
+    "end": 187
+  },
+  "banana.ml:x": {
+    "file": "ocaml/banana.ml",
+    "function": "x",
+    "start": 183,
+    "end": 187
+  },
+  "banana.ml:phi": {
+    "file": "ocaml/banana.ml",
+    "function": "phi",
+    "start": 184,
+    "end": 187
+  },
+  "banana.ml:alpha'": {
+    "file": "ocaml/banana.ml",
+    "function": "alpha'",
+    "start": 185,
+    "end": 187
+  },
+  "banana.ml:theta'": {
+    "file": "ocaml/banana.ml",
+    "function": "theta'",
+    "start": 186,
+    "end": 187
+  },
+  "banana.ml:durveIt": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIt",
+    "start": 189,
+    "end": 189
+  },
+  "banana.ml:durveIIt": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIIt",
+    "start": 191,
+    "end": 191
+  },
+  "banana.ml:durveIIIt": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIIIt",
+    "start": 193,
+    "end": 193
+  },
+  "banana.ml:durveIVtpos": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIVtpos",
+    "start": 195,
+    "end": 195
+  },
+  "banana.ml:durveIVtneg": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIVtneg",
+    "start": 197,
+    "end": 197
+  },
+  "banana.ml:durveVt": {
+    "file": "ocaml/banana.ml",
+    "function": "durveVt",
+    "start": 199,
+    "end": 199
+  },
+  "banana.ml:durveIth": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIth",
+    "start": 201,
+    "end": 201
+  },
+  "banana.ml:durveIIth": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIIth",
+    "start": 203,
+    "end": 203
+  },
+  "banana.ml:durveIIIth": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIIIth",
+    "start": 205,
+    "end": 205
+  },
+  "banana.ml:durveIVth": {
+    "file": "ocaml/banana.ml",
+    "function": "durveIVth",
+    "start": 207,
+    "end": 207
+  },
+  "banana.ml:durveVth": {
+    "file": "ocaml/banana.ml",
+    "function": "durveVth",
+    "start": 209,
+    "end": 209
+  },
+  "banana.ml:dox0": {
+    "file": "ocaml/banana.ml",
+    "function": "dox0",
+    "start": 211,
+    "end": 211
+  },
+  "banana.ml:dox1": {
+    "file": "ocaml/banana.ml",
+    "function": "dox1",
+    "start": 213,
+    "end": 213
+  },
+  "banana.ml:dox2": {
+    "file": "ocaml/banana.ml",
+    "function": "dox2",
+    "start": 215,
+    "end": 215
+  },
+  "banana.ml:dox3": {
+    "file": "ocaml/banana.ml",
+    "function": "dox3",
+    "start": 217,
+    "end": 217
+  },
+  "banana.ml:dox4": {
+    "file": "ocaml/banana.ml",
+    "function": "dox4",
+    "start": 219,
+    "end": 219
+  },
+  "banana.ml:dox5": {
+    "file": "ocaml/banana.ml",
+    "function": "dox5",
+    "start": 221,
+    "end": 221
+  },
+  "banana.ml:ridgeless_doxes": {
+    "file": "ocaml/banana.ml",
+    "function": "ridgeless_doxes",
+    "start": 224,
+    "end": 229
+  },
+  "banana.ml:min_critical_theta_dox_ridge": {
+    "file": "ocaml/banana.ml",
+    "function": "min_critical_theta_dox_ridge",
+    "start": 231,
+    "end": 236
+  },
+  "banana.ml:critical_theta_dox_ridge": {
+    "file": "ocaml/banana.ml",
+    "function": "critical_theta_dox_ridge",
+    "start": 238,
+    "end": 242
+  },
+  "banana.ml:critical_points_danana": {
+    "file": "ocaml/banana.ml",
+    "function": "critical_points_danana",
+    "start": 244,
+    "end": 260
+  },
+  "banana.ml:theta'_danana": {
+    "file": "ocaml/banana.ml",
+    "function": "theta'_danana",
+    "start": 262,
+    "end": 265
+  },
+  "banana.ml:theta'_values": {
+    "file": "ocaml/banana.ml",
+    "function": "theta'_values",
+    "start": 264,
+    "end": 265
+  },
+  "banana.ml:pent_contact": {
+    "file": "ocaml/banana.ml",
+    "function": "pent_contact",
+    "start": 268,
+    "end": 280
+  },
+  "banana.ml:split": {
+    "file": "ocaml/banana.ml",
+    "function": "split",
+    "start": 269,
+    "end": 280
+  },
+  "banana.ml:ithetas": {
+    "file": "ocaml/banana.ml",
+    "function": "ithetas",
+    "start": 270,
+    "end": 280
+  },
+  "banana.ml:ithetas'": {
+    "file": "ocaml/banana.ml",
+    "function": "ithetas'",
+    "start": 271,
+    "end": 280
+  },
+  "banana.ml:cases": {
+    "file": "ocaml/banana.ml",
+    "function": "cases",
+    "start": 272,
+    "end": 280
+  },
+  "banana.ml:up0": {
+    "file": "ocaml/banana.ml",
+    "function": "up0",
+    "start": 273,
+    "end": 280
+  },
+  "banana.ml:cases0": {
+    "file": "ocaml/banana.ml",
+    "function": "cases0",
+    "start": 274,
+    "end": 280
+  },
+  "banana.ml:p": {
+    "file": "ocaml/banana.ml",
+    "function": "p",
+    "start": 275,
+    "end": 280
+  },
+  "banana.ml:ell_ofth": {
+    "file": "ocaml/banana.ml",
+    "function": "ell_ofth",
+    "start": 282,
+    "end": 286
+  },
+  "banana.ml:y": {
+    "file": "ocaml/banana.ml",
+    "function": "y",
+    "start": 285,
+    "end": 286
+  },
+  "banana.ml:pent_contact2": {
+    "file": "ocaml/banana.ml",
+    "function": "pent_contact2",
+    "start": 288,
+    "end": 295
+  },
+  "banana.ml:fillout2C": {
+    "file": "ocaml/banana.ml",
+    "function": "fillout2C",
+    "start": 298,
+    "end": 319
+  },
+  "banana.ml:arcBrange": {
+    "file": "ocaml/banana.ml",
+    "function": "arcBrange",
+    "start": 300,
+    "end": 319
+  },
+  "banana.ml:prearc": {
+    "file": "ocaml/banana.ml",
+    "function": "prearc",
+    "start": 301,
+    "end": 319
+  },
+  "banana.ml:k": {
+    "file": "ocaml/banana.ml",
+    "function": "k",
+    "start": 302,
+    "end": 319
+  },
+  "banana.ml:arcB": {
+    "file": "ocaml/banana.ml",
+    "function": "arcB",
+    "start": 305,
+    "end": 319
+  },
+  "banana.ml:dAC": {
+    "file": "ocaml/banana.ml",
+    "function": "dAC",
+    "start": 306,
+    "end": 319
+  },
+  "banana.ml:arcC": {
+    "file": "ocaml/banana.ml",
+    "function": "arcC",
+    "start": 310,
+    "end": 319
+  },
+  "banana.ml:arcA": {
+    "file": "ocaml/banana.ml",
+    "function": "arcA",
+    "start": 311,
+    "end": 319
+  },
+  "banana.ml:a": {
+    "file": "ocaml/banana.ml",
+    "function": "a",
+    "start": 312,
+    "end": 319
+  },
+  "banana.ml:thACB": {
+    "file": "ocaml/banana.ml",
+    "function": "thACB",
+    "start": 313,
+    "end": 319
+  },
+  "banana.ml:thCAB": {
+    "file": "ocaml/banana.ml",
+    "function": "thCAB",
+    "start": 314,
+    "end": 319
+  },
+  "banana.ml:mk2C": {
+    "file": "ocaml/banana.ml",
+    "function": "mk2C",
+    "start": 321,
+    "end": 325
+  },
+  "banana.ml:dAB_triple": {
+    "file": "ocaml/banana.ml",
+    "function": "dAB_triple",
+    "start": 323,
+    "end": 325
+  },
+  "banana.ml:dBC_triple": {
+    "file": "ocaml/banana.ml",
+    "function": "dBC_triple",
+    "start": 324,
+    "end": 325
+  },
+  "banana.ml:mk2Ce": {
+    "file": "ocaml/banana.ml",
+    "function": "mk2Ce",
+    "start": 327,
+    "end": 327
+  },
+  "banana.ml:fillout5D": {
+    "file": "ocaml/banana.ml",
+    "function": "fillout5D",
+    "start": 330,
+    "end": 349
+  },
+  "banana.ml:thBCA": {
+    "file": "ocaml/banana.ml",
+    "function": "thBCA",
+    "start": 338,
+    "end": 349
+  },
+  "banana.ml:thACB0": {
+    "file": "ocaml/banana.ml",
+    "function": "thACB0",
+    "start": 339,
+    "end": 349
+  },
+  "banana.ml:thACB_CAB_pos": {
+    "file": "ocaml/banana.ml",
+    "function": "thACB_CAB_pos",
+    "start": 340,
+    "end": 349
+  },
+  "banana.ml:thACB_CAB_neg": {
+    "file": "ocaml/banana.ml",
+    "function": "thACB_CAB_neg",
+    "start": 341,
+    "end": 349
+  },
+  "banana.ml:thACB_CAB": {
+    "file": "ocaml/banana.ml",
+    "function": "thACB_CAB",
+    "start": 342,
+    "end": 349
+  },
+  "banana.ml:thACB_CAB_CBA": {
+    "file": "ocaml/banana.ml",
+    "function": "thACB_CAB_CBA",
+    "start": 343,
+    "end": 349
+  },
+  "banana.ml:fillout6D": {
+    "file": "ocaml/banana.ml",
+    "function": "fillout6D",
+    "start": 352,
+    "end": 365
+  },
+  "dimer.ml:one_iso2C": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_iso2C",
+    "start": 22,
+    "end": 32
+  },
+  "dimer.ml:dACrange": {
+    "file": "ocaml/dimer.ml",
+    "function": "dACrange",
+    "start": 23,
+    "end": 32
+  },
+  "dimer.ml:one_iso2C'": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_iso2C'",
+    "start": 34,
+    "end": 42
+  },
+  "dimer.ml:pint_outdomfn": {
+    "file": "ocaml/dimer.ml",
+    "function": "pint_outdomfn",
+    "start": 44,
+    "end": 48
+  },
+  "dimer.ml:one_pintx": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_pintx",
+    "start": 50,
+    "end": 60
+  },
+  "dimer.ml:a": {
+    "file": "ocaml/dimer.ml",
+    "function": "a",
+    "start": 56,
+    "end": 60
+  },
+  "dimer.ml:inadmissible": {
+    "file": "ocaml/dimer.ml",
+    "function": "inadmissible",
+    "start": 57,
+    "end": 60
+  },
+  "dimer.ml:one_pinwheelx": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_pinwheelx",
+    "start": 62,
+    "end": 73
+  },
+  "dimer.ml:one_pinwheelx_constant": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_pinwheelx_constant",
+    "start": 70,
+    "end": 73
+  },
+  "dimer.ml:outdom": {
+    "file": "ocaml/dimer.ml",
+    "function": "outdom",
+    "start": 71,
+    "end": 73
+  },
+  "dimer.ml:one_ljx": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_ljx",
+    "start": 75,
+    "end": 86
+  },
+  "dimer.ml:one_ljx_constant": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_ljx_constant",
+    "start": 83,
+    "end": 86
+  },
+  "dimer.ml:one_tjx": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_tjx",
+    "start": 88,
+    "end": 99
+  },
+  "dimer.ml:one_tjx_constant": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_tjx_constant",
+    "start": 96,
+    "end": 99
+  },
+  "dimer.ml:domain_iso2C": {
+    "file": "ocaml/dimer.ml",
+    "function": "domain_iso2C",
+    "start": 101,
+    "end": 108
+  },
+  "dimer.ml:zpi25": {
+    "file": "ocaml/dimer.ml",
+    "function": "zpi25",
+    "start": 102,
+    "end": 108
+  },
+  "dimer.ml:z2sig": {
+    "file": "ocaml/dimer.ml",
+    "function": "z2sig",
+    "start": 103,
+    "end": 108
+  },
+  "dimer.ml:r_slider": {
+    "file": "ocaml/dimer.ml",
+    "function": "r_slider",
+    "start": 104,
+    "end": 108
+  },
+  "dimer.ml:r_midpointer": {
+    "file": "ocaml/dimer.ml",
+    "function": "r_midpointer",
+    "start": 105,
+    "end": 108
+  },
+  "dimer.ml:b": {
+    "file": "ocaml/dimer.ml",
+    "function": "b",
+    "start": 106,
+    "end": 108
+  },
+  "dimer.ml:f": {
+    "file": "ocaml/dimer.ml",
+    "function": "f",
+    "start": 107,
+    "end": 108
+  },
+  "dimer.ml:domain_iso2C'": {
+    "file": "ocaml/dimer.ml",
+    "function": "domain_iso2C'",
+    "start": 110,
+    "end": 118
+  },
+  "dimer.ml:zpi5": {
+    "file": "ocaml/dimer.ml",
+    "function": "zpi5",
+    "start": 112,
+    "end": 118
+  },
+  "dimer.ml:dummybool": {
+    "file": "ocaml/dimer.ml",
+    "function": "dummybool",
+    "start": 120,
+    "end": 120
+  },
+  "dimer.ml:run_group1": {
+    "file": "ocaml/dimer.ml",
+    "function": "run_group1",
+    "start": 122,
+    "end": 130
+  },
+  "dimer.ml:dimer_outdomfn_null": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_outdomfn_null",
+    "start": 132,
+    "end": 132
+  },
+  "dimer.ml:dimer_outdomfn_eps": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_outdomfn_eps",
+    "start": 134,
+    "end": 139
+  },
+  "dimer.ml:nearlyt": {
+    "file": "ocaml/dimer.ml",
+    "function": "nearlyt",
+    "start": 135,
+    "end": 139
+  },
+  "dimer.ml:ice_ray_nbd": {
+    "file": "ocaml/dimer.ml",
+    "function": "ice_ray_nbd",
+    "start": 141,
+    "end": 141
+  },
+  "dimer.ml:dimer_outdomfn_01": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_outdomfn_01",
+    "start": 143,
+    "end": 143
+  },
+  "dimer.ml:one_dimer_eps": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_dimer_eps",
+    "start": 146,
+    "end": 169
+  },
+  "dimer.ml:aABC": {
+    "file": "ocaml/dimer.ml",
+    "function": "aABC",
+    "start": 154,
+    "end": 169
+  },
+  "dimer.ml:betaD": {
+    "file": "ocaml/dimer.ml",
+    "function": "betaD",
+    "start": 158,
+    "end": 169
+  },
+  "dimer.ml:xbetaD": {
+    "file": "ocaml/dimer.ml",
+    "function": "xbetaD",
+    "start": 159,
+    "end": 169
+  },
+  "dimer.ml:aADC": {
+    "file": "ocaml/dimer.ml",
+    "function": "aADC",
+    "start": 163,
+    "end": 169
+  },
+  "dimer.ml:pseudodimer": {
+    "file": "ocaml/dimer.ml",
+    "function": "pseudodimer",
+    "start": 164,
+    "end": 169
+  },
+  "dimer.ml:one_dimer": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_dimer",
+    "start": 171,
+    "end": 171
+  },
+  "dimer.ml:dimer_types": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_types",
+    "start": 174,
+    "end": 182
+  },
+  "dimer.ml:dtype": {
+    "file": "ocaml/dimer.ml",
+    "function": "dtype",
+    "start": 184,
+    "end": 184
+  },
+  "dimer.ml:dimer_domain": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_domain",
+    "start": 186,
+    "end": 188
+  },
+  "dimer.ml:dtype_labels": {
+    "file": "ocaml/dimer.ml",
+    "function": "dtype_labels",
+    "start": 190,
+    "end": 192
+  },
+  "dimer.ml:recurse_dimer": {
+    "file": "ocaml/dimer.ml",
+    "function": "recurse_dimer",
+    "start": 194,
+    "end": 200
+  },
+  "dimer.ml:_": {
+    "file": "ocaml/dimer.ml",
+    "function": "_",
+    "start": 196,
+    "end": 200
+  },
+  "dimer.ml:recurse0": {
+    "file": "ocaml/dimer.ml",
+    "function": "recurse0",
+    "start": 202,
+    "end": 203
+  },
+  "dimer.ml:run_group2": {
+    "file": "ocaml/dimer.ml",
+    "function": "run_group2",
+    "start": 206,
+    "end": 215
+  },
+  "dimer.ml:needsmore": {
+    "file": "ocaml/dimer.ml",
+    "function": "needsmore",
+    "start": 217,
+    "end": 217
+  },
+  "dimer.ml:morecases": {
+    "file": "ocaml/dimer.ml",
+    "function": "morecases",
+    "start": 219,
+    "end": 219
+  },
+  "dimer.ml:recurse_01": {
+    "file": "ocaml/dimer.ml",
+    "function": "recurse_01",
+    "start": 221,
+    "end": 222
+  },
+  "dimer.ml:run_group3": {
+    "file": "ocaml/dimer.ml",
+    "function": "run_group3",
+    "start": 225,
+    "end": 246
+  },
+  "dimer.ml:recurseN": {
+    "file": "ocaml/dimer.ml",
+    "function": "recurseN",
+    "start": 249,
+    "end": 250
+  },
+  "dimer.ml:run_group4": {
+    "file": "ocaml/dimer.ml",
+    "function": "run_group4",
+    "start": 252,
+    "end": 258
+  },
+  "dimer.ml:safetan_I": {
+    "file": "ocaml/dimer.ml",
+    "function": "safetan_I",
+    "start": 260,
+    "end": 261
+  },
+  "dimer.ml:one_sigma": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_sigma",
+    "start": 264,
+    "end": 267
+  },
+  "dimer.ml:f0": {
+    "file": "ocaml/dimer.ml",
+    "function": "f0",
+    "start": 265,
+    "end": 267
+  },
+  "dimer.ml:f1": {
+    "file": "ocaml/dimer.ml",
+    "function": "f1",
+    "start": 266,
+    "end": 267
+  },
+  "dimer.ml:squeezable": {
+    "file": "ocaml/dimer.ml",
+    "function": "squeezable",
+    "start": 270,
+    "end": 286
+  },
+  "dimer.ml:dAB_sinA": {
+    "file": "ocaml/dimer.ml",
+    "function": "dAB_sinA",
+    "start": 280,
+    "end": 286
+  },
+  "dimer.ml:sigmaA": {
+    "file": "ocaml/dimer.ml",
+    "function": "sigmaA",
+    "start": 281,
+    "end": 286
+  },
+  "dimer.ml:sigmaC": {
+    "file": "ocaml/dimer.ml",
+    "function": "sigmaC",
+    "start": 282,
+    "end": 286
+  },
+  "dimer.ml:domain2Ce": {
+    "file": "ocaml/dimer.ml",
+    "function": "domain2Ce",
+    "start": 288,
+    "end": 288
+  },
+  "dimer.ml:squeeze_calc": {
+    "file": "ocaml/dimer.ml",
+    "function": "squeeze_calc",
+    "start": 290,
+    "end": 296
+  },
+  "dimer.ml:top": {
+    "file": "ocaml/dimer.ml",
+    "function": "top",
+    "start": 291,
+    "end": 296
+  },
+  "dimer.ml:outofdomfn": {
+    "file": "ocaml/dimer.ml",
+    "function": "outofdomfn",
+    "start": 295,
+    "end": 296
+  },
+  "dimer.ml:one127": {
+    "file": "ocaml/dimer.ml",
+    "function": "one127",
+    "start": 299,
+    "end": 308
+  },
+  "dimer.ml:v": {
+    "file": "ocaml/dimer.ml",
+    "function": "v",
+    "start": 302,
+    "end": 308
+  },
+  "dimer.ml:domain2C": {
+    "file": "ocaml/dimer.ml",
+    "function": "domain2C",
+    "start": 310,
+    "end": 310
+  },
+  "dimer.ml:recursesgn": {
+    "file": "ocaml/dimer.ml",
+    "function": "recursesgn",
+    "start": 312,
+    "end": 314
+  },
+  "dimer.ml:run_group5": {
+    "file": "ocaml/dimer.ml",
+    "function": "run_group5",
+    "start": 316,
+    "end": 318
+  },
+  "interval_compat.ml:float_i": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "float_i",
+    "start": 20,
+    "end": 37
+  },
+  "interval_compat.ml:pi_I": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "pi_I",
+    "start": 21,
+    "end": 37
+  },
+  "interval_compat.ml:abs_I": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "abs_I",
+    "start": 22,
+    "end": 37
+  },
+  "interval_compat.ml:sqrt_domain_error_count": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "sqrt_domain_error_count",
+    "start": 26,
+    "end": 37
+  },
+  "interval_compat.ml:sqrt_I": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "sqrt_I",
+    "start": 27,
+    "end": 37
+  },
+  "interval_compat.ml:acos_I": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "acos_I",
+    "start": 33,
+    "end": 37
+  },
+  "interval_compat.ml:asin_I": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "asin_I",
+    "start": 34,
+    "end": 37
+  },
+  "interval_compat.ml:cos_I": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "cos_I",
+    "start": 35,
+    "end": 37
+  },
+  "interval_compat.ml:sin_I": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "sin_I",
+    "start": 36,
+    "end": 37
+  },
+  "interval_compat.ml:tan_I": {
+    "file": "ocaml/interval_compat.ml",
+    "function": "tan_I",
+    "start": 39,
+    "end": 39
+  },
+  "jobs.ml:pentagon_check_pair": {
+    "file": "ocaml/jobs.ml",
+    "function": "pentagon_check_pair",
+    "start": 3,
+    "end": 5
+  },
+  "jobs.ml:pentagon_check_pairs": {
+    "file": "ocaml/jobs.ml",
+    "function": "pentagon_check_pairs",
+    "start": 6,
+    "end": 8
+  },
+  "jobs.ml:pentagon_dispatch": {
+    "file": "ocaml/jobs.ml",
+    "function": "pentagon_dispatch",
+    "start": 9,
+    "end": 88
+  },
+  "lib.ml:fail": {
+    "file": "ocaml/lib.ml",
+    "function": "fail",
+    "start": 15,
+    "end": 15
+  },
+  "lib.ml:curry": {
+    "file": "ocaml/lib.ml",
+    "function": "curry",
+    "start": 21,
+    "end": 21
+  },
+  "lib.ml:uncurry": {
+    "file": "ocaml/lib.ml",
+    "function": "uncurry",
+    "start": 23,
+    "end": 23
+  },
+  "lib.ml:hd": {
+    "file": "ocaml/lib.ml",
+    "function": "hd",
+    "start": 29,
+    "end": 32
+  },
+  "lib.ml:tl": {
+    "file": "ocaml/lib.ml",
+    "function": "tl",
+    "start": 34,
+    "end": 37
+  },
+  "lib.ml:map": {
+    "file": "ocaml/lib.ml",
+    "function": "map",
+    "start": 39,
+    "end": 44
+  },
+  "lib.ml:mapf": {
+    "file": "ocaml/lib.ml",
+    "function": "mapf",
+    "start": 40,
+    "end": 44
+  },
+  "lib.ml:last": {
+    "file": "ocaml/lib.ml",
+    "function": "last",
+    "start": 46,
+    "end": 50
+  },
+  "lib.ml:butlast": {
+    "file": "ocaml/lib.ml",
+    "function": "butlast",
+    "start": 52,
+    "end": 56
+  },
+  "lib.ml:el": {
+    "file": "ocaml/lib.ml",
+    "function": "el",
+    "start": 58,
+    "end": 59
+  },
+  "lib.ml:rev": {
+    "file": "ocaml/lib.ml",
+    "function": "rev",
+    "start": 61,
+    "end": 66
+  },
+  "lib.ml:rev_append": {
+    "file": "ocaml/lib.ml",
+    "function": "rev_append",
+    "start": 62,
+    "end": 66
+  },
+  "lib.ml:map2": {
+    "file": "ocaml/lib.ml",
+    "function": "map2",
+    "start": 68,
+    "end": 72
+  },
+  "lib.ml:can": {
+    "file": "ocaml/lib.ml",
+    "function": "can",
+    "start": 78,
+    "end": 78
+  },
+  "lib.ml:check": {
+    "file": "ocaml/lib.ml",
+    "function": "check",
+    "start": 80,
+    "end": 80
+  },
+  "lib.ml:funpow": {
+    "file": "ocaml/lib.ml",
+    "function": "funpow",
+    "start": 86,
+    "end": 87
+  },
+  "lib.ml:repeat": {
+    "file": "ocaml/lib.ml",
+    "function": "repeat",
+    "start": 89,
+    "end": 90
+  },
+  "lib.ml:itlist": {
+    "file": "ocaml/lib.ml",
+    "function": "itlist",
+    "start": 103,
+    "end": 106
+  },
+  "lib.ml:rev_itlist": {
+    "file": "ocaml/lib.ml",
+    "function": "rev_itlist",
+    "start": 108,
+    "end": 111
+  },
+  "lib.ml:end_itlist": {
+    "file": "ocaml/lib.ml",
+    "function": "end_itlist",
+    "start": 113,
+    "end": 117
+  },
+  "lib.ml:itlist2": {
+    "file": "ocaml/lib.ml",
+    "function": "itlist2",
+    "start": 119,
+    "end": 123
+  },
+  "lib.ml:rev_itlist2": {
+    "file": "ocaml/lib.ml",
+    "function": "rev_itlist2",
+    "start": 125,
+    "end": 129
+  },
+  "lib.ml:splitlist": {
+    "file": "ocaml/lib.ml",
+    "function": "splitlist",
+    "start": 135,
+    "end": 139
+  },
+  "lib.ml:rev_splitlist": {
+    "file": "ocaml/lib.ml",
+    "function": "rev_splitlist",
+    "start": 141,
+    "end": 146
+  },
+  "lib.ml:rsplist": {
+    "file": "ocaml/lib.ml",
+    "function": "rsplist",
+    "start": 142,
+    "end": 146
+  },
+  "lib.ml:striplist": {
+    "file": "ocaml/lib.ml",
+    "function": "striplist",
+    "start": 148,
+    "end": 153
+  },
+  "lib.ml:strip": {
+    "file": "ocaml/lib.ml",
+    "function": "strip",
+    "start": 149,
+    "end": 153
+  },
+  "lib.ml:nsplit": {
+    "file": "ocaml/lib.ml",
+    "function": "nsplit",
+    "start": 159,
+    "end": 163
+  },
+  "lib.ml:replicate": {
+    "file": "ocaml/lib.ml",
+    "function": "replicate",
+    "start": 169,
+    "end": 171
+  },
+  "lib.ml:rec": {
+    "file": "ocaml/lib.ml",
+    "function": "rec",
+    "start": 173,
+    "end": 173
+  },
+  "lib.ml:forall": {
+    "file": "ocaml/lib.ml",
+    "function": "forall",
+    "start": 179,
+    "end": 182
+  },
+  "lib.ml:forall2": {
+    "file": "ocaml/lib.ml",
+    "function": "forall2",
+    "start": 184,
+    "end": 188
+  },
+  "lib.ml:exists": {
+    "file": "ocaml/lib.ml",
+    "function": "exists",
+    "start": 190,
+    "end": 193
+  },
+  "lib.ml:length": {
+    "file": "ocaml/lib.ml",
+    "function": "length",
+    "start": 195,
+    "end": 198
+  },
+  "lib.ml:len": {
+    "file": "ocaml/lib.ml",
+    "function": "len",
+    "start": 196,
+    "end": 198
+  },
+  "lib.ml:filter": {
+    "file": "ocaml/lib.ml",
+    "function": "filter",
+    "start": 200,
+    "end": 205
+  },
+  "lib.ml:partition": {
+    "file": "ocaml/lib.ml",
+    "function": "partition",
+    "start": 207,
+    "end": 212
+  },
+  "lib.ml:mapfilter": {
+    "file": "ocaml/lib.ml",
+    "function": "mapfilter",
+    "start": 214,
+    "end": 218
+  },
+  "lib.ml:find": {
+    "file": "ocaml/lib.ml",
+    "function": "find",
+    "start": 220,
+    "end": 223
+  },
+  "lib.ml:tryfind": {
+    "file": "ocaml/lib.ml",
+    "function": "tryfind",
+    "start": 225,
+    "end": 228
+  },
+  "lib.ml:flat": {
+    "file": "ocaml/lib.ml",
+    "function": "flat",
+    "start": 230,
+    "end": 230
+  },
+  "lib.ml:remove": {
+    "file": "ocaml/lib.ml",
+    "function": "remove",
+    "start": 232,
+    "end": 236
+  },
+  "lib.ml:chop_list": {
+    "file": "ocaml/lib.ml",
+    "function": "chop_list",
+    "start": 238,
+    "end": 241
+  },
+  "lib.ml:index": {
+    "file": "ocaml/lib.ml",
+    "function": "index",
+    "start": 243,
+    "end": 248
+  },
+  "lib.ml:ind": {
+    "file": "ocaml/lib.ml",
+    "function": "ind",
+    "start": 244,
+    "end": 248
+  },
+  "lib.ml:mem": {
+    "file": "ocaml/lib.ml",
+    "function": "mem",
+    "start": 254,
+    "end": 257
+  },
+  "lib.ml:insert": {
+    "file": "ocaml/lib.ml",
+    "function": "insert",
+    "start": 259,
+    "end": 260
+  },
+  "lib.ml:union": {
+    "file": "ocaml/lib.ml",
+    "function": "union",
+    "start": 262,
+    "end": 262
+  },
+  "lib.ml:unions": {
+    "file": "ocaml/lib.ml",
+    "function": "unions",
+    "start": 264,
+    "end": 264
+  },
+  "lib.ml:intersect": {
+    "file": "ocaml/lib.ml",
+    "function": "intersect",
+    "start": 266,
+    "end": 266
+  },
+  "lib.ml:subtract": {
+    "file": "ocaml/lib.ml",
+    "function": "subtract",
+    "start": 268,
+    "end": 268
+  },
+  "lib.ml:subset": {
+    "file": "ocaml/lib.ml",
+    "function": "subset",
+    "start": 270,
+    "end": 270
+  },
+  "lib.ml:set_eq": {
+    "file": "ocaml/lib.ml",
+    "function": "set_eq",
+    "start": 272,
+    "end": 272
+  },
+  "lib.ml:assoc": {
+    "file": "ocaml/lib.ml",
+    "function": "assoc",
+    "start": 278,
+    "end": 281
+  },
+  "lib.ml:rev_assoc": {
+    "file": "ocaml/lib.ml",
+    "function": "rev_assoc",
+    "start": 283,
+    "end": 286
+  },
+  "lib.ml:zip": {
+    "file": "ocaml/lib.ml",
+    "function": "zip",
+    "start": 292,
+    "end": 296
+  },
+  "lib.ml:unzip": {
+    "file": "ocaml/lib.ml",
+    "function": "unzip",
+    "start": 298,
+    "end": 301
+  },
+  "lib.ml:shareout": {
+    "file": "ocaml/lib.ml",
+    "function": "shareout",
+    "start": 307,
+    "end": 310
+  },
+  "lib.ml:do_list": {
+    "file": "ocaml/lib.ml",
+    "function": "do_list",
+    "start": 316,
+    "end": 319
+  },
+  "lib.ml:sort": {
+    "file": "ocaml/lib.ml",
+    "function": "sort",
+    "start": 325,
+    "end": 330
+  },
+  "lib.ml:uniq": {
+    "file": "ocaml/lib.ml",
+    "function": "uniq",
+    "start": 336,
+    "end": 341
+  },
+  "lib.ml:setify": {
+    "file": "ocaml/lib.ml",
+    "function": "setify",
+    "start": 347,
+    "end": 347
+  },
+  "lib.ml:implode": {
+    "file": "ocaml/lib.ml",
+    "function": "implode",
+    "start": 353,
+    "end": 353
+  },
+  "lib.ml:explode": {
+    "file": "ocaml/lib.ml",
+    "function": "explode",
+    "start": 355,
+    "end": 359
+  },
+  "lib.ml:exap": {
+    "file": "ocaml/lib.ml",
+    "function": "exap",
+    "start": 356,
+    "end": 359
+  },
+  "lib.ml:gcd": {
+    "file": "ocaml/lib.ml",
+    "function": "gcd",
+    "start": 365,
+    "end": 369
+  },
+  "lib.ml:gxd": {
+    "file": "ocaml/lib.ml",
+    "function": "gxd",
+    "start": 366,
+    "end": 369
+  },
+  "lib.ml:allpairs": {
+    "file": "ocaml/lib.ml",
+    "function": "allpairs",
+    "start": 380,
+    "end": 383
+  },
+  "lib.ml:report": {
+    "file": "ocaml/lib.ml",
+    "function": "report",
+    "start": 389,
+    "end": 390
+  },
+  "lib.ml:warn": {
+    "file": "ocaml/lib.ml",
+    "function": "warn",
+    "start": 396,
+    "end": 397
+  },
+  "lib.ml:verbose": {
+    "file": "ocaml/lib.ml",
+    "function": "verbose",
+    "start": 403,
+    "end": 403
+  },
+  "lib.ml:report_timing": {
+    "file": "ocaml/lib.ml",
+    "function": "report_timing",
+    "start": 404,
+    "end": 404
+  },
+  "lib.ml:remark": {
+    "file": "ocaml/lib.ml",
+    "function": "remark",
+    "start": 410,
+    "end": 411
+  },
+  "lib.ml:time": {
+    "file": "ocaml/lib.ml",
+    "function": "time",
+    "start": 417,
+    "end": 428
+  },
+  "lib.ml:start_time": {
+    "file": "ocaml/lib.ml",
+    "function": "start_time",
+    "start": 419,
+    "end": 428
+  },
+  "lib.ml:finish_time": {
+    "file": "ocaml/lib.ml",
+    "function": "finish_time",
+    "start": 421,
+    "end": 428
+  },
+  "lib.ml:assocd": {
+    "file": "ocaml/lib.ml",
+    "function": "assocd",
+    "start": 434,
+    "end": 437
+  },
+  "lib.ml:rev_assocd": {
+    "file": "ocaml/lib.ml",
+    "function": "rev_assocd",
+    "start": 439,
+    "end": 442
+  },
+  "lib.ml:qmap": {
+    "file": "ocaml/lib.ml",
+    "function": "qmap",
+    "start": 448,
+    "end": 452
+  },
+  "lib.ml:merge": {
+    "file": "ocaml/lib.ml",
+    "function": "merge",
+    "start": 458,
+    "end": 464
+  },
+  "lib.ml:mergesort": {
+    "file": "ocaml/lib.ml",
+    "function": "mergesort",
+    "start": 466,
+    "end": 473
+  },
+  "lib.ml:mergepairs": {
+    "file": "ocaml/lib.ml",
+    "function": "mergepairs",
+    "start": 467,
+    "end": 473
+  },
+  "lib.ml:increasing": {
+    "file": "ocaml/lib.ml",
+    "function": "increasing",
+    "start": 479,
+    "end": 479
+  },
+  "lib.ml:decreasing": {
+    "file": "ocaml/lib.ml",
+    "function": "decreasing",
+    "start": 481,
+    "end": 481
+  },
+  "lib.ml:undefined": {
+    "file": "ocaml/lib.ml",
+    "function": "undefined",
+    "start": 501,
+    "end": 501
+  },
+  "lib.ml:is_undefined": {
+    "file": "ocaml/lib.ml",
+    "function": "is_undefined",
+    "start": 507,
+    "end": 510
+  },
+  "lib.ml:map_list": {
+    "file": "ocaml/lib.ml",
+    "function": "map_list",
+    "start": 517,
+    "end": 526
+  },
+  "lib.ml:foldl": {
+    "file": "ocaml/lib.ml",
+    "function": "foldl",
+    "start": 532,
+    "end": 542
+  },
+  "lib.ml:foldl_list": {
+    "file": "ocaml/lib.ml",
+    "function": "foldl_list",
+    "start": 533,
+    "end": 542
+  },
+  "lib.ml:foldr": {
+    "file": "ocaml/lib.ml",
+    "function": "foldr",
+    "start": 544,
+    "end": 554
+  },
+  "lib.ml:foldr_list": {
+    "file": "ocaml/lib.ml",
+    "function": "foldr_list",
+    "start": 545,
+    "end": 554
+  },
+  "lib.ml:graph": {
+    "file": "ocaml/lib.ml",
+    "function": "graph",
+    "start": 560,
+    "end": 560
+  },
+  "lib.ml:dom": {
+    "file": "ocaml/lib.ml",
+    "function": "dom",
+    "start": 562,
+    "end": 562
+  },
+  "lib.ml:ran": {
+    "file": "ocaml/lib.ml",
+    "function": "ran",
+    "start": 564,
+    "end": 564
+  },
+  "lib.ml:applyd": {
+    "file": "ocaml/lib.ml",
+    "function": "applyd",
+    "start": 570,
+    "end": 584
+  },
+  "lib.ml:apply_listd": {
+    "file": "ocaml/lib.ml",
+    "function": "apply_listd",
+    "start": 571,
+    "end": 584
+  },
+  "lib.ml:k": {
+    "file": "ocaml/lib.ml",
+    "function": "k",
+    "start": 577,
+    "end": 584
+  },
+  "lib.ml:look": {
+    "file": "ocaml/lib.ml",
+    "function": "look",
+    "start": 578,
+    "end": 584
+  },
+  "lib.ml:apply": {
+    "file": "ocaml/lib.ml",
+    "function": "apply",
+    "start": 586,
+    "end": 586
+  },
+  "lib.ml:tryapplyd": {
+    "file": "ocaml/lib.ml",
+    "function": "tryapplyd",
+    "start": 588,
+    "end": 588
+  },
+  "lib.ml:defined": {
+    "file": "ocaml/lib.ml",
+    "function": "defined",
+    "start": 590,
+    "end": 590
+  },
+  "lib.ml:undefine": {
+    "file": "ocaml/lib.ml",
+    "function": "undefine",
+    "start": 596,
+    "end": 625
+  },
+  "lib.ml:undefine_list": {
+    "file": "ocaml/lib.ml",
+    "function": "undefine_list",
+    "start": 597,
+    "end": 625
+  },
+  "lib.ml:c": {
+    "file": "ocaml/lib.ml",
+    "function": "c",
+    "start": 600,
+    "end": 625
+  },
+  "lib.ml:t'": {
+    "file": "ocaml/lib.ml",
+    "function": "t'",
+    "start": 603,
+    "end": 625
+  },
+  "lib.ml:und": {
+    "file": "ocaml/lib.ml",
+    "function": "und",
+    "start": 608,
+    "end": 625
+  },
+  "lib.ml:l'": {
+    "file": "ocaml/lib.ml",
+    "function": "l'",
+    "start": 611,
+    "end": 625
+  },
+  "lib.ml:r'": {
+    "file": "ocaml/lib.ml",
+    "function": "r'",
+    "start": 621,
+    "end": 625
+  },
+  "lib.ml:choose": {
+    "file": "ocaml/lib.ml",
+    "function": "choose",
+    "start": 642,
+    "end": 646
+  },
+  "lib.ml:print_fpf": {
+    "file": "ocaml/lib.ml",
+    "function": "print_fpf",
+    "start": 652,
+    "end": 652
+  },
+  "lib.ml:mem'": {
+    "file": "ocaml/lib.ml",
+    "function": "mem'",
+    "start": 659,
+    "end": 664
+  },
+  "lib.ml:insert'": {
+    "file": "ocaml/lib.ml",
+    "function": "insert'",
+    "start": 666,
+    "end": 667
+  },
+  "lib.ml:union'": {
+    "file": "ocaml/lib.ml",
+    "function": "union'",
+    "start": 669,
+    "end": 669
+  },
+  "lib.ml:unions'": {
+    "file": "ocaml/lib.ml",
+    "function": "unions'",
+    "start": 671,
+    "end": 671
+  },
+  "lib.ml:subtract'": {
+    "file": "ocaml/lib.ml",
+    "function": "subtract'",
+    "start": 673,
+    "end": 673
+  },
+  "loader.ml:pentagon_root": {
+    "file": "ocaml/loader.ml",
+    "function": "pentagon_root",
+    "start": 8,
+    "end": 10
+  },
+  "loader.ml:pentagon_loaded": {
+    "file": "ocaml/loader.ml",
+    "function": "pentagon_loaded",
+    "start": 11,
+    "end": 11
+  },
+  "loader.ml:pentagon_load_relative": {
+    "file": "ocaml/loader.ml",
+    "function": "pentagon_load_relative",
+    "start": 12,
+    "end": 19
+  },
+  "loader.ml:path": {
+    "file": "ocaml/loader.ml",
+    "function": "path",
+    "start": 13,
+    "end": 19
+  },
+  "loader.ml:needs": {
+    "file": "ocaml/loader.ml",
+    "function": "needs",
+    "start": 20,
+    "end": 26
+  },
+  "loader.ml:rel": {
+    "file": "ocaml/loader.ml",
+    "function": "rel",
+    "start": 21,
+    "end": 26
+  },
+  "loader.ml:reneeds": {
+    "file": "ocaml/loader.ml",
+    "function": "reneeds",
+    "start": 27,
+    "end": 27
+  },
+  "loader.ml:pentagon_assert_unchanged": {
+    "file": "ocaml/loader.ml",
+    "function": "pentagon_assert_unchanged",
+    "start": 28,
+    "end": 31
+  },
+  "loader.ml:calcs": {
+    "file": "ocaml/loader.ml",
+    "function": "calcs",
+    "start": 45,
+    "end": 45
+  },
+  "loader.ml:mkcalc": {
+    "file": "ocaml/loader.ml",
+    "function": "mkcalc",
+    "start": 46,
+    "end": 48
+  },
+  "meet-in-middle.ml:findsome": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "findsome",
+    "start": 16,
+    "end": 19
+  },
+  "meet-in-middle.ml:int_floor": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "int_floor",
+    "start": 21,
+    "end": 21
+  },
+  "meet-in-middle.ml:int_ceil": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "int_ceil",
+    "start": 24,
+    "end": 27
+  },
+  "meet-in-middle.ml:c": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "c",
+    "start": 25,
+    "end": 27
+  },
+  "meet-in-middle.ml:i": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "i",
+    "start": 26,
+    "end": 27
+  },
+  "meet-in-middle.ml:make_a_key": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "make_a_key",
+    "start": 30,
+    "end": 34
+  },
+  "meet-in-middle.ml:rescale": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "rescale",
+    "start": 31,
+    "end": 34
+  },
+  "meet-in-middle.ml:im": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "im",
+    "start": 32,
+    "end": 34
+  },
+  "meet-in-middle.ml:iM": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "iM",
+    "start": 33,
+    "end": 34
+  },
+  "meet-in-middle.ml:make_keys": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "make_keys",
+    "start": 36,
+    "end": 42
+  },
+  "meet-in-middle.ml:k1": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "k1",
+    "start": 39,
+    "end": 42
+  },
+  "meet-in-middle.ml:k2": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "k2",
+    "start": 40,
+    "end": 42
+  },
+  "meet-in-middle.ml:k3": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "k3",
+    "start": 41,
+    "end": 42
+  },
+  "meet-in-middle.ml:keys_of_edge": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "keys_of_edge",
+    "start": 44,
+    "end": 51
+  },
+  "meet-in-middle.ml:ts": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "ts",
+    "start": 46,
+    "end": 51
+  },
+  "meet-in-middle.ml:ts'": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "ts'",
+    "start": 47,
+    "end": 51
+  },
+  "meet-in-middle.ml:triples": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "triples",
+    "start": 48,
+    "end": 51
+  },
+  "meet-in-middle.ml:s": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "s",
+    "start": 49,
+    "end": 51
+  },
+  "meet-in-middle.ml:key_invert": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "key_invert",
+    "start": 54,
+    "end": 55
+  },
+  "meet-in-middle.ml:key_inverts": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "key_inverts",
+    "start": 57,
+    "end": 58
+  },
+  "meet-in-middle.ml:widthlist": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "widthlist",
+    "start": 60,
+    "end": 62
+  },
+  "meet-in-middle.ml:ws": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "ws",
+    "start": 61,
+    "end": 62
+  },
+  "meet-in-middle.ml:subdivide_subwidth": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "subdivide_subwidth",
+    "start": 64,
+    "end": 70
+  },
+  "meet-in-middle.ml:ns": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "ns",
+    "start": 65,
+    "end": 70
+  },
+  "meet-in-middle.ml:one1": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "one1",
+    "start": 66,
+    "end": 70
+  },
+  "meet-in-middle.ml:z": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "z",
+    "start": 67,
+    "end": 70
+  },
+  "meet-in-middle.ml:prs": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "prs",
+    "start": 69,
+    "end": 70
+  },
+  "meet-in-middle.ml:maxcut": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "maxcut",
+    "start": 73,
+    "end": 77
+  },
+  "meet-in-middle.ml:cuts": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "cuts",
+    "start": 74,
+    "end": 77
+  },
+  "meet-in-middle.ml:minarea": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "minarea",
+    "start": 80,
+    "end": 84
+  },
+  "meet-in-middle.ml:areas": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "areas",
+    "start": 81,
+    "end": 84
+  },
+  "meet-in-middle.ml:recut": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "recut",
+    "start": 87,
+    "end": 92
+  },
+  "meet-in-middle.ml:mk_one_pericoord": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "mk_one_pericoord",
+    "start": 95,
+    "end": 114
+  },
+  "meet-in-middle.ml:overweight": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "overweight",
+    "start": 98,
+    "end": 114
+  },
+  "meet-in-middle.ml:makesome": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "makesome",
+    "start": 101,
+    "end": 114
+  },
+  "meet-in-middle.ml:pcs": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "pcs",
+    "start": 113,
+    "end": 114
+  },
+  "meet-in-middle.ml:update_one_perihash": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "update_one_perihash",
+    "start": 116,
+    "end": 122
+  },
+  "meet-in-middle.ml:area": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "area",
+    "start": 117,
+    "end": 122
+  },
+  "meet-in-middle.ml:one_key": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "one_key",
+    "start": 118,
+    "end": 122
+  },
+  "meet-in-middle.ml:_": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "_",
+    "start": 121,
+    "end": 122
+  },
+  "meet-in-middle.ml:mk_peridata": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "mk_peridata",
+    "start": 124,
+    "end": 128
+  },
+  "meet-in-middle.ml:ps'": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "ps'",
+    "start": 125,
+    "end": 128
+  },
+  "meet-in-middle.ml:periareas": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "periareas",
+    "start": 130,
+    "end": 140
+  },
+  "meet-in-middle.ml:phash": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "phash",
+    "start": 133,
+    "end": 140
+  },
+  "meet-in-middle.ml:keys'": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "keys'",
+    "start": 134,
+    "end": 140
+  },
+  "meet-in-middle.ml:someperiareas": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "someperiareas",
+    "start": 135,
+    "end": 140
+  },
+  "meet-in-middle.ml:total_periarea": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "total_periarea",
+    "start": 139,
+    "end": 140
+  },
+  "meet-in-middle.ml:perirecut": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "perirecut",
+    "start": 147,
+    "end": 173
+  },
+  "meet-in-middle.ml:gap": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "gap",
+    "start": 161,
+    "end": 173
+  },
+  "meet-in-middle.ml:cencut'": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "cencut'",
+    "start": 166,
+    "end": 173
+  },
+  "meet-in-middle.ml:ccs": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "ccs",
+    "start": 172,
+    "end": 173
+  },
+  "meet-in-middle.ml:mk_cencoord": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "mk_cencoord",
+    "start": 175,
+    "end": 176
+  },
+  "meet-in-middle.ml:report_stats": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "report_stats",
+    "start": 178,
+    "end": 191
+  },
+  "meet-in-middle.ml:s1": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "s1",
+    "start": 179,
+    "end": 191
+  },
+  "meet-in-middle.ml:ls": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "ls",
+    "start": 182,
+    "end": 191
+  },
+  "meet-in-middle.ml:keyss": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "keyss",
+    "start": 186,
+    "end": 191
+  },
+  "meet-in-middle.ml:mitm_recursion": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "mitm_recursion",
+    "start": 194,
+    "end": 208
+  },
+  "meet-in-middle.ml:pdata'": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "pdata'",
+    "start": 199,
+    "end": 208
+  },
+  "meet-in-middle.ml:mk_hashtbl": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "mk_hashtbl",
+    "start": 210,
+    "end": 213
+  },
+  "meet-in-middle.ml:tbl": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "tbl",
+    "start": 211,
+    "end": 213
+  },
+  "mitm-calcs.ml:time_mitm": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "time_mitm",
+    "start": 14,
+    "end": 18
+  },
+  "mitm-calcs.ml:i": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "i",
+    "start": 15,
+    "end": 18
+  },
+  "mitm-calcs.ml:width": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "width",
+    "start": 16,
+    "end": 18
+  },
+  "mitm-calcs.ml:initialized": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "initialized",
+    "start": 17,
+    "end": 18
+  },
+  "mitm-calcs.ml:unit_extra": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "unit_extra",
+    "start": 20,
+    "end": 20
+  },
+  "mitm-calcs.ml:coord5": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "coord5",
+    "start": 22,
+    "end": 24
+  },
+  "mitm-calcs.ml:z2pi25": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "z2pi25",
+    "start": 23,
+    "end": 24
+  },
+  "mitm-calcs.ml:coord6": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "coord6",
+    "start": 26,
+    "end": 28
+  },
+  "mitm-calcs.ml:coord2Ce": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "coord2Ce",
+    "start": 30,
+    "end": 33
+  },
+  "mitm-calcs.ml:xalpha": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "xalpha",
+    "start": 31,
+    "end": 33
+  },
+  "mitm-calcs.ml:alpha": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "alpha",
+    "start": 32,
+    "end": 33
+  },
+  "mitm-calcs.ml:fillfn5": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "fillfn5",
+    "start": 35,
+    "end": 36
+  },
+  "mitm-calcs.ml:fillfn6": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "fillfn6",
+    "start": 38,
+    "end": 39
+  },
+  "mitm-calcs.ml:areafn5": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "areafn5",
+    "start": 41,
+    "end": 41
+  },
+  "mitm-calcs.ml:areafn2Ce": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "areafn2Ce",
+    "start": 43,
+    "end": 43
+  },
+  "mitm-calcs.ml:forall_dom": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "forall_dom",
+    "start": 45,
+    "end": 46
+  },
+  "mitm-calcs.ml:forall_alpha0": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "forall_alpha0",
+    "start": 48,
+    "end": 50
+  },
+  "mitm-calcs.ml:ts": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ts",
+    "start": 49,
+    "end": 50
+  },
+  "mitm-calcs.ml:forall_alpha": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "forall_alpha",
+    "start": 52,
+    "end": 54
+  },
+  "mitm-calcs.ml:forall_alpha_pair": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "forall_alpha_pair",
+    "start": 56,
+    "end": 59
+  },
+  "mitm-calcs.ml:s": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "s",
+    "start": 57,
+    "end": 59
+  },
+  "mitm-calcs.ml:s'": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "s'",
+    "start": 58,
+    "end": 59
+  },
+  "mitm-calcs.ml:forall_alpha_constraint_pseudo_dimer": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "forall_alpha_constraint_pseudo_dimer",
+    "start": 61,
+    "end": 62
+  },
+  "mitm-calcs.ml:d_subcrit_shared": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_subcrit_shared",
+    "start": 64,
+    "end": 66
+  },
+  "mitm-calcs.ml:_": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "_",
+    "start": 65,
+    "end": 66
+  },
+  "mitm-calcs.ml:d_subcrit_contact": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_subcrit_contact",
+    "start": 68,
+    "end": 69
+  },
+  "mitm-calcs.ml:d_shared_pseudo": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_shared_pseudo",
+    "start": 71,
+    "end": 71
+  },
+  "mitm-calcs.ml:d_egress": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_egress",
+    "start": 73,
+    "end": 76
+  },
+  "mitm-calcs.ml:d_third_pseudo": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_third_pseudo",
+    "start": 78,
+    "end": 78
+  },
+  "mitm-calcs.ml:edge5D_ABs": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "edge5D_ABs",
+    "start": 80,
+    "end": 80
+  },
+  "mitm-calcs.ml:edge5D_BCs": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "edge5D_BCs",
+    "start": 82,
+    "end": 82
+  },
+  "mitm-calcs.ml:edge5D_ACs": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "edge5D_ACs",
+    "start": 84,
+    "end": 84
+  },
+  "mitm-calcs.ml:ckeyfnBC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ckeyfnBC",
+    "start": 86,
+    "end": 86
+  },
+  "mitm-calcs.ml:ckeyfnAC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ckeyfnAC",
+    "start": 88,
+    "end": 88
+  },
+  "mitm-calcs.ml:ckeyfnAB": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ckeyfnAB",
+    "start": 90,
+    "end": 90
+  },
+  "mitm-calcs.ml:ckeyfn2Ce": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ckeyfn2Ce",
+    "start": 92,
+    "end": 93
+  },
+  "mitm-calcs.ml:ckeyfn6AB": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ckeyfn6AB",
+    "start": 95,
+    "end": 95
+  },
+  "mitm-calcs.ml:ckeyfn6BC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ckeyfn6BC",
+    "start": 97,
+    "end": 97
+  },
+  "mitm-calcs.ml:ckeyfn6AC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ckeyfn6AC",
+    "start": 99,
+    "end": 99
+  },
+  "mitm-calcs.ml:init2Cps": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "init2Cps",
+    "start": 101,
+    "end": 109
+  },
+  "mitm-calcs.ml:fillfn": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "fillfn",
+    "start": 102,
+    "end": 109
+  },
+  "mitm-calcs.ml:outdomfn": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "outdomfn",
+    "start": 103,
+    "end": 109
+  },
+  "mitm-calcs.ml:keyfn": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "keyfn",
+    "start": 105,
+    "end": 109
+  },
+  "mitm-calcs.ml:fn": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "fn",
+    "start": 106,
+    "end": 109
+  },
+  "mitm-calcs.ml:keys": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "keys",
+    "start": 107,
+    "end": 109
+  },
+  "mitm-calcs.ml:area": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "area",
+    "start": 108,
+    "end": 109
+  },
+  "mitm-calcs.ml:init2Cps_isosceles_AB_AC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "init2Cps_isosceles_AB_AC",
+    "start": 111,
+    "end": 118
+  },
+  "mitm-calcs.ml:outdomfn'": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "outdomfn'",
+    "start": 114,
+    "end": 118
+  },
+  "mitm-calcs.ml:init2Cps_isosceles_BC_AC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "init2Cps_isosceles_BC_AC",
+    "start": 120,
+    "end": 127
+  },
+  "mitm-calcs.ml:init2Cps_isosceles_AC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "init2Cps_isosceles_AC",
+    "start": 129,
+    "end": 136
+  },
+  "mitm-calcs.ml:reset_peri": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "reset_peri",
+    "start": 138,
+    "end": 140
+  },
+  "mitm-calcs.ml:test1_centralpent_1237": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "test1_centralpent_1237",
+    "start": 144,
+    "end": 154
+  },
+  "mitm-calcs.ml:cluster_areacut": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "cluster_areacut",
+    "start": 145,
+    "end": 154
+  },
+  "mitm-calcs.ml:pdata": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "pdata",
+    "start": 146,
+    "end": 154
+  },
+  "mitm-calcs.ml:cencut": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "cencut",
+    "start": 147,
+    "end": 154
+  },
+  "mitm-calcs.ml:keyfns": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "keyfns",
+    "start": 149,
+    "end": 154
+  },
+  "mitm-calcs.ml:k2": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "k2",
+    "start": 150,
+    "end": 154
+  },
+  "mitm-calcs.ml:dAB_dBC_dAC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "dAB_dBC_dAC",
+    "start": 151,
+    "end": 154
+  },
+  "mitm-calcs.ml:cfn": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "cfn",
+    "start": 152,
+    "end": 154
+  },
+  "mitm-calcs.ml:ccs": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "ccs",
+    "start": 153,
+    "end": 154
+  },
+  "mitm-calcs.ml:test1_centralpent_172": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "test1_centralpent_172",
+    "start": 158,
+    "end": 168
+  },
+  "mitm-calcs.ml:calc_pent4_6D_postcluster": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent4_6D_postcluster",
+    "start": 174,
+    "end": 186
+  },
+  "mitm-calcs.ml:calc_pent3_6D_postcluster": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent3_6D_postcluster",
+    "start": 192,
+    "end": 207
+  },
+  "mitm-calcs.ml:d_subcrit_isosc": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_subcrit_isosc",
+    "start": 201,
+    "end": 207
+  },
+  "mitm-calcs.ml:d_short": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_short",
+    "start": 202,
+    "end": 207
+  },
+  "mitm-calcs.ml:calc_pent3AB_postcluster": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent3AB_postcluster",
+    "start": 213,
+    "end": 227
+  },
+  "mitm-calcs.ml:calc_pent3BC_postcluster": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent3BC_postcluster",
+    "start": 233,
+    "end": 244
+  },
+  "mitm-calcs.ml:calc_pent3AC_postcluster": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent3AC_postcluster",
+    "start": 250,
+    "end": 262
+  },
+  "mitm-calcs.ml:calc_pent2_postcluster_case0": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent2_postcluster_case0",
+    "start": 268,
+    "end": 288
+  },
+  "mitm-calcs.ml:range": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "range",
+    "start": 272,
+    "end": 288
+  },
+  "mitm-calcs.ml:assertAC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "assertAC",
+    "start": 282,
+    "end": 288
+  },
+  "mitm-calcs.ml:assertBC": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "assertBC",
+    "start": 284,
+    "end": 288
+  },
+  "mitm-calcs.ml:calc_pent2_postcluster_case1": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent2_postcluster_case1",
+    "start": 294,
+    "end": 308
+  },
+  "mitm-calcs.ml:d_18": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_18",
+    "start": 303,
+    "end": 308
+  },
+  "mitm-calcs.ml:calc_pent2_postcluster_case2": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent2_postcluster_case2",
+    "start": 314,
+    "end": 329
+  },
+  "mitm-calcs.ml:d_contact": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_contact",
+    "start": 324,
+    "end": 329
+  },
+  "mitm-calcs.ml:calc_pent2_postcluster_case3": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent2_postcluster_case3",
+    "start": 335,
+    "end": 348
+  },
+  "mitm-calcs.ml:calc_pent2_postcluster_case4": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "calc_pent2_postcluster_case4",
+    "start": 354,
+    "end": 368
+  },
+  "mitm-calcs.ml:precluster1_case0": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster1_case0",
+    "start": 374,
+    "end": 392
+  },
+  "mitm-calcs.ml:precluster1_case1": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster1_case1",
+    "start": 398,
+    "end": 418
+  },
+  "mitm-calcs.ml:theta'": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "theta'",
+    "start": 402,
+    "end": 418
+  },
+  "mitm-calcs.ml:out_of_theta'": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "out_of_theta'",
+    "start": 403,
+    "end": 418
+  },
+  "mitm-calcs.ml:d_shared": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_shared",
+    "start": 412,
+    "end": 418
+  },
+  "mitm-calcs.ml:precluster1_case2": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster1_case2",
+    "start": 424,
+    "end": 445
+  },
+  "mitm-calcs.ml:notslider1": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "notslider1",
+    "start": 428,
+    "end": 445
+  },
+  "mitm-calcs.ml:notslider": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "notslider",
+    "start": 429,
+    "end": 445
+  },
+  "mitm-calcs.ml:d_full": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "d_full",
+    "start": 440,
+    "end": 445
+  },
+  "mitm-calcs.ml:pseudo2_boundary_excluded": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "pseudo2_boundary_excluded",
+    "start": 451,
+    "end": 456
+  },
+  "mitm-calcs.ml:precluster2_case0": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster2_case0",
+    "start": 462,
+    "end": 478
+  },
+  "mitm-calcs.ml:precluster2_case1": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster2_case1",
+    "start": 484,
+    "end": 503
+  },
+  "mitm-calcs.ml:out_of_midpointer": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "out_of_midpointer",
+    "start": 488,
+    "end": 503
+  },
+  "mitm-calcs.ml:precluster2_case2": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster2_case2",
+    "start": 509,
+    "end": 528
+  },
+  "mitm-calcs.ml:dimer_isosceles_precluster": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "dimer_isosceles_precluster",
+    "start": 534,
+    "end": 547
+  },
+  "mitm-calcs.ml:precluster4_case0_experimental": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster4_case0_experimental",
+    "start": 553,
+    "end": 564
+  },
+  "mitm-calcs.ml:precluster4_case1_experimental": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster4_case1_experimental",
+    "start": 570,
+    "end": 581
+  },
+  "mitm-calcs.ml:init2Cps_precluster6": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "init2Cps_precluster6",
+    "start": 585,
+    "end": 592
+  },
+  "mitm-calcs.ml:precluster6_case1": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster6_case1",
+    "start": 598,
+    "end": 610
+  },
+  "mitm-calcs.ml:keyfnT": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "keyfnT",
+    "start": 602,
+    "end": 610
+  },
+  "mitm-calcs.ml:keyfnS": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "keyfnS",
+    "start": 603,
+    "end": 610
+  },
+  "mitm-calcs.ml:precluster6_case2": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster6_case2",
+    "start": 616,
+    "end": 628
+  },
+  "mitm-calcs.ml:precluster6_case3": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster6_case3",
+    "start": 634,
+    "end": 646
+  },
+  "mitm-calcs.ml:precluster6_case4": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster6_case4",
+    "start": 652,
+    "end": 664
+  },
+  "mitm-calcs.ml:precluster6_case5": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster6_case5",
+    "start": 670,
+    "end": 682
+  },
+  "mitm-calcs.ml:precluster6_case6": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "precluster6_case6",
+    "start": 688,
+    "end": 700
+  },
+  "pent.ml:selectsome": {
+    "file": "ocaml/pent.ml",
+    "function": "selectsome",
+    "start": 14,
+    "end": 17
+  },
+  "pent.ml:the": {
+    "file": "ocaml/pent.ml",
+    "function": "the",
+    "start": 19,
+    "end": 21
+  },
+  "pent.ml:issome": {
+    "file": "ocaml/pent.ml",
+    "function": "issome",
+    "start": 23,
+    "end": 25
+  },
+  "pent.ml:isnone": {
+    "file": "ocaml/pent.ml",
+    "function": "isnone",
+    "start": 27,
+    "end": 27
+  },
+  "pent.ml:outer": {
+    "file": "ocaml/pent.ml",
+    "function": "outer",
+    "start": 29,
+    "end": 29
+  },
+  "pent.ml:pair": {
+    "file": "ocaml/pent.ml",
+    "function": "pair",
+    "start": 31,
+    "end": 31
+  },
+  "pent.ml:outertriple": {
+    "file": "ocaml/pent.ml",
+    "function": "outertriple",
+    "start": 33,
+    "end": 35
+  },
+  "pent.ml:k123": {
+    "file": "ocaml/pent.ml",
+    "function": "k123",
+    "start": 34,
+    "end": 35
+  },
+  "pent.ml:sqrt": {
+    "file": "ocaml/pent.ml",
+    "function": "sqrt",
+    "start": 47,
+    "end": 47
+  },
+  "pent.ml:sin": {
+    "file": "ocaml/pent.ml",
+    "function": "sin",
+    "start": 49,
+    "end": 49
+  },
+  "pent.ml:cos": {
+    "file": "ocaml/pent.ml",
+    "function": "cos",
+    "start": 51,
+    "end": 51
+  },
+  "pent.ml:mk_interval": {
+    "file": "ocaml/pent.ml",
+    "function": "mk_interval",
+    "start": 61,
+    "end": 61
+  },
+  "pent.ml:m": {
+    "file": "ocaml/pent.ml",
+    "function": "m",
+    "start": 63,
+    "end": 63
+  },
+  "pent.ml:mk": {
+    "file": "ocaml/pent.ml",
+    "function": "mk",
+    "start": 65,
+    "end": 65
+  },
+  "pent.ml:zero": {
+    "file": "ocaml/pent.ml",
+    "function": "zero",
+    "start": 67,
+    "end": 67
+  },
+  "pent.ml:one": {
+    "file": "ocaml/pent.ml",
+    "function": "one",
+    "start": 69,
+    "end": 69
+  },
+  "pent.ml:two": {
+    "file": "ocaml/pent.ml",
+    "function": "two",
+    "start": 71,
+    "end": 71
+  },
+  "pent.ml:four": {
+    "file": "ocaml/pent.ml",
+    "function": "four",
+    "start": 73,
+    "end": 73
+  },
+  "pent.ml:i16": {
+    "file": "ocaml/pent.ml",
+    "function": "i16",
+    "start": 75,
+    "end": 75
+  },
+  "pent.ml:merge_I": {
+    "file": "ocaml/pent.ml",
+    "function": "merge_I",
+    "start": 77,
+    "end": 77
+  },
+  "pent.ml:inter_I": {
+    "file": "ocaml/pent.ml",
+    "function": "inter_I",
+    "start": 80,
+    "end": 83
+  },
+  "pent.ml:t": {
+    "file": "ocaml/pent.ml",
+    "function": "t",
+    "start": 81,
+    "end": 83
+  },
+  "pent.ml:_": {
+    "file": "ocaml/pent.ml",
+    "function": "_",
+    "start": 82,
+    "end": 83
+  },
+  "pent.ml:min_I": {
+    "file": "ocaml/pent.ml",
+    "function": "min_I",
+    "start": 85,
+    "end": 85
+  },
+  "pent.ml:max_I": {
+    "file": "ocaml/pent.ml",
+    "function": "max_I",
+    "start": 87,
+    "end": 87
+  },
+  "pent.ml:min2_I": {
+    "file": "ocaml/pent.ml",
+    "function": "min2_I",
+    "start": 89,
+    "end": 89
+  },
+  "pent.ml:max2_I": {
+    "file": "ocaml/pent.ml",
+    "function": "max2_I",
+    "start": 91,
+    "end": 91
+  },
+  "pent.ml:max3_I": {
+    "file": "ocaml/pent.ml",
+    "function": "max3_I",
+    "start": 93,
+    "end": 93
+  },
+  "pent.ml:mem_I": {
+    "file": "ocaml/pent.ml",
+    "function": "mem_I",
+    "start": 95,
+    "end": 95
+  },
+  "pent.ml:width_I": {
+    "file": "ocaml/pent.ml",
+    "function": "width_I",
+    "start": 97,
+    "end": 97
+  },
+  "pent.ml:disjoint_I": {
+    "file": "ocaml/pent.ml",
+    "function": "disjoint_I",
+    "start": 112,
+    "end": 112
+  },
+  "pent.ml:meet_I": {
+    "file": "ocaml/pent.ml",
+    "function": "meet_I",
+    "start": 114,
+    "end": 114
+  },
+  "pent.ml:abs_I": {
+    "file": "ocaml/pent.ml",
+    "function": "abs_I",
+    "start": 116,
+    "end": 116
+  },
+  "pent.ml:eps_I": {
+    "file": "ocaml/pent.ml",
+    "function": "eps_I",
+    "start": 120,
+    "end": 122
+  },
+  "pent.ml:int": {
+    "file": "ocaml/pent.ml",
+    "function": "int",
+    "start": 124,
+    "end": 124
+  },
+  "pent.ml:rat": {
+    "file": "ocaml/pent.ml",
+    "function": "rat",
+    "start": 126,
+    "end": 126
+  },
+  "pent.ml:hasint": {
+    "file": "ocaml/pent.ml",
+    "function": "hasint",
+    "start": 130,
+    "end": 132
+  },
+  "pent.ml:getint": {
+    "file": "ocaml/pent.ml",
+    "function": "getint",
+    "start": 134,
+    "end": 138
+  },
+  "pent.ml:k": {
+    "file": "ocaml/pent.ml",
+    "function": "k",
+    "start": 135,
+    "end": 138
+  },
+  "pent.ml:k'": {
+    "file": "ocaml/pent.ml",
+    "function": "k'",
+    "start": 136,
+    "end": 138
+  },
+  "pent.ml:ratpi": {
+    "file": "ocaml/pent.ml",
+    "function": "ratpi",
+    "start": 140,
+    "end": 141
+  },
+  "pent.ml:pi": {
+    "file": "ocaml/pent.ml",
+    "function": "pi",
+    "start": 143,
+    "end": 143
+  },
+  "pent.ml:pi2": {
+    "file": "ocaml/pent.ml",
+    "function": "pi2",
+    "start": 145,
+    "end": 145
+  },
+  "pent.ml:twopi": {
+    "file": "ocaml/pent.ml",
+    "function": "twopi",
+    "start": 147,
+    "end": 147
+  },
+  "pent.ml:pi15": {
+    "file": "ocaml/pent.ml",
+    "function": "pi15",
+    "start": 149,
+    "end": 149
+  },
+  "pent.ml:pi25": {
+    "file": "ocaml/pent.ml",
+    "function": "pi25",
+    "start": 151,
+    "end": 151
+  },
+  "pent.ml:pi35": {
+    "file": "ocaml/pent.ml",
+    "function": "pi35",
+    "start": 153,
+    "end": 153
+  },
+  "pent.ml:pi45": {
+    "file": "ocaml/pent.ml",
+    "function": "pi45",
+    "start": 155,
+    "end": 155
+  },
+  "pent.ml:pi65": {
+    "file": "ocaml/pent.ml",
+    "function": "pi65",
+    "start": 157,
+    "end": 157
+  },
+  "pent.ml:pi110": {
+    "file": "ocaml/pent.ml",
+    "function": "pi110",
+    "start": 159,
+    "end": 159
+  },
+  "pent.ml:pi310": {
+    "file": "ocaml/pent.ml",
+    "function": "pi310",
+    "start": 161,
+    "end": 161
+  },
+  "pent.ml:pi710": {
+    "file": "ocaml/pent.ml",
+    "function": "pi710",
+    "start": 163,
+    "end": 163
+  },
+  "pent.ml:kappa": {
+    "file": "ocaml/pent.ml",
+    "function": "kappa",
+    "start": 165,
+    "end": 165
+  },
+  "pent.ml:sigma": {
+    "file": "ocaml/pent.ml",
+    "function": "sigma",
+    "start": 167,
+    "end": 167
+  },
+  "pent.ml:aK": {
+    "file": "ocaml/pent.ml",
+    "function": "aK",
+    "start": 169,
+    "end": 169
+  },
+  "pent.ml:acrit": {
+    "file": "ocaml/pent.ml",
+    "function": "acrit",
+    "start": 171,
+    "end": 171
+  },
+  "pent.ml:amin": {
+    "file": "ocaml/pent.ml",
+    "function": "amin",
+    "start": 173,
+    "end": 173
+  },
+  "pent.ml:epsN_I": {
+    "file": "ocaml/pent.ml",
+    "function": "epsN_I",
+    "start": 175,
+    "end": 175
+  },
+  "pent.ml:epsM_I": {
+    "file": "ocaml/pent.ml",
+    "function": "epsM_I",
+    "start": 177,
+    "end": 177
+  },
+  "pent.ml:sqrt_I": {
+    "file": "ocaml/pent.ml",
+    "function": "sqrt_I",
+    "start": 180,
+    "end": 183
+  },
+  "pent.ml:square_I": {
+    "file": "ocaml/pent.ml",
+    "function": "square_I",
+    "start": 185,
+    "end": 185
+  },
+  "pent.ml:acos_I": {
+    "file": "ocaml/pent.ml",
+    "function": "acos_I",
+    "start": 187,
+    "end": 190
+  },
+  "pent.ml:ups_I": {
+    "file": "ocaml/pent.ml",
+    "function": "ups_I",
+    "start": 192,
+    "end": 193
+  },
+  "pent.ml:area_I": {
+    "file": "ocaml/pent.ml",
+    "function": "area_I",
+    "start": 195,
+    "end": 199
+  },
+  "pent.ml:x1": {
+    "file": "ocaml/pent.ml",
+    "function": "x1",
+    "start": 196,
+    "end": 199
+  },
+  "pent.ml:x2": {
+    "file": "ocaml/pent.ml",
+    "function": "x2",
+    "start": 197,
+    "end": 199
+  },
+  "pent.ml:x3": {
+    "file": "ocaml/pent.ml",
+    "function": "x3",
+    "start": 198,
+    "end": 199
+  },
+  "pent.ml:areamin_acute": {
+    "file": "ocaml/pent.ml",
+    "function": "areamin_acute",
+    "start": 202,
+    "end": 203
+  },
+  "pent.ml:iarc": {
+    "file": "ocaml/pent.ml",
+    "function": "iarc",
+    "start": 206,
+    "end": 222
+  },
+  "pent.ml:mn": {
+    "file": "ocaml/pent.ml",
+    "function": "mn",
+    "start": 207,
+    "end": 222
+  },
+  "pent.ml:mx": {
+    "file": "ocaml/pent.ml",
+    "function": "mx",
+    "start": 208,
+    "end": 222
+  },
+  "pent.ml:iarc1": {
+    "file": "ocaml/pent.ml",
+    "function": "iarc1",
+    "start": 209,
+    "end": 222
+  },
+  "pent.ml:iarc2": {
+    "file": "ocaml/pent.ml",
+    "function": "iarc2",
+    "start": 211,
+    "end": 222
+  },
+  "pent.ml:b_obtuse": {
+    "file": "ocaml/pent.ml",
+    "function": "b_obtuse",
+    "start": 215,
+    "end": 222
+  },
+  "pent.ml:ab_acute": {
+    "file": "ocaml/pent.ml",
+    "function": "ab_acute",
+    "start": 219,
+    "end": 222
+  },
+  "pent.ml:lawsines": {
+    "file": "ocaml/pent.ml",
+    "function": "lawsines",
+    "start": 224,
+    "end": 226
+  },
+  "pent.ml:aa": {
+    "file": "ocaml/pent.ml",
+    "function": "aa",
+    "start": 225,
+    "end": 226
+  },
+  "pent.ml:iloc": {
+    "file": "ocaml/pent.ml",
+    "function": "iloc",
+    "start": 228,
+    "end": 244
+  },
+  "pent.ml:ilocc": {
+    "file": "ocaml/pent.ml",
+    "function": "ilocc",
+    "start": 231,
+    "end": 244
+  },
+  "pent.ml:ilocc2": {
+    "file": "ocaml/pent.ml",
+    "function": "ilocc2",
+    "start": 233,
+    "end": 244
+  },
+  "pent.ml:costh": {
+    "file": "ocaml/pent.ml",
+    "function": "costh",
+    "start": 235,
+    "end": 244
+  },
+  "pent.ml:ell_aux": {
+    "file": "ocaml/pent.ml",
+    "function": "ell_aux",
+    "start": 247,
+    "end": 250
+  },
+  "pent.ml:r": {
+    "file": "ocaml/pent.ml",
+    "function": "r",
+    "start": 248,
+    "end": 250
+  },
+  "pent.ml:theta": {
+    "file": "ocaml/pent.ml",
+    "function": "theta",
+    "start": 249,
+    "end": 250
+  },
+  "pent.ml:ellx": {
+    "file": "ocaml/pent.ml",
+    "function": "ellx",
+    "start": 252,
+    "end": 254
+  },
+  "pent.ml:thetax": {
+    "file": "ocaml/pent.ml",
+    "function": "thetax",
+    "start": 257,
+    "end": 267
+  },
+  "pent.ml:h": {
+    "file": "ocaml/pent.ml",
+    "function": "h",
+    "start": 259,
+    "end": 267
+  },
+  "pent.ml:phi'": {
+    "file": "ocaml/pent.ml",
+    "function": "phi'",
+    "start": 261,
+    "end": 267
+  },
+  "pent.ml:delta": {
+    "file": "ocaml/pent.ml",
+    "function": "delta",
+    "start": 262,
+    "end": 267
+  },
+  "pent.ml:elx": {
+    "file": "ocaml/pent.ml",
+    "function": "elx",
+    "start": 263,
+    "end": 267
+  },
+  "pent.ml:ely": {
+    "file": "ocaml/pent.ml",
+    "function": "ely",
+    "start": 264,
+    "end": 267
+  },
+  "pent.ml:theta'": {
+    "file": "ocaml/pent.ml",
+    "function": "theta'",
+    "start": 265,
+    "end": 267
+  },
+  "pent.ml:shifted_thetax": {
+    "file": "ocaml/pent.ml",
+    "function": "shifted_thetax",
+    "start": 270,
+    "end": 272
+  },
+  "pent.ml:mergefn": {
+    "file": "ocaml/pent.ml",
+    "function": "mergefn",
+    "start": 274,
+    "end": 281
+  },
+  "pent.ml:x0": {
+    "file": "ocaml/pent.ml",
+    "function": "x0",
+    "start": 279,
+    "end": 281
+  },
+  "pent.ml:ethetax": {
+    "file": "ocaml/pent.ml",
+    "function": "ethetax",
+    "start": 283,
+    "end": 289
+  },
+  "pent.ml:theta'mono": {
+    "file": "ocaml/pent.ml",
+    "function": "theta'mono",
+    "start": 291,
+    "end": 294
+  },
+  "pent.ml:thetamono": {
+    "file": "ocaml/pent.ml",
+    "function": "thetamono",
+    "start": 296,
+    "end": 299
+  },
+  "pent.ml:ellxmono_r": {
+    "file": "ocaml/pent.ml",
+    "function": "ellxmono_r",
+    "start": 302,
+    "end": 317
+  },
+  "pent.ml:ellmax": {
+    "file": "ocaml/pent.ml",
+    "function": "ellmax",
+    "start": 303,
+    "end": 317
+  },
+  "pent.ml:alpham": {
+    "file": "ocaml/pent.ml",
+    "function": "alpham",
+    "start": 306,
+    "end": 317
+  },
+  "pent.ml:ellM": {
+    "file": "ocaml/pent.ml",
+    "function": "ellM",
+    "start": 310,
+    "end": 317
+  },
+  "pent.ml:ellmin": {
+    "file": "ocaml/pent.ml",
+    "function": "ellmin",
+    "start": 311,
+    "end": 317
+  },
+  "pent.ml:xm": {
+    "file": "ocaml/pent.ml",
+    "function": "xm",
+    "start": 312,
+    "end": 317
+  },
+  "pent.ml:ellm": {
+    "file": "ocaml/pent.ml",
+    "function": "ellm",
+    "start": 316,
+    "end": 317
+  },
+  "pent.ml:ellxmono": {
+    "file": "ocaml/pent.ml",
+    "function": "ellxmono",
+    "start": 319,
+    "end": 324
+  },
+  "pent.ml:alpha2": {
+    "file": "ocaml/pent.ml",
+    "function": "alpha2",
+    "start": 320,
+    "end": 324
+  },
+  "pent.ml:ellthetax": {
+    "file": "ocaml/pent.ml",
+    "function": "ellthetax",
+    "start": 326,
+    "end": 327
+  },
+  "pent.ml:ellthetax_sgn": {
+    "file": "ocaml/pent.ml",
+    "function": "ellthetax_sgn",
+    "start": 329,
+    "end": 331
+  },
+  "pent.ml:pinwheeledge": {
+    "file": "ocaml/pent.ml",
+    "function": "pinwheeledge",
+    "start": 334,
+    "end": 342
+  },
+  "pent.ml:gamma": {
+    "file": "ocaml/pent.ml",
+    "function": "gamma",
+    "start": 336,
+    "end": 342
+  },
+  "pent.ml:pintedge_extended": {
+    "file": "ocaml/pent.ml",
+    "function": "pintedge_extended",
+    "start": 344,
+    "end": 361
+  },
+  "pent.ml:alpha'": {
+    "file": "ocaml/pent.ml",
+    "function": "alpha'",
+    "start": 347,
+    "end": 361
+  },
+  "pent.ml:beta'": {
+    "file": "ocaml/pent.ml",
+    "function": "beta'",
+    "start": 348,
+    "end": 361
+  },
+  "pent.ml:gamma'": {
+    "file": "ocaml/pent.ml",
+    "function": "gamma'",
+    "start": 349,
+    "end": 361
+  },
+  "pent.ml:eps'": {
+    "file": "ocaml/pent.ml",
+    "function": "eps'",
+    "start": 350,
+    "end": 361
+  },
+  "pent.ml:eps": {
+    "file": "ocaml/pent.ml",
+    "function": "eps",
+    "start": 351,
+    "end": 361
+  },
+  "pent.ml:delta'": {
+    "file": "ocaml/pent.ml",
+    "function": "delta'",
+    "start": 353,
+    "end": 361
+  },
+  "pent.ml:xbeta": {
+    "file": "ocaml/pent.ml",
+    "function": "xbeta",
+    "start": 357,
+    "end": 361
+  },
+  "pent.ml:xgamma": {
+    "file": "ocaml/pent.ml",
+    "function": "xgamma",
+    "start": 358,
+    "end": 361
+  },
+  "pent.ml:pintedge": {
+    "file": "ocaml/pent.ml",
+    "function": "pintedge",
+    "start": 363,
+    "end": 365
+  },
+  "pent.ml:deltajedge": {
+    "file": "ocaml/pent.ml",
+    "function": "deltajedge",
+    "start": 367,
+    "end": 378
+  },
+  "pent.ml:xbeta'": {
+    "file": "ocaml/pent.ml",
+    "function": "xbeta'",
+    "start": 374,
+    "end": 378
+  },
+  "pent.ml:xgamma'": {
+    "file": "ocaml/pent.ml",
+    "function": "xgamma'",
+    "start": 375,
+    "end": 378
+  },
+  "pent.ml:ljedge_extended": {
+    "file": "ocaml/pent.ml",
+    "function": "ljedge_extended",
+    "start": 380,
+    "end": 394
+  },
+  "pent.ml:s2": {
+    "file": "ocaml/pent.ml",
+    "function": "s2",
+    "start": 388,
+    "end": 394
+  },
+  "pent.ml:ljedge": {
+    "file": "ocaml/pent.ml",
+    "function": "ljedge",
+    "start": 396,
+    "end": 398
+  },
+  "pent.ml:tjedge_extended": {
+    "file": "ocaml/pent.ml",
+    "function": "tjedge_extended",
+    "start": 400,
+    "end": 418
+  },
+  "pent.ml:t3": {
+    "file": "ocaml/pent.ml",
+    "function": "t3",
+    "start": 411,
+    "end": 418
+  },
+  "pent.ml:xalpha": {
+    "file": "ocaml/pent.ml",
+    "function": "xalpha",
+    "start": 413,
+    "end": 418
+  },
+  "pent.ml:tjedge": {
+    "file": "ocaml/pent.ml",
+    "function": "tjedge",
+    "start": 420,
+    "end": 422
+  },
+  "pent.ml:shared_pinwheeledge": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_pinwheeledge",
+    "start": 425,
+    "end": 428
+  },
+  "pent.ml:shared_pintedge": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_pintedge",
+    "start": 430,
+    "end": 432
+  },
+  "pent.ml:shared_lj1edge_extended": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_lj1edge_extended",
+    "start": 434,
+    "end": 445
+  },
+  "pent.ml:alpha": {
+    "file": "ocaml/pent.ml",
+    "function": "alpha",
+    "start": 436,
+    "end": 445
+  },
+  "pent.ml:xa": {
+    "file": "ocaml/pent.ml",
+    "function": "xa",
+    "start": 443,
+    "end": 445
+  },
+  "pent.ml:xc": {
+    "file": "ocaml/pent.ml",
+    "function": "xc",
+    "start": 444,
+    "end": 445
+  },
+  "pent.ml:shared_lj1edge": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_lj1edge",
+    "start": 447,
+    "end": 449
+  },
+  "pent.ml:shared_lj2edge": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_lj2edge",
+    "start": 451,
+    "end": 453
+  },
+  "pent.ml:shared_lj2edge_extended": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_lj2edge_extended",
+    "start": 455,
+    "end": 457
+  },
+  "pent.ml:shared_lj3edge_extended": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_lj3edge_extended",
+    "start": 459,
+    "end": 473
+  },
+  "pent.ml:shared_lj3edge": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_lj3edge",
+    "start": 475,
+    "end": 477
+  },
+  "pent.ml:shared_tj1edge": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_tj1edge",
+    "start": 479,
+    "end": 491
+  },
+  "pent.ml:shared_tj2edge": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_tj2edge",
+    "start": 493,
+    "end": 496
+  },
+  "pent.ml:shared_tj2edge_extended": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_tj2edge_extended",
+    "start": 498,
+    "end": 501
+  },
+  "pent.ml:shared_tj3edge_extended": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_tj3edge_extended",
+    "start": 503,
+    "end": 516
+  },
+  "pent.ml:shared_tj3edge": {
+    "file": "ocaml/pent.ml",
+    "function": "shared_tj3edge",
+    "start": 518,
+    "end": 520
+  },
+  "pent.ml:pint_constant": {
+    "file": "ocaml/pent.ml",
+    "function": "pint_constant",
+    "start": 522,
+    "end": 522
+  },
+  "pent.ml:outdomfn_shared_pint": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_shared_pint",
+    "start": 524,
+    "end": 529
+  },
+  "pent.ml:ab": {
+    "file": "ocaml/pent.ml",
+    "function": "ab",
+    "start": 525,
+    "end": 529
+  },
+  "pent.ml:outdomfn_shared_pinwheel": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_shared_pinwheel",
+    "start": 531,
+    "end": 533
+  },
+  "pent.ml:one_pinwheelx_constant": {
+    "file": "ocaml/pent.ml",
+    "function": "one_pinwheelx_constant",
+    "start": 532,
+    "end": 533
+  },
+  "pent.ml:outdomfn_15_35": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_15_35",
+    "start": 535,
+    "end": 537
+  },
+  "pent.ml:outdomfn_sigma": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_sigma",
+    "start": 539,
+    "end": 540
+  },
+  "pent.ml:outdomfn_shared_lj1": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_shared_lj1",
+    "start": 542,
+    "end": 547
+  },
+  "pent.ml:outdomfn_shared_lj2": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_shared_lj2",
+    "start": 549,
+    "end": 550
+  },
+  "pent.ml:outdomfn_shared_lj3": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_shared_lj3",
+    "start": 552,
+    "end": 557
+  },
+  "pent.ml:one_ljx_constant": {
+    "file": "ocaml/pent.ml",
+    "function": "one_ljx_constant",
+    "start": 553,
+    "end": 557
+  },
+  "pent.ml:outdomfn_35_45": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_35_45",
+    "start": 559,
+    "end": 561
+  },
+  "pent.ml:outdomfn_shared_tj1": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_shared_tj1",
+    "start": 563,
+    "end": 565
+  },
+  "pent.ml:one_tjx_constant": {
+    "file": "ocaml/pent.ml",
+    "function": "one_tjx_constant",
+    "start": 564,
+    "end": 565
+  },
+  "pent.ml:outdomfn_shared_tj2": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_shared_tj2",
+    "start": 567,
+    "end": 571
+  },
+  "pent.ml:outdomfn_shared_tj3": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_shared_tj3",
+    "start": 573,
+    "end": 575
+  },
+  "pent.ml:maxwidth": {
+    "file": "ocaml/pent.ml",
+    "function": "maxwidth",
+    "start": 577,
+    "end": 582
+  },
+  "pent.ml:c'": {
+    "file": "ocaml/pent.ml",
+    "function": "c'",
+    "start": 581,
+    "end": 582
+  },
+  "pent.ml:testi": {
+    "file": "ocaml/pent.ml",
+    "function": "testi",
+    "start": 584,
+    "end": 585
+  },
+  "pent.ml:string_of_interval": {
+    "file": "ocaml/pent.ml",
+    "function": "string_of_interval",
+    "start": 587,
+    "end": 588
+  },
+  "pent.ml:join_semi": {
+    "file": "ocaml/pent.ml",
+    "function": "join_semi",
+    "start": 590,
+    "end": 590
+  },
+  "pent.ml:string_of_list": {
+    "file": "ocaml/pent.ml",
+    "function": "string_of_list",
+    "start": 592,
+    "end": 592
+  },
+  "pent.ml:splitlist": {
+    "file": "ocaml/pent.ml",
+    "function": "splitlist",
+    "start": 595,
+    "end": 605
+  },
+  "pent.ml:v1": {
+    "file": "ocaml/pent.ml",
+    "function": "v1",
+    "start": 603,
+    "end": 605
+  },
+  "pent.ml:v2": {
+    "file": "ocaml/pent.ml",
+    "function": "v2",
+    "start": 604,
+    "end": 605
+  },
+  "pent.ml:prepost": {
+    "file": "ocaml/pent.ml",
+    "function": "prepost",
+    "start": 607,
+    "end": 610
+  },
+  "pent.ml:ys": {
+    "file": "ocaml/pent.ml",
+    "function": "ys",
+    "start": 608,
+    "end": 610
+  },
+  "pent.ml:split": {
+    "file": "ocaml/pent.ml",
+    "function": "split",
+    "start": 612,
+    "end": 612
+  },
+  "pent.ml:recurser": {
+    "file": "ocaml/pent.ml",
+    "function": "recurser",
+    "start": 614,
+    "end": 621
+  },
+  "pent.ml:print_stats": {
+    "file": "ocaml/pent.ml",
+    "function": "print_stats",
+    "start": 623,
+    "end": 628
+  },
+  "pent.ml:ws": {
+    "file": "ocaml/pent.ml",
+    "function": "ws",
+    "start": 625,
+    "end": 628
+  },
+  "pent.ml:vol": {
+    "file": "ocaml/pent.ml",
+    "function": "vol",
+    "start": 626,
+    "end": 628
+  },
+  "pent.ml:recurserpair": {
+    "file": "ocaml/pent.ml",
+    "function": "recurserpair",
+    "start": 631,
+    "end": 639
+  },
+  "pent.ml:recursetoeps": {
+    "file": "ocaml/pent.ml",
+    "function": "recursetoeps",
+    "start": 641,
+    "end": 641
+  },
+  "pent.ml:recursepairtoeps": {
+    "file": "ocaml/pent.ml",
+    "function": "recursepairtoeps",
+    "start": 643,
+    "end": 643
+  },
+  "pent.ml:recurserpair_x": {
+    "file": "ocaml/pent.ml",
+    "function": "recurserpair_x",
+    "start": 645,
+    "end": 646
+  },
+  "pent.ml:recurs_xeps": {
+    "file": "ocaml/pent.ml",
+    "function": "recurs_xeps",
+    "start": 648,
+    "end": 648
+  },
+  "pent.ml:recursetofinish": {
+    "file": "ocaml/pent.ml",
+    "function": "recursetofinish",
+    "start": 650,
+    "end": 654
+  },
+  "pent.ml:wrap3": {
+    "file": "ocaml/pent.ml",
+    "function": "wrap3",
+    "start": 651,
+    "end": 654
+  },
+  "pent.ml:area_exceeds": {
+    "file": "ocaml/pent.ml",
+    "function": "area_exceeds",
+    "start": 656,
+    "end": 656
+  },
+  "pent.ml:longest_exceeds": {
+    "file": "ocaml/pent.ml",
+    "function": "longest_exceeds",
+    "start": 658,
+    "end": 658
+  },
+  "pent.ml:longgt172": {
+    "file": "ocaml/pent.ml",
+    "function": "longgt172",
+    "start": 660,
+    "end": 662
+  },
+  "pent.ml:i172": {
+    "file": "ocaml/pent.ml",
+    "function": "i172",
+    "start": 661,
+    "end": 662
+  },
+  "pent.ml:one172": {
+    "file": "ocaml/pent.ml",
+    "function": "one172",
+    "start": 665,
+    "end": 671
+  },
+  "pent.ml:outdomfn_pinwheel": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_pinwheel",
+    "start": 673,
+    "end": 676
+  },
+  "pent.ml:outdomfn_lj": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_lj",
+    "start": 678,
+    "end": 680
+  },
+  "pent.ml:outdomfn_tj": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_tj",
+    "start": 682,
+    "end": 684
+  },
+  "pent.ml:outdomfn_pint": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_pint",
+    "start": 686,
+    "end": 688
+  },
+  "pent.ml:calculate": {
+    "file": "ocaml/pent.ml",
+    "function": "calculate",
+    "start": 690,
+    "end": 693
+  },
+  "pent.ml:once": {
+    "file": "ocaml/pent.ml",
+    "function": "once",
+    "start": 692,
+    "end": 693
+  },
+  "pent.ml:zero2": {
+    "file": "ocaml/pent.ml",
+    "function": "zero2",
+    "start": 695,
+    "end": 695
+  },
+  "pent.ml:pinwheeldomain": {
+    "file": "ocaml/pent.ml",
+    "function": "pinwheeldomain",
+    "start": 697,
+    "end": 697
+  },
+  "pent.ml:ljdomain": {
+    "file": "ocaml/pent.ml",
+    "function": "ljdomain",
+    "start": 699,
+    "end": 699
+  },
+  "pent.ml:tjdomain": {
+    "file": "ocaml/pent.ml",
+    "function": "tjdomain",
+    "start": 701,
+    "end": 701
+  },
+  "pent.ml:pintdomain": {
+    "file": "ocaml/pent.ml",
+    "function": "pintdomain",
+    "start": 703,
+    "end": 704
+  },
+  "pent.ml:types3C": {
+    "file": "ocaml/pent.ml",
+    "function": "types3C",
+    "start": 706,
+    "end": 710
+  },
+  "pent.ml:one1237": {
+    "file": "ocaml/pent.ml",
+    "function": "one1237",
+    "start": 715,
+    "end": 721
+  },
+  "pent.ml:outdomfn_delta": {
+    "file": "ocaml/pent.ml",
+    "function": "outdomfn_delta",
+    "start": 725,
+    "end": 726
+  },
+  "pent.ml:onedeltajamin": {
+    "file": "ocaml/pent.ml",
+    "function": "onedeltajamin",
+    "start": 728,
+    "end": 734
+  },
+  "pent.ml:ff": {
+    "file": "ocaml/pent.ml",
+    "function": "ff",
+    "start": 737,
+    "end": 739
+  },
+  "pet.ml:periodize1": {
+    "file": "ocaml/pet.ml",
+    "function": "periodize1",
+    "start": 12,
+    "end": 17
+  },
+  "pet.ml:iy": {
+    "file": "ocaml/pet.ml",
+    "function": "iy",
+    "start": 15,
+    "end": 17
+  },
+  "pet.ml:periodize": {
+    "file": "ocaml/pet.ml",
+    "function": "periodize",
+    "start": 19,
+    "end": 22
+  },
+  "pet.ml:eps": {
+    "file": "ocaml/pet.ml",
+    "function": "eps",
+    "start": 20,
+    "end": 22
+  },
+  "pet.ml:_": {
+    "file": "ocaml/pet.ml",
+    "function": "_",
+    "start": 21,
+    "end": 22
+  },
+  "pet.ml:periodize_min": {
+    "file": "ocaml/pet.ml",
+    "function": "periodize_min",
+    "start": 24,
+    "end": 26
+  },
+  "pet.ml:xi2": {
+    "file": "ocaml/pet.ml",
+    "function": "xi2",
+    "start": 28,
+    "end": 28
+  },
+  "pet.ml:xi1": {
+    "file": "ocaml/pet.ml",
+    "function": "xi1",
+    "start": 30,
+    "end": 30
+  },
+  "pet.ml:periodize_pent": {
+    "file": "ocaml/pet.ml",
+    "function": "periodize_pent",
+    "start": 32,
+    "end": 33
+  },
+  "pet.ml:periodize_pent0": {
+    "file": "ocaml/pet.ml",
+    "function": "periodize_pent0",
+    "start": 35,
+    "end": 36
+  },
+  "pet.ml:ilawbeta": {
+    "file": "ocaml/pet.ml",
+    "function": "ilawbeta",
+    "start": 38,
+    "end": 39
+  },
+  "pet.ml:case_pet_pos": {
+    "file": "ocaml/pet.ml",
+    "function": "case_pet_pos",
+    "start": 42,
+    "end": 49
+  },
+  "pet.ml:abstheta": {
+    "file": "ocaml/pet.ml",
+    "function": "abstheta",
+    "start": 43,
+    "end": 49
+  },
+  "pet.ml:locx": {
+    "file": "ocaml/pet.ml",
+    "function": "locx",
+    "start": 44,
+    "end": 49
+  },
+  "pet.ml:beta": {
+    "file": "ocaml/pet.ml",
+    "function": "beta",
+    "start": 45,
+    "end": 49
+  },
+  "pet.ml:r": {
+    "file": "ocaml/pet.ml",
+    "function": "r",
+    "start": 46,
+    "end": 49
+  },
+  "pet.ml:f": {
+    "file": "ocaml/pet.ml",
+    "function": "f",
+    "start": 47,
+    "end": 49
+  },
+  "pet.ml:case_pet_neg": {
+    "file": "ocaml/pet.ml",
+    "function": "case_pet_neg",
+    "start": 52,
+    "end": 63
+  },
+  "pet.ml:theta'": {
+    "file": "ocaml/pet.ml",
+    "function": "theta'",
+    "start": 53,
+    "end": 63
+  },
+  "pet.ml:iabstheta": {
+    "file": "ocaml/pet.ml",
+    "function": "iabstheta",
+    "start": 54,
+    "end": 63
+  },
+  "pet.ml:target": {
+    "file": "ocaml/pet.ml",
+    "function": "target",
+    "start": 57,
+    "end": 63
+  },
+  "pet.ml:pet0": {
+    "file": "ocaml/pet.ml",
+    "function": "pet0",
+    "start": 65,
+    "end": 70
+  },
+  "pet.ml:splitat0": {
+    "file": "ocaml/pet.ml",
+    "function": "splitat0",
+    "start": 72,
+    "end": 76
+  },
+  "pet.ml:resize": {
+    "file": "ocaml/pet.ml",
+    "function": "resize",
+    "start": 78,
+    "end": 82
+  },
+  "pet.ml:t": {
+    "file": "ocaml/pet.ml",
+    "function": "t",
+    "start": 79,
+    "end": 82
+  },
+  "pet.ml:t1": {
+    "file": "ocaml/pet.ml",
+    "function": "t1",
+    "start": 80,
+    "end": 82
+  },
+  "pet.ml:t2": {
+    "file": "ocaml/pet.ml",
+    "function": "t2",
+    "start": 81,
+    "end": 82
+  },
+  "pet.ml:reorder": {
+    "file": "ocaml/pet.ml",
+    "function": "reorder",
+    "start": 84,
+    "end": 88
+  },
+  "pet.ml:samesign": {
+    "file": "ocaml/pet.ml",
+    "function": "samesign",
+    "start": 85,
+    "end": 88
+  },
+  "pet.ml:pet": {
+    "file": "ocaml/pet.ml",
+    "function": "pet",
+    "start": 91,
+    "end": 96
+  },
+  "pet.ml:split": {
+    "file": "ocaml/pet.ml",
+    "function": "split",
+    "start": 92,
+    "end": 96
+  },
+  "pet.ml:ithetas": {
+    "file": "ocaml/pet.ml",
+    "function": "ithetas",
+    "start": 93,
+    "end": 96
+  },
+  "pet.ml:ithetas'": {
+    "file": "ocaml/pet.ml",
+    "function": "ithetas'",
+    "start": 94,
+    "end": 96
+  },
+  "pet.ml:cases": {
+    "file": "ocaml/pet.ml",
+    "function": "cases",
+    "start": 95,
+    "end": 96
+  },
+  "squeeze_sign.ml:neg": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "neg",
+    "start": 30,
+    "end": 235
+  },
+  "squeeze_sign.ml:point": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "point",
+    "start": 31,
+    "end": 235
+  },
+  "squeeze_sign.ml:integer": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "integer",
+    "start": 32,
+    "end": 235
+  },
+  "squeeze_sign.ml:box": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "box",
+    "start": 33,
+    "end": 235
+  },
+  "squeeze_sign.ml:zero": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "zero",
+    "start": 37,
+    "end": 235
+  },
+  "squeeze_sign.ml:one": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "one",
+    "start": 38,
+    "end": 235
+  },
+  "squeeze_sign.ml:two": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "two",
+    "start": 39,
+    "end": 235
+  },
+  "squeeze_sign.ml:half": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "half",
+    "start": 40,
+    "end": 235
+  },
+  "squeeze_sign.ml:pi": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "pi",
+    "start": 41,
+    "end": 235
+  },
+  "squeeze_sign.ml:delta": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "delta",
+    "start": 42,
+    "end": 235
+  },
+  "squeeze_sign.ml:period": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "period",
+    "start": 43,
+    "end": 235
+  },
+  "squeeze_sign.ml:kappa": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "kappa",
+    "start": 44,
+    "end": 235
+  },
+  "squeeze_sign.ml:sigma": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "sigma",
+    "start": 45,
+    "end": 235
+  },
+  "squeeze_sign.ml:area_cap": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "area_cap",
+    "start": 47,
+    "end": 235
+  },
+  "squeeze_sign.ml:below": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "below",
+    "start": 48,
+    "end": 235
+  },
+  "squeeze_sign.ml:above": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "above",
+    "start": 49,
+    "end": 235
+  },
+  "squeeze_sign.ml:positive": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "positive",
+    "start": 50,
+    "end": 235
+  },
+  "squeeze_sign.ml:negative": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "negative",
+    "start": 51,
+    "end": 235
+  },
+  "squeeze_sign.ml:meets": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "meets",
+    "start": 52,
+    "end": 235
+  },
+  "squeeze_sign.ml:contains": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "contains",
+    "start": 53,
+    "end": 235
+  },
+  "squeeze_sign.ml:add": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "add",
+    "start": 55,
+    "end": 235
+  },
+  "squeeze_sign.ml:sub": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "sub",
+    "start": 56,
+    "end": 235
+  },
+  "squeeze_sign.ml:scale": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "scale",
+    "start": 57,
+    "end": 235
+  },
+  "squeeze_sign.ml:quarter_turn": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "quarter_turn",
+    "start": 58,
+    "end": 235
+  },
+  "squeeze_sign.ml:dot": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "dot",
+    "start": 59,
+    "end": 235
+  },
+  "squeeze_sign.ml:det": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "det",
+    "start": 60,
+    "end": 235
+  },
+  "squeeze_sign.ml:unit": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "unit",
+    "start": 61,
+    "end": 235
+  },
+  "squeeze_sign.ml:rotate": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "rotate",
+    "start": 62,
+    "end": 235
+  },
+  "squeeze_sign.ml:square": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "square",
+    "start": 63,
+    "end": 235
+  },
+  "squeeze_sign.ml:norm2": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "norm2",
+    "start": 67,
+    "end": 235
+  },
+  "squeeze_sign.ml:min_center_distance2": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "min_center_distance2",
+    "start": 68,
+    "end": 235
+  },
+  "squeeze_sign.ml:contact": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "contact",
+    "start": 82,
+    "end": 235
+  },
+  "squeeze_sign.ml:alpha": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "alpha",
+    "start": 83,
+    "end": 235
+  },
+  "squeeze_sign.ml:h": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "h",
+    "start": 84,
+    "end": 235
+  },
+  "squeeze_sign.ml:n": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "n",
+    "start": 85,
+    "end": 235
+  },
+  "squeeze_sign.ml:first": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "first",
+    "start": 86,
+    "end": 235
+  },
+  "squeeze_sign.ml:center": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "center",
+    "start": 87,
+    "end": 235
+  },
+  "squeeze_sign.ml:orientation": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "orientation",
+    "start": 88,
+    "end": 235
+  },
+  "squeeze_sign.ml:rotations": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "rotations",
+    "start": 93,
+    "end": 235
+  },
+  "squeeze_sign.ml:rotate_contact": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "rotate_contact",
+    "start": 94,
+    "end": 235
+  },
+  "squeeze_sign.ml:signed_components": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "signed_components",
+    "start": 105,
+    "end": 235
+  },
+  "squeeze_sign.ml:g": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "g",
+    "start": 106,
+    "end": 235
+  },
+  "squeeze_sign.ml:correct_contact_signs": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "correct_contact_signs",
+    "start": 109,
+    "end": 235
+  },
+  "squeeze_sign.ml:vertex_support": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "vertex_support",
+    "start": 116,
+    "end": 235
+  },
+  "squeeze_sign.ml:values": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "values",
+    "start": 117,
+    "end": 235
+  },
+  "squeeze_sign.ml:lo_min": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "lo_min",
+    "start": 118,
+    "end": 235
+  },
+  "squeeze_sign.ml:lo_max": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "lo_max",
+    "start": 119,
+    "end": 235
+  },
+  "squeeze_sign.ml:strict_overlap": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "strict_overlap",
+    "start": 130,
+    "end": 235
+  },
+  "squeeze_sign.ml:axes_overlap": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "axes_overlap",
+    "start": 131,
+    "end": 235
+  },
+  "squeeze_sign.ml:displacement": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "displacement",
+    "start": 132,
+    "end": 235
+  },
+  "squeeze_sign.ml:loop": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "loop",
+    "start": 133,
+    "end": 235
+  },
+  "squeeze_sign.ml:angle": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "angle",
+    "start": 135,
+    "end": 235
+  },
+  "squeeze_sign.ml:projected": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "projected",
+    "start": 136,
+    "end": 235
+  },
+  "squeeze_sign.ml:reason_index": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "reason_index",
+    "start": 144,
+    "end": 235
+  },
+  "squeeze_sign.ml:reason_names": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "reason_names",
+    "start": 147,
+    "end": 235
+  },
+  "squeeze_sign.ml:classify": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "classify",
+    "start": 155,
+    "end": 235
+  },
+  "squeeze_sign.ml:a": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "a",
+    "start": 157,
+    "end": 235
+  },
+  "squeeze_sign.ml:c": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "c",
+    "start": 158,
+    "end": 235
+  },
+  "squeeze_sign.ml:twice_area": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "twice_area",
+    "start": 160,
+    "end": 235
+  },
+  "squeeze_sign.ml:case_flags": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "case_flags",
+    "start": 171,
+    "end": 235
+  },
+  "squeeze_sign.ml:case_names": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "case_names",
+    "start": 177,
+    "end": 235
+  },
+  "squeeze_sign.ml:show_interval": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "show_interval",
+    "start": 178,
+    "end": 235
+  },
+  "squeeze_sign.ml:show_box": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "show_box",
+    "start": 179,
+    "end": 235
+  },
+  "squeeze_sign.ml:split": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "split",
+    "start": 183,
+    "end": 235
+  },
+  "squeeze_sign.ml:j": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "j",
+    "start": 184,
+    "end": 235
+  },
+  "squeeze_sign.ml:x": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "x",
+    "start": 188,
+    "end": 235
+  },
+  "squeeze_sign.ml:mid": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "mid",
+    "start": 189,
+    "end": 235
+  },
+  "squeeze_sign.ml:left": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "left",
+    "start": 192,
+    "end": 235
+  },
+  "squeeze_sign.ml:verify_case": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "verify_case",
+    "start": 198,
+    "end": 235
+  },
+  "squeeze_sign.ml:reasons": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "reasons",
+    "start": 200,
+    "end": 235
+  },
+  "squeeze_sign.ml:processed": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "processed",
+    "start": 201,
+    "end": 235
+  },
+  "squeeze_sign.ml:started": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "started",
+    "start": 202,
+    "end": 235
+  },
+  "squeeze_sign.ml:visit": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "visit",
+    "start": 203,
+    "end": 235
+  },
+  "squeeze_sign.ml:k": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "k",
+    "start": 216,
+    "end": 235
+  },
+  "squeeze_sign.ml:leaves": {
+    "file": "ocaml/squeeze_sign.ml",
+    "function": "leaves",
+    "start": 225,
+    "end": 235
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "release": "pentagon_code_v003",
+  "manuscript": "pentagon_v005.tex",
+  "python_tests": {
+    "passed": 97,
+    "failed": 0,
+    "scope": "controller, integrity and synthetic integration; not OCaml"
+  },
+  "exact_checks": {
+    "passed": 56,
+    "scope": "supplementary exact symbolic/rational checks"
+  },
+  "ocaml_math_bodies_compared": 12,
+  "wolfram_mathematical_call_templates_unchanged": 89,
+  "wolfram_expanded_checks": 161,
+  "existing_label_numbers_preserved": 169,
+  "pdf_pages": {
+    "paper": 73,
+    "commentary": 17,
+    "gallery": 30
+  },
+  "current_assembled_ocaml_execution": "Recorded by run.py on the verifying machine",
+  "current_assembled_wolfram_execution": "Recorded by PentagonChecks`RunChecks[] on the verifying machine"
+}

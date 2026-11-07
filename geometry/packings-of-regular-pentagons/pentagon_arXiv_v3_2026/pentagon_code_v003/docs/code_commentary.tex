@@ -1,0 +1,939 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{amsmath,amsthm,mathtools}
+\usepackage{newtxmath}
+\usepackage[scaled=.89]{inconsolata}
+\usepackage[margin=24mm]{geometry}
+\usepackage{microtype,booktabs,array,longtable,xcolor,listings,fancyhdr,hyperref,bookmark,needspace}
+\definecolor{inkblue}{RGB}{28,57,77}
+\definecolor{codeback}{RGB}{247,248,249}
+\hypersetup{colorlinks=true,linkcolor=inkblue,urlcolor=inkblue,pdftitle={Pentagon packing: a mathematical code commentary}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\textsc{Pentagon packing}}\fancyhead[R]{\small Code v003 / manuscript v005}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}\setlength{\parskip}{5pt}\setlength{\parindent}{0pt}\setlength{\emergencystretch}{2em}
+\setcounter{tocdepth}{1}\widowpenalty=10000\clubpenalty=10000
+\lstdefinestyle{proofcode}{language=[Objective]Caml,basicstyle=\ttfamily\fontsize{8}{10}\selectfont,
+keywordstyle=\color{inkblue}\bfseries,commentstyle=\color{black!55},stringstyle=\color{black!55},
+backgroundcolor=\color{codeback},frame=single,rulecolor=\color{black!16},framerule=.3pt,
+numbers=left,numberstyle=\tiny\ttfamily,numbersep=7pt,xleftmargin=12pt,framexleftmargin=4pt,
+columns=fullflexible,keepspaces=true,showstringspaces=false,breaklines=true,breakatwhitespace=false,tabsize=2}
+\lstset{style=proofcode}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\ak}{a_{\mathrm{crit}}}\newcommand{\amin}{a_{\min}}
+\newcommand{\eN}{\epsilon_{\mathcal N}}\newcommand{\eM}{\epsilon_{\mathcal M}}
+\newcommand{\area}{\operatorname{area}}\newcommand{\arc}{\operatorname{arc}}
+\newcommand{\cc}{\mathbf c}\newcommand{\RR}{\mathbb R}\newcommand{\ZZ}{\mathbb Z}
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{remark}\newtheorem*{contract}{Implementation contract}\newtheorem*{auditnote}{Audit note}
+\input{paperrefs.tex}
+\begin{document}
+\begin{center}
+{\color{inkblue}\Large\bfseries Packings of regular pentagons}\\[5pt]
+{\large A mathematical commentary on the verification code}\\[8pt]
+\code{pentagon_code_v003}\qquad\code{pentagon_v005.tex}\\[5pt]
+{\small 6 November 2026}
+\end{center}
+\begin{abstract}\noindent
+This document follows the verification from regular-pentagon contacts to
+finite-cluster exclusions. It explains the coordinate conventions, interval
+rejection tests, automatic derivatives, and meet-in-the-middle retention
+invariant. The four contact-sign calculations are derived independently from
+actual pentagon vertices and placed before the squeezing area inequality.
+Source listings are extracted from the accompanying files with their actual
+line numbers. Printed paper numbers, stable TeX labels, and seven-letter
+source comments provide complementary navigation.
+
+The paper supplies the geometric reductions; the code exhausts the resulting
+parameter boxes. Exact identities, finite function-contract tests, numerical
+diagnostics, and full interval searches have different logical roles and are
+identified accordingly. Execution confirmation is generated from source-matching
+logs in \code{verification/CONFIRMATION.md}, rather than asserted by a fixed
+paragraph in this mathematical explanation.
+\end{abstract}
+\tableofcontents
+\clearpage
+
+\section{The target and the division of responsibilities}
+
+The paper proves that a packing of congruent regular pentagons has density at
+most $(5-\sqrt5)/3$, with a unique periodic equality packing. The code does not
+search all infinite packings. The geometric arguments reduce the theorem to
+inequalities for a single triangle or a small cluster, with specified contacts,
+side bounds, and attachment relations. The code excludes a closed set of
+counterexamples to each such inequality.
+
+There are four distinct assertions to keep separate. The paper supplies a
+valid reduction to the terminal cases. A coordinate map covers those cases.
+The interval implementation encloses its geometric functions and never rejects
+a feasible input. Finally, a terminating run exhausts the encoded
+counterexample boxes. A successful run is evidence for the last assertion; it
+cannot repair a missing input case or an incorrect rejection rule.
+
+The accompanying \code{docs/CALCULATIONS.md} and \code{docs/index.html}
+are reader lookup tools. They use the printed numbers from the compiled
+manuscript, the stable TeX labels, and the seven-letter source-navigation codes.
+No code identifier needs to be printed in the published article. A reader of a
+printed lemma can look up that number and reach its source functions and run
+command. The ledger \code{registry.json} is also the source for job selection.
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+Paper & Stable label & Existing identifier\\\midrule
+Lemma \PaperPseudoOne & \code{calc:pseudo1} & \code{NKQNXUN}\\
+Lemma \PaperPseudoTwo & \code{calc:pseudo2} & \code{RWWHLQT}\\
+Lemma \PaperPseudoArea & \code{calc:pseudo-area} & \code{BXZBPJW}\\
+Lemma \PaperPseudoThree & \code{calc:pseudo-area3} & \code{JQMRXTH}\\
+Lemma \PaperIsosceles & \code{calc:dimer-isosc} & \code{KUGAKIK}\\
+Lemma \PaperThree & \code{calc:pent3} & \code{HUQEJAT}\\
+Lemma \PaperFour & \code{calc:pent4} & \code{QPJDYDB}\\
+Lemma \PaperLarge & \code{calc:large} & \code{FHBGHHY}\\\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Files and execution}
+\code{pent.ml} gives constants, interval geometry, contact charts, and simple
+subdivision. \code{pet.ml} supplies a necessary test for nonoverlap of a pair.
+\code{banana.ml} inverts contact coordinates and reconstructs triangles.
+\code{dimer.ml} supplies the two-triangle exclusions and squeezing predicates.
+\code{autodiff.ml} lifts these formulas to jets. \code{meet-in-middle.ml}
+implements matching and pruning; \code{mitm-calcs.ml} supplies the particular
+finite-cluster domains.
+
+The loader evaluates definitions and inexpensive range assertions,
+not proof searches. Long calculations are explicit jobs rather than side effects of loading.
+Each selected job runs in a separate OCaml bytecode process. This is important
+for the large mutable peripheral hash tables: processes do not share them.
+Concurrency is only between independent calculations. It changes neither the
+internal order of a calculation nor the numerical expressions it evaluates.
+
+\code{python3 run.py --tests} selects the deterministic contract suite.
+\code{--extended} adds seeded generated diagnostics. A job can be selected by
+\code{--job}; \code{--claim 5.2}, \code{--claim RWWHLQT}, and
+\code{--claim calc:pseudo2} select the same direct calculation association.
+\code{--section 5} selects the associated principal lemma calculations.
+The listing option performs no calculation. The selector does not silently
+expand the entire mathematical dependency graph of cited lemmas; use
+\code{--all} for all current proof jobs, and add \code{--diagnostics} for the
+optional historical and supplementary computations.
+
+\section{Intervals, inequalities, and failure}
+
+The normalization is
+\[
+\kappa=\cos(\pi/5),\qquad \sigma=\sin(\pi/5),\qquad
+\ak=\frac32\kappa\sigma(1+\kappa),\qquad \amin=1.237,
+\]
+with $\eN=\ak-\amin$ and $\eM=0.008$. The code names are
+\code{kappa}, \code{sigma}, \code{aK} or \code{acrit}, \code{amin},
+\code{epsN_I}, and \code{epsM_I}. Rational constants are enclosed through
+integer conversion and interval division; a machine-float singleton is not
+silently described as the exact decimal rational.
+
+An interval is a closed pair of endpoints, stored as \code{low}, \code{high}.
+The relation \code{x >> y} means $\inf x>\sup y$. In particular, equality
+with a target cannot satisfy a strict rejection. The definition of
+\code{disjoint_I} uses strict separation in either direction, so touching
+intervals are not disjoint.
+
+\lstinputlisting[firstline=112,lastline=116,firstnumber=112,caption={\code{ocaml/pent.ml}: \code{disjoint_I}}]{../ocaml/pent.ml}
+
+This direction of comparison is central to the proof. An area interval whose
+lower endpoint exceeds the upper endpoint of the target certifies that the
+entire box is outside the counterexample set. Failure to prove that inequality
+means only that the box needs more work.
+
+\subsection{The compatibility layer}
+The release uses \code{Interval_crlibm.I}, not the Intel transcendental
+implementation. The adapter preserves the older operation names expected by
+the project. Successful values are returned unchanged. The square-root
+exception repair is narrowly specified: for an ordered interval wholly below
+zero, the current \code{Domain_error "sqrt"} is translated to the legacy
+\code{Failure "sqrt_I"}. The unchanged project wrapper raises
+\code{Unstable}, which the proof predicate handles by subdivision.
+
+\lstinputlisting[firstline=27,lastline=35,firstnumber=27,caption={\code{ocaml/interval_compat.ml}: \code{sqrt_I}}]{../ocaml/interval_compat.ml}
+
+This pathway was required by an observed baseline failure at the argument
+\[[-2.854101966249686,-2.854101966249678].\]
+It does not replace the argument by
+zero, return an empty interval, or accept a box. Other exceptions are not
+blanket-translated into successful exclusions. Partial-domain square root is
+the backend's existing behavior and is tested separately. The primitive
+library's enclosure guarantees remain part of the trusted numerical base;
+finite samples do not prove all such guarantees.
+
+The original bytecode stack limit, $16{,}777{,}216$ machine words, is restored
+before loading the mathematical source and checked after each job. On the
+64-bit baseline it is a maximum of 128 MiB, not a physical reservation. It is
+separate from the per-process address-space ceiling. An exhausted width,
+stack, time, memory, or output limit produces an incomplete result, never a
+proof success.
+
+\section{Triangle area and center geometry}
+
+For squared sides $x_1,x_2,x_3$, define
+\[
+U(x_1,x_2,x_3)=2(x_1x_2+x_2x_3+x_3x_1)-x_1^2-x_2^2-x_3^2.
+\]
+The area is $\sqrt{U}/4$. This is \code{ups_I} followed by
+\code{area_I}. The center angle opposite $c$ is computed from
+$\cos\gamma=(a^2+b^2-c^2)/(2ab)$; conversely the third side comes from
+the cosine law. The code uses sharper endpoint evaluations only when it
+certifies the signs needed for those monotonicity choices.
+
+\lstinputlisting[firstline=195,lastline=203,firstnumber=195,caption={\code{ocaml/pent.ml}: \code{area_I}}]{../ocaml/pent.ml}
+
+\subsection{Why the lower-endpoint area is a lower bound}
+The name \code{areamin_acute} is historical; its intended contract includes
+nonobtuse triangles. It evaluates the area expression at the three lower side
+endpoints. Those endpoints need not themselves form a nonobtuse triangle.
+The following elementary observation explains the conditional contract.
+
+\begin{proposition}
+Suppose $X_1,X_2,X_3>0$ are the squared sides of a nondegenerate nonobtuse
+triangle. If $0\le z_i\le X_i$, then
+\[
+U(z_1,z_2,z_3)\le U(X_1,X_2,X_3).
+\]
+\end{proposition}
+\begin{proof}
+Maximize $U$ on the closed box $0\le z_i\le X_i$. On a face $z_i=0$,
+$U=-(z_j-z_k)^2\le0$, whereas $U(X_1,X_2,X_3)>0$.
+Thus a maximizing point of positive value has all coordinates positive.
+If two coordinates are below their upper bounds, their partial derivatives
+vanish; subtracting the two equations shows that the third coordinate is
+zero, a contradiction. If just $z_i$ is below its upper bound, the other two
+are $X_j,X_k$, and stationarity gives $z_i=X_j+X_k\ge X_i$ by
+nonobtuseness. Hence the maximum is at $(X_1,X_2,X_3)$.
+\end{proof}
+
+If the lower-endpoint Heron expression is nonnegative, its square root is a
+lower area bound for every intended nonobtuse triangle in the box. If it is
+negative, the attempted evaluation must remain unresolved. It is not a
+justification to discard the geometric box. This distinction explains why
+negative auxiliary radicands may appear even in a successful subdivision
+proof.
+
+The suite checks exact right triangles, permutations and scaling, and
+numerical nonobtuse fixtures against an independently evaluated Heron formula.
+The displayed proposition supplies the mathematical argument; the generated
+fixtures check the implementation and cannot replace that argument.
+
+\section{One contact and its inclination angles}
+
+Use the manuscript's directed contact $B\to A$. A vertex of the pointer $B$
+lies on an edge of the receptor $A$. The edge coordinate $x_\alpha$ runs from
+one receptor endpoint, between $0$ and $2\sigma$; its midpoint is $\sigma$.
+The inclination $\theta'$ is associated with the pointer and $\theta$ with
+the receptor. They satisfy
+\[
+\theta+\theta'\equiv\alpha\pmod{2\pi/5}.
+\]
+These are not ordinary interior angles at an unspecified vertex. Tuple order
+and signs must follow the paper's convention throughout.
+
+Let $h=\sigma-x$ and $\psi=\alpha+3\pi/10$. The right triangle from the
+receptor center to the contact point has legs $h,\kappa$. The cosine law
+therefore gives
+\[
+\ell(x,\alpha)^2
+=1+h^2+\kappa^2-2h\cos\psi+2\kappa\sin\psi.
+\]
+The production function \code{ell_aux} uses the same construction with an
+auxiliary angle rather than this expanded expression. The expansion is useful
+as a separate reference in the Wolfram tests. It is not substituted into the
+interval calculation, since reassociation would change interval widths.
+
+\lstinputlisting[firstline=247,lastline=258,firstnumber=247,caption={\code{ocaml/pent.ml}: \code{ell_aux}}]{../ocaml/pent.ml}
+
+In particular,
+\[
+\ell(x,0)^2=4\kappa^2+x^2,
+\qquad
+\ell(x,\pi/5)^2=(1+\kappa)^2+(\sigma-x)^2.
+\]
+The first is the familiar slider-contact formula. The second describes the
+vertex--edge contact across the shared diagonal of the ice-ray family.
+
+\subsection{Extended contacts and branch boundaries}
+The extended domain $0\le\alpha\le4\pi/5$ represents both pointer
+directions. For $\alpha>2\pi/5$, exchange the roles using
+$(x,\alpha)\mapsto(2\sigma-x,\alpha-2\pi/5)$ and exchange/shift the two
+inclinations as in Section~\PaperContactCoordinates. At a box crossing
+$\alpha=2\pi/5$, both branches are evaluated and their bounds combined.
+A single branch cannot be chosen merely from the midpoint of an interval.
+
+\code{ellxmono_r} includes the stationary candidates as well as the relevant
+endpoints. For fixed $x$, the candidate in $\alpha$ is
+$\pi/5-\arcsin((x-\sigma)/\sqrt{\kappa^2+(x-\sigma)^2})$.
+For fixed $\alpha$, the candidate in $x$ is
+$\sigma+\sin(\alpha-\pi/5)$. A candidate whose interval meets the input
+box is retained. Extra candidates broaden the result and are harmless;
+missing a necessary extremum can invalidate an enclosure.
+
+\section{Pair feasibility and inverse contact domains}
+
+\subsection{The necessary pair test}
+\code{Pet.pet} asks whether a box of center distance and inclinations can
+contain a nonoverlapping pair. Its Boolean is deliberately asymmetric:
+\code{false} is an exclusion, whereas \code{true} only means that the pair
+has not been excluded by this test. A wide box may return true even if it
+contains no actual nonoverlapping pair.
+
+The function first reduces the inclinations modulo $2\pi/5$, splits at zero,
+and exchanges the two roles so that their absolute inclinations are ordered.
+It then treats equal-sign and opposite-sign branches. In each branch, the
+vertex-to-center distance is compared with the radial boundary of a regular
+pentagon. The factors $\kappa/\cos(\cdot)$ are distances to a side in the
+appropriate sector. Endpoint or stationary-direction tests bound this radial
+comparison. The final result is an existential disjunction over the branch
+list: it is enough that one branch remains possible.
+
+\lstinputlisting[firstline=91,lastline=98,firstnumber=91,caption={\code{ocaml/pet.ml}: \code{pet}}]{../ocaml/pet.ml}
+
+The generated tests independently construct the five vertices of each
+pentagon and use the separating-axis theorem with an explicit numerical
+margin. A comfortably separated pair must not be rejected by
+\code{Pet.pet} when put in a small enclosing parameter box. These are
+floating-point diagnostics, labeled as such. Contact cases are supplemented
+by exact or interval identities; a numerical tolerance is never treated as a
+proof of separation at equality.
+
+\subsection{The banana and inverse-banana charts}
+The historical names \code{banana} and \code{danana} denote two planar
+views of the same directed-contact domain. They are implementation names,
+not new assumptions. In the first view the inputs are $(\theta',d)$ and the
+output is a range for $\theta$ on the positive-height branch. The negative
+branch is obtained by the stated reflection and period shift.
+
+The five boundary curves have the following inverse expressions. Here $u$
+is the relevant pointer inclination, and each expression is used only on its
+assigned box and branch:
+\begin{center}
+\begin{tabular}{@{}cl@{}}\toprule
+Curve & Center distance as a function of $u$\\\midrule
+I & $2\kappa/\cos(u+\pi/5)$\\
+II & $2\cos u$\\
+III & $2\kappa/\cos(u-\pi/5)$\\
+IV & $\cos u+\sqrt{\cos^2u+\kappa^2-1}$\\
+V & $(1+\kappa)/\cos u$\\\bottomrule
+\end{tabular}
+\end{center}
+These follow from the inradius right triangle and cosine law at the limiting
+contact directions. The domain is divided into five ridgeless pieces and a
+sixth piece containing a ridge. \code{find_critical_points} collects corners,
+intersections with the rectangle's vertical and horizontal sides, and the
+appropriate boundary candidates. The ridge piece has its own extremum rule.
+Two global extremal points must be included whenever their intervals meet the
+input rectangle.
+
+\lstinputlisting[firstline=150,lastline=171,firstnumber=150,caption={\code{ocaml/banana.ml}: \code{critical_points_banana}}]{../ocaml/banana.ml}
+
+C015 makes the two global-point alternatives independent. In the older
+unparenthesized expression, an \code{else} branch could contain the list
+concatenation, so one candidate could be masked by the first condition. The
+new grouping can only add the missing candidate. A deterministic test chooses
+a rectangle meeting both and checks their presence. This is a defensive
+correction to the enclosure calculation, not an established counterexample to
+an old numerical inequality.
+
+C005 separately changes \code{someinter_I}: only certified interval
+disjointness returns \code{None}. An unexpected exception no longer becomes
+an empty intersection. The original catch-all was too broad as an interface
+contract, even though the baseline jobs happened to complete.
+
+\lstinputlisting[firstline=54,lastline=56,firstnumber=54,caption={\code{ocaml/banana.ml}: \code{someinter_I}}]{../ocaml/banana.ml}
+
+\begin{auditnote}
+The trigonometric formulas and their inverse identities are documented and
+sample-tested. A complete universal proof of the ridgeless partition and all
+critical-point assertions is not claimed here. The remaining trust is stated
+explicitly in \code{AUDIT.md}; the added tests include independent witnesses
+and boundary cases, rather than only round trips that might hide mutually
+compensating mistakes.
+\end{auditnote}
+
+\section{Reconstructing a center triangle}
+
+For an oriented center edge $XY$, its complete datum is
+\[
+(d_{XY},\theta_{XYZ},\theta_{YXZ},\arc_Z).
+\]
+The first two inclinations belong to the two endpoint pentagons, and
+$\arc_Z$ is the opposite center angle. A complete triangle record orders
+these edge data as $AB,BC,AC$, preceded by an area lower bound. Do not confuse
+that order with the output $(d_{BC},d_{AC},d_{AB})$ of the shared 3C charts.
+
+\subsection{Two contact edges: four variables}
+The two contacts at the outer pentagon $B$ are encoded by two extended
+$(x,\alpha)$ pairs. The corresponding center distances and inclinations
+come from \code{ellthetax}. Their values determine the center angle at $B$
+modulo $2\pi/5$:
+\[
+\arc_B=\frac{2\pi}{5}-(\theta_{BAC}+\theta_{BCA})
+       +k\frac{2\pi}{5}.
+\]
+The possible angle range from the side bounds determines the integer $k$.
+\code{getint} returns a unique integer, none, or \code{Unstable} when the
+choice is not resolved. It must not choose an arbitrary integer from a wide
+box. The cosine law then gives $d_{AC}$, and the remaining angle relations
+recover the last two inclinations. A right angle is retained; rejection is
+strictly above $\pi/2$.
+
+\lstinputlisting[firstline=298,lastline=325,firstnumber=298,caption={\code{ocaml/banana.ml}: \code{fillout2C}}]{../ocaml/banana.ml}
+
+\subsection{One contact edge: five variables}
+The input is
+\[
+(d_{AB},\theta_{ABC},\theta_{BAC},d_{BC},d_{AC}).
+\]
+Here $AC$ is required to be a contact edge. First reconstruct the center
+triangle and the inclination of $A$ relative to $AC$. Then use both inverse
+contact branches to obtain possible inclinations of $C$. The final $BC$ pair
+test removes only branches proved impossible. The output is a list of
+possible full edge-data records, not a single arbitrary choice.
+
+The wrapper \code{forall_dom} applies a rejection predicate to every branch.
+Thus it rejects the parameter box only if \emph{all} represented contact
+branches are rejected. The key functions instead take the union of keys of
+all branches. These quantifiers are deliberately different.
+
+\subsection{No required contact: six variables}
+The input is
+\[
+(d_{AB},\theta_{ABC},\theta_{BAC},d_{BC},\theta_{CBA},d_{AC}).
+\]
+The three sides determine the center triangle. At each center,
+\[
+\arc_A+\theta_{ABC}+\theta_{ACB}\equiv0\pmod{2\pi/5},
+\]
+and similarly at $B,C$. These equations determine the remaining inclinations.
+Three pair tests supply necessary nonoverlap constraints. No contact is
+imposed, so this chart includes the contact subspaces and is appropriate for
+the general central triangle in the 6D jobs.
+
+The helper's area value is conditional on the intended nonobtuse subset.
+Additional irrelevant obtuse inputs in a box do not require their own area
+bound; what matters is that no intended nonobtuse witness is lost. A helper
+returning \code{None}, however, must justify that the relevant represented
+set is empty.
+
+\section{Two triangles, their contact types, and squeezing}
+
+\subsection{The shared-edge relation}
+For adjacent triples $(A,B,C)$ and $(A,D,C)$, the common pentagons $A,C$
+are the same objects. In the shared 3C charts, their contact relation gives
+\[
+\bar\beta_D=2\pi/5-\bar\beta_B,\qquad
+\bar x_{\beta,D}=2\sigma-\bar x_{\beta,B}.
+\]
+The remaining chart parameters are independent until the geometric tests
+restrict them. The code evaluates the first triangle, uses its subcritical
+and shared-longest assumptions, then evaluates the second with these exact
+shared-variable identities.
+
+The eight names, in their fixed order, are
+\code{pint,pinw,lj1,lj2,lj3,tj1,tj2,tj3}. Different names may describe different
+choices of shared edge within the same geometric contact type. They must not
+be merged solely because the pictures look alike.
+
+\subsection{What the dimer groups actually exclude}
+Group 1 treats the two isosceles endpoints and four coordinate restrictions.
+Group 2 contains 64 calls covering 48 distinct ordered pairs; the original
+repeated calls are retained. These use no near-ice-ray alternative. Group 3
+contains the other sixteen ordered pairs. Twelve use \code{pseudo=false};
+four additionally allow the explicitly coded pseudo-dimer alternative.
+Every group-3 case retains the $0.01$ neighborhood alternative.
+
+Group 4 returns to the four exceptional ordered pairs with
+\code{pseudo=false}, no neighborhood alternative, and area cutoff
+$2\ak-0.007$. Since
+\[
+2\ak-0.007>2\ak-0.008,
+\]
+this is a stronger lower bound than needed on these terminal cases. The
+constant is not changed merely to agree typographically with $\eM$.
+It does not by itself cover the separate isosceles-peripheral cases.
+
+Group 5 historically bundled squeezing and four \code{one127} cases.
+The release exposes squeezing as its own proof job and \code{one127} as an
+optional historical diagnostic. The latter's existing domain and conclusion
+are retained, but its relevance to the current proof is not asserted.
+
+\subsection{Four contact-sign calculations}
+The proof of Lemma~6.5 (\code{lemma:squeeze-area}) uses the area cap
+$\ak+\eN$, not $\amin+\eN=\ak$. It first needs the signs of the supporting
+contact lines, then a separate inequality to prove area decrease. The new
+module \code{squeeze_sign.ml}, navigation code \code{GJULAOH}, establishes
+the former on the complete four-dimensional domain.
+
+Fix the center of $B$ at the origin and one of its vertices at $(1,0)$.
+There are four pointer choices: $B\to A,B\to C$; $B\to A,C\to B$;
+$A\to B,B\to C$; $A\to B,C\to B$. In each case use the two contact
+coordinates $(x_\alpha,\alpha)$ and $(x_\gamma,\gamma)$ of Appendix A.1,
+with $0\le x_\alpha,x_\gamma\le2\sigma$ and
+$0\le\alpha,\gamma\le2\pi/5$. Closed endpoints retain sliders and
+one-sided vertex--vertex contact representations. A relative rotation
+$2\pi m/5$, $m=0,\ldots,4$, determines the second attachment. Each of the
+five alternatives is checked. Although at a fixed feasible point the acute
+angle interval selects at most one alternative, an interval box need not
+have a unique index. No midpoint-based branch selection is used.
+
+Write $\mathbf e(\theta)=(\cos\theta,\sin\theta)$ and let $J$ be a positive
+quarter turn. For $B$ pointing to a neighbor $X$, put
+$h=x-\sigma$, $\phi=\alpha-\pi/5$. The neighbor center, normal from $B$
+toward $X$, and neighbor vertex orientation are
+\[
+\mathbf n=\mathbf e(\phi),\quad
+\mathbf c_X=(1,0)+\kappa\mathbf n+hJ\mathbf n,\quad
+\omega_X=\alpha+3\pi/5.
+\]
+For $X$ pointing to $B$, put $\psi=2\pi/5-\alpha$. Exchanging the pointer
+and receptor in the same construction gives
+\[
+\mathbf n=\mathbf e(\pi/5),\quad
+\mathbf c_X=\mathbf e(\psi)+\kappa\mathbf n+hJ\mathbf n,\quad
+\omega_X=\pi+\psi.
+\]
+Both formulas use the endpoint definition of $x$ in the paper, not a
+midpoint offset. Rotating the entire $C$ record through $2\pi m/5$
+completes the chart. The unit four-cube used in subdivision is mapped to
+these ranges by interval scaling, without truncating a parameter boundary.
+
+Let $\mathbf a=\mathbf c_A$, $\mathbf c=\mathbf c_C$ and
+$\mathbf g=\mathbf c-\mathbf a$. The chosen orientation has
+$H=\det(\mathbf a,\mathbf c)>0$, so $B$ lies above $AC$. Define
+\[
+q_A=\mathbf n_A\cdot\mathbf g,\quad
+r_A=\det(\mathbf n_A,\mathbf g),\qquad
+q_C=\mathbf n_C\cdot\mathbf g,\quad
+r_C=\det(\mathbf n_C,\mathbf g).
+\]
+In the orthonormal frame along $AC$, the tangent $J\mathbf n$ has
+components $(r,q)/\lVert\mathbf g\rVert$, and the inward normal toward
+$B$ has upward component $r/\lVert\mathbf g\rVert$. Hence
+\[
+-q_A>0,\quad r_A>0,\quad q_C>0,\quad r_C>0
+\]
+prove the required negative/positive finite slopes and the supporting-side
+assertions together. They also exclude horizontal and vertical normals.
+No division by an uncertain slope is involved.
+
+The classifier first removes the wrong orientation, then tries, in order:
+insufficient $AC$ center separation; a certified obtuse angle; area above
+$\ak+\eN$; the four desired signs; and strict interior overlap of $A,C$.
+The last test uses actual vertices and all ten edge-normal axes. The
+projection of a unit regular pentagon on its own outward edge normal is
+$[-1,\kappa]$. Directed endpoint comparisons certify strict overlap of the
+projection interiors; all axes must pass. Touching cases are not discarded.
+Any unresolved box is bisected. A numerical exception or a subdivision limit
+never becomes an accepted box.
+
+The binary-forest checks require all five roots to be visited and
+$\text{nodes}=2\,\text{splits}+5$,
+$\text{leaves}=\text{splits}+5$. Each of the four pointer jobs has a separate
+process and log. The detailed chart derivation and separating-axis argument
+are also in \code{docs/SQUEEZING.md}.
+
+\subsection{The squeezing area inequality}
+Let $\ell=d_{AC}$ and $h=d_{AB}\sin\arc_A$. The signed-normal calculation
+just described supplies positive finite quantities
+$\sigma_A=-q_A/r_A$ and $\sigma_C=q_C/r_C$. With $A$ fixed and
+$\ell'=-1$, the contact equations give
+\[
+x_B'=-\frac{\sigma_C}{\sigma_A+\sigma_C},\qquad
+h'=\frac{\sigma_A\sigma_C}{\sigma_A+\sigma_C}>0.
+\]
+A horizontal change of frame gives exactly the motion directions used in the
+paper. The area derivative is $(-h+\ell h')/2$, so decrease is equivalent to
+\[
+(1/\sigma_A+1/\sigma_C)h>\ell.
+\]
+The existing \code{squeeze_calc} accepts this condition or either of
+$\sigma_A<h/\ell$, $\sigma_C<h/\ell$. For positive finite slopes, either
+of the latter implies the reciprocal inequality. The disjunction is thus a
+sufficient interval test on every geometric branch retained by the sign
+calculation. The sign searches and this inequality calculation are both
+selected by \code{--claim lemma:squeeze-area} (\code{LZMJIZU}).
+
+\lstinputlisting[firstline=270,lastline=290,firstnumber=270,caption={\code{ocaml/dimer.ml}: \code{squeezable}}]{../ocaml/dimer.ml}
+
+\section{The exact ice-ray shear identity}
+
+The final convexity calculation is no longer needed as a theorem premise.
+The manuscript now has a shorter geometric argument. Fix $A$ and all
+orientations. Let $\mathbf e,\mathbf f$ be the orthonormal directions along
+and perpendicular to the shared diagonal at the ice-ray position. The shear
+parameter is the signed offset from the receptor-edge midpoint, not the
+absolute contact parameter. Thus $x=\sigma+t$.
+
+The slider directions give
+\[
+\begin{split}
+\cc_C(t)-\cc_C(0)&=t\mathbf f,\\
+\cc_B(t)-\cc_B(0)&=t(-\sigma\mathbf e+\kappa\mathbf f),\\
+\cc_D(t)-\cc_D(0)&=t(\sigma\mathbf e+\kappa\mathbf f).
+\end{split}
+\]
+The equal signed slide lengths follow from the small displacement triangle
+with angles $\pi/5,2\pi/5,2\pi/5$. Therefore the diagonal vectors satisfy
+\[
+\mathbf u(t)=\mathbf u(0)+t\mathbf f,\qquad
+\mathbf v(t)=\mathbf v(0)-2\sigma t\mathbf e.
+\]
+At $t=0$ they are parallel to $\mathbf e,\mathbf f$, respectively. Taking
+half their determinant yields
+\[
+\boxed{\area\{T_0(t),T_1(t)\}=2\ak+\sigma t^2.}
+\]
+The minimum is unique at zero. No periodic extension is needed for this local
+area computation.
+
+For an independent algebraic check, the squared sides of one triangle are
+\[
+4\kappa^2+x^2,\qquad
+4\kappa^2+\frac{x^2}{4\kappa^2},\qquad
+(1+\kappa)^2+(\sigma-x)^2.
+\]
+Their Heron polynomial is $4B(x)^2$, where
+\[
+B(x)=\sigma x^2+(\kappa-1)x+\sigma(4\kappa+1).
+\]
+Its leading coefficient is positive and its discriminant is
+$-(13+15\sqrt5)/8<0$, so the area is $B(x)/2$. Adding the partner with
+parameter $2\sigma-x$ gives the same identity. Both checks are included in
+the Wolfram suite; the exact polynomial identities were also checked with
+SymPy during preparation.
+
+The optional \code{one_dimer2} diagnostic uses the absolute parameter
+$x$ on $\sigma+[-0.1,0.1]$, corresponding to the centered offset
+$|t|\le0.1$. Its greater width is conservative. This consistency check is not
+a premise of the geometric area proof.
+
+\section{Automatic differentiation along the other paths}
+
+A first-order jet is $(f,f')$; a second-order jet is $(f,f',f'')$, not a
+factorial-scaled coefficient tuple. The operations are the chain and product
+rules applied with interval arithmetic. For example,
+\[
+(fg)''=f''g+2f'g'+fg'',\qquad
+(f^{-1})''=2(f')^2/f^3-f''/f^2.
+\]
+The implementation does not estimate derivatives by finite differences.
+Those estimates, when used in tests, are only diagnostics.
+
+\lstinputlisting[firstline=424,lastline=428,firstnumber=424,caption={\code{ocaml/autodiff.ml}: \code{sqrtD2}}]{../ocaml/autodiff.ml}
+
+The two twist calculations handle the LJ charts before the final common
+shared-edge path. The path checks then cover a $5\times5$ ordered chart
+matrix. Their original first-derivative seeds and initial boxes are retained;
+the new driver names each pair separately instead of launching all pairs as a
+side effect of loading \code{autodiff.ml}. This makes both ordinary testing
+and selective rerunning possible.
+
+The thirty-one original numerical test intentions are now retained as named
+thunks, including the previously shadowed first- and second-order product
+tests. The suite also checks exact jets for a cube, reciprocal, square root,
+sine and cosine, and checks the exact shear identity at several values of
+$t$. Equalities involving transcendental interval results are tested by
+necessary enclosure/overlap relations, not by imposing an arbitrary equality
+of rounded endpoints.
+
+\begin{auditnote}
+The code's derivative values are only useful on the correct parameter path.
+The appendix's chart order and the shared-angle identities must remain the
+basis of that interpretation. The present commentary specifies these links
+and the suite exercises them, but does not claim a fresh universal proof of
+every first-derivative chart enclosure.
+\end{auditnote}
+
+\section{Meet in the middle: why a feasible cluster must survive}
+
+Let a counterexample consist of a central triangle and one or more peripheral
+triangles. Along a shared edge, the common data are the length and two
+inclinations. Rather than store every central/peripheral combination, the
+algorithm stores peripheral boxes in a hash table keyed by discretizations
+of those three shared variables. Central boxes retrieve lower area bounds
+from matching keys.
+
+\subsection{Closed keys and orientation}
+For width $w>0$ and closed interval $I$, the scalar key list contains every
+integer from $\lfloor\inf(I/w)\rfloor$ through
+$\operatorname{ceil}_{\rm strict}(\sup(I/w))-1$. The strict ceiling
+returns $n+1$ when its input is the integer $n$. Hence a singleton at a cell
+boundary shares a key with either neighboring interval containing that point.
+For triples, the Cartesian products are hashed. Hash collisions can create
+extra matches, but cannot destroy a necessary match.
+
+\lstinputlisting[firstline=30,lastline=36,firstnumber=30,caption={\code{ocaml/meet-in-middle.ml}: \code{make_a_key}}]{../ocaml/meet-in-middle.ml}
+
+Adjacent triangles traverse the common edge oppositely, so the central
+key routine negates both inclinations before reducing them modulo $2\pi/5$.
+Periodization keeps all endpoint representatives. Key tests cover negative
+intervals, exact grid points, wrap boundaries, and generated dyadic intervals
+with a known common point.
+
+\subsection{Lower area bounds and upper cuts}
+For every key, the stored peripheral area is a \emph{minimum lower bound}
+over compatible boxes. A hash collision can lower this bound; that makes
+exclusion more difficult, not unsound. If no compatible entry remains, the
+central box can be excluded, provided the key coverage property holds.
+
+Suppose a central lower bound is $a_0$, and compatible peripheral lower
+bounds are $a_1,\ldots,a_m$. If
+\[
+a_0+a_1+\cdots+a_m>A,
+\]
+where $A$ is the counterexample's total-area cap, that central box is outside
+the domain. Otherwise a peripheral participating in this central possibility
+must obey
+\[
+\area(T_i)\le A-a_0-\sum_{j\ne i}a_j.
+\]
+The implementation stores an outward upper endpoint of this expression as an
+allowable cut. When several central possibilities use one peripheral key,
+it takes the \emph{maximum} allowable cut. A minimum would be incorrect:
+one feasible central alternative could be removed by another incompatible
+one's tighter requirement.
+
+\lstinputlisting[firstline=87,lastline=93,firstnumber=87,caption={\code{ocaml/meet-in-middle.ml}: \code{recut}}]{../ocaml/meet-in-middle.ml}
+
+\begin{contract}
+Assume each geometric fill function encloses every intended witness or proves
+emptiness; each outside-domain predicate is one-sided sound; each area value
+is a lower bound; and matching witness data share a key. Then every feasible
+cluster of total area at most $A$ survives each pruning round.
+\end{contract}
+\begin{proof}
+Its peripheral boxes cannot be removed initially by their geometric tests.
+Their keys give central matches. Each stored peripheral minimum is no greater
+than the corresponding witness area, and the central lower bound is no greater
+than its witness area. Thus their sum cannot exceed $A$ strictly. The cut
+propagated by this central witness is at least the area of its peripheral
+witness. Taking a maximum over possible central matches cannot lower that
+cut. The witness therefore survives the next peripheral pruning. Subdivision
+covers the closed parent boxes, so the same argument applies inductively.
+\end{proof}
+
+This proof separates the combinatorial pruning invariant from the geometric
+fill contracts. It does not assert that a flawed geometric \code{None} can be
+repaired by the hash-table logic.
+
+\subsection{Termination and tests with feasible examples}
+The key width halves at each outer step. A successful calculation ends only
+when the relevant peripheral set or the central set is empty. Reaching the
+minimum width raises an exception. There is no rule ``small enough means
+verified.'' Independent workers have separate tables and result files.
+
+The tests do not use only impossible examples. They construct small finite
+cluster problems, enumerate all compatible combinations directly, and
+compare that independent enumeration with \code{mk_one_cencoord}. A feasible
+combination exactly at the target must survive, with both peripheral cuts at
+least its actual areas. Impossible fixtures must be removed. Additional tests
+force unresolved fills and width exhaustion; neither is allowed to become a
+pass. Duplicate-key and collision fixtures check conservative minima and
+maximum cuts.
+
+\section{The eight principal computational inputs}
+
+In this section, the stated geometric reductions belong to the paper.
+The commentary identifies their terminal computational domains; it does not
+replace those reductions by the mere existence of source functions. Every
+area rejection is strict. Closed equality faces are retained unless a
+separate geometric argument excludes them.
+
+\subsection{Shared edge below 1.8: \code{NKQNXUN}}
+Lemma~\PaperPseudoOne negates a shared-edge upper bound. The total target is
+$2\ak$, and the central cap is $\ak+\eN$. There are three terminal
+branches: outside double contact, a midpoint endpoint, and a slider endpoint.
+The code uses the retained nonshared-length consequence rather than the
+combinatorial arrow itself, so the added tied-arrow relaxation is retained
+at this interface. The closed ranges include the boundary 1.8.
+
+The functions are \code{precluster1_case0}, \code{precluster1_case1}, and
+\code{precluster1_case2}. The first uses the four-dimensional two-contact
+chart; the latter two use a five-dimensional contact-central chart. The
+side-range cuts are supported by explicit interval assertions in the source
+and independent exact-number checks in the Wolfram suite.
+
+\subsection{A nonshared longest edge above 1.8: \code{RWWHLQT}}
+For Lemma~\PaperPseudoTwo, fix the shared pentagons and the peripheral.
+The peripheral data remain O2C, subcritical, and shared-longest; dropping the
+selected arrow does not drop that last length consequence.
+In the paper labels, let $p=d_{AB}$ be the primary-contact side,
+$q=d_{BC}$ the other nonshared side, and $s=d_{AC}$ the shared side.
+The compact minimum retains
+\[
+p,q\le1.8,\qquad \max(p,q)\ge s.
+\]
+Besides O2C, a minimum has midpoint or slider contact and lies on a tie or a
+nonshared length-1.8 boundary. The primary-contact descent fixes the larger
+incident distance, so it preserves the lower bound on the maximum.
+
+In the two five-dimensional code branches the labels are permuted:
+\[
+(AB,AC,BC)_{\rm code}=(AC,AB,BC)_{\rm paper}.
+\]
+Thus code $AB$ is shared and code $AC$ is contact. The boundary helper deliberately
+retains all three equalities and both nonshared 1.8 boundaries, a superset of
+the required stopping events:
+
+\lstinputlisting[firstline=451,lastline=457,firstnumber=451,caption={\code{ocaml/mitm-calcs.ml}: \code{pseudo2_boundary_excluded}}]{../ocaml/mitm-calcs.ml}
+
+Both \code{precluster2_case1} and \code{precluster2_case2} call this actual
+helper; the tests exercise the same helper, not a duplicate expression.
+The midpoint/slider filters and all other bounds remain in their respective
+functions. The O2C branch \code{precluster2_case0} uses the separate two-contact chart. All terminal branches belong to the required proof set.
+
+\subsection{Pseudo-dimer pair area: \code{BXZBPJW}}
+The target in Lemma~\PaperPseudoArea is $2\ak-\eM$. The two mixed-contact
+branches use \code{precluster4_case0_experimental} and
+\code{precluster4_case1_experimental}, distinguishing which side of the
+peripheral equals the shared side. Their central cap is
+$\ak+\eN-\eM$. The word \code{experimental} is retained as part of the
+historical stable name; it is not evidence of obsolescence.
+
+The triple-contact route uses the earlier type exclusions and the four
+stronger $0.007$ cases in \code{Dimer.run_group4}. No attempt is made to
+weaken that stronger bound to match the paper. All these comparisons are strict, with interval endpoints directed outward.
+
+\subsection{A pseudo-dimer and its outgoing peripheral: \code{JQMRXTH}}
+Lemma~\PaperPseudoThree has target $3\ak+\eM$. The exceptional outgoing
+peripheral is not assumed subcritical. In a counterexample,
+\[
+\area(T_-)<3\ak+\eM-(2\ak-\eM)=\ak+2\eM.
+\]
+The common initializer uses that cap, which follows from the stated counterexample assumptions.
+
+\lstinputlisting[firstline=585,lastline=593,firstnumber=585,caption={\code{ocaml/mitm-calcs.ml}: \code{init2Cps_precluster6}}]{../ocaml/mitm-calcs.ml}
+
+The shared initializer serves the ordinary incoming and exceptional outgoing
+roles. Its first disjunct retains the ordinary constraints where the shared
+edge is strictly below 1.8; the second cap is common. This reuse may admit
+extra peripheral candidates. Extra candidates make the exclusion harder and
+are not a defect. The six jobs distinguish the six ordered choices of
+incoming and outgoing edges:
+\[
+(AB,BC),(AB,AC),(BC,AB),(BC,AC),(AC,AB),(AC,BC).
+\]
+Their central cap remains $\ak+\eN$ and their total target remains unchanged.
+All six cases are selected by the lemma identifier.
+
+\subsection{The isosceles dimer endpoint: \code{KUGAKIK}}
+\code{dimer_isosceles_precluster} represents the long-isosceles O2C
+peripheral and the central double-contact chart, with total cap $2\ak$.
+The peripheral initializer imposes the appropriate shared-side equality and
+retains the third-side longest comparison. The main lemma is
+Lemma~\PaperIsosceles. This is separate from the local isosceles exclusions
+in dimer group 1; both associations remain visible in the index.
+
+\subsection{Three nonobtuse triangles: \code{HUQEJAT}}
+Lemma~\PaperThree has two subcritical peripherals attached to distinct edges
+of a nonobtuse central triangle. The total cap is $3\ak+\eM$; subtracting
+two $\amin$ bounds gives central cap $\ak+2\eN+\eM$.
+When the center acquires a contact, the five-dimensional cases distinguish
+the edge without a peripheral:
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+Function suffix & Nonshared edge & Peripheral keys\\\midrule
+\code{AB} & $AB$ & $BC,AC$\\
+\code{BC} & $BC$ & $AB,AC$\\
+\code{AC} & $AC$ & $AB,BC$\\\bottomrule
+\end{tabular}
+\end{center}
+The remaining terminal alternative has a general six-dimensional central
+chart and two isosceles peripheral charts. It is
+\code{calc_pent3_6D_postcluster}. Its historical run has completed; it is
+not an unresolved execution issue. The three contact-based alternatives do
+not replace it. The nonshared upper side bound 2.02 is checked against the
+central cap by an explicit source assertion.
+
+\subsection{Four nonobtuse triangles: \code{QPJDYDB}}
+\code{calc_pent4_6D_postcluster} uses a general central triangle, one
+subcritical O2C peripheral on each edge, target $4\ak$, and central cap
+$\ak+3\eN$. The central side ordering is a symmetry reduction with
+non-strict boundaries retained. The six-dimensional chart includes central
+contact subspaces, so the explicitly superseded five-dimensional alternative
+is removed from the active release rather than kept as a required second
+proof.
+
+\subsection{A non-large angle: \code{FHBGHHY}}
+The five existing \code{calc_pent2_postcluster_case0} through \code{case4}
+cover O2C or one contact together with the distinguished nonshared side at
+length 1.8, according to the normalized contact/shared-edge placement.
+The target is $2\ak+\eM$ and the central cap is $\ak+\eN+\eM$.
+The paper's geometric argument excludes right triangles: the shared
+edge is a longest side of the subcritical peripheral, hence greater than
+1.72 and less than $2.1<\kappa\sqrt8$. It is therefore a leg, not the
+hypotenuse, of any right central triangle. Its other leg is at least
+$2\kappa$, giving
+\[
+\area(T_0)+\area(T_1)>\amin+1.72\kappa>2\ak+\eM.
+\]
+No new right-angle job is required for that reason. The new manuscript note
+asks only that the leg be identified and the compact minimum be stated
+instead of invoking termination of a possibly infinite translation path.
+
+\section{Tests, execution evidence, and the trust boundary}
+
+The OCaml suite exercises the actual release functions. It includes exact
+dyadic examples, strict-boundary and exception tests, contact-chart fixtures,
+first/second derivative rules, and finite MITM problems with an independent
+exhaustive answer. Generated diagnostics use recorded seeds and independent
+polygon construction. Old work counts, rounded endpoints, and historical
+runtimes are not mathematical acceptance criteria. The 153 ordinary contract
+checks, the extended generated groups, and the 71 contact-sign checks have
+separate stage results.
+
+The Wolfram package defines its functions without executing them on import.
+Its 161 named checks are documented individually in
+\code{docs/WOLFRAM_CHECKS.md}: exact assertions from the paper, supporting
+identities, implementation fixtures, and numerical diagnostics have different
+roles. The report includes the displayed paper number, stable label,
+mathematical assertion, and reason for the check. Numerical examples do not
+replace uniform interval searches.
+
+Python tests exercise scheduling, memory admission, failure handling,
+checkpoint identities, report copying and confirmation with synthetic child
+processes. They are not executions of OCaml or Wolfram mathematics.
+
+The interval backend is trusted for outward rounding, including
+whole-interval transcendental ranges. The compiler/runtime and application
+coordinate routines are also trusted components. The formulas and retention
+arguments in this commentary, independent geometric fixtures, finite
+exhaustive tests, and exact symbolic checks provide complementary scrutiny;
+this is not a machine-checked formalization of every implementation branch.
+
+\subsection{Source-specific confirmation}
+The release requires 70 proof jobs and three function-test stages. Four
+additional historical or consistency diagnostics are optional. The
+controller requires normal exit, an exact job marker, the retained stack
+setting, and unchanged source identities. A failure, timeout, interruption,
+missing job or missing marker cannot become a pass. An intact checkpoint is
+reused only for identical source and installed-environment fingerprints.
+
+The command \code{python3 confirm.py --check} validates the complete required
+OCaml set and the full Wolfram export, then writes
+\code{verification/CONFIRMATION.md}. The record is an execution summary, not
+a formal proof certificate or a signature identifying an operator. A
+source-matching verified distribution can be created with
+\code{confirm.py --bundle}. Historical evidence is recorded separately and
+cannot fill missing jobs in the current confirmation.
+
+\subsection{Resources and long-term reproducibility}
+A recorded 2026 Intel/WSL execution of the general six-dimensional
+three-triangle calculation took about 6 hours 36 minutes wall time. The
+largest observed individual resident peak in that concurrent baseline was
+about 2.58 GiB. These are measurements, not runtime predictions. Four
+independent workers have separate hash tables; the controller budgets
+4 GiB address space per worker and 8 GiB additional memory headroom. It does
+not treat swap as available admission memory.
+
+Preserve the exact interval source, its notices, compiler/package metadata,
+and run records. A package name, development pin, or container image is not
+by itself an archive of all required source. The environment guide gives a
+version-pinned installation and an explicit source-archiving command.
+The mathematical source, parameter domains, and evidence remain inspectable
+without a private directory layout or an unpublished notebook.
+
+\end{document}

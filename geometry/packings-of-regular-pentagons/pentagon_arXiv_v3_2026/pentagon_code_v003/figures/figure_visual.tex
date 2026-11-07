@@ -1,0 +1,26 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{visual}{The area modification $b(T)$ can
+be visualized as a small semicircular 
+knob (of area $\epsN$) or triangular notch (of area $\epsM$) 
+that transfers area
+from one Delaunay triangle to an adjacent one. 
+}
+{
+\begin{scope}[scale=2,xshift=0cm]
+\coordinate (T) at (0.5706,-0.38541);
+\coordinate (U) at (0,0.7236);
+\coordinate (T') at ($(T)+(U)$);
+\draw[blue] (U) -- ++ (T) -- ++ ($-1.0*(T')$) -- ++ ($-1.0*(T)$) -- ++ (T');
+\draw[blue] (0,0) -- ++ ($0.5*(U)-(0,0.08)$);
+\draw[blue] (0, 0.5*0.7236 - 0.08)
+  arc[start angle=-90, end angle=90, radius=0.08];
+\draw[blue] ($0.5*(U)+(0,0.08)$) -- (U);
+\end{scope}
+\begin{scope}[scale=2,xshift=1.5cm]
+\coordinate (T) at (0.5706,-0.38541);
+\coordinate (U) at (0,0.7236);
+\coordinate (T') at ($(T)+(U)$);
+\draw[blue] (U) -- ++ (T) -- ++ ($-1.0*(T')$) -- ++ ($-1.0*(T)$) -- ++ (T');
+\draw[blue] (0,0) -- ++ ($0.5*(U)-(0,0.055/2.0)$) -- ++ (30:0.055) --++ (150:0.055)--(U) ;
+\end{scope}
+}

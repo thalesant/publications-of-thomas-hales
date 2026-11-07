@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+runs/
+environment/archives/
+*.aux
+*.log
+*.toc
+*.out
+*.fdb_latexmk
+*.fls

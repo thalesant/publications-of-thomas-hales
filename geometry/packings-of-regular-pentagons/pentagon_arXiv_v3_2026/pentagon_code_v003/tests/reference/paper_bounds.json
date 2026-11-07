@@ -1,0 +1,306 @@
+[
+  {
+    "id": "lemma21",
+    "claim": "lemma:21",
+    "expression": "triangleArea[21/10,2 k,2 k]-aK",
+    "reference": "0.0022657241333671216107251418808493775299694227053656988658895007336",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "right-gap",
+    "claim": "lemma:right",
+    "expression": "k Sqrt[8]-21/10",
+    "reference": "0.18824561127073719040029113432120830614461350735108245001709229539",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "midpointer",
+    "claim": "lemma:mid-172",
+    "expression": "Sqrt[4 k^2+s^2]-43/25",
+    "reference": "0.0014893236852853442541578059861975145153318062540885794421239349172",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "pseudo3",
+    "claim": "calc:pseudo3",
+    "expression": "triangleArea[43/25,9/5,9/5]-(aK+epsN)",
+    "reference": "0.016172070989516529196714202879733797764968698858325201998529059145",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "pseudo-table-111",
+    "claim": "lemma:pd-nra-dimer",
+    "expression": "triangleArea[9/5,9/5,9/5]-(aK+112/1000)",
+    "reference": "0.00060310368906541568797255357829941766814162807875956181988262308816",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "pseudo-table-110",
+    "claim": "lemma:pd-nra-dimer",
+    "expression": "triangleArea[9/5,9/5,43/25]-(aK+69/1000)",
+    "reference": "0.00053012143124172126597318592119099732049932636597394890385008941264",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "pseudo-table-100",
+    "claim": "lemma:pd-nra-dimer",
+    "expression": "triangleArea[9/5,43/25,43/25]-(aK+3 epsM)",
+    "reference": "0.004809869119692887218041264080970985133389460411943178409904062922",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "pseudo-table-11min",
+    "claim": "lemma:pd-nra-dimer",
+    "expression": "triangleArea[9/5,9/5,2 k]-(aK+epsM)",
+    "reference": "0.0024978823951164845335007884738452947859747945733476465865656791292",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "obtuse-neighbor",
+    "claim": "lemma:Nb",
+    "expression": "triangleArea[k Sqrt[8],2 k,43/25]-(aK+epsN)",
+    "reference": "0.045188998188666947599569235317971400776479378941206529425252409186",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "two-nonobtuse",
+    "claim": "sec:obtuse",
+    "expression": "triangleArea[k Sqrt[8],43/25,43/25]-(aK+2 epsN)",
+    "reference": "0.072303398726690203049601340261310190000335223868673608236703168944",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "two-mcorrections",
+    "claim": "sec:obtuse",
+    "expression": "triangleArea[k Sqrt[8],43/25,2 k]-(aK+2 epsM)",
+    "reference": "0.082547048630392139668828218359428600332010006448855276330573439454",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "three-m",
+    "claim": "sec:obtuse",
+    "expression": "triangleArea[9/5,9/5,9/5]-(aK+3 epsM+epsN)",
+    "reference": "0.03524505324734022361871357053684221811261100057111081491456159282",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "obtuse-adjacent",
+    "claim": "sec:obtuse",
+    "expression": "circleArea[2 k,k Sqrt[8],2]-(aK+2 epsN)",
+    "reference": "0.1856382437525738642971028959509367640220672852096248237842802536",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "obtuse-case1-circle",
+    "claim": "sec:obtuse",
+    "expression": "(2 k)^3 (1-(2 k)^2/16)^(3/2)-(2 aK+4 epsN)",
+    "reference": "0.44598464609818978205283795031733488221941816615601180663350628376",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "obtuse-case1-right-boundary",
+    "claim": "sec:obtuse",
+    "expression": "k^2 Sqrt[8]+circleArea[2 k,2 k,2]-(2 aK+4 epsN)",
+    "reference": "0.025588586020811539160576548524659727863106566828910974166685341895",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "obtuse-case1-shared-chord",
+    "claim": "sec:obtuse",
+    "expression": "4 k Sqrt[1-k^2/4]-(43/25) Sqrt[2]",
+    "reference": "0.52704764034994293363502072764704563527207155969061435605049703392",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case2-central",
+    "claim": "sec:obtuse",
+    "expression": "triangleArea[2 k,k Sqrt[8],k Sqrt[8]]-173/100",
+    "reference": "0.0016667145366734767590219440599247906932848475052113579980903808433",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case2-central-charged",
+    "claim": "sec:obtuse",
+    "expression": "triangleArea[43/25,k Sqrt[8],k Sqrt[8]]-(173/100+epsN)",
+    "reference": "0.040261349586373998875802053505391584676444333986749052112375050295",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case2-small-radius",
+    "claim": "sec:obtuse",
+    "expression": "circleArea[2 k,2 k,17/10]-108/100",
+    "reference": "0.015775520323948012099660288737947094074032653992683963197794219745",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case2-small-radius-charged",
+    "claim": "sec:obtuse",
+    "expression": "circleArea[2 k,43/25,17/10]-(108/100+2 epsN)",
+    "reference": "0.0036243675739777891748304924569425751279902563218675061050703131347",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case2-total-small",
+    "claim": "sec:obtuse",
+    "expression": "173/100+2 (108/100)-3 aK",
+    "reference": "0.018925848674824423792223050875628401333408117477053759284036909196",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "obtuse-minimum",
+    "claim": "sec:obtuse",
+    "expression": "circleArea[2 k,2 k,2]-968/1000",
+    "reference": "0.00050730184924657197514051750794973283914764051078819400172550681135",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case2-large-radius-central",
+    "claim": "sec:obtuse",
+    "expression": "k Sqrt[4 (17/10)^2-4 k^2]-241/100",
+    "reference": "0.0092132473026793871690057371212511174444250717601473005756974915373",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case2-total-large",
+    "claim": "sec:obtuse",
+    "expression": "2 (968/1000)+241/100-(3 aK+5 epsN)",
+    "reference": "0.20813559646619846344592813566834240355575497993881002475743175786",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case3-equilateral",
+    "claim": "sec:obtuse",
+    "expression": "triangleArea[k Sqrt[8],k Sqrt[8],k Sqrt[8]]-22668/10000",
+    "reference": "0.00048394222851219144040110607500417791533436668068317768874867611732",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case3-large-radius-central",
+    "claim": "sec:obtuse",
+    "expression": "Sqrt[8] k/2 Sqrt[4 (17/10)^2-8 k^2]-26/10",
+    "reference": "0.27717474073520735787292181295634331885554924144861606164827710037",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case3-total-small",
+    "claim": "sec:obtuse",
+    "expression": "22668/10000+3 (108/100)-(4 aK+6 epsN)",
+    "reference": "0.025219495582748079307410169585428004444693724923512530946789697321",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case3-total-large",
+    "claim": "sec:obtuse",
+    "expression": "26/10+3 (968/1000)-(4 aK+6 epsN)",
+    "reference": "0.022419495582748079307410169585428004444693724923512530946789697321",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case5-center",
+    "claim": "sec:obtuse",
+    "expression": "circleArea[k Sqrt[8],k Sqrt[8],2]-245/100",
+    "reference": "0.0068203729140114741189573102694345193980461088871314819940713503576",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "case5-total",
+    "claim": "sec:obtuse",
+    "expression": "245/100+2 (968/1000)-(3 aK+5 epsN)",
+    "reference": "0.24813559646619846344592813566834240355575497993881002475743175786",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "nonobtuse-two",
+    "claim": "sec:nonobtuse",
+    "expression": "amin+triangleArea[9/5,9/5,43/25]-2 epsM-2 aK",
+    "reference": "0.00017207098951652919671420287973379776496869885832520199852905914474",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "pseudo-area3-right",
+    "claim": "sec:pseudo-area3",
+    "expression": "2 amin+(9/5) k-(3 aK+epsM)",
+    "reference": "0.051156438549729787176351201804702707281686379302240335205940669631",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "pseudo1-preparation",
+    "claim": "sec:pseudo1",
+    "expression": "amin+triangleArea[9/5,9/5,43/25]-2 aK",
+    "reference": "0.016172070989516529196714202879733797764968698858325201998529059145",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "large-right-exclusion",
+    "claim": "sec:large",
+    "expression": "amin+(43/25) k-(2 aK+epsM)",
+    "reference": "0.039793129441459185317426711471534382128404639617658567625843754991",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "squeeze-side-cut",
+    "claim": "lemma:squeeze-area",
+    "expression": "k Sqrt[(58/25)^2-(2 k)^2]-(aK+epsN)",
+    "reference": "0.001386513677772365546689672575331800772372854414637019592997892585",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "pent3-unshared-cut",
+    "claim": "calc:pent3",
+    "expression": "triangleArea[43/25,43/25,101/50]-(aK+2 epsN+epsM)",
+    "reference": "0.0010765625031821555689531133115854117818375690542780060337120547783",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "C013-cap-below-epsN",
+    "claim": "calc:pseudo-area3",
+    "expression": "epsN-2 epsM",
+    "reference": "0.037358050441725192069258983041457199555530627507648746905321030268",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  },
+  {
+    "id": "BXZBPJW-stronger-cut",
+    "claim": "calc:pseudo-area",
+    "expression": "(2 aK-7/1000)-(2 aK-epsM)",
+    "reference": "0.001",
+    "status": "POSITIVE_NUMERICAL_REFERENCE",
+    "method": "mpmath 70 digits; not a Wolfram execution or exact sign certificate"
+  }
+]

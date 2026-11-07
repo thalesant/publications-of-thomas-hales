@@ -1,0 +1,31 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{Gamma'}{Three configurations along the curve $\Gamma$.}
+{
+\begin{scope}[scale=0.5,xshift=-6cm]
+\threepentnoD{0.00}{0.00}{79.87}{0.93}{1.36}{259.87}{1.83}{0.00}{223.87};
+\threepentnoD{0.00}{0.00}{-64.13}{1.03}{-1.50}{-244.13}
+{1.83}{0.00}{-208.13};
+\draw (0,0) node {$A$};
+\draw (1.83,0) node {$C$};
+\draw (0.5,-3.5) node {$t= 0.25$};
+\smalldot{79.87-72:1};
+\smalldot{$(1.83,0)+(223.87-3*72+180:0.809)$};
+\end{scope}
+\begin{scope}[scale=0.5]
+\threepentnoD{0.00}{0.00}{72.00}{0.96}{1.43}{252.00}{1.81}{0.00}{216.00};
+\threepentnoD{0.00}{0.00}{-72.00}{0.96}{-1.43}{-252.00}{1.81}{0.00}{-216.00};
+\draw (0,0) node {$A$};
+\draw (1.81,0) node {$C$};
+\smalldot{1,0};
+\draw (0.5,-3.5) node {$t=0$};
+\end{scope}
+\begin{scope}[scale=0.5,xshift=6cm]
+\threepentnoD{0.00}{0.00}{-79.87}{0.93}{-1.36}{-259.87}{1.83}{0.00}{-223.87};
+\threepentnoD{0.00}{0.00}{64.13}{1.03}{1.50}{244.13}{1.83}{0.00}{208.13};
+\draw (0,0) node {$A$};
+\draw (1.83,0) node {$C$};
+\draw (0.5,-3.5) node {$t= -0.25$};
+\smalldot{-79.87+72:1};
+\smalldot{$(1.82,0)+(-223.87+3*72+180:0.809)$};
+\end{scope}
+}

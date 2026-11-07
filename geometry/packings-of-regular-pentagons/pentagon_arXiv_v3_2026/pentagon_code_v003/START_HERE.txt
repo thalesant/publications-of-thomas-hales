@@ -1,0 +1,19 @@
+PENTAGON PACKING — COMPLETE DISTRIBUTION
+Code v003 / manuscript v005 / 6 November 2026
+
+This ZIP is the complete paper, code, test suites, and documentation.
+Extract it as a NEW folder. Do not overwrite an edited earlier working copy.
+The package root is the folder containing run.py, registry.json and README.md.
+
+1. Read README.md, then docs/INSTALL.md for a first installation.
+2. Open docs/index.html to find a calculation by printed lemma number.
+3. In Linux/Ubuntu-WSL BASH, at the package root:
+      python3 run.py --all --diagnostics
+   On WSL, also copying reports to Windows Downloads:
+      python3 run.py --all --diagnostics --copy-report windows-downloads
+4. See mathematica/README.md for the Wolfram checks (including notebook use).
+5. Record completion with confirm.py; details in docs/VERIFICATION.md.
+
+No code needs to be copied into an old baseline folder. No personal path is required.
+The mathematical document is paper/pentagon_v005.pdf.
+The code commentary is docs/code_commentary.pdf.

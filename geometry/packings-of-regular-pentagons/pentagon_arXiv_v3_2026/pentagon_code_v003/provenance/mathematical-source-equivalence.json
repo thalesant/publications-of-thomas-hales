@@ -1,0 +1,86 @@
+[
+  {
+    "file": "ocaml/autodiff.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "bc7231eed82240c92454035a3eac41289fd87784eb4332f1a4dcf0a7f029d5db",
+    "release_sha256": "40dd625dad09f8994159b27b5252627846cdcc9c3299fda634af731f43b34722",
+    "noncomment_sha256": "26a07801286731192434275aafc61f072cd0342e8f7c31324424ec4e8a5a53e2"
+  },
+  {
+    "file": "ocaml/banana.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "9f8d1270f6a14dd485b74327b8890f926e9c165fecd99a6eaa0b49aa5403d630",
+    "release_sha256": "9e5369928269d4ce50134c6e41bf9d4a8532030e515353184529d5436fd8bdc2",
+    "noncomment_sha256": "8725576e033b8f5e69edb982981648a8ac43a0135544d74d2270a2a9b0fbcdd4"
+  },
+  {
+    "file": "ocaml/dimer.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "22ac46caa2e727de77ea2572936f7f4308d35ebc2a390a1c72e1dc79a73b7cfa",
+    "release_sha256": "05d2efebb090ac2d43c9ba15191fad0e27d2198dc4c2d024389a42ec33b45cc6",
+    "noncomment_sha256": "5c22791011b6e829bd9184389cffcd2426b8f409feeaccbb7ca453461a2770ba"
+  },
+  {
+    "file": "ocaml/interval_compat.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "bb2e3bffba6f5e9bc7b62a77c7faae503ba8ae02af21639b6f78cee155019d75",
+    "release_sha256": "99d848a1693fe352e8e7973dc01199ae142aac4eba387045bacab7a74d7b092a",
+    "noncomment_sha256": "8cda3181b558558c5c3edf82a93c5e8910dfede92d4a6dad10c0647f58b6f042"
+  },
+  {
+    "file": "ocaml/lib.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "b4c88497a02b029c8ffd5f30a0d803b548989416c3f62c99309f690f8a53da89",
+    "release_sha256": "b4c88497a02b029c8ffd5f30a0d803b548989416c3f62c99309f690f8a53da89",
+    "noncomment_sha256": "59bfaf2eefe26e1bba8567f5052487a2c524e46d6e5319e6dfcb1529a009c46c"
+  },
+  {
+    "file": "ocaml/meet-in-middle.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "8c5f2d67f721d6b8471435b8c04e679a93752912711b62122a6476da6a8b220c",
+    "release_sha256": "8c5f2d67f721d6b8471435b8c04e679a93752912711b62122a6476da6a8b220c",
+    "noncomment_sha256": "e7d9c6759686dc51b00f72c21d64f5f94a3d28db07f080aac50a2838a55343bb"
+  },
+  {
+    "file": "ocaml/mitm-calcs.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "87edca17b3d7cc93b4b714937fd6c00dfd6b7f8b53e3d6cbb62a4d1ae4d9ec5a",
+    "release_sha256": "fa9f537f557e59b58e71917d7dbb1320f8827b75d40ec47384596ebbebe2feaa",
+    "noncomment_sha256": "405437d2be7f3709f3a632fc7c7d5ee2b4b3a96560dbaef86bc3c413c3be81ff"
+  },
+  {
+    "file": "ocaml/pent.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "35adedb0c850a5f96c97a319a3775004db45e3ccfffcb9f6e7547347b2f4fc0f",
+    "release_sha256": "d769bba797802d8b174873b7ef1f1f0394bd48da1433266f697c2b898f0c11f4",
+    "noncomment_sha256": "20f47c9d438ebb13baedf52ebe6c0fcfd9653b2b9ff356ea37517b427c408834"
+  },
+  {
+    "file": "ocaml/pet.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "17e200cd00c5bf97dd0ea283095049227710812553c5c522a8e7b349c4f470e7",
+    "release_sha256": "17e200cd00c5bf97dd0ea283095049227710812553c5c522a8e7b349c4f470e7",
+    "noncomment_sha256": "8dc50e03d94f89964658600f470db84ab44b4dbbcf99895f5da09412539bd196"
+  },
+  {
+    "file": "ocaml/squeeze_sign.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "6fda863c2c47b7390eda0531f712492ea2de49dd5bce9a51253423ae729c3d86",
+    "release_sha256": "26318891208e7071914a1cd17b30399481b8c534955662aa0afe452f5a55cea8",
+    "noncomment_sha256": "b303c4cde9c0c8f6cee9bca13d3b3d545294100b814f18fddc6d0580ae11e2ed"
+  },
+  {
+    "file": "tests/ocaml/squeeze_tests.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "ab7ad5502b33c8f63c368d4de2ae1b7f4b6a0299f1860dd73bb89b35c0409705",
+    "release_sha256": "222c09dc1455f05335b682768601838494507c5dd027dafa75313c4a53458657",
+    "noncomment_sha256": "c24db48cb98ee7a70d54eb5a0a1860b10b990b60f849b1b5e07a3b840a16752b"
+  },
+  {
+    "file": "tests/ocaml/tests.ml",
+    "noncomment_tokens_identical": true,
+    "tested_source_sha256": "361a9b3cbc0aafbfbda57eb98d0a7212207c1535004463b9e7a05ecd2cf533da",
+    "release_sha256": "c02b71f69d7fd54967b67c1fcb4c54a6785bd146e096cd4a0315acf45100a8f5",
+    "noncomment_sha256": "9e73488aef2ab37e250509a65d22cd33b40c4f78b753d2a1923044d8b7159301"
+  }
+]

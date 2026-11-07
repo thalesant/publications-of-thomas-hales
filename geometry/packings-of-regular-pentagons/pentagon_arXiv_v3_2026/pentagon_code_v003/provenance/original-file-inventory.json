@@ -1,0 +1,170 @@
+[
+  {
+    "original": "code/figure/figures_for_tex_scratchpad.ml",
+    "sha256": "ebdef65eba380bbaa1e4b55bfcfcbe43219e57f1843e8e815af62b625e52b633",
+    "bytes": 8441,
+    "disposition": "superseded by exact TikZ gallery and safe drawing helpers; original retained in code.zip"
+  },
+  {
+    "original": "code/figure/obsolete_interval.ml",
+    "sha256": "7f3207c217580f9f04a6aab18281a1b742428815597b715a8282d64d2243d76a",
+    "bytes": 6950,
+    "disposition": "superseded by exact TikZ gallery and safe drawing helpers; original retained in code.zip"
+  },
+  {
+    "original": "code/mathematica/banana.m",
+    "sha256": "2df0783a7710716add298cc0213de19cc337b60727394a0580cc079a7838b8a5",
+    "bytes": 4346,
+    "disposition": "superseded by named paper checks / drawing helpers; original retained in code.zip"
+  },
+  {
+    "original": "code/mathematica/pent2mathca_recovered_input_cells.m",
+    "sha256": "c936680b3b81ace3d5b99574dcc0e63b16dd439dc460ddbd11a9db21d5215e56",
+    "bytes": 12776,
+    "disposition": "superseded by named paper checks / drawing helpers; original retained in code.zip"
+  },
+  {
+    "original": "code/mathematica/pentagon-good-calcs.nb",
+    "sha256": "755881ed1f3bced59e4fd3c052c6fba2b9293658f1f86f9636ba61f8845ef8b7",
+    "bytes": 86637,
+    "disposition": "superseded by named paper checks / drawing helpers; original retained in code.zip"
+  },
+  {
+    "original": "code/mathematica/pentagon2026.m",
+    "sha256": "cb57b79f1f21de9f853b71e6a488b1d3c496b34c2c25557bf1a571388502fb61",
+    "bytes": 1939,
+    "disposition": "superseded by named paper checks / drawing helpers; original retained in code.zip"
+  },
+  {
+    "original": "code/mathematica/pentca.m",
+    "sha256": "267b192152319b8d6cd84a667b6e1b5b6c426b9d5bf829511e66d0d967cdee7a",
+    "bytes": 4912,
+    "disposition": "superseded by named paper checks / drawing helpers; original retained in code.zip"
+  },
+  {
+    "original": "code/mathematica/pentgraphics.m",
+    "sha256": "12c77dcd5e4c32806880eb7e5a59b2be8975f10e3259046514af24640c0c7d70",
+    "bytes": 1462,
+    "disposition": "superseded by named paper checks / drawing helpers; original retained in code.zip"
+  },
+  {
+    "original": "code/obsolete/kusner_pentagongraphics.m",
+    "sha256": "80d9b8406feea617ee32748a4c023fbae36cf75dd988259ca49cb0054acdad1e",
+    "bytes": 276,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/obsolete/obsolete_dimer.ml",
+    "sha256": "996b4ad07b066db31977d7236d9cdcde5a4a529835c9847b5142716add313003",
+    "bytes": 24702,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/obsolete/obsolete_readme.md",
+    "sha256": "769bbb32666e6b48b92219479e2863889e21e75e2b5487d1e73f257d3c079a5b",
+    "bytes": 507,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/obsolete/pent2mathca_corrupted.nb",
+    "sha256": "e8caa9947d944f869ebc2126d1ee570ae855a7013f10d8915b6670612b26dcdb",
+    "bytes": 93018,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/obsolete/pent2mathca_recovered_raw_input_cells.nbfrag.txt",
+    "sha256": "0a9ff4176da3418e4ff30aca6121f03e270f82bea715b41e5807c2fe47e349a8",
+    "bytes": 62364,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/obsolete/pent2mathca_repaired_input_cells.nb",
+    "sha256": "364711ae049c7793a79d0fc70ca13e734e67cc0604a9fa9c541b4489f00765e7",
+    "bytes": 60835,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/ocaml/autodiff.ml",
+    "sha256": "58747a021877854efcabd511d2df184b37896ecb7679d2ed3a74e158a82a3cc5",
+    "bytes": 18176,
+    "disposition": "revised active source"
+  },
+  {
+    "original": "code/ocaml/banana.ml",
+    "sha256": "5c643b720effbfc7bc5d1fcc64eb985bf8e5de5032a10b390d6b33cc59203613",
+    "bytes": 17639,
+    "disposition": "revised active source"
+  },
+  {
+    "original": "code/ocaml/calcs.ml",
+    "sha256": "64e5b7c2204307fb1ea397b0bd0de60bb1e074f710a25c08d7a077f1a21618e3",
+    "bytes": 6218,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/ocaml/dimer.hl",
+    "sha256": "85b352f2b8c4890f06ad301ddc6b8d898c7f1fdea5b11386796f2c8a619ffd84",
+    "bytes": 8818,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/ocaml/dimer.ml",
+    "sha256": "8abadb0ed30ec1b10bf81f06c737d984150a6937444b9d070734ad2d3af25bed",
+    "bytes": 13294,
+    "disposition": "revised active source"
+  },
+  {
+    "original": "code/ocaml/init.hl",
+    "sha256": "9e6260cdfa39eb8f11273736b66499a77d467b95291ac6d4b24b634e677151fb",
+    "bytes": 829,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/ocaml/init.ml",
+    "sha256": "9454b68a526064ddb0373190b1b2e007e3d048227ba107f85664cd827f706bf7",
+    "bytes": 2663,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/ocaml/lib.ml",
+    "sha256": "b4c88497a02b029c8ffd5f30a0d803b548989416c3f62c99309f690f8a53da89",
+    "bytes": 23320,
+    "disposition": "preserved byte-for-byte"
+  },
+  {
+    "original": "code/ocaml/meet-in-middle.ml",
+    "sha256": "a4f6b2b1f3c979d7b8f6bc9f6f0f1b1021533e5050816715d9d442ea184f666c",
+    "bytes": 10717,
+    "disposition": "revised active source"
+  },
+  {
+    "original": "code/ocaml/mitm-calcs.ml",
+    "sha256": "1c4551a398ccd6a979da866bb3278dc8c3edb297e034b6d489110a6d616d33b2",
+    "bytes": 48492,
+    "disposition": "revised active source"
+  },
+  {
+    "original": "code/ocaml/pent.hl",
+    "sha256": "3a0696d24883cd5e51d44a0a8e5a9927901678483b6b53e80b1df0a438df3d42",
+    "bytes": 29316,
+    "disposition": "not in active release; retained in original code.zip"
+  },
+  {
+    "original": "code/ocaml/pent.ml",
+    "sha256": "9ad8602fd45c4791b740375561d70cc924bc7e32a67cb03f9d4e9e855c02b16f",
+    "bytes": 29278,
+    "disposition": "revised active source"
+  },
+  {
+    "original": "code/ocaml/pet.ml",
+    "sha256": "2dc38df42df8f9697eefdc93e0c5e74bce25bcbdcfabc0feb088cea14faffa09",
+    "bytes": 3966,
+    "disposition": "revised active source"
+  },
+  {
+    "original": "code/readme.org",
+    "sha256": "b9dfdd42e1cd9f809577f3b76c703bfaf596d00d2160b8919249d6f1eba0296c",
+    "bytes": 2184,
+    "disposition": "not in active release; retained in original code.zip"
+  }
+]

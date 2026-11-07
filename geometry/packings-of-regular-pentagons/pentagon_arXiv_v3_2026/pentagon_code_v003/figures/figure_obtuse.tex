@@ -1,0 +1,18 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{obtuse}{Obtuse Delaunay triangles can have small area.  A
+  triangle with circumradius about $2$ and area about $0.98$
+  is shown. The adjacent Delaunay triangle cannot have a vertex
+  inside the circumcircle of the first.  The neighbor of a subcritical
+  obtuse Delaunay triangle tends to have large area.}
+{
+\begin{scope}[scale=0.5]
+\threepent{0}{0}{90}
+{1.486}{-0.661}{-90}
+{-1.486}{-0.661}{-90};
+\end{scope}
+\begin{scope}[scale=0.5,xshift=6cm]
+\draw[blue] (0,0)-- (1.486,-0.661) -- (-1.486,-0.661) -- cycle;
+\draw[blue] (1.486,-0.661) -- ($(0,-2) + (-6:2)$) -- (-1.486,-0.661);
+\draw (0,-2) circle (2cm);
+\end{scope}
+}

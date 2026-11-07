@@ -1,0 +1,20 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{KK2min}{Ice-ray triangle deformation.
+The ice-ray triangle is not a local minimum of the area function.
+The  ice-ray triangle (left) can be continuously deformed
+along an area decreasing curve to the subcritical acute triangle of 
+numerically minimum area (right). }
+{
+\begin{scope}[scale=0.5]
+\threepent{0.00}{0.00}{72.00}{0.96}{1.43}{252.00}{1.81}{0.00}{216.00};
+\draw (0.5,-1.5) node {$\area=\acrit$};
+\end{scope}
+\begin{scope}[scale=0.5,xshift=6cm]
+\threepent{0.00}{0.00}{79.49}{0.93}{1.37}{259.49}{1.82}{0.00}{223.49};
+\draw (0.5,-1.5) node {$\area\approx 1.248$};
+\end{scope}
+\begin{scope}[scale=0.5,xshift=12cm]
+\threepent{0.00}{0.00}{85.23}{0.93}{1.33}{265.23}{1.86}{0.00}{229.23};
+\draw (0.5,-1.5) node {$\area\approx 1.23719$};
+\end{scope}
+}

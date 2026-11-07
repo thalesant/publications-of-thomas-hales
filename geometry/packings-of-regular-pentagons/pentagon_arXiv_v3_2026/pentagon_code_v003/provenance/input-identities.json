@@ -1,0 +1,40 @@
+{
+  "authoritative_manuscript": {
+    "name": "pentagon_v004g.tex",
+    "sha256": "c29356933207e453ce191bcfe1314a8d1eddcb1a9a47caec51d784c201103627"
+  },
+  "code_base": {
+    "name": "pentagon_code_v002.zip",
+    "sha256": "981b6cdbc8f5a3519e65e0e47c1a46e46c425a079c28e8b87309471bdf5704c3"
+  },
+  "tested_source_report": {
+    "name": "pentagon_code_v002_report_20261106T155422Z-06fe6a.zip",
+    "sha256": "28f26e14a533c186c103ea37e9f2a70f48126b2d1e772d542d07e4db9537eada"
+  },
+  "tested_squeezing_report": {
+    "name": "pentagon_squeeze_sign_v002_report_20261106T203408Z-614f8f.zip",
+    "sha256": "8b869eeafd313de9e2578381d4d02eaa5ba5d1bfcd9d5fbbd5d87d2b5dfe4070"
+  },
+  "seven_letter_identifiers": {
+    "lemma:delta": "QBQQTVY",
+    "lemma:172": "BVICHFW",
+    "lemma:a0": "QGPVOYX",
+    "NKQNXUN": "NKQNXUN",
+    "RWWHLQT": "RWWHLQT",
+    "BXZBPJW": "BXZBPJW",
+    "JQMRXTH": "JQMRXTH",
+    "KUGAKIK": "KUGAKIK",
+    "HUQEJAT": "HUQEJAT",
+    "QPJDYDB": "QPJDYDB",
+    "FHBGHHY": "FHBGHHY",
+    "sec:O2C": "GAIMXAD",
+    "lemma:squeeze-area": "LZMJIZU",
+    "sec:nbd": "DSKKWND",
+    "sec:curve": "LPEYXGH",
+    "calculation:gamma-convexity": "BKUSHRZ",
+    "sec:shared": "SMPXAOD",
+    "squeeze-contact-signs": "GJULAOH",
+    "mathematica-paper-checks": "VNDQIXO",
+    "function-contract-tests": "YQRQXVD"
+  }
+}

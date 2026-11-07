@@ -1,0 +1,85 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{KKtriangle}{Ice-ray triangles and ice-ray dimers.
+  All Delaunay triangles in the pentagonal ice-ray are congruent and
+  have area $\acrit$.  We call them ice-ray triangles. 
+  The pentagonal ice-ray can be partitioned into pairs of Delaunay
+  triangles (called ice-ray dimers) in which the two triangles in each
+  dimer share their common longest edge.  
+}
+{
+\begin{scope}
+\pentpink{0.0}{0.0}{-90}{0.4}{red!30};  %
+\pentpink{0.0}{0.724}{-90}{0.4}{red!30};  %
+\pentpink{0.0}{2*0.724}{-90}{0.4}{red!30};  
+\pentpink{0.57}{-0.3854}{90}{0.4}{red!30};  %
+\pentpink{0.57}{-0.3854+0.724}{90}{0.4}{red!30}; 
+\pentpink{0.57}{-0.3854+2*0.724}{90}{0.4}{red!30};  
+\pentpink{0.57}{-0.3854+3*0.724}{90}{0.4}{red!30};  
+\pentpink{-0.57}{-0.3854}{90}{0.4}{red!30};  %
+\pentpink{-0.57}{-0.3854+0.724}{90}{0.4}{red!30}; 
+\pentpink{-0.57}{-0.3854+2*0.724}{90}{0.4}{red!30};  
+\pentpink{-0.57}{-0.3854+3*0.724}{90}{0.4}{red!30};  
+\pentpink{2*0.57}{0.0}{-90}{0.4}{red!30};  %
+\pentpink{2*0.57}{0.724}{-90}{0.4}{red!30};  %
+\pentpink{2*0.57}{2*0.724}{-90}{0.4}{red!30}; 
+\pentpink{3*0.57}{-0.3854}{90}{0.4}{red!30};  %
+\pentpink{3*0.57}{-0.3854+0.724}{90}{0.4}{red!30}; 
+\pentpink{3*0.57}{-0.3854+2*0.724}{90}{0.4}{red!30};  
+\pentpink{3*0.57}{-0.3854+3*0.724}{90}{0.4}{red!30};   
+\coordinate (T) at (0.5706,-0.38541);
+\coordinate (U) at (0,0.7236);
+\coordinate (T') at ($(T)+(U)$);
+\draw[blue] (0,0) -- ++ ($2*(U)$);
+\draw[blue] ($-1.0*(T')$) -- ++ ($3*(U)$);
+\draw[blue] (T) -- ++ ($3*(U)$);
+\draw[blue] ($(T)+(T')$) -- ++ ($2*(U)$);
+\draw[blue] ($(T)+(T')+(T)$) -- ++ ($3*(U)$);
+\draw[blue] ($-1.0*(T)$) -- ++ ($2.0*(T)$);
+\draw[blue] ($-1.0*(T) + (U)$) -- ++ ($4.0*(T)$);
+\draw[blue] ($-1.0*(T) + 2.0*(U)$) -- ++ ($4.0*(T)$);
+\draw[blue] ($1.0*(T) + 3.0*(U)$) -- ++ ($2.0*(T)$);
+\draw[blue] ($(T)$) -- ++ ($2.0*(T')$);
+\draw[blue] ($1.0*(T) +1.0*(U) -2.0 *(T')$) -- ++ ($4.0*(T')$);
+\draw[blue] ($1.0*(T) +2.0*(U) -2.0 *(T')$) -- ++ ($4.0*(T')$);
+\draw[blue] ($1.0*(T) +3.0*(U) -2.0 *(T')$) -- ++ ($2.0*(T')$);
+\end{scope}
+\begin{scope}[xshift=5cm]
+\pentpink{0.0}{0.0}{-90}{0.4}{red!30};  %
+\pentpink{0.0}{0.724}{-90}{0.4}{red!30};  %
+\pentpink{0.0}{2*0.724}{-90}{0.4}{red!30};  
+\pentpink{0.57}{-0.3854}{90}{0.4}{red!30};  %
+\pentpink{0.57}{-0.3854+0.724}{90}{0.4}{red!30}; 
+\pentpink{0.57}{-0.3854+2*0.724}{90}{0.4}{red!30};  
+\pentpink{0.57}{-0.3854+3*0.724}{90}{0.4}{red!30};  
+\pentpink{-0.57}{-0.3854}{90}{0.4}{red!30};  %
+\pentpink{-0.57}{-0.3854+0.724}{90}{0.4}{red!30}; 
+\pentpink{-0.57}{-0.3854+2*0.724}{90}{0.4}{red!30};  
+\pentpink{-0.57}{-0.3854+3*0.724}{90}{0.4}{red!30};  
+\pentpink{2*0.57}{0.0}{-90}{0.4}{red!30};  %
+\pentpink{2*0.57}{0.724}{-90}{0.4}{red!30};  %
+\pentpink{2*0.57}{2*0.724}{-90}{0.4}{red!30}; 
+\pentpink{3*0.57}{-0.3854}{90}{0.4}{red!30};  %
+\pentpink{3*0.57}{-0.3854+0.724}{90}{0.4}{red!30}; 
+\pentpink{3*0.57}{-0.3854+2*0.724}{90}{0.4}{red!30};  
+\pentpink{3*0.57}{-0.3854+3*0.724}{90}{0.4}{red!30};   
+\coordinate (T) at (0.5706,-0.38541);
+\coordinate (U) at (0,0.7236);
+\coordinate (T') at ($(T)+(U)$);
+\draw[blue] ($-1.0*(T)$) -- ++ ($2.0*(T)$);
+\draw[blue] ($-1.0*(T) + (U)$) -- ++ ($4.0*(T)$);
+\draw[blue] ($-1.0*(T) + 2.0*(U)$) -- ++ ($4.0*(T)$);
+\draw[blue] ($1.0*(T) + 3.0*(U)$) -- ++ ($2.0*(T)$);
+\draw[blue] ($(T)$) -- ++ ($2.0*(T')$);
+\draw[blue] ($1.0*(T) +1.0*(U) -2.0 *(T')$) -- ++ ($4.0*(T')$);
+\draw[blue] ($1.0*(T) +2.0*(U) -2.0 *(T')$) -- ++ ($4.0*(T')$);
+\draw[blue] ($1.0*(T) +3.0*(U) -2.0 *(T')$) -- ++ ($2.0*(T')$);
+\draw[blue] ($-1.0*(T) + 2.0*(U)$) -- ++ ($-1.0*(T')$) -- ++ (T)
+  -- ++ ($-1.0*(T')$) -- ++ (T)
+  -- ++ ($-1.0*(T')$) -- ++ (T);
+\draw[blue] ($3.0*(T) + 4.0*(U)$) -- ++ (T) -- ++ ($-1.0*(T')$) 
+  -- ++ (T)
+  -- ++ ($-1.0*(T')$) 
+  -- ++ (T)
+  -- ++ ($-1.0*(T')$);
+\end{scope}
+}

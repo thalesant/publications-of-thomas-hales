@@ -1,0 +1,446 @@
+{
+  "removed_examples_or_dead_definitions": [
+    {
+      "file": "pent.ml",
+      "original_fragment": "let try_do f =\n  let rec try_dof = function\n    | [] -> []\n    | (x::t) ->\n      try let y = f x in y :: try_dof t\n      with\n      |  Failure s  -> report s; []\n      | _ -> [] in\n  try_dof",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "outer pair [0;1;2] [3;4]",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "abs_I (mk (~-. 0.1) ( 0.2))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = getint (mk 1.1 1.3)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = hasint (mk  (-0.9) (-0.8))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "acos_I (m 0.22)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "asin_I (m 0.22)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "iarc (m 0.1) (m 0.2) (m 0.1085659)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = iloc (mk_interval(1.0,1.1))\n  (mk_interval(1.1,1.2)) (mk_interval(1.2,1.3))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = ell_aux (mk 1.1 1.2) (mk 1.3 1.4)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "ethetax (m 0.1) pi25",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "ethetax (m 0.5) pi25",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "thetax (m 0.1) (m 0.2)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "thetax (m 0.2) (m 0.19)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "thetax (mk 0.1 0.11) (mk 0.2 0.22)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "thetax (sigma+ mk 0.0 0.01) (pi15 + mk 0.0 0.01)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let ellxmono_merge =0",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "ellthetax (m 0.1) pi25",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "ethetax (m 0.1) pi25",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "ellthetax_sgn (mk 0.2 0.25) (mk 0.3 0.35) false",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "ellxmono (mk 0.2 0.25) (mk 0.3 0.35)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = pinwheeledge (m 0.1) (m 0.2)  (m 0.3)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ =\n  deltajedge (m 0.05) (m 0.06)  (m 0.1),\n  area_I (m 1.94) (m 1.88) (m 1.93),\n  deltajedge (m 0.0) (m 0.0) (m 0.0),\n\n  pinwheeledge (m 0.0) (pi15) (two * sigma),\n  ellxmono (m 0.0) (m 0.0),\n  ellxmono (m 0.0) (pi25)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = ljedge (m 0.1) (m 0.2) (m 0.753251)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = tjedge (m 0.9) (m 1.0) (m 0.5)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = shared_pinwheeledge (m 0.0) pi15 sigma,\n  one+kappa",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = shared_pintedge pi25 pi310 (m 0.001)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = shared_lj1edge zero pi15 sigma",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = shared_lj2edge zero pi15 sigma",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ =\n  let alpha3 = pi15 + m 0.1 in\n  let beta3 =  m 0.15 in\n  let beta3' = pi25 - beta3 in\n  let xbeta3 = m 0.2 in\n  let gamma3 = pi35 - (alpha3+beta3) in\n  let alpha0 = gamma3 in\n  let beta0 = alpha3 in\n  let gamma0 = beta3 in\n  let (dAC3,dAB3,dBC3,(s2,xalpha3,xgamma3)) =\n    shared_lj3edge_extended alpha3 beta3 xbeta3 in\n  let xalpha0 = xgamma3 in\n  let xbeta0 = xalpha3 in\n  let xgamma0 = xbeta3 in\n  let (dAB1,dAC1,dBC1) = shared_lj1edge beta3' alpha3 xalpha3 in\n  let (dAC2,dBC2,dAB2) = shared_lj2edge beta0 alpha0 xalpha0 in\n  ((dAC1,dAC2,dAC3),(dAB1,dAB2,dAB3),(dBC1,dBC2,dBC3),\n   s2,(xalpha3,xbeta3,xgamma3))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ =\n  let alpha3' =  m 0.05 in\n  let alpha3 = pi25 - alpha3' in\n  let beta3 = pi15 + m 0.15 in\n  let xbeta3 = sigma + m 0.1 in\n  let (dAC3,dBC3,dAB3,xbeta0,xgamma0) =\n    shared_tj3edge_extended alpha3' beta3 xbeta3 in\n  let xalpha0 = xbeta3 in\n  let alpha0 = beta3 in\n  let beta0 = alpha3 in\n  let gamma0 = pi - (alpha0+beta0) in\n  let (dBC1,dAC1,dAB1) = shared_tj1edge alpha0 beta0 xbeta0 in\n  let (dAC2,dAB2,dBC2,(xgamma2,xalpha2)) =\n    shared_tj2edge_extended beta0 gamma0 xgamma0 in\n  ((dAC1,dAC2,dAC3),(dBC1,dBC2,dBC3),(dAB1,dAB2,dAB3),\n   (xbeta0,xbeta3,xgamma0),(xalpha2,xgamma2,xgamma0))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = maxwidth 0 (0,0.0) testi",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "let _ = splitlist 0.2 testi",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pent.ml",
+      "original_fragment": "1",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize1 (mk_interval(3.3 ,4.4 ))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize1 (mk_interval(3.3 ,3.8 ))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize1 (mk_interval(3.7 ,4.2 ))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize1 (mk_interval(-3.7 ,-2.8 ))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize (mk_interval(3.3 ,4.4 )) (m 0.2)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize (mk_interval(3.3 ,3.35 )) (m 0.2)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize (mk_interval(3.37 ,3.42 )) (m 0.2)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize_min (mk_interval(3.3 ,4.4 )) xi2 xi1",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize_min (mk_interval(3.37 ,3.43 )) xi2 xi1",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "periodize_min (mk_interval(3.45 ,3.54 )) xi2 xi1",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "pet.ml",
+      "original_fragment": "let _ = ilawbeta (m 0.4) (m 1.1) (m 1.2)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "banana.ml",
+      "original_fragment": "curveIt (curveIth (m (- 0.1)))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "banana.ml",
+      "original_fragment": "curveIIt (curveIIth (m 0.1))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "banana.ml",
+      "original_fragment": "curveIIIt (curveIIIth (m 0.3))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "banana.ml",
+      "original_fragment": "curveIVtpos (curveIVth (m 0.1))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "banana.ml",
+      "original_fragment": "curveIVtneg (curveIVth (m (- 0.1)))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "banana.ml",
+      "original_fragment": "curveVt (curveVth (m 0.1))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "banana.ml",
+      "original_fragment": "find_critical_points (zero2 one) (zero2 two) None None",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "banana.ml",
+      "original_fragment": "theta'_acute ks (theta'ks  + pi15)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "dimer.ml",
+      "original_fragment": "let one_scaleneto3C_deprecated xs =\n  try\n    let pi310 = ratpi 3 10 in\n    let dACrange = mk 1.72 2.0 in\n    let ([xalpha; alpha;  xbeta; beta],_) = xs in\n    let is_cloverleaf = xalpha + xbeta << m 0.1 in\n    if (alpha + beta >> pi310) || is_cloverleaf then true\n    else\n      match  mk2C dACrange xs with\n      |None -> true\n      |Some (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),\n\t     (dAC,thACB,thCAB,arcB)) ->\n\t(a >> aK) || (dAC >> m 1.79)\n  with Unstable -> false",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "dimer.ml",
+      "original_fragment": "let domain_scaleneto3C_deprecated =\n  [(map zero2 [two*sigma;pi25;two*sigma;pi25],(true,true))]",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "dimer.ml",
+      "original_fragment": "let _ = one_sigma (m 1.0) (m 0.3) (m 0.2) (m 0.4)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "dimer.ml",
+      "original_fragment": "let test =\n  let arcA = m 1.0 in\n  let thBAC = m 0.3 in\n  let thABC t = t - thBAC in\n  let e = m (1.0e-6) in\n  let t0 = pi25 - e in\n  let t1 = pi25 + e in\n  (one_sigma arcA thBAC (thABC t0) t0,\n   one_sigma arcA thBAC (thABC t1) t1)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "autodiff.ml",
+      "original_fragment": "map (recurseD 0) (0--4)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "autodiff.ml",
+      "original_fragment": "map (recurseD 1) (0--4)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "autodiff.ml",
+      "original_fragment": "map (recurseD 2) (0--4)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "autodiff.ml",
+      "original_fragment": "map (recurseD 3) (0--4)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "autodiff.ml",
+      "original_fragment": "map (recurseD 4) (0--4)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "autodiff.ml",
+      "original_fragment": "recursetoeps (fun t -> one_dimer2 (hd t)) [[mk (-0.1) (0.1)]]",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "int_ceil 3.0",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "int_floor (- 2.5)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "make_a_key (m 0.2)  (mk 1.01 1.1)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "make_a_key one (m 3.0)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "make_keys (m 0.2,m 0.2,m 0.2)\n  ((mk 1.1 1.2),(mk 1.4 1.5),(mk 2.01 2.3))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "widthlist [mk 3.0 4.0; mk 7.0 9.1; mk 1.0 2.05]",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let test =\n (subdivide_subwidth (m 2.1) [zero2 two;zero2 four;zero2 four])",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let test =\n  let _ = time (subdivide_subwidth (one)) [mk 0.0 100.0;mk 0.0 100.7;mk 0.0 100.0] in\n  ()",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let test = subdivide_subwidth one [mk 0.0 0.5]",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let testh = Hashtbl.create 20",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let _ =   Hashtbl.clear testh",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let _ = Hashtbl.add testh 0 (m 7.0,None)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let _ = Hashtbl.add testh 1 (m 7.1,Some 1.0)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let _ = Hashtbl.add testh 2 (m 7.2,Some 2.0)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let _ = Hashtbl.add testh 3 (m 7.3,Some 3.0)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "Hashtbl.mem testh 3",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "maxcut testh [0;3;1;3;2]",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "minarea testh [3;1;3;2]",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "meet-in-middle.ml",
+      "original_fragment": "let test c a p cfn ccs =\n  (funpow 2 (mk_cencoord c a p cfn) ccs)",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "mitm-calcs.ml",
+      "original_fragment": "let _ = exists (mem_I 0.0) (Pet.periodize_pent0 (pi25))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "mitm-calcs.ml",
+      "original_fragment": "let _ = fun t -> edge5D_ACs (the (fillout5D t))",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "mitm-calcs.ml",
+      "original_fragment": "let mk_peri = 0",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    },
+    {
+      "file": "mitm-calcs.ml",
+      "original_fragment": "let calc_pent4_postcluster() =\n  let cluster_areacut = four*aK in\n  let pdata = reset_peri init2Cps in\n  let outdomfn _ = false in\n  let keyfns = [ckeyfnAB;ckeyfnBC;ckeyfnAC] in\n  let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in\n  let dAB_dBC_dAC = (d_subcrit_shared,d_subcrit_shared,d_subcrit_contact) in\n  let cencut = (aK + int 3*epsN_I).high in\n  let ccs = [(coord5 dAB_dBC_dAC,cencut);] in\n  let _ = report \"pent4_postcluster\" in\n  time_mitm cluster_areacut pdata cfn ccs",
+      "reason": "obsolete definition or load-time example/search moved out of loading"
+    }
+  ],
+  "deferred_searches": [
+    {
+      "file": "autodiff.ml",
+      "function": "twist_claim_lj1",
+      "change": "unit thunk; no search during loading"
+    },
+    {
+      "file": "autodiff.ml",
+      "function": "twist_claim_lj2",
+      "change": "unit thunk; no search during loading"
+    }
+  ]
+}

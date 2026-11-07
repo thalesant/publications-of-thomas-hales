@@ -1,0 +1,8 @@
+{
+  "parent": "pentagon_v004g.tex",
+  "parent_sha256": "c29356933207e453ce191bcfe1314a8d1eddcb1a9a47caec51d784c201103627",
+  "release": "paper/pentagon_v005.tex",
+  "release_sha256": "a85881102339a30d941cfe25b0da8998004b49e810e9b530b52e7f3404001815",
+  "comparison": "Article body, ignoring source comments and whitespace, after the documented R100 editorial removal, spelling correction, bold-normal typography, and replacement of the retired numerical-check file reference.",
+  "identical": true
+}

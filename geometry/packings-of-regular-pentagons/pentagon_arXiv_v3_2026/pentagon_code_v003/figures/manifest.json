@@ -1,0 +1,254 @@
+[
+  {
+    "label": "fig:double-lattice",
+    "number": "1.1",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 125,
+    "file": "figure_double-lattice.tex",
+    "sha256": "aa427ccab661e3ec621e2553ca4ab08f36c5bc96025f2495ee97a0352bd72791",
+    "caption": "The pentagonal ice-ray.  All figures show\npentagons in red and Delaunay triangles in blue."
+  },
+  {
+    "label": "fig:KKtriangle",
+    "number": "2.2",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 402,
+    "file": "figure_KKtriangle.tex",
+    "sha256": "52939ed793af2073cb451d47aa1c9b6dc9e5738ca845571aac345b5d266aa430",
+    "caption": "Ice-ray triangles and ice-ray dimers.\n  All Delaunay triangles in the pentagonal ice-ray are congruent and\n  have area $\\acrit$.  We call them ice-ray triangles. \n  The pentagonal ice-ray can be partitioned into pairs of Delaunay\n  triangles (called ice-ray dimers) in which the two triangles in each\n  dimer share their common longest edge.  \n"
+  },
+  {
+    "label": "fig:subcritical",
+    "number": "2.3",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 487,
+    "file": "figure_subcritical.tex",
+    "sha256": "e9308664278163d7639e78dd050afe5f69499d7e15c2cf20f3d5ddd635b58dcf",
+    "caption": "Subcritical triangles.\nExperimentally, the first triangle has the smallest area among all\nacute Delaunay triangles.  The second triangle is a cloverleaf that\nhas two edges of minimal length $2\\kappa$.  Experimentally, the\nthird triangle minimizes the longest edge among subcritical acute Delaunay triangles.\nIt is equilateral with edge length about $1.72256$."
+  },
+  {
+    "label": "fig:KK2min",
+    "number": "2.4",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 512,
+    "file": "figure_KK2min.tex",
+    "sha256": "93cccd22204c4a72736f798001b62e680066e98ab99635ed4192d83fb6844669",
+    "caption": "Ice-ray triangle deformation.\nThe ice-ray triangle is not a local minimum of the area function.\nThe  ice-ray triangle (left) can be continuously deformed\nalong an area decreasing curve to the subcritical acute triangle of \nnumerically minimum area (right). "
+  },
+  {
+    "label": "fig:Gamma",
+    "number": "2.5",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 532,
+    "file": "figure_Gamma.tex",
+    "sha256": "4705cbc1c4f8710f9eb9a723a59e5747f2350faadc5d0c1e2ae6dd3af6b987c6",
+    "caption": "Ice-ray dimer deformation.  The ice-ray\n  dimer (center) admits a shear motion that preserves all edges of\n  contact.  This deformation increases the area of the dimer.  It is\n  obvious by the symmetry of the figures on the left and right that\n  the area function along this deformation has a critical point at the\n  ice-ray dimer.  It is known that the ice-ray dimer is a local\n  minimum of the area function \\cite{Kus}.  "
+  },
+  {
+    "label": "fig:pseudo-dimer",
+    "number": "2.6",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 557,
+    "file": "figure_pseudo-dimer.tex",
+    "sha256": "24640f7edf55647679700fa68a22d5d2ebb21563ff589781242f4eec008e071b",
+    "caption": "Pseudo-dimer.  There exist pairs of acute\n  triangles $(T_1,T_0)$ such that the sum of their two areas is at\n  most $2\\acrit$ and such that (1) $T_1$ is subcritical and is\n  adjacent to $T_0$ along the longest edge of $T_1$, but such that (2)\n  the longest edge of $T_0$ is not the edge shared with $T_1$.  We\n  call such pairs {\\it pseudo-dimers}.    The illustrated\n  pseudo-dimer has area about $2\\acrit - 10^{-5}$, and the triangle $T_0$\n  has longest edge length about $1.84$.  The modification\n  term $\\epsM = 0.008$ is based on this and closely related examples\n  of pseudo-dimers.  Pseudo-dimers add\n  significant complications to the proof. "
+  },
+  {
+    "label": "fig:obtuse",
+    "number": "2.7",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 577,
+    "file": "figure_obtuse.tex",
+    "sha256": "5b6db5dcc59d42b7aa9bcd162072ae344334b595a25edb2a395b5384d50e1734",
+    "caption": "Obtuse Delaunay triangles can have small area.  A\n  triangle with circumradius about $2$ and area about $0.98$\n  is shown. The adjacent Delaunay triangle cannot have a vertex\n  inside the circumcircle of the first.  The neighbor of a subcritical\n  obtuse Delaunay triangle tends to have large area."
+  },
+  {
+    "label": "fig:visual",
+    "number": "2.8",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 780,
+    "file": "figure_visual.tex",
+    "sha256": "af269d8dcc7a3d9c8f451ee6ff31332a8eeef880fb7b51e1a61f5374ba737d8d",
+    "caption": "The area modification $b(T)$ can\nbe visualized as a small semicircular \nknob (of area $\\epsN$) or triangular notch (of area $\\epsM$) \nthat transfers area\nfrom one Delaunay triangle to an adjacent one. \n"
+  },
+  {
+    "label": "fig:receptor",
+    "number": "3.1",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 1055,
+    "file": "figure_receptor.tex",
+    "sha256": "a6124fd75ccc8f1900cf6388832fef68950ae33d4713d803d03ae06d17c16973",
+    "caption": "Pointer and receptor pairs of pentagons.  \nIn each pair, the pentagon on the\nleft can be considered a pointer pentagon, \nwith receptor on the right.  The first pair is nondegenerate,\nand the other two pairs are degenerate."
+  },
+  {
+    "label": "fig:3C-type",
+    "number": "3.2",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 1097,
+    "file": "figure_3C-type.tex",
+    "sha256": "5c7596fbb660184da4921020ffaf2d3f1e8014640fb25f5fb46a8ce14b088a2a",
+    "caption": "Types of $3C$-contact from top-to-bottom:\na pinwheel, a pin-$T$ junction, \na $\\Delta$-junction, an $LJ$-junction, and a $TJ$-junction.\nIn the first two types, arrows form a directed cycle. In the other\nthree types, both arrows point outward from the pentagon on top.\nThe second column gives \\emph{distorted} representations of the\ninner polygons.\nIn the pin-$T$, the inner polygon, which is\na nonconvex pentagon, is difficult to discern because of a \nnecessarily small angle and\nshort edge.   \n"
+  },
+  {
+    "label": "fig:clover",
+    "number": "3.3",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 1189,
+    "file": "figure_clover.tex",
+    "sha256": "062246493e743d7142ef232d0abc82b200f57b4074406a4514027e7c948ff834",
+    "caption": "A cloverleaf (degenerate pinwheel).  The Delaunay triangle\nin this particular example is not subcritical."
+  },
+  {
+    "label": "fig:sep",
+    "number": "3.4",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 1229,
+    "file": "figure_sep.tex",
+    "sha256": "c1dcf08053f5b9d5477e41e63e9dba8fca54aeca9cd418047e73371d5a5eca91",
+    "caption": "A line through the center \nof the middle pentagon $B$\nthrough one of its vertices \nseparates the two extremal \npentagons $A$ and $C$."
+  },
+  {
+    "label": "fig:delta",
+    "number": "3.5",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 1290,
+    "file": "figure_delta.tex",
+    "sha256": "2510e362de8c6f506f19d5ece97cd7fd5ed5d8d2c8365afbf6a21e136eeb201b",
+    "caption": "In type $\\Delta$, a line separates pentagon \n$B$ from\nthe other two pentagons. \nThe second figure (which is degenerate of type $LJ$) does not have\ntype $\\Delta$."
+  },
+  {
+    "label": "fig:pin1",
+    "number": "3.6",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 1339,
+    "file": "figure_pin1.tex",
+    "sha256": "75cc6d098a382d8b4e5025c26a747f5ef000214d3e5b7524d1fa1386896423e4",
+    "caption": "A distorted pin-$1$ configuration."
+  },
+  {
+    "label": "fig:large",
+    "number": "5.1",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 1914,
+    "file": "figure_large.tex",
+    "sha256": "76932d560d25f13f8d577be632969859994c1bb50505f47d5c4f064eb82b5fa5",
+    "caption": "A Delaunay triangle $T$ \nwith a large angle $\\alpha$ along $(T,e)$."
+  },
+  {
+    "label": "fig:slider",
+    "number": "6.1",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 2122,
+    "file": "figure_slider.tex",
+    "sha256": "ef482d7fa4c92310dbd4fba0e5e357f1e6f4ef177096b1ab6738eda5d42595b6",
+    "caption": "The center $\\c_B$ of the nonobtuse triangle lands in\n  the first quadrant and gives a triangle $(\\c_A,\\c_B,\\c_C)$ of height\n  and base both at least $2\\kappa$."
+  },
+  {
+    "label": "fig:Gamma'",
+    "number": "6.2",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 2462,
+    "file": "figure_Gamma_.tex",
+    "sha256": "73767a88713def7853b1f62ce8628bc2de9772d02e5ba68125265248f9efbd11",
+    "caption": "Three configurations along the curve $\\Gamma$."
+  },
+  {
+    "label": "fig:areta",
+    "number": "9.1",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 3178,
+    "file": "figure_areta.tex",
+    "sha256": "375269a1bd63004d341c3c4f1b8c13bb70602e8298e8a622cddac4b900b03a57",
+    "caption": "\nThere can be two positions $\\r,\\r'$ \non the circumcircle for\nthe third vertex of the triangle.  \nHere, $d_1 = \\norm{\\p}{\\q}$."
+  },
+  {
+    "label": "fig:not-large",
+    "number": "10.1",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 3846,
+    "file": "figure_not-large.tex",
+    "sha256": "c5173f521255375345efa3dccbd1bc9b825edfdf0e9dfefea1dd09d567575dc7",
+    "caption": "The angle between the nearly vertical edges of\n  $A$ and $B$ is $\\gamma$.  On the left, $\\gamma= 0.02$ and $\n  2\\kappa<d_{AB}\\approx 1.6296 < 1.63$.  There is almost no play in\n  the configuration.  The  figure on the right does not satisfy the\n  constraints of the proof of Lemma \\rif{lemma:2small}, but\n  illustrates the notation."
+  },
+  {
+    "label": "fig:theta",
+    "number": "A.1",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4109,
+    "file": "figure_theta.tex",
+    "sha256": "a120d0fcc014b87a4b0848a56e529c26769fb3732621c53059b072b4a0aa0adb",
+    "caption": "coordinates for a pair of pentagons in contact"
+  },
+  {
+    "label": "fig:extended",
+    "number": "A.2",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4227,
+    "file": "figure_extended.tex",
+    "sha256": "b03d5d0c935e7bd11fd896b7764f8d5054c8b67134756c6789571692033dcda0",
+    "caption": "Extended coordinates give a continuous transition\n  from pairs $(A,B)$ with pointer $B\\to A$ to pointer $A\\to B$.  The\n  functions $\\theta,\\theta'$ are continuous in $\\alpha,x_\\alpha$.  The\n  function $\\theta$ is the angle $\\angle(\\c_A,\\c_B,\\v)$, and $\\theta'\n  = \\angle(\\c_B,\\c_A,\\w)$. The vertices $\\v$ and $\\w$ transition into\n  and away from the pointer vertex.  In these figures, $\\alpha$ varies\n  and $x_\\alpha=0.8=\\norm{\\v}{\\w}$ is fixed."
+  },
+  {
+    "label": "fig:banana2",
+    "number": "A.3",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4282,
+    "file": "figure_banana2.tex",
+    "sha256": "64199c1c7e7a04a4451d9cc178e108960ae32618a3824b3ebe9609f98261d4f3",
+    "caption": "With given fixed center $\\c_A$ and fixed pointer\n  pentagon $B$, there might be two pentagons $A$ in contact with\n  $B$. They are distinguished by a boolean variable indicating whether\n  the pointer $B\\to A$ lies above or below the midpoint of the edge on\n  $A$."
+  },
+  {
+    "label": "fig:p-triangle",
+    "number": "A.4",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4346,
+    "file": "figure_p-triangle.tex",
+    "sha256": "5c56faaa73c91fbb8d29df4d71ad33eb0dcd35cc87666dcbcbc868af77d5f268",
+    "caption": "Angle conventions. \n  The edge lengths of the Delaunay triangle are\n  $d_{AC}$, $d_{AB}$, and $d_{BC}$.  The angles at $\\c_A$ are\n  $\\theta_{ABC}$, $\\arc_A$, and $\\theta_{ACB}$.  The angles at $\\c_B$\n  are $\\theta_{BAC}$, $\\arc_B$, and $\\theta_{BCA}$. The angles at\n  $\\c_C$ are $\\theta_{CBA}$, $\\arc_C$, and $\\theta_{CAB}$."
+  },
+  {
+    "label": "fig:cord-delta",
+    "number": "A.5",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4573,
+    "file": "figure_cord-delta.tex",
+    "sha256": "9273c1a7227b0f3827413a7619a186fde0999921bda33c05dab55147e186f702",
+    "caption": "Coordinates for $\\Delta$-types"
+  },
+  {
+    "label": "fig:cord-pinwheel",
+    "number": "A.6",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4615,
+    "file": "figure_cord-pinwheel.tex",
+    "sha256": "a550a2c270985018c1ffe3663a0db6078b0f9b94f688db64ea6e8b18230e75ac",
+    "caption": "Coordinates for pinwheel type"
+  },
+  {
+    "label": "fig:cord-L",
+    "number": "A.7",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4668,
+    "file": "figure_cord-L.tex",
+    "sha256": "249d94a2b76efd9527201ddefd59d4907db351b4e19c376b3331b9e0eff7756b",
+    "caption": "Coordinates for $LJ$-junction type"
+  },
+  {
+    "label": "fig:cord-T",
+    "number": "A.8",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4752,
+    "file": "figure_cord-T.tex",
+    "sha256": "8430df8dadbee41a23217464d55b3cd80c0e609a3f48772031fb9d9891b8ac1d",
+    "caption": "Coordinates for $TJ$-junction types"
+  },
+  {
+    "label": "fig:cord-pint",
+    "number": "A.9",
+    "source_file": "pentagon_v005.tex",
+    "source_line": 4839,
+    "file": "figure_cord-pint.tex",
+    "sha256": "299428f82f58232900b60dcee536f1d8df068c1747794bc98d21679ab61ed979",
+    "caption": "Coordinates for pin-$T$ junction types. Although\n  it is difficult to tell from the figure, $A$ points into $B$, $B$\n  into $C$, and $C$ into $A$.  The parameter $\\beta'\\approx 0$\n  measures the incidence angle between the nearly horizontal edges of\n  $A$ and $C$.  The region bounded by the three pentagons is a\n  $T$-shaped pentagon, with stem between the nearly parallel edges of\n  $A$ and $C$ and two arms along $B$.  The arm between $B$ and $C$ is\n  almost imperceptible.  The distance between the neighboring vertices\n  of $B$ and $C$ is $x_\\alpha$.  The figure on the right distorts the\n  pentagons to make the incidence relations more apparent."
+  }
+]

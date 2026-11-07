@@ -1,0 +1,405 @@
+[
+  {
+    "id": "lemma:delta",
+    "label": "lemma:delta",
+    "title": "Delta-junction area",
+    "number": "4.7",
+    "claim": "A 3C triangle of type Delta is excluded from the subcritical case; the stated area bound is greater than 1.5.",
+    "assumptions": [
+      "The paper\u2019s P-triangle / contact-type conventions and the geometric classification.",
+      "Code uses outdomfn_delta and deltajedge on the initial Delta coordinate box; the area predicate is areamin_acute."
+    ],
+    "jobs": [
+      "onedeltajmin"
+    ],
+    "note": "The Delta contact chart is tested at cutoff 1.5. This excludes that contact type from the subcritical cases.",
+    "comment_id": "QBQQTVY"
+  },
+  {
+    "id": "lemma:172",
+    "label": "lemma:172",
+    "title": "Longest edge of a subcritical triangle",
+    "number": "4.9",
+    "claim": "If every edge is at most 1.72, the P-triangle is not subcritical.",
+    "assumptions": [
+      "The paper reduces the nonobtuse short-edge case to the classified 3C configurations.",
+      "Use the four non-Delta contact types plus the separate Delta exclusion."
+    ],
+    "jobs": [
+      "onedeltajmin",
+      "pinwheel17215",
+      "lj17215",
+      "tj17215",
+      "pint17215"
+    ],
+    "note": "The code uses the stronger longest-edge cutoff 1.7215. Four non-Delta types and the Delta exclusion exhaust the classified terminal contact patterns.",
+    "comment_id": "BVICHFW"
+  },
+  {
+    "id": "lemma:a0",
+    "label": "lemma:a0",
+    "title": "Minimum nonobtuse triangle area",
+    "number": "4.11",
+    "claim": "Every nonobtuse P-triangle has area greater than a_min.",
+    "assumptions": [
+      "The paper first reduces to 3C contact; amin is 1.237 in the code.",
+      "The Delta type is covered separately by onedeltajmin."
+    ],
+    "jobs": [
+      "pinwheel1237",
+      "lj1237",
+      "tj1237",
+      "pint1237",
+      "onedeltajmin"
+    ],
+    "note": "The four non-Delta contact charts use the exact rational cutoff 1237/1000; the Delta case is handled at the stronger cutoff 1.5.",
+    "comment_id": "QGPVOYX"
+  },
+  {
+    "id": "NKQNXUN",
+    "label": "calc:pseudo1",
+    "title": "Pseudo-dimer shared edge",
+    "number": "5.1",
+    "claim": "The edge shared by T1 and T0 has length less than 1.8, including the stated relaxation allowing a longest-edge tie.",
+    "assumptions": [
+      "(T1,T0) in Psi D; also the precise weakening of the third defining condition stated in the lemma.",
+      "Preparation assumes total area <=2*a_crit and reduces the central configuration to double contact or the stated midpointer/slider endpoint."
+    ],
+    "jobs": [
+      "mitm_precluster1_case0",
+      "mitm_precluster1_case1",
+      "mitm_precluster1_case2"
+    ],
+    "note": "The three central terminal patterns are double contact, midpointer at a length boundary, and slider at a length boundary. Peripheral data retain a longest shared edge. Closed ranges retain the tied-arrow boundary.",
+    "comment_id": "NKQNXUN"
+  },
+  {
+    "id": "RWWHLQT",
+    "label": "calc:pseudo2",
+    "title": "Pseudo-dimer egressive edge",
+    "number": "5.2",
+    "claim": "The longest (egressive) edge of T0 has length greater than 1.8, including the stated longest-edge-tie relaxation.",
+    "assumptions": [
+      "(T1,T0) in Psi D or the specified tied relaxation; terminal domains from sec:pseudo2.",
+      "The counterexample has all central edges <=1.8 and total area <=2*a_crit."
+    ],
+    "jobs": [
+      "mitm_precluster2_case0",
+      "mitm_precluster2_case1",
+      "mitm_precluster2_case2"
+    ],
+    "note": "The central equality filter retains all three equalities and either nonshared length equal to 1.8. In the midpointer and slider code labels, AB is shared and AC is the contact edge. The peripheral is O2C, subcritical, and shared-longest.",
+    "comment_id": "RWWHLQT"
+  },
+  {
+    "id": "BXZBPJW",
+    "label": "calc:pseudo-area",
+    "title": "Pseudo-dimer pair area",
+    "number": "5.4",
+    "claim": "area{T0,T1} > 2*a_crit - epsilon_M.",
+    "assumptions": [
+      "(T1,T0) in Psi D.",
+      "Preparation produces two isosceles-peripheral cases or a 3C+3C terminal case."
+    ],
+    "jobs": [
+      "dimer_group2",
+      "dimer_group4",
+      "mitm_precluster4_case0_experimental",
+      "mitm_precluster4_case1_experimental"
+    ],
+    "note": "Two isosceles-peripheral cases and the triple-contact type exclusions establish the pair bound. The triple-contact calculation uses the stronger allowance 0.007; the other cases use epsilon_M=0.008.",
+    "comment_id": "BXZBPJW"
+  },
+  {
+    "id": "JQMRXTH",
+    "label": "calc:pseudo-area3",
+    "title": "Pseudo-dimer plus egressive neighbor",
+    "number": "5.5",
+    "claim": "area{T0,T1,T_minus} > 3*a_crit + epsilon_M.",
+    "assumptions": [
+      "(T1,T0) in Psi D; T0 attaches to T_minus; T_minus is nonobtuse (explicit current hypothesis).",
+      "Preparation reduces both peripherals to O2C and gives six assignments of incoming and egressive central edges."
+    ],
+    "jobs": [
+      "mitm_precluster6_case1",
+      "mitm_precluster6_case2",
+      "mitm_precluster6_case3",
+      "mitm_precluster6_case4",
+      "mitm_precluster6_case5",
+      "mitm_precluster6_case6"
+    ],
+    "note": "All six ordered incoming/egressive edge assignments are checked. The outgoing peripheral cap is acrit+2 epsilon_M, obtained by subtracting the strict pair bound from the assumed triple-area bound.",
+    "comment_id": "JQMRXTH"
+  },
+  {
+    "id": "KUGAKIK",
+    "label": "calc:dimer-isosc",
+    "title": "No long-isosceles O2C peripheral in a dimer",
+    "number": "5.10",
+    "claim": "In a dimer pair, T1 cannot be both O2C and long isosceles.",
+    "assumptions": [
+      "(T1,T0) in DP.",
+      "Negate the conclusion, reduce T0 to O2C, then run the isosceles peripheral case."
+    ],
+    "jobs": [
+      "mitm_dimer_isosceles_precluster"
+    ],
+    "note": "The shared-edge glue matches an O2C long-isosceles peripheral to an O2C central triangle at pair cutoff 2 acrit.",
+    "comment_id": "KUGAKIK"
+  },
+  {
+    "id": "HUQEJAT",
+    "label": "calc:pent3",
+    "title": "Three-triangle cluster bound",
+    "number": "5.11",
+    "claim": "area{T0,T1^0,T1^1} > 3*a_crit + epsilon_M.",
+    "assumptions": [
+      "Three distinct nonobtuse P-triangles; each peripheral attaches to T0 and has area <=a_crit.",
+      "The two sequential peripheral motions stop at a central contact or a long-isosceles peripheral."
+    ],
+    "jobs": [
+      "mitm_calc_pent3_6D_postcluster",
+      "mitm_calc_pent3AB_postcluster",
+      "mitm_calc_pent3BC_postcluster",
+      "mitm_calc_pent3AC_postcluster"
+    ],
+    "note": "Three contact-central charts distinguish the nonshared edge. The fourth chart is the general six-dimensional center with two isosceles peripherals. All four are required; their central cap is acrit+2 epsilon_N+epsilon_M.",
+    "comment_id": "HUQEJAT"
+  },
+  {
+    "id": "QPJDYDB",
+    "label": "calc:pent4",
+    "title": "Four-triangle cluster bound",
+    "number": "5.12",
+    "claim": "area{T0,T1^0,T1^1,T1^2} > 4*a_crit.",
+    "assumptions": [
+      "Four distinct nonobtuse P-triangles; three subcritical peripherals attach to T0.",
+      "Each peripheral is O2C after preparation; central side ordering exploits the stated symmetry."
+    ],
+    "jobs": [
+      "mitm_calc_pent4_6D_postcluster"
+    ],
+    "note": "The general six-dimensional central chart has peripheral attachments on all three edges. Its central cap is acrit+3 epsilon_N. Strict symmetry exclusions retain equal sides.",
+    "comment_id": "QPJDYDB"
+  },
+  {
+    "id": "FHBGHHY",
+    "label": "calc:large",
+    "title": "Non-large-angle two-triangle estimate",
+    "number": "5.14",
+    "claim": "area{T0,T1} > 2*a_crit + epsilon_M under the non-large-angle and nonshared-edge assumptions.",
+    "assumptions": [
+      "Both P-triangles nonobtuse, area(T1)<=a_crit, T1 attaches to T0.",
+      "A nonshared edge e of T0 has length >1.8 and the angle along (T0,e) is not large."
+    ],
+    "jobs": [
+      "mitm_calc_pent2_postcluster_case0",
+      "mitm_calc_pent2_postcluster_case1",
+      "mitm_calc_pent2_postcluster_case2",
+      "mitm_calc_pent2_postcluster_case3",
+      "mitm_calc_pent2_postcluster_case4"
+    ],
+    "note": "The paper excludes right triangles by the shared-leg area estimate. The remaining cases are double contact or one contact together with a nonshared length of 1.8.",
+    "comment_id": "FHBGHHY"
+  },
+  {
+    "id": "sec:O2C",
+    "label": "sec:O2C",
+    "title": "Long-isosceles terminal exclusions (stage 2)",
+    "number": "6.2",
+    "claim": "Terminal exclusions named iso_2C and iso_2C' in the paper\u2019s stage-2 calculation.",
+    "assumptions": [
+      "Use the acute, subcritical long-isosceles terminal configurations and contact alternatives actually listed in the paper."
+    ],
+    "jobs": [
+      "dimer_group1"
+    ],
+    "note": "The two long-isosceles exclusions are evaluated together with four shared-contact coordinate restrictions by dimer_group1. Result labels follow the returned list, not the evaluation order.",
+    "comment_id": "GAIMXAD"
+  },
+  {
+    "id": "lemma:squeeze-area",
+    "label": "lemma:squeeze-area",
+    "title": "Squeezing area inequality (stage 3)",
+    "number": "6.5",
+    "claim": "The specified squeezing deformation decreases area for the stated nonobtuse double-contact configuration of area <=a_crit+epsilon_N.",
+    "assumptions": [
+      "The geometric motion, signs of slopes, and contact branches are fixed by the local proof.",
+      "Code uses the mk2Ce representation, shared-length range [2*kappa,2.32], and area cutoff aK+epsN_I."
+    ],
+    "jobs": [
+      "squeeze_sign_BA_BC",
+      "squeeze_sign_BA_CB",
+      "squeeze_sign_AB_BC",
+      "squeeze_sign_AB_CB",
+      "squeeze"
+    ],
+    "note": "Four contact-sign calculations establish positive finite slopes and the supporting-side assertions. The separate squeeze calculation proves the reciprocal-slope area inequality on that branch. All five proof jobs are required.",
+    "comment_id": "LZMJIZU",
+    "additional_comment_ids": [
+      "GJULAOH"
+    ]
+  },
+  {
+    "id": "sec:nbd",
+    "label": "sec:nbd",
+    "title": "Exclusion outside the ice-ray neighborhood (stage 4)",
+    "number": "6.4",
+    "claim": "Reduce candidate 3C+3C dimers to the case-dependent neighborhood U with |x_i|<0.01.",
+    "assumptions": [
+      "Dimer area and common-longest-edge constraints; eight shared-edge contact charts per triangle.",
+      "The code uses alphaB, betaB-pi/5, xbetaB-sigma, alphaD as the neighborhood quantities."
+    ],
+    "jobs": [
+      "dimer_group2",
+      "dimer_group3"
+    ],
+    "note": "Group 2 excludes 48 distinct ordered contact pairs (64 retained calls). Group 3 treats the other sixteen pairs; four allow the stated pseudo-dimer alternative as well as the 0.01 neighborhood.",
+    "comment_id": "DSKKWND"
+  },
+  {
+    "id": "sec:curve",
+    "label": "sec:curve",
+    "title": "Descent to the shear curve (stage 6)",
+    "number": "6.6",
+    "claim": "Area decreases along the stated shared-edge paths from U to Gamma.",
+    "assumptions": [
+      "The source\u2019s top/bottom chart selections and derivatives must match the paper\u2019s specified paths.",
+      "25 first-derivative pair checks plus two auxiliary twist checks."
+    ],
+    "jobs": [
+      "autodiff_twist_lj1",
+      "autodiff_twist_lj2",
+      "autodiff_path_0_0",
+      "autodiff_path_0_1",
+      "autodiff_path_0_2",
+      "autodiff_path_0_3",
+      "autodiff_path_0_4",
+      "autodiff_path_1_0",
+      "autodiff_path_1_1",
+      "autodiff_path_1_2",
+      "autodiff_path_1_3",
+      "autodiff_path_1_4",
+      "autodiff_path_2_0",
+      "autodiff_path_2_1",
+      "autodiff_path_2_2",
+      "autodiff_path_2_3",
+      "autodiff_path_2_4",
+      "autodiff_path_3_0",
+      "autodiff_path_3_1",
+      "autodiff_path_3_2",
+      "autodiff_path_3_3",
+      "autodiff_path_3_4",
+      "autodiff_path_4_0",
+      "autodiff_path_4_1",
+      "autodiff_path_4_2",
+      "autodiff_path_4_3",
+      "autodiff_path_4_4"
+    ],
+    "note": "Two twist exclusions and 25 first-derivative combinations justify descent to the shear curve. These are distinct from the exact final shear-area argument.",
+    "comment_id": "LPEYXGH"
+  },
+  {
+    "id": "calculation:gamma-convexity",
+    "label": "sec:gamma",
+    "title": "Exact area formula along Gamma",
+    "number": "6.5",
+    "claim": "The paper needs positive second derivative along Gamma for |t|<0.01.",
+    "assumptions": [
+      "The paper defines t=bar x_beta-sigma; the shared-edge parameter has an absolute contact-length interpretation."
+    ],
+    "jobs": [
+      "gamma_convexity"
+    ],
+    "note": "The paper proves area=2 acrit+sigma t^2 by a diagonal determinant. The numerical second-derivative calculation is supplementary; it uses the absolute contact parameter sigma+t, not t.",
+    "comment_id": "BKUSHRZ",
+    "role": "exact-paper-proof-with-diagnostic"
+  },
+  {
+    "id": "sec:shared",
+    "label": "sec:shared",
+    "title": "Shared-edge chart restrictions",
+    "number": "A.7",
+    "claim": "Restrictions used to select valid/stable shared-edge charts: pin-T longest edge, pinwheel contact length, LJ beta, TJ beta.",
+    "assumptions": [
+      "The paper\u2019s relevant area cap is a_crit+epsilon_N; parameters retain their raw chart meanings."
+    ],
+    "jobs": [
+      "dimer_group1",
+      "autodiff_twist_lj1",
+      "autodiff_twist_lj2",
+      "autodiff_path_0_0",
+      "autodiff_path_0_1",
+      "autodiff_path_0_2",
+      "autodiff_path_0_3",
+      "autodiff_path_0_4",
+      "autodiff_path_1_0",
+      "autodiff_path_1_1",
+      "autodiff_path_1_2",
+      "autodiff_path_1_3",
+      "autodiff_path_1_4",
+      "autodiff_path_2_0",
+      "autodiff_path_2_1",
+      "autodiff_path_2_2",
+      "autodiff_path_2_3",
+      "autodiff_path_2_4",
+      "autodiff_path_3_0",
+      "autodiff_path_3_1",
+      "autodiff_path_3_2",
+      "autodiff_path_3_3",
+      "autodiff_path_3_4",
+      "autodiff_path_4_0",
+      "autodiff_path_4_1",
+      "autodiff_path_4_2",
+      "autodiff_path_4_3",
+      "autodiff_path_4_4"
+    ],
+    "note": "The contact-chart restrictions establish the side/orientation alternatives used before differentiating the shared-edge coordinate formulas.",
+    "comment_id": "SMPXAOD"
+  },
+  {
+    "id": "diagnostic:central-1237",
+    "label": null,
+    "title": "MITM central-triangle diagnostic (name contains 1237)",
+    "number": null,
+    "claim": "This function uses a 1.2 debug cutoff, despite its name.",
+    "assumptions": [
+      "The existing central five-dimensional chart and code-defined side ranges."
+    ],
+    "jobs": [
+      "mitm_test1_centralpent_1237"
+    ],
+    "note": "This diagnostic deliberately uses the cutoff 1.2 despite the historical identifier. It does not establish the 1.237 theorem; the primary jobs are listed separately.",
+    "comment_id": null
+  },
+  {
+    "id": "diagnostic:central-172",
+    "label": null,
+    "title": "MITM central-triangle short-edge diagnostic",
+    "number": null,
+    "claim": "Checks the central chart with every side in [2*kappa,1.72] against aK.",
+    "assumptions": [
+      "No peripheral data; code-defined five-dimensional chart."
+    ],
+    "jobs": [
+      "mitm_test1_centralpent_172"
+    ],
+    "note": "An additional central-chart diagnostic with all sides at most 1.72. It supplements, rather than replaces, the primary classified contact calculations.",
+    "comment_id": null
+  },
+  {
+    "id": "historical:one127",
+    "label": null,
+    "title": "Historical isosceles 1.27 check",
+    "number": null,
+    "claim": "The source describes a 1.27 area lower-bound check on subcritical isosceles triangles and says it may no longer be needed.",
+    "assumptions": [
+      "Four sign choices and the existing domain2C, with shared length in [1.72,1.79]."
+    ],
+    "jobs": [
+      "historical_one127"
+    ],
+    "note": "Optional check of the original subcritical isosceles domain at area cutoff 1.27. It is not a premise of the published proof.",
+    "comment_id": null
+  }
+]

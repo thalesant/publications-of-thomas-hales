@@ -1,0 +1,290 @@
+[
+  {
+    "job": "environment_ready",
+    "status": "IMPORTED_V002_PASS",
+    "wall_seconds": 0.814,
+    "peak_rss_bytes": null,
+    "log_sha256": "d32481970dbdfbc3e5d0460d36e54c078cd56d73d5f0d9abd931e13ff9fd49e0",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "core_regression_v002",
+    "status": "CACHED_PASS",
+    "wall_seconds": 1.266,
+    "peak_rss_bytes": null,
+    "log_sha256": "f4d794ca3410fbba4a1425f71b5c5da9eb11a3c2688277a340b8e0dd9e8a4a7b",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "dimer_group1_regression_v002",
+    "status": "CACHED_PASS",
+    "wall_seconds": 1.69,
+    "peak_rss_bytes": null,
+    "log_sha256": "9f1981f43f1ff1177edf06c5171d8eb343f5c60284f133baeaccb91a02d566b0",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "autodiff_original",
+    "status": "CACHED_PASS",
+    "wall_seconds": 1.05,
+    "peak_rss_bytes": null,
+    "log_sha256": "eb0a729ca3c5a4b8860a6fa032bd0799f972b01b585d8c9d77e9857dfcfa9ca3",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_ready",
+    "status": "IMPORTED_V002_PASS",
+    "wall_seconds": 1.02,
+    "peak_rss_bytes": null,
+    "log_sha256": "38880e7282937f841c2081920e56ed3a77af192cc6886595df1e3a516bbd5c86",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_test1_centralpent_1237",
+    "status": "CACHED_PASS",
+    "wall_seconds": 1.681,
+    "peak_rss_bytes": null,
+    "log_sha256": "e19f7d2dcd9f9ecdd1cdda031a24838584e9a5377a4de36389da4e6b25988ef7",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_test1_centralpent_172",
+    "status": "CACHED_PASS",
+    "wall_seconds": 1.263,
+    "peak_rss_bytes": null,
+    "log_sha256": "a06901e024f7e997efaf5fa8649dce30b4c145c30a1bcfef02d9497e2e7c72cc",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent2_postcluster_case1",
+    "status": "CACHED_PASS",
+    "wall_seconds": 87.482,
+    "peak_rss_bytes": null,
+    "log_sha256": "cc9073c5a8f5bcb8e449258aec33ce2fc1f95a754489908d21f0257604fc4ad9",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent2_postcluster_case2",
+    "status": "CACHED_PASS",
+    "wall_seconds": 117.906,
+    "peak_rss_bytes": null,
+    "log_sha256": "45c58bce8c7c8ee872081eaf059696c8a382af4fccb6ffe772feb294f61b0442",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent2_postcluster_case3",
+    "status": "CACHED_PASS",
+    "wall_seconds": 58.938,
+    "peak_rss_bytes": null,
+    "log_sha256": "74f840cf8ef389c3e16347569214da1e9acc176774138b81f806e9c87256400c",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent2_postcluster_case4",
+    "status": "CACHED_PASS",
+    "wall_seconds": 134.476,
+    "peak_rss_bytes": null,
+    "log_sha256": "280db471785d9a1f281b3414ec50fe9dae65ae466b1dcca5004ae1b0cf0213ca",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster1_case1",
+    "status": "PASS",
+    "wall_seconds": 35.15,
+    "peak_rss_bytes": null,
+    "log_sha256": "6873d33ce2f20a5c62264cfe9e901d7b7f8bfd653e57be911af3d9d271261803",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster1_case2",
+    "status": "PASS",
+    "wall_seconds": 175.536,
+    "peak_rss_bytes": null,
+    "log_sha256": "f2625449097fd7f9032c44def2598d9fdde3dee9ab8855094cb1960d3d643534",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster2_case2",
+    "status": "PASS",
+    "wall_seconds": 91.187,
+    "peak_rss_bytes": null,
+    "log_sha256": "22f67eee549bca1107e09a83f3b1626dd18e94eaf19b030784813a94a20b5518",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_dimer_isosceles_precluster",
+    "status": "PASS",
+    "wall_seconds": 1074.885,
+    "peak_rss_bytes": null,
+    "log_sha256": "8933ffa64c8127046a14f3b9e89297c3a12ca70499563002ee41bc9a6310aff6",
+    "source_archive": "pentagon_batch_report_20261031T002657Z-c553c1.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster2_case1",
+    "status": "IMPORTED_V002_PASS",
+    "wall_seconds": 234.238,
+    "peak_rss_bytes": null,
+    "log_sha256": "54e32a2a4ca33e464394831492b5b00b21954bfa6fd6f6f60a51e2fbce9d3cca",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster6_case6",
+    "status": "IMPORTED_V002_PASS",
+    "wall_seconds": 894.27,
+    "peak_rss_bytes": null,
+    "log_sha256": "5002ea9cb3d4d4a7a62a267ebb2f24015d8a1554b291ec82c57eab8f4a531db9",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster1_case0",
+    "status": "IMPORTED_V002_PASS",
+    "wall_seconds": 1132.706,
+    "peak_rss_bytes": null,
+    "log_sha256": "7fe349907b6534f2772a312e23f9af0bad3fee6282aa8f7b0eb21e105fe9b8e3",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster6_case4",
+    "status": "IMPORTED_V002_PASS",
+    "wall_seconds": 761.422,
+    "peak_rss_bytes": null,
+    "log_sha256": "59b1012ac227ce3942c3b3f82724a79c19fc670032db7828a18e5a58c4751af1",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent2_postcluster_case0",
+    "status": "PASS",
+    "wall_seconds": 691.164,
+    "peak_rss_bytes": 761884672,
+    "log_sha256": "6f56a4b4d12de050150c977a11a15351163b470619ae7776348f146f0cabe8f1",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster6_case1",
+    "status": "PASS",
+    "wall_seconds": 690.698,
+    "peak_rss_bytes": 815484928,
+    "log_sha256": "1e96dd2abee2843e951d0395c9d0100674d3c1ea3b415160b91073c53ca48567",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster6_case5",
+    "status": "PASS",
+    "wall_seconds": 1653.948,
+    "peak_rss_bytes": 1713422336,
+    "log_sha256": "786d07cc96cf39a7264f7190ffa0116efef5dddfb5af0c3e14595be81aa51026",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster6_case2",
+    "status": "PASS",
+    "wall_seconds": 1763.007,
+    "peak_rss_bytes": 1800056832,
+    "log_sha256": "ec8420acb00579b050fda1baa74508e543e50d0ccb5484e93b874e30ae1fee57",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster2_case0",
+    "status": "PASS",
+    "wall_seconds": 2225.3,
+    "peak_rss_bytes": 1660059648,
+    "log_sha256": "87eda4e4540cfdba8dba58ea5de3bf56f214c7ed27fc48ab39d07ab028be4ce3",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster6_case3",
+    "status": "PASS",
+    "wall_seconds": 909.041,
+    "peak_rss_bytes": 1021767680,
+    "log_sha256": "5c8ccde308dad1db81d9a5e9b34c98d409675cd2537b7160e8dfedbe2e68bdeb",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent3AC_postcluster",
+    "status": "PASS",
+    "wall_seconds": 1519.371,
+    "peak_rss_bytes": 1128706048,
+    "log_sha256": "0280006211051ead5b9131e6959649131ae5949f8ba065b371d0bacc39158a42",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent3BC_postcluster",
+    "status": "PASS",
+    "wall_seconds": 2396.686,
+    "peak_rss_bytes": 1745862656,
+    "log_sha256": "727d3b14e6bd0e3c639c114e0292ce5d5499777551dd9ccf5e82312493ec9e4b",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster4_case0_experimental",
+    "status": "PASS",
+    "wall_seconds": 3622.23,
+    "peak_rss_bytes": 993120256,
+    "log_sha256": "47272b402f838250dd4fdecab0229f0c5094fdfe2487c445cf90c416ead31b40",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent3AB_postcluster",
+    "status": "PASS",
+    "wall_seconds": 5788.192,
+    "peak_rss_bytes": 2772791296,
+    "log_sha256": "08a57d937858a6e2640406a5438d6ed652628b0cd06fc261e1ce9ce9bf98bce3",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent4_6D_postcluster",
+    "status": "PASS",
+    "wall_seconds": 4688.221,
+    "peak_rss_bytes": 1141227520,
+    "log_sha256": "db98014c993ceb6ddc90ef0c7739e30b9d20f1c662f701909e42497eea36f899",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_precluster4_case1_experimental",
+    "status": "PASS",
+    "wall_seconds": 5900.544,
+    "peak_rss_bytes": 1689903104,
+    "log_sha256": "6f1ea900a08985641e18fdabd2a19bb4e598d988daa212be5806e5be30eeef95",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  },
+  {
+    "job": "mitm_calc_pent3_6D_postcluster",
+    "status": "PASS",
+    "wall_seconds": 23752.016,
+    "peak_rss_bytes": 1364799488,
+    "log_sha256": "e662ff4d86a97b5113373b94ed8adaf86ee6e9a9683e1c1076a54e6a6a277e44",
+    "source_archive": "pentagon_batch_v003_report_20261031T125804Z-b87d46.zip",
+    "scope": "original-source baseline"
+  }
+]

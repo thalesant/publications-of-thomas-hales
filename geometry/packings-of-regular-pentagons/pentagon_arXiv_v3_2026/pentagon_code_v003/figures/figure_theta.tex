@@ -1,0 +1,24 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{theta}{coordinates for a pair of pentagons in contact}{
+[scale=1.2]
+\pen{0}{0}{0};
+\pen{1.616}{0.598}{168.54};
+\draw[blue] (0,0) node[anchor=south,black] {$B$}
+ -- (1.616,0.598) node[anchor=south,black] {$A$};
+\draw (0,0) node[anchor=north,black] {$\c_B$};
+\smalldot{0,0};
+\draw (1.616,0.598) node[anchor=north,black] {$\c_A$};
+\smalldot{1.616,0.598};
+\draw (72:1) node[anchor=south] {$\w_B$};
+\draw (0:1) node[anchor=west] {$\v_B$};
+\draw (-72:1) node[anchor=north] {$\u_B$};
+\smalldot{72:1};
+\smalldot{0:1};
+\smalldot{-72:1};
+\smalldot{0.636,0.797};
+\draw (0.636,0.797) node[anchor=west] {$\w_A$}
+node[anchor=north west] {$x$};
+\smalldot{1.124,-0.2727};
+\draw (1.124,-0.2727) node[anchor=north west] {$\u_A$}
+node[anchor=north east] {$\alpha$};
+}

@@ -1,0 +1,37 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{p-triangle}{Angle conventions. 
+  The edge lengths of the Delaunay triangle are
+  $d_{AC}$, $d_{AB}$, and $d_{BC}$.  The angles at $\c_A$ are
+  $\theta_{ABC}$, $\arc_A$, and $\theta_{ACB}$.  The angles at $\c_B$
+  are $\theta_{BAC}$, $\arc_B$, and $\theta_{BCA}$. The angles at
+  $\c_C$ are $\theta_{CBA}$, $\arc_C$, and $\theta_{CAB}$.}
+{
+\begin{scope}[scale=1.9,xshift=5cm]
+\def\x{1.2}
+\threepent
+{0.00}{0.00}{96.88}
+{\x*0.95}{\x*1.52}{252.34}
+{\x*1.68}{0.00}{210.61};
+\draw(0,0) node[anchor=east] {$A$};
+\draw(\x*0.95,\x*1.52) node[anchor=south] {$B$};
+\draw(\x*1.68,0) node[anchor=west] {$C$};
+\smalldot{0,0};
+\smalldot{\x*0.95,\x*1.52};
+\smalldot{\x*1.68,0};
+\draw(0,0) -- ++ (96.88:1);
+\draw(0,0) -- ++ (96.88- 2*72:1);
+\draw(\x*0.95,\x*1.52) -- ++ (252.34+72:1);
+\draw(\x*0.95,\x*1.52) -- ++ (252.34-72:1);
+\draw(\x*1.68,0) -- ++ (210.61 - 2*72:1);
+\draw(\x*1.68,0) -- ++ (210.61:1);
+\draw(25:0.65) node {$\arc_A$};
+\draw(75:0.7) node {$\theta_{ABC}$};
+\draw(-20:0.6) node {$\theta_{ACB}$};
+\draw($(\x*0.95,\x*1.52)+(-45:0.7)$) node {$\theta_{BCA}$};
+\draw($(\x*0.95,\x*1.52)+(-95:0.65)$) node {$\arc_B$};
+\draw($(\x*0.95,\x*1.52)+(210:0.55)$) node {$\theta_{BAC}$};
+\draw($(\x*1.68,0)+(90:0.65)$) node {$\theta_{CBA}$};
+\draw($(\x*1.68,0)+(140:0.60)$) node {$\arc_C$};
+\draw($(\x*1.68,0)+(195:0.6)$) node {$\theta_{CAB}$};
+\end{scope}
+}

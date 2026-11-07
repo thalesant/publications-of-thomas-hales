@@ -1,0 +1,20 @@
+{
+  "scope": "Published source archive identities. Not a claim of byte identity to a historical local development checkout.",
+  "ocaml": "4.14.4",
+  "packages": [
+    {
+      "package": "interval",
+      "version": "1.6",
+      "url": "https://github.com/Chris00/ocaml-interval/releases/download/1.6/interval-1.6.tbz",
+      "sha256": "a2807d7860a9f965a3f91b40de17b98321e5c3f7da9e69dccf3dc20f1ac77e96",
+      "license": "LGPL-3.0-only"
+    },
+    {
+      "package": "crlibm",
+      "version": "0.5.1",
+      "url": "https://github.com/Chris00/ocaml-crlibm/releases/download/0.5.1/crlibm-0.5.1.tbz",
+      "sha256": "fcc6ff4497eb168a91bac7967316164ff0d3e1ee776fed958718a9cd7c49983b",
+      "license": "LGPL-3.0"
+    }
+  ]
+}

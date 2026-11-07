@@ -1,0 +1,20 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{delta}{In type $\Delta$, a line separates pentagon 
+$B$ from
+the other two pentagons. 
+The second figure (which is degenerate of type $LJ$) does not have
+type $\Delta$.}{
+[scale=0.5]
+\pen{0}{0}{90};
+\draw (0,0) node {$B$};
+\draw (-2.0,-0.809) node[above] {$\lambda$} --  (2.0,-0.809);
+\pen{-1.05}{-2*0.809}{-90};
+\pen{1.9 - 1.05}{-2*0.809}{-90};
+\begin{scope}[xshift=6cm]
+\pen{0}{0}{90};
+\draw (0,0) node {$B$};
+\draw (-2.0,-0.809) node[above] {$\lambda$} --  (2.0,-0.809);
+\pen{-0.428}{-2*0.809}{-90};
+\pen{1.36}{ -1.44}{ 212.704};
+\end{scope}
+}

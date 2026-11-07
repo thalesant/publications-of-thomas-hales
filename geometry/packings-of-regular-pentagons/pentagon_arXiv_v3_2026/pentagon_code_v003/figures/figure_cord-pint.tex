@@ -1,0 +1,37 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{cord-pint}{Coordinates for pin-$T$ junction types. Although
+  it is difficult to tell from the figure, $A$ points into $B$, $B$
+  into $C$, and $C$ into $A$.  The parameter $\beta'\approx 0$
+  measures the incidence angle between the nearly horizontal edges of
+  $A$ and $C$.  The region bounded by the three pentagons is a
+  $T$-shaped pentagon, with stem between the nearly parallel edges of
+  $A$ and $C$ and two arms along $B$.  The arm between $B$ and $C$ is
+  almost imperceptible.  The distance between the neighboring vertices
+  of $B$ and $C$ is $x_\alpha$.  The figure on the right distorts the
+  pentagons to make the incidence relations more apparent.}
+{
+\begin{scope}[xshift=4.5cm,yshift=1.5cm]
+\threepentnoD{0.00}{0.00}{90} %
+{1.40}{-1.377}{0} %
+{-0.35}{-1.628}{-18.89}; %
+\draw (0,0) node {$C$};
+\draw (1.4,-1.37) node {$B$};
+\draw (-0.35,-1.62) node {$A$};
+\draw (0.36,-2.4) node {$\gamma$};
+\draw (-1.1,-0.5) node {$\beta$};
+\draw (1.0,-0.3) node {$\alpha$};
+\draw (0.4,-0.49) node {$x_\alpha$};
+\draw (1.4 - 0.809,-1.377 - 0.5878) -- +(0,-0.75);
+\end{scope}
+\begin{scope}[xshift=9.5cm,yshift=1cm]
+\draw[red] (0.2,-1.2) -- ++ (90:1.4) -- ++ (10:1); %
+\draw[red] (0.2,-1.2) -- ++ (-10:1);
+\draw[red] (-1,0) -- ++(1,0) -- ++ (45:1); %
+\draw[red] (-1,0) -- ++(100:1);
+\draw[red] (-1,0) -- + (-10:0.9) -- (0.2,-0.8) -- ++ (-120:1); %
+\draw[red] (-1,0) -- ++(180-10:0.3) -- ++(-110:1);
+\draw (0.9,-0.4) node {$B$};
+\draw (-0.5,0.7) node {$C$};
+\draw (-0.7,-0.7) node {$A$};
+\end{scope}
+}

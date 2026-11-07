@@ -1,0 +1,17 @@
+{
+  "compiler": "version: 4.14.4\nstandard_library_default: /home/autonomy/.opam/pentagon-4.14.4/lib/ocaml\nstandard_library: /home/autonomy/.opam/pentagon-4.14.4/lib/ocaml\nccomp_type: cc\nc_compiler: gcc\nocamlc_cflags: -O2 -fno-strict-aliasing -fwrapv -pthread -fPIC \nocamlc_cppflags: -D_FILE_OFFSET_BITS=64 \nocamlopt_cflags: -O2 -fno-strict-aliasing -fwrapv -pthread -fPIC \nocamlopt_cppflags: -D_FILE_OFFSET_BITS=64 \nbytecomp_c_compiler: gcc -O2 -fno-strict-aliasing -fwrapv -pthread -fPIC  -D_FILE_OFFSET_BITS=64 \nnative_c_compiler: gcc -O2 -fno-strict-aliasing -fwrapv -pthread -fPIC  -D_FILE_OFFSET_BITS=64 \nbytecomp_c_libraries: -lm  -lpthread\nnative_c_libraries: -lm \nnative_pack_linker: ld -r -o \narchitecture: amd64\nmodel: default\nint_size: 63\nword_size: 64\nsystem: linux\nasm: as\nasm_cfi_supported: true\nwith_frame_pointers: false\next_exe: \next_obj: .o\next_asm: .s\next_lib: .a\next_dll: .so\nos_type: Unix\ndefault_executable_name: a.out\nsysthread_supported: true\nhost: x86_64-pc-linux-gnu\ntarget: x86_64-pc-linux-gnu\nflambda: false\nsafe_string: true\ndefault_safe_string: true\nflat_float_array: true\nfunction_sections: true\nafl_instrument: false\nwindows_unicode: false\nsupports_shared_libraries: true\nnaked_pointers: true\nexec_magic_number: Caml1999X031\ncmi_magic_number: Caml1999I031\ncmo_magic_number: Caml1999O031\ncma_magic_number: Caml1999A031\ncmx_magic_number: Caml1999Y031\ncmxa_magic_number: Caml1999Z031\nast_impl_magic_number: Caml1999M031\nast_intf_magic_number: Caml1999N031\ncmxs_magic_number: Caml1999D031\ncmt_magic_number: Caml1999T031\nlinear_magic_number: Caml1999L031",
+  "floating_environment": {
+    "LD_LIBRARY_PATH": null,
+    "LD_PRELOAD": null,
+    "OCAMLPARAM": null,
+    "OCAMLPATH": null,
+    "OCAMLRUNPARAM": null,
+    "OCAML_TOPLEVEL_PATH": "/home/autonomy/.opam/pentagon-4.14.4/lib/toplevel"
+  },
+  "installed_fingerprint": "e27409de41a9a4e3d10e9c52924648de3ba0791f0cbd1a85cc84a8e3162287cb",
+  "machine": "x86_64",
+  "packages": "# Packages matching: installed\n# Name                # Version\nbase-bigarray         base\nbase-bytes            base\nbase-threads          base\nbase-unix             base\ncrlibm                0.5.1\ncsexp                 1.5.2\ndune                  3.24.2\ndune-configurator     3.24.2\ninterval              dev\ninterval_base         dev\ninterval_crlibm       dev\ninterval_intel        dev\nocaml                 4.14.4\nocaml-base-compiler   4.14.4\nocaml-config          2\nocaml-options-vanilla 1\nocamlfind             1.9.8",
+  "pins": "interval.dev           rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master\ninterval_base.dev      rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master\ninterval_crlibm.dev    rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master\ninterval_intel.dev     rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "prefix": "/home/autonomy/.opam/pentagon-4.14.4"
+}

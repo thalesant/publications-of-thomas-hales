@@ -1,0 +1,25 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{subcritical}{Subcritical triangles.
+Experimentally, the first triangle has the smallest area among all
+acute Delaunay triangles.  The second triangle is a cloverleaf that
+has two edges of minimal length $2\kappa$.  Experimentally, the
+third triangle minimizes the longest edge among subcritical acute Delaunay triangles.
+It is equilateral with edge length about $1.72256$.}
+{
+\begin{scope}[scale=0.5]
+\threepent{0.00}{0.00}{85.23}{0.93}{1.33}{265.23}{1.86}{0.00}{229.23};
+\draw (0.5,-1.5) node {$\area\approx 1.23719$};
+\end{scope}
+\begin{scope}[scale=0.5,xshift=5cm]
+\threepent{0.00}{0.00}{90.00}{0.95}{1.31}{270.00}{1.90}{0.00}{234.00};
+\draw (0.5,-1.5) node {$\area\approx 1.24$};
+\end{scope}
+\begin{scope}[scale=0.5,xshift=10cm]
+\threepent{0.00}{0.00}{96.03}{0.86}{1.49}{264.03}{1.72}{0.00}{216.03};
+\draw (0.5,-1.5) node {$\area\approx 1.285$};
+\end{scope}
+\begin{scope}[scale=0.5,xshift=15cm] %
+\threepent{0.00}{0.00}{109.36}{0.83}{1.59}{235.36}{1.62}{0.00}{145.36};
+\draw (0.5,-1.5) node {$\area\approx 1.286$};
+\end{scope}
+}

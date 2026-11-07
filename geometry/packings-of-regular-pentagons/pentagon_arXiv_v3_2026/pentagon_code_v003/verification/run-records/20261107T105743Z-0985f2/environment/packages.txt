@@ -1,0 +1,19 @@
+# Packages matching: installed
+# Name                # Version
+base-bigarray         base
+base-bytes            base
+base-threads          base
+base-unix             base
+crlibm                0.5.1
+csexp                 1.5.2
+dune                  3.24.2
+dune-configurator     3.24.2
+interval              dev
+interval_base         dev
+interval_crlibm       dev
+interval_intel        dev
+ocaml                 4.14.4
+ocaml-base-compiler   4.14.4
+ocaml-config          2
+ocaml-options-vanilla 1
+ocamlfind             1.9.8

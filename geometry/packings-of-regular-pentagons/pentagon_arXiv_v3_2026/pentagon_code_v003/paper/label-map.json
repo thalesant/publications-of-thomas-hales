@@ -1,0 +1,678 @@
+{
+  "sec:intro": {
+    "number": "1",
+    "page": "1"
+  },
+  "fig:double-lattice": {
+    "number": "1.1",
+    "page": "2"
+  },
+  "thm:main": {
+    "number": "1.1",
+    "page": "2"
+  },
+  "sec:cluster": {
+    "number": "2",
+    "page": "5"
+  },
+  "eqn:epsN": {
+    "number": "2.1",
+    "page": "5"
+  },
+  "eqn:epsM": {
+    "number": "2.2",
+    "page": "5"
+  },
+  "fig:constant": {
+    "number": "2.1",
+    "page": "5"
+  },
+  "fig:KKtriangle": {
+    "number": "2.2",
+    "page": "6"
+  },
+  "fig:subcritical": {
+    "number": "2.3",
+    "page": "6"
+  },
+  "fig:KK2min": {
+    "number": "2.4",
+    "page": "6"
+  },
+  "fig:Gamma": {
+    "number": "2.5",
+    "page": "7"
+  },
+  "fig:pseudo-dimer": {
+    "number": "2.6",
+    "page": "7"
+  },
+  "fig:obtuse": {
+    "number": "2.7",
+    "page": "8"
+  },
+  "fig:visual": {
+    "number": "2.8",
+    "page": "10"
+  },
+  "lemma:M-nonobtuse": {
+    "number": "2.7",
+    "page": "11"
+  },
+  "lemma:obtuse-b": {
+    "number": "2.8",
+    "page": "11"
+  },
+  "cor:obtuse-b-arrow": {
+    "number": "2.9",
+    "page": "11"
+  },
+  "lemma:n1m1": {
+    "number": "2.10",
+    "page": "11"
+  },
+  "lemma:n2m2": {
+    "number": "2.11",
+    "page": "11"
+  },
+  "lemma:main": {
+    "number": "2.12",
+    "page": "11"
+  },
+  "eqn:main": {
+    "number": "2.13",
+    "page": "11"
+  },
+  "eqn:strict-main": {
+    "number": "2.14",
+    "page": "12"
+  },
+  "thm2:main": {
+    "number": "2.15",
+    "page": "13"
+  },
+  "cor:equal": {
+    "number": "2.16",
+    "page": "13"
+  },
+  "sec:contact": {
+    "number": "3",
+    "page": "13"
+  },
+  "fig:receptor": {
+    "number": "3.1",
+    "page": "14"
+  },
+  "fig:3C-type": {
+    "number": "3.2",
+    "page": "15"
+  },
+  "fig:clover": {
+    "number": "3.3",
+    "page": "16"
+  },
+  "lemma:sep1": {
+    "number": "3.1",
+    "page": "16"
+  },
+  "lemma:sep2": {
+    "number": "3.2",
+    "page": "16"
+  },
+  "lemma:sep3": {
+    "number": "3.3",
+    "page": "16"
+  },
+  "fig:sep": {
+    "number": "3.4",
+    "page": "16"
+  },
+  "fig:delta": {
+    "number": "3.5",
+    "page": "17"
+  },
+  "fig:pin1": {
+    "number": "3.6",
+    "page": "17"
+  },
+  "sec:area": {
+    "number": "4",
+    "page": "18"
+  },
+  "lemma:21": {
+    "number": "4.1",
+    "page": "19"
+  },
+  "lemma:right": {
+    "number": "4.2",
+    "page": "19"
+  },
+  "lemma:primary": {
+    "number": "4.5",
+    "page": "19"
+  },
+  "lemma:primary2": {
+    "number": "4.6",
+    "page": "20"
+  },
+  "lemma:delta": {
+    "number": "4.7",
+    "page": "20"
+  },
+  "lemma:mid-172": {
+    "number": "4.8",
+    "page": "20"
+  },
+  "lemma:172": {
+    "number": "4.9",
+    "page": "21"
+  },
+  "fig:172-slider": {
+    "number": "4.1",
+    "page": "21"
+  },
+  "lemma:2C": {
+    "number": "4.10",
+    "page": "22"
+  },
+  "lemma:a0": {
+    "number": "4.11",
+    "page": "22"
+  },
+  "sec:calc": {
+    "number": "5",
+    "page": "22"
+  },
+  "NKQNXUN": {
+    "number": "5.1",
+    "page": "23"
+  },
+  "calc:pseudo1": {
+    "number": "5.1",
+    "page": "23"
+  },
+  "RWWHLQT": {
+    "number": "5.2",
+    "page": "23"
+  },
+  "calc:pseudo2": {
+    "number": "5.2",
+    "page": "23"
+  },
+  "calc:pseudo3": {
+    "number": "5.3",
+    "page": "23"
+  },
+  "BXZBPJW": {
+    "number": "5.4",
+    "page": "23"
+  },
+  "calc:pseudo-area": {
+    "number": "5.4",
+    "page": "23"
+  },
+  "JQMRXTH": {
+    "number": "5.5",
+    "page": "23"
+  },
+  "calc:pseudo-area3": {
+    "number": "5.5",
+    "page": "23"
+  },
+  "lemma:egress'": {
+    "number": "5.6",
+    "page": "23"
+  },
+  "lemma:m2-area": {
+    "number": "5.7",
+    "page": "23"
+  },
+  "KUGAKIK": {
+    "number": "5.10",
+    "page": "24"
+  },
+  "calc:dimer-isosc": {
+    "number": "5.10",
+    "page": "24"
+  },
+  "HUQEJAT": {
+    "number": "5.11",
+    "page": "24"
+  },
+  "calc:pent3": {
+    "number": "5.11",
+    "page": "24"
+  },
+  "QPJDYDB": {
+    "number": "5.12",
+    "page": "24"
+  },
+  "calc:pent4": {
+    "number": "5.12",
+    "page": "24"
+  },
+  "def:large": {
+    "number": "5.13",
+    "page": "24"
+  },
+  "fig:large": {
+    "number": "5.1",
+    "page": "25"
+  },
+  "FHBGHHY": {
+    "number": "5.14",
+    "page": "25"
+  },
+  "calc:large": {
+    "number": "5.14",
+    "page": "25"
+  },
+  "lemma:large": {
+    "number": "5.15",
+    "page": "25"
+  },
+  "sec:dimer-pair": {
+    "number": "6",
+    "page": "25"
+  },
+  "thm:dimer-area": {
+    "number": "6.1",
+    "page": "25"
+  },
+  "sub:long": {
+    "number": "6.1",
+    "page": "26"
+  },
+  "sec:O2C": {
+    "number": "6.2",
+    "page": "27"
+  },
+  "fig:slider": {
+    "number": "6.1",
+    "page": "28"
+  },
+  "sec:squeeze": {
+    "number": "6.3",
+    "page": "29"
+  },
+  "lemma:squeeze-area": {
+    "number": "6.5",
+    "page": "30"
+  },
+  "lemma:dimer-acrit-epsN": {
+    "number": "6.6",
+    "page": "31"
+  },
+  "eq:dimer-acrit-epsN": {
+    "number": "6.7",
+    "page": "31"
+  },
+  "sec:nbd": {
+    "number": "6.4",
+    "page": "31"
+  },
+  "sec:gamma": {
+    "number": "6.5",
+    "page": "32"
+  },
+  "sec:curve": {
+    "number": "6.6",
+    "page": "32"
+  },
+  "fig:Gamma'": {
+    "number": "6.2",
+    "page": "33"
+  },
+  "sec:pseudo": {
+    "number": "7",
+    "page": "34"
+  },
+  "lemma:pd-m2": {
+    "number": "7.1",
+    "page": "35"
+  },
+  "lemma:m1m2": {
+    "number": "7.2",
+    "page": "35"
+  },
+  "lemma:pd-obtuse": {
+    "number": "7.4",
+    "page": "35"
+  },
+  "lemma:pd-n2": {
+    "number": "7.5",
+    "page": "36"
+  },
+  "lemma:pd-1": {
+    "number": "7.6",
+    "page": "36"
+  },
+  "lemma:pd-b": {
+    "number": "7.7",
+    "page": "36"
+  },
+  "sec:dimer-main": {
+    "number": "8",
+    "page": "37"
+  },
+  "thm:dimer": {
+    "number": "8.1",
+    "page": "37"
+  },
+  "lemma:singleton": {
+    "number": "8.2",
+    "page": "37"
+  },
+  "lemma:pd-nra-dimer": {
+    "number": "8.3",
+    "page": "37"
+  },
+  "lemma:m2-dimer": {
+    "number": "8.4",
+    "page": "37"
+  },
+  "lemma:m1-dimer": {
+    "number": "8.5",
+    "page": "38"
+  },
+  "lemma:t2b-nonobtuse": {
+    "number": "8.6",
+    "page": "38"
+  },
+  "lemma:n2b": {
+    "number": "8.7",
+    "page": "38"
+  },
+  "lemma:m2b": {
+    "number": "8.8",
+    "page": "39"
+  },
+  "eqn:2-ac": {
+    "number": "8.9",
+    "page": "39"
+  },
+  "lemma:rab-sequence": {
+    "number": "8.10",
+    "page": "39"
+  },
+  "lemma:notlong": {
+    "number": "8.11",
+    "page": "40"
+  },
+  "lemma:3m2": {
+    "number": "8.12",
+    "page": "40"
+  },
+  "lemma:Nb": {
+    "number": "8.13",
+    "page": "40"
+  },
+  "lemma:no-ao": {
+    "number": "8.14",
+    "page": "41"
+  },
+  "sec:obtuse": {
+    "number": "9",
+    "page": "41"
+  },
+  "rem:delaunay": {
+    "number": "9.1",
+    "page": "41"
+  },
+  "lemma:areta": {
+    "number": "9.2",
+    "page": "41"
+  },
+  "fig:areta": {
+    "number": "9.1",
+    "page": "42"
+  },
+  "lemma:obtuse-area-monotone": {
+    "number": "9.3",
+    "page": "42"
+  },
+  "lemma:t2b": {
+    "number": "9.4",
+    "page": "42"
+  },
+  "lemma:sequence": {
+    "number": "9.5",
+    "page": "43"
+  },
+  "lemma:c-weak": {
+    "number": "9.6",
+    "page": "43"
+  },
+  "eqn:c-weak": {
+    "number": "9.7",
+    "page": "43"
+  },
+  "lemma:card4": {
+    "number": "9.8",
+    "page": "43"
+  },
+  "thm:obtuse": {
+    "number": "9.9",
+    "page": "43"
+  },
+  "lemma:obtuse-source": {
+    "number": "9.10",
+    "page": "44"
+  },
+  "lemma:tb": {
+    "number": "9.11",
+    "page": "44"
+  },
+  "lemma:nonobtuse-radius-area": {
+    "number": "9.12",
+    "page": "45"
+  },
+  "eqn:n": {
+    "number": "9.13",
+    "page": "45"
+  },
+  "eqn:173": {
+    "number": "9.14",
+    "page": "48"
+  },
+  "eqn:968": {
+    "number": "9.15",
+    "page": "49"
+  },
+  "sec:nonobtuse": {
+    "number": "10",
+    "page": "50"
+  },
+  "lemma:m2": {
+    "number": "10.1",
+    "page": "50"
+  },
+  "lemma:2small": {
+    "number": "10.2",
+    "page": "51"
+  },
+  "fig:not-large": {
+    "number": "10.1",
+    "page": "52"
+  },
+  "lemma:n2-0": {
+    "number": "10.3",
+    "page": "52"
+  },
+  "lemma:T1-all": {
+    "number": "10.4",
+    "page": "52"
+  },
+  "lemma:4": {
+    "number": "10.5",
+    "page": "52"
+  },
+  "lemma:3": {
+    "number": "10.6",
+    "page": "53"
+  },
+  "lemma:2": {
+    "number": "10.7",
+    "page": "53"
+  },
+  "eqn:2": {
+    "number": "10.8",
+    "page": "53"
+  },
+  "sec:coords": {
+    "number": "A",
+    "page": "55"
+  },
+  "sec:appendix": {
+    "number": "A",
+    "page": "55"
+  },
+  "sec:two": {
+    "number": "A.1",
+    "page": "55"
+  },
+  "fig:theta": {
+    "number": "A.1",
+    "page": "55"
+  },
+  "eqn:sym": {
+    "number": "A.1",
+    "page": "55"
+  },
+  "sec:xalpha": {
+    "number": "A.2",
+    "page": "55"
+  },
+  "sec:banana": {
+    "number": "A.3",
+    "page": "56"
+  },
+  "fig:extended": {
+    "number": "A.2",
+    "page": "57"
+  },
+  "fig:banana2": {
+    "number": "A.3",
+    "page": "57"
+  },
+  "sec:pet": {
+    "number": "A.4",
+    "page": "57"
+  },
+  "fig:p-triangle": {
+    "number": "A.4",
+    "page": "58"
+  },
+  "sec:shared": {
+    "number": "A.7",
+    "page": "59"
+  },
+  "eqn:abc": {
+    "number": "A.4",
+    "page": "60"
+  },
+  "fig:cord-delta": {
+    "number": "A.5",
+    "page": "61"
+  },
+  "sec:pinwheel": {
+    "number": "A.9",
+    "page": "61"
+  },
+  "fig:cord-pinwheel": {
+    "number": "A.6",
+    "page": "61"
+  },
+  "fig:cord-L": {
+    "number": "A.7",
+    "page": "62"
+  },
+  "sec:one-ljx": {
+    "number": "A.10.3",
+    "page": "62"
+  },
+  "fig:cord-T": {
+    "number": "A.8",
+    "page": "63"
+  },
+  "sec:one-tjx": {
+    "number": "A.11.1",
+    "page": "63"
+  },
+  "sec:pint": {
+    "number": "A.12",
+    "page": "64"
+  },
+  "lemma:0605": {
+    "number": "A.5",
+    "page": "64"
+  },
+  "fig:cord-pint": {
+    "number": "A.9",
+    "page": "65"
+  },
+  "sec:one-pintx": {
+    "number": "A.12.1",
+    "page": "65"
+  },
+  "appendix:cc": {
+    "number": "B",
+    "page": "65"
+  },
+  "sec:auto-diff": {
+    "number": "B.2",
+    "page": "66"
+  },
+  "sec:mitm": {
+    "number": "B.3",
+    "page": "67"
+  },
+  "eqn:assembly": {
+    "number": "B.1",
+    "page": "67"
+  },
+  "sec:calc-prep": {
+    "number": "B.4",
+    "page": "68"
+  },
+  "lemma:peripheral-o2c": {
+    "number": "B.2",
+    "page": "68"
+  },
+  "sec:pseudo1": {
+    "number": "B.4.1",
+    "page": "69"
+  },
+  "sec:pseudo2": {
+    "number": "B.4.2",
+    "page": "69"
+  },
+  "eqn:pseudo2-constraint": {
+    "number": "B.3",
+    "page": "69"
+  },
+  "sec:pseudo-area": {
+    "number": "B.4.3",
+    "page": "70"
+  },
+  "sec:pseudo-area3": {
+    "number": "B.4.4",
+    "page": "70"
+  },
+  "sec:dimer-isosc": {
+    "number": "B.4.5",
+    "page": "71"
+  },
+  "sec:large": {
+    "number": "B.4.6",
+    "page": "71"
+  },
+  "sec:pent3": {
+    "number": "B.4.7",
+    "page": "72"
+  },
+  "sec:pent4": {
+    "number": "B.4.8",
+    "page": "72"
+  }
+}

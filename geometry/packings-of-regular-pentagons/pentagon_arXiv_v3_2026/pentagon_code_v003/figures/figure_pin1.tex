@@ -1,0 +1,20 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{pin1}{A distorted pin-$1$ configuration.}{
+\begin{scope}[scale=1.0]
+\pen{0}{0}{-90};
+\pen{-0.974}{ 1.543}{ 32.70422};
+\draw[red] ++ (-0.974,1.543) 
+  ++ (0.842,0.532) node[black,anchor=west] {$\v_{BC}$} -- 
+  ++ (115:0.2) -- ++ (-65:1.6) node[black,anchor=south west] {$\v_{CA}$}
+   -- ++ (7:1.17);
+\draw (0,0) node {$A$};
+\draw (0,0) + (3*72-90:1) node[anchor=north west] {$\v_{AB}$};
+\draw (-0.974,1.543) node {$B$};
+\draw (1.1,1.543) node {$C$};
+\smalldot{3*72-90:1}; %
+\draw (-0.974,1.543)+(32.7-72:1) node[anchor=south west]{$\v$};
+\smalldot{$(-0.974,1.543)+(32.7-72:1)$}; %
+\smalldot{$(-0.974,1.543)+(32.7:1)$}; %
+\smalldot{$(-0.974,1.543)+(0.842,0.532)+(115:0.2)+(-65:1.6)$}; %
+\end{scope}
+}

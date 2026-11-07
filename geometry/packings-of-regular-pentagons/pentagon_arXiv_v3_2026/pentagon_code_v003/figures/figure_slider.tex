@@ -1,0 +1,23 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{slider}{The center $\c_B$ of the nonobtuse triangle lands in
+  the first quadrant and gives a triangle $(\c_A,\c_B,\c_C)$ of height
+  and base both at least $2\kappa$.}
+{
+[scale=1.0]
+\draw (0,0) -- (2,0);
+\draw (0,0) -- (0,2);
+\coordinate (V) at ($(0,0) + (-90+2*72+10:1)   $);
+\draw (V) -- ++ (10:1.5) node[anchor=west] {$\lambda$};
+\draw (V) -- ++ (180+10:1.5);
+\coordinate (B) at ($(V) + (10:0.5) + (90+10- 2*72 - 180:1)$);
+\draw (B) -- ++ (10:1.5) node[anchor=west] {$\lambda'$};
+\draw (B) -- ++ (180+10:1.5);
+\penp{B}{90+10};
+\pen{0}{0}{-90+10};
+\smalldot{B};
+\smalldot{0,0};
+\smalldot{2,0};
+\draw (B) node [anchor=south west] {$\c_B$};
+\draw (0,0) node [anchor=north] {$\c_A$};
+\draw (2,0) node [anchor=north] {$\c_C$};
+}

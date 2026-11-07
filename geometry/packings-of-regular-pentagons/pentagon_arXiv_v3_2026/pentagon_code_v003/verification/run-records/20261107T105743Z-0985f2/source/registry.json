@@ -1,0 +1,3849 @@
+{
+  "version": "pentagon_code_v003",
+  "manuscript": "pentagon_v005.tex",
+  "jobs": [
+    {
+      "id": "unit",
+      "call": "PentagonTests.run false",
+      "claims": [
+        "tests:function-contracts"
+      ],
+      "role": "test",
+      "changed_domain": false,
+      "description": "Deterministic boundary, geometry, derivative and finite-MITM checks",
+      "shape": "unit",
+      "source": "",
+      "aliases": [
+        "YQRQXVD"
+      ],
+      "sections": [],
+      "display_claims": [
+        "tests:function-contracts"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "extended",
+      "call": "PentagonTests.run true",
+      "claims": [
+        "tests:function-contracts"
+      ],
+      "role": "test",
+      "changed_domain": false,
+      "description": "All unit checks plus deterministic generated geometric and key-cover cases",
+      "shape": "unit",
+      "source": "",
+      "aliases": [
+        "YQRQXVD"
+      ],
+      "sections": [],
+      "display_claims": [
+        "tests:function-contracts"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "squeeze_sign_tests",
+      "call": "SqueezeTests.run ()",
+      "claims": [
+        "tests:squeeze-contracts"
+      ],
+      "role": "test",
+      "description": "71 checks of contact construction, sign predicates, strict overlap and subdivision coverage",
+      "shape": "unit",
+      "source": "tests/ocaml/squeeze_tests.ml",
+      "comment_ids": [
+        "YQRQXVD"
+      ],
+      "aliases": [
+        "GJULAOH",
+        "LZMJIZU",
+        "YQRQXVD"
+      ],
+      "sections": [],
+      "display_claims": [
+        "tests:squeeze-contracts"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "pinwheel1237",
+      "call": "(List.assoc \"pinwheel1237\" !calcs) ()",
+      "claims": [
+        "lemma:a0"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude nonobtuse pinwheel triangles of area at most 1.237.",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.11",
+        "Lemma 4.11",
+        "QGPVOYX"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.11 [lemma:a0]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "QGPVOYX"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "lj1237",
+      "call": "(List.assoc \"lj1237\" !calcs) ()",
+      "claims": [
+        "lemma:a0"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude nonobtuse L-junction triangles of area at most 1.237.",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.11",
+        "Lemma 4.11",
+        "QGPVOYX"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.11 [lemma:a0]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "QGPVOYX"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "tj1237",
+      "call": "(List.assoc \"tj1237\" !calcs) ()",
+      "claims": [
+        "lemma:a0"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude nonobtuse T-junction triangles of area at most 1.237.",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.11",
+        "Lemma 4.11",
+        "QGPVOYX"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.11 [lemma:a0]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "QGPVOYX"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "pint1237",
+      "call": "(List.assoc \"pint1237\" !calcs) ()",
+      "claims": [
+        "lemma:a0"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude nonobtuse pin-T junction triangles of area at most 1.237.",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.11",
+        "Lemma 4.11",
+        "QGPVOYX"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.11 [lemma:a0]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "QGPVOYX"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "onedeltajmin",
+      "call": "(List.assoc \"onedeltajmin\" !calcs) ()",
+      "claims": [
+        "lemma:delta",
+        "lemma:a0",
+        "lemma:172"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude Delta-contact triangles of area at most 1.5 on the classified domain.",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.11",
+        "4.7",
+        "4.9",
+        "BVICHFW",
+        "Lemma 4.11",
+        "Lemma 4.7",
+        "Lemma 4.9",
+        "QBQQTVY",
+        "QGPVOYX"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.7 [lemma:delta]",
+        "Lemma 4.11 [lemma:a0]",
+        "Lemma 4.9 [lemma:172]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "QBQQTVY",
+        "QGPVOYX",
+        "BVICHFW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "pinwheel17215",
+      "call": "(List.assoc \"pinwheel17215\" !calcs) ()",
+      "claims": [
+        "lemma:172"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude subcritical pinwheel triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound).",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.9",
+        "BVICHFW",
+        "Lemma 4.9"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.9 [lemma:172]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "BVICHFW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "lj17215",
+      "call": "(List.assoc \"lj17215\" !calcs) ()",
+      "claims": [
+        "lemma:172"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude subcritical L-junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound).",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.9",
+        "BVICHFW",
+        "Lemma 4.9"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.9 [lemma:172]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "BVICHFW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "tj17215",
+      "call": "(List.assoc \"tj17215\" !calcs) ()",
+      "claims": [
+        "lemma:172"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude subcritical T-junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound).",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.9",
+        "BVICHFW",
+        "Lemma 4.9"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.9 [lemma:172]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "BVICHFW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "pint17215",
+      "call": "(List.assoc \"pint17215\" !calcs) ()",
+      "claims": [
+        "lemma:172"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude subcritical pin-T junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound).",
+      "shape": "pair",
+      "source": "ocaml/pent.ml",
+      "aliases": [
+        "4.9",
+        "BVICHFW",
+        "Lemma 4.9"
+      ],
+      "sections": [
+        "4",
+        "sec:area"
+      ],
+      "display_claims": [
+        "Lemma 4.9 [lemma:172]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "BVICHFW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "dimer_group1",
+      "call": "Dimer.run_group1 ()",
+      "claims": [
+        "sec:O2C",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Two isosceles exclusions and four contact-chart restrictions",
+      "shape": "pairs",
+      "source": "ocaml/dimer.ml",
+      "aliases": [
+        "6.1",
+        "GAIMXAD",
+        "SMPXAOD",
+        "Section 6.2",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.2",
+        "A",
+        "A.7",
+        "sec:O2C",
+        "sec:coords",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.2 [sec:O2C]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "GAIMXAD",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "dimer_group2",
+      "call": "List.concat (Dimer.run_group2 ())",
+      "claims": [
+        "sec:nbd",
+        "calc:pseudo-area",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "64 original calls, 48 distinct ordered contact pairs",
+      "shape": "pairs",
+      "source": "ocaml/dimer.ml",
+      "aliases": [
+        "5.4",
+        "6.1",
+        "BXZBPJW",
+        "DSKKWND",
+        "Lemma 5.4",
+        "Section 6.4",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "5",
+        "6",
+        "6.4",
+        "sec:calc",
+        "sec:dimer-pair",
+        "sec:nbd"
+      ],
+      "display_claims": [
+        "Section 6.4 [sec:nbd]",
+        "Lemma 5.4 [calc:pseudo-area]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "DSKKWND",
+        "BXZBPJW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "dimer_group3",
+      "call": "Dimer.run_group3 ()",
+      "claims": [
+        "sec:nbd",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "12 ordinary and 4 pseudo-relaxed neighborhood checks",
+      "shape": "pairs",
+      "source": "ocaml/dimer.ml",
+      "aliases": [
+        "6.1",
+        "DSKKWND",
+        "Section 6.4",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.4",
+        "sec:dimer-pair",
+        "sec:nbd"
+      ],
+      "display_claims": [
+        "Section 6.4 [sec:nbd]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "DSKKWND"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "dimer_group4",
+      "call": "Dimer.run_group4 ()",
+      "claims": [
+        "calc:pseudo-area",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Four 3C+3C bounds at the stronger 0.007 allowance",
+      "shape": "pairs",
+      "source": "ocaml/dimer.ml",
+      "aliases": [
+        "5.4",
+        "6.1",
+        "BXZBPJW",
+        "Lemma 5.4",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "5",
+        "6",
+        "sec:calc",
+        "sec:dimer-pair"
+      ],
+      "display_claims": [
+        "Lemma 5.4 [calc:pseudo-area]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "BXZBPJW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "squeeze_sign_BA_BC",
+      "call": "SqueezeSign.verify_case \"BA_BC\"",
+      "claims": [
+        "lemma:squeeze-area",
+        "sec:squeeze",
+        "thm:dimer-area"
+      ],
+      "comment_ids": [
+        "GJULAOH",
+        "LZMJIZU"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "changed_contract": false,
+      "description": "B points to A and C: both contact signs and supporting-side conditions on the full four-parameter domain",
+      "shape": "squeeze_result",
+      "source": "ocaml/squeeze_sign.ml",
+      "aliases": [
+        "6.1",
+        "6.5",
+        "GJULAOH",
+        "LZMJIZU",
+        "Lemma 6.5",
+        "Section 6.3",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.3",
+        "sec:dimer-pair",
+        "sec:squeeze"
+      ],
+      "display_claims": [
+        "Lemma 6.5 [lemma:squeeze-area]",
+        "Section 6.3 [sec:squeeze]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "squeeze_sign_BA_CB",
+      "call": "SqueezeSign.verify_case \"BA_CB\"",
+      "claims": [
+        "lemma:squeeze-area",
+        "sec:squeeze",
+        "thm:dimer-area"
+      ],
+      "comment_ids": [
+        "GJULAOH",
+        "LZMJIZU"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "changed_contract": false,
+      "description": "B points to A; C points to B: both contact signs and supporting-side conditions on the full four-parameter domain",
+      "shape": "squeeze_result",
+      "source": "ocaml/squeeze_sign.ml",
+      "aliases": [
+        "6.1",
+        "6.5",
+        "GJULAOH",
+        "LZMJIZU",
+        "Lemma 6.5",
+        "Section 6.3",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.3",
+        "sec:dimer-pair",
+        "sec:squeeze"
+      ],
+      "display_claims": [
+        "Lemma 6.5 [lemma:squeeze-area]",
+        "Section 6.3 [sec:squeeze]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "squeeze_sign_AB_BC",
+      "call": "SqueezeSign.verify_case \"AB_BC\"",
+      "claims": [
+        "lemma:squeeze-area",
+        "sec:squeeze",
+        "thm:dimer-area"
+      ],
+      "comment_ids": [
+        "GJULAOH",
+        "LZMJIZU"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "changed_contract": false,
+      "description": "A points to B; B points to C: both contact signs and supporting-side conditions on the full four-parameter domain",
+      "shape": "squeeze_result",
+      "source": "ocaml/squeeze_sign.ml",
+      "aliases": [
+        "6.1",
+        "6.5",
+        "GJULAOH",
+        "LZMJIZU",
+        "Lemma 6.5",
+        "Section 6.3",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.3",
+        "sec:dimer-pair",
+        "sec:squeeze"
+      ],
+      "display_claims": [
+        "Lemma 6.5 [lemma:squeeze-area]",
+        "Section 6.3 [sec:squeeze]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "squeeze_sign_AB_CB",
+      "call": "SqueezeSign.verify_case \"AB_CB\"",
+      "claims": [
+        "lemma:squeeze-area",
+        "sec:squeeze",
+        "thm:dimer-area"
+      ],
+      "comment_ids": [
+        "GJULAOH",
+        "LZMJIZU"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "changed_contract": false,
+      "description": "A and C point to B: both contact signs and supporting-side conditions on the full four-parameter domain",
+      "shape": "squeeze_result",
+      "source": "ocaml/squeeze_sign.ml",
+      "aliases": [
+        "6.1",
+        "6.5",
+        "GJULAOH",
+        "LZMJIZU",
+        "Lemma 6.5",
+        "Section 6.3",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.3",
+        "sec:dimer-pair",
+        "sec:squeeze"
+      ],
+      "display_claims": [
+        "Lemma 6.5 [lemma:squeeze-area]",
+        "Section 6.3 [sec:squeeze]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "squeeze",
+      "call": "Dimer.squeeze_calc ()",
+      "claims": [
+        "lemma:squeeze-area",
+        "sec:squeeze",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify the reciprocal-slope area-decrease inequality, using the three-way sufficient test; combine with all four contact-sign jobs.",
+      "shape": "pair",
+      "source": "ocaml/dimer.ml",
+      "aliases": [
+        "6.1",
+        "6.5",
+        "LZMJIZU",
+        "Lemma 6.5",
+        "Section 6.3",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.3",
+        "sec:dimer-pair",
+        "sec:squeeze"
+      ],
+      "display_claims": [
+        "Lemma 6.5 [lemma:squeeze-area]",
+        "Section 6.3 [sec:squeeze]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LZMJIZU"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "historical_one127",
+      "call": "Dimer.recursesgn Dimer.one127 Dimer.domain2C",
+      "claims": [
+        "diagnostic:one127"
+      ],
+      "role": "diagnostic",
+      "changed_domain": false,
+      "description": "Historical 1.27 isosceles checks; not a current proof dependency",
+      "shape": "pairs",
+      "source": "ocaml/dimer.ml",
+      "aliases": [],
+      "sections": [],
+      "display_claims": [
+        "diagnostic:one127"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "required_for_confirmation": false
+    },
+    {
+      "id": "autodiff_twist_lj1",
+      "call": "Autodiff.twist_claim_lj1 ()",
+      "claims": [
+        "sec:shared",
+        "sec:curve",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify the local twist reduction for lj1 contact.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section A.7 [sec:shared]",
+        "Section 6.6 [sec:curve]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "SMPXAOD",
+        "LPEYXGH"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_twist_lj2",
+      "call": "Autodiff.twist_claim_lj2 ()",
+      "claims": [
+        "sec:shared",
+        "sec:curve",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify the local twist reduction for lj2 contact.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section A.7 [sec:shared]",
+        "Section 6.6 [sec:curve]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "SMPXAOD",
+        "LPEYXGH"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_0_0",
+      "call": "Autodiff.recurseD 0 0",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (0,0) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_0_1",
+      "call": "Autodiff.recurseD 0 1",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (0,1) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_0_2",
+      "call": "Autodiff.recurseD 0 2",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (0,2) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_0_3",
+      "call": "Autodiff.recurseD 0 3",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (0,3) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_0_4",
+      "call": "Autodiff.recurseD 0 4",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (0,4) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_1_0",
+      "call": "Autodiff.recurseD 1 0",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (1,0) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_1_1",
+      "call": "Autodiff.recurseD 1 1",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (1,1) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_1_2",
+      "call": "Autodiff.recurseD 1 2",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (1,2) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_1_3",
+      "call": "Autodiff.recurseD 1 3",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (1,3) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_1_4",
+      "call": "Autodiff.recurseD 1 4",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (1,4) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_2_0",
+      "call": "Autodiff.recurseD 2 0",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (2,0) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_2_1",
+      "call": "Autodiff.recurseD 2 1",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (2,1) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_2_2",
+      "call": "Autodiff.recurseD 2 2",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (2,2) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_2_3",
+      "call": "Autodiff.recurseD 2 3",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (2,3) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_2_4",
+      "call": "Autodiff.recurseD 2 4",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (2,4) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_3_0",
+      "call": "Autodiff.recurseD 3 0",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (3,0) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_3_1",
+      "call": "Autodiff.recurseD 3 1",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (3,1) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_3_2",
+      "call": "Autodiff.recurseD 3 2",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (3,2) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_3_3",
+      "call": "Autodiff.recurseD 3 3",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (3,3) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_3_4",
+      "call": "Autodiff.recurseD 3 4",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (3,4) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_4_0",
+      "call": "Autodiff.recurseD 4 0",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (4,0) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_4_1",
+      "call": "Autodiff.recurseD 4 1",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (4,1) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_4_2",
+      "call": "Autodiff.recurseD 4 2",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (4,2) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_4_3",
+      "call": "Autodiff.recurseD 4 3",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (4,3) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "autodiff_path_4_4",
+      "call": "Autodiff.recurseD 4 4",
+      "claims": [
+        "sec:curve",
+        "sec:shared",
+        "thm:dimer-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Certify strict area decrease for shared-edge contact-chart pair (4,4) on its prescribed neighborhood and path.",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "6.1",
+        "LPEYXGH",
+        "SMPXAOD",
+        "Section 6.6",
+        "Section A.7",
+        "Theorem 6.1"
+      ],
+      "sections": [
+        "6",
+        "6.6",
+        "A",
+        "A.7",
+        "sec:coords",
+        "sec:curve",
+        "sec:dimer-pair",
+        "sec:shared"
+      ],
+      "display_claims": [
+        "Section 6.6 [sec:curve]",
+        "Section A.7 [sec:shared]",
+        "Theorem 6.1 [thm:dimer-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "LPEYXGH",
+        "SMPXAOD"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "gamma_convexity",
+      "call": "Autodiff.gamma_convexity_diagnostic ()",
+      "claims": [
+        "sec:gamma"
+      ],
+      "role": "diagnostic",
+      "changed_domain": false,
+      "description": "Recentered optional numerical check; exact formula proves the paper claim",
+      "shape": "pair",
+      "source": "ocaml/autodiff.ml",
+      "aliases": [
+        "BKUSHRZ",
+        "Section 6.5"
+      ],
+      "sections": [
+        "6",
+        "6.5",
+        "sec:dimer-pair",
+        "sec:gamma"
+      ],
+      "display_claims": [
+        "Section 6.5 [sec:gamma]"
+      ],
+      "changed_contract": false,
+      "change_ids": [
+        "C004"
+      ],
+      "comment_ids": [
+        "BKUSHRZ"
+      ],
+      "required_for_confirmation": false
+    },
+    {
+      "id": "mitm_precluster1_case0",
+      "call": "precluster1_case0 ()",
+      "claims": [
+        "calc:pseudo1"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Shared-edge bound: outside-double-contact central triangle, total cutoff 2 a_crit.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.1",
+        "Lemma 5.1",
+        "NKQNXUN"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.1 [calc:pseudo1]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "NKQNXUN"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster1_case1",
+      "call": "precluster1_case1 ()",
+      "claims": [
+        "calc:pseudo1"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Shared-edge bound: midpoint contact at the nonshared length-1.8 endpoint, total cutoff 2 a_crit.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.1",
+        "Lemma 5.1",
+        "NKQNXUN"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.1 [calc:pseudo1]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "NKQNXUN"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster1_case2",
+      "call": "precluster1_case2 ()",
+      "claims": [
+        "calc:pseudo1"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Shared-edge bound: slider contact with either nonshared length 1.8, total cutoff 2 a_crit.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.1",
+        "Lemma 5.1",
+        "NKQNXUN"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.1 [calc:pseudo1]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "NKQNXUN"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster2_case0",
+      "call": "precluster2_case0 ()",
+      "claims": [
+        "calc:pseudo2"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Egressive-edge bound: outside-double-contact central triangle with sides at most 1.8, total cutoff 2 a_crit.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.2",
+        "Lemma 5.2",
+        "RWWHLQT"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.2 [calc:pseudo2]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "RWWHLQT"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster2_case1",
+      "call": "precluster2_case1 ()",
+      "claims": [
+        "calc:pseudo2"
+      ],
+      "role": "proof",
+      "changed_domain": true,
+      "description": "Egressive-edge bound: midpoint contact on a shared-edge tie or nonshared length-1.8 boundary, retaining all three equalities.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.2",
+        "Lemma 5.2",
+        "RWWHLQT"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.2 [calc:pseudo2]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C014",
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "RWWHLQT"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster2_case2",
+      "call": "precluster2_case2 ()",
+      "claims": [
+        "calc:pseudo2"
+      ],
+      "role": "proof",
+      "changed_domain": true,
+      "description": "Egressive-edge bound: slider contact on a shared-edge tie or nonshared length-1.8 boundary, retaining all three equalities.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.2",
+        "Lemma 5.2",
+        "RWWHLQT"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.2 [calc:pseudo2]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C014",
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "RWWHLQT"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster4_case0_experimental",
+      "call": "precluster4_case0_experimental ()",
+      "claims": [
+        "calc:pseudo-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Pseudo-dimer pair-area bound 2 a_crit - epsilon_M; outside-double-contact peripheral with local AB=AC.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.4",
+        "BXZBPJW",
+        "Lemma 5.4"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.4 [calc:pseudo-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "BXZBPJW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster4_case1_experimental",
+      "call": "precluster4_case1_experimental ()",
+      "claims": [
+        "calc:pseudo-area"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Pseudo-dimer pair-area bound 2 a_crit - epsilon_M; outside-double-contact peripheral with local BC=AC.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.4",
+        "BXZBPJW",
+        "Lemma 5.4"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.4 [calc:pseudo-area]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "BXZBPJW"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster6_case1",
+      "call": "precluster6_case1 ()",
+      "claims": [
+        "calc:pseudo-area3"
+      ],
+      "role": "proof",
+      "changed_domain": true,
+      "description": "Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AB, outgoing edge BC; exceptional peripheral cap a_crit + 2 epsilon_M.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.5",
+        "JQMRXTH",
+        "Lemma 5.5"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.5 [calc:pseudo-area3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C013",
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "JQMRXTH"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster6_case2",
+      "call": "precluster6_case2 ()",
+      "claims": [
+        "calc:pseudo-area3"
+      ],
+      "role": "proof",
+      "changed_domain": true,
+      "description": "Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AB, outgoing edge AC; exceptional peripheral cap a_crit + 2 epsilon_M.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.5",
+        "JQMRXTH",
+        "Lemma 5.5"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.5 [calc:pseudo-area3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C013",
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "JQMRXTH"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster6_case3",
+      "call": "precluster6_case3 ()",
+      "claims": [
+        "calc:pseudo-area3"
+      ],
+      "role": "proof",
+      "changed_domain": true,
+      "description": "Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge BC, outgoing edge AB; exceptional peripheral cap a_crit + 2 epsilon_M.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.5",
+        "JQMRXTH",
+        "Lemma 5.5"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.5 [calc:pseudo-area3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C013",
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "JQMRXTH"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster6_case4",
+      "call": "precluster6_case4 ()",
+      "claims": [
+        "calc:pseudo-area3"
+      ],
+      "role": "proof",
+      "changed_domain": true,
+      "description": "Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge BC, outgoing edge AC; exceptional peripheral cap a_crit + 2 epsilon_M.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.5",
+        "JQMRXTH",
+        "Lemma 5.5"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.5 [calc:pseudo-area3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C013",
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "JQMRXTH"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster6_case5",
+      "call": "precluster6_case5 ()",
+      "claims": [
+        "calc:pseudo-area3"
+      ],
+      "role": "proof",
+      "changed_domain": true,
+      "description": "Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AC, outgoing edge AB; exceptional peripheral cap a_crit + 2 epsilon_M.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.5",
+        "JQMRXTH",
+        "Lemma 5.5"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.5 [calc:pseudo-area3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C013",
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "JQMRXTH"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_precluster6_case6",
+      "call": "precluster6_case6 ()",
+      "claims": [
+        "calc:pseudo-area3"
+      ],
+      "role": "proof",
+      "changed_domain": true,
+      "description": "Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AC, outgoing edge BC; exceptional peripheral cap a_crit + 2 epsilon_M.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.5",
+        "JQMRXTH",
+        "Lemma 5.5"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.5 [calc:pseudo-area3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C013",
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "JQMRXTH"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent2_postcluster_case0",
+      "call": "calc_pent2_postcluster_case0 ()",
+      "claims": [
+        "calc:large"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Non-large-angle pair bound 2 a_crit + epsilon_M: outside-double-contact central triangle.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.14",
+        "FHBGHHY",
+        "Lemma 5.14"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.14 [calc:large]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "FHBGHHY"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent2_postcluster_case1",
+      "call": "calc_pent2_postcluster_case1 ()",
+      "claims": [
+        "calc:large"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge AB, distinguished nonshared edge AC at length 1.8, with central contact.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.14",
+        "FHBGHHY",
+        "Lemma 5.14"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.14 [calc:large]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "FHBGHHY"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent2_postcluster_case2",
+      "call": "calc_pent2_postcluster_case2 ()",
+      "claims": [
+        "calc:large"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge AB, distinguished nonshared edge BC at length 1.8, with central contact.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.14",
+        "FHBGHHY",
+        "Lemma 5.14"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.14 [calc:large]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "FHBGHHY"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent2_postcluster_case3",
+      "call": "calc_pent2_postcluster_case3 ()",
+      "claims": [
+        "calc:large"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge BC, distinguished nonshared edge AC at length 1.8, with central contact.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.14",
+        "FHBGHHY",
+        "Lemma 5.14"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.14 [calc:large]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "FHBGHHY"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent2_postcluster_case4",
+      "call": "calc_pent2_postcluster_case4 ()",
+      "claims": [
+        "calc:large"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge BC, distinguished nonshared edge AB at length 1.8, with central contact.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.14",
+        "FHBGHHY",
+        "Lemma 5.14"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.14 [calc:large]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "FHBGHHY"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent3_6D_postcluster",
+      "call": "calc_pent3_6D_postcluster ()",
+      "claims": [
+        "calc:pent3"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Three-triangle bound 3 a_crit + epsilon_M: unrestricted six-dimensional central chart and two long-isosceles peripherals.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.11",
+        "HUQEJAT",
+        "Lemma 5.11"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.11 [calc:pent3]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "HUQEJAT"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent3AB_postcluster",
+      "call": "calc_pent3AB_postcluster ()",
+      "claims": [
+        "calc:pent3"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on BC and AC; AB is unshared.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.11",
+        "HUQEJAT",
+        "Lemma 5.11"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.11 [calc:pent3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "HUQEJAT"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent3BC_postcluster",
+      "call": "calc_pent3BC_postcluster ()",
+      "claims": [
+        "calc:pent3"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on AB and AC; BC is unshared.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.11",
+        "HUQEJAT",
+        "Lemma 5.11"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.11 [calc:pent3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "HUQEJAT"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent3AC_postcluster",
+      "call": "calc_pent3AC_postcluster ()",
+      "claims": [
+        "calc:pent3"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on AB and BC; AC is unshared.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.11",
+        "HUQEJAT",
+        "Lemma 5.11"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.11 [calc:pent3]"
+      ],
+      "changed_contract": true,
+      "change_ids": [
+        "C005",
+        "C015"
+      ],
+      "comment_ids": [
+        "HUQEJAT"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_calc_pent4_6D_postcluster",
+      "call": "calc_pent4_6D_postcluster ()",
+      "claims": [
+        "calc:pent4"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Four-triangle bound 4 a_crit: six-dimensional central chart and three subcritical outside-double-contact peripherals.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.12",
+        "Lemma 5.12",
+        "QPJDYDB"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.12 [calc:pent4]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "QPJDYDB"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_dimer_isosceles_precluster",
+      "call": "dimer_isosceles_precluster ()",
+      "claims": [
+        "calc:dimer-isosc"
+      ],
+      "role": "proof",
+      "changed_domain": false,
+      "description": "Exclude an outside-double-contact long-isosceles subcritical peripheral in a dimer pair with total area at most 2 a_crit.",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [
+        "5.10",
+        "KUGAKIK",
+        "Lemma 5.10"
+      ],
+      "sections": [
+        "5",
+        "sec:calc"
+      ],
+      "display_claims": [
+        "Lemma 5.10 [calc:dimer-isosc]"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "comment_ids": [
+        "KUGAKIK"
+      ],
+      "required_for_confirmation": true
+    },
+    {
+      "id": "mitm_test1_centralpent_1237",
+      "call": "test1_centralpent_1237 ()",
+      "claims": [
+        "diagnostic:central"
+      ],
+      "role": "diagnostic",
+      "changed_domain": false,
+      "description": "Existing central-chart diagnostic (1.2 debug cutoff, not 1.237)",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [],
+      "sections": [],
+      "display_claims": [
+        "diagnostic:central"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "required_for_confirmation": false
+    },
+    {
+      "id": "mitm_test1_centralpent_172",
+      "call": "test1_centralpent_172 ()",
+      "claims": [
+        "diagnostic:central"
+      ],
+      "role": "diagnostic",
+      "changed_domain": false,
+      "description": "Existing central-chart diagnostic (1.72 cutoff)",
+      "shape": "bool",
+      "source": "ocaml/mitm-calcs.ml",
+      "aliases": [],
+      "sections": [],
+      "display_claims": [
+        "diagnostic:central"
+      ],
+      "changed_contract": false,
+      "change_ids": [],
+      "required_for_confirmation": false
+    }
+  ],
+  "printed_number_source": "paper/header_v003.aux; existing numbers checked equal to pentagon_v002f baseline",
+  "selection_note": "Claim and section selectors select listed direct computational associations, plus the function-contract test prerequisite. Analytic reductions and other cited lemmas are not automatically recursed. Use --all for all current proof jobs.",
+  "claim_ids": {
+    "calc:pseudo1": "NKQNXUN",
+    "calc:pseudo2": "RWWHLQT",
+    "calc:pseudo-area": "BXZBPJW",
+    "calc:pseudo-area3": "JQMRXTH",
+    "calc:dimer-isosc": "KUGAKIK",
+    "calc:pent3": "HUQEJAT",
+    "calc:pent4": "QPJDYDB",
+    "calc:large": "FHBGHHY"
+  },
+  "confirmation_tests": [
+    "unit",
+    "extended",
+    "squeeze_sign_tests"
+  ],
+  "scope": "The finite interval exclusions listed as proof jobs, with explicit mathematical hypotheses in docs/claims.json.",
+  "section_map": {
+    "sec:intro": [
+      [
+        "sec:intro",
+        "1"
+      ]
+    ],
+    "thm:main": [
+      [
+        "sec:intro",
+        "1"
+      ]
+    ],
+    "sec:cluster": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "eqn:epsN": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "eqn:epsM": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "lemma:M-nonobtuse": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "lemma:obtuse-b": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "cor:obtuse-b-arrow": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "lemma:n1m1": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "lemma:n2m2": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "lemma:main": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "eqn:main": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "eqn:strict-main": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "thm2:main": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "cor:equal": [
+      [
+        "sec:cluster",
+        "2"
+      ]
+    ],
+    "sec:contact": [
+      [
+        "sec:contact",
+        "3"
+      ]
+    ],
+    "lemma:sep1": [
+      [
+        "sec:contact",
+        "3"
+      ]
+    ],
+    "lemma:sep2": [
+      [
+        "sec:contact",
+        "3"
+      ]
+    ],
+    "lemma:sep3": [
+      [
+        "sec:contact",
+        "3"
+      ]
+    ],
+    "sec:area": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:21": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:right": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:primary": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:primary2": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:delta": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:mid-172": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:172": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:2C": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "lemma:a0": [
+      [
+        "sec:area",
+        "4"
+      ]
+    ],
+    "sec:calc": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "NKQNXUN": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:pseudo1": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "RWWHLQT": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:pseudo2": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:pseudo3": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "BXZBPJW": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:pseudo-area": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "JQMRXTH": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:pseudo-area3": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "lemma:egress'": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "lemma:m2-area": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "KUGAKIK": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:dimer-isosc": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "HUQEJAT": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:pent3": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "QPJDYDB": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:pent4": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "def:large": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "FHBGHHY": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "calc:large": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "lemma:large": [
+      [
+        "sec:calc",
+        "5"
+      ]
+    ],
+    "sec:dimer-pair": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ]
+    ],
+    "thm:dimer-area": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ]
+    ],
+    "sub:long": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sub:long",
+        "6.1"
+      ]
+    ],
+    "sec:O2C": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sec:O2C",
+        "6.2"
+      ]
+    ],
+    "sec:squeeze": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sec:squeeze",
+        "6.3"
+      ]
+    ],
+    "lemma:squeeze-area": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sec:squeeze",
+        "6.3"
+      ]
+    ],
+    "lemma:dimer-acrit-epsN": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sec:squeeze",
+        "6.3"
+      ]
+    ],
+    "eq:dimer-acrit-epsN": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sec:squeeze",
+        "6.3"
+      ]
+    ],
+    "sec:nbd": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sec:nbd",
+        "6.4"
+      ]
+    ],
+    "sec:gamma": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sec:gamma",
+        "6.5"
+      ]
+    ],
+    "sec:curve": [
+      [
+        "sec:dimer-pair",
+        "6"
+      ],
+      [
+        "sec:curve",
+        "6.6"
+      ]
+    ],
+    "sec:pseudo": [
+      [
+        "sec:pseudo",
+        "7"
+      ]
+    ],
+    "lemma:pd-m2": [
+      [
+        "sec:pseudo",
+        "7"
+      ]
+    ],
+    "lemma:m1m2": [
+      [
+        "sec:pseudo",
+        "7"
+      ]
+    ],
+    "lemma:pd-obtuse": [
+      [
+        "sec:pseudo",
+        "7"
+      ]
+    ],
+    "lemma:pd-n2": [
+      [
+        "sec:pseudo",
+        "7"
+      ]
+    ],
+    "lemma:pd-1": [
+      [
+        "sec:pseudo",
+        "7"
+      ]
+    ],
+    "lemma:pd-b": [
+      [
+        "sec:pseudo",
+        "7"
+      ]
+    ],
+    "sec:dimer-main": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "thm:dimer": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:singleton": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:pd-nra-dimer": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:m2-dimer": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:m1-dimer": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:t2b-nonobtuse": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:n2b": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:m2b": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "eqn:2-ac": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:rab-sequence": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:notlong": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:3m2": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:Nb": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "lemma:no-ao": [
+      [
+        "sec:dimer-main",
+        "8"
+      ]
+    ],
+    "sec:obtuse": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "rem:delaunay": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:areta": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:obtuse-area-monotone": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:t2b": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:sequence": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:c-weak": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "eqn:c-weak": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:card4": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "thm:obtuse": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:obtuse-source": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:tb": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "lemma:nonobtuse-radius-area": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "eqn:n": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "eqn:173": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "eqn:968": [
+      [
+        "sec:obtuse",
+        "9"
+      ]
+    ],
+    "sec:nonobtuse": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "lemma:m2": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "lemma:2small": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "lemma:n2-0": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "lemma:T1-all": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "lemma:4": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "lemma:3": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "lemma:2": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "eqn:2": [
+      [
+        "sec:nonobtuse",
+        "10"
+      ]
+    ],
+    "sec:coords": [
+      [
+        "sec:coords",
+        "A"
+      ]
+    ],
+    "sec:appendix": [
+      [
+        "sec:coords",
+        "A"
+      ]
+    ],
+    "sec:two": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:two",
+        "A.1"
+      ]
+    ],
+    "eqn:sym": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:two",
+        "A.1"
+      ]
+    ],
+    "sec:xalpha": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:xalpha",
+        "A.2"
+      ]
+    ],
+    "sec:banana": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:banana",
+        "A.3"
+      ]
+    ],
+    "sec:pet": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:pet",
+        "A.4"
+      ]
+    ],
+    "sec:shared": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:shared",
+        "A.7"
+      ]
+    ],
+    "eqn:abc": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:shared",
+        "A.7"
+      ]
+    ],
+    "sec:pinwheel": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:pinwheel",
+        "A.9"
+      ]
+    ],
+    "sec:one-ljx": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:pinwheel",
+        "A.9"
+      ],
+      [
+        "sec:one-ljx",
+        "A.10.3"
+      ]
+    ],
+    "sec:one-tjx": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:pinwheel",
+        "A.9"
+      ],
+      [
+        "sec:one-tjx",
+        "A.11.1"
+      ]
+    ],
+    "sec:pint": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:pint",
+        "A.12"
+      ]
+    ],
+    "lemma:0605": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:pint",
+        "A.12"
+      ]
+    ],
+    "sec:one-pintx": [
+      [
+        "sec:coords",
+        "A"
+      ],
+      [
+        "sec:pint",
+        "A.12"
+      ],
+      [
+        "sec:one-pintx",
+        "A.12.1"
+      ]
+    ],
+    "appendix:cc": [
+      [
+        "appendix:cc",
+        "B"
+      ]
+    ],
+    "sec:auto-diff": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:auto-diff",
+        "B.2"
+      ]
+    ],
+    "sec:mitm": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:mitm",
+        "B.3"
+      ]
+    ],
+    "eqn:assembly": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:mitm",
+        "B.3"
+      ]
+    ],
+    "sec:calc-prep": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ]
+    ],
+    "lemma:peripheral-o2c": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ]
+    ],
+    "sec:pseudo1": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:pseudo1",
+        "B.4.1"
+      ]
+    ],
+    "sec:pseudo2": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:pseudo2",
+        "B.4.2"
+      ]
+    ],
+    "eqn:pseudo2-constraint": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:pseudo2",
+        "B.4.2"
+      ]
+    ],
+    "sec:pseudo-area": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:pseudo-area",
+        "B.4.3"
+      ]
+    ],
+    "sec:pseudo-area3": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:pseudo-area3",
+        "B.4.4"
+      ]
+    ],
+    "sec:dimer-isosc": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:dimer-isosc",
+        "B.4.5"
+      ]
+    ],
+    "sec:large": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:large",
+        "B.4.6"
+      ]
+    ],
+    "sec:pent3": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:pent3",
+        "B.4.7"
+      ]
+    ],
+    "sec:pent4": [
+      [
+        "appendix:cc",
+        "B"
+      ],
+      [
+        "sec:calc-prep",
+        "B.4"
+      ],
+      [
+        "sec:pent4",
+        "B.4.8"
+      ]
+    ]
+  }
+}

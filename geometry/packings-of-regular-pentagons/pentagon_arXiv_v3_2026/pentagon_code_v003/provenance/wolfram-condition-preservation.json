@@ -1,0 +1,7 @@
+{
+  "record_calls": 89,
+  "expanded_check_ids": 161,
+  "mathematical_conditions_byte_identical_to_v002": true,
+  "condition_list_sha256": "40c13ed349fcd397e964844ac6342b0dcd1aec75884aedf997e652b093b13d68",
+  "scope": "Only the 89 mathematical record-call templates. Reporting, metadata, source identification and export are changed separately."
+}

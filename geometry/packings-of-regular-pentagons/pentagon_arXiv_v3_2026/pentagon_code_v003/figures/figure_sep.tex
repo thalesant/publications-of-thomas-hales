@@ -1,0 +1,24 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{sep}{A line through the center 
+of the middle pentagon $B$
+through one of its vertices 
+separates the two extremal 
+pentagons $A$ and $C$.}{
+[scale=0.5]
+\pen{0}{0}{90};
+\pen{1.72}{0.56}{90};  %
+\pen{-1.72}{0.56}{90};  
+\draw (0,-1.5) -- (0,1.5) node[black,anchor=west] {$\v$};
+\begin{scope}[xshift=6cm]
+\pen{0}{0}{90};
+\pen{1.72}{0.56}{90};  
+\pen{-1.72}{-0.56}{90};  
+\draw (0,-1.5) -- (0,1.5) node[black,anchor=west] {$\v$};
+\end{scope}
+\begin{scope}[xshift=12cm]
+\pen{0}{0}{90};
+\pen{1.72}{-0.56}{90};  
+\pen{-1.72}{-0.56}{90};  
+\draw (0,-1.5) -- (0,1.5) node[black,anchor=west] {$\v$};
+\end{scope}
+}

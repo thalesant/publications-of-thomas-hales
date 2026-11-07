@@ -1,0 +1,726 @@
+{
+  "complete": false,
+  "generated_utc": "2026-11-07T18:36:30.709075+00:00",
+  "ocaml": {
+    "environment": {
+      "compiler": "version: 4.14.4\nstandard_library_default: /home/autonomy/.opam/pentagon-4.14.4/lib/ocaml\nstandard_library: /home/autonomy/.opam/pentagon-4.14.4/lib/ocaml\nccomp_type: cc\nc_compiler: gcc\nocamlc_cflags: -O2 -fno-strict-aliasing -fwrapv -pthread -fPIC \nocamlc_cppflags: -D_FILE_OFFSET_BITS=64 \nocamlopt_cflags: -O2 -fno-strict-aliasing -fwrapv -pthread -fPIC \nocamlopt_cppflags: -D_FILE_OFFSET_BITS=64 \nbytecomp_c_compiler: gcc -O2 -fno-strict-aliasing -fwrapv -pthread -fPIC  -D_FILE_OFFSET_BITS=64 \nnative_c_compiler: gcc -O2 -fno-strict-aliasing -fwrapv -pthread -fPIC  -D_FILE_OFFSET_BITS=64 \nbytecomp_c_libraries: -lm  -lpthread\nnative_c_libraries: -lm \nnative_pack_linker: ld -r -o \narchitecture: amd64\nmodel: default\nint_size: 63\nword_size: 64\nsystem: linux\nasm: as\nasm_cfi_supported: true\nwith_frame_pointers: false\next_exe: \next_obj: .o\next_asm: .s\next_lib: .a\next_dll: .so\nos_type: Unix\ndefault_executable_name: a.out\nsysthread_supported: true\nhost: x86_64-pc-linux-gnu\ntarget: x86_64-pc-linux-gnu\nflambda: false\nsafe_string: true\ndefault_safe_string: true\nflat_float_array: true\nfunction_sections: true\nafl_instrument: false\nwindows_unicode: false\nsupports_shared_libraries: true\nnaked_pointers: true\nexec_magic_number: Caml1999X031\ncmi_magic_number: Caml1999I031\ncmo_magic_number: Caml1999O031\ncma_magic_number: Caml1999A031\ncmx_magic_number: Caml1999Y031\ncmxa_magic_number: Caml1999Z031\nast_impl_magic_number: Caml1999M031\nast_intf_magic_number: Caml1999N031\ncmxs_magic_number: Caml1999D031\ncmt_magic_number: Caml1999T031\nlinear_magic_number: Caml1999L031",
+      "floating_environment": {
+        "LD_LIBRARY_PATH": null,
+        "LD_PRELOAD": null,
+        "OCAMLPARAM": null,
+        "OCAMLPATH": null,
+        "OCAMLRUNPARAM": null,
+        "OCAML_TOPLEVEL_PATH": "/home/autonomy/.opam/pentagon-4.14.4/lib/toplevel"
+      },
+      "installed_fingerprint": "e27409de41a9a4e3d10e9c52924648de3ba0791f0cbd1a85cc84a8e3162287cb",
+      "machine": "x86_64",
+      "packages": "# Packages matching: installed\n# Name                # Version\nbase-bigarray         base\nbase-bytes            base\nbase-threads          base\nbase-unix             base\ncrlibm                0.5.1\ncsexp                 1.5.2\ndune                  3.24.2\ndune-configurator     3.24.2\ninterval              dev\ninterval_base         dev\ninterval_crlibm       dev\ninterval_intel        dev\nocaml                 4.14.4\nocaml-base-compiler   4.14.4\nocaml-config          2\nocaml-options-vanilla 1\nocamlfind             1.9.8",
+      "pins": "interval.dev           rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master\ninterval_base.dev      rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master\ninterval_crlibm.dev    rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master\ninterval_intel.dev     rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "prefix": "/home/autonomy/.opam/pentagon-4.14.4"
+    },
+    "jobs": {
+      "autodiff_path_0_0": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_0_0.log",
+        "log_sha256": "1c70d1108b7b374c0e59a34d004ddeb2baa71cbb22847fd3cdb46b4098b2cb64",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.598
+      },
+      "autodiff_path_0_1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_0_1.log",
+        "log_sha256": "3ed99acbd3b444dcde7692fa7829ee9e184e01ad6c941bee96ed427312b28dfc",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.584
+      },
+      "autodiff_path_0_2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_0_2.log",
+        "log_sha256": "a13215b2283cefb78e708895cdcbd2c456346dd73ea7249502e24df3eba375a7",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.564
+      },
+      "autodiff_path_0_3": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_0_3.log",
+        "log_sha256": "c69ac485e3ee9b67788312cab8abef09adf13525a91a9f645a20cf561b5ee5b2",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.585
+      },
+      "autodiff_path_0_4": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_0_4.log",
+        "log_sha256": "e2f8cb88dbe9dcf198b2d176e1f93f7a35e03bbaef4885af4a394c9347b9ef38",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.579
+      },
+      "autodiff_path_1_0": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_1_0.log",
+        "log_sha256": "2b1d8275ce89c7352364b88401e537024e492fdf4988205a7006b305862ceb4f",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.592
+      },
+      "autodiff_path_1_1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_1_1.log",
+        "log_sha256": "4c52ae2c375662506a2df98418b7b7a2897dbc3f86564d164e106d5595bfc109",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.59
+      },
+      "autodiff_path_1_2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_1_2.log",
+        "log_sha256": "a436fb20f3cbc26fff2e63a229c763f8d287809249c66172b693f0b93b1ace6c",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.594
+      },
+      "autodiff_path_1_3": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_1_3.log",
+        "log_sha256": "a18c07b0c46af5e88c222da7c853e5e834bd9809d2917ce743df7359cf750697",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.592
+      },
+      "autodiff_path_1_4": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_1_4.log",
+        "log_sha256": "865809f3df091ca2e16c74ff93800ca1c93e3024cfa68ced4a5620b5fe89e428",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.594
+      },
+      "autodiff_path_2_0": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_2_0.log",
+        "log_sha256": "bed6ac9c38dc137d56b3eeccd927cea562116618452e2b92ad8237801dfa37d8",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.592
+      },
+      "autodiff_path_2_1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_2_1.log",
+        "log_sha256": "39feb5c8f5bb956250a9efd65f27b7374bb3d984b059af0e2b4c54d3934ec80b",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.587
+      },
+      "autodiff_path_2_2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_2_2.log",
+        "log_sha256": "90fdeef91ef9ca5dd2fe0ccd72d310ef65a8136c1905cc7668898d4a9225fe8d",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.586
+      },
+      "autodiff_path_2_3": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_2_3.log",
+        "log_sha256": "dbf55c24f8e2d4b3db08c4e65194c189e200d0cdeaf6a2c8b0e3e38d6c457328",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.586
+      },
+      "autodiff_path_2_4": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_2_4.log",
+        "log_sha256": "09a512612efa4dd0b9a19af2480a9f3e249d46cc7a3e78e62357ec579e0ec325",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.587
+      },
+      "autodiff_path_3_0": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_3_0.log",
+        "log_sha256": "7a7c7cd06de4b666308fc21820c27f4de69956320206f02287eb1c226f65e697",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.584
+      },
+      "autodiff_path_3_1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_3_1.log",
+        "log_sha256": "c520fe8e9589daef84f934a0db31d87ebd34046ae58b704583f642b7c3a033b0",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.582
+      },
+      "autodiff_path_3_2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_3_2.log",
+        "log_sha256": "78bbae743d120a15994ad159091e78044d6429786971bd0935f03f9faecc150c",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.581
+      },
+      "autodiff_path_3_3": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_3_3.log",
+        "log_sha256": "53a93813552f8e526d465998f61936a7636042c42078e0de6df8fb084e4ef95f",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.582
+      },
+      "autodiff_path_3_4": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_3_4.log",
+        "log_sha256": "4391caf1bbb9ac5e320cd91d489c1731fddf9a213a2bfed6cc241c3adc17d101",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.587
+      },
+      "autodiff_path_4_0": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_4_0.log",
+        "log_sha256": "eaa9cde0cc4a0955a9a8fc11fe49d318a1731ec29a7dc7c4ff2e599dd217d2db",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.585
+      },
+      "autodiff_path_4_1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_4_1.log",
+        "log_sha256": "9dbb1690189fc4cfc0fa973340999061f01e11a9653809696048e6ac8a37b8c1",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.585
+      },
+      "autodiff_path_4_2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_4_2.log",
+        "log_sha256": "f8859c027951aa062fff2e2270dc97d6de2f423a2c12daeb3e137a0357111896",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.577
+      },
+      "autodiff_path_4_3": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_4_3.log",
+        "log_sha256": "eac95e3a2fe15000ff18a4909bd4c645c1384e1e73524aebccdd60e1a858a2ab",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.575
+      },
+      "autodiff_path_4_4": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_path_4_4.log",
+        "log_sha256": "8559ab344cb9318933b6ae9c443e614cef07eb7116eec4bbdcc238980c7e3c1f",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.575
+      },
+      "autodiff_twist_lj1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_twist_lj1.log",
+        "log_sha256": "967fea7a3df6ecbe2baefbe7c13fde8c8c301acc172221cb8c9f29e54087f170",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.587
+      },
+      "autodiff_twist_lj2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/autodiff_twist_lj2.log",
+        "log_sha256": "013f7f836d8c48214856783d875e1484a37c2609cc944c08310f84657e9da9b7",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.578
+      },
+      "dimer_group1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/dimer_group1.log",
+        "log_sha256": "74d65138782a8bb706aa33fca00fa3b8fb0e42912a2cd4936e36520d5dc388e7",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 2.364
+      },
+      "dimer_group2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/dimer_group2.log",
+        "log_sha256": "36f365c38996a899a2708d8edf2887cdd7e820dfb30bf2c15d83ec6003afd97f",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 76.346
+      },
+      "dimer_group3": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/dimer_group3.log",
+        "log_sha256": "f7663e036f091c9f14e72efd2d2de0d7c97e7ff4744f10af0a5cd13a8effbbba",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 93.557
+      },
+      "dimer_group4": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/dimer_group4.log",
+        "log_sha256": "1c58e8ad76dbc5dda38cb886fd16797fe6bb5f7b3d41f18116fe8f611966dc4b",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 85.858
+      },
+      "extended": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/extended.log",
+        "log_sha256": "746c7dc959612b9489f9c16278355105656d9e91e49eade36815b381aee96343",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.576
+      },
+      "lj1237": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/lj1237.log",
+        "log_sha256": "b3485c7a071811ca17756b05101ced3dade17810154adfca411d375ecc1a0f3f",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.847
+      },
+      "lj17215": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/lj17215.log",
+        "log_sha256": "85d66b9cfde44340078272d8f92d8d3401aa3d6ef8339df1fa2ee2b9fb15e514",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.575
+      },
+      "mitm_calc_pent2_postcluster_case0": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent2_postcluster_case0.log",
+        "log_sha256": "29edcc67d5acb110568b289359472afd6ea1fbbade72856b07435243bea7e2e2",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 701.498
+      },
+      "mitm_calc_pent2_postcluster_case1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent2_postcluster_case1.log",
+        "log_sha256": "0400a531398eed1af8f35ec69135af8dccf4bd5c796951fc74269286c13ead96",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 93.731
+      },
+      "mitm_calc_pent2_postcluster_case2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent2_postcluster_case2.log",
+        "log_sha256": "67dfadc61a93ce868542ea350048401b72fedf70a8b7080c6d3da88ba00f9d3f",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 124.421
+      },
+      "mitm_calc_pent2_postcluster_case3": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent2_postcluster_case3.log",
+        "log_sha256": "a695ed4ca9d8642ae2fda4fdbfff7d1f49ae312e3ee9cb15cc795fd78b7e1d5e",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 62.641
+      },
+      "mitm_calc_pent2_postcluster_case4": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent2_postcluster_case4.log",
+        "log_sha256": "a1511b213e87ef7e107b851fe2f2f33e92d1c04f4a1f2a2dad3b2a05e4be1a00",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 140.442
+      },
+      "mitm_calc_pent3AB_postcluster": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent3AB_postcluster.log",
+        "log_sha256": "33edb58b994217065c038a4ea12aed0a36a7b35828f53f0452b4f06ecabd5b44",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 6032.058
+      },
+      "mitm_calc_pent3AC_postcluster": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent3AC_postcluster.log",
+        "log_sha256": "809d4c70877e4099f9c485e59a1ce6f0c506b9c031fad17a95bf5bc30be9d088",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1456.349
+      },
+      "mitm_calc_pent3BC_postcluster": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent3BC_postcluster.log",
+        "log_sha256": "ac4194d78f923e6dcd71132134340cd519d103a6f34678057f7e8403cae2e5c8",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 2344.138
+      },
+      "mitm_calc_pent3_6D_postcluster": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent3_6D_postcluster.log",
+        "log_sha256": "a2fe4d8c018826c792c5b30a91efce38776463287f150ea5943d2b7ae6ba3dc6",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 22657.545
+      },
+      "mitm_calc_pent4_6D_postcluster": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_calc_pent4_6D_postcluster.log",
+        "log_sha256": "8918340b933918fd076e541a83ec344be90c0a6d158a076caf0a5b0df12fe2b8",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 4533.367
+      },
+      "mitm_dimer_isosceles_precluster": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_dimer_isosceles_precluster.log",
+        "log_sha256": "95dd3c5ff82ade8eca9e224e0b65027fd1f06f8bafa3e193e0adea40ba7ec053",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1219.744
+      },
+      "mitm_precluster1_case0": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster1_case0.log",
+        "log_sha256": "f611cb97fe0138bcaa1a6b4226cef649cffafb6bc0dee7cdfa9e62135d0cff39",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1302.026
+      },
+      "mitm_precluster1_case1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster1_case1.log",
+        "log_sha256": "921378ae3170ddb02e2c2f727110447d6ba322706746352a9ec7a96ead26b97c",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 39.087
+      },
+      "mitm_precluster1_case2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster1_case2.log",
+        "log_sha256": "00842fdd1936308c0d02482b9fe6b90f8c293b12bfeabaf0326c1d0762b14aec",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 192.086
+      },
+      "mitm_precluster2_case0": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster2_case0.log",
+        "log_sha256": "3639c54caea119a8cfbd46559301a647b3450296f4752e61d43bcadc374af4f1",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 2283.429
+      },
+      "mitm_precluster2_case1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster2_case1.log",
+        "log_sha256": "a14adde64a699ce230544ce310fb680ee5ccd7b8512a9443b1a6be10a1688ae0",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 324.511
+      },
+      "mitm_precluster2_case2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster2_case2.log",
+        "log_sha256": "609b59404174630c8797645fddd7fc49ed8d21f04bb3008dc0743b4e67dd1916",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 451.513
+      },
+      "mitm_precluster4_case0_experimental": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster4_case0_experimental.log",
+        "log_sha256": "0f57270c2db521f2808888ed679dd3ba4aaaa9896efeb2723f785903a4e10d67",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 3627.544
+      },
+      "mitm_precluster4_case1_experimental": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster4_case1_experimental.log",
+        "log_sha256": "dd052f06c5b36743b2513699de084750ed029e3afbbdef353bacc8142aa23664",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 6373.732
+      },
+      "mitm_precluster6_case1": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster6_case1.log",
+        "log_sha256": "aa9650d7c94eb9e7d080805d893e17d7317a5dbf4c623de204d930c8c166fc29",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1106.227
+      },
+      "mitm_precluster6_case2": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster6_case2.log",
+        "log_sha256": "2f405e33fc2c545546fda00056d1339ce0b1f22379573116b6da0ef03846b384",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 3047.316
+      },
+      "mitm_precluster6_case3": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster6_case3.log",
+        "log_sha256": "ca36c0af94dd0b7df74fb901a9991d047a3b8816d84d5231efd42a953dcf0430",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1404.35
+      },
+      "mitm_precluster6_case4": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster6_case4.log",
+        "log_sha256": "7c69583b83bd7e660c4bf9807041cd877f435c2a19348c7eb62f9896a5561f74",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1132.613
+      },
+      "mitm_precluster6_case5": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster6_case5.log",
+        "log_sha256": "1d9bc7f8634598c599592379a97f9cecc7e16216bc89e372583e1619a7e3c438",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 2522.215
+      },
+      "mitm_precluster6_case6": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/mitm_precluster6_case6.log",
+        "log_sha256": "69a1ea0af67a333836e79bf5a8f3756881ec153161056894869fa11bd484a9c1",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1417.096
+      },
+      "onedeltajmin": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/onedeltajmin.log",
+        "log_sha256": "650319da89cc21cdb05cbbf41409244de93f3a5bddf413493f4da191a2ba9638",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.576
+      },
+      "pint1237": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/pint1237.log",
+        "log_sha256": "e664765e69703ef141191bc5f6f3f91f0b75024123bbc5419a1804d579c72ff1",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.573
+      },
+      "pint17215": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/pint17215.log",
+        "log_sha256": "f40453cb9e4b04b66a081f4ca0dfbddc10a5a7cec469f892a0399d1ce6f04d5d",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.579
+      },
+      "pinwheel1237": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/pinwheel1237.log",
+        "log_sha256": "b1da4ac070eed141c5f50906f6247f52d5a8fffae7328951c3c8f0d4d953a332",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.578
+      },
+      "pinwheel17215": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/pinwheel17215.log",
+        "log_sha256": "749805e599294e39cba9aa47c40c43f521a6774d1029e505f51a65236cf78a2b",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.574
+      },
+      "squeeze": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/squeeze.log",
+        "log_sha256": "eba0c85e20a59ee21000d4f36798a89fcfac0d1b029edd5c6e7af77d368a9b73",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 3.141
+      },
+      "squeeze_sign_AB_BC": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/squeeze_sign_AB_BC.log",
+        "log_sha256": "9c49668adb68aa42a700db071d6f057417db4d6b43845d4da1991eb08594fd8d",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 2.093
+      },
+      "squeeze_sign_AB_CB": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/squeeze_sign_AB_CB.log",
+        "log_sha256": "bf6748eff06f23a3ddef16738b8064351231891fade59ce60a44c0a058ac8cb8",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.574
+      },
+      "squeeze_sign_BA_BC": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/squeeze_sign_BA_BC.log",
+        "log_sha256": "e17542c48272af236e4bde43c37b93fcf2701d970ee99443de792a4074e83db2",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 3.418
+      },
+      "squeeze_sign_BA_CB": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/squeeze_sign_BA_CB.log",
+        "log_sha256": "0b9c333937955918346fd35fc9a0852f5ee771fdfdeaa496e22074b9cadd641e",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.845
+      },
+      "squeeze_sign_tests": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/squeeze_sign_tests.log",
+        "log_sha256": "f7d07d210c80a5f37fbf98d8664f1dfa0917f0967f575aca1fdb9ca3e141331c",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.574
+      },
+      "tj1237": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/tj1237.log",
+        "log_sha256": "e04e928a5c6fbee159c5a257ab14bf52d018286452835a489982af7391c5c47b",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.575
+      },
+      "tj17215": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/tj17215.log",
+        "log_sha256": "0a2cd7c0f841a790ceff4eb061c006e874ea89fb8926a8cc972fd3da4902486f",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.574
+      },
+      "unit": {
+        "execution_fingerprint": "902bffbd8c35a85e3cb28d0b66c7eba6438aa383114424ef6b6a2150bf6b0545",
+        "log": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2/unit.log",
+        "log_sha256": "71ff6be8ce42d2d399271529ed23ada7f1fb2eda44951bc2438b10f949b3dea4",
+        "process_exit": 0,
+        "report_folder": "/home/autonomy/pentagon/pentagon_release_v003/pentagon_code_v003/runs/20261107T105743Z-0985f2",
+        "status": "PASS",
+        "wall_seconds": 1.571
+      }
+    },
+    "passed": 73,
+    "required": 73,
+    "status": "COMPLETE"
+  },
+  "release": "pentagon_code_v003",
+  "schema": 1,
+  "source_inventory_sha256": "10d45c6e88dfbdad62abe46ead67d94392ec2a6ee1bef473364160653051a75f",
+  "source_sha256": {
+    "RELEASE.json": "890c4ad4001e8f5619de0e03a6add3d08d632c79c90532152946959440e6c5f7",
+    "confirm.py": "45323ec0e6351035454840e8ed297b8443bc473a5e3362c53107a3fc333dc235",
+    "mathematica/PentagonChecks.wl": "3f44b20eda0776cad3407908658c64f788ea7d377608fbd19dfd21ff11296fc7",
+    "mathematica/checks_catalog.json": "36a62de872b1da94c194f74a39aa7728bcdd357d028208e2e7273af1e3b6f7d1",
+    "mathematica/expected_checks.json": "d6aee5608027a6b400ee1703f06d72c13a0518f2b8dad66e6450fe1ccc0e352f",
+    "mathematica/run_checks.wls": "2becb1dbf3904e0a074eb4407441fb533d253ec33caed727d7b352c01b3effd1",
+    "ocaml/autodiff.ml": "40dd625dad09f8994159b27b5252627846cdcc9c3299fda634af731f43b34722",
+    "ocaml/banana.ml": "9e5369928269d4ce50134c6e41bf9d4a8532030e515353184529d5436fd8bdc2",
+    "ocaml/dimer.ml": "05d2efebb090ac2d43c9ba15191fad0e27d2198dc4c2d024389a42ec33b45cc6",
+    "ocaml/interval_compat.ml": "99d848a1693fe352e8e7973dc01199ae142aac4eba387045bacab7a74d7b092a",
+    "ocaml/jobs.ml": "17528bef1c99b3c12705385f363faad90a33114820be53777e60fb3c90e5fe4e",
+    "ocaml/lib.ml": "b4c88497a02b029c8ffd5f30a0d803b548989416c3f62c99309f690f8a53da89",
+    "ocaml/loader.ml": "bd0a9735c07460655ce814e90e9be18b31db414aa40d0567d1ef3cde73f99c63",
+    "ocaml/meet-in-middle.ml": "8c5f2d67f721d6b8471435b8c04e679a93752912711b62122a6476da6a8b220c",
+    "ocaml/mitm-calcs.ml": "fa9f537f557e59b58e71917d7dbb1320f8827b75d40ec47384596ebbebe2feaa",
+    "ocaml/pent.ml": "d769bba797802d8b174873b7ef1f1f0394bd48da1433266f697c2b898f0c11f4",
+    "ocaml/pet.ml": "17e200cd00c5bf97dd0ea283095049227710812553c5c522a8e7b349c4f470e7",
+    "ocaml/squeeze_sign.ml": "26318891208e7071914a1cd17b30399481b8c534955662aa0afe452f5a55cea8",
+    "paper/label-map.json": "ce42e987a3729f425657025363332ec052f2e8fdae4b282fa9add409bf9522a7",
+    "paper/pentagon_v005.tex": "a85881102339a30d941cfe25b0da8998004b49e810e9b530b52e7f3404001815",
+    "registry.json": "383f55c9a3db2babf09fbd59f9180b33779cf8f37c3fee9b3cf1a33f75029a51",
+    "run.py": "7f681586841c3cfd5b64ba81a2c30bc2a9ccfe7ffbff39233530f72c6771ee1e",
+    "scripts/build_docs.py": "6ac5e798522255c0ce47f136f9c2e64fc6c7fdb76919bdf308d44b791a51677d",
+    "scripts/build_index.py": "7aa617c3d90de2c56b2a8a47efc9aa525377825541993ce37c71f3ec12cd857c",
+    "scripts/driver.py": "a3dbd13e0138e7800be879137c7d99d7fd92360f589a5e5537a6fbe6936c51f9",
+    "scripts/extract_figures.py": "3195bddd3fb8d482b8cff4538bdbfbfea5efcf254d10c7d5a4305a1b7435cad2",
+    "scripts/report_paths.py": "6e26c10f9096c7b5d67515445257d1e0297beb5fa383b032f6f647976db7ea18",
+    "scripts/verification.py": "47d5c17fee03e8d60427f5f07e587cd66250b98fb3ab37ea7dd8b594cc7ef608",
+    "scripts/verify_exact_identities.py": "e28a6eda0f7b7d4a1ee369f97d8222b26fba13aec3babdf996a1ee7f3be4e0de",
+    "scripts/worker.ml": "e575127890f7369d55bf8a2fed21801978ebc641d6823d8ba4f63158d0de5f7f",
+    "tests/ocaml/squeeze_tests.ml": "222c09dc1455f05335b682768601838494507c5dd027dafa75313c4a53458657",
+    "tests/ocaml/tests.ml": "c02b71f69d7fd54967b67c1fcb4c54a6785bd146e096cd4a0315acf45100a8f5"
+  },
+  "validation_notes": [],
+  "wolfram": {
+    "status": "NO_MATCHING_RECORD"
+  }
+}

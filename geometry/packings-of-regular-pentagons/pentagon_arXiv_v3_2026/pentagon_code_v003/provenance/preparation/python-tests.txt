@@ -1,0 +1,164 @@
+test_absent_logs_not_complete (test_confirmation.Confirmation.test_absent_logs_not_complete) ... ok
+test_bundle_never_overwrites (test_confirmation.Confirmation.test_bundle_never_overwrites) ... ok
+test_cached_requires_intact_log (test_confirmation.Confirmation.test_cached_requires_intact_log) ... ok
+test_changed_source_invalidates_old (test_confirmation.Confirmation.test_changed_source_invalidates_old) ... ok
+test_changed_wolfram_source_rejected (test_confirmation.Confirmation.test_changed_wolfram_source_rejected) ... ok
+test_complete_both (test_confirmation.Confirmation.test_complete_both) ... ok
+test_copied_records_are_valid_without_saved_absolute_log_paths (test_confirmation.Confirmation.test_copied_records_are_valid_without_saved_absolute_log_paths) ... ok
+test_duplicate_results (test_confirmation.Confirmation.test_duplicate_results) ... ok
+test_duplicate_wolfram_rejected (test_confirmation.Confirmation.test_duplicate_wolfram_rejected) ... ok
+test_error_after_marker (test_confirmation.Confirmation.test_error_after_marker) ... ok
+test_exit_nonzero_not_pass (test_confirmation.Confirmation.test_exit_nonzero_not_pass) ... ok
+test_false_wolfram_rejected (test_confirmation.Confirmation.test_false_wolfram_rejected) ... ok
+test_import_wolfram_elsewhere (test_confirmation.Confirmation.test_import_wolfram_elsewhere) ... ok
+test_incomplete_bundle_refused (test_confirmation.Confirmation.test_incomplete_bundle_refused) ... ok
+test_missing_marker (test_confirmation.Confirmation.test_missing_marker) ... ok
+test_missing_required_job (test_confirmation.Confirmation.test_missing_required_job) ... ok
+test_new_failure_supersedes_old (test_confirmation.Confirmation.test_new_failure_supersedes_old) ... ok
+test_ocaml_alone_not_combined (test_confirmation.Confirmation.test_ocaml_alone_not_combined) ... ok
+test_partial_wolfram_rejected (test_confirmation.Confirmation.test_partial_wolfram_rejected) ... ok
+test_same_environment_disjoint_runs_combine (test_confirmation.Confirmation.test_same_environment_disjoint_runs_combine) ... ok
+test_tampered_log (test_confirmation.Confirmation.test_tampered_log) ... ok
+test_two_environments_not_merged (test_confirmation.Confirmation.test_two_environments_not_merged) ... ok
+test_unknown_job_does_not_count (test_confirmation.Confirmation.test_unknown_job_does_not_count) ... ok
+test_verified_bundle_revalidates_after_move (test_confirmation.Confirmation.test_verified_bundle_revalidates_after_move) ... ok
+test_wrong_fingerprint (test_confirmation.Confirmation.test_wrong_fingerprint) ... ok
+test_wrong_wolfram_section_rejected (test_confirmation.Confirmation.test_wrong_wolfram_section_rejected) ... ok
+test_wrong_wolfram_summary_rejected (test_confirmation.Confirmation.test_wrong_wolfram_summary_rejected) ... ok
+test_bare_number_disambiguated (test_documentation.Documentation.test_bare_number_disambiguated) ... ok
+test_catalog_expected_match (test_documentation.Documentation.test_catalog_expected_match) ... ok
+test_catalog_source_line (test_documentation.Documentation.test_catalog_source_line) ... ok
+test_every_job_dispatched (test_documentation.Documentation.test_every_job_dispatched) ... ok
+test_explicit_path (test_documentation.Documentation.test_explicit_path) ... ok
+test_export_api_matches_instructions (test_documentation.Documentation.test_export_api_matches_instructions) ... ok
+test_mathematical_roles_present (test_documentation.Documentation.test_mathematical_roles_present) ... ok
+test_source_does_not_contain_personal_paths (test_documentation.Documentation.test_source_does_not_contain_personal_paths) ... ok
+test_source_load_operator_environment (test_documentation.Documentation.test_source_load_operator_environment) ... ok
+test_windows_bad_multiline_rejected (test_documentation.Documentation.test_windows_bad_multiline_rejected) ... ok
+test_windows_copy_is_optional (test_documentation.Documentation.test_windows_copy_is_optional) ... ok
+test_windows_discovery_missing_interop (test_documentation.Documentation.test_windows_discovery_missing_interop) ... ok
+test_windows_known_folder_spaces (test_documentation.Documentation.test_windows_known_folder_spaces) ... ok
+test_admit_empty (test_driver.ResourceAndCache.test_admit_empty) ... ok
+test_cache_changed_environment (test_driver.ResourceAndCache.test_cache_changed_environment) ... ok
+test_cache_intact (test_driver.ResourceAndCache.test_cache_intact) ... ok
+test_cache_tampered_log (test_driver.ResourceAndCache.test_cache_tampered_log) ... ok
+test_cache_timeout_never_pass (test_driver.ResourceAndCache.test_cache_timeout_never_pass) ... ok
+test_drain_then_cancel (test_driver.ResourceAndCache.test_drain_then_cancel) ... ok
+test_exact_admission_boundary (test_driver.ResourceAndCache.test_exact_admission_boundary) ... ok
+test_later_error_overrides_marker (test_driver.ResourceAndCache.test_later_error_overrides_marker) ... ok
+test_missing_marker (test_driver.ResourceAndCache.test_missing_marker) ... ok
+test_reserve_future_growth (test_driver.ResourceAndCache.test_reserve_future_growth) ... ok
+test_rss_not_double_counted (test_driver.ResourceAndCache.test_rss_not_double_counted) ... ok
+test_sigterm_cancels (test_driver.ResourceAndCache.test_sigterm_cancels) ... ok
+test_stack_marker_required (test_driver.ResourceAndCache.test_stack_marker_required) ... ok
+test_test_failure_overrides (test_driver.ResourceAndCache.test_test_failure_overrides) ... ok
+test_wrong_job_marker (test_driver.ResourceAndCache.test_wrong_job_marker) ... ok
+test_all_contains_all_25_mitm (test_driver.Selection.test_all_contains_all_25_mitm) ... ok
+test_all_diagnostics_count (test_driver.Selection.test_all_diagnostics_count) ... ok
+test_all_excludes_diagnostics (test_driver.Selection.test_all_excludes_diagnostics) ... ok
+test_all_required_count (test_driver.Selection.test_all_required_count) ... ok
+test_changed_domains_and_contracts_plus_tests (test_driver.Selection.test_changed_domains_and_contracts_plus_tests) ... ok
+test_claim_selects_both_branches (test_driver.Selection.test_claim_selects_both_branches) ... ok
+test_default_is_unit (test_driver.Selection.test_default_is_unit) ... ok
+test_duplicate_registry_fails (test_driver.Selection.test_duplicate_registry_fails) ... ok
+test_no_duplicate_union (test_driver.Selection.test_no_duplicate_union) ... ok
+test_proofs_require_unit (test_driver.Selection.test_proofs_require_unit) ... ok
+test_squeeze_number_not_gamma_section (test_driver.Selection.test_squeeze_number_not_gamma_section) ... ok
+test_squeeze_section_and_source_code (test_driver.Selection.test_squeeze_section_and_source_code) ... ok
+test_unknown_claim_fails (test_driver.Selection.test_unknown_claim_fails) ... ok
+test_unknown_job_fails (test_driver.Selection.test_unknown_job_fails) ... ok
+test_c013_actual_initializer (test_driver.SourceBindings.test_c013_actual_initializer) ... ok
+test_c014_both_use_actual_helper (test_driver.SourceBindings.test_c014_both_use_actual_helper) ... ok
+test_c015_independent_candidates (test_driver.SourceBindings.test_c015_independent_candidates) ... ok
+test_no_catch_all_empty_intersection (test_driver.SourceBindings.test_no_catch_all_empty_intersection) ... ok
+test_no_loadtime_proof_search_ad (test_driver.SourceBindings.test_no_loadtime_proof_search_ad) ... ok
+test_no_obsolete_arithmetic (test_driver.SourceBindings.test_no_obsolete_arithmetic) ... ok
+test_previous_shadowed_test_retained (test_driver.SourceBindings.test_previous_shadowed_test_retained) ... ok
+test_public_source_no_handwritten_dependency (test_driver.SourceBindings.test_public_source_no_handwritten_dependency) ... ok
+test_nonzero_even_with_marker (test_driver.SubprocessTests.test_nonzero_even_with_marker) ... ok
+test_pass_process (test_driver.SubprocessTests.test_pass_process) ... ok
+test_timeout_even_with_marker (test_driver.SubprocessTests.test_timeout_even_with_marker) ... ok
+test_failure_blocks_proofs (test_integration.Integration.test_failure_blocks_proofs) ... Pentagon code v003: 3 selected jobs; at most 2 workers.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpk5e4b5i3/runs/20261106T221151Z-5deec5
+RUN          unit (1/2 workers)
+FAILED       unit (0.8s)
+OCaml confirmation: 0/2 required jobs.
+One report ZIP: /tmp/tmpk5e4b5i3/runs/pentagon_code_v003_report_20261106T221151Z-5deec5.zip
+ok
+test_protected_output_directory (test_integration.Integration.test_protected_output_directory) ... usage: python3 -m unittest [-h] [--job JOB] [--claim CLAIM]
+                           [--section SECTION] [--all] [--changed] [--tests]
+                           [--extended] [--diagnostics] [--list]
+                           [--switch SWITCH] [--jobs JOBS]
+                           [--memory-gib MEMORY_GIB]
+                           [--reserve-gib RESERVE_GIB] [--timeout TIMEOUT]
+                           [--rerun] [--work WORK] [--copy-report COPY_REPORT]
+python3 -m unittest: error: The output directory must be outside source/document directories; use the default runs directory.
+ok
+test_rerun_ignores_cache (test_integration.Integration.test_rerun_ignores_cache) ... Pentagon code v003: 3 selected jobs; at most 2 workers.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmphsoth09z/runs/20261106T221152Z-ead325
+RUN          unit (1/2 workers)
+PASS         unit (0.8s)
+RUN          a (1/2 workers)
+RUN          b (2/2 workers)
+PASS         a (0.8s)
+PASS         b (1.0s)
+OCaml confirmation: 2/2 required jobs.
+One report ZIP: /tmp/tmphsoth09z/runs/pentagon_code_v003_report_20261106T221152Z-ead325.zip
+Pentagon code v003: 3 selected jobs; at most 2 workers.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmphsoth09z/runs/20261106T221154Z-9a7630
+RUN          unit (1/2 workers)
+PASS         unit (1.0s)
+RUN          a (1/2 workers)
+RUN          b (2/2 workers)
+PASS         a (0.8s)
+PASS         b (1.0s)
+OCaml confirmation: 2/2 required jobs.
+One report ZIP: /tmp/tmphsoth09z/runs/pentagon_code_v003_report_20261106T221154Z-9a7630.zip
+ok
+test_small_memory_refuses_without_launch (test_integration.Integration.test_small_memory_refuses_without_launch) ... Pentagon code v003: 1 selected jobs; at most 4 workers.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpybv02enx/runs/20261106T221156Z-b6f5a5
+CONTROLLER ERROR: Memory budget exceeds visible RAM. Reduce --jobs/--reserve-gib or adjust WSL allocation; no job started.
+OCaml confirmation: 0/2 required jobs.
+One report ZIP: /tmp/tmpybv02enx/runs/pentagon_code_v003_report_20261106T221156Z-b6f5a5.zip
+ok
+test_success_cache_report_and_source_integrity (test_integration.Integration.test_success_cache_report_and_source_integrity) ... Pentagon code v003: 3 selected jobs; at most 2 workers.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmp1w6iyxnb/runs/20261106T221156Z-e2d231
+RUN          unit (1/2 workers)
+PASS         unit (0.8s)
+RUN          a (1/2 workers)
+RUN          b (2/2 workers)
+PASS         a (1.0s)
+PASS         b (1.0s)
+OCaml confirmation: 2/2 required jobs.
+One report ZIP: /tmp/tmp1w6iyxnb/runs/pentagon_code_v003_report_20261106T221156Z-e2d231.zip
+Pentagon code v003: 3 selected jobs; at most 2 workers.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmp1w6iyxnb/runs/20261106T221158Z-215b72
+CACHED_PASS  unit
+CACHED_PASS  a
+CACHED_PASS  b
+OCaml confirmation: 2/2 required jobs.
+One report ZIP: /tmp/tmp1w6iyxnb/runs/pentagon_code_v003_report_20261106T221158Z-215b72.zip
+ok
+test_c013_and_c014_production_calls (test_release_static.Release.test_c013_and_c014_production_calls) ... ok
+test_exact_source_anchor_ranges (test_release_static.Release.test_exact_source_anchor_ranges) ... ok
+test_label_number_comparison (test_release_static.Release.test_label_number_comparison) ... ok
+test_manuscript_has_no_active_review_markup (test_release_static.Release.test_manuscript_has_no_active_review_markup) ... ok
+test_mathematical_source_equivalence_record (test_release_static.Release.test_mathematical_source_equivalence_record) ... ok
+test_navigation_codes_are_unique (test_release_static.Release.test_navigation_codes_are_unique) ... ok
+test_no_source_changes_in_licenced_lib (test_release_static.Release.test_no_source_changes_in_licenced_lib) ... ok
+test_no_unsafe_graphics_interval (test_release_static.Release.test_no_unsafe_graphics_interval) ... ok
+test_required_set_and_no_static_release_pass (test_release_static.Release.test_required_set_and_no_static_release_pass) ... ok
+test_static_tests_not_claimed_as_ocaml_runs (test_release_static.Release.test_static_tests_not_claimed_as_ocaml_runs) ... ok
+test_wolfram_balanced_delimiters (test_release_static.Release.test_wolfram_balanced_delimiters) ... ok
+test_wolfram_paper_labels_exist (test_release_static.Release.test_wolfram_paper_labels_exist) ... ok
+
+----------------------------------------------------------------------
+Ran 97 tests in 7.938s
+
+OK

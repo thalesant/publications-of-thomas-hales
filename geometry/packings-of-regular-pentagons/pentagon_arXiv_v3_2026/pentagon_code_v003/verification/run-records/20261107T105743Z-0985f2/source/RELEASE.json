@@ -1,0 +1,10 @@
+{
+  "version": "pentagon_code_v003",
+  "manuscript": "paper/pentagon_v005.tex",
+  "date": "2026-11-06",
+  "compiler": "4.14.4",
+  "interval_backend": "Interval_crlibm.I",
+  "normal_command": "python3 run.py --all --diagnostics",
+  "verification_record": "verification/CONFIRMATION.md",
+  "scope": "Paper, mathematical programs, supplementary checks, and source-specific run records."
+}

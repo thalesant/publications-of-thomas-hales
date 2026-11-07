@@ -1,0 +1,20 @@
+% Exact TikZ call from pentagon_v005.tex; no geometric modification.
+\tikzfig{cord-delta}{Coordinates for $\Delta$-types}
+{
+[scale=1.0]
+\threepentnoD
+{0.00}{0.00}{-5.16}%
+{0.99}{1.70}{235.38}%
+{1.98}{0.00}{183.43}; %
+\draw (0,0) node {$C$};
+\draw (0.99,1.70) node {$B$};
+\draw (1.98,0.0) node {$A$};
+\draw (1.0,0.6) node {$\Delta$};
+\draw (-5.16:1) -- ++ (126 - 5.16 :2.5) node[anchor=south] {$\alpha$};
+\draw (-5.16:1) -- ++ (- 180 + 126 - 5.16 :1.5) node[anchor=west] {$\beta$};
+\draw ++ (1.98,0) ++ (183.43 - 72:1) 
+-- ++ (54 + 3.43:1) node[anchor=south] {$\gamma$};
+\draw (72-5.16:1) -- ++ (126 + 90 - 5.16:0.5);
+\draw (0.99,1.70) ++ (235.38:1) node[anchor = south west] {$x_\alpha$} 
+-- ++ (126+90 - 5.16:0.5);
+}
