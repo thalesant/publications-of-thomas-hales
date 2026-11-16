@@ -1,0 +1,21 @@
+% Exact TikZ call from the current manuscript; no geometric modification.
+  \tikzfig{172-slider}{The first frame shows pentagon $A$ and segments (on a dilated pentagon) inside
+    a circle of radius $1.72$ where centers $\c_B$ and $\c_C$ can be placed in
+    slider contact with pentagon $A$.  The second frame shows sliding pentagons $B$
+    centered at $\c_B\in e'_B$ and $C$ centered at $\c_C\in e''_C$.
+  }{
+\begin{scope}[scale=0.5,xshift=8cm]
+  \threepent{0}{0}{-90}{0.63}{-1.54}{90}{-1.27}{-1.07}{90};
+    \begin{scope}
+    \clip (0,0) circle[radius=1.72cm];
+  \end{scope}
+\end{scope}
+\begin{scope}[scale=0.5]
+  \pent{0}{0}{-90}{1};
+  \begin{scope}
+    \clip (0,0) circle[radius=1.72cm];
+    \pent{0}{0}{-90}{2};
+  \end{scope}
+  \draw[blue] (0,0) circle[radius=1.72cm];
+\end{scope}
+}

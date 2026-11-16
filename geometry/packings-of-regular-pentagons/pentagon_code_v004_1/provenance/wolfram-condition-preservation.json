@@ -1,0 +1,8 @@
+{
+  "source": "mathematica/PentagonChecks.wl",
+  "original_sha256": "3f44b20eda0776cad3407908658c64f788ea7d377608fbd19dfd21ff11296fc7",
+  "current_sha256": "bfc13db5ea94a7100e739cc8a8223c538f6cdeac5d3753b14ba9bc22bf733d77",
+  "check_conditions_unchanged": true,
+  "only_changes": "Current manuscript filename and computational release identifier in source/report metadata.",
+  "checks": 161
+}

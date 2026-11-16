@@ -1,0 +1,5 @@
+{
+  "local_links_checked": 305,
+  "broken": [],
+  "scope": "Relative Markdown and HTML links in root guides, docs/, and subdirectory READMEs. External URLs are not asserted checked by this test."
+}

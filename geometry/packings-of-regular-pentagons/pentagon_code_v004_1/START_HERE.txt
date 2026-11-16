@@ -1,0 +1,58 @@
+PENTAGON PACKING — START HERE
+Computational distribution: code v004, modular reporting revision 1
+Current manuscript: paper/pentagon_v007.pdf (source: paper/pentagon_v007.tex)
+
+ONE PROJECT, ONE RUNNER, ONE CONFIRMATION
+All additional estimates and the geometric MITM control are integrated. There is
+no supplements folder, separate launcher, nested manuscript-version folder, or
+requirement to run a program from Downloads.
+
+1. READ
+   README.md gives the complete starting procedure.
+   docs/index.html maps printed paper statements to their computations.
+   docs/code_commentary.pdf explains the geometry behind those computations.
+   docs/pentagon_changes_2016v2_to_v007.md is the compact revision table.
+
+2. ENTER PACKAGE_ROOT
+   Use Linux Bash (Ubuntu Bash under WSL on Windows), not PowerShell or an OCaml
+   prompt. Change to the actual extracted directory containing run.py,
+   registry.json, and ocaml/. That directory is PACKAGE_ROOT throughout the guides.
+   Install tools only if needed: docs/INSTALL.md. A working pentagon-4.14.4 switch
+   can be reused. Do not copy just run.py away from its package.
+
+3. RUN FROM PACKAGE_ROOT IN BASH
+   python3 scripts/check_release.py
+   python3 run.py --all --diagnostics
+
+   On WSL, use this second command instead for an automatic Windows report copy:
+   python3 run.py --all --diagnostics --copy-report windows-downloads
+
+   The four short tests gate the calculations. The longest known searches start
+   first. Automatic concurrency is up to 8, limited by CPU and RAM; 31 GiB RAM
+   normally permits 5 workers with the default 4 GiB/process and 8 GiB reserve.
+   Output is in runs/. Keep the machine awake. First Ctrl+C drains; second cancels.
+   Repeat the same command to resume completed source-matching jobs.
+
+4. WOLFRAM CHECKS
+   Follow mathematica/README.md: notebook file selection or wolframscript.
+   Export all 161 checks to verification/paper-checks.json. A report made on
+   another machine using ONLY the mathematica/ folder can be copied here.
+   No LaTeX or label map is required there. Known v003/v004 complete reports
+   are accepted unchanged through an explicit equivalence record.
+
+5. CONFIRM AND PACKAGE — AGAIN IN BASH AT PACKAGE_ROOT
+   python3 confirm.py --check
+   python3 confirm.py --bundle ../pentagon_verified.zip
+
+   The standard Wolfram report is imported automatically. The full confirmation
+   requires OCaml COMPLETE (77/77), Wolfram PASS, and manuscript association MATCH.
+   Association happens on the project computer, not in Mathematica. Four diagnostics are
+   optional, so --all --diagnostics runs 81 stages in total.
+   Confirmation never reruns mathematics. Use a previously unused ZIP filename.
+   Keep the resulting verified archive; it includes the contributing logs.
+
+No calculation result is supplied as a checkpoint in this fresh distribution.
+The generated verification record, not this fixed guide, reports actual completion.
+
+Modular component boundaries and compatibility: docs/MODULARITY.md.
+No mathematical formulas changed in this reporting revision.

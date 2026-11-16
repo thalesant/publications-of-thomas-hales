@@ -1,0 +1,105 @@
+[
+  {
+    "file": "ocaml/lib.ml",
+    "baseline_sha256": "b4c88497a02b029c8ffd5f30a0d803b548989416c3f62c99309f690f8a53da89",
+    "release_sha256": "b4c88497a02b029c8ffd5f30a0d803b548989416c3f62c99309f690f8a53da89",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/interval_compat.ml",
+    "baseline_sha256": "99d848a1693fe352e8e7973dc01199ae142aac4eba387045bacab7a74d7b092a",
+    "release_sha256": "99d848a1693fe352e8e7973dc01199ae142aac4eba387045bacab7a74d7b092a",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/pent.ml",
+    "baseline_sha256": "d769bba797802d8b174873b7ef1f1f0394bd48da1433266f697c2b898f0c11f4",
+    "release_sha256": "d769bba797802d8b174873b7ef1f1f0394bd48da1433266f697c2b898f0c11f4",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/pet.ml",
+    "baseline_sha256": "17e200cd00c5bf97dd0ea283095049227710812553c5c522a8e7b349c4f470e7",
+    "release_sha256": "17e200cd00c5bf97dd0ea283095049227710812553c5c522a8e7b349c4f470e7",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/banana.ml",
+    "baseline_sha256": "9e5369928269d4ce50134c6e41bf9d4a8532030e515353184529d5436fd8bdc2",
+    "release_sha256": "9e5369928269d4ce50134c6e41bf9d4a8532030e515353184529d5436fd8bdc2",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/dimer.ml",
+    "baseline_sha256": "05d2efebb090ac2d43c9ba15191fad0e27d2198dc4c2d024389a42ec33b45cc6",
+    "release_sha256": "05d2efebb090ac2d43c9ba15191fad0e27d2198dc4c2d024389a42ec33b45cc6",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/autodiff.ml",
+    "baseline_sha256": "40dd625dad09f8994159b27b5252627846cdcc9c3299fda634af731f43b34722",
+    "release_sha256": "40dd625dad09f8994159b27b5252627846cdcc9c3299fda634af731f43b34722",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/meet-in-middle.ml",
+    "baseline_sha256": "8c5f2d67f721d6b8471435b8c04e679a93752912711b62122a6476da6a8b220c",
+    "release_sha256": "8c5f2d67f721d6b8471435b8c04e679a93752912711b62122a6476da6a8b220c",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/mitm-calcs.ml",
+    "baseline_sha256": "fa9f537f557e59b58e71917d7dbb1320f8827b75d40ec47384596ebbebe2feaa",
+    "release_sha256": "fa9f537f557e59b58e71917d7dbb1320f8827b75d40ec47384596ebbebe2feaa",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/squeeze_sign.ml",
+    "baseline_sha256": "26318891208e7071914a1cd17b30399481b8c534955662aa0afe452f5a55cea8",
+    "release_sha256": "3848767862e9439f183dd91e70c8a8aca095fa83c41c8bcf0df2fffda7bab472",
+    "byte_identical": false,
+    "noncomment_tokens_identical": true,
+    "explanation": "Only the introductory manuscript-version comment changes from v005 to v007."
+  },
+  {
+    "file": "tests/ocaml/tests.ml",
+    "baseline_sha256": "c02b71f69d7fd54967b67c1fcb4c54a6785bd146e096cd4a0315acf45100a8f5",
+    "release_sha256": "c02b71f69d7fd54967b67c1fcb4c54a6785bd146e096cd4a0315acf45100a8f5",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "tests/ocaml/squeeze_tests.ml",
+    "baseline_sha256": "222c09dc1455f05335b682768601838494507c5dd027dafa75313c4a53458657",
+    "release_sha256": "222c09dc1455f05335b682768601838494507c5dd027dafa75313c4a53458657",
+    "byte_identical": true,
+    "noncomment_tokens_identical": true
+  },
+  {
+    "file": "ocaml/review_jobs.ml",
+    "baseline_sha256": "2dc7c508ac16c8735f829be4a7df1727cc7dc9cdeaa798b858ae0dc3783446b1",
+    "release_sha256": "3ed5151873b1aa5e9851282e78d990e94a64ef18560b6da7dd9effe0956545dc",
+    "byte_identical": false,
+    "noncomment_tokens_identical": true,
+    "explanation": "Only introductory comments changed; body from the stated anchor is byte-identical.",
+    "body_anchor": "open Pent;;"
+  },
+  {
+    "file": "tests/ocaml/positive_control.ml",
+    "baseline_sha256": "649114b42177bb449607b159ff474756672fb9a729246b2195a2f858f6cc206f",
+    "release_sha256": "f7c3ae2e9dfd43f5989d6bf0bc9087c2fd245a02be2b31b7a8499426b2367886",
+    "byte_identical": false,
+    "noncomment_tokens_identical": true,
+    "explanation": "Only introductory comments changed; body from the stated anchor is byte-identical.",
+    "body_anchor": "module Review_positive_control = struct"
+  }
+]

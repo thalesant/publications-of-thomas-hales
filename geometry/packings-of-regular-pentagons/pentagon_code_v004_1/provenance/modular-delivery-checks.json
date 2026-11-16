@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "check": "updater accepts actual extracted v004 from unrelated cwd",
+      "passed": true
+    },
+    {
+      "check": "no OCaml/test-OCaml/paper file changed",
+      "passed": true
+    },
+    {
+      "check": "original logs retained",
+      "passed": true
+    },
+    {
+      "check": "original report retained",
+      "passed": true
+    },
+    {
+      "check": "updater is idempotent",
+      "passed": true
+    },
+    {
+      "check": "one backup outside project",
+      "passed": true
+    },
+    {
+      "check": "fresh relocated archive fixed manifest",
+      "passed": true
+    },
+    {
+      "check": "all controller tests after relocation",
+      "passed": true
+    },
+    {
+      "check": "main driver has original bytes",
+      "passed": true
+    },
+    {
+      "check": "CLI accepts real legacy Mathematica report",
+      "passed": true
+    },
+    {
+      "check": "CLI retains original Mathematica report bytes",
+      "passed": true
+    },
+    {
+      "check": "no OCaml run fabricated",
+      "passed": true
+    },
+    {
+      "check": "partial combined result not complete",
+      "passed": true
+    },
+    {
+      "check": "no paper or project runtime in standalone ZIP",
+      "passed": true
+    },
+    {
+      "check": "standalone exact component: PentagonChecks.wl",
+      "passed": true
+    },
+    {
+      "check": "standalone exact component: run_checks.wls",
+      "passed": true
+    },
+    {
+      "check": "standalone exact component: checks_catalog.json",
+      "passed": true
+    },
+    {
+      "check": "standalone exact component: expected_checks.json",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

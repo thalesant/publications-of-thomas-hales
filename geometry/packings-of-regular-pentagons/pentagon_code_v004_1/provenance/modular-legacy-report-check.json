@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "checks": 161,
+  "report_sha256": "8ccd0660999b4e0a1b5704993ebe011654e2ff1caa11ae7927378625f3348a83",
+  "kernel": "15.0.1 for Linux x86 (64-bit) (July 2, 2026)",
+  "source_match": {
+    "mode": "APPROVED_LEGACY_EQUIVALENCE",
+    "source_sha256": {
+      "mathematica/PentagonChecks.wl": "3f44b20eda0776cad3407908658c64f788ea7d377608fbd19dfd21ff11296fc7",
+      "mathematica/run_checks.wls": "2becb1dbf3904e0a074eb4407441fb533d253ec33caed727d7b352c01b3effd1",
+      "mathematica/checks_catalog.json": "36a62de872b1da94c194f74a39aa7728bcdd357d028208e2e7273af1e3b6f7d1",
+      "mathematica/expected_checks.json": "d6aee5608027a6b400ee1703f06d72c13a0518f2b8dad66e6450fe1ccc0e352f",
+      "paper/pentagon_v005.tex": "a85881102339a30d941cfe25b0da8998004b49e810e9b530b52e7f3404001815",
+      "paper/label-map.json": "ce42e987a3729f425657025363332ec052f2e8fdae4b282fa9add409bf9522a7"
+    },
+    "equivalence_id": "code-v003-161-checks",
+    "compatibility_sha256": "b5cbcf79a9030091987d21b5443028a998aa1f8a63d1045379f097ffad0bafba",
+    "original_release": "pentagon_code_v003",
+    "original_manuscript": "pentagon_v005.tex",
+    "basis": "All mathematical definitions, assertion conditions, seeds, thresholds, precision defaults and evaluation selection are unchanged. Only component metadata, file I/O and source-line locators differ."
+  },
+  "source_sha256": {
+    "mathematica/PentagonChecks.wl": "3f44b20eda0776cad3407908658c64f788ea7d377608fbd19dfd21ff11296fc7",
+    "mathematica/run_checks.wls": "2becb1dbf3904e0a074eb4407441fb533d253ec33caed727d7b352c01b3effd1",
+    "mathematica/checks_catalog.json": "36a62de872b1da94c194f74a39aa7728bcdd357d028208e2e7273af1e3b6f7d1",
+    "mathematica/expected_checks.json": "d6aee5608027a6b400ee1703f06d72c13a0518f2b8dad66e6450fe1ccc0e352f",
+    "paper/pentagon_v005.tex": "a85881102339a30d941cfe25b0da8998004b49e810e9b530b52e7f3404001815",
+    "paper/label-map.json": "ce42e987a3729f425657025363332ec052f2e8fdae4b282fa9add409bf9522a7"
+  }
+}

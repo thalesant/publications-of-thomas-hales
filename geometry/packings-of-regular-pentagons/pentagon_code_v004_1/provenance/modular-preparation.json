@@ -1,0 +1,14 @@
+{
+  "python_tests": 167,
+  "status": "PASS",
+  "process_test_inputs": "Synthetic Python child processes and synthetic execution reports; no OCaml jobs were run.",
+  "wolfram_runtime": "Not installed here. The modified wrapper has not been executed in Mathematica.",
+  "earlier_real_report_validation": "The 161-check v003 Mathematica 15.0.1 report in the uploaded review archive was accepted without rewriting it; see modular-legacy-report-check.json.",
+  "unchanged_math": "Exact byte comparison of the entire mathematical block and preservation of test conditions/defaults.",
+  "public_primary_documentation": [
+    "https://reference.wolfram.com/language/ref/FileHash.html",
+    "https://reference.wolfram.com/language/ref/$InputFileName.html",
+    "https://reference.wolfram.com/language/ref/SystemDialogInput.html",
+    "https://reference.wolfram.com/language/ref/format/RawJSON.html"
+  ]
+}

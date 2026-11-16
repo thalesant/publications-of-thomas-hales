@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "purpose": "Assembly metadata, not an input to either calculation component. Matching these files does not assert that tests prove every statement.",
+  "manuscript": "paper/pentagon_v007.tex",
+  "files": {
+    "paper/pentagon_v007.tex": "cdfaa9b6122070cdf5121ac789bf3a9bb09931910512966020e3453ea3d5f63a",
+    "paper/label-map.json": "806bded3482ae5ad1bb10d7be74a90fcdc4e1dcf4a4753c4722293c8bd595abd",
+    "docs/claims.json": "31f087496b80e0ba4af75ccf41db88b051c5725303cf3a3224e305b54ecc0546"
+  },
+  "wolfram_component": "PentagonChecks",
+  "wolfram_expected_checks_sha256": "d6aee5608027a6b400ee1703f06d72c13a0518f2b8dad66e6450fe1ccc0e352f"
+}

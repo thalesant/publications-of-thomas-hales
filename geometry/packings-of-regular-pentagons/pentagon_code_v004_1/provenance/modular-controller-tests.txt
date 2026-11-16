@@ -1,0 +1,108 @@
+Pentagon code v004: 10 selected jobs; at most 5 workers.
+Order: longest-first; RAM 31.00 GiB; reserve 8 GiB; per-process cap 4 GiB.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpcs7omb2q/release/runs/20261115T202144Z-32208a
+RUN          unit (1/5 workers)
+PASS         unit (1.5s)
+RUN          extended (1/5 workers)
+RUN          squeeze_sign_tests (2/5 workers)
+RUN          mitm_geometric_control (3/5 workers)
+PASS         extended (1.5s)
+PASS         squeeze_sign_tests (1.5s)
+PASS         mitm_geometric_control (1.5s)
+RUN          p6 (1/5 workers)
+RUN          p5 (2/5 workers)
+RUN          p4 (3/5 workers)
+RUN          p3 (4/5 workers)
+RUN          p2 (5/5 workers)
+PASS         p5 (1.5s)
+PASS         p2 (1.5s)
+RUN          p1 (4/5 workers)
+PASS         p6 (1.8s)
+PASS         p4 (1.8s)
+PASS         p3 (1.8s)
+PASS         p1 (1.3s)
+OCaml confirmation: 10/10 required jobs.
+One report ZIP: /tmp/tmpcs7omb2q/release/runs/pentagon_code_v004_report_20261115T202144Z-32208a.zip
+Confirmation not accepted: Wolfram report contains a failed check
+OCaml: COMPLETE (77/77)
+Wolfram: PASS
+Manuscript association: MATCH
+Record: /tmp/tmpu7essvej/verification/CONFIRMATION.md
+OCaml: COMPLETE (77/77)
+Wolfram: PASS
+Manuscript association: MATCH
+Record: /tmp/tmpkjg0z14l/verification/CONFIRMATION.md
+Pentagon code v004: 3 selected jobs; at most 2 workers.
+Order: longest-first; RAM 16.00 GiB; reserve 0 GiB; per-process cap 0.5 GiB.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpijl7hnsa/runs/20261115T202151Z-8202ef
+RUN          unit (1/2 workers)
+FAILED       unit (1.0s)
+OCaml confirmation: 0/2 required jobs.
+One report ZIP: /tmp/tmpijl7hnsa/runs/pentagon_code_v004_report_20261115T202151Z-8202ef.zip
+usage: python3 -m unittest [-h] [--job JOB] [--claim CLAIM]
+                           [--section SECTION] [--all] [--changed] [--tests]
+                           [--extended] [--diagnostics] [--list]
+                           [--switch SWITCH] [--jobs JOBS]
+                           [--order {longest-first,registry}]
+                           [--memory-gib MEMORY_GIB]
+                           [--reserve-gib RESERVE_GIB] [--timeout TIMEOUT]
+                           [--rerun] [--work WORK] [--copy-report COPY_REPORT]
+python3 -m unittest: error: The output directory must be outside source/document directories; use the default runs directory.
+Pentagon code v004: 3 selected jobs; at most 2 workers.
+Order: longest-first; RAM 16.00 GiB; reserve 0 GiB; per-process cap 0.5 GiB.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpny41euqn/runs/20261115T202152Z-e937cb
+RUN          unit (1/2 workers)
+PASS         unit (1.0s)
+RUN          a (1/2 workers)
+RUN          b (2/2 workers)
+PASS         a (1.0s)
+PASS         b (1.0s)
+OCaml confirmation: 2/2 required jobs.
+One report ZIP: /tmp/tmpny41euqn/runs/pentagon_code_v004_report_20261115T202152Z-e937cb.zip
+Pentagon code v004: 3 selected jobs; at most 2 workers.
+Order: longest-first; RAM 16.00 GiB; reserve 0 GiB; per-process cap 0.5 GiB.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpny41euqn/runs/20261115T202154Z-3f325b
+RUN          unit (1/2 workers)
+PASS         unit (1.0s)
+RUN          a (1/2 workers)
+RUN          b (2/2 workers)
+PASS         a (1.0s)
+PASS         b (1.0s)
+OCaml confirmation: 2/2 required jobs.
+One report ZIP: /tmp/tmpny41euqn/runs/pentagon_code_v004_report_20261115T202154Z-3f325b.zip
+Pentagon code v004: 1 selected jobs; at most 1 workers.
+Order: longest-first; RAM 1.00 GiB; reserve 8 GiB; per-process cap 4 GiB.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpbn8vb5ki/runs/20261115T202156Z-165a4d
+CONTROLLER ERROR: Memory budget exceeds visible RAM. Reduce --reserve-gib or adjust WSL allocation; no job started.
+OCaml confirmation: 0/2 required jobs.
+One report ZIP: /tmp/tmpbn8vb5ki/runs/pentagon_code_v004_report_20261115T202156Z-165a4d.zip
+Pentagon code v004: 3 selected jobs; at most 2 workers.
+Order: longest-first; RAM 16.00 GiB; reserve 0 GiB; per-process cap 0.5 GiB.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpulug758u/runs/20261115T202156Z-806db9
+RUN          unit (1/2 workers)
+PASS         unit (1.0s)
+RUN          a (1/2 workers)
+RUN          b (2/2 workers)
+PASS         a (1.0s)
+PASS         b (1.0s)
+OCaml confirmation: 2/2 required jobs.
+One report ZIP: /tmp/tmpulug758u/runs/pentagon_code_v004_report_20261115T202156Z-806db9.zip
+Pentagon code v004: 3 selected jobs; at most 2 workers.
+Order: longest-first; RAM 16.00 GiB; reserve 0 GiB; per-process cap 0.5 GiB.
+First Ctrl+C drains active jobs; second cancels. Sources are read-only.
+Report directory: /tmp/tmpulug758u/runs/20261115T202158Z-890947
+CACHED_PASS  unit
+CACHED_PASS  a
+CACHED_PASS  b
+OCaml confirmation: 2/2 required jobs.
+One report ZIP: /tmp/tmpulug758u/runs/pentagon_code_v004_report_20261115T202158Z-890947.zip
+----------------------------------------------------------------------
+Ran 167 tests in 14.829s
+
+OK

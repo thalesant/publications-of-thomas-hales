@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+runs/*
+!runs/README.md
+environment/archives/
+*.aux
+*.log
+*.toc
+*.out
+*.fdb_latexmk
+*.fls
+
+verification/status.json
+verification/CONFIRMATION.md
+verification/paper-checks.json
+verification/wolfram-report.json
+verification/run-records/

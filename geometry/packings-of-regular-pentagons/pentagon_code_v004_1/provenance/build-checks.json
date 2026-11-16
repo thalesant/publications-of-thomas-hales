@@ -1,0 +1,21 @@
+{
+  "pdfs": {
+    "paper/pentagon_v007.pdf": {
+      "pages": 74,
+      "sha256": "6d33a5b00a7ce2f9cf6cc9a22e583dcab53e1b8c0275552da4552a5a66582ec0"
+    },
+    "docs/code_commentary.pdf": {
+      "pages": 19,
+      "sha256": "d2806d803c06edf686cd913d8dcb57cd05b21b9d1d63caf10261130771579f90"
+    },
+    "figures/gallery.pdf": {
+      "pages": 30,
+      "sha256": "0530a26a77606c1a95eb528719a0525f76c4579eaae05b6036e8e62a6c61e098"
+    }
+  },
+  "approved_paper_copied_exactly": true,
+  "updated_commentary_compiled": true,
+  "current_figure_gallery_compiled": true,
+  "visual_inspection": "Selected commentary pages, including the new face and pin-T estimates and control sections; gallery title and figure pages.",
+  "remaining_warnings": "Nonfatal TeX box/font-size warnings, if any, do not change the numerical code."
+}

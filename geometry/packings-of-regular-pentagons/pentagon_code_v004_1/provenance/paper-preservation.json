@@ -1,0 +1,32 @@
+{
+  "pentagon_v007.tex": {
+    "input_sha256": "cdfaa9b6122070cdf5121ac789bf3a9bb09931910512966020e3453ea3d5f63a",
+    "release_sha256": "cdfaa9b6122070cdf5121ac789bf3a9bb09931910512966020e3453ea3d5f63a",
+    "identical": true
+  },
+  "pentagon_v007.pdf": {
+    "input_sha256": "6d33a5b00a7ce2f9cf6cc9a22e583dcab53e1b8c0275552da4552a5a66582ec0",
+    "release_sha256": "6d33a5b00a7ce2f9cf6cc9a22e583dcab53e1b8c0275552da4552a5a66582ec0",
+    "identical": true
+  },
+  "header_v007.tex": {
+    "input_sha256": "3f34ea93fbdc45d8ca4c3dec09e025db6c44355ed48911ea056d2ce9c41472e9",
+    "release_sha256": "3f34ea93fbdc45d8ca4c3dec09e025db6c44355ed48911ea056d2ce9c41472e9",
+    "identical": true
+  },
+  "header_v007.bbl": {
+    "input_sha256": "366ff39807c6a7f892a78c1716ba3e2ff09f8086c3ebdf0d6f79c04913a19a0d",
+    "release_sha256": "366ff39807c6a7f892a78c1716ba3e2ff09f8086c3ebdf0d6f79c04913a19a0d",
+    "identical": true
+  },
+  "pentagon.bib": {
+    "input_sha256": "f91d296413d7feec3470bf9a59ac1b1b9caebc2f92a18a8312bee2adcba0c333",
+    "release_sha256": "f91d296413d7feec3470bf9a59ac1b1b9caebc2f92a18a8312bee2adcba0c333",
+    "identical": true
+  },
+  "label-map.json": {
+    "input_sha256": "806bded3482ae5ad1bb10d7be74a90fcdc4e1dcf4a4753c4722293c8bd595abd",
+    "release_sha256": "806bded3482ae5ad1bb10d7be74a90fcdc4e1dcf4a4753c4722293c8bd595abd",
+    "identical": true
+  }
+}

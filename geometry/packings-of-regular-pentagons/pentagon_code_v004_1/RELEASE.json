@@ -1,0 +1,20 @@
+{
+  "version": "pentagon_code_v004",
+  "manuscript": "paper/pentagon_v007.tex",
+  "date": "2026-11-14",
+  "compiler": "4.14.4",
+  "interval_backend": "Interval_crlibm.I",
+  "normal_command": "python3 run.py --all --diagnostics",
+  "verification_record": "verification/CONFIRMATION.md",
+  "scope": "Paper, mathematical programs, supplementary checks, and source-specific run records.",
+  "required_jobs": 77,
+  "proof_jobs": 73,
+  "test_stages": 4,
+  "optional_diagnostics": 4,
+  "scheduling": "longest estimated remaining job first after short prerequisite tests",
+  "default_workers": "auto: at most 8, bounded by available CPUs and RAM budget",
+  "reporting_revision": 1,
+  "distribution_name": "pentagon_code_v004_1",
+  "wolfram_report_schema": 2,
+  "component_contract": "docs/MODULARITY.md"
+}

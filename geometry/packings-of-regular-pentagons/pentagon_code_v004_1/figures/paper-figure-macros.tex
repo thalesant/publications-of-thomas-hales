@@ -1,0 +1,94 @@
+% Extracted manuscript macros; gallery-only label display overrides below.
+\def\area{\op{area}}
+\def\areta{\op{area}^\circ}
+\def\ao{a_\text{min}}
+\def\acrit{a_\text{crit}}
+\def\loc{\op{loc}}
+
+\def\Ra{\Rightarrow}
+\def\nRa{\nRightarrow}
+\def\rab{\Ra_{b}}
+
+\def\C{\mathcal C}
+\def\SS{\mathcal S}
+\def\N{\mathcal N}
+\def\M{\mathcal M}
+\def\T{\mathcal T}
+\def\PD{\Psi D}
+\def\cong{\equiv}
+\def\r{{\mathbf r}}
+\def\s{{\mathbf s}}
+\def\bl{\ell}
+\def\epsM{\epsilon_{\M}}
+\def\epsN{\epsilon_{\N}}
+\def\c{{\mathbf c}}
+\def\K{\op{K}}
+
+
+\def\dx#1{d_{#1}} 
+\def\dd#1#2{\norm{\c_{#1}}{\c_{#2}}}
+\def\tb{\underline{b}}
+\def\tn{\bar n}
+
+%for debugging:
+\def\libel#1{{\text{\sc [#1]~}}\label{#1}}
+\def\rif#1{(\ref{#1}-{\text{\sc #1})}}
+%\def\libel#1{\label{#1}}
+%\def\rif#1{\ref{#1}}
+
+% tikz.
+\def\smalldot#1{\draw[fill=black] (#1) node [inner sep=0.8pt,shape=circle,fill=black] {}}
+\def\graydot#1{\draw[fill=gray] (#1) node [inner sep=1.3pt,shape=circle,fill=gray] {}}
+\def\whitedot#1{\draw[fill=gray] (#1) node [inner sep=1.3pt,shape=circle,fill=white,draw=black] {}}
+\tikzset{dartstyle/.style={fill=black,rotate=-90,inner sep=0.7pt,dart,shape border uses incircle}}
+\tikzset{grayfatpath/.style={line width=1ex,line cap=round,line join=round,draw=gray}}
+
+% parameters (x,y) center coords, theta vertex angle, rho radius in cm.
+\def\pent#1#2#3#4{%
+\draw[red] (#1,#2) + (#3:#4cm) -- + (#3+72:#4cm) -- 
++(#3+144:#4cm) -- +(#3+216:#4cm) -- + (#3+288:#4cm) -- cycle
+}
+
+\def\pentpink#1#2#3#4#5{%
+\draw[#5] (#1,#2) + (#3:#4cm) -- + (#3+72:#4cm) -- 
++(#3+144:#4cm) -- +(#3+216:#4cm) -- + (#3+288:#4cm) -- cycle
+}
+
+% parameters (x,y) center coords, theta vertex angle.
+\def\pen#1#2#3{%
+\draw[red] (#1,#2) + (#3:1cm) -- + (#3+72:1cm) -- 
+  +(#3+144:1cm) -- +(#3+216:1cm) -- + (#3+288:1cm) -- cycle
+}
+
+% parameters (x,y) center coords, theta vertex angle.
+\def\penp#1#2{%
+\draw[red] (#1) + (#2:1cm) -- + (#2+72:1cm) -- 
+  +(#2+144:1cm) -- +(#2+216:1cm) -- + (#2+288:1cm) -- cycle
+}
+
+
+\def\threepent#1#2#3#4#5#6#7#8#9{%
+\pen{#1}{#2}{#3};
+\pen{#4}{#5}{#6};
+\pen{#7}{#8}{#9};
+\draw[blue] (#1,#2) -- (#4,#5) -- (#7,#8) -- cycle
+}
+
+\def\threepentnoD#1#2#3#4#5#6#7#8#9{%
+\pen{#1}{#2}{#3};
+\pen{#4}{#5}{#6};
+\pen{#7}{#8}{#9}
+}
+
+\def\blankfig#1{\tikzfig{#1}{Insert graphic}
+{
+[scale=1]
+\draw(0,) circle(1cm);
+}}
+
+
+
+
+
+\def\libel#1{\label{#1}}
+\def\rif#1{\ref{#1}}
