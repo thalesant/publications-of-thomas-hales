@@ -86,7 +86,7 @@ class Confirmation(unittest.TestCase):
   relocated=dest/'release';shutil.rmtree(self.root)
   self.assertTrue(v.refresh(relocated)['complete'])
  def test_verified_bundle_retains_run_directory_guide(self):
-  self.run_record();self.wf();(self.root/'runs/README.md').write_text('Run output guide\n')
+  self.run_record();self.wf();(self.root/'runs/README.md').write_bytes(b'Run output guide\n')
   out=v.make_bundle(self.root,Path(self.tmp.name)/'checked.zip',v.refresh(self.root))
   with zipfile.ZipFile(out) as z:
    self.assertEqual(z.read('release/runs/README.md'),b'Run output guide\n')

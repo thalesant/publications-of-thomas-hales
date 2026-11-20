@@ -1,6 +1,9 @@
 {
-  "parent": "approved manuscript v007",
+  "parent": "manuscript v007 in pentagon_code_v004_1",
+  "manuscript": "v008",
   "retained_labels": 168,
-  "exact_map_match": true,
-  "manuscript_bytes_unchanged": true
+  "unchanged_numbers": 168,
+  "changed_page_references": 134,
+  "exact_map_match": false,
+  "manuscript_bytes_unchanged": false
 }

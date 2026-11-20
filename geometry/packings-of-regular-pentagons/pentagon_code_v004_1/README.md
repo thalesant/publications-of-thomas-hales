@@ -1,7 +1,7 @@
 # Packings of regular pentagons — verification project
 
-**Current article:** [manuscript v007](paper/pentagon_v007.pdf).  
-**Computational distribution:** code v004, modular reporting revision 1 (`pentagon_code_v004_1`).
+**Current article:** [manuscript v008](paper/pentagon_v008.pdf).  
+**Computational distribution:** code v005 (`pentagon_code_v005`).
 
 This repository contains the paper, its interval-arithmetic calculations, supporting
 Wolfram checks, figure sources, and mathematical documentation. All OCaml calculations,
@@ -82,11 +82,10 @@ terminal open. See [RUNNING.md](docs/RUNNING.md) for limits, selection, and repo
 
 Read [mathematica/README.md](mathematica/README.md). It gives a notebook file-dialog
 route that does not depend on the notebook's directory, plus a command-line route.
-Export the full 161-check report as `verification/paper-checks.json`. It may be run
-on another machine with **only the standalone `mathematica/` folder**, then copied to that location. No LaTeX, PDF, label map or OCaml installation is needed there. A complete report from the exact earlier v003/v004 suite can also be imported unchanged through the explicit compatibility record.
+The complete 161-check Mathematica report from the preceding release has been carried forward byte for byte. The component and required checks are unchanged, and the confirmation program validates the original report. A fresh Mathematica run is optional.
 Every check is explained in [WOLFRAM_CHECKS.md](docs/WOLFRAM_CHECKS.md).
 
-Back in **Ubuntu/Linux Bash at PACKAGE_ROOT**, after both suites finish:
+Back in **Ubuntu/Linux Bash at PACKAGE_ROOT**, after the OCaml run finishes:
 
 ```bash
 python3 confirm.py --check
@@ -107,7 +106,7 @@ another reader. See [VERIFICATION.md](docs/VERIFICATION.md) for the exact checks
 
 | Location | Purpose |
 |---|---|
-| `paper/` | The current v007 source, PDF, bibliography, compiled label map, and build driver. No older manuscript copies. |
+| `paper/` | The current v008 source, PDF, bibliography, compiled label map, and build driver. No older manuscript copies. |
 | `ocaml/` | The production geometry, interval adapter, search engines, extra contact bounds, loader, and job dispatch. |
 | `tests/` | OCaml contract/positive-control checks, Python controller tests, and reference fixtures. |
 | `mathematica/` | The self-contained Wolfram checking package and its described check catalogue. |
@@ -123,14 +122,9 @@ another reader. See [VERIFICATION.md](docs/VERIFICATION.md) for the exact checks
 
 The manuscript and mathematical implementation bodies are not changed by run
 scheduling. The release history is in [CHANGELOG.md](CHANGELOG.md), and exact
-unchanged/moved/changed paths are recorded in `provenance/file-changes.json`.
+unchanged/moved/changed paths are recorded in [the v005 file comparison](provenance/v005-file-changes.json).
 License scopes and third-party notices are in [LICENSE.md](LICENSE.md).
 
-## Modular reporting revision
+## Changes from v004.1
 
-The numerical source files, registry, test conditions and manuscript are unchanged.
-The [component design](docs/MODULARITY.md) separates Wolfram execution, OCaml execution
-and manuscript association. Existing v004 logs and supported earlier Wolfram reports
-remain identifiable original evidence, not invented new executions. Use the guarded
-updater rather than overwriting an active installation; do not interrupt an OCaml
-run merely to run the standalone Mathematica component on another computer.
+Manuscript v008 treats limiting contacts, gives the fixed-edge reduction and uses Lemma 5.10 at a tie in squeezing. The pinwheel jobs now cover the full angle triangle. Two elementary side bounds are checked at their points of use. The original 77 required stages and four diagnostics are retained. The [release history](CHANGELOG.md) identifies the mathematical changes. The OCaml status is pending a run on these sources.

@@ -76,7 +76,7 @@ class Scheduling(unittest.TestCase):
         self.assertNotIn('#require "interval.top"',source)
         self.assertIn('interval_crlibm.1.6',(ROOT/'environment/install.sh').read_text())
     def test_single_current_manuscript(self):
-        self.assertEqual([p.name for p in (ROOT/'paper').glob('pentagon_v*.tex')],['pentagon_v007.tex'])
+        self.assertEqual([p.name for p in (ROOT/'paper').glob('pentagon_v*.tex')],['pentagon_v008.tex'])
         self.assertFalse((ROOT/'supplements').exists())
         self.assertFalse((ROOT/'paper/v007').exists())
         self.assertFalse((ROOT/'docs/v007').exists())

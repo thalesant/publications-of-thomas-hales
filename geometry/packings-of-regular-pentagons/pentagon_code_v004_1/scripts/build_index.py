@@ -13,10 +13,10 @@ def main():
  reg=json.loads((R/'registry.json').read_text());jobs={j['id']:j for j in reg['jobs']}
  entries=json.loads((R/'docs/claims.json').read_text());sm=json.loads((R/'docs/source-map.json').read_text())
  labs=json.loads((R/'paper/label-map.json').read_text())
- md=['# Paper-to-code index — code v004 / manuscript v007','','**Context:** commands below are for Linux/Ubuntu-WSL Bash, at the extracted package root containing `run.py`. Append `--list` to preview without executing.','',
+ md=['# Paper-to-code index — code v005 / manuscript v008','','**Context:** commands below are for Linux/Ubuntu-WSL Bash, at the extracted package root containing `run.py`. Append `--list` to preview without executing.','',
      'The selected jobs establish their encoded terminal exclusions. The paper supplies the reductions and earlier lemmas; a claim selection is not the entire transitive mathematical proof. Use `--all` for the complete proof-job set. Source-specific completion is generated in `verification/CONFIRMATION.md`.','']
- h=page('Pentagon paper-to-code index — v004')
- h+=['<p>Companion to <a href="../paper/pentagon_v007.pdf">the paper</a>. <a href="code_commentary.pdf">Mathematical commentary</a> · <a href="RUNNING.md">Execution guide</a> · <a href="wolfram_checks.html">Wolfram checks</a> · <a href="../verification/CONFIRMATION.md">Generated confirmation</a>.</p>',
+ h=page('Pentagon paper-to-code index — v005')
+ h+=['<p>Companion to <a href="../paper/pentagon_v008.pdf">the paper</a>. <a href="code_commentary.pdf">Mathematical commentary</a> · <a href="RUNNING.md">Execution guide</a> · <a href="wolfram_checks.html">Wolfram checks</a> · <a href="../verification/CONFIRMATION.md">Generated confirmation</a>.</p>',
      '<div class="context"><strong>First-time reader:</strong> find a printed lemma number here, read its assumptions and cases, then inspect the indicated original function. Commands use <strong>Bash at the extracted package root</strong>, not the docs folder or a language prompt. Append <code>--list</code> to preview. A source code is a navigation key, not an additional mathematical hypothesis.</div>',
      '<p>Execution evidence is maintained separately from this fixed mathematical explanation. An absent, interrupted, or mismatched run is never represented as a pass. See <a href="VERIFICATION.md">confirmation rules</a>.</p>',
      '<input id="search" aria-label="Search calculation" placeholder="Search lemma/section number, label, seven-letter code or function">',

@@ -137,538 +137,538 @@
   },
   "sec:area": {
     "number": "4",
-    "page": "18"
+    "page": "19"
   },
   "lemma:21": {
     "number": "4.1",
-    "page": "19"
+    "page": "20"
   },
   "lemma:right": {
     "number": "4.2",
-    "page": "19"
+    "page": "20"
   },
   "lemma:primary": {
     "number": "4.5",
-    "page": "19"
+    "page": "20"
   },
   "lemma:primary2": {
     "number": "4.6",
-    "page": "20"
+    "page": "21"
   },
   "lemma:delta": {
     "number": "4.7",
-    "page": "20"
+    "page": "21"
   },
   "lemma:mid-172": {
     "number": "4.8",
-    "page": "20"
+    "page": "21"
   },
   "lemma:172": {
     "number": "4.9",
-    "page": "21"
+    "page": "22"
   },
   "fig:172-slider": {
     "number": "4.1",
-    "page": "21"
+    "page": "22"
   },
   "lemma:2C": {
     "number": "4.10",
-    "page": "22"
+    "page": "23"
   },
   "lemma:a0": {
     "number": "4.11",
-    "page": "22"
+    "page": "23"
   },
   "sec:calc": {
     "number": "5",
-    "page": "22"
+    "page": "23"
   },
   "NKQNXUN": {
     "number": "5.1",
-    "page": "23"
+    "page": "24"
   },
   "calc:pseudo1": {
     "number": "5.1",
-    "page": "23"
+    "page": "24"
   },
   "RWWHLQT": {
     "number": "5.2",
-    "page": "23"
+    "page": "24"
   },
   "calc:pseudo2": {
     "number": "5.2",
-    "page": "23"
+    "page": "24"
   },
   "calc:pseudo3": {
     "number": "5.3",
-    "page": "23"
+    "page": "24"
   },
   "BXZBPJW": {
     "number": "5.4",
-    "page": "23"
+    "page": "24"
   },
   "calc:pseudo-area": {
     "number": "5.4",
-    "page": "23"
+    "page": "24"
   },
   "JQMRXTH": {
     "number": "5.5",
-    "page": "23"
+    "page": "24"
   },
   "calc:pseudo-area3": {
     "number": "5.5",
-    "page": "23"
+    "page": "24"
   },
   "lemma:egress'": {
     "number": "5.6",
-    "page": "23"
+    "page": "24"
   },
   "lemma:m2-area": {
     "number": "5.7",
-    "page": "23"
+    "page": "24"
   },
   "KUGAKIK": {
     "number": "5.10",
-    "page": "24"
+    "page": "25"
   },
   "calc:dimer-isosc": {
     "number": "5.10",
-    "page": "24"
+    "page": "25"
   },
   "HUQEJAT": {
     "number": "5.11",
-    "page": "24"
+    "page": "25"
   },
   "calc:pent3": {
     "number": "5.11",
-    "page": "24"
+    "page": "25"
   },
   "QPJDYDB": {
     "number": "5.12",
-    "page": "24"
+    "page": "25"
   },
   "calc:pent4": {
     "number": "5.12",
-    "page": "24"
+    "page": "25"
   },
   "def:large": {
     "number": "5.13",
-    "page": "24"
+    "page": "25"
   },
   "fig:large": {
     "number": "5.1",
-    "page": "25"
+    "page": "26"
   },
   "FHBGHHY": {
     "number": "5.14",
-    "page": "25"
+    "page": "26"
   },
   "calc:large": {
     "number": "5.14",
-    "page": "25"
+    "page": "26"
   },
   "lemma:large": {
     "number": "5.15",
-    "page": "25"
+    "page": "26"
   },
   "sec:dimer-pair": {
     "number": "6",
-    "page": "25"
+    "page": "26"
   },
   "thm:dimer-area": {
     "number": "6.1",
-    "page": "25"
+    "page": "26"
   },
   "sub:long": {
     "number": "6.1",
-    "page": "27"
+    "page": "28"
   },
   "sec:O2C": {
     "number": "6.2",
-    "page": "27"
+    "page": "28"
   },
   "fig:slider": {
     "number": "6.1",
-    "page": "28"
+    "page": "29"
   },
   "sec:squeeze": {
     "number": "6.3",
-    "page": "29"
+    "page": "30"
   },
   "lemma:squeeze-area": {
     "number": "6.5",
-    "page": "30"
+    "page": "31"
   },
   "lemma:dimer-acrit-epsN": {
     "number": "6.6",
-    "page": "31"
+    "page": "33"
   },
   "eq:dimer-acrit-epsN": {
     "number": "6.7",
-    "page": "31"
+    "page": "33"
   },
   "sec:nbd": {
     "number": "6.4",
-    "page": "32"
+    "page": "33"
   },
   "sec:gamma": {
     "number": "6.5",
-    "page": "33"
+    "page": "34"
   },
   "fig:Gamma'": {
     "number": "6.2",
-    "page": "33"
+    "page": "34"
   },
   "sec:curve": {
     "number": "6.6",
-    "page": "33"
+    "page": "34"
   },
   "sec:pseudo": {
     "number": "7",
-    "page": "35"
+    "page": "36"
   },
   "lemma:pd-m2": {
     "number": "7.1",
-    "page": "35"
+    "page": "36"
   },
   "lemma:m1m2": {
     "number": "7.2",
-    "page": "35"
+    "page": "37"
   },
   "lemma:pd-obtuse": {
     "number": "7.4",
-    "page": "35"
+    "page": "37"
   },
   "lemma:pd-n2": {
     "number": "7.5",
-    "page": "36"
+    "page": "37"
   },
   "lemma:pd-1": {
     "number": "7.6",
-    "page": "36"
+    "page": "37"
   },
   "lemma:pd-b": {
     "number": "7.7",
-    "page": "36"
+    "page": "38"
   },
   "sec:dimer-main": {
     "number": "8",
-    "page": "37"
+    "page": "38"
   },
   "thm:dimer": {
     "number": "8.1",
-    "page": "37"
+    "page": "38"
   },
   "lemma:singleton": {
     "number": "8.2",
-    "page": "37"
+    "page": "39"
   },
   "lemma:pd-nra-dimer": {
     "number": "8.3",
-    "page": "37"
+    "page": "39"
   },
   "lemma:m2-dimer": {
     "number": "8.4",
-    "page": "38"
+    "page": "39"
   },
   "lemma:m1-dimer": {
     "number": "8.5",
-    "page": "38"
+    "page": "39"
   },
   "lemma:t2b-nonobtuse": {
     "number": "8.6",
-    "page": "38"
+    "page": "40"
   },
   "lemma:n2b": {
     "number": "8.7",
-    "page": "39"
+    "page": "40"
   },
   "lemma:m2b": {
     "number": "8.8",
-    "page": "39"
+    "page": "40"
   },
   "eqn:2-ac": {
     "number": "8.9",
-    "page": "39"
+    "page": "40"
   },
   "lemma:rab-sequence": {
     "number": "8.10",
-    "page": "39"
+    "page": "41"
   },
   "lemma:notlong": {
     "number": "8.11",
-    "page": "40"
+    "page": "42"
   },
   "lemma:3m2": {
     "number": "8.12",
-    "page": "40"
+    "page": "42"
   },
   "lemma:Nb": {
     "number": "8.13",
-    "page": "40"
+    "page": "42"
   },
   "lemma:no-ao": {
     "number": "8.14",
-    "page": "41"
+    "page": "42"
   },
   "sec:obtuse": {
     "number": "9",
-    "page": "41"
+    "page": "43"
   },
   "rem:delaunay": {
     "number": "9.1",
-    "page": "41"
+    "page": "43"
   },
   "lemma:areta": {
     "number": "9.2",
-    "page": "41"
+    "page": "43"
   },
   "fig:areta": {
     "number": "9.1",
-    "page": "42"
+    "page": "44"
   },
   "lemma:obtuse-area-monotone": {
     "number": "9.3",
-    "page": "42"
+    "page": "44"
   },
   "lemma:t2b": {
     "number": "9.4",
-    "page": "42"
+    "page": "44"
   },
   "lemma:sequence": {
     "number": "9.5",
-    "page": "43"
+    "page": "44"
   },
   "lemma:c-weak": {
     "number": "9.6",
-    "page": "43"
+    "page": "45"
   },
   "eqn:c-weak": {
     "number": "9.7",
-    "page": "43"
+    "page": "45"
   },
   "lemma:card4": {
     "number": "9.8",
-    "page": "43"
+    "page": "45"
   },
   "thm:obtuse": {
     "number": "9.9",
-    "page": "43"
+    "page": "45"
   },
   "lemma:obtuse-source": {
     "number": "9.10",
-    "page": "44"
+    "page": "45"
   },
   "lemma:tb": {
     "number": "9.11",
-    "page": "44"
+    "page": "46"
   },
   "lemma:nonobtuse-radius-area": {
     "number": "9.12",
-    "page": "45"
+    "page": "46"
   },
   "eqn:n": {
     "number": "9.13",
-    "page": "45"
+    "page": "47"
   },
   "eqn:173": {
     "number": "9.14",
-    "page": "48"
+    "page": "50"
   },
   "eqn:968": {
     "number": "9.15",
-    "page": "49"
+    "page": "50"
   },
   "sec:nonobtuse": {
     "number": "10",
-    "page": "50"
+    "page": "52"
   },
   "lemma:m2": {
     "number": "10.1",
-    "page": "50"
+    "page": "52"
   },
   "lemma:2small": {
     "number": "10.2",
-    "page": "51"
+    "page": "52"
   },
   "lemma:n2-0": {
     "number": "10.3",
-    "page": "51"
+    "page": "53"
   },
   "lemma:T1-all": {
     "number": "10.4",
-    "page": "51"
+    "page": "53"
   },
   "lemma:4": {
     "number": "10.5",
-    "page": "51"
+    "page": "53"
   },
   "lemma:3": {
     "number": "10.6",
-    "page": "52"
+    "page": "53"
   },
   "lemma:2": {
     "number": "10.7",
-    "page": "53"
+    "page": "54"
   },
   "eqn:2": {
     "number": "10.8",
-    "page": "53"
+    "page": "54"
   },
   "sec:coords": {
     "number": "A",
-    "page": "54"
+    "page": "56"
   },
   "sec:appendix": {
     "number": "A",
-    "page": "54"
+    "page": "56"
   },
   "sec:two": {
     "number": "A.1",
-    "page": "54"
-  },
-  "eqn:sym": {
-    "number": "A.1",
-    "page": "54"
+    "page": "56"
   },
   "fig:theta": {
     "number": "A.1",
-    "page": "55"
+    "page": "56"
+  },
+  "eqn:sym": {
+    "number": "A.1",
+    "page": "56"
   },
   "sec:xalpha": {
-    "number": "A.2",
-    "page": "55"
-  },
-  "fig:extended": {
     "number": "A.2",
     "page": "56"
   },
   "sec:banana": {
     "number": "A.3",
-    "page": "56"
+    "page": "57"
+  },
+  "fig:extended": {
+    "number": "A.2",
+    "page": "58"
   },
   "fig:banana2": {
     "number": "A.3",
-    "page": "57"
+    "page": "58"
   },
   "sec:pet": {
     "number": "A.4",
-    "page": "57"
+    "page": "58"
   },
   "fig:p-triangle": {
     "number": "A.4",
-    "page": "58"
+    "page": "59"
   },
   "sec:shared": {
     "number": "A.7",
-    "page": "58"
+    "page": "60"
   },
   "eqn:abc": {
     "number": "A.4",
-    "page": "61"
-  },
-  "fig:cord-delta": {
-    "number": "A.5",
-    "page": "61"
+    "page": "62"
   },
   "sec:pinwheel": {
     "number": "A.9",
-    "page": "61"
+    "page": "62"
+  },
+  "fig:cord-delta": {
+    "number": "A.5",
+    "page": "63"
   },
   "fig:cord-pinwheel": {
     "number": "A.6",
-    "page": "62"
+    "page": "63"
   },
   "fig:cord-L": {
     "number": "A.7",
-    "page": "62"
+    "page": "64"
   },
   "sec:one-ljx": {
     "number": "A.10.3",
-    "page": "63"
+    "page": "64"
   },
   "fig:cord-T": {
     "number": "A.8",
-    "page": "63"
+    "page": "65"
   },
   "sec:one-tjx": {
     "number": "A.11.1",
-    "page": "64"
+    "page": "65"
   },
   "sec:pint": {
     "number": "A.12",
-    "page": "64"
-  },
-  "lemma:0605": {
-    "number": "A.5",
-    "page": "64"
+    "page": "66"
   },
   "fig:cord-pint": {
     "number": "A.9",
-    "page": "65"
+    "page": "66"
+  },
+  "lemma:0605": {
+    "number": "A.5",
+    "page": "66"
   },
   "sec:one-pintx": {
     "number": "A.12.1",
-    "page": "65"
+    "page": "67"
   },
   "appendix:cc": {
     "number": "B",
-    "page": "66"
+    "page": "67"
   },
   "sec:auto-diff": {
     "number": "B.2",
-    "page": "66"
+    "page": "68"
   },
   "sec:mitm": {
     "number": "B.3",
-    "page": "67"
+    "page": "68"
   },
   "eqn:assembly": {
     "number": "B.1",
-    "page": "68"
+    "page": "69"
   },
   "sec:calc-prep": {
     "number": "B.4",
-    "page": "68"
+    "page": "70"
   },
   "lemma:peripheral-o2c": {
     "number": "B.2",
-    "page": "69"
+    "page": "70"
   },
   "sec:pseudo1": {
     "number": "B.4.1",
-    "page": "69"
+    "page": "71"
   },
   "sec:pseudo2": {
     "number": "B.4.2",
-    "page": "70"
+    "page": "71"
   },
   "eqn:pseudo2-constraint": {
     "number": "B.3",
-    "page": "70"
+    "page": "72"
   },
   "sec:pseudo-area": {
     "number": "B.4.3",
-    "page": "70"
+    "page": "72"
   },
   "sec:pseudo-area3": {
     "number": "B.4.4",
-    "page": "71"
+    "page": "73"
   },
   "sec:dimer-isosc": {
     "number": "B.4.5",
-    "page": "71"
+    "page": "73"
   },
   "sec:large": {
     "number": "B.4.6",
-    "page": "71"
+    "page": "74"
   },
   "sec:pent3": {
     "number": "B.4.7",
-    "page": "72"
+    "page": "75"
   },
   "sec:pent4": {
     "number": "B.4.8",
-    "page": "73"
+    "page": "75"
   }
 }

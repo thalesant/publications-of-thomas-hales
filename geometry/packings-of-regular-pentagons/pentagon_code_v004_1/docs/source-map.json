@@ -1971,325 +1971,325 @@
     "file": "ocaml/dimer.ml",
     "function": "domain_iso2C",
     "start": 101,
-    "end": 108
-  },
-  "dimer.ml:zpi25": {
-    "file": "ocaml/dimer.ml",
-    "function": "zpi25",
-    "start": 102,
-    "end": 108
-  },
-  "dimer.ml:z2sig": {
-    "file": "ocaml/dimer.ml",
-    "function": "z2sig",
-    "start": 103,
-    "end": 108
-  },
-  "dimer.ml:r_slider": {
-    "file": "ocaml/dimer.ml",
-    "function": "r_slider",
-    "start": 104,
-    "end": 108
-  },
-  "dimer.ml:r_midpointer": {
-    "file": "ocaml/dimer.ml",
-    "function": "r_midpointer",
-    "start": 105,
-    "end": 108
-  },
-  "dimer.ml:b": {
-    "file": "ocaml/dimer.ml",
-    "function": "b",
-    "start": 106,
-    "end": 108
-  },
-  "dimer.ml:f": {
-    "file": "ocaml/dimer.ml",
-    "function": "f",
-    "start": 107,
-    "end": 108
-  },
-  "dimer.ml:domain_iso2C'": {
-    "file": "ocaml/dimer.ml",
-    "function": "domain_iso2C'",
-    "start": 110,
-    "end": 118
-  },
-  "dimer.ml:zpi5": {
-    "file": "ocaml/dimer.ml",
-    "function": "zpi5",
-    "start": 112,
-    "end": 118
-  },
-  "dimer.ml:dummybool": {
-    "file": "ocaml/dimer.ml",
-    "function": "dummybool",
-    "start": 120,
-    "end": 120
-  },
-  "dimer.ml:run_group1": {
-    "file": "ocaml/dimer.ml",
-    "function": "run_group1",
-    "start": 122,
-    "end": 130
-  },
-  "dimer.ml:dimer_outdomfn_null": {
-    "file": "ocaml/dimer.ml",
-    "function": "dimer_outdomfn_null",
-    "start": 132,
-    "end": 132
-  },
-  "dimer.ml:dimer_outdomfn_eps": {
-    "file": "ocaml/dimer.ml",
-    "function": "dimer_outdomfn_eps",
-    "start": 134,
-    "end": 139
-  },
-  "dimer.ml:nearlyt": {
-    "file": "ocaml/dimer.ml",
-    "function": "nearlyt",
-    "start": 135,
-    "end": 139
-  },
-  "dimer.ml:ice_ray_nbd": {
-    "file": "ocaml/dimer.ml",
-    "function": "ice_ray_nbd",
-    "start": 141,
-    "end": 141
-  },
-  "dimer.ml:dimer_outdomfn_01": {
-    "file": "ocaml/dimer.ml",
-    "function": "dimer_outdomfn_01",
-    "start": 143,
-    "end": 143
-  },
-  "dimer.ml:one_dimer_eps": {
-    "file": "ocaml/dimer.ml",
-    "function": "one_dimer_eps",
-    "start": 146,
-    "end": 169
-  },
-  "dimer.ml:aABC": {
-    "file": "ocaml/dimer.ml",
-    "function": "aABC",
-    "start": 154,
-    "end": 169
-  },
-  "dimer.ml:betaD": {
-    "file": "ocaml/dimer.ml",
-    "function": "betaD",
-    "start": 158,
-    "end": 169
-  },
-  "dimer.ml:xbetaD": {
-    "file": "ocaml/dimer.ml",
-    "function": "xbetaD",
-    "start": 159,
-    "end": 169
-  },
-  "dimer.ml:aADC": {
-    "file": "ocaml/dimer.ml",
-    "function": "aADC",
-    "start": 163,
-    "end": 169
-  },
-  "dimer.ml:pseudodimer": {
-    "file": "ocaml/dimer.ml",
-    "function": "pseudodimer",
-    "start": 164,
-    "end": 169
-  },
-  "dimer.ml:one_dimer": {
-    "file": "ocaml/dimer.ml",
-    "function": "one_dimer",
-    "start": 171,
-    "end": 171
-  },
-  "dimer.ml:dimer_types": {
-    "file": "ocaml/dimer.ml",
-    "function": "dimer_types",
-    "start": 174,
-    "end": 182
-  },
-  "dimer.ml:dtype": {
-    "file": "ocaml/dimer.ml",
-    "function": "dtype",
-    "start": 184,
-    "end": 184
-  },
-  "dimer.ml:dimer_domain": {
-    "file": "ocaml/dimer.ml",
-    "function": "dimer_domain",
-    "start": 186,
-    "end": 188
-  },
-  "dimer.ml:dtype_labels": {
-    "file": "ocaml/dimer.ml",
-    "function": "dtype_labels",
-    "start": 190,
-    "end": 192
-  },
-  "dimer.ml:recurse_dimer": {
-    "file": "ocaml/dimer.ml",
-    "function": "recurse_dimer",
-    "start": 194,
-    "end": 200
+    "end": 109
   },
   "dimer.ml:_": {
     "file": "ocaml/dimer.ml",
     "function": "_",
-    "start": 196,
-    "end": 200
+    "start": 102,
+    "end": 109
+  },
+  "dimer.ml:zpi25": {
+    "file": "ocaml/dimer.ml",
+    "function": "zpi25",
+    "start": 103,
+    "end": 109
+  },
+  "dimer.ml:z2sig": {
+    "file": "ocaml/dimer.ml",
+    "function": "z2sig",
+    "start": 104,
+    "end": 109
+  },
+  "dimer.ml:r_slider": {
+    "file": "ocaml/dimer.ml",
+    "function": "r_slider",
+    "start": 105,
+    "end": 109
+  },
+  "dimer.ml:r_midpointer": {
+    "file": "ocaml/dimer.ml",
+    "function": "r_midpointer",
+    "start": 106,
+    "end": 109
+  },
+  "dimer.ml:b": {
+    "file": "ocaml/dimer.ml",
+    "function": "b",
+    "start": 107,
+    "end": 109
+  },
+  "dimer.ml:f": {
+    "file": "ocaml/dimer.ml",
+    "function": "f",
+    "start": 108,
+    "end": 109
+  },
+  "dimer.ml:domain_iso2C'": {
+    "file": "ocaml/dimer.ml",
+    "function": "domain_iso2C'",
+    "start": 111,
+    "end": 119
+  },
+  "dimer.ml:zpi5": {
+    "file": "ocaml/dimer.ml",
+    "function": "zpi5",
+    "start": 113,
+    "end": 119
+  },
+  "dimer.ml:dummybool": {
+    "file": "ocaml/dimer.ml",
+    "function": "dummybool",
+    "start": 121,
+    "end": 121
+  },
+  "dimer.ml:run_group1": {
+    "file": "ocaml/dimer.ml",
+    "function": "run_group1",
+    "start": 123,
+    "end": 131
+  },
+  "dimer.ml:dimer_outdomfn_null": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_outdomfn_null",
+    "start": 133,
+    "end": 133
+  },
+  "dimer.ml:dimer_outdomfn_eps": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_outdomfn_eps",
+    "start": 135,
+    "end": 140
+  },
+  "dimer.ml:nearlyt": {
+    "file": "ocaml/dimer.ml",
+    "function": "nearlyt",
+    "start": 136,
+    "end": 140
+  },
+  "dimer.ml:ice_ray_nbd": {
+    "file": "ocaml/dimer.ml",
+    "function": "ice_ray_nbd",
+    "start": 142,
+    "end": 142
+  },
+  "dimer.ml:dimer_outdomfn_01": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_outdomfn_01",
+    "start": 144,
+    "end": 144
+  },
+  "dimer.ml:one_dimer_eps": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_dimer_eps",
+    "start": 147,
+    "end": 170
+  },
+  "dimer.ml:aABC": {
+    "file": "ocaml/dimer.ml",
+    "function": "aABC",
+    "start": 155,
+    "end": 170
+  },
+  "dimer.ml:betaD": {
+    "file": "ocaml/dimer.ml",
+    "function": "betaD",
+    "start": 159,
+    "end": 170
+  },
+  "dimer.ml:xbetaD": {
+    "file": "ocaml/dimer.ml",
+    "function": "xbetaD",
+    "start": 160,
+    "end": 170
+  },
+  "dimer.ml:aADC": {
+    "file": "ocaml/dimer.ml",
+    "function": "aADC",
+    "start": 164,
+    "end": 170
+  },
+  "dimer.ml:pseudodimer": {
+    "file": "ocaml/dimer.ml",
+    "function": "pseudodimer",
+    "start": 165,
+    "end": 170
+  },
+  "dimer.ml:one_dimer": {
+    "file": "ocaml/dimer.ml",
+    "function": "one_dimer",
+    "start": 172,
+    "end": 172
+  },
+  "dimer.ml:dimer_types": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_types",
+    "start": 175,
+    "end": 183
+  },
+  "dimer.ml:dtype": {
+    "file": "ocaml/dimer.ml",
+    "function": "dtype",
+    "start": 185,
+    "end": 185
+  },
+  "dimer.ml:dimer_domain": {
+    "file": "ocaml/dimer.ml",
+    "function": "dimer_domain",
+    "start": 187,
+    "end": 189
+  },
+  "dimer.ml:dtype_labels": {
+    "file": "ocaml/dimer.ml",
+    "function": "dtype_labels",
+    "start": 191,
+    "end": 193
+  },
+  "dimer.ml:recurse_dimer": {
+    "file": "ocaml/dimer.ml",
+    "function": "recurse_dimer",
+    "start": 195,
+    "end": 201
   },
   "dimer.ml:recurse0": {
     "file": "ocaml/dimer.ml",
     "function": "recurse0",
-    "start": 202,
-    "end": 203
+    "start": 203,
+    "end": 204
   },
   "dimer.ml:run_group2": {
     "file": "ocaml/dimer.ml",
     "function": "run_group2",
-    "start": 206,
-    "end": 215
+    "start": 207,
+    "end": 216
   },
   "dimer.ml:needsmore": {
     "file": "ocaml/dimer.ml",
     "function": "needsmore",
-    "start": 217,
-    "end": 217
+    "start": 218,
+    "end": 218
   },
   "dimer.ml:morecases": {
     "file": "ocaml/dimer.ml",
     "function": "morecases",
-    "start": 219,
-    "end": 219
+    "start": 220,
+    "end": 220
   },
   "dimer.ml:recurse_01": {
     "file": "ocaml/dimer.ml",
     "function": "recurse_01",
-    "start": 221,
-    "end": 222
+    "start": 222,
+    "end": 223
   },
   "dimer.ml:run_group3": {
     "file": "ocaml/dimer.ml",
     "function": "run_group3",
-    "start": 225,
-    "end": 246
+    "start": 226,
+    "end": 247
   },
   "dimer.ml:recurseN": {
     "file": "ocaml/dimer.ml",
     "function": "recurseN",
-    "start": 249,
-    "end": 250
+    "start": 250,
+    "end": 251
   },
   "dimer.ml:run_group4": {
     "file": "ocaml/dimer.ml",
     "function": "run_group4",
-    "start": 252,
-    "end": 258
+    "start": 253,
+    "end": 259
   },
   "dimer.ml:safetan_I": {
     "file": "ocaml/dimer.ml",
     "function": "safetan_I",
-    "start": 260,
-    "end": 261
+    "start": 261,
+    "end": 262
   },
   "dimer.ml:one_sigma": {
     "file": "ocaml/dimer.ml",
     "function": "one_sigma",
-    "start": 264,
-    "end": 267
+    "start": 265,
+    "end": 268
   },
   "dimer.ml:f0": {
     "file": "ocaml/dimer.ml",
     "function": "f0",
-    "start": 265,
-    "end": 267
+    "start": 266,
+    "end": 268
   },
   "dimer.ml:f1": {
     "file": "ocaml/dimer.ml",
     "function": "f1",
-    "start": 266,
-    "end": 267
+    "start": 267,
+    "end": 268
   },
   "dimer.ml:squeezable": {
     "file": "ocaml/dimer.ml",
     "function": "squeezable",
-    "start": 270,
-    "end": 286
+    "start": 271,
+    "end": 287
   },
   "dimer.ml:dAB_sinA": {
     "file": "ocaml/dimer.ml",
     "function": "dAB_sinA",
-    "start": 280,
-    "end": 286
+    "start": 281,
+    "end": 287
   },
   "dimer.ml:sigmaA": {
     "file": "ocaml/dimer.ml",
     "function": "sigmaA",
-    "start": 281,
-    "end": 286
+    "start": 282,
+    "end": 287
   },
   "dimer.ml:sigmaC": {
     "file": "ocaml/dimer.ml",
     "function": "sigmaC",
-    "start": 282,
-    "end": 286
+    "start": 283,
+    "end": 287
   },
   "dimer.ml:domain2Ce": {
     "file": "ocaml/dimer.ml",
     "function": "domain2Ce",
-    "start": 288,
-    "end": 288
+    "start": 289,
+    "end": 289
   },
   "dimer.ml:squeeze_calc": {
     "file": "ocaml/dimer.ml",
     "function": "squeeze_calc",
-    "start": 290,
-    "end": 296
+    "start": 291,
+    "end": 297
   },
   "dimer.ml:top": {
     "file": "ocaml/dimer.ml",
     "function": "top",
-    "start": 291,
-    "end": 296
+    "start": 292,
+    "end": 297
   },
   "dimer.ml:outofdomfn": {
     "file": "ocaml/dimer.ml",
     "function": "outofdomfn",
-    "start": 295,
-    "end": 296
+    "start": 296,
+    "end": 297
   },
   "dimer.ml:one127": {
     "file": "ocaml/dimer.ml",
     "function": "one127",
-    "start": 299,
-    "end": 308
+    "start": 300,
+    "end": 309
   },
   "dimer.ml:v": {
     "file": "ocaml/dimer.ml",
     "function": "v",
-    "start": 302,
-    "end": 308
+    "start": 303,
+    "end": 309
   },
   "dimer.ml:domain2C": {
     "file": "ocaml/dimer.ml",
     "function": "domain2C",
-    "start": 310,
-    "end": 310
+    "start": 311,
+    "end": 311
   },
   "dimer.ml:recursesgn": {
     "file": "ocaml/dimer.ml",
     "function": "recursesgn",
-    "start": 312,
-    "end": 314
+    "start": 313,
+    "end": 315
   },
   "dimer.ml:run_group5": {
     "file": "ocaml/dimer.ml",
     "function": "run_group5",
-    "start": 316,
-    "end": 318
+    "start": 317,
+    "end": 319
   },
   "interval_compat.ml:float_i": {
     "file": "ocaml/interval_compat.ml",
@@ -3897,217 +3897,217 @@
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case0",
     "start": 268,
-    "end": 288
+    "end": 290
   },
   "mitm-calcs.ml:range": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "range",
     "start": 272,
-    "end": 288
+    "end": 290
   },
   "mitm-calcs.ml:assertAC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "assertAC",
-    "start": 282,
-    "end": 288
+    "start": 284,
+    "end": 290
   },
   "mitm-calcs.ml:assertBC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "assertBC",
-    "start": 284,
-    "end": 288
+    "start": 286,
+    "end": 290
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case1",
-    "start": 294,
-    "end": 308
+    "start": 296,
+    "end": 310
   },
   "mitm-calcs.ml:d_18": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_18",
-    "start": 303,
-    "end": 308
+    "start": 305,
+    "end": 310
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case2",
-    "start": 314,
-    "end": 329
+    "start": 316,
+    "end": 331
   },
   "mitm-calcs.ml:d_contact": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_contact",
-    "start": 324,
-    "end": 329
+    "start": 326,
+    "end": 331
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case3": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case3",
-    "start": 335,
-    "end": 348
+    "start": 337,
+    "end": 350
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case4": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case4",
-    "start": 354,
-    "end": 368
+    "start": 356,
+    "end": 370
   },
   "mitm-calcs.ml:precluster1_case0": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster1_case0",
-    "start": 374,
-    "end": 392
+    "start": 376,
+    "end": 394
   },
   "mitm-calcs.ml:precluster1_case1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster1_case1",
-    "start": 398,
-    "end": 418
+    "start": 400,
+    "end": 420
   },
   "mitm-calcs.ml:theta'": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "theta'",
-    "start": 402,
-    "end": 418
+    "start": 404,
+    "end": 420
   },
   "mitm-calcs.ml:out_of_theta'": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "out_of_theta'",
-    "start": 403,
-    "end": 418
+    "start": 405,
+    "end": 420
   },
   "mitm-calcs.ml:d_shared": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_shared",
-    "start": 412,
-    "end": 418
+    "start": 414,
+    "end": 420
   },
   "mitm-calcs.ml:precluster1_case2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster1_case2",
-    "start": 424,
-    "end": 445
+    "start": 426,
+    "end": 447
   },
   "mitm-calcs.ml:notslider1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "notslider1",
-    "start": 428,
-    "end": 445
+    "start": 430,
+    "end": 447
   },
   "mitm-calcs.ml:notslider": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "notslider",
-    "start": 429,
-    "end": 445
+    "start": 431,
+    "end": 447
   },
   "mitm-calcs.ml:d_full": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_full",
-    "start": 440,
-    "end": 445
+    "start": 442,
+    "end": 447
   },
   "mitm-calcs.ml:pseudo2_boundary_excluded": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "pseudo2_boundary_excluded",
-    "start": 451,
-    "end": 456
+    "start": 453,
+    "end": 458
   },
   "mitm-calcs.ml:precluster2_case0": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster2_case0",
-    "start": 462,
-    "end": 478
+    "start": 464,
+    "end": 480
   },
   "mitm-calcs.ml:precluster2_case1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster2_case1",
-    "start": 484,
-    "end": 503
+    "start": 486,
+    "end": 505
   },
   "mitm-calcs.ml:out_of_midpointer": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "out_of_midpointer",
-    "start": 488,
-    "end": 503
+    "start": 490,
+    "end": 505
   },
   "mitm-calcs.ml:precluster2_case2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster2_case2",
-    "start": 509,
-    "end": 528
+    "start": 511,
+    "end": 530
   },
   "mitm-calcs.ml:dimer_isosceles_precluster": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "dimer_isosceles_precluster",
-    "start": 534,
-    "end": 547
+    "start": 536,
+    "end": 549
   },
   "mitm-calcs.ml:precluster4_case0_experimental": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster4_case0_experimental",
-    "start": 553,
-    "end": 564
+    "start": 555,
+    "end": 566
   },
   "mitm-calcs.ml:precluster4_case1_experimental": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster4_case1_experimental",
-    "start": 570,
-    "end": 581
+    "start": 572,
+    "end": 583
   },
   "mitm-calcs.ml:init2Cps_precluster6": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "init2Cps_precluster6",
-    "start": 585,
-    "end": 592
+    "start": 587,
+    "end": 594
   },
   "mitm-calcs.ml:precluster6_case1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case1",
-    "start": 598,
-    "end": 610
+    "start": 600,
+    "end": 612
   },
   "mitm-calcs.ml:keyfnT": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "keyfnT",
-    "start": 602,
-    "end": 610
+    "start": 604,
+    "end": 612
   },
   "mitm-calcs.ml:keyfnS": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "keyfnS",
-    "start": 603,
-    "end": 610
+    "start": 605,
+    "end": 612
   },
   "mitm-calcs.ml:precluster6_case2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case2",
-    "start": 616,
-    "end": 628
+    "start": 618,
+    "end": 630
   },
   "mitm-calcs.ml:precluster6_case3": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case3",
-    "start": 634,
-    "end": 646
+    "start": 636,
+    "end": 648
   },
   "mitm-calcs.ml:precluster6_case4": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case4",
-    "start": 652,
-    "end": 664
+    "start": 654,
+    "end": 666
   },
   "mitm-calcs.ml:precluster6_case5": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case5",
-    "start": 670,
-    "end": 682
+    "start": 672,
+    "end": 684
   },
   "mitm-calcs.ml:precluster6_case6": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case6",
-    "start": 688,
-    "end": 700
+    "start": 690,
+    "end": 702
   },
   "pent.ml:selectsome": {
     "file": "ocaml/pent.ml",
@@ -5259,97 +5259,97 @@
     "file": "ocaml/pent.ml",
     "function": "outdomfn_pinwheel",
     "start": 673,
-    "end": 676
+    "end": 674
   },
   "pent.ml:outdomfn_lj": {
     "file": "ocaml/pent.ml",
     "function": "outdomfn_lj",
-    "start": 678,
-    "end": 680
+    "start": 676,
+    "end": 678
   },
   "pent.ml:outdomfn_tj": {
     "file": "ocaml/pent.ml",
     "function": "outdomfn_tj",
-    "start": 682,
-    "end": 684
+    "start": 680,
+    "end": 682
   },
   "pent.ml:outdomfn_pint": {
     "file": "ocaml/pent.ml",
     "function": "outdomfn_pint",
-    "start": 686,
-    "end": 688
+    "start": 684,
+    "end": 686
   },
   "pent.ml:calculate": {
     "file": "ocaml/pent.ml",
     "function": "calculate",
-    "start": 690,
-    "end": 693
+    "start": 688,
+    "end": 691
   },
   "pent.ml:once": {
     "file": "ocaml/pent.ml",
     "function": "once",
-    "start": 692,
-    "end": 693
+    "start": 690,
+    "end": 691
   },
   "pent.ml:zero2": {
     "file": "ocaml/pent.ml",
     "function": "zero2",
-    "start": 695,
-    "end": 695
+    "start": 693,
+    "end": 693
   },
   "pent.ml:pinwheeldomain": {
     "file": "ocaml/pent.ml",
     "function": "pinwheeldomain",
-    "start": 697,
-    "end": 697
+    "start": 695,
+    "end": 695
   },
   "pent.ml:ljdomain": {
     "file": "ocaml/pent.ml",
     "function": "ljdomain",
-    "start": 699,
-    "end": 699
+    "start": 697,
+    "end": 697
   },
   "pent.ml:tjdomain": {
     "file": "ocaml/pent.ml",
     "function": "tjdomain",
-    "start": 701,
-    "end": 701
+    "start": 699,
+    "end": 699
   },
   "pent.ml:pintdomain": {
     "file": "ocaml/pent.ml",
     "function": "pintdomain",
-    "start": 703,
-    "end": 704
+    "start": 701,
+    "end": 702
   },
   "pent.ml:types3C": {
     "file": "ocaml/pent.ml",
     "function": "types3C",
-    "start": 706,
-    "end": 710
+    "start": 704,
+    "end": 708
   },
   "pent.ml:one1237": {
     "file": "ocaml/pent.ml",
     "function": "one1237",
-    "start": 715,
-    "end": 721
+    "start": 713,
+    "end": 719
   },
   "pent.ml:outdomfn_delta": {
     "file": "ocaml/pent.ml",
     "function": "outdomfn_delta",
-    "start": 725,
-    "end": 726
+    "start": 723,
+    "end": 724
   },
   "pent.ml:onedeltajamin": {
     "file": "ocaml/pent.ml",
     "function": "onedeltajamin",
-    "start": 728,
-    "end": 734
+    "start": 726,
+    "end": 732
   },
   "pent.ml:ff": {
     "file": "ocaml/pent.ml",
     "function": "ff",
-    "start": 737,
-    "end": 739
+    "start": 735,
+    "end": 737
   },
   "pet.ml:periodize1": {
     "file": "ocaml/pet.ml",

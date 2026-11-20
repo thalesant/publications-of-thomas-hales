@@ -1,0 +1,71 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alliot et~al.(2012)Alliot, Gotteland, Vanaret, Durand, and
+  Gianazza]{All}
+Jean-Marc Alliot, Jean-Baptiste Gotteland, Charlie Vanaret, Nicolas Durand, and
+  David Gianazza.
+\newblock Implementing an interval computation library for {OCaml} on x86/amd64
+  architectures.
+\newblock In \emph{OUD 2012, OCaml Users and Developers workshop}, 2012.
+
+\bibitem[de~Oliveira~Filho and Vallentin(2018)]{val}
+Fernando~M{\'a}rio de~Oliveira~Filho and Frank Vallentin.
+\newblock Computing upper bounds for the packing density of congruent copies of
+  a convex body.
+\newblock In \emph{New trends in intuitive geometry}, pages 155--188. Springer,
+  2018.
+\newblock \url{arxiv.org/abs/1308.4893v3}.
+
+\bibitem[Dinur et~al.(2014)Dinur, Dunkelman, Keller, and
+  Shamir]{dinur2014dissection}
+Itai Dinur, Orr Dunkelman, Nathan Keller, and Adi Shamir.
+\newblock Dissection: a new paradigm for solving bicomposite search problems.
+\newblock \emph{Communications of the ACM}, 57\penalty0 (10):\penalty0 98--105,
+  2014.
+
+\bibitem[Dye(1937)]{dye}
+Daniel~Sheets Dye.
+\newblock \emph{A grammar of Chinese lattice}.
+\newblock Harvard University Press, 1937.
+
+\bibitem[Hales and Kusner(2016--2026)]{Git}
+Thomas Hales and W\"oden Kusner.
+\newblock Pentagon computations.
+\newblock Code v005, with {OCaml} source fingerprint \texttt{6a1953fe9c36ef78},
+  accompanies the present article. Previous release:
+  \url{https://github.com/thalesant/publications-of-thomas-hales/tree/29250f012a54cf659010291cef8f907438f4d392/geometry/packings-of-regular-pentagons/pentagon_code_v004_1},
+  2016--2026.
+
+\bibitem[Hales(2003)]{hales2003some}
+Thomas~C Hales.
+\newblock Some algorithms arising in the proof of the {Kepler} conjecture.
+\newblock In \emph{Discrete and computational geometry}, pages 489--507.
+  Springer, 2003.
+
+\bibitem[Henley(1986)]{henley}
+CL~Henley.
+\newblock Sphere packings and local environments in {Penrose} tilings.
+\newblock \emph{Physical Review B}, 34\penalty0 (2):\penalty0 797--816, 1986.
+
+\bibitem[Kuperberg and Kuperberg(1990)]{Kup}
+Greg Kuperberg and Wlodzimierz Kuperberg.
+\newblock Double-lattice packings of convex bodies in the plane.
+\newblock \emph{Discrete \& Computational Geometry}, 5\penalty0 (4):\penalty0
+  389--397, 1990.
+
+\bibitem[Kusner(2014)]{Kus}
+W{\"o}den Kusner.
+\newblock \emph{Bounds on packing density via slicing}.
+\newblock PhD thesis, University of Pittsburgh, 2014.
+
+\bibitem[Negruseri(2012)]{mitm}
+Cosmin Negruseri.
+\newblock Coding contest trick: Meet in the middle.
+\newblock \url{www.infoarena.ro/blog/meet-in-the-middle}, 2012.
+
+\end{thebibliography}

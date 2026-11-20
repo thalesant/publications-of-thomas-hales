@@ -22,7 +22,7 @@ def strip_strings_comments(text):
 
 class Release(unittest.TestCase):
  def test_manuscript_has_no_active_review_markup(self):
-    text=(ROOT/'paper/pentagon_v007.tex').read_text()
+    text=(ROOT/'paper/pentagon_v008.tex').read_text()
     active='\n'.join(x for x in text.splitlines() if not x.lstrip().startswith('%'))
     self.assertNotIn('pentagonrefereenote',active);self.assertNotIn('pentagonproposal',active)
     self.assertNotIn('TODO',active)
@@ -30,12 +30,12 @@ class Release(unittest.TestCase):
     record=json.loads((ROOT/'provenance/label-comparison.json').read_text())
     labels=json.loads((ROOT/'paper/label-map.json').read_text())
     self.assertEqual(len(labels),168)
-    self.assertTrue(record)
+    self.assertEqual(record["unchanged_numbers"],len(labels))
  def test_navigation_codes_are_unique(self):
     x=json.loads((ROOT/'provenance/input-identities.json').read_text())['seven_letter_identifiers']
     self.assertEqual(len(x),len(set(x.values())))
     self.assertTrue(all(re.fullmatch('[A-Z]{7}',v)for v in x.values()))
-    text=(ROOT/'paper/pentagon_v007.tex').read_text()
+    text=(ROOT/'paper/pentagon_v008.tex').read_text()
     self.assertTrue(all(v in text for v in x.values()))
  def test_wolfram_balanced_delimiters(self):
     for fn in ['mathematica/PentagonChecks.wl','mathematica/run_checks.wls','figures/PentagonFigures.wl']:
@@ -58,7 +58,7 @@ class Release(unittest.TestCase):
       ls=(ROOT/v['file']).read_text().splitlines();self.assertGreater(v['start'],0);self.assertGreaterEqual(v['end'],v['start']);self.assertLessEqual(v['end'],len(ls)+1)
       self.assertRegex(ls[v['start']-1],r'\blet(?: rec)? '+re.escape(v['function'])+r'(?=\s|\(|=|:|$)')
  def test_required_set_and_no_static_release_pass(self):
-    reg=json.loads((ROOT/'registry.json').read_text());self.assertEqual(reg['version'],'pentagon_code_v004')
+    reg=json.loads((ROOT/'registry.json').read_text());self.assertEqual(reg['version'],'pentagon_code_v005')
     self.assertEqual(sum(j['required_for_confirmation']for j in reg['jobs']),77)
     self.assertFalse(any('release_status'in j for j in reg['jobs']))
  def test_mathematical_source_equivalence_record(self):

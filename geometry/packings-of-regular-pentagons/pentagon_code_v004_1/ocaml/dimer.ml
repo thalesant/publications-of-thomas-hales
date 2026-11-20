@@ -99,6 +99,7 @@ let one_tjx xs =
   with Unstable -> false;;
 
 let domain_iso2C =
+  let _ = area_I (179//100) (179//100) (two*kappa) >> aK || failwith "1.79 long isosceles" in
   let zpi25 = zero2 (ratpi 2 5) in
   let z2sig = zero2 (two*sigma) in
   let r_slider = [z2sig;zero;z2sig;zpi25] in
@@ -260,7 +261,7 @@ let run_group4() =
 let safetan_I x = if (x.high < 1.57) && (x.low > -. 1.57) then
     tan_I x else raise Unstable;;
 
-(* Contact-line slope after choosing the relevant extended alpha chart. The sign and reciprocal alternatives are geometrically significant; see the outstanding signed-squeeze contract in the audit. *)
+(* Contact-line slope after choosing the relevant extended alpha chart. The sign and reciprocal alternatives are geometrically significant; the four squeeze_sign jobs verify the signed contact branches. *)
 let one_sigma arcA thBAC thABC alpha =
   let f0 alpha = safetan_I (-arcA + thBAC + pi310 + (pi25 - alpha)) in
   let f1 alpha = safetan_I (-arcA - thABC + pi310 + alpha) in

@@ -1,5 +1,7 @@
 # Release provenance
 
+The historical records describe v004 and v004.1. The label comparison describes v007 and v008. For the changes in v005 see the [release history](../CHANGELOG.md) and [v005 file comparison](v005-file-changes.json).
+
 This directory records integration and preparation, not successful execution of a
 new full mathematical run. `file-changes.json` identifies unchanged, modified,
 added, and removed paths relative to the preceding computational distribution.

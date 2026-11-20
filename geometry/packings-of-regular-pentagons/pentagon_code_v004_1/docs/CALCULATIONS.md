@@ -1,4 +1,4 @@
-# Paper-to-code index — code v004 / manuscript v007
+# Paper-to-code index — code v005 / manuscript v008
 
 **Context:** commands below are for Linux/Ubuntu-WSL Bash, at the extracted package root containing `run.py`. Append `--list` to preview without executing.
 
@@ -32,7 +32,7 @@ If every edge is at most 1.72, the P-triangle is not subcritical.
 
 **Assumptions / reductions:** The paper reduces the nonobtuse short-edge case to the classified 3C configurations. Use the four non-Delta contact types plus the separate Delta exclusion.
 
-**Interpretation:** The code uses the stronger longest-edge cutoff 1.7215. Four non-Delta types and the Delta exclusion exhaust the classified terminal contact patterns.
+**Interpretation:** The code uses the stronger longest-edge cutoff 1.7215. Four non-Delta types and the Delta exclusion exhaust the classified terminal contact patterns. The pinwheel branch uses the entire angle triangle.
 
 | Job | Mathematical call | Source | Role |
 |---|---|---|---|
@@ -56,7 +56,7 @@ Every nonobtuse P-triangle has area greater than a_min.
 
 **Assumptions / reductions:** The paper first reduces to 3C contact; amin is 1.237 in the code. The Delta type is covered separately by onedeltajmin.
 
-**Interpretation:** The four non-Delta contact charts use the exact rational cutoff 1237/1000; the Delta case is handled at the stronger cutoff 1.5.
+**Interpretation:** The four non-Delta contact charts use the exact rational cutoff 1237/1000; the Delta case is handled at the stronger cutoff 1.5. The pinwheel branch uses the entire angle triangle.
 
 | Job | Mathematical call | Source | Role |
 |---|---|---|---|
@@ -124,7 +124,7 @@ area{T0,T1} > 2*a_crit - epsilon_M.
 
 **Assumptions / reductions:** (T1,T0) in Psi D. Preparation produces two isosceles-peripheral cases or a 3C+3C terminal case. For the central pin-T placement sharing AB, the shared edge is the longest peripheral edge, in (1.72,1.8).
 
-**Interpretation:** Two isosceles-peripheral cases and the covered triple-contact pairs use the existing exclusions (0.007 is stronger than 0.008). The AB-shared central pin-T placement is handled separately by pintab_area and small3C_area: 1.315+1.262=2.577 > 2*a_crit-epsilon_M. The Delta type has its separate 1.5 bound. The central placement is not assumed empty on its own.
+**Interpretation:** Two isosceles-peripheral cases and the covered triple-contact pairs use the existing exclusions (0.007 is stronger than 0.008). The AB-shared central pin-T placement is handled separately by pintab_area and small3C_area: 1.315+1.262=2.577 > 2*a_crit-epsilon_M. The Delta type has its separate 1.5 bound. The central placement is not assumed empty on its own. The pinwheel branch uses the entire angle triangle.
 
 | Job | Mathematical call | Source | Role |
 |---|---|---|---|
@@ -175,7 +175,7 @@ In a dimer pair, T1 cannot be both O2C and long isosceles.
 
 **Assumptions / reductions:** (T1,T0) in DP. Negate the conclusion, reduce T0 to O2C, then run the isosceles peripheral case.
 
-**Interpretation:** The shared-edge glue matches an O2C long-isosceles peripheral to an O2C central triangle at pair cutoff 2 acrit.
+**Interpretation:** The shared-edge glue matches an O2C long-isosceles peripheral to an O2C central triangle at pair cutoff 2 acrit. On the closed boundary the peripheral is subcritical and shares a longest edge with the central triangle. The latter has no subcriticality or attachment-tie requirement.
 
 | Job | Mathematical call | Source | Role |
 |---|---|---|---|
@@ -260,7 +260,7 @@ Source code: `GAIMXAD`; paper label: `sec:O2C`.
 
 Terminal exclusions named iso_2C and iso_2C' in the paper’s stage-2 calculation.
 
-**Assumptions / reductions:** Use the acute, subcritical long-isosceles terminal configurations and contact alternatives actually listed in the paper.
+**Assumptions / reductions:** The long-isosceles triangle is acute and subcritical. AB is a slider, or a vertex of A is at the midpoint of an edge of B. The slide towards a smaller angle at A does not shorten AB.
 
 **Interpretation:** The two long-isosceles exclusions are evaluated together with four shared-contact coordinate restrictions by dimer_group1. Result labels follow the returned list, not the evaluation order.
 
@@ -502,7 +502,7 @@ A pin-T triangle with d_AB >= 1.72 has area > 1.315.
 
 **Assumptions / reductions:** The pin-T contact chart and its full contact-parameter domain; area_I is used, without a nonobtuse-area shortcut.
 
-**Interpretation:** Combine this with the small-edge peripheral estimate in Appendix B.4.3; this is not an emptiness claim for the central triangle alone.
+**Interpretation:** Combine this with the small-edge peripheral estimate in Appendix B.4.3; this is not an emptiness claim for the central triangle alone. The pinwheel branch uses the entire angle triangle.
 
 | Job | Mathematical call | Source | Role |
 |---|---|---|---|
@@ -522,7 +522,7 @@ Every tested non-Delta 3C triangle with all sides <= 1.8 has area > 1.262.
 
 **Assumptions / reductions:** Pinwheel, LJ, TJ, and pin-T domains; full triangle-area intervals. The Delta type is separately bounded by Lemma 4.7.
 
-**Interpretation:** Four independent chart results must all pass. The bound concerns the peripheral in the AB-shared pin-T pair exclusion.
+**Interpretation:** Four independent chart results must all pass. The bound concerns the peripheral in the AB-shared pin-T pair exclusion. The pinwheel branch uses the entire angle triangle.
 
 | Job | Mathematical call | Source | Role |
 |---|---|---|---|
@@ -583,12 +583,12 @@ This includes supporting stages and optional diagnostics, not only the eight pri
 | `unit` | test | tests:function-contracts | Deterministic boundary, geometry, derivative and finite-MITM checks |
 | `extended` | test | tests:function-contracts | All unit checks plus deterministic generated geometric and key-cover cases |
 | `squeeze_sign_tests` | test | tests:squeeze-contracts | 71 checks of contact construction, sign predicates, strict overlap and subdivision coverage |
-| `pinwheel1237` | proof | Lemma 4.11 [lemma:a0] | Exclude nonobtuse pinwheel triangles of area at most 1.237. |
+| `pinwheel1237` | proof | Lemma 4.11 [lemma:a0] | Exclude nonobtuse pinwheel triangles of area at most 1.237. The pinwheel test retains the full angle triangle. |
 | `lj1237` | proof | Lemma 4.11 [lemma:a0] | Exclude nonobtuse L-junction triangles of area at most 1.237. |
 | `tj1237` | proof | Lemma 4.11 [lemma:a0] | Exclude nonobtuse T-junction triangles of area at most 1.237. |
 | `pint1237` | proof | Lemma 4.11 [lemma:a0] | Exclude nonobtuse pin-T junction triangles of area at most 1.237. |
 | `onedeltajmin` | proof | Lemma 4.7 [lemma:delta], Lemma 4.11 [lemma:a0], Lemma 4.9 [lemma:172] | Exclude Delta-contact triangles of area at most 1.5 on the classified domain. |
-| `pinwheel17215` | proof | Lemma 4.9 [lemma:172] | Exclude subcritical pinwheel triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound). |
+| `pinwheel17215` | proof | Lemma 4.9 [lemma:172] | Exclude subcritical pinwheel triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound). The pinwheel test retains the full angle triangle. |
 | `lj17215` | proof | Lemma 4.9 [lemma:172] | Exclude subcritical L-junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound). |
 | `tj17215` | proof | Lemma 4.9 [lemma:172] | Exclude subcritical T-junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound). |
 | `pint17215` | proof | Lemma 4.9 [lemma:172] | Exclude subcritical pin-T junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound). |
@@ -659,5 +659,5 @@ This includes supporting stages and optional diagnostics, not only the eight pri
 | `mitm_test1_centralpent_172` | diagnostic | diagnostic:central | Existing central-chart diagnostic (1.72 cutoff) |
 | `mitm_geometric_control` | test | Appendix B.3 — geometric matching control | Retain a known asymmetric glued configuration through real keys and two pruning rounds; detect the wrong orientation inversion. |
 | `pintab_area` | proof | Lemma 5.4 [calc:pseudo-area]; Appendix B.4.3 | Pin-T triangle with d_AB >= 1.72: exclude area <= 1.315. |
-| `small3C_area` | proof | Lemma 5.4 [calc:pseudo-area]; Appendix B.4.3 | Four non-Delta triple-contact charts with every side <= 1.8: exclude area <= 1.262. |
+| `small3C_area` | proof | Lemma 5.4 [calc:pseudo-area]; Appendix B.4.3 | Four non-Delta triple-contact charts with every side <= 1.8: exclude area <= 1.262. The pinwheel test retains the full angle triangle. |
 | `face_lj1` | proof | Theorem 6.1, stage 6; Appendix A.7 | On the LJ1 face beta_bar=pi/5, prove the negative area derivative for alpha_bar decreasing at unit speed. |

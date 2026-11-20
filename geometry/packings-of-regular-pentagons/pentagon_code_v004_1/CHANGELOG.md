@@ -1,3 +1,12 @@
+# Manuscript v008 and code v005 — 19 November 2026
+
+Parent: `pentagon_code_v004_1` at Git commit `29250f012a54cf659010291cef8f907438f4d392`. The package uses the same layout, job names, and run and confirmation commands.
+
+- The pinwheel calculations for Lemmas 4.9, 4.11 and 5.4 retain the full angle domain. Earlier OCaml executions are not passes on v005. The two added side-bound assertions accompany the existing isosceles and two-triangle calculations.
+- Section 3 treats limiting contacts. Section 6 gives the signed condition in stage 2, the fixed-edge peripheral reduction, and the outgoing motion at a vertex in stage 3. The existing Lemma 5.10 calculation covers a tie on the subcritical side. Its central triangle may be supercritical. The appendix gives the corresponding reductions and parameter cutoffs.
+- The Mathematica component and its original 161-check execution report are preserved byte for byte. Confirmation checks the new manuscript association separately. See `verification/CONFIRMATION.md` for the actual run status.
+- The paper, bibliography outputs, gallery and offline HTML indices are included in the archive. File changes relative to the parent distribution are listed in `provenance/v005-file-changes.json`. Earlier provenance records describe their original releases.
+
 # Modular reporting revision 1 (code v004.1)
 
 - Made `mathematica/` independently deployable: only three runtime files are read.

@@ -3,7 +3,7 @@
 ## Claim and context for a first-time reader
 
 This calculation supports **Lemma 6.5, `lemma:squeeze-area`, Section 6.3** of
-`pentagon_v007.tex`. Pentagon circumradius is one. Put
+`pentagon_v008.tex`. Pentagon circumradius is one. Put
 
 \[
 \kappa=\cos(\pi/5),\quad \sigma=\sin(\pi/5),\quad

@@ -1,6 +1,6 @@
 PENTAGON PACKING — START HERE
-Computational distribution: code v004, modular reporting revision 1
-Current manuscript: paper/pentagon_v007.pdf (source: paper/pentagon_v007.tex)
+Computational distribution: code v005
+Current manuscript: paper/pentagon_v008.pdf (source: paper/pentagon_v008.tex)
 
 ONE PROJECT, ONE RUNNER, ONE CONFIRMATION
 All additional estimates and the geometric MITM control are integrated. There is
@@ -11,7 +11,7 @@ requirement to run a program from Downloads.
    README.md gives the complete starting procedure.
    docs/index.html maps printed paper statements to their computations.
    docs/code_commentary.pdf explains the geometry behind those computations.
-   docs/pentagon_changes_2016v2_to_v007.md is the compact revision table.
+   CHANGELOG.md describes v008. The compact table in docs/ covers 2016 through v007.
 
 2. ENTER PACKAGE_ROOT
    Use Linux Bash (Ubuntu Bash under WSL on Windows), not PowerShell or an OCaml
@@ -34,11 +34,7 @@ requirement to run a program from Downloads.
    Repeat the same command to resume completed source-matching jobs.
 
 4. WOLFRAM CHECKS
-   Follow mathematica/README.md: notebook file selection or wolframscript.
-   Export all 161 checks to verification/paper-checks.json. A report made on
-   another machine using ONLY the mathematica/ folder can be copied here.
-   No LaTeX or label map is required there. Known v003/v004 complete reports
-   are accepted unchanged through an explicit equivalence record.
+   The original 161-check passing report is included and validated against the unchanged Mathematica component. A fresh Mathematica run is optional.
 
 5. CONFIRM AND PACKAGE — AGAIN IN BASH AT PACKAGE_ROOT
    python3 confirm.py --check
@@ -55,4 +51,4 @@ No calculation result is supplied as a checkpoint in this fresh distribution.
 The generated verification record, not this fixed guide, reports actual completion.
 
 Modular component boundaries and compatibility: docs/MODULARITY.md.
-No mathematical formulas changed in this reporting revision.
+The pinwheel domain and the manuscript have been revised.

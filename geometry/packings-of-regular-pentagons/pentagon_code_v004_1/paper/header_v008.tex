@@ -1,4 +1,4 @@
-% Compilation driver for manuscript pentagon_v007.tex.
+% Compilation driver for manuscript pentagon_v008.tex.
 %%
 % Author Thomas C. Hales et al.
 % LaTeX Format
@@ -47,7 +47,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage{txfonts}
-%\usepackage[hyphens]{url}
+\usepackage[hyphens]{url}
 %\usepackage{url}
 \usepackage{setspace}
 \usepackage{ellipsis} % 
@@ -114,8 +114,8 @@
 \def\normo#1{{\|#1\|}}
 
 \def\red#1{\textcolor{red}{#1}}
-\def\calc{$^\dagger$}
-\def\calcref#1{$^\dagger$}
+%\def\calc{$^\dagger$}
+\def\calcref#1{} % $^\dagger$
 % line numbers
 \def\lll{\resetlinenumber[1]}
 \def\linenumberfont{\normalfont\small\sffamily}
@@ -187,8 +187,9 @@
 \title
     {Packings of Regular Pentagons in the Plane}
 \author{Thomas Hales and W\"oden Kusner}
-\date{Revision history: 2/23/2016 (arXiv v1), 9/13/2016 (arXiv v2). This version: 14 November 2026}
-\thanks{Research supported by NSF grant 1104102 and partially supported by Austrian Science Fund (FWF) Project 5503. We thank a referee for comments.}
+\date{Revision history: 2/23/2016 (arXiv v1), 9/13/2016 (arXiv v2). This version: 19 November 2026}
+\thanks{Research supported by NSF grant 1104102 and partially supported by Austrian Science Fund (FWF) Project 5503. We thank a referee for a detailed report.
+ChatGPT Astra and Claude were used in production of the 2026 version of this paper and code.}
 
 \begin{abstract}  
 We show that every packing of congruent regular pentagons in the Euclidean plane has
@@ -218,7 +219,7 @@ interval arithmetic, automatic differentiation, and a meet-in-the-middle algorit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% FRONT
 
-\input{pentagon_v007}
+\input{pentagon_v008}
       
 %\input{version1}
       

@@ -67,31 +67,19 @@ Wolfram evidence is `CURRENT_COMPONENT` or `APPROVED_LEGACY_EQUIVALENCE`. The la
 retains the original release/manuscript tags; a manuscript tag is historical metadata,
 not a current dependency. Required OCaml jobs remain **77**, Wolfram checks **161**.
 
-## Updating an existing v004 installation
+## Running v005 after v004.1
 
-Use the supplied guarded updater from the delivery, with `--root` naming the
-existing directory containing `run.py`. It rejects unknown modified files,
-backs up each replacement, leaves `runs/` and existing report JSONs intact, and
-refuses to write while the default runner lock is held. For an alternative run
-output location, pass `--work` naming that location too. Do not update a live
-calculation tree by manually unzipping over it.
-
-The Mathematica folder can be copied to its separate machine immediately; it does
-not interact with an active OCaml run. Let that run finish before updating the
-main confirmation machinery.
-
-Completed v004 results are recognized by `confirm.py --check` after the update.
-For a partial run that should resume rather than restart already completed jobs,
-run **Bash at PACKAGE_ROOT**, after the old process has stopped:
+Extract v005 in its own directory. The revised pinwheel domain and the two
+additional assertions require fresh OCaml execution. From the directory
+containing run.py, run the following commands in Linux or Ubuntu Bash.
 
 ```bash
-python3 confirm.py --prepare-resume
+python3 run.py --all --diagnostics
+python3 confirm.py --check
 ```
 
-This revalidates logs and builds only the mutable cache, preserving its previous
-copy and the original execution fingerprints on reused entries. It launches no
-calculation. Resume normally with the existing `run.py` command. The numerical
-files, historical execution logs, and result records are unchanged.
+The supplied Mathematica report retains its original execution identity.
+The package checks that report and the v008 manuscript association separately.
 
 ## Testing boundaries
 

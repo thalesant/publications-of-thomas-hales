@@ -13,7 +13,7 @@ python3 scripts/extract_figures.py
 python3 scripts/build_docs.py --compile --figures
 ```
 
-The first command only extracts active constructions from `paper/pentagon_v007.tex`;
+The first command only extracts active constructions from `paper/pentagon_v008.tex`;
 the second builds the paper, commentary and standalone gallery. A TeX distribution
 with the packages in the preambles is required. The precompiled `gallery.pdf` can
 be opened directly. Its figures retain the paper’s numbering; the constants table

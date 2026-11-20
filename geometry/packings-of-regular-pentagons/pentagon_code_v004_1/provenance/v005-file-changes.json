@@ -1,0 +1,81 @@
+{
+  "parent_distribution": "pentagon_code_v004_1",
+  "parent_commit": "29250f012a54cf659010291cef8f907438f4d392",
+  "parent_zip_sha256": "99c9a71e7b6e4baf534952cb4be4c82ca057716ced7fb2ae0cfd316306a263f2",
+  "parent_manifest_sha256": "c67b9cdfd40827d7bfa1b268fdd334ab26587bc562d2f8f1a4b9bd279797a2c1",
+  "distribution": "pentagon_code_v005",
+  "comparison_scope": "Fixed files in the preceding release manifest. The two distribution manifests and generated confirmation records are accounted for separately.",
+  "parent_fixed_files": 141,
+  "unchanged_files": 99,
+  "changed_in_place": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "README.md",
+    "RELEASE.json",
+    "START_HERE.txt",
+    "docs/CALCULATIONS.md",
+    "docs/MODULARITY.md",
+    "docs/SQUEEZING.md",
+    "docs/claims.json",
+    "docs/code_commentary.pdf",
+    "docs/code_commentary.tex",
+    "docs/code_commentary_template.txt",
+    "docs/index.html",
+    "docs/source-map.json",
+    "figures/README.md",
+    "figures/gallery.bbl",
+    "figures/gallery.pdf",
+    "figures/gallery.tex",
+    "figures/manifest.json",
+    "ocaml/dimer.ml",
+    "ocaml/mitm-calcs.ml",
+    "ocaml/pent.ml",
+    "paper/README.md",
+    "paper/build.sh",
+    "paper/label-map.json",
+    "paper/pentagon.bib",
+    "provenance/README.md",
+    "provenance/label-comparison.json",
+    "registry.json",
+    "scripts/build_docs.py",
+    "scripts/build_index.py",
+    "scripts/driver.py",
+    "scripts/extract_figures.py",
+    "tests/python/test_confirmation.py",
+    "tests/python/test_consolidated_release.py",
+    "tests/python/test_modular_reporting.py",
+    "tests/python/test_release_static.py",
+    "verification/association.json"
+  ],
+  "renamed_and_revised": {
+    "paper/header_v007.bbl": "paper/header_v008.bbl",
+    "paper/header_v007.tex": "paper/header_v008.tex",
+    "paper/pentagon_v007.pdf": "paper/pentagon_v008.pdf",
+    "paper/pentagon_v007.tex": "paper/pentagon_v008.tex"
+  },
+  "added_fixed_files": [
+    "provenance/v005-file-changes.json"
+  ],
+  "removed_without_replacement": [],
+  "mathematica": {
+    "identical_files": 6,
+    "report": "verification/wolfram-report.json",
+    "original_report_sha256": "ae7588509bf4e47688bb4028fad2cda5cd72296029b9068903ffeb2821b4502e",
+    "checks": 161,
+    "evidence_mode": "APPROVED_LEGACY_EQUIVALENCE"
+  },
+  "ocaml": {
+    "changed_sources": [
+      "ocaml/dimer.ml",
+      "ocaml/mitm-calcs.ml",
+      "ocaml/pent.ml"
+    ],
+    "source_inventory_sha256": "6a1953fe9c36ef78708422c5616afb256b4a6b62a8a76de87220fd7847d165ff",
+    "required_stages": 77,
+    "passing_stages_in_this_archive": 0
+  },
+  "manuscript": {
+    "retained_labels": 168,
+    "unchanged_numbers": 168
+  }
+}

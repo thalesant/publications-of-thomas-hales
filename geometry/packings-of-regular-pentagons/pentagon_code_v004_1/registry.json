@@ -1,6 +1,6 @@
 {
-  "version": "pentagon_code_v004",
-  "manuscript": "pentagon_v007.tex",
+  "version": "pentagon_code_v005",
+  "manuscript": "pentagon_v008.tex",
   "jobs": [
     {
       "id": "unit",
@@ -80,8 +80,8 @@
         "lemma:a0"
       ],
       "role": "proof",
-      "changed_domain": false,
-      "description": "Exclude nonobtuse pinwheel triangles of area at most 1.237.",
+      "changed_domain": true,
+      "description": "Exclude nonobtuse pinwheel triangles of area at most 1.237. The pinwheel test retains the full angle triangle.",
       "shape": "pair",
       "source": "ocaml/pent.ml",
       "aliases": [
@@ -247,8 +247,8 @@
         "lemma:172"
       ],
       "role": "proof",
-      "changed_domain": false,
-      "description": "Exclude subcritical pinwheel triangles with every side at most 1.7215 (stronger than the paper\u2019s 1.72 bound).",
+      "changed_domain": true,
+      "description": "Exclude subcritical pinwheel triangles with every side at most 1.7215 (stronger than the paper\u2019s 1.72 bound). The pinwheel test retains the full angle triangle.",
       "shape": "pair",
       "source": "ocaml/pent.ml",
       "aliases": [
@@ -3052,7 +3052,7 @@
         "sec:pseudo-area"
       ],
       "role": "proof",
-      "description": "Four non-Delta triple-contact charts with every side <= 1.8: exclude area <= 1.262.",
+      "description": "Four non-Delta triple-contact charts with every side <= 1.8: exclude area <= 1.262. The pinwheel test retains the full angle triangle.",
       "shape": "pairs4",
       "source": "ocaml/review_jobs.ml",
       "aliases": [
@@ -3076,7 +3076,8 @@
         "VLMRTQH"
       ],
       "required_for_confirmation": true,
-      "estimated_seconds": 3.012
+      "estimated_seconds": 3.012,
+      "changed_domain": true
     },
     {
       "id": "face_lj1",
@@ -3119,7 +3120,7 @@
       "estimated_seconds": 1.146
     }
   ],
-  "printed_number_source": "paper/label-map.json from the approved header_v007 build",
+  "printed_number_source": "paper/label-map.json from the header_v008 build",
   "selection_note": "Claim and section selectors select listed direct computational associations, plus the function-contract test prerequisite. Analytic reductions and other cited lemmas are not automatically recursed. Use --all for all current proof jobs.",
   "claim_ids": {
     "calc:pseudo1": "NKQNXUN",

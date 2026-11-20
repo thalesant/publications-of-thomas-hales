@@ -1,10 +1,5 @@
-% Packings of Regular Pentagons in the Plane -- manuscript v007.
-% Compile header_v007.tex. Authoritative parent: pentagon_v006.tex.
-% Parent SHA-256: 4234c4033d65f55c8962f5b5c75fbcbaf05e8532d7e04d98e3dcf7a3de004a94
-% Scope: restore the established T-notation for triangles; no mathematical changes.
-% The approved Section 10, pin-T, and stage-6 repairs are retained.
-% Code, calculation inputs, and execution/confirmation records are unchanged.
-% See CHANGES.md and audit/pentagon_v006_to_v007.diff for the exact scope.
+% Packings of Regular Pentagons in the Plane -- manuscript v008.
+% Compile header_v008.tex. Previous manuscript: pentagon_v007.tex.
 
 \def\area{\op{area}}
 \def\areta{\op{area}^\circ}
@@ -118,7 +113,7 @@ This packing has density
 \] %
 Before our work, the best known bound on the density of packings of
 regular pentagons was $0.98103$, obtained through the representation
-theory of the group of isometries of the plane \cite{Val}.  Our
+theory of the group of isometries of the plane \cite{val}.  Our
 research is a continuation of W. Kusner's thesis \cite{Kus}, which
 proves the local optimality of the pentagonal ice-ray.
 
@@ -892,7 +887,7 @@ $(T_+,T_-)\in\M\cap\N=\emptyset$.
 
 \begin{lemma}\libel{lemma:main}  
 If  every cluster $\C$ in every saturated packing of regular
-  pentagons is finite, and if for some $a$ every cluster average
+  pentagons is finite, and if for some $a>0$ every cluster average
   satisfies
 \begin{equation}\libel{eqn:main}
 \frac{\sum_{T\in \C} b(T)}{\card(\C)} \ge a,
@@ -1336,8 +1331,8 @@ classified as a degenerate $LJ$-junction below.
   synonym for pin-$0$ and {\it pin-T} as a synonym for pin-$2$.
 \end{definition}
 
-\begin{lemma} There does not exist a $3C$-triangle $T$ of type pin-$1$
-  with pentagons $A$, $B$, and $C$.
+\begin{lemma} Let $T$ be a $3C$-triangle. Suppose that each contact is at a vertex of one pentagon in the
+  relative interior of an edge of the other. Then $T$ cannot have type pin-$1$.
 \end{lemma}
 
 \tikzfig{pin1}{A distorted pin-$1$ configuration.}{
@@ -1360,38 +1355,24 @@ classified as a degenerate $LJ$-junction below.
 \end{scope}
 }
 
-\begin{proof} 
-  For a contradiction, we draw a (distorted) picture of a pin-$1$
-  configuration (Figure~\rif{fig:pin1}).  We let $\v$ be the inner
-  vertex of $B$; that is, the vertex that is interior to the triangle
-  $(\v_{CA},\v_{AB},\v_{BC})$ with vertices at the pointers $X$ into
-  $Y$, where $(X,Y)=(A,B),(B,C),(C,A)$.  The inner vertex is an endpoint of the edge of the pentagon $B$ containing
-  $\v_{AB}$.  We have
-\[
-\angle (\v,\v_{AB},\v_{CA}) \le \pi,\quad 
-\angle(\v,\v_{BC},\v_{AB}) = 3\pi/5,\quad
-\angle(\v_{CA},\v_{BC},\v_{AB})\le 2\pi/5.
-\]
-(The last inequality uses the fact that $T$ is not a degenerate
-pin-$2$, so that $\v_{CA}$ is not a vertex of $A$.)  We also have
-\begin{align*}
-  \angle(\v,\v_{BC},\v_{CA}) &= 2\pi - \angle(\v,\v_{AB},\v_{BC}) - \angle(\v,\v_{AB},\v_{CA})\\
-  &\ge 2\pi /5 
-\ge \angle(\v_{CA},\v_{BC},\v_{AB}) \ge \angle(\v_{CA},\v_{BC},\v).
-\end{align*}
-The law of sines applied to the triangle $(\v,\v_{BC},\v_{CA})$ then
-gives
-\[
-2\sigma =\norm{\v_{BC}}{\v}\le\norm{\v_{BC}}{\v_{CA}}\le 2\sigma.
-\]
-Thus, we have equality everywhere.  In particular,
-$\angle(\v,\v_{AB},\v_{CA})=\pi$, forcing $\v$ to lie on an edge of $A$,
-and $\v_{BC}$ to be a vertex of $C$.
-Hence $\v_{BC}$ is a degenerate inner vertex of $C$, and $T$ has type
-pin-$k$, for some $k\ge 2$.
+\begin{proof}
+  Suppose that $B$ has the inner vertex $\v$ in Figure~\rif{fig:pin1}.
+  The hole is a quadrilateral with a reflex angle at $\v$, so $\v$ lies
+  inside the triangle of the three pointers. The ray from $\v_{AB}$
+  through $\v$ therefore meets the open segment from $\v_{BC}$ to
+  $\v_{CA}$. At $\v$ this ray makes an angle $2\pi/5$ with the ray
+  to $\v_{BC}$, since the interior angle of $B$ is $3\pi/5$.
+  Hence $\angle(\v_{BC},\v,\v_{CA})>2\pi/5$.
+  At $\v_{CA}$ the angle of the hole is at most $2\pi/5$: the pentagon
+  with its vertex there occupies $3\pi/5$ of the half-plane bounded by
+  the receptor edge. In particular
+  $\angle(\v_{BC},\v_{CA},\v)<2\pi/5$.
+  Comparing opposite sides gives
+  $\norm{\v_{BC}}{\v_{CA}}>\norm{\v_{BC}}{\v}=2\sigma$.
+  But $\v_{BC}$ and $\v_{CA}$ lie on the same edge of $C$.
 \end{proof}
 
-\begin{lemma}  The type pin-$3$ does not exist.  
+\begin{lemma} Under the same hypothesis on the three contacts, $T$ cannot have type pin-$3$.
 \end{lemma}
 
 \begin{proof} 
@@ -1426,10 +1407,82 @@ has one inner vertex, and the inner polygon is a nonconvex quadrilateral.
 A $TJ$-junction has two inner vertices, and the inner polygon is a
 nonconvex pentagon.
 
-This completes the classification of $3C$-triangles: $\Delta$,
-pinwheel, pin-$T$, $LJ$, and $TJ$.  Useful coordinate systems for the
-various types can be found in the appendix
-(Section~\rif{sec:appendix}).
+This gives the five types $\Delta$, pinwheel, pin-$T$, $LJ$, and $TJ$
+when each pointer meets the relative interior of its receptor edge.
+Every triple contact is a limit of configurations of one of these
+five types. At an endpoint more than one description may apply.
+We give the argument, since the parameter ranges in
+Section~\rif{sec:appendix} include their endpoints.
+
+\begin{proof}
+Fix the orientations for the moment. With $A$ fixed, the positions of
+$\c_B$ for which $B$ meets $A$ form a convex polygon: it is the set
+of differences of a point of $A$ and a point of $B$ measured from
+$\c_B$. Its boundary gives contact, and its interior gives overlap.
+The same construction applies to the other two pairs.
+
+We first show that, arbitrarily near the given configuration, $B$ and
+$C$ can both touch $A$ with $B,C$ separated, or with $B,C$ overlapping.
+For each of the three pairs prescribe a sign, opening or closing.
+At every side of its contact polygon incident to the given position,
+require the relative translation to point strictly outwards or strictly
+inwards, respectively. These strict linear inequalities on translations
+of the three centers have a solution. Indeed, if they did not, the
+convex hull of their coefficient vectors would contain the origin, by
+separation from a point. In a convex combination giving zero, group
+the normals by pairs. At each pentagon the two resulting vectors must
+balance. A nonempty group has nonzero sum, since all its normals have
+the same sign and lie in an open half-plane. Thus all three groups
+are nonempty and their sums are parallel. Each sum, up to sign, is a
+supporting normal for the corresponding pair. Projecting the three
+pentagons onto this common normal would give three intervals of
+positive length, each two meeting only at an endpoint. This is
+impossible.
+
+Keep the prescribed sign for $B,C$. For each sign for $A,C$, take
+the two small translations with opposite signs for $A,B$, and
+interpolate between them, fixing $A$ by an overall translation.
+The strict inequalities for $A,C$ and $B,C$ persist along the segment,
+and somewhere $B$ touches $A$. This gives two placements with $B$
+touching $A$ and with opposite signs for $A,C$. Join the two positions
+of $\c_B$ by the short boundary arc for contact with $A$, interpolating
+the position of $\c_C$ relative to $\c_B$ linearly. The strict
+inequalities for $B,C$ still hold. Along this path $C$ must touch $A$.
+All motions can be made arbitrarily small.
+
+We may choose nearby orientations with no parallel edges on distinct
+pentagons, and with only finitely many triple contacts at which two
+vertices coincide, up to translation. To see the latter assertion,
+fix two orientations and place a chosen pair of touching vertices
+at the origin. The possible centers of the third pentagon lie on two
+polygon boundaries. An intersection segment must be parallel to an
+edge of the third pentagon, since no two pentagons have parallel
+edges. Both polygons then have the same outward normal there: a
+pentagon has no parallel edges. Subtracting the common contribution
+of the third pentagon to the two support distances gives an external
+common supporting line of the fixed pair parallel to that edge.
+There are only finitely many such lines. Each contains a vertex of
+each pentagon; at the common vertex the two disjoint interior angles
+sum to $6\pi/5$ and do not fit in one half-plane. This excludes only
+finitely many third orientations for each fixed pair and vertex choice.
+The exceptional triples of orientations therefore have measure zero.
+
+Finally, with $B,C$ both touching $A$, use the directions from $\c_A$
+to their centers as two local parameters. A ray meets the corresponding
+contact polygon boundary once, and the intersection varies continuously
+with the ray and the orientations. In any small rectangle of these
+parameters the first part gives both overlap and separation of $B,C$.
+Both persist under a sufficiently small change to the orientations
+just chosen. Removing the finitely many parameter points of triple
+contact with coincident vertices leaves the rectangle path connected.
+Along a path joining overlap to separation there is a triple contact.
+Its three pointers meet edge interiors. Taking successively smaller
+neighborhoods and then a subsequence of a single type proves the claim.
+\end{proof}
+
+Every triangle of three touching pentagons is acute: its sides are
+between $2\kappa$ and $2$, and $4<8\kappa^2$. The area estimates for
+nonobtuse triangles therefore apply also at the limiting contacts.
 
 \section{Delaunay Triangle Areas}\libel{sec:area}
 
@@ -1440,7 +1493,7 @@ subcritical triangle.  We also obtain a lower bound on the area of a
 nonobtuse Delaunay triangle.
 
 Some proofs will deform $P$-triangles in a way that is monotonic in
-relevant quantities such as area.  Whenever, we make deformations, it
+relevant quantities such as area. Whenever we make deformations, it
 is to be understood that the deformations are local; a single
 $P$-triangle (or otherwise identified finite cluster) is deformed, and
 we do not attempt to extend the deformation globally to the full
@@ -1824,8 +1877,8 @@ $\area(T_-) > \acrit+\epsM$.
 \end{corollary}
 
 \begin{proof} 
-  If $m_-(T_-)>0$, there exists $(T_1,T_0)\in\PD$ such that $T_0\Ra
-  T_-$.  The result follows from the previous corollary.
+  If $m_-(T_-)>0$, there exists $(T_1,T_0)\in\PD$ with $T_0\Ra T_-$.
+  The target of an $\M$-pair is nonobtuse. The previous corollary applies.
 \end{proof}
 
 \begin{definition}[long isosceles]
@@ -1973,9 +2026,8 @@ configurations that are far from optimal.
   the ice-ray dimer of area exactly $2\acrit$.
 \end{theorem}
 
-The proof will fill the entire section.  The strategy of the proof is
-to give a sequence of area decreasing deformations to $(T_1,T_0)$,
-until the ice-ray dimer is reached.
+We shall show that a pair of least area is the ice-ray dimer.
+The deformations below are local tests at such a minimum.
 
 \noindent
 {\bf Context and Notation.} We fix context and
@@ -2017,19 +2069,15 @@ and all other lengths are no greater. The pentagon orientations
 range over compact circles and the nonoverlap conditions are
 closed. It contains the ice-ray dimer.
 
-We use the reductions below as local tests at a minimum, rather
-than inferring termination of an arbitrary sequence of motions
-from compactness. The tied-length alternatives are excluded in
-stages 1 and 2. At any remaining minimum, the strict local
-area-decreasing motions of stages 1--3 force triple contact.
-Stage 4 places the minimum in $U$; stages 5--7 then force it to
-be the ice-ray dimer. This argument applies to every minimum.
+We use the reductions below as local tests at a minimum. Stages 1 and 2
+give outside double contact. The length boundaries for a pair in outside
+double contact are excluded in stage 3, where a strict decrease forces
+triple contact. Stage 4 places the minimum in $U$, and stages 5--7 then
+force it to be the ice-ray dimer. This argument applies to every minimum.
 Since the ice-ray dimer has area $2\acrit$, it gives both the area
 bound and the equality assertion.
 
-The deformation of a general dimer pair to the ice-ray dimer takes
-place in several stages.  We give a summary of the stages here, before
-going into details.  Here is the proof sketch:
+The proof has the following stages.
 
 \begin{enumerate}
 \item We deform the dimer pair so that each of $T_0$ and $T_1$ is
@@ -2070,14 +2118,17 @@ as long as the shared edge.  The first event is $O2C$; the second
 is the long-isosceles boundary considered in stage 2.  A configuration
 already on that boundary is passed directly to stage 2.
 
-This is easy to carry out. By Lemma~\rif{lemma:primary}, we may
-choose a primary-contact configuration of no greater area, without
-increasing the incident edges. We then move the outer
-pentagon by translation (meaning no rotation) that preserves contact
-with either $A$ or $C$ and that is non-increasing in triangle area
-up to the first $O2C$ or longest-edge-tie event.  The motions are
-applied separately to $T_1$ and $T_0$, with the same two shared
-pentagons fixed.
+Indeed, at a minimum with the shared edge uniquely longest the outer
+pentagon has primary contact by the local motion of
+Lemma~\rif{lemma:primary}. At a single slider or midpoint contact, slide
+along the contact edge in the direction that lowers the outer center.
+A horizontal edge of contact gives height at least $2\kappa$ by the
+two incircles. The shared length exceeds $1.72$ by Lemma~\rif{lemma:172},
+so the area would exceed $1.72\kappa>\acrit+\epsN$. This is impossible:
+each area is less than $2\acrit-\ao=\acrit+\epsN$ by Lemma~\rif{lemma:a0}.
+Thus the slide strictly decreases area. A sufficiently short slide
+preserves a strict longest-edge inequality. This proves the assertion
+at a minimum, with the two shared pentagons fixed.
 
 % COMPUTATION GAIMXAD | sec:O2C | Long-isosceles terminal exclusions (stage 2)
 \subsection{Reduction to $O2C$ (computer interval-arithmetic assisted) (stage 2)}\libel{sec:O2C}
@@ -2126,21 +2177,22 @@ edges of the isosceles triangle.
   decrease the area also decreases the length $\dx{BC}$.
 \end{lemma}
 
-\begin{proof} 
-  Assume to the contrary that the translation is increasing in
-  $\dx{BC}$.  Choose coordinates so that the $x$-axis passes through
-  $\c_A$ and $\c_C$, with the origin at $\c_A$, with $\c_C$ in the
-  right half-plane, and with $\c_B$ in the positive half-plane
-  (Figure~\rif{fig:slider}).  Our contrary assumption means the 
-  line $\lambda$ through the edge of contact between $A$ and $B$ has
-  positive slope.  Slider contact implies that the center $\c_B$ lies
-  on the line $\lambda'$ parallel to $\lambda$ at distance $2\kappa$
-  from the origin.  Every point on $\lambda'$ either has
-  $y$-coordinate at least $2\kappa$ or negative $x$-coordinate.  If
-  the $y$-coordinate is at least $2\kappa$ the triangle is not
-  subcritical.  (The area is at least $2\kappa^2>\acrit$.) If the
-  $x$-coordinate of $\c_B$ is negative, then the triangle $T$ is
-  obtuse.
+\begin{proof}
+  Use the coordinates of Figure~\rif{fig:slider}, with $\c_A$ at the
+  origin, $\c_C$ on the positive horizontal axis, and $\c_B=(x_B,y_B)$
+  above it. Both coordinates of $\c_B$ are positive by acuteness.
+  The area bound gives $y_B\le\acrit/\kappa<2\kappa$. By the cosine
+  law and Lemma~\rif{lemma:21},
+  \[
+   x_B\le\frac{\dx{AC}^2+2.1^2-4\kappa^2}{2\dx{AC}}<2\kappa.
+  \]
+  Indeed, the middle expression increases on $[2\kappa,2.1]$ and
+  is less than $2\kappa$ at $2.1$. The projection of $\c_B-\c_A$
+  onto the unit normal of the contact edge directed towards $B$ is
+  at least $2\kappa$, by the two incircles. Hence both components of
+  the normal are positive. The downhill slide moves $\c_B$ right and
+  down, towards the vertical through $\c_C$ and towards the base.
+  It strictly shortens $\dx{BC}$.
 \end{proof}
 
 \tikzfig{slider}{The center $\c_B$ of the nonobtuse triangle lands in
@@ -2169,40 +2221,18 @@ edges of the isosceles triangle.
 \begin{lemma}[midpointer-non-anomaly]  
   Let $T$ be a subcritical nonobtuse $P$-triangle with pentagons $A$,
   $B$, and $C$.  Assume that $B$ is not in contact with $C$.
-  Assume that $A$ has midpointer contact with $B$, with
-  $A$ pointing to $B$ at $\v_{AB}$.  Then there is a motion of $B$
+  Assume that a vertex $\v_{AB}$ of $A$ is the midpoint of an edge of
+  $B$. Then there is a motion of $B$
   that is nonincreasing in the area and that preserves contact between $A$ and $B$,
   while also decreasing the distance $\dx{BC}$.
 \end{lemma}
 
 \begin{proof}
-  Assume to the contrary that the translation is increasing in
-  $\dx{BC}$.  Choose coordinates so that the $x$-axis passes through
-  $\c_A$ and $\c_C$, with the origin at $\c_A$, with $\c_C$ in the
-  right half-plane, and with $\c_B$ in the positive half-plane.
-  Let $\c_B=(x_B,y_B)$ and $\v_{AB}=(x_{AB},y_{AB})$.
-  The nonobtuse condition gives $x_B\ge0$.
-
-  If the line $\lambda$ through the edge of $B$ containing $\v_{AB}$
-  has nonpositive slope, then the translation of $B$ to the
-  right along a line parallel to $\lambda$
-  fulfills the conclusion of the lemma.  Thus, we may assume without
-  loss of generality that the slope of $\lambda$ is positive.
-
-  If $x_B\ge x_{AB}$, then the rotation of $B$ about the pointer $\v_{AB}$
-  to the right fulfills the conclusion of the lemma.
-  Thus, we may assume without loss of generality that $x_B<x_{AB}$.
-
-  We claim that $y_B\ge 2\kappa$.  For the proof of this claim we may disregard $\c_C$.
-  Rotate $A,B$ rigidly about $\c_A$ clockwise until the slope of $\lambda$ is $0$.
-  This motion also rotates $\c_B$ clockwise and is decreasing in $y_B$.
-  Thus, we may assume without loss of generality that $\lambda$ is horizontal.
-  $\lambda$ is a separating line between pentagons $A$ and $B$.  The distance
-  from $\c_B$ to $\lambda$ is $\kappa$. Since $\lambda$ is a support line of $A$,
-  its distance from the $x$-axis is at least the inradius $\kappa$.  Thus, $y_B\ge 2\kappa$.
-
-  As in the proof of the previous lemma, the lower bound on $y_B$ contradicts subcriticality.
-
+The argument with the two incircles in the preceding proof applies
+to the normal to the edge of $B$ through $\v_{AB}$. A sufficiently
+small downhill slide along this edge keeps $\v_{AB}$ on the edge,
+decreases area and shortens $\dx{BC}$. The pentagon $C$ is initially
+separated from $B$, so such a slide is possible.
 \end{proof}
 
 As a corollary of these two lemmas, if $d_{AB}$ is not a longest edge,
@@ -2210,25 +2240,65 @@ then there exists a deformation decreasing area and $d_{BC}$.  This
 allows us to reduce the long isosceles triangle to a triangle such
 that the long edges are $(\c_A,\c_B)$ and $(\c_A,\c_C)$.
 
-Because we are now disregarding $T_0$, we may deform the
-triangle $T_1$ by translating $C$, preserving the long isosceles constraint
-and decreasing area, until $C$ has primary contact. Together with the contact between
-$A$ and $B$, this gives double contact.
+Before moving $C$, consider the translation of $B$ along its contact
+with $A$ in the direction that decreases the angle at $\c_A$.
+If it also shortened $\dx{AB}$, it would lower $\c_B$ above the
+shared edge, since the angle at $\c_A$ is acute. This contradicts
+the assumption on the area-decreasing translation above.
 
+Keep $A,B$ fixed and move $\c_C$ along the circle about $\c_A$
+of radius $\dx{AB}$ toward $\c_B$, keeping the orientation of $C$
+fixed. Stop at its first contact with $A$ or $B$, including a contact
+already present. The angle at $\c_A$ starts at most $\pi/3$ and
+decreases, as do the area and $\dx{BC}$. Contact occurs before the
+two centers coincide. Throughout, $\c_C$ is on the same side of
+the line through $\c_A,\c_B$, so the direction of translation just
+described is unchanged.
  We choose coordinates and
 compute\calcref{iso\_2C,iso\_2C'} with interval
 arithmetic to show that no $P$-triangle exists with the
 following properties:
 \begin{enumerate}
 \item The triangle has double contact.
-\item The pentagons $A$ and $B$ have contact,
-  and the contact type between $A$ and $B$ is either slider contact or
-  midpointer contact.
+\item The contact between $A$ and $B$ is
+  of slider type, or a vertex of $A$ is the midpoint of an edge of $B$.
 \item The triangle is long isosceles, with long edges $(\c_A,\c_B)$ and $(\c_A,\c_C)$.
 \item The triangle is subcritical and acute.
+\item Disregarding the second contact, slide $B$ along its contact with
+  $A$ in the direction that decreases the angle at $\c_A$. This slide
+  does not shorten the edge between $\c_A$ and $\c_B$.
 \end{enumerate}
-This
-completes this reduction.
+For clarity, orient the triangle as in Figure~\rif{fig:slider}.
+At the tied edge, the perpendicular to the contact edge, directed from
+it towards $\c_B$, is on or counterclockwise from the ray
+$\c_A\c_B$: otherwise the indicated slide would shorten $\dx{AB}$.
+At a midpoint the ray from $\c_A$ to the pointer vertex is therefore
+on or clockwise from $\c_A\c_B$. At a slider use the endpoint of the
+edge of $A$ lying on the receptor edge of $B$; it is the clockwise
+endpoint as seen from $\c_A$. A centered slider would give
+$\dx{AB}=2\kappa$, contrary to Lemma~\rif{lemma:172}.
+In both cases the pointer inclination $\theta_{ABC}$ lies in
+$[-\pi/5,0]$ in these coordinates. At a midpoint the contact
+coordinates also have $x_\alpha=\sigma$ and $0\le\alpha\le\pi/5$;
+at a slider $\alpha=0$. These are the restrictions used in the two
+calculations. For a second contact with $B$ use the labeling $A,B,C$;
+for a second contact with $A$ use $C,A,B$. The equal length is less
+than $1.79$, since $\area(1.79,1.79,2\kappa)>\acrit$ and area is
+monotone on nonobtuse triangles. This completes the reduction.
+
+We record the consequence for a single peripheral triangle. If $T$ is
+subcritical and nonobtuse with $\dx{AC}$ a longest edge, keep the
+pentagons $A,C$ fixed. Among positions and orientations of $B$ on the
+original side of the shared edge with no greater area and with neither
+incident edge longer than $\dx{AC}$, choose one of least area. As in
+Lemma~\rif{lemma:primary}, the set is compact, the triangle is acute,
+and $B$ has primary contact. Suppose this is a single contact with $A$.
+The downhill slide of the preceding two lemmas shortens $\dx{BC}$ even at a tie. It can be blocked
+only if $\dx{AB}=\dx{AC}$ and it does not shorten $\dx{AB}$.
+The preceding isosceles argument excludes exactly this case, using
+the auxiliary motion of $C$ only to obtain a contradiction.
+Thus the position of least area has outside double contact, with
+the designated shared edge still a longest edge.
 
 \subsection{Reduction to triple contact (stage 3)}\libel{sec:squeeze}
 
@@ -2283,27 +2353,25 @@ Transition between branches might be needed to obtain $A$--$C$ contact.
 The same equations define $\u_D$
 with the corresponding contact normals.
 
-This completes our description of the squeezing motion, and we return
-to the reduction to triple contact.  In this stage, we initially
-assume that both triangles $T_0$ and $T_1$ are $O2C$.  We deform so
-that both triangles are triple contact.  We briefly describe the
-argument.  Our deformations will preserve the $O2C$ contacts.  By an
-argument made in the second paragraph of Section~\rif{sec:O2C}, we may
-assume without loss of generality that the triangle $T_0$ is not long
-isosceles.  By Lemma~\rif{calc:dimer-isosc}, we have that $T_1$ is not
-long isosceles.  Assuming that neither triangle is long isosceles, we
-show that both triangles can be brought into triple contact.  Because
-both triangles are already $O2C$, this amounts to decreasing the edge
-between $\c_A$ and $\c_C$ until the pentagons $A$ and $C$ come into
-contact.
+We now apply squeezing with both outer pentagons in double contact.
+If $T_0$ is long isosceles, the boundary statements of
+Lemmas~\rif{calc:pseudo1} and~\rif{calc:pseudo2} make its shared
+longest edge both shorter and longer than $1.8$. If $T_1$ is long
+isosceles, use instead the calculation of Lemma~\rif{calc:dimer-isosc}.
+As explained in Section~\rif{sec:dimer-isosc}, it tests outside double
+contact on both sides with a tie on the subcritical side, including
+equality on the shared edge independently of the attachment choice.
+There is no assumption of subcriticality on $T_0$ in this test.
+It follows that at a minimum in outside double contact the shared
+edge is uniquely longest on both sides.
 
 % COMPUTATION LZMJIZU | lemma:squeeze-area | Squeezing area inequality (stage 3)
 \begin{lemma}\libel{lemma:squeeze-area}
   Let $T$ be a nonobtuse $P$-triangle with pentagons $A$, $B$, and
   $C$, where $B$ has double contact.  Assume that the area of $T$ is  at most $\acrit+\epsN$.
-  Then the normals $\mathbf n_{AB}$ and $\mathbf n_{CB}$ are not horizontal or vertical.
-  Then the squeezing
-  deformation decreases area.
+   Then the normals $\mathbf n_{AB}$ and $\mathbf n_{CB}$ are
+   neither horizontal nor vertical, and the squeezing deformation
+   decreases area.
 \end{lemma}
 
 \begin{proof}
@@ -2377,10 +2445,19 @@ line through $e$.  On the positive-slope branch, $\sigma_A$ is the absolute valu
 the slope of the line through $e$.  Elementary coordinate calculations
 described in the coordinate section of this article give an explicit
 formula for the slope of this line.  There are two cases, depending on
-which pentagon points to the other.  There are no difficulties in
-carrying out the computer interval-arithmetic calculations with these explicit formulas.
-At a vertex--vertex contact the formula must be applied to a
-specified one-sided vertex--edge branch.
+which pentagon points to the other. At a vertex--vertex contact the
+incident segments of the contact polygon are both included in these
+calculations, since the pointer may be at an endpoint. With $A$
+fixed take the segment along which $\c_B$ moves up and to the left.
+Relative to $C$ take the segment going up and to the right. These
+segments exist also at a corner: all the incident upper edges at $A$
+have negative slope and those at $C$ positive slope, by the sign
+calculation above. Equal rises along the two segments differ by a
+horizontal translation of $C$ toward $A$. Thus both contacts persist
+on actual segments for a sufficiently small decrease in $\ell$, and
+the area estimate applies on that side of the corner. Along successive
+segments the center moves monotonically left relative to $A$ and right
+relative to $C$. Each polygon has finitely many sides.
 \end{proof}
 
 \begin{lemma}\libel{lemma:dimer-acrit-epsN}
@@ -2398,13 +2475,17 @@ $\area(T_1)>\ao$.  Hence
 \end{equation}
 \end{proof}
 
-Thus the area hypothesis of Lemma~\rif{lemma:squeeze-area} holds
-for both $T_0$ and $T_1$.  On an admissible squeezing branch,
-individual area decrease preserves these bounds.  We stop at the
-first contact change or longest-edge tie, using the exclusions of
-stage 2 for the latter boundary.  Continuation to $A$--$C$
-contact, with the $O2C$ contacts and nonobtuseness retained,
-completes the reduction to $3C$ contact.
+The area hypothesis holds on both sides. Use the same small decrease in
+$\ell$ on the two sides of the shared edge. The outer pentagons stay
+apart. Indeed, in either nonobtuse triangle the product of the two
+projections of the incident edges onto the base is at most the square
+of the height. Thus the smaller projection is at most the height,
+and the shorter incident edge is at most $\sqrt2$ times the height.
+The two heights together are at least $2\sqrt2\,\kappa>2$.
+The strict longest-edge inequalities and acuteness persist for a
+sufficiently small motion. Unless $A,C$ already touch, this strictly
+decreases both areas, contrary to minimality. This proves the reduction
+to triple contact.
 
 \subsection{Reduction to a small neighborhood of the ice-ray
 % COMPUTATION DSKKWND | sec:nbd | Exclusion outside the ice-ray neighborhood (stage 4)
@@ -3051,11 +3132,10 @@ We are finally in a position to prove Theorem~\rif{thm:dimer}.
 
   This shows that $b(T_i)=\area(T_i)$, for $i=0,1$.  Because $T_0$ and
   $T_1$ are both subcritical, they are also $b$-subcritical, and fall
-  into the same cluster.  This is the full cluster, for otherwise, we
-  would have say $T\rab T_0\rab T_1$, which is impossible by
-  Lemma~\rif{lemma:rab-sequence}, for $T$ nonobtuse.  And if $T$ is
-  obtuse, this contradicts Lemma~\rif{lemma:t2b-nonobtuse}.
-  This gives the proof.
+  into the same cluster. If a third triangle attached to $T_0$,
+  Lemma~\rif{lemma:rab-sequence} would rule it out if it were nonobtuse,
+  and Lemma~\rif{lemma:t2b-nonobtuse} if it were obtuse. This gives
+  the full cluster.
 \end{proof}
 
 \subsection{Cluster structure}
@@ -3625,7 +3705,8 @@ $\eta(T_1')\le1.7$.  Let $k_0\in\{0,1\}$ count the long external
 edges of $T_0$, and let $k_T\in\{0,1,2\}$ count those of each
 $T\in\{T_1,T_1'\}$.  Here long means length at least $1.72$.
 Set $d_0=1.72$ if $k_0=1$, and $d_0=2\kappa$ otherwise.
-For a peripheral triangle, set $d_T=1.72$ if $k_T\ge1$, and
+Here $T_0$ is the central triangle and the triangles attached to it
+along its edges are peripheral. For a peripheral triangle, set $d_T=1.72$ if $k_T\ge1$, and
 $d_T=2\kappa$ otherwise.  Monotonicity on nonobtuse triangles gives
 \[
 \area(T_0) \ge \area(d_0,\kappa\sqrt{8},\kappa\sqrt{8}) >
@@ -4404,7 +4485,7 @@ that the $\theta_{ACB}$ fixes the inclination of $A$ and that
 $\theta_{BAC}$ fixes the inclination of $B$.  The variable
 $\theta_{CAB}$ is computed from $\dx{AC}$ and $\theta_{ACB}$ by the
 procedure in Section~\rif{sec:banana}.  Other quantities can be easily
-computed from these quatitites. Again, we can algorithmically
+computed from these quantities. Again, we can algorithmically
 test whether a given five-tuple $(\dx{AB},\dx{BC},\ldots)$ 
 comes from a $P$-triangle.
 
@@ -4552,7 +4633,9 @@ Write $(\bar\alpha_0,\bar\beta,\bar x_\beta)$ and
 $(\bar\alpha_1,2\pi/5-\bar\beta,2\sigma-\bar x_\beta)$ for the
 coordinates of the two triangles. By exchanging them, we may assume
 $\bar\beta\le\pi/5$. The neighborhood $U$ and the paths are symmetric
-under this exchange. The chart inequalities near $\Gamma$ give
+under this exchange. For a pinwheel $\bar\alpha+\bar\beta\le\pi/5$,
+so $\bar\beta\le\pi/5$; for $TJ_3$ the corresponding chart has
+$\bar\beta\ge\pi/5$. The chart inequalities near $\Gamma$ give
 \[
 \begin{aligned}
 \bar\alpha&\le|\bar\beta-\pi/5|
@@ -4580,9 +4663,12 @@ There are three cases.
   the triangle's own $\bar\alpha_i$ decreases with the other
   contact parameters fixed.
 \end{enumerate}
-The first two cases are covered by the $25=5\times5$ paired
-interval calculations, including the variants with a zero
-$\bar\alpha_i$ held fixed. In the third case, the two
+For $\bar\beta<\pi/5$, the five choices on the first side are a
+pinwheel, $LJ_1$, or $LJ_2$ with moving $\bar\alpha$, and a pinwheel
+or $LJ_1$ with $\bar\alpha=0$. On the other side they are $LJ_1$,
+$LJ_2$, or $TJ_3$ with moving $\bar\alpha$, and $LJ_2$ or $TJ_3$ with
+$\bar\alpha=0$. The $25=5\times5$ paired calculations cover the first
+two cases. In the third case, the two
 single-triangle derivative calculations give strict decrease
 whenever $\bar\alpha_i>0$. Consequently the total area has a
 strictly negative right derivative at every point off $\Gamma$.
@@ -4697,7 +4783,11 @@ without loss of generality that the shared edge is $A\to C$ (meaning,
 $A$ and $C$ are the shared pentagons and $A$ points to $C$).  This
 choice of shared edge gives $(\bar A,\bar C) = (A,C)$.  The shared
 variables are $(\bar x_\beta,\bar\beta)=(x_\beta,\beta)$.  The
-nonshared variable is $\bar\alpha=\alpha$.
+nonshared variable is $\bar\alpha=\alpha$. The interval calculation
+for a pinwheel with $x_\gamma\ge0.8$ gives area greater than
+$\acrit+\epsN$. By cyclic relabeling the same holds for $x_\alpha$
+and $x_\beta$. In particular we may restrict to $\bar x_\beta<0.8$
+in the shared-edge calculations with area at most $\acrit+\epsN$.
 
 \subsection{Triple contact at a $LJ$-junction type}
 
@@ -5043,12 +5133,10 @@ differentiation algorithms, we show by computer that area decreases as
 we move along $P$ from $\mathbf{x}_0$ towards $\Gamma$.  Thus, the area
 minimizer, lies on $\Gamma$ for some parameter $|t|\le M$.
 
-By symmetry in the underlying geometry, it is clear that the area
-function has derivative zero along $\Gamma$ at $t=0$. By taking a
-second derivative with automatic differentiation, we find that the
-second derivative of the area function along this curve is positive
-when $|t|\le M$.  Thus, the ice-ray dimer is the unique area minimizer
-on this curve within this explicit neighborhood.
+On $\Gamma$ the exact area formula of Section~\rif{sec:dimer-pair}
+is $2\acrit+\sigma t^2$. It gives the unique minimum at $t=0$.
+The separate calculation of a positive second derivative on this curve
+is a check of the formula.
 
 We remark that many of the functions that are used in the proof of the
 pentagonal ice-ray conjecture are not differentiable.  Our use of
@@ -5110,7 +5198,12 @@ d^0_{AB} = d^1_{AB},\quad
 \theta^0_{ABC} = -\theta^1_{ABC},\quad \theta^0_{BAC} = -\theta^1_{BAC}.
 \end{equation}
 The negative sign comes from the opposite orientations of the common
-edge with respect to $T_0$ and $T_1$.
+edge with respect to $T_0$ and $T_1$. The two inclinations refer
+to the same ordered endpoints on both sides. Reflected triangles
+have the same side-relative description. Where the endpoints can be
+exchanged, one of the families includes both choices or both
+asymmetric cases are run. In the five-dimensional coordinates the
+contact is along $AC$ with $A$ pointing to $C$.
 
 A cluster consisting of one central $P$-triangle and $k$ flanking
 triangles is a point in a configuration space of dimension $6 + 3k$.
@@ -5182,30 +5275,43 @@ that follow.
   Lemma~\rif{calc:pseudo-area3} is $O2C$.
 \end{lemma}
 
-\begin{proof} 
-  Assume for a contradiction, that we cannot deform into a $O2C$.
-  Let
-  the three pentagons of $T_-$ be $A,B,C$, where $A,C$ are shared with
-  the central triangle $T_0$.
-  The edge shared between $T_-$ and $T_0$ has length less than $\kappa\sqrt8$.
-  This implies that the angle of $T_-$ opposite the shared edge is acute.
-  By Lemmas~\rif{lemma:primary}
-  and~\rif{lemma:primary2}, we can assume that $B$ has primary
-  contact.  By translating $B$, we can continue to deform $T_-$,
-  decreasing its area, until it is a right triangle (because $O2C$ is
-  assumed not to occur).  By Lemma~\rif{calc:pseudo2}, the shared edge
-  with $T_0$ has length at least $1.8$, so a right angle gives the
-  proof of Lemma~\rif{calc:pseudo-area3} in this case:
-\[
-\area\{T_0,T_1,T_-\} > 2\ao + \area(T_-) 
-\ge 2\ao + 1.8\kappa > 3\acrit + \epsM.
-\]
+\begin{proof}
+Negate the conclusion of Lemma~\rif{calc:pseudo-area3}. Subtracting
+Lemma~\rif{calc:pseudo-area} gives $\area(T_-)<\acrit+2\epsM<2\kappa^2$.
+With the shared pentagons fixed, minimize the area of $T_-$ on its
+original side over nonobtuse triangles of no greater area. A right
+triangle has area at least $2\kappa^2$, so the minimum is acute.
+A small rotation followed by a translation towards the shared edge,
+as in Lemma~\rif{lemma:primary}, gives primary contact at a minimum.
+At a single slider or midpoint contact slide the outer pentagon down
+along its contact edge. A horizontal contact edge gives height at
+least $2\kappa$ by the incircles and hence area at least $2\kappa^2$.
+This contradiction gives outside double contact.
 \end{proof}
 
-We note that an earlier lemma (Lemma~\rif{lemma:2C}) shows that
-subcritical peripheral triangles can be assumed to be $O2C$. Thus, we
-will assume in the computations that all peripheral triangles are
-$O2C$.
+For a subcritical peripheral triangle use the fixed-edge argument
+at the end of Section~\rif{sec:O2C}. The two shared pentagons stay
+fixed and the shared edge remains a longest edge. Only the constraints
+within each triangle and the assembly constraints
+(\rif{eqn:assembly}) are needed for these lower bounds. Dropping
+any other nonoverlap conditions enlarges the set being tested.
+
+For reference, the side cutoffs used below follow by monotonicity of
+area on nonobtuse triangles and the following applications of Heron's
+formula:
+\[
+\begin{aligned}
+\area(2\kappa,2\kappa,2.1),\ \area(1.79,1.79,2\kappa)&>\acrit,\\
+\area(1.8,1.92,2\kappa),\ \area(1.8,1.8,1.7),\
+ \area(1.72,2\kappa,2.04)&>\acrit+\epsN,\\
+\area(1.93,1.8,2\kappa),\ \area(1.8,1.72,1.79),\
+ \area(1.72,1.8,1.8)&>\acrit+\epsN+\epsM,\\
+\area(1.72,1.72,2.02)&>\acrit+2\epsN+\epsM,\\
+\kappa\sqrt{2.32^2-4\kappa^2}&>\acrit+\epsN .
+\end{aligned}
+\]
+The last bound is the area of the right triangle with hypotenuse
+$2.32$ and one leg $2\kappa$.
 
 In the rest of this section, we describe how each calculation has been
 prepared, to reduce the dimension of the configuration space, prior to
@@ -5224,10 +5330,17 @@ $T_0\nRa T_1$: the selected longest edge of $T_0$ is no longer
 required to be nonshared with $T_1$.  We retain only the weaker
 consequence $\max(\dx{AB},\dx{BC})\ge1.8$, which follows from
 the original pseudo-dimer condition and the assumed shared-edge
-length at least $1.8$.  We may assume that $B$ has primary contact. By symmetry, we may assume contact between $A$ and $B$.  By Lemma~\rif{lemma:primary}, as
-long as $B$ is not $O2C$, we may continue to move $B$ (decreasing area
-as always) until $\max(\dx{AB},\dx{BC})=1.8$.  The calculation reduces
-to three subcases:
+length at least $1.8$. With the shared pentagons fixed, minimize
+the height of $\c_B$ under this constraint and nonobtuseness.
+A right triangle with two sides at least $1.8$ has a leg at least
+$1.8$ and area at least $1.8\kappa>\acrit+\epsN$. At a minimum
+without primary contact, break a possible contact by rotation and
+move $\c_B$ on the circle fixing the longer incident edge towards
+the shared line. This lowers the height. Thus $B$ has primary contact,
+say with $A$. If the length constraint is strict and the contact is
+single, a slide along the contact edge lowers the height; a horizontal
+contact edge is excluded by the same area bound. The calculation
+therefore reduces to three cases:
 
 \begin{enumerate}
 \item $T_0$ has $O2C$ contact.
@@ -5290,20 +5403,30 @@ Let $(T_1,T_0)\in\PD$.  Then $\area\{T_0,T_1\} > 2\acrit - \epsM$.
 
 Negating the conclusion, we may assume that
 $\area\{T_0,T_1\}\le2\acrit-\epsM$.  Let $A,B,C$ be the pentagons of $T_0$, with $A,C$
-shared with $T_1$.  We deform $B$, decreasing area, until primary contact.  If it is not
-$O2C$, then we continue to translate $B$.  We never encounter the long
-isosceles constraint while translating $B$ because if the longest edge
-and shared length have equal lengths, we have $\area\{T_0,T_1\} >
-2\acrit$ by Lemmas~\rif{calc:pseudo1} and~\rif{calc:pseudo2}.  Thus,
-we always reduce to $O2C$ on $T_0$.  We may continue with a squeeze
-transformation (Section~\rif{sec:squeeze}) until $T_1$ is long
-isosceles or $3C$.  We consider two long isosceles subcases, depending
-on which of the two nonshared edges of $T_1$ has the same length as the
-shared edge.
+shared with $T_1$. Keep the shared pentagons fixed and choose a
+position of least area for $T_0$, retaining nonobtuseness and a
+nonshared edge at least as long as the shared edge. Equality is
+excluded by the boundary statements of Lemmas~\rif{calc:pseudo1}
+and~\rif{calc:pseudo2}. A right angle at a base vertex gives area
+at least $1.72\kappa>\acrit+\epsN$; a right angle at the outer vertex
+would have the shared edge as its unique longest edge. The primary
+contact and downhill-slide arguments now force outside double contact
+at a minimum. The other peripheral reduction gave $O2C$ on $T_1$.
+Squeezing strictly decreases both areas. It can be continued through
+the finitely many contact segments until $T_1$ is long isosceles
+or $A,C$ touch: a tie on $T_0$ is excluded as above, while on $T_1$
+the shared edge remains longest up to the first tie. Neither triangle
+can first become right under these bounds. In the long-isosceles case
+we test each of the two nonshared edges of $T_1$ tied with the shared edge.
 
 The squeeze transformation may result in $T_0$ and $T_1$ becoming
-triple contact. The shared-edge calculations of
-Section~\rif{sec:nbd} cover the eight charts listed there.
+triple contact. The shared-edge calculations of Section~\rif{sec:nbd}
+apply outside $U$ for the twelve ordered pairs with the neighborhood
+alternative and without that alternative for the cases treated globally.
+Inside $U$, stages 6 and 7 give area at least $2\acrit$: the path and
+the area estimate there use the shared contact coordinates and do not
+require the shared edge to be longest on $T_0$. For the four pairs with
+a pseudo-dimer alternative the separate global bound uses $0.007<\epsM$.
 One further placement must be considered: $T_0$ may be pin-$T$
 with its shared edge along $A\to B$, in the labels of
 Section~\rif{sec:pint}. Indeed, the area bound gives
@@ -5328,7 +5451,7 @@ They apply to $T_0$ and $T_1$, respectively, and give
 a contradiction. This completes the triple-contact case.
 % COMPUTATION QKZVPNA | sec:pseudo-area | review_jobs.ml:pintab_area
 % COMPUTATION VLMRTQH | sec:pseudo-area | review_jobs.ml:small3C_area
-% Source-specific PASS record: review_checks_v002, 14 November 2026.
+% Run records for the current source are described in verification/CONFIRMATION.md.
 
 \subsubsection{Calculation~of Lemma~\rif{calc:pseudo-area3}}\libel{sec:pseudo-area3}
 
@@ -5336,7 +5459,7 @@ We repeat the statement of Lemma~\rif{calc:pseudo-area3}.  Let
 $(T_1,T_0)\in\PD$. Assume $T_0\Ra T_-$ with $T_-$ nonobtuse.  Then $\area\{T_0,T_1,T_-\} >
 3\acrit + \epsM$. %
 
-By Lemma~\rif{lemma:2C} for $T_1$ and
+By the fixed-edge reduction of Section~\rif{sec:O2C} for $T_1$ and
 Lemma~\rif{lemma:peripheral-o2c} for $T_-$, we may assume that both
 peripheral triangles are $O2C$.  Negating the conclusion, assume
 $\area\{T_0,T_1,T_-\}\le3\acrit+\epsM$.
@@ -5356,26 +5479,41 @@ $T_1$ and $T_0$ fixed.  A stopping condition occurs when $B$ comes
 into contact with $A$ or $C$.  From the perspective of the triangle
 $T_-$, it undergoes a squeezing transformation, as described in
 Section~\rif{sec:squeeze}.  The pentagon at the nonshared vertex of
-$T_-$ is translated to maintain $02C$ contact.  By
+$T_-$ is translated to maintain $O2C$ contact. By
 Lemma~\rif{lemma:squeeze-area}, squeezing $T_-$ decreases its area.
 Furthermore, the translation of $B$ toward $\c_A$ decreases the area
 of $T_0$.  The area of $T_1$ remains fixed.  Thus, the deformation
-decreases $\area\{T_0,T_1,T_-\}$.
+decreases $\area\{T_0,T_1,T_-\}$. At a minimum it forces contact:
+$T_-$ cannot become right under its area bound, and in $T_0$ only
+the angle at $\c_B$ can increase to a right angle. Its opposite edge
+is shared with $T_1$ and has length less than $1.8<\kappa\sqrt8$.
 
 Renaming pentagons of the central triangle, we assume that $\bar A$
 and $\bar C$ are in contact, with $\bar A$ pointing to $\bar C$.  We
 consider six cases: each permutation on three letters determines a
 choice for the edge of $T_0$ shared with $T_1$, and a choice of the
-edge of $T_0$ shared with $T_-$.
+edge of $T_0$ shared with $T_-$. The two cases with contact on the
+edge shared with $T_1$ are included in the calculation as well.
 
 \subsubsection{Calculation~of Lemma~\rif{calc:dimer-isosc}}\libel{sec:dimer-isosc}
 
-We repeat the statement of Lemma~\rif{calc:dimer-isosc}.  Let
-$(T_1,T_0)\in DP$.  Then $T_1$ is not both $O2C$ and long isosceles.
+In a counterexample $T_1$ has outside double contact and its shared
+edge is tied for longest. A tie on $T_0$ is excluded by the boundary
+statements of Lemmas~\rif{calc:pseudo1} and~\rif{calc:pseudo2}.
+With the two shared pentagons fixed, minimize the area of $T_0$
+subject to its shared edge being a longest edge, as in stage 1 of
+Section~\rif{sec:dimer-pair}. A tie would give the same contradiction,
+so the strict-decrease test there gives outside double contact on $T_0$.
 
-Negating the conclusion, we may assume that $T_1$ is $O2C$ and long
-isosceles and that $T_0$ is $O2C$.  We perform the calculation without
-further preparation.
+For the computation, label the endpoints $A,C$ so that the tied
+nonshared edge of $T_1$ is $AB$, reflecting the pair if necessary.
+The test retains $d_{AB}=d_{AC}\ge d_{BC}$ and $\area(T_1)\le\acrit$.
+On the other side it retains either order of the nonshared edges,
+both at most $d_{AC}$, and area at most $\acrit+\epsN$. This last
+bound follows from $\area(T_1)>\ao$ and the pair-area bound.
+Thus the test also covers the closed longest-edge boundary when
+both triangles have outside double contact. No choice of attachment
+arrow at equality is used.
 
 \subsubsection{Calculation~of Lemma~\rif{calc:large}}\libel{sec:large} %
 
@@ -5437,11 +5575,8 @@ $T_1^i\Ra T_0$ and $\area(T_1^i)\le\acrit$ for $i=0,1$. Then $\area\{T_0,T_1^0,T
 \epsM$. %
 
 We assume that $\area\{T_0,T_1^0,T_1^1\}\le 3\acrit + \epsM$.
-By earlier reductions (Section~\rif{sec:O2C}), we may assume
-that $T_1^0,T_1^1$ are $O2C$.  The arguments there were made for dimer pairs, but the argument
-is sufficiently general to apply to $T_1^i$.
-The reduction may be assumed to preserve the shared edge between $T_1^i$ and $T_0$
-as a longest edge of $T_1^i$, for $i=0,1$.
+By the fixed-edge reduction of Section~\rif{sec:O2C} each $T_1^i$
+may be taken in outside double contact with its shared edge longest.
 
 Let $A_1^i$, $B_1^i$, $C$ be the pentagons of $T_1^i$,
 and let $A_1^0,A_1^1,C$ be the pentagons of $T_0$.
@@ -5458,7 +5593,12 @@ following two stopping conditions is met:
 \item $A_1^i$ comes in contact with another pentagon of $T_0$.
 \item The triangle $T_1^i$ becomes long isosceles.
 \end{enumerate}
-Applying the motion to $i=0,1$, at least one of the conditions holds for each $i$.
+Stop the whole motion at the first contact in $T_0$. Otherwise the
+first peripheral reaches a tie and is held fixed while the second
+is considered. On each squeezing branch the shared length decreases;
+there are only finitely many changes of contact segment, and the
+length cannot pass below $2\kappa$. Thus either there is a contact
+in $T_0$ or both peripherals reach a tie.
 
 Since $T_1^i$ are subcritical, by Lemma~\rif{lemma:right}, the edges
 $(\c_{A_1^i},\c_C)$ have length initially less than $\kappa\sqrt8$ and

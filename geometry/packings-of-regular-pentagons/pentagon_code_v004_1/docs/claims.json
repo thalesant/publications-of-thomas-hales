@@ -32,7 +32,7 @@
       "tj17215",
       "pint17215"
     ],
-    "note": "The code uses the stronger longest-edge cutoff 1.7215. Four non-Delta types and the Delta exclusion exhaust the classified terminal contact patterns.",
+    "note": "The code uses the stronger longest-edge cutoff 1.7215. Four non-Delta types and the Delta exclusion exhaust the classified terminal contact patterns. The pinwheel branch uses the entire angle triangle.",
     "comment_id": "BVICHFW"
   },
   {
@@ -52,7 +52,7 @@
       "pint1237",
       "onedeltajmin"
     ],
-    "note": "The four non-Delta contact charts use the exact rational cutoff 1237/1000; the Delta case is handled at the stronger cutoff 1.5.",
+    "note": "The four non-Delta contact charts use the exact rational cutoff 1237/1000; the Delta case is handled at the stronger cutoff 1.5. The pinwheel branch uses the entire angle triangle.",
     "comment_id": "QGPVOYX"
   },
   {
@@ -111,7 +111,7 @@
       "small3C_area",
       "onedeltajmin"
     ],
-    "note": "Two isosceles-peripheral cases and the covered triple-contact pairs use the existing exclusions (0.007 is stronger than 0.008). The AB-shared central pin-T placement is handled separately by pintab_area and small3C_area: 1.315+1.262=2.577 > 2*a_crit-epsilon_M. The Delta type has its separate 1.5 bound. The central placement is not assumed empty on its own.",
+    "note": "Two isosceles-peripheral cases and the covered triple-contact pairs use the existing exclusions (0.007 is stronger than 0.008). The AB-shared central pin-T placement is handled separately by pintab_area and small3C_area: 1.315+1.262=2.577 > 2*a_crit-epsilon_M. The Delta type has its separate 1.5 bound. The central placement is not assumed empty on its own. The pinwheel branch uses the entire angle triangle.",
     "comment_id": "BXZBPJW"
   },
   {
@@ -148,7 +148,7 @@
     "jobs": [
       "mitm_dimer_isosceles_precluster"
     ],
-    "note": "The shared-edge glue matches an O2C long-isosceles peripheral to an O2C central triangle at pair cutoff 2 acrit.",
+    "note": "The shared-edge glue matches an O2C long-isosceles peripheral to an O2C central triangle at pair cutoff 2 acrit. On the closed boundary the peripheral is subcritical and shares a longest edge with the central triangle. The latter has no subcriticality or attachment-tie requirement.",
     "comment_id": "KUGAKIK"
   },
   {
@@ -213,7 +213,7 @@
     "number": "6.2",
     "claim": "Terminal exclusions named iso_2C and iso_2C' in the paper\u2019s stage-2 calculation.",
     "assumptions": [
-      "Use the acute, subcritical long-isosceles terminal configurations and contact alternatives actually listed in the paper."
+      "The long-isosceles triangle is acute and subcritical. AB is a slider, or a vertex of A is at the midpoint of an edge of B. The slide towards a smaller angle at A does not shorten AB."
     ],
     "jobs": [
       "dimer_group1"
@@ -421,7 +421,7 @@
       "pintab_area"
     ],
     "comment_id": "QKZVPNA",
-    "note": "Combine this with the small-edge peripheral estimate in Appendix B.4.3; this is not an emptiness claim for the central triangle alone.",
+    "note": "Combine this with the small-edge peripheral estimate in Appendix B.4.3; this is not an emptiness claim for the central triangle alone. The pinwheel branch uses the entire angle triangle.",
     "selector": "--job pintab_area"
   },
   {
@@ -437,7 +437,7 @@
       "small3C_area"
     ],
     "comment_id": "VLMRTQH",
-    "note": "Four independent chart results must all pass. The bound concerns the peripheral in the AB-shared pin-T pair exclusion.",
+    "note": "Four independent chart results must all pass. The bound concerns the peripheral in the AB-shared pin-T pair exclusion. The pinwheel branch uses the entire angle triangle.",
     "selector": "--job small3C_area"
   },
   {

@@ -671,9 +671,7 @@ let one172 outdomfn_domain edges abx =
   with | Unstable -> false;;
 
 let outdomfn_pinwheel alpha beta =
-  (beta >> alpha) ||
-    pi15 >> alpha + two * beta ||
-    alpha+beta  >> pi15;;
+  alpha+beta  >> pi15;;
 
 let outdomfn_lj alpha beta =
   let ab = alpha+beta in

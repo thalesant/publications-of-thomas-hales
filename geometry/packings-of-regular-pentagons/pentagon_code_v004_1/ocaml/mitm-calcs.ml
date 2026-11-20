@@ -279,6 +279,8 @@ let calc_pent2_postcluster_case0() =
   let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
 
   let cencut = (aK + epsN_I + epsM_I).high in
+  let _ = area_I (172//100) (18//10) (18//10) >>. cencut ||
+    failwith "1.8 nonshared bound" in
   let assertAC = area_I (193//100) (18//10) (two*kappa) >>. cencut ||
     failwith "please reset 1.93 bound and rerun" in
   let assertBC = area_I (18//10) (172//100) (179//100) >>. cencut ||

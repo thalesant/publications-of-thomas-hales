@@ -1,0 +1,1158 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pentagon paper-to-code index — v005</title><style>body{max-width:1100px;margin:35px auto;padding:0 22px;font:17px/1.55 system-ui;color:#1e2f3d}h1,h2,h3{color:#193d50}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:9px;border-bottom:1px solid #cbd6dc;text-align:left;vertical-align:top}code,pre{font:13px/1.55 ui-monospace,monospace}pre{background:#f3f5f6;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere}details{margin:12px 0}summary{cursor:pointer;font-weight:600}a{color:#075c87}input{box-sizing:border-box;width:100%;padding:10px;font-size:17px}article{border-top:1px solid #c4d3db;padding:20px 0}.tag{display:inline-block;padding:3px 8px;margin:3px;background:#eaf0f3;font-size:13px}.context{padding:14px;background:#f2f5f7}</style></head><body><h1>Pentagon paper-to-code index — v005</h1>
+<p>Companion to <a href="../paper/pentagon_v008.pdf">the paper</a>. <a href="code_commentary.pdf">Mathematical commentary</a> · <a href="RUNNING.md">Execution guide</a> · <a href="wolfram_checks.html">Wolfram checks</a> · <a href="../verification/CONFIRMATION.md">Generated confirmation</a>.</p>
+<div class="context"><strong>First-time reader:</strong> find a printed lemma number here, read its assumptions and cases, then inspect the indicated original function. Commands use <strong>Bash at the extracted package root</strong>, not the docs folder or a language prompt. Append <code>--list</code> to preview. A source code is a navigation key, not an additional mathematical hypothesis.</div>
+<p>Execution evidence is maintained separately from this fixed mathematical explanation. An absent, interrupted, or mismatched run is never represented as a pass. See <a href="VERIFICATION.md">confirmation rules</a>.</p>
+<input id="search" aria-label="Search calculation" placeholder="Search lemma/section number, label, seven-letter code or function">
+<table><tr><th>Paper</th><th>Assertion / source code</th><th>Direct jobs</th></tr>
+<tr><td>Lemma 5.1</td><td><a href="#NKQNXUN">NKQNXUN</a> · The edge shared by T1 and T0 has length less than 1.8, including the stated relaxation allowing a longest-edge tie.</td><td>mitm_precluster1_case0, mitm_precluster1_case1, mitm_precluster1_case2</td></tr>
+<tr><td>Lemma 5.2</td><td><a href="#RWWHLQT">RWWHLQT</a> · The longest (egressive) edge of T0 has length greater than 1.8, including the stated longest-edge-tie relaxation.</td><td>mitm_precluster2_case0, mitm_precluster2_case1, mitm_precluster2_case2</td></tr>
+<tr><td>Lemma 5.4</td><td><a href="#BXZBPJW">BXZBPJW</a> · area{T0,T1} &gt; 2*a_crit - epsilon_M.</td><td>dimer_group2, dimer_group4, mitm_precluster4_case0_experimental, mitm_precluster4_case1_experimental, pintab_area, small3C_area, onedeltajmin</td></tr>
+<tr><td>Lemma 5.5</td><td><a href="#JQMRXTH">JQMRXTH</a> · area{T0,T1,T_minus} &gt; 3*a_crit + epsilon_M.</td><td>mitm_precluster6_case1, mitm_precluster6_case2, mitm_precluster6_case3, mitm_precluster6_case4, mitm_precluster6_case5, mitm_precluster6_case6</td></tr>
+<tr><td>Lemma 5.10</td><td><a href="#KUGAKIK">KUGAKIK</a> · In a dimer pair, T1 cannot be both O2C and long isosceles.</td><td>mitm_dimer_isosceles_precluster</td></tr>
+<tr><td>Lemma 5.11</td><td><a href="#HUQEJAT">HUQEJAT</a> · area{T0,T1^0,T1^1} &gt; 3*a_crit + epsilon_M.</td><td>mitm_calc_pent3_6D_postcluster, mitm_calc_pent3AB_postcluster, mitm_calc_pent3BC_postcluster, mitm_calc_pent3AC_postcluster</td></tr>
+<tr><td>Lemma 5.12</td><td><a href="#QPJDYDB">QPJDYDB</a> · area{T0,T1^0,T1^1,T1^2} &gt; 4*a_crit.</td><td>mitm_calc_pent4_6D_postcluster</td></tr>
+<tr><td>Lemma 5.14</td><td><a href="#FHBGHHY">FHBGHHY</a> · area{T0,T1} &gt; 2*a_crit + epsilon_M under the non-large-angle and nonshared-edge assumptions.</td><td>mitm_calc_pent2_postcluster_case0, mitm_calc_pent2_postcluster_case1, mitm_calc_pent2_postcluster_case2, mitm_calc_pent2_postcluster_case3, mitm_calc_pent2_postcluster_case4</td></tr>
+</table>
+<article id="lemma:delta" data-search="Lemma 4.7 — Delta-junction area lemma:delta lemma:delta QBQQTVY onedeltajmin"><h2>Lemma 4.7 — Delta-junction area</h2><p><span class="tag">QBQQTVY</span> <code>lemma:delta</code></p><p>A 3C triangle of type Delta is excluded from the subcritical case; the stated area bound is greater than 1.5.</p><p><strong>Assumptions and preparation:</strong> The paper’s P-triangle / contact-type conventions and the geometric classification. Code uses outdomfn_delta and deltajedge on the initial Delta coordinate box; the area predicate is areamin_acute.</p><p><strong>Interpretation:</strong> The Delta contact chart is tested at cutoff 1.5. This excludes that contact type from the subcritical cases.</p>
+<details><summary>onedeltajmin — proof</summary><p>Exclude Delta-contact triangles of area at most 1.5 on the classified domain.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;onedeltajmin&quot; !calcs) ()</pre>
+<p>Function <code>onedeltajamin</code>, lines 726–732.</p><pre> 726  let onedeltajamin abx =
+ 727    try
+ 728      let (alpha,beta,xalpha) = abx in
+ 729      outdomfn_delta alpha beta ||
+ 730        let (l1,l2,l3) = deltajedge alpha beta xalpha in
+ 731        areamin_acute l1 l2 l3 &gt;&gt;  15 // 10
+ 732    with | Unstable -&gt; false;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim lemma:delta --list
+python3 run.py --claim lemma:delta</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="lemma:172" data-search="Lemma 4.9 — Longest edge of a subcritical triangle lemma:172 lemma:172 BVICHFW onedeltajmin pinwheel17215 lj17215 tj17215 pint17215"><h2>Lemma 4.9 — Longest edge of a subcritical triangle</h2><p><span class="tag">BVICHFW</span> <code>lemma:172</code></p><p>If every edge is at most 1.72, the P-triangle is not subcritical.</p><p><strong>Assumptions and preparation:</strong> The paper reduces the nonobtuse short-edge case to the classified 3C configurations. Use the four non-Delta contact types plus the separate Delta exclusion.</p><p><strong>Interpretation:</strong> The code uses the stronger longest-edge cutoff 1.7215. Four non-Delta types and the Delta exclusion exhaust the classified terminal contact patterns. The pinwheel branch uses the entire angle triangle.</p>
+<details><summary>onedeltajmin — proof</summary><p>Exclude Delta-contact triangles of area at most 1.5 on the classified domain.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;onedeltajmin&quot; !calcs) ()</pre>
+<p>Function <code>onedeltajamin</code>, lines 726–732.</p><pre> 726  let onedeltajamin abx =
+ 727    try
+ 728      let (alpha,beta,xalpha) = abx in
+ 729      outdomfn_delta alpha beta ||
+ 730        let (l1,l2,l3) = deltajedge alpha beta xalpha in
+ 731        areamin_acute l1 l2 l3 &gt;&gt;  15 // 10
+ 732    with | Unstable -&gt; false;;</pre>
+</details>
+<details><summary>pinwheel17215 — proof</summary><p>Exclude subcritical pinwheel triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound). The pinwheel test retains the full angle triangle.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;pinwheel17215&quot; !calcs) ()</pre>
+</details>
+<details><summary>lj17215 — proof</summary><p>Exclude subcritical L-junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound).</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;lj17215&quot; !calcs) ()</pre>
+</details>
+<details><summary>tj17215 — proof</summary><p>Exclude subcritical T-junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound).</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;tj17215&quot; !calcs) ()</pre>
+</details>
+<details><summary>pint17215 — proof</summary><p>Exclude subcritical pin-T junction triangles with every side at most 1.7215 (stronger than the paper’s 1.72 bound).</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;pint17215&quot; !calcs) ()</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim lemma:172 --list
+python3 run.py --claim lemma:172</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="lemma:a0" data-search="Lemma 4.11 — Minimum nonobtuse triangle area lemma:a0 lemma:a0 QGPVOYX pinwheel1237 lj1237 tj1237 pint1237 onedeltajmin"><h2>Lemma 4.11 — Minimum nonobtuse triangle area</h2><p><span class="tag">QGPVOYX</span> <code>lemma:a0</code></p><p>Every nonobtuse P-triangle has area greater than a_min.</p><p><strong>Assumptions and preparation:</strong> The paper first reduces to 3C contact; amin is 1.237 in the code. The Delta type is covered separately by onedeltajmin.</p><p><strong>Interpretation:</strong> The four non-Delta contact charts use the exact rational cutoff 1237/1000; the Delta case is handled at the stronger cutoff 1.5. The pinwheel branch uses the entire angle triangle.</p>
+<details><summary>pinwheel1237 — proof</summary><p>Exclude nonobtuse pinwheel triangles of area at most 1.237. The pinwheel test retains the full angle triangle.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;pinwheel1237&quot; !calcs) ()</pre>
+</details>
+<details><summary>lj1237 — proof</summary><p>Exclude nonobtuse L-junction triangles of area at most 1.237.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;lj1237&quot; !calcs) ()</pre>
+</details>
+<details><summary>tj1237 — proof</summary><p>Exclude nonobtuse T-junction triangles of area at most 1.237.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;tj1237&quot; !calcs) ()</pre>
+</details>
+<details><summary>pint1237 — proof</summary><p>Exclude nonobtuse pin-T junction triangles of area at most 1.237.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;pint1237&quot; !calcs) ()</pre>
+</details>
+<details><summary>onedeltajmin — proof</summary><p>Exclude Delta-contact triangles of area at most 1.5 on the classified domain.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;onedeltajmin&quot; !calcs) ()</pre>
+<p>Function <code>onedeltajamin</code>, lines 726–732.</p><pre> 726  let onedeltajamin abx =
+ 727    try
+ 728      let (alpha,beta,xalpha) = abx in
+ 729      outdomfn_delta alpha beta ||
+ 730        let (l1,l2,l3) = deltajedge alpha beta xalpha in
+ 731        areamin_acute l1 l2 l3 &gt;&gt;  15 // 10
+ 732    with | Unstable -&gt; false;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim lemma:a0 --list
+python3 run.py --claim lemma:a0</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="NKQNXUN" data-search="Lemma 5.1 — Pseudo-dimer shared edge NKQNXUN calc:pseudo1 NKQNXUN mitm_precluster1_case0 mitm_precluster1_case1 mitm_precluster1_case2"><h2>Lemma 5.1 — Pseudo-dimer shared edge</h2><p><span class="tag">NKQNXUN</span> <code>calc:pseudo1</code></p><p>The edge shared by T1 and T0 has length less than 1.8, including the stated relaxation allowing a longest-edge tie.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in Psi D; also the precise weakening of the third defining condition stated in the lemma. Preparation assumes total area &lt;=2*a_crit and reduces the central configuration to double contact or the stated midpointer/slider endpoint.</p><p><strong>Interpretation:</strong> The three central terminal patterns are double contact, midpointer at a length boundary, and slider at a length boundary. Peripheral data retain a longest shared edge. Closed ranges retain the tied-arrow boundary.</p>
+<details><summary>mitm_precluster1_case0 — proof</summary><p>Shared-edge bound: outside-double-contact central triangle, total cutoff 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster1_case0 ()</pre>
+<p>Function <code>precluster1_case0</code>, lines 376–394.</p><pre> 376  let precluster1_case0() =
+ 377    let cluster_areacut = two*aK in
+ 378    let pdata = reset_peri init2Cps in
+ 379  
+ 380    let range = merge_I (18//10) (192//100) in
+ 381    let fillfn () = mk2Ce range in
+ 382    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 383      (disjoint_I dAC range || disjoint_I dAB range || disjoint_I dBC (merge_I (two*kappa) (17//10))) in
+ 384    let keyfns = [ckeyfn2Ce] in
+ 385    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 386  
+ 387    let cencut = (aK + epsN_I).high in
+ 388    let ccs = [(coord2Ce,cencut);] in
+ 389    let _ = area_I (18//10) (192//100) (two*kappa) &gt;&gt; aK+epsN_I ||
+ 390      failwith &quot;range_check&quot; in
+ 391    let _ = area_I (18//10) (18//10) (17//10) &gt;&gt; aK+epsN_I ||
+ 392      failwith &quot;range_check&quot; in
+ 393    let _ = report &quot;precluster1_case0&quot; in
+ 394    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster1_case1 — proof</summary><p>Shared-edge bound: midpoint contact at the nonshared length-1.8 endpoint, total cutoff 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster1_case1 ()</pre>
+<p>Function <code>precluster1_case1</code>, lines 400–420.</p><pre> 400  let precluster1_case1() =
+ 401    let cluster_areacut = two*aK in
+ 402    let pdata = reset_peri init2Cps in
+ 403  
+ 404    let theta&#x27; = iarc one (18//10) kappa in
+ 405    let out_of_theta&#x27; t =
+ 406      forall_alpha (fun t -&gt; disjoint_I theta&#x27; (abs_I t)) t in
+ 407    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 408  	       (dAC,thACB,thCAB,arcB)) = out_of_theta&#x27; thACB in
+ 409  
+ 410    let keyfns = [ckeyfnAB] in
+ 411    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 412  
+ 413    let d_18 = (18//10) in
+ 414    let d_shared = merge_I (18//10) (192//100) in
+ 415    let d_short = merge_I (two*kappa) (17//10) in
+ 416    let dAB_dBC_dAC = (d_shared,d_short,d_18) in
+ 417    let cencut = (aK + epsN_I).high in
+ 418    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 419    let _ = report(&quot;precluster1 case1 midpointer&quot;) in
+ 420    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster1_case2 — proof</summary><p>Shared-edge bound: slider contact with either nonshared length 1.8, total cutoff 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster1_case2 ()</pre>
+<p>Function <code>precluster1_case2</code>, lines 426–447.</p><pre> 426  let precluster1_case2() =
+ 427    let cluster_areacut = two*aK in
+ 428    let pdata = reset_peri init2Cps in
+ 429  
+ 430    let notslider1 (t, t&#x27;) = disjoint_I zero (t+t&#x27;) in
+ 431    let notslider (t, t&#x27;) =
+ 432      forall_alpha_pair notslider1 (t,t&#x27;) in
+ 433    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 434  	       (dAC,thACB,thCAB,arcB)) =
+ 435      (disjoint_I dAC (18//10) &amp;&amp; disjoint_I dBC (18//10) ||
+ 436         notslider (thACB,thCAB)) in
+ 437  
+ 438    let keyfns = [ckeyfnAB] in
+ 439    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 440  
+ 441    let d_shared = merge_I (18//10) (192//100) in
+ 442    let d_full = merge_I (two*kappa) (192//100) in
+ 443    let dAB_dBC_dAC = (d_shared,d_full,d_full) in
+ 444    let cencut = (aK + epsN_I).high in
+ 445    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 446    let _ = report(&quot;precluster1 case2 slider&quot;) in
+ 447    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pseudo1 --list
+python3 run.py --claim calc:pseudo1</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="RWWHLQT" data-search="Lemma 5.2 — Pseudo-dimer egressive edge RWWHLQT calc:pseudo2 RWWHLQT mitm_precluster2_case0 mitm_precluster2_case1 mitm_precluster2_case2"><h2>Lemma 5.2 — Pseudo-dimer egressive edge</h2><p><span class="tag">RWWHLQT</span> <code>calc:pseudo2</code></p><p>The longest (egressive) edge of T0 has length greater than 1.8, including the stated longest-edge-tie relaxation.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in Psi D or the specified tied relaxation; terminal domains from sec:pseudo2. The counterexample has all central edges &lt;=1.8 and total area &lt;=2*a_crit.</p><p><strong>Interpretation:</strong> The central equality filter retains all three equalities and either nonshared length equal to 1.8. In the midpointer and slider code labels, AB is shared and AC is the contact edge. The peripheral is O2C, subcritical, and shared-longest.</p>
+<details><summary>mitm_precluster2_case0 — proof</summary><p>Egressive-edge bound: outside-double-contact central triangle with sides at most 1.8, total cutoff 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster2_case0 ()</pre>
+<p>Function <code>precluster2_case0</code>, lines 464–480.</p><pre> 464  let precluster2_case0() =
+ 465    let cluster_areacut = two*aK in
+ 466    let pdata = reset_peri init2Cps in
+ 467  
+ 468    let fillfn () = mk2Ce d_shared_pseudo in
+ 469    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 470  		(dAC,thACB,thCAB,arcB)) =
+ 471      (disjoint_I dAC d_shared_pseudo || disjoint_I dAB d_shared_pseudo ||
+ 472         disjoint_I dBC d_third_pseudo ||
+ 473      dAB &lt;&lt; dAC || dAB &lt;&lt; dBC) in
+ 474    let keyfns = [ckeyfn2Ce] in
+ 475    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 476  
+ 477    let cencut = (aK + epsN_I).high in
+ 478    let ccs = [(coord2Ce,cencut);] in
+ 479    let _ = report &quot;precluster2_case0&quot; in
+ 480    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster2_case1 — proof</summary><p>Egressive-edge bound: midpoint contact on a shared-edge tie or nonshared length-1.8 boundary, retaining all three equalities.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster2_case1 ()</pre>
+<p>Function <code>precluster2_case1</code>, lines 486–505.</p><pre> 486  let precluster2_case1() =
+ 487    let cluster_areacut = two*aK in
+ 488    let pdata = reset_peri init2Cps in
+ 489  
+ 490    let out_of_midpointer dAC thACB =
+ 491      forall_alpha (fun t -&gt; disjoint_I kappa (iloc one dAC (abs_I t))) thACB in
+ 492    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 493  	       (dAC,thACB,thCAB,arcB)) = out_of_midpointer dAC thACB
+ 494      || pseudo2_boundary_excluded dAB dBC dAC
+ 495      || (disjoint_I dAB d_shared_pseudo)
+ 496      || (disjoint_I dAC d_third_pseudo)
+ 497      || (disjoint_I dBC d_third_pseudo) in
+ 498    let keyfns = [ckeyfnAB] in
+ 499    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 500  
+ 501    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_third_pseudo) in
+ 502    let cencut = (aK + epsN_I).high in
+ 503    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 504    let _ = report(&quot;precluster2 case1 midpointer&quot;) in
+ 505    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster2_case2 — proof</summary><p>Egressive-edge bound: slider contact on a shared-edge tie or nonshared length-1.8 boundary, retaining all three equalities.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster2_case2 ()</pre>
+<p>Function <code>precluster2_case2</code>, lines 511–530.</p><pre> 511  let precluster2_case2() =
+ 512    let cluster_areacut = two*aK in
+ 513    let pdata = reset_peri init2Cps in
+ 514  
+ 515    let notslider1 (t, t&#x27;) = disjoint_I zero (t+t&#x27;) in
+ 516    let notslider (t, t&#x27;) =
+ 517      forall_alpha_pair notslider1 (t,t&#x27;) in
+ 518    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 519  	       (dAC,thACB,thCAB,arcB)) =
+ 520        pseudo2_boundary_excluded dAB dBC dAC
+ 521        ||        notslider (thACB,thCAB) in
+ 522  
+ 523    let keyfns = [ckeyfnAB] in
+ 524    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 525  
+ 526    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_third_pseudo) in
+ 527    let cencut = (aK + epsN_I).high in
+ 528    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 529    let _ = report(&quot;precluster2 case2 slider&quot;) in
+ 530    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pseudo2 --list
+python3 run.py --claim calc:pseudo2</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="BXZBPJW" data-search="Lemma 5.4 — Pseudo-dimer pair area BXZBPJW calc:pseudo-area BXZBPJW dimer_group2 dimer_group4 mitm_precluster4_case0_experimental mitm_precluster4_case1_experimental pintab_area small3C_area onedeltajmin"><h2>Lemma 5.4 — Pseudo-dimer pair area</h2><p><span class="tag">BXZBPJW</span> <code>calc:pseudo-area</code></p><p>area{T0,T1} &gt; 2*a_crit - epsilon_M.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in Psi D. Preparation produces two isosceles-peripheral cases or a 3C+3C terminal case. For the central pin-T placement sharing AB, the shared edge is the longest peripheral edge, in (1.72,1.8).</p><p><strong>Interpretation:</strong> Two isosceles-peripheral cases and the covered triple-contact pairs use the existing exclusions (0.007 is stronger than 0.008). The AB-shared central pin-T placement is handled separately by pintab_area and small3C_area: 1.315+1.262=2.577 &gt; 2*a_crit-epsilon_M. The Delta type has its separate 1.5 bound. The central placement is not assumed empty on its own. The pinwheel branch uses the entire angle triangle.</p>
+<details><summary>dimer_group2 — proof</summary><p>64 original calls, 48 distinct ordered contact pairs</p><p>Source: <a href="../ocaml/dimer.ml">ocaml/dimer.ml</a>.</p><pre>List.concat (Dimer.run_group2 ())</pre>
+<p>Function <code>run_group2</code>, lines 207–216.</p><pre> 207  let run_group2 () =
+ 208    [
+ 209      map (fun i -&gt; recurse0 (0,i)) (0--7);
+ 210      map (fun i -&gt; recurse0 (i,0)) (0--7);
+ 211      map (fun i -&gt; recurse0 (4,i)) (0--7);
+ 212      map (fun i -&gt; recurse0 (i,4)) (0--7);
+ 213      map (fun i -&gt; recurse0 (5,i)) (0--7);
+ 214      map (fun i -&gt; recurse0 (i,5)) (0--7);
+ 215      map (fun i -&gt; recurse0 (6,i)) (0--7);
+ 216      map (fun i -&gt; recurse0 (i,6)) (0--7)];;</pre>
+</details>
+<details><summary>dimer_group4 — proof</summary><p>Four 3C+3C bounds at the stronger 0.007 allowance</p><p>Source: <a href="../ocaml/dimer.ml">ocaml/dimer.ml</a>.</p><pre>Dimer.run_group4 ()</pre>
+<p>Function <code>run_group4</code>, lines 253–259.</p><pre> 253  let run_group4() =
+ 254    [
+ 255      recurseN (1,3);
+ 256      recurseN (3,3);
+ 257      recurseN (1,7);
+ 258      recurseN (3,7);
+ 259    ];;</pre>
+</details>
+<details><summary>mitm_precluster4_case0_experimental — proof</summary><p>Pseudo-dimer pair-area bound 2 a_crit - epsilon_M; outside-double-contact peripheral with local AB=AC.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster4_case0_experimental ()</pre>
+<p>Function <code>precluster4_case0_experimental</code>, lines 555–566.</p><pre> 555  let precluster4_case0_experimental() =
+ 556    let cluster_areacut = two*aK - epsM_I in
+ 557    let pdata = reset_peri init2Cps_isosceles_AB_AC in
+ 558    let fillfn () = mk2Ce d_shared_pseudo in
+ 559    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 560      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 18//10 || disjoint_I dAC d_shared_pseudo) in
+ 561    let keyfns = [ckeyfn2Ce] in
+ 562    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 563    let cencut = (aK + epsN_I - epsM_I).high in
+ 564    let ccs = [(coord2Ce,cencut);] in
+ 565    let _ = report &quot;precluster4_case0 isosceles Tin AB=AC --experimental&quot; in
+ 566    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster4_case1_experimental — proof</summary><p>Pseudo-dimer pair-area bound 2 a_crit - epsilon_M; outside-double-contact peripheral with local BC=AC.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster4_case1_experimental ()</pre>
+<p>Function <code>precluster4_case1_experimental</code>, lines 572–583.</p><pre> 572  let precluster4_case1_experimental() =
+ 573    let cluster_areacut = two*aK - epsM_I in
+ 574    let pdata = reset_peri init2Cps_isosceles_BC_AC in
+ 575    let fillfn () = mk2Ce d_shared_pseudo in
+ 576    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 577      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 18//10 || disjoint_I dAC d_shared_pseudo) in
+ 578    let keyfns = [ckeyfn2Ce] in
+ 579    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 580    let cencut = (aK + epsN_I - epsM_I).high in
+ 581    let ccs = [(coord2Ce,cencut);] in
+ 582    let _ = report &quot;precluster4_case1 isosceles Tin BC=AC experimental&quot; in
+ 583    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>pintab_area — proof</summary><p>Pin-T triangle with d_AB &gt;= 1.72: exclude area &lt;= 1.315.</p><p>Source: <a href="../ocaml/review_jobs.ml">ocaml/review_jobs.ml</a>.</p><pre>pintab_area ()</pre>
+<p>Function <code>pintab_area</code>, lines 34–34.</p><pre>  34  let pintab_area () = recursepairtoeps one_pintab (Dimer.dummybool pintdomain);;</pre>
+</details>
+<details><summary>small3C_area — proof</summary><p>Four non-Delta triple-contact charts with every side &lt;= 1.8: exclude area &lt;= 1.262. The pinwheel test retains the full angle triangle.</p><p>Source: <a href="../ocaml/review_jobs.ml">ocaml/review_jobs.ml</a>.</p><pre>small3C_area ()</pre>
+<p>Function <code>small3C_area</code>, lines 45–46.</p><pre>  45  let small3C_area () =
+  46    map (fun (_,outdom,edges,domain) -&gt; recursetofinish (one_small3C outdom edges) domain) types3C;;</pre>
+</details>
+<details><summary>onedeltajmin — proof</summary><p>Exclude Delta-contact triangles of area at most 1.5 on the classified domain.</p><p>Source: <a href="../ocaml/pent.ml">ocaml/pent.ml</a>.</p><pre>(List.assoc &quot;onedeltajmin&quot; !calcs) ()</pre>
+<p>Function <code>onedeltajamin</code>, lines 726–732.</p><pre> 726  let onedeltajamin abx =
+ 727    try
+ 728      let (alpha,beta,xalpha) = abx in
+ 729      outdomfn_delta alpha beta ||
+ 730        let (l1,l2,l3) = deltajedge alpha beta xalpha in
+ 731        areamin_acute l1 l2 l3 &gt;&gt;  15 // 10
+ 732    with | Unstable -&gt; false;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pseudo-area --list
+python3 run.py --claim calc:pseudo-area</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="JQMRXTH" data-search="Lemma 5.5 — Pseudo-dimer plus egressive neighbor JQMRXTH calc:pseudo-area3 JQMRXTH mitm_precluster6_case1 mitm_precluster6_case2 mitm_precluster6_case3 mitm_precluster6_case4 mitm_precluster6_case5 mitm_precluster6_case6"><h2>Lemma 5.5 — Pseudo-dimer plus egressive neighbor</h2><p><span class="tag">JQMRXTH</span> <code>calc:pseudo-area3</code></p><p>area{T0,T1,T_minus} &gt; 3*a_crit + epsilon_M.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in Psi D; T0 attaches to T_minus; T_minus is nonobtuse (explicit current hypothesis). Preparation reduces both peripherals to O2C and gives six assignments of incoming and egressive central edges.</p><p><strong>Interpretation:</strong> All six ordered incoming/egressive edge assignments are checked. The outgoing peripheral cap is acrit+2 epsilon_M, obtained by subtracting the strict pair bound from the assumed triple-area bound.</p>
+<details><summary>mitm_precluster6_case1 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AB, outgoing edge BC; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case1 ()</pre>
+<p>Function <code>precluster6_case1</code>, lines 600–612.</p><pre> 600  let precluster6_case1() =
+ 601    let cluster_areacut = (int 3)*aK + epsM_I in
+ 602    let pdata = reset_peri init2Cps_precluster6 in
+ 603    let outdomfn _ = false in
+ 604    let keyfnT = ckeyfnAB in
+ 605    let keyfnS = ckeyfnBC in
+ 606    let cfn =
+ 607      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 608    let dAB_dBC_dAC = (d_shared_pseudo,d_egress,d_third_pseudo) in
+ 609    let cencut = (aK + epsN_I).high in
+ 610    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 611    let _ = report(&quot;precluster6 case1 AB shared Tin, egress BC&quot;) in
+ 612    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster6_case2 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AB, outgoing edge AC; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case2 ()</pre>
+<p>Function <code>precluster6_case2</code>, lines 618–630.</p><pre> 618  let precluster6_case2() =
+ 619    let cluster_areacut = (int 3)*aK + epsM_I in
+ 620    let pdata = reset_peri init2Cps_precluster6 in
+ 621    let outdomfn _ = false in
+ 622    let keyfnT = ckeyfnAB in
+ 623    let keyfnS = ckeyfnAC in
+ 624    let cfn =
+ 625      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 626    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_egress) in
+ 627    let cencut = (aK + epsN_I).high in
+ 628    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 629    let _ = report(&quot;precluster6 case2 AB shared Tin, egress AC&quot;) in
+ 630    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster6_case3 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge BC, outgoing edge AB; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case3 ()</pre>
+<p>Function <code>precluster6_case3</code>, lines 636–648.</p><pre> 636  let precluster6_case3() =
+ 637    let cluster_areacut = (int 3)*aK + epsM_I in
+ 638    let pdata = reset_peri init2Cps_precluster6 in
+ 639    let outdomfn _ = false in
+ 640    let keyfnT = ckeyfnBC in
+ 641    let keyfnS = ckeyfnAB in
+ 642    let cfn =
+ 643      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 644    let dAB_dBC_dAC = (d_egress,d_shared_pseudo,d_third_pseudo) in
+ 645    let cencut = (aK + epsN_I).high in
+ 646    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 647    let _ = report(&quot;precluster6 case3 BC shared Tin, egress AB&quot;) in
+ 648    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster6_case4 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge BC, outgoing edge AC; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case4 ()</pre>
+<p>Function <code>precluster6_case4</code>, lines 654–666.</p><pre> 654  let precluster6_case4() =
+ 655    let cluster_areacut = (int 3)*aK + epsM_I in
+ 656    let pdata = reset_peri init2Cps_precluster6 in
+ 657    let outdomfn _ = false in
+ 658    let keyfnT = ckeyfnBC in
+ 659    let keyfnS = ckeyfnAC in
+ 660    let cfn =
+ 661      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 662    let dAB_dBC_dAC = (d_third_pseudo,d_shared_pseudo,d_egress) in
+ 663    let cencut = (aK + epsN_I).high in
+ 664    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 665    let _ = report(&quot;precluster6 case4: BC shared Tin, egress AC&quot;) in
+ 666    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster6_case5 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AC, outgoing edge AB; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case5 ()</pre>
+<p>Function <code>precluster6_case5</code>, lines 672–684.</p><pre> 672  let precluster6_case5() =
+ 673    let cluster_areacut = (int 3)*aK + epsM_I in
+ 674    let pdata = reset_peri init2Cps_precluster6 in
+ 675    let outdomfn _ = false in
+ 676    let keyfnT = ckeyfnAC in
+ 677    let keyfnS = ckeyfnAB in
+ 678    let cfn =
+ 679      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 680    let dAB_dBC_dAC = (d_egress,d_third_pseudo,d_shared_pseudo) in
+ 681    let cencut = (aK + epsN_I).high in
+ 682    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 683    let _ = report(&quot;precluster6 case5: AC shared Tin, egress AB&quot;) in
+ 684    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_precluster6_case6 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AC, outgoing edge BC; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case6 ()</pre>
+<p>Function <code>precluster6_case6</code>, lines 690–702.</p><pre> 690  let precluster6_case6() =
+ 691    let cluster_areacut = (int 3)*aK + epsM_I in
+ 692    let pdata = reset_peri init2Cps_precluster6 in
+ 693    let outdomfn _ = false in
+ 694    let keyfnT = ckeyfnAC in
+ 695    let keyfnS = ckeyfnBC in
+ 696    let cfn =
+ 697      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 698    let dAB_dBC_dAC = (d_third_pseudo,d_egress,d_shared_pseudo) in
+ 699    let cencut = (aK + epsN_I).high in
+ 700    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 701    let _ = report(&quot;precluster6 case6: AC shared Tin, egress BC&quot;) in
+ 702    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pseudo-area3 --list
+python3 run.py --claim calc:pseudo-area3</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="KUGAKIK" data-search="Lemma 5.10 — No long-isosceles O2C peripheral in a dimer KUGAKIK calc:dimer-isosc KUGAKIK mitm_dimer_isosceles_precluster"><h2>Lemma 5.10 — No long-isosceles O2C peripheral in a dimer</h2><p><span class="tag">KUGAKIK</span> <code>calc:dimer-isosc</code></p><p>In a dimer pair, T1 cannot be both O2C and long isosceles.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in DP. Negate the conclusion, reduce T0 to O2C, then run the isosceles peripheral case.</p><p><strong>Interpretation:</strong> The shared-edge glue matches an O2C long-isosceles peripheral to an O2C central triangle at pair cutoff 2 acrit. On the closed boundary the peripheral is subcritical and shares a longest edge with the central triangle. The latter has no subcriticality or attachment-tie requirement.</p>
+<details><summary>mitm_dimer_isosceles_precluster — proof</summary><p>Exclude an outside-double-contact long-isosceles subcritical peripheral in a dimer pair with total area at most 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>dimer_isosceles_precluster ()</pre>
+<p>Function <code>dimer_isosceles_precluster</code>, lines 536–549.</p><pre> 536  let dimer_isosceles_precluster() =
+ 537    let cluster_areacut = two*aK in
+ 538    let pdata = reset_peri init2Cps_isosceles_AB_AC in
+ 539  
+ 540    let fillfn () = mk2Ce d_subcrit_shared in
+ 541    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 542  		(dAC,thACB,thCAB,arcB)) =
+ 543      (dAB &gt;&gt; dAC || dBC &gt;&gt; dAC || disjoint_I dAC d_subcrit_shared) in
+ 544    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,[ckeyfn2Ce]) in
+ 545  
+ 546    let cencut = (aK + epsN_I).high in
+ 547    let ccs = [(coord2Ce,cencut);] in
+ 548    let _ = report (&quot;dimer with Tin isosceles&quot;) in
+ 549    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:dimer-isosc --list
+python3 run.py --claim calc:dimer-isosc</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="HUQEJAT" data-search="Lemma 5.11 — Three-triangle cluster bound HUQEJAT calc:pent3 HUQEJAT mitm_calc_pent3_6D_postcluster mitm_calc_pent3AB_postcluster mitm_calc_pent3BC_postcluster mitm_calc_pent3AC_postcluster"><h2>Lemma 5.11 — Three-triangle cluster bound</h2><p><span class="tag">HUQEJAT</span> <code>calc:pent3</code></p><p>area{T0,T1^0,T1^1} &gt; 3*a_crit + epsilon_M.</p><p><strong>Assumptions and preparation:</strong> Three distinct nonobtuse P-triangles; each peripheral attaches to T0 and has area &lt;=a_crit. The two sequential peripheral motions stop at a central contact or a long-isosceles peripheral.</p><p><strong>Interpretation:</strong> Three contact-central charts distinguish the nonshared edge. The fourth chart is the general six-dimensional center with two isosceles peripherals. All four are required; their central cap is acrit+2 epsilon_N+epsilon_M.</p>
+<details><summary>mitm_calc_pent3_6D_postcluster — proof</summary><p>Three-triangle bound 3 a_crit + epsilon_M: unrestricted six-dimensional central chart and two long-isosceles peripherals.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent3_6D_postcluster ()</pre>
+<p>Function <code>calc_pent3_6D_postcluster</code>, lines 192–207.</p><pre> 192  let calc_pent3_6D_postcluster() =
+ 193    let cluster_areacut = int 3*aK + epsM_I in
+ 194  
+ 195    let pdata = reset_peri init2Cps_isosceles_AC in
+ 196  
+ 197    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),_) =
+ 198      (dAB &lt;&lt; dBC) in
+ 199    let keyfns = [ckeyfn6AB;ckeyfn6BC] in
+ 200    let cfn = (unit_extra,fillfn6,outdomfn,areafn2Ce,keyfns) in
+ 201    let d_subcrit_isosc = merge_I (172//100) (179//100) in
+ 202    let d_short = merge_I (two*kappa) (202//100) in
+ 203    let dAB_dBC_dAC = (d_subcrit_shared,d_subcrit_shared,d_short) in
+ 204    let cencut = (aK + two*epsN_I + epsM_I).high in
+ 205    let ccs = [(coord6 dAB_dBC_dAC,cencut);] in
+ 206    let _ = report &quot;pent3_6D_postcluster&quot; in
+ 207    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_calc_pent3AB_postcluster — proof</summary><p>Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on BC and AC; AB is unshared.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent3AB_postcluster ()</pre>
+<p>Function <code>calc_pent3AB_postcluster</code>, lines 213–227.</p><pre> 213  let calc_pent3AB_postcluster() =
+ 214    let cluster_areacut = int 3*aK + epsM_I in
+ 215    let pdata = reset_peri init2Cps in
+ 216    let outdomfn _ = false in
+ 217    let keyfns = [ckeyfnBC; ckeyfnAC] in
+ 218    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 219    let _ = area_I (172//100) (172//100) (202//100) &gt;&gt;
+ 220      (aK + two * epsN_I + epsM_I) || failwith &quot;202&quot; in
+ 221    let d_short = merge_I (two*kappa) (202//100) in
+ 222  
+ 223    let dAB_dBC_dAC = (d_short,d_subcrit_shared,d_subcrit_contact) in
+ 224    let cencut = (aK + two*epsN_I + epsM_I).high in
+ 225    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 226    let _ = report(&quot;pent3AB&quot;) in
+ 227    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_calc_pent3BC_postcluster — proof</summary><p>Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on AB and AC; BC is unshared.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent3BC_postcluster ()</pre>
+<p>Function <code>calc_pent3BC_postcluster</code>, lines 233–244.</p><pre> 233  let calc_pent3BC_postcluster() =
+ 234    let cluster_areacut = int 3*aK + epsM_I in
+ 235    let pdata = reset_peri init2Cps in
+ 236    let outdomfn _ = false in
+ 237    let keyfns = [ckeyfnAB;ckeyfnAC] in
+ 238    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 239    let d_short = merge_I (two*kappa) (202//100) in
+ 240    let dAB_dBC_dAC=(d_subcrit_shared,d_short,d_subcrit_contact) in
+ 241    let cencut = (aK + int 2*epsN_I +epsM_I).high in
+ 242    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 243    let _ = report(&quot;pent3BC&quot;) in
+ 244    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_calc_pent3AC_postcluster — proof</summary><p>Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on AB and BC; AC is unshared.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent3AC_postcluster ()</pre>
+<p>Function <code>calc_pent3AC_postcluster</code>, lines 250–262.</p><pre> 250  let calc_pent3AC_postcluster() =
+ 251    let cluster_areacut = int 3*aK +epsM_I in
+ 252    let pdata = reset_peri init2Cps in
+ 253    let outdomfn _ = false in
+ 254    let keyfns = [ckeyfnAB; ckeyfnBC] in
+ 255    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 256    let d_short = merge_I (two*kappa) (202//100) in
+ 257  
+ 258    let dAB_dBC_dAC=(d_subcrit_shared,d_subcrit_shared,d_short) in
+ 259    let cencut = (aK + int 2*epsN_I + epsM_I).high in
+ 260    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 261    let _ = report(&quot;pent3AC&quot;) in
+ 262    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pent3 --list
+python3 run.py --claim calc:pent3</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="QPJDYDB" data-search="Lemma 5.12 — Four-triangle cluster bound QPJDYDB calc:pent4 QPJDYDB mitm_calc_pent4_6D_postcluster"><h2>Lemma 5.12 — Four-triangle cluster bound</h2><p><span class="tag">QPJDYDB</span> <code>calc:pent4</code></p><p>area{T0,T1^0,T1^1,T1^2} &gt; 4*a_crit.</p><p><strong>Assumptions and preparation:</strong> Four distinct nonobtuse P-triangles; three subcritical peripherals attach to T0. Each peripheral is O2C after preparation; central side ordering exploits the stated symmetry.</p><p><strong>Interpretation:</strong> The general six-dimensional central chart has peripheral attachments on all three edges. Its central cap is acrit+3 epsilon_N. Strict symmetry exclusions retain equal sides.</p>
+<details><summary>mitm_calc_pent4_6D_postcluster — proof</summary><p>Four-triangle bound 4 a_crit: six-dimensional central chart and three subcritical outside-double-contact peripherals.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent4_6D_postcluster ()</pre>
+<p>Function <code>calc_pent4_6D_postcluster</code>, lines 174–186.</p><pre> 174  let calc_pent4_6D_postcluster() =
+ 175    let cluster_areacut = four*aK in
+ 176    let pdata = reset_peri init2Cps in
+ 177  
+ 178    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 179      (dAB &lt;&lt; dBC || dAB &lt;&lt; dAC || dBC &lt;&lt; dAC) in
+ 180    let keyfns = [ckeyfn6AB;ckeyfn6BC;ckeyfn6AC] in
+ 181    let cfn = (unit_extra,fillfn6,outdomfn,areafn2Ce,keyfns) in
+ 182    let dAB_dBC_dAC = (d_subcrit_shared,d_subcrit_shared,d_subcrit_shared) in
+ 183    let cencut = (aK + int 3*epsN_I).high in
+ 184    let ccs = [(coord6 dAB_dBC_dAC,cencut);] in
+ 185    let _ = report &quot;pent4_6D_postcluster_experimental&quot; in
+ 186    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pent4 --list
+python3 run.py --claim calc:pent4</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="FHBGHHY" data-search="Lemma 5.14 — Non-large-angle two-triangle estimate FHBGHHY calc:large FHBGHHY mitm_calc_pent2_postcluster_case0 mitm_calc_pent2_postcluster_case1 mitm_calc_pent2_postcluster_case2 mitm_calc_pent2_postcluster_case3 mitm_calc_pent2_postcluster_case4"><h2>Lemma 5.14 — Non-large-angle two-triangle estimate</h2><p><span class="tag">FHBGHHY</span> <code>calc:large</code></p><p>area{T0,T1} &gt; 2*a_crit + epsilon_M under the non-large-angle and nonshared-edge assumptions.</p><p><strong>Assumptions and preparation:</strong> Both P-triangles nonobtuse, area(T1)&lt;=a_crit, T1 attaches to T0. A nonshared edge e of T0 has length &gt;1.8 and the angle along (T0,e) is not large.</p><p><strong>Interpretation:</strong> The paper excludes right triangles by the shared-leg area estimate. The remaining cases are double contact or one contact together with a nonshared length of 1.8.</p>
+<details><summary>mitm_calc_pent2_postcluster_case0 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: outside-double-contact central triangle.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case0 ()</pre>
+<p>Function <code>calc_pent2_postcluster_case0</code>, lines 268–290.</p><pre> 268  let calc_pent2_postcluster_case0() =
+ 269    let cluster_areacut = two*aK + epsM_I in
+ 270    let pdata = reset_peri init2Cps in
+ 271  
+ 272    let range = merge_I (172//100) (193//100) in
+ 273    let fillfn () = mk2Ce range in
+ 274    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 275      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 179//100 || disjoint_I dAC range ||
+ 276         forall_alpha_constraint_pseudo_dimer (thABC,thBAC)) in
+ 277  
+ 278    let keyfns = [ckeyfn2Ce] in
+ 279    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 280  
+ 281    let cencut = (aK + epsN_I + epsM_I).high in
+ 282    let _ = area_I (172//100) (18//10) (18//10) &gt;&gt;. cencut ||
+ 283      failwith &quot;1.8 nonshared bound&quot; in
+ 284    let assertAC = area_I (193//100) (18//10) (two*kappa) &gt;&gt;. cencut ||
+ 285      failwith &quot;please reset 1.93 bound and rerun&quot; in
+ 286    let assertBC = area_I (18//10) (172//100) (179//100) &gt;&gt;. cencut ||
+ 287      failwith &quot;please reset 1.79 bound and rerun&quot; in
+ 288    let ccs = [(coord2Ce,cencut);] in
+ 289    let _ = report &quot;pent2_case0 covers 2C+2C situation&quot; in
+ 290    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_calc_pent2_postcluster_case1 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge AB, distinguished nonshared edge AC at length 1.8, with central contact.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case1 ()</pre>
+<p>Function <code>calc_pent2_postcluster_case1</code>, lines 296–310.</p><pre> 296  let calc_pent2_postcluster_case1() =
+ 297    let cluster_areacut = two*aK + epsM_I in
+ 298    let pdata = reset_peri init2Cps in
+ 299    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 300  		(dAC,thACB,thCAB,arcB)) =
+ 301         forall_alpha_constraint_pseudo_dimer (thACB,thCAB) in
+ 302  
+ 303    let keyfns = [ckeyfnAB] in
+ 304    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 305    let d_18 = (18//10) in
+ 306    let dAB_dBC_dAC=(d_subcrit_shared,d_third_pseudo,d_18) in
+ 307    let cencut = (aK + epsN_I + epsM_I).high in
+ 308    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 309    let _ = report(&quot;pent2_postcluster_case1:AB shared, AC egressive. &quot;) in
+ 310    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_calc_pent2_postcluster_case2 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge AB, distinguished nonshared edge BC at length 1.8, with central contact.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case2 ()</pre>
+<p>Function <code>calc_pent2_postcluster_case2</code>, lines 316–331.</p><pre> 316  let calc_pent2_postcluster_case2() =
+ 317    let cluster_areacut = two*aK + epsM_I in
+ 318    let pdata = reset_peri init2Cps in
+ 319    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 320  	       (dAC,thACB,thCAB,arcB)) =
+ 321      forall_alpha_constraint_pseudo_dimer (thBCA,thCBA) in
+ 322  
+ 323    let keyfns = [ckeyfnAB] in
+ 324    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 325    let d_18 = (18//10) in
+ 326    let d_contact = merge_I (two*kappa) two in
+ 327    let dAB_dBC_dAC=(d_subcrit_shared,d_18,d_contact) in
+ 328    let cencut = (aK + epsN_I + epsM_I).high in
+ 329    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 330    let _ = report(&quot;pent2_postcluster_case2:AB shared, BC egressive. &quot;) in
+ 331    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_calc_pent2_postcluster_case3 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge BC, distinguished nonshared edge AC at length 1.8, with central contact.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case3 ()</pre>
+<p>Function <code>calc_pent2_postcluster_case3</code>, lines 337–350.</p><pre> 337  let calc_pent2_postcluster_case3() =
+ 338    let cluster_areacut = two*aK + epsM_I in
+ 339    let pdata = reset_peri init2Cps in
+ 340    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 341  	       (dAC,thACB,thCAB,arcB)) =
+ 342      forall_alpha_constraint_pseudo_dimer (thACB,thCAB) in
+ 343    let keyfns = [ckeyfnBC] in
+ 344    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 345    let d_18 = (18//10) in
+ 346    let dAB_dBC_dAC = (d_third_pseudo,d_subcrit_shared,d_18) in
+ 347    let cencut = (aK + epsN_I + epsM_I).high in
+ 348    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 349    let _ = report(&quot;pent2_postcluster_case3:BC shared, AC egressive. &quot;) in
+ 350    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>mitm_calc_pent2_postcluster_case4 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge BC, distinguished nonshared edge AB at length 1.8, with central contact.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case4 ()</pre>
+<p>Function <code>calc_pent2_postcluster_case4</code>, lines 356–370.</p><pre> 356  let calc_pent2_postcluster_case4() =
+ 357    let cluster_areacut = two*aK + epsM_I in
+ 358    let pdata = reset_peri init2Cps in
+ 359    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 360  	       (dAC,thACB,thCAB,arcB)) =
+ 361      forall_alpha_constraint_pseudo_dimer (thABC,thBAC) in
+ 362    let keyfns = [ckeyfnBC] in
+ 363    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 364    let d_18 = (18//10) in
+ 365    let d_contact = merge_I (two*kappa) two in
+ 366    let dAB_dBC_dAC = (d_18,d_subcrit_shared,d_contact) in
+ 367    let cencut = (aK + epsN_I + epsM_I).high in
+ 368    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 369    let _ = report(&quot;pent2_postcluster_case4:BC shared, AB egressive. &quot;) in
+ 370    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:large --list
+python3 run.py --claim calc:large</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="sec:O2C" data-search="Section 6.2 — Long-isosceles terminal exclusions (stage 2) sec:O2C sec:O2C GAIMXAD dimer_group1"><h2>Section 6.2 — Long-isosceles terminal exclusions (stage 2)</h2><p><span class="tag">GAIMXAD</span> <code>sec:O2C</code></p><p>Terminal exclusions named iso_2C and iso_2C&#x27; in the paper’s stage-2 calculation.</p><p><strong>Assumptions and preparation:</strong> The long-isosceles triangle is acute and subcritical. AB is a slider, or a vertex of A is at the midpoint of an edge of B. The slide towards a smaller angle at A does not shorten AB.</p><p><strong>Interpretation:</strong> The two long-isosceles exclusions are evaluated together with four shared-contact coordinate restrictions by dimer_group1. Result labels follow the returned list, not the evaluation order.</p>
+<details><summary>dimer_group1 — proof</summary><p>Two isosceles exclusions and four contact-chart restrictions</p><p>Source: <a href="../ocaml/dimer.ml">ocaml/dimer.ml</a>.</p><pre>Dimer.run_group1 ()</pre>
+<p>Function <code>run_group1</code>, lines 123–131.</p><pre> 123  let run_group1() =
+ 124    [recursepairtoeps one_iso2C domain_iso2C;
+ 125     recursepairtoeps one_iso2C&#x27; domain_iso2C&#x27;;
+ 126  
+ 127     recursepairtoeps one_pintx (dummybool pintdomain);
+ 128     recursepairtoeps one_pinwheelx (dummybool pinwheeldomain);
+ 129     recursepairtoeps one_ljx (dummybool ljdomain);
+ 130     recursepairtoeps one_tjx (dummybool tjdomain)
+ 131  ];;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim sec:O2C --list
+python3 run.py --claim sec:O2C</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="lemma:squeeze-area" data-search="Lemma 6.5 — Squeezing area inequality (stage 3) lemma:squeeze-area lemma:squeeze-area LZMJIZU squeeze_sign_BA_BC squeeze_sign_BA_CB squeeze_sign_AB_BC squeeze_sign_AB_CB squeeze"><h2>Lemma 6.5 — Squeezing area inequality (stage 3)</h2><p><span class="tag">LZMJIZU</span> <code>lemma:squeeze-area</code></p><p>The specified squeezing deformation decreases area for the stated nonobtuse double-contact configuration of area &lt;=a_crit+epsilon_N.</p><p><strong>Assumptions and preparation:</strong> The geometric motion, signs of slopes, and contact branches are fixed by the local proof. Code uses the mk2Ce representation, shared-length range [2*kappa,2.32], and area cutoff aK+epsN_I.</p><p><strong>Interpretation:</strong> Four contact-sign calculations establish positive finite slopes and the supporting-side assertions. The separate squeeze calculation proves the reciprocal-slope area inequality on that branch. All five proof jobs are required.</p>
+<details><summary>squeeze_sign_BA_BC — proof</summary><p>B points to A and C: both contact signs and supporting-side conditions on the full four-parameter domain</p><p>Source: <a href="../ocaml/squeeze_sign.ml">ocaml/squeeze_sign.ml</a>.</p><pre>SqueezeSign.verify_case &quot;BA_BC&quot;</pre>
+<p>Function <code>verify_case</code>, lines 198–235.</p><pre> 198    let verify_case ?(max_nodes=0) name =
+ 199      let ba,bc = case_flags name in
+ 200      let reasons=Array.make 6 0 and rotation_nodes=Array.make 5 0 in
+ 201      let processed=ref 0 and splits=ref 0 and max_depth=ref 0 in
+ 202      let started=Sys.time () in
+ 203      let rec visit = function
+ 204        | [] -&gt; ()
+ 205        | (m,depth,xs)::rest -&gt;
+ 206          if max_nodes &gt; 0 &amp;&amp; !processed &gt;= max_nodes then
+ 207            failwith (&quot;Unresolved: requested node limit reached in &quot; ^ name);
+ 208          incr processed;
+ 209          rotation_nodes.(m)&lt;-rotation_nodes.(m)+1;
+ 210          max_depth:=max !max_depth depth;
+ 211          if !processed mod 100000 = 0 then
+ 212            Printf.printf &quot;PROGRESS %s nodes=%d depth=%d cpu=%.3f\n%!&quot;
+ 213              name !processed depth (Sys.time () -. started);
+ 214          match classify ba bc m xs with
+ 215          | Some reason -&gt;
+ 216            let k=reason_index reason in reasons.(k)&lt;-reasons.(k)+1; visit rest
+ 217          | None -&gt;
+ 218            let left,right =
+ 219              try split xs with Failure message -&gt;
+ 220                failwith (Printf.sprintf &quot;%s; case=%s rotation=%d&quot; message name m) in
+ 221            incr splits;
+ 222            visit ((m,depth+1,left)::(m,depth+1,right)::rest) in
+ 223      Printf.printf &quot;CASE %s: x_alpha,alpha,x_gamma,gamma; five discrete rotations\n%!&quot; name;
+ 224      visit (List.init 5 (fun m -&gt; (m,0,Array.make 4 (box 0. 1.))));
+ 225      let leaves=Array.fold_left ( + ) 0 reasons in
+ 226      if !processed &lt;&gt; 2 * !splits + 5 || leaves &lt;&gt; !splits + 5 ||
+ 227         not (Array.for_all (fun n -&gt; n&gt;0) rotation_nodes) then
+ 228        failwith &quot;Subdivision accounting failed&quot;;
+ 229      Array.iteri (fun i n -&gt; Printf.printf &quot;LEAVES %s: %d\n&quot; reason_names.(i) n) reasons;
+ 230      Array.iteri (fun m n -&gt; Printf.printf &quot;ROTATION %d: nodes=%d\n&quot; m n) rotation_nodes;
+ 231      Printf.printf &quot;CASE COMPLETED %s: nodes=%d splits=%d depth=%d cpu=%.6f\n%!&quot;
+ 232        name !processed !splits !max_depth (Sys.time () -. started);
+ 233      {processed= !processed; splits= !splits; max_depth= !max_depth;
+ 234       reasons; rotation_nodes}
+ 235  end;;</pre>
+</details>
+<details><summary>squeeze_sign_BA_CB — proof</summary><p>B points to A; C points to B: both contact signs and supporting-side conditions on the full four-parameter domain</p><p>Source: <a href="../ocaml/squeeze_sign.ml">ocaml/squeeze_sign.ml</a>.</p><pre>SqueezeSign.verify_case &quot;BA_CB&quot;</pre>
+<p>Function <code>verify_case</code>, lines 198–235.</p><pre> 198    let verify_case ?(max_nodes=0) name =
+ 199      let ba,bc = case_flags name in
+ 200      let reasons=Array.make 6 0 and rotation_nodes=Array.make 5 0 in
+ 201      let processed=ref 0 and splits=ref 0 and max_depth=ref 0 in
+ 202      let started=Sys.time () in
+ 203      let rec visit = function
+ 204        | [] -&gt; ()
+ 205        | (m,depth,xs)::rest -&gt;
+ 206          if max_nodes &gt; 0 &amp;&amp; !processed &gt;= max_nodes then
+ 207            failwith (&quot;Unresolved: requested node limit reached in &quot; ^ name);
+ 208          incr processed;
+ 209          rotation_nodes.(m)&lt;-rotation_nodes.(m)+1;
+ 210          max_depth:=max !max_depth depth;
+ 211          if !processed mod 100000 = 0 then
+ 212            Printf.printf &quot;PROGRESS %s nodes=%d depth=%d cpu=%.3f\n%!&quot;
+ 213              name !processed depth (Sys.time () -. started);
+ 214          match classify ba bc m xs with
+ 215          | Some reason -&gt;
+ 216            let k=reason_index reason in reasons.(k)&lt;-reasons.(k)+1; visit rest
+ 217          | None -&gt;
+ 218            let left,right =
+ 219              try split xs with Failure message -&gt;
+ 220                failwith (Printf.sprintf &quot;%s; case=%s rotation=%d&quot; message name m) in
+ 221            incr splits;
+ 222            visit ((m,depth+1,left)::(m,depth+1,right)::rest) in
+ 223      Printf.printf &quot;CASE %s: x_alpha,alpha,x_gamma,gamma; five discrete rotations\n%!&quot; name;
+ 224      visit (List.init 5 (fun m -&gt; (m,0,Array.make 4 (box 0. 1.))));
+ 225      let leaves=Array.fold_left ( + ) 0 reasons in
+ 226      if !processed &lt;&gt; 2 * !splits + 5 || leaves &lt;&gt; !splits + 5 ||
+ 227         not (Array.for_all (fun n -&gt; n&gt;0) rotation_nodes) then
+ 228        failwith &quot;Subdivision accounting failed&quot;;
+ 229      Array.iteri (fun i n -&gt; Printf.printf &quot;LEAVES %s: %d\n&quot; reason_names.(i) n) reasons;
+ 230      Array.iteri (fun m n -&gt; Printf.printf &quot;ROTATION %d: nodes=%d\n&quot; m n) rotation_nodes;
+ 231      Printf.printf &quot;CASE COMPLETED %s: nodes=%d splits=%d depth=%d cpu=%.6f\n%!&quot;
+ 232        name !processed !splits !max_depth (Sys.time () -. started);
+ 233      {processed= !processed; splits= !splits; max_depth= !max_depth;
+ 234       reasons; rotation_nodes}
+ 235  end;;</pre>
+</details>
+<details><summary>squeeze_sign_AB_BC — proof</summary><p>A points to B; B points to C: both contact signs and supporting-side conditions on the full four-parameter domain</p><p>Source: <a href="../ocaml/squeeze_sign.ml">ocaml/squeeze_sign.ml</a>.</p><pre>SqueezeSign.verify_case &quot;AB_BC&quot;</pre>
+<p>Function <code>verify_case</code>, lines 198–235.</p><pre> 198    let verify_case ?(max_nodes=0) name =
+ 199      let ba,bc = case_flags name in
+ 200      let reasons=Array.make 6 0 and rotation_nodes=Array.make 5 0 in
+ 201      let processed=ref 0 and splits=ref 0 and max_depth=ref 0 in
+ 202      let started=Sys.time () in
+ 203      let rec visit = function
+ 204        | [] -&gt; ()
+ 205        | (m,depth,xs)::rest -&gt;
+ 206          if max_nodes &gt; 0 &amp;&amp; !processed &gt;= max_nodes then
+ 207            failwith (&quot;Unresolved: requested node limit reached in &quot; ^ name);
+ 208          incr processed;
+ 209          rotation_nodes.(m)&lt;-rotation_nodes.(m)+1;
+ 210          max_depth:=max !max_depth depth;
+ 211          if !processed mod 100000 = 0 then
+ 212            Printf.printf &quot;PROGRESS %s nodes=%d depth=%d cpu=%.3f\n%!&quot;
+ 213              name !processed depth (Sys.time () -. started);
+ 214          match classify ba bc m xs with
+ 215          | Some reason -&gt;
+ 216            let k=reason_index reason in reasons.(k)&lt;-reasons.(k)+1; visit rest
+ 217          | None -&gt;
+ 218            let left,right =
+ 219              try split xs with Failure message -&gt;
+ 220                failwith (Printf.sprintf &quot;%s; case=%s rotation=%d&quot; message name m) in
+ 221            incr splits;
+ 222            visit ((m,depth+1,left)::(m,depth+1,right)::rest) in
+ 223      Printf.printf &quot;CASE %s: x_alpha,alpha,x_gamma,gamma; five discrete rotations\n%!&quot; name;
+ 224      visit (List.init 5 (fun m -&gt; (m,0,Array.make 4 (box 0. 1.))));
+ 225      let leaves=Array.fold_left ( + ) 0 reasons in
+ 226      if !processed &lt;&gt; 2 * !splits + 5 || leaves &lt;&gt; !splits + 5 ||
+ 227         not (Array.for_all (fun n -&gt; n&gt;0) rotation_nodes) then
+ 228        failwith &quot;Subdivision accounting failed&quot;;
+ 229      Array.iteri (fun i n -&gt; Printf.printf &quot;LEAVES %s: %d\n&quot; reason_names.(i) n) reasons;
+ 230      Array.iteri (fun m n -&gt; Printf.printf &quot;ROTATION %d: nodes=%d\n&quot; m n) rotation_nodes;
+ 231      Printf.printf &quot;CASE COMPLETED %s: nodes=%d splits=%d depth=%d cpu=%.6f\n%!&quot;
+ 232        name !processed !splits !max_depth (Sys.time () -. started);
+ 233      {processed= !processed; splits= !splits; max_depth= !max_depth;
+ 234       reasons; rotation_nodes}
+ 235  end;;</pre>
+</details>
+<details><summary>squeeze_sign_AB_CB — proof</summary><p>A and C point to B: both contact signs and supporting-side conditions on the full four-parameter domain</p><p>Source: <a href="../ocaml/squeeze_sign.ml">ocaml/squeeze_sign.ml</a>.</p><pre>SqueezeSign.verify_case &quot;AB_CB&quot;</pre>
+<p>Function <code>verify_case</code>, lines 198–235.</p><pre> 198    let verify_case ?(max_nodes=0) name =
+ 199      let ba,bc = case_flags name in
+ 200      let reasons=Array.make 6 0 and rotation_nodes=Array.make 5 0 in
+ 201      let processed=ref 0 and splits=ref 0 and max_depth=ref 0 in
+ 202      let started=Sys.time () in
+ 203      let rec visit = function
+ 204        | [] -&gt; ()
+ 205        | (m,depth,xs)::rest -&gt;
+ 206          if max_nodes &gt; 0 &amp;&amp; !processed &gt;= max_nodes then
+ 207            failwith (&quot;Unresolved: requested node limit reached in &quot; ^ name);
+ 208          incr processed;
+ 209          rotation_nodes.(m)&lt;-rotation_nodes.(m)+1;
+ 210          max_depth:=max !max_depth depth;
+ 211          if !processed mod 100000 = 0 then
+ 212            Printf.printf &quot;PROGRESS %s nodes=%d depth=%d cpu=%.3f\n%!&quot;
+ 213              name !processed depth (Sys.time () -. started);
+ 214          match classify ba bc m xs with
+ 215          | Some reason -&gt;
+ 216            let k=reason_index reason in reasons.(k)&lt;-reasons.(k)+1; visit rest
+ 217          | None -&gt;
+ 218            let left,right =
+ 219              try split xs with Failure message -&gt;
+ 220                failwith (Printf.sprintf &quot;%s; case=%s rotation=%d&quot; message name m) in
+ 221            incr splits;
+ 222            visit ((m,depth+1,left)::(m,depth+1,right)::rest) in
+ 223      Printf.printf &quot;CASE %s: x_alpha,alpha,x_gamma,gamma; five discrete rotations\n%!&quot; name;
+ 224      visit (List.init 5 (fun m -&gt; (m,0,Array.make 4 (box 0. 1.))));
+ 225      let leaves=Array.fold_left ( + ) 0 reasons in
+ 226      if !processed &lt;&gt; 2 * !splits + 5 || leaves &lt;&gt; !splits + 5 ||
+ 227         not (Array.for_all (fun n -&gt; n&gt;0) rotation_nodes) then
+ 228        failwith &quot;Subdivision accounting failed&quot;;
+ 229      Array.iteri (fun i n -&gt; Printf.printf &quot;LEAVES %s: %d\n&quot; reason_names.(i) n) reasons;
+ 230      Array.iteri (fun m n -&gt; Printf.printf &quot;ROTATION %d: nodes=%d\n&quot; m n) rotation_nodes;
+ 231      Printf.printf &quot;CASE COMPLETED %s: nodes=%d splits=%d depth=%d cpu=%.6f\n%!&quot;
+ 232        name !processed !splits !max_depth (Sys.time () -. started);
+ 233      {processed= !processed; splits= !splits; max_depth= !max_depth;
+ 234       reasons; rotation_nodes}
+ 235  end;;</pre>
+</details>
+<details><summary>squeeze — proof</summary><p>Certify the reciprocal-slope area-decrease inequality, using the three-way sufficient test; combine with all four contact-sign jobs.</p><p>Source: <a href="../ocaml/dimer.ml">ocaml/dimer.ml</a>.</p><pre>Dimer.squeeze_calc ()</pre>
+<p>Function <code>squeeze_calc</code>, lines 291–297.</p><pre> 291  let squeeze_calc() =
+ 292    let top = 232//100 in
+ 293    let _ =  kappa*  (sqrt_I(square_I top - square_I(two*kappa))) &gt;&gt;
+ 294      (aK+epsN_I) || failwith &quot;232&quot; in
+ 295    let dACrange = merge_I (two*kappa) (232//100) in
+ 296    let outofdomfn (a,_,_,_) = (a &gt;&gt; aK+epsN_I) in
+ 297    recursetoeps (squeezable dACrange outofdomfn) domain2Ce;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim lemma:squeeze-area --list
+python3 run.py --claim lemma:squeeze-area</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="sec:nbd" data-search="Section 6.4 — Exclusion outside the ice-ray neighborhood (stage 4) sec:nbd sec:nbd DSKKWND dimer_group2 dimer_group3"><h2>Section 6.4 — Exclusion outside the ice-ray neighborhood (stage 4)</h2><p><span class="tag">DSKKWND</span> <code>sec:nbd</code></p><p>Reduce candidate 3C+3C dimers to the case-dependent neighborhood U with |x_i|&lt;0.01.</p><p><strong>Assumptions and preparation:</strong> Dimer area and common-longest-edge constraints; eight shared-edge contact charts per triangle. The code uses alphaB, betaB-pi/5, xbetaB-sigma, alphaD as the neighborhood quantities.</p><p><strong>Interpretation:</strong> Group 2 excludes 48 distinct ordered contact pairs (64 retained calls). Group 3 treats the other sixteen pairs; four allow the stated pseudo-dimer alternative as well as the 0.01 neighborhood.</p>
+<details><summary>dimer_group2 — proof</summary><p>64 original calls, 48 distinct ordered contact pairs</p><p>Source: <a href="../ocaml/dimer.ml">ocaml/dimer.ml</a>.</p><pre>List.concat (Dimer.run_group2 ())</pre>
+<p>Function <code>run_group2</code>, lines 207–216.</p><pre> 207  let run_group2 () =
+ 208    [
+ 209      map (fun i -&gt; recurse0 (0,i)) (0--7);
+ 210      map (fun i -&gt; recurse0 (i,0)) (0--7);
+ 211      map (fun i -&gt; recurse0 (4,i)) (0--7);
+ 212      map (fun i -&gt; recurse0 (i,4)) (0--7);
+ 213      map (fun i -&gt; recurse0 (5,i)) (0--7);
+ 214      map (fun i -&gt; recurse0 (i,5)) (0--7);
+ 215      map (fun i -&gt; recurse0 (6,i)) (0--7);
+ 216      map (fun i -&gt; recurse0 (i,6)) (0--7)];;</pre>
+</details>
+<details><summary>dimer_group3 — proof</summary><p>12 ordinary and 4 pseudo-relaxed neighborhood checks</p><p>Source: <a href="../ocaml/dimer.ml">ocaml/dimer.ml</a>.</p><pre>Dimer.run_group3 ()</pre>
+<p>Function <code>run_group3</code>, lines 226–247.</p><pre> 226  let run_group3() =
+ 227    [
+ 228      recurse_01 false (1,1);
+ 229      recurse_01 false (2,1);
+ 230      recurse_01 false (3,1);
+ 231      recurse_01 false (7,1);
+ 232  
+ 233      recurse_01 false (1,2);
+ 234      recurse_01 false (2,2);
+ 235      recurse_01 false (3,2);
+ 236      recurse_01 false (7,2);
+ 237  
+ 238      recurse_01 false (2,3);
+ 239      recurse_01 false (7,3);
+ 240  
+ 241      recurse_01 false (2,7);
+ 242      recurse_01 false (7,7);
+ 243  
+ 244      recurse_01 true (1,3);
+ 245      recurse_01 true (3,3);
+ 246      recurse_01 true (1,7);
+ 247      recurse_01 true (3,7)];;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim sec:nbd --list
+python3 run.py --claim sec:nbd</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="sec:curve" data-search="Section 6.6 — Descent to the shear curve (stage 6) sec:curve sec:curve LPEYXGH autodiff_twist_lj1 autodiff_twist_lj2 autodiff_path_0_0 autodiff_path_0_1 autodiff_path_0_2 autodiff_path_0_3 autodiff_path_0_4 autodiff_path_1_0 autodiff_path_1_1 autodiff_path_1_2 autodiff_path_1_3 autodiff_path_1_4 autodiff_path_2_0 autodiff_path_2_1 autodiff_path_2_2 autodiff_path_2_3 autodiff_path_2_4 autodiff_path_3_0 autodiff_path_3_1 autodiff_path_3_2 autodiff_path_3_3 autodiff_path_3_4 autodiff_path_4_0 autodiff_path_4_1 autodiff_path_4_2 autodiff_path_4_3 autodiff_path_4_4 face_lj1"><h2>Section 6.6 — Descent to the shear curve (stage 6)</h2><p><span class="tag">LPEYXGH</span> <code>sec:curve</code></p><p>Area decreases along the stated shared-edge paths from U to Gamma.</p><p><strong>Assumptions and preparation:</strong> The source’s top/bottom chart selections and derivatives must match the paper’s specified paths. 25 first-derivative pair checks plus two auxiliary twist checks.</p><p><strong>Interpretation:</strong> The 25 paired path jobs include the permitted stationary-alpha (_a0) variants. At beta_bar=pi/5, pinwheel/TJ3 are already on Gamma; LJ2 uses autodiff_twist_lj2 and LJ1 uses face_lj1. The paper explains finite piecewise flow and strict descent. autodiff_twist_lj1 is an auxiliary coordinate consistency check, not an area derivative.</p>
+<details><summary>autodiff_twist_lj1 — proof</summary><p>Auxiliary LJ1 contact-coordinate inequality xa &gt; sigma. Retained as a required consistency check; it is not the face area derivative.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.twist_claim_lj1 ()</pre>
+<p>Function <code>twist_claim_lj1</code>, lines 309–313.</p><pre> 309  let twist_claim_lj1 () =
+ 310    let ee = merge_I (- ice_ray_nbd) (ice_ray_nbd) in
+ 311  
+ 312    let eps_domain =[[zero2 (m 0.01);pi15 + ee;sigma+ee]] in
+ 313    recursepairtoeps one_twist_claim_lj1 (dummybool eps_domain);;</pre>
+</details>
+<details><summary>autodiff_twist_lj2 — proof</summary><p>Certify the local twist reduction for lj2 contact.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.twist_claim_lj2 ()</pre>
+<p>Function <code>twist_claim_lj2</code>, lines 326–330.</p><pre> 326  let twist_claim_lj2 () =
+ 327    let ee = merge_I (- ice_ray_nbd) (ice_ray_nbd) in
+ 328  
+ 329    let eps_domain =[[zero2 ice_ray_nbd;sigma+ee]] in
+ 330    recursepairtoeps one_twist_claim_lj2 (dummybool eps_domain);;</pre>
+</details>
+<details><summary>autodiff_path_0_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_0_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_0_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_0_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_0_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>face_lj1 — proof</summary><p>On the LJ1 face beta_bar=pi/5, prove the negative area derivative for alpha_bar decreasing at unit speed.</p><p>Source: <a href="../ocaml/review_jobs.ml">ocaml/review_jobs.ml</a>.</p><pre>face_lj1 ()</pre>
+<p>Function <code>face_lj1</code>, lines 59–61.</p><pre>  59  let face_lj1 () =
+  60    let ee = merge_I (- Dimer.ice_ray_nbd) (Dimer.ice_ray_nbd) in
+  61    recursepairtoeps one_face_lj1 (Dimer.dummybool [[zero2 Dimer.ice_ray_nbd; sigma+ee]]);;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim sec:curve --list
+python3 run.py --claim sec:curve</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="calculation:gamma-convexity" data-search="Section 6.5 — Exact area formula along Gamma calculation:gamma-convexity sec:gamma BKUSHRZ gamma_convexity"><h2>Section 6.5 — Exact area formula along Gamma</h2><p><span class="tag">BKUSHRZ</span> <code>sec:gamma</code></p><p>The paper needs positive second derivative along Gamma for |t|&lt;0.01.</p><p><strong>Assumptions and preparation:</strong> The paper defines t=bar x_beta-sigma; the shared-edge parameter has an absolute contact-length interpretation.</p><p><strong>Interpretation:</strong> The paper proves area=2 acrit+sigma t^2 by a diagonal determinant. The numerical second-derivative calculation is supplementary; it uses the absolute contact parameter sigma+t, not t.</p>
+<details><summary>gamma_convexity — diagnostic</summary><p>Recentered optional numerical check; exact formula proves the paper claim</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.gamma_convexity_diagnostic ()</pre>
+<p>Function <code>gamma_convexity_diagnostic</code>, lines 621–623.</p><pre> 621  let gamma_convexity_diagnostic () =
+ 622    recursetoeps (fun xs -&gt; one_dimer2 (hd xs))
+ 623      [[sigma + mk (-0.1) 0.1]];;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim sec:gamma --list
+python3 run.py --claim sec:gamma</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="sec:shared" data-search="Section A.7 — Shared-edge chart restrictions sec:shared sec:shared SMPXAOD dimer_group1 autodiff_twist_lj1 autodiff_twist_lj2 autodiff_path_0_0 autodiff_path_0_1 autodiff_path_0_2 autodiff_path_0_3 autodiff_path_0_4 autodiff_path_1_0 autodiff_path_1_1 autodiff_path_1_2 autodiff_path_1_3 autodiff_path_1_4 autodiff_path_2_0 autodiff_path_2_1 autodiff_path_2_2 autodiff_path_2_3 autodiff_path_2_4 autodiff_path_3_0 autodiff_path_3_1 autodiff_path_3_2 autodiff_path_3_3 autodiff_path_3_4 autodiff_path_4_0 autodiff_path_4_1 autodiff_path_4_2 autodiff_path_4_3 autodiff_path_4_4 face_lj1"><h2>Section A.7 — Shared-edge chart restrictions</h2><p><span class="tag">SMPXAOD</span> <code>sec:shared</code></p><p>Restrictions used to select valid/stable shared-edge charts: pin-T longest edge, pinwheel contact length, LJ beta, TJ beta.</p><p><strong>Assumptions and preparation:</strong> The paper’s relevant area cap is a_crit+epsilon_N; parameters retain their raw chart meanings.</p><p><strong>Interpretation:</strong> The 25 paired path jobs include the permitted stationary-alpha (_a0) variants. At beta_bar=pi/5, pinwheel/TJ3 are already on Gamma; LJ2 uses autodiff_twist_lj2 and LJ1 uses face_lj1. The paper explains finite piecewise flow and strict descent. autodiff_twist_lj1 is an auxiliary coordinate consistency check, not an area derivative.</p>
+<details><summary>dimer_group1 — proof</summary><p>Two isosceles exclusions and four contact-chart restrictions</p><p>Source: <a href="../ocaml/dimer.ml">ocaml/dimer.ml</a>.</p><pre>Dimer.run_group1 ()</pre>
+<p>Function <code>run_group1</code>, lines 123–131.</p><pre> 123  let run_group1() =
+ 124    [recursepairtoeps one_iso2C domain_iso2C;
+ 125     recursepairtoeps one_iso2C&#x27; domain_iso2C&#x27;;
+ 126  
+ 127     recursepairtoeps one_pintx (dummybool pintdomain);
+ 128     recursepairtoeps one_pinwheelx (dummybool pinwheeldomain);
+ 129     recursepairtoeps one_ljx (dummybool ljdomain);
+ 130     recursepairtoeps one_tjx (dummybool tjdomain)
+ 131  ];;</pre>
+</details>
+<details><summary>autodiff_twist_lj1 — proof</summary><p>Auxiliary LJ1 contact-coordinate inequality xa &gt; sigma. Retained as a required consistency check; it is not the face area derivative.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.twist_claim_lj1 ()</pre>
+<p>Function <code>twist_claim_lj1</code>, lines 309–313.</p><pre> 309  let twist_claim_lj1 () =
+ 310    let ee = merge_I (- ice_ray_nbd) (ice_ray_nbd) in
+ 311  
+ 312    let eps_domain =[[zero2 (m 0.01);pi15 + ee;sigma+ee]] in
+ 313    recursepairtoeps one_twist_claim_lj1 (dummybool eps_domain);;</pre>
+</details>
+<details><summary>autodiff_twist_lj2 — proof</summary><p>Certify the local twist reduction for lj2 contact.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.twist_claim_lj2 ()</pre>
+<p>Function <code>twist_claim_lj2</code>, lines 326–330.</p><pre> 326  let twist_claim_lj2 () =
+ 327    let ee = merge_I (- ice_ray_nbd) (ice_ray_nbd) in
+ 328  
+ 329    let eps_domain =[[zero2 ice_ray_nbd;sigma+ee]] in
+ 330    recursepairtoeps one_twist_claim_lj2 (dummybool eps_domain);;</pre>
+</details>
+<details><summary>autodiff_path_0_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_0_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_0_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_0_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_0_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (0,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 0 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_1_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (1,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 1 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_2_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (2,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 2 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_3_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (3,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 3 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_0 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,0) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 0</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_1 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,1) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 1</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_2 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,2) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 2</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_3 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,3) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 3</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>autodiff_path_4_4 — proof</summary><p>Certify strict area decrease for shared-edge contact-chart pair (4,4) on its prescribed neighborhood and path.</p><p>Source: <a href="../ocaml/autodiff.ml">ocaml/autodiff.ml</a>.</p><pre>Autodiff.recurseD 4 4</pre>
+<p>Function <code>recurseD</code>, lines 393–393.</p><pre> 393  let recurseD i j = recurse_dimerD (dimerD_domain (i,j));;</pre>
+</details>
+<details><summary>face_lj1 — proof</summary><p>On the LJ1 face beta_bar=pi/5, prove the negative area derivative for alpha_bar decreasing at unit speed.</p><p>Source: <a href="../ocaml/review_jobs.ml">ocaml/review_jobs.ml</a>.</p><pre>face_lj1 ()</pre>
+<p>Function <code>face_lj1</code>, lines 59–61.</p><pre>  59  let face_lj1 () =
+  60    let ee = merge_I (- Dimer.ice_ray_nbd) (Dimer.ice_ray_nbd) in
+  61    recursepairtoeps one_face_lj1 (Dimer.dummybool [[zero2 Dimer.ice_ray_nbd; sigma+ee]]);;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim sec:shared --list
+python3 run.py --claim sec:shared</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="diagnostic:central-1237" data-search="MITM central-triangle diagnostic (name contains 1237) diagnostic:central-1237 None None mitm_test1_centralpent_1237"><h2>MITM central-triangle diagnostic (name contains 1237)</h2><p><span class="tag">diagnostic:central-1237</span> <code>Diagnostic</code></p><p>This function uses a 1.2 debug cutoff, despite its name.</p><p><strong>Assumptions and preparation:</strong> The existing central five-dimensional chart and code-defined side ranges.</p><p><strong>Interpretation:</strong> This diagnostic deliberately uses the cutoff 1.2 despite the historical identifier. It does not establish the 1.237 theorem; the primary jobs are listed separately.</p>
+<details><summary>mitm_test1_centralpent_1237 — diagnostic</summary><p>Existing central-chart diagnostic (1.2 debug cutoff, not 1.237)</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>test1_centralpent_1237 ()</pre>
+<p>Function <code>test1_centralpent_1237</code>, lines 144–154.</p><pre> 144  let test1_centralpent_1237() =
+ 145    let cluster_areacut = (m 1.2            ) in
+ 146    let pdata = None in
+ 147    let cencut = cluster_areacut.high in
+ 148    let outdomfn _ = false in
+ 149    let keyfns = [] in
+ 150    let k2 = merge_I (two*kappa) in
+ 151    let dAB_dBC_dAC = (k2(21//10),k2(21//10),k2(two)) in
+ 152    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 153    let ccs = [(coord5(dAB_dBC_dAC),cencut);] in
+ 154    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job mitm_test1_centralpent_1237 --list
+python3 run.py --job mitm_test1_centralpent_1237</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="diagnostic:central-172" data-search="MITM central-triangle short-edge diagnostic diagnostic:central-172 None None mitm_test1_centralpent_172"><h2>MITM central-triangle short-edge diagnostic</h2><p><span class="tag">diagnostic:central-172</span> <code>Diagnostic</code></p><p>Checks the central chart with every side in [2*kappa,1.72] against aK.</p><p><strong>Assumptions and preparation:</strong> No peripheral data; code-defined five-dimensional chart.</p><p><strong>Interpretation:</strong> An additional central-chart diagnostic with all sides at most 1.72. It supplements, rather than replaces, the primary classified contact calculations.</p>
+<details><summary>mitm_test1_centralpent_172 — diagnostic</summary><p>Existing central-chart diagnostic (1.72 cutoff)</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>test1_centralpent_172 ()</pre>
+<p>Function <code>test1_centralpent_172</code>, lines 158–168.</p><pre> 158  let test1_centralpent_172() =
+ 159    let cluster_areacut = aK in
+ 160    let pdata = None in
+ 161    let cencut = cluster_areacut.high in
+ 162    let outdomfn _ = false in
+ 163    let keyfns = [] in
+ 164    let k2 = merge_I (two*kappa) (172//100) in
+ 165    let dAB_dBC_dAC = (k2,k2,k2) in
+ 166    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 167    let ccs = [(coord5(dAB_dBC_dAC),cencut);] in
+ 168    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job mitm_test1_centralpent_172 --list
+python3 run.py --job mitm_test1_centralpent_172</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="historical:one127" data-search="Historical isosceles 1.27 check historical:one127 None None historical_one127"><h2>Historical isosceles 1.27 check</h2><p><span class="tag">historical:one127</span> <code>Diagnostic</code></p><p>The source describes a 1.27 area lower-bound check on subcritical isosceles triangles and says it may no longer be needed.</p><p><strong>Assumptions and preparation:</strong> Four sign choices and the existing domain2C, with shared length in [1.72,1.79].</p><p><strong>Interpretation:</strong> Optional check of the original subcritical isosceles domain at area cutoff 1.27. It is not a premise of the published proof.</p>
+<details><summary>historical_one127 — diagnostic</summary><p>Historical 1.27 isosceles checks; not a current proof dependency</p><p>Source: <a href="../ocaml/dimer.ml">ocaml/dimer.ml</a>.</p><pre>Dimer.recursesgn Dimer.one127 Dimer.domain2C</pre>
+<p>Function <code>recursesgn</code>, lines 313–315.</p><pre> 313  let recursesgn f dom =
+ 314    map (fun t -&gt; recursetoeps (f t) dom)
+ 315      [(true,true);(true,false);(false,true);(false,false)];;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job historical_one127 --list
+python3 run.py --job historical_one127</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="additional:pintab-area" data-search="Lemma 5.4 — Pin-T with AB as shared edge additional:pintab-area calc:pseudo-area QKZVPNA pintab_area"><h2>Lemma 5.4 — Pin-T with AB as shared edge</h2><p><span class="tag">QKZVPNA</span> <code>calc:pseudo-area</code></p><p>A pin-T triangle with d_AB &gt;= 1.72 has area &gt; 1.315.</p><p><strong>Assumptions and preparation:</strong> The pin-T contact chart and its full contact-parameter domain; area_I is used, without a nonobtuse-area shortcut.</p><p><strong>Interpretation:</strong> Combine this with the small-edge peripheral estimate in Appendix B.4.3; this is not an emptiness claim for the central triangle alone. The pinwheel branch uses the entire angle triangle.</p>
+<details><summary>pintab_area — proof</summary><p>Pin-T triangle with d_AB &gt;= 1.72: exclude area &lt;= 1.315.</p><p>Source: <a href="../ocaml/review_jobs.ml">ocaml/review_jobs.ml</a>.</p><pre>pintab_area ()</pre>
+<p>Function <code>pintab_area</code>, lines 34–34.</p><pre>  34  let pintab_area () = recursepairtoeps one_pintab (Dimer.dummybool pintdomain);;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job pintab_area --list
+python3 run.py --job pintab_area</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="additional:small3C-area" data-search="Lemma 5.4 — Triple contact with all edges at most 1.8 additional:small3C-area calc:pseudo-area VLMRTQH small3C_area"><h2>Lemma 5.4 — Triple contact with all edges at most 1.8</h2><p><span class="tag">VLMRTQH</span> <code>calc:pseudo-area</code></p><p>Every tested non-Delta 3C triangle with all sides &lt;= 1.8 has area &gt; 1.262.</p><p><strong>Assumptions and preparation:</strong> Pinwheel, LJ, TJ, and pin-T domains; full triangle-area intervals. The Delta type is separately bounded by Lemma 4.7.</p><p><strong>Interpretation:</strong> Four independent chart results must all pass. The bound concerns the peripheral in the AB-shared pin-T pair exclusion. The pinwheel branch uses the entire angle triangle.</p>
+<details><summary>small3C_area — proof</summary><p>Four non-Delta triple-contact charts with every side &lt;= 1.8: exclude area &lt;= 1.262. The pinwheel test retains the full angle triangle.</p><p>Source: <a href="../ocaml/review_jobs.ml">ocaml/review_jobs.ml</a>.</p><pre>small3C_area ()</pre>
+<p>Function <code>small3C_area</code>, lines 45–46.</p><pre>  45  let small3C_area () =
+  46    map (fun (_,outdom,edges,domain) -&gt; recursetofinish (one_small3C outdom edges) domain) types3C;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job small3C_area --list
+python3 run.py --job small3C_area</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="additional:face-lj1" data-search="Section A.7 — LJ1 face derivative at beta_bar = pi/5 additional:face-lj1 sec:shared ZHCFWUP face_lj1"><h2>Section A.7 — LJ1 face derivative at beta_bar = pi/5</h2><p><span class="tag">ZHCFWUP</span> <code>sec:shared</code></p><p>Area strictly decreases when alpha_bar decreases at unit speed, with beta_bar=pi/5 and x_beta fixed.</p><p><strong>Assumptions and preparation:</strong> 0 &lt;= alpha_bar &lt;= 0.01, |x_beta-sigma| &lt;= 0.01, and the LJ1 shared-edge chart domain.</p><p><strong>Interpretation:</strong> This is the remaining face regime in stage 6. The separately retained twist_lj1 job proves a coordinate inequality, not this derivative.</p>
+<details><summary>face_lj1 — proof</summary><p>On the LJ1 face beta_bar=pi/5, prove the negative area derivative for alpha_bar decreasing at unit speed.</p><p>Source: <a href="../ocaml/review_jobs.ml">ocaml/review_jobs.ml</a>.</p><pre>face_lj1 ()</pre>
+<p>Function <code>face_lj1</code>, lines 59–61.</p><pre>  59  let face_lj1 () =
+  60    let ee = merge_I (- Dimer.ice_ray_nbd) (Dimer.ice_ray_nbd) in
+  61    recursepairtoeps one_face_lj1 (Dimer.dummybool [[zero2 Dimer.ice_ray_nbd; sigma+ee]]);;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job face_lj1 --list
+python3 run.py --job face_lj1</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<article id="tests:geometric-mitm" data-search="Section B.3 — Geometric MITM positive control tests:geometric-mitm sec:mitm None mitm_geometric_control"><h2>Section B.3 — Geometric MITM positive control</h2><p><span class="tag">tests:geometric-mitm</span> <code>sec:mitm</code></p><p>A known feasible asymmetric Gamma pair survives geometric reconstruction, key inversion, matching, and two pruning rounds.</p><p><strong>Assumptions and preparation:</strong> The fixture uses nonzero rational shear t=1/200 and target area 3, deliberately above the pair area.</p><p><strong>Interpretation:</strong> Eighteen finite test assertions, including rejection of the deliberately wrong orientation convention. This is a required control, not an inequality theorem or a universal proof of the key invariant.</p>
+<details><summary>mitm_geometric_control — test</summary><p>Retain a known asymmetric glued configuration through real keys and two pruning rounds; detect the wrong orientation inversion.</p><p>Source: <a href="../tests/ocaml/positive_control.ml">tests/ocaml/positive_control.ml</a>.</p><pre>Review_positive_control.run ()</pre>
+<p>Function <code>run</code>, lines 15–101.</p><pre>  15    let run () =
+  16      let assertions = ref 0 in
+  17      let check name condition =
+  18        Stdlib.incr assertions;
+  19        if condition then Printf.printf &quot;CONTROL PASS: %s\n%!&quot; name
+  20        else failwith (&quot;Geometric positive control failed: &quot; ^ name)
+  21      in
+  22      let nonempty xs = match xs with [] -&gt; false | _ -&gt; true in
+  23      let common xs ys = List.exists (fun x -&gt; List.mem x ys) xs in
+  24      (* Fixed pentagon orientations: A,C have a vertex in the positive
+  25         x direction; B,D have the opposite orientation. The rational shear
+  26         is nonzero so the reflected edge angles are distinguishable. *)
+  27      let t = 1 // 200 in
+  28      let ell0 = one + kappa in
+  29      let height0 = int 3 * kappa * sigma in
+  30      let ab0sq = four*kappa*kappa + sigma*sigma in
+  31      let bc0sq = four*kappa*kappa + (sigma/(two*kappa))*(sigma/(two*kappa)) in
+  32      let x0 = (ab0sq - bc0sq + ell0*ell0)/(two*ell0) in
+  33      let bx = x0 - sigma*t and by = height0 + kappa*t in
+  34      let cx = ell0 and cy = t in
+  35      let dx = x0 + sigma*t and dy = -height0 + kappa*t in
+  36      let dab = sqrt_I (bx*bx + by*by) in
+  37      let dbc = sqrt_I ((cx-bx)*(cx-bx) + (by-cy)*(by-cy)) in
+  38      let dac = sqrt_I (cx*cx + cy*cy) in
+  39      let xc = sigma + t in
+  40      let cc = [xc; zero; xc/(two*kappa); zero] in
+  41      let xp = sigma - t in
+  42      let pc = [xp; zero; xp/(two*kappa); zero] in
+  43      let central_area = (by*cx-bx*cy)/two in
+  44      let peripheral_area = (dx*cy-dy*cx)/two in
+  45      let target = int 3 in
+  46      check &quot;the constructed pair is below the test target 3&quot;
+  47        (central_area+peripheral_area &lt;&lt; target);
+  48      check &quot;the peripheral is subcritical&quot;
+  49        (peripheral_area &lt;&lt; aK);
+  50      check &quot;the shear is strictly nonzero&quot; (t &gt;&gt; zero);
+  51      let pfill () xs = Banana.mk2C d_subcrit_shared (xs,(true,false)) in
+  52      let unwrap name = function Some x -&gt; x | None -&gt; failwith (name ^ &quot; lost the known configuration&quot;) in
+  53      let pf = unwrap &quot;two-contact reconstruction&quot; (pfill () pc) in
+  54      let cf = unwrap &quot;central two-contact reconstruction&quot; (pfill () cc) in
+  55      let (_,_,_,(psh,_,_,_)) = pf in
+  56      let (_,(cab,_,_,_),(cbc,_,_,_),(csh,_,_,_)) = cf in
+  57      check &quot;central side data agree with the independently constructed centers&quot;
+  58        (meet_I cab dab &amp;&amp; meet_I cbc dbc &amp;&amp; meet_I csh dac);
+  59      check &quot;both independently reconstructed shared lengths enclose the geometric length&quot;
+  60        (meet_I psh dac &amp;&amp; meet_I csh dac);
+  61      let (extra,_,pout,parea,pkeys),_ = init2Cps in
+  62      check &quot;the production peripheral predicate retains the witness&quot; (not (pout pf));
+  63      let pfn = (extra,pfill,pout,parea,pkeys) in
+  64      let cfn = (unit_extra,pfill,(fun _ -&gt; false),areafn2Ce,[ckeyfn2Ce]) in
+  65      let h = Hashtbl.create 127 in
+  66      let pdata = ref (h,(pfn,[(pc,[],amin)])) in
+  67      let ccs = ref [(cc,target.high)] in
+  68      List.iteri (fun round width -&gt;
+  69        let k_p = pkeys width pf in
+  70        let k_c = ckeyfn2Ce width cf in
+  71        let (_,_,_,(l,ta,tb,_)) = cf in
+  72        let wrong = Meet.keys_of_edge width (l,ta,tb) in
+  73        check &quot;geometric peripheral and inverted central keys collide&quot; (common k_p k_c);
+  74        check &quot;omitting the orientation inversion is detected by this asymmetric fixture&quot;
+  75          (not (common k_p wrong));
+  76        let initialized = Stdlib.(round &gt; 0) in
+  77        let nextp = Meet.mk_peridata initialized width !pdata in
+  78        let hash,(_,surviving_p) = nextp in
+  79        check &quot;actual peripheral construction retains a box&quot; (nonempty surviving_p);
+  80        check &quot;actual central lookup finds peripheral area data&quot;
+  81          (match Meet.periareas width (Some hash) [ckeyfn2Ce] cf with
+  82           | Some ([a],total,[keys]) -&gt;
+  83               nonempty keys &amp;&amp; not (a &gt;&gt; peripheral_area) &amp;&amp;
+  84               not (total &gt;&gt; peripheral_area)
+  85           | _ -&gt; false);
+  86        let nextc = Meet.mk_cencoord width target (Some hash) cfn !ccs in
+  87        check &quot;actual central pruning retains the known feasible box&quot; (nonempty nextc);
+  88        (* mk_cencoord updates key cuts through Meet.recut. Peripheral triples
+  89           still store LOWER area bounds; their allowed upper cut is maxcut
+  90           over the compatible keys, not a fabricated field in that triple. *)
+  91        check &quot;propagated peripheral upper cuts retain the actual area&quot;
+  92          (List.for_all (fun (_,keys,_) -&gt;
+  93             match Meet.maxcut hash keys with
+  94             | Some cut -&gt; Stdlib.(cut &gt;= peripheral_area.high)
+  95             | None -&gt; false) surviving_p);
+  96        pdata := nextp;
+  97        ccs := nextc
+  98      ) [1 // 4096; 1 // 8192];
+  99      Printf.printf &quot;GEOMETRIC MITM CONTROL: %d assertions passed; two production pruning rounds.\n%!&quot; !assertions;
+ 100      !assertions
+ 101  end;;</pre>
+</details>
+<details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job mitm_geometric_control --list
+python3 run.py --job mitm_geometric_control</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
+<script>document.getElementById('search').addEventListener('input',function(){const q=this.value.toLowerCase();document.querySelectorAll('article[data-search]').forEach(e=>{e.hidden=!e.dataset.search.toLowerCase().includes(q)});});</script>
+</body></html>

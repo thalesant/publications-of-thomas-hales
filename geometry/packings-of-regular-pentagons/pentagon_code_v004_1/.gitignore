@@ -15,3 +15,13 @@ verification/CONFIRMATION.md
 verification/paper-checks.json
 verification/wolfram-report.json
 verification/run-records/
+
+# Reader-facing build products shipped in the release, even under broader parent rules.
+!paper/pentagon_v008.pdf
+!paper/header_v008.bbl
+!figures/gallery.pdf
+!figures/gallery.bbl
+!docs/index.html
+!docs/wolfram_checks.html
+!docs/code_commentary.pdf
+!verification/wolfram-report.json

@@ -19,12 +19,12 @@ def source_map():
             end=text.find(';;',m.end())
             b=text[:end+2].count('\n')+1 if end>=0 else a
             key=p.name+':'+name
-            if key not in out:out[key]={'file':str(p.relative_to(ROOT)),'function':name,'start':a,'end':b}
+            if key not in out:out[key]={'file':p.relative_to(ROOT).as_posix(),'function':name,'start':a,'end':b}
     (ROOT/'docs/source-map.json').write_text(json.dumps(out,indent=2)+'\n')
     return out
 
 def labels():
-    p=ROOT/'paper/header_v007.aux'
+    p=ROOT/'paper/header_v008.aux'
     if not p.exists():return json.loads((ROOT/'paper/label-map.json').read_text())
     result={m[1]:{'number':m[2],'page':m[3]}for m in re.finditer(r'\\newlabel\{([^}]+)\}\{\{([^}]+)\}\{([^}]+)\}',p.read_text())}
     if len(result)<100:raise RuntimeError('Incomplete compiled label file; refusing to overwrite label map')
@@ -57,8 +57,8 @@ def compile_tex(folder,name,passes=3):
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--compile',action='store_true');ap.add_argument('--figures',action='store_true');a=ap.parse_args()
     if a.compile:
-        compile_tex('paper','header_v007')
-        shutil.copyfile(ROOT/'paper/header_v007.pdf', ROOT/'paper/pentagon_v007.pdf')
+        compile_tex('paper','header_v008')
+        shutil.copyfile(ROOT/'paper/header_v008.pdf', ROOT/'paper/pentagon_v008.pdf')
     source_map();labs=labels();refresh_commentary(labs)
     subprocess.run([sys.executable,str(ROOT/'scripts/build_index.py')],check=True)
     if a.compile:compile_tex('docs','code_commentary')

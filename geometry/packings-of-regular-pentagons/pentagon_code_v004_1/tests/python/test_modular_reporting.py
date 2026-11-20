@@ -213,8 +213,11 @@ class ExactProgram(unittest.TestCase):
     def test_output_is_required_before_get(self):
         s=(ROOT/'mathematica/run_checks.wls').read_text();self.assertLess(s.index('Length[outputs]=!=1'),s.index('Get['))
         self.assertIn('FileExistsQ[out]',s)
-    def test_all_original_production_inputs_still_match(self):
-        old=v.compatibility_record(ROOT)['ocaml_v004_source_inventory'];now=v.source_inventory(ROOT)
-        self.assertTrue(all(old.get(name)==sha for name,sha in now.items()))
+    def test_old_ocaml_inventory_cannot_confirm_v005(self):
+        compatibility = v.compatibility_record(ROOT)
+        old = compatibility['ocaml_v004_source_inventory']
+        current = v.source_inventory(ROOT)
+        self.assertNotEqual(old['ocaml/pent.ml'], current['ocaml/pent.ml'])
+        self.assertIsNone(v.match_ocaml_sources(old, current, compatibility))
 
 if __name__=='__main__':unittest.main()
