@@ -11,7 +11,7 @@ from pathlib import Path
 import platform, resource, shutil, signal, subprocess, sys, time, traceback, uuid, zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "pentagon_code_v005"
+VERSION = "pentagon_code_v006"
 STACK_MARKER = "PENTAGON STACK RETAINED: 16777216"
 LOG_CAP = 64 * 1024**2
 GIB = 1024**3
@@ -281,7 +281,7 @@ def environment(switch: str, folder: Path, root: Path):
     return details,prefix,env
 
 def summary(rows,plan,error):
-    out=["# Pentagon code v005 — execution report","","Results concern these exact sources and environment, not every mathematical contract.","",
+    out=["# Pentagon code v006 — execution report","","Results concern these exact sources and environment, not every mathematical contract.","",
       "| Job | Status | Seconds | Peak GiB |","|---|---|---:|---:|"]
     by={r["id"]:r for r in rows}
     for j in plan:
@@ -336,7 +336,7 @@ def main(argv=None):
         requested_jobs=args.jobs
         args.jobs=worker_limit(args.jobs,info['effective_total'],cap,reserve,available_cpus())
         write_json(run/"plan.json",dict(version=VERSION,jobs=plan,resources=vars(args)|{"requested_jobs":requested_jobs,"work":str(work),"copy_report":str(args.copy_report) if args.copy_report else None}))
-        print(f"Pentagon code v005: {len(plan)} selected jobs; at most {args.jobs} workers.",flush=True)
+        print(f"Pentagon code v006: {len(plan)} selected jobs; at most {args.jobs} workers.",flush=True)
         print(f"Order: {args.order}; RAM {info['effective_total']/GIB:.2f} GiB; reserve {args.reserve_gib:g} GiB; per-process cap {args.memory_gib:g} GiB.",flush=True)
         print("First Ctrl+C drains active jobs; second cancels. Sources are read-only.",flush=True)
         print("Report directory: "+str(run),flush=True)
@@ -431,7 +431,7 @@ def main(argv=None):
             if error is None:error="Confirmation record error: "+str(ex)
         write_json(run/"final.json",dict(error=error,interrupted=control.drain))
         (run/"SUMMARY.md").write_text(summary(rows,plan,error))
-        archive=work/("pentagon_code_v005_report_"+stamp+".zip")
+        archive=work/("pentagon_code_v006_report_"+stamp+".zip")
         with zipfile.ZipFile(archive,"w",zipfile.ZIP_DEFLATED) as z:
             for p in sorted(run.rglob('*')):
                 if p.is_file():z.write(p,str(p.relative_to(run)))

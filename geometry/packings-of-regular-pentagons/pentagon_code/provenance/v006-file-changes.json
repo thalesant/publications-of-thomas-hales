@@ -1,0 +1,1031 @@
+{
+  "parent_distribution": "pentagon_code_v005",
+  "parent_archive_sha256": "62edb8bf2d8be6fefd6a80dcacf9346e0a4d2ab54286a9bcfd90ca3a15aeb76f",
+  "distribution": "pentagon_code_v006",
+  "manuscript": "paper/pentagon_v010.tex",
+  "ocaml_source_fingerprint": "56eedc1efc7d3afc",
+  "scope": "Fixed distributed files other than this ledger and the two checksum manifests. The saved Mathematica execution report is verified separately.",
+  "counts": {
+    "added": 3,
+    "revised": 42,
+    "unchanged": 96,
+    "renamed and revised": 4
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "parent_path": null,
+      "change": "added",
+      "parent_sha256": null,
+      "sha256": "44056a0b9d7184112ad12340cd8721f378945ae5f65d1d7f49625d713dc75f3e"
+    },
+    {
+      "path": ".gitignore",
+      "parent_path": ".gitignore",
+      "change": "revised",
+      "parent_sha256": "b38f7725162ae5b790eca16525004b2fed1aa1c0cbd94b6d27e2894df894b91d",
+      "sha256": "4b71363c5044d4a7b72cd9612f680226eb91bac1ce3cf7b2f0d32fd71f97470c"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "parent_path": "CHANGELOG.md",
+      "change": "revised",
+      "parent_sha256": "a0e43987199c534c79ac2a6477d7210be989b6908766d4995cac5929a7145306",
+      "sha256": "098acc680b863fd05205bf66c158018ca59b8c2af7ec18907d0c3a41a5236634"
+    },
+    {
+      "path": "LICENSE.md",
+      "parent_path": "LICENSE.md",
+      "change": "unchanged",
+      "parent_sha256": "df9adcc730be19d082ef7090471c2bebd9a3efe53a105e73f22b34e2f75cb7d0",
+      "sha256": "df9adcc730be19d082ef7090471c2bebd9a3efe53a105e73f22b34e2f75cb7d0"
+    },
+    {
+      "path": "Makefile",
+      "parent_path": "Makefile",
+      "change": "unchanged",
+      "parent_sha256": "bd8119ae8ffeffec1c0588e618674be423dd3e8a0d7a08efe913425ce3524ac7",
+      "sha256": "bd8119ae8ffeffec1c0588e618674be423dd3e8a0d7a08efe913425ce3524ac7"
+    },
+    {
+      "path": "README.md",
+      "parent_path": "README.md",
+      "change": "revised",
+      "parent_sha256": "fc67a276ffa5f8bde39cb4107d27c592800d113ba05731f01487bb2a181c8b8f",
+      "sha256": "728345bde978a700c307089385debe88d0d1af9991d1fcef25f180a3d76fe942"
+    },
+    {
+      "path": "RELEASE.json",
+      "parent_path": "RELEASE.json",
+      "change": "revised",
+      "parent_sha256": "860290905072b70f6356c6841504be5ccedb9c8aae52876df2f47f3ebfdaa583",
+      "sha256": "25b1dff53b6b6e43f3edacc60f2e5f2a977caa8058c619a6ae8b2cf50ef6e4d6"
+    },
+    {
+      "path": "START_HERE.txt",
+      "parent_path": "START_HERE.txt",
+      "change": "revised",
+      "parent_sha256": "f86a459ca706a8d8eaa999295e74027ea3650092241c71f7f2134ebe734cc667",
+      "sha256": "c7d27c36995456c18b73d41c66de9400b413c2d111af75793f47810d0a92c2f6"
+    },
+    {
+      "path": "confirm.py",
+      "parent_path": "confirm.py",
+      "change": "unchanged",
+      "parent_sha256": "211398ce45225a45a881be79c65138892b6d7e6bfccb644f30b8403d849f7242",
+      "sha256": "211398ce45225a45a881be79c65138892b6d7e6bfccb644f30b8403d849f7242"
+    },
+    {
+      "path": "docs/CALCULATIONS.md",
+      "parent_path": "docs/CALCULATIONS.md",
+      "change": "revised",
+      "parent_sha256": "07bbed8b3f3bc8db8097b16f3029f5077e3a6fc9eef63dafbf307031a44a652a",
+      "sha256": "1dbde187ffea03660d99bec49c73fbb50d23d5fb720d6c6b13ae7d6359998531"
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "parent_path": "docs/INSTALL.md",
+      "change": "unchanged",
+      "parent_sha256": "2f57faa7e5c18e4b008dea5d358b0cdce1b4a1530dfdd3f2330bb927114756ff",
+      "sha256": "2f57faa7e5c18e4b008dea5d358b0cdce1b4a1530dfdd3f2330bb927114756ff"
+    },
+    {
+      "path": "docs/METHOD_AND_ASSURANCE.md",
+      "parent_path": "docs/METHOD_AND_ASSURANCE.md",
+      "change": "revised",
+      "parent_sha256": "49d6fd4aa6d22cf9a26c1fda065b118a1b6e554abc03dff14136d72b7d607f60",
+      "sha256": "210e75a676221da347bed4e4ee1cc7d305644c3e3f808cbd97824765b6138fa5"
+    },
+    {
+      "path": "docs/MODULARITY.md",
+      "parent_path": "docs/MODULARITY.md",
+      "change": "revised",
+      "parent_sha256": "4647255c0e674cc1c29ebeae05255e0553d5e651e3e41738c7f74599260dc084",
+      "sha256": "fff932dffad100b406422e4266d5701f87d89c1681e92c5f3d350fb4f2d47d4f"
+    },
+    {
+      "path": "docs/RUNNING.md",
+      "parent_path": "docs/RUNNING.md",
+      "change": "unchanged",
+      "parent_sha256": "ec606091fcba54fb5eb0e164fb66cf0dcae1aeb3127774b8c7767c1d84e0f68e",
+      "sha256": "ec606091fcba54fb5eb0e164fb66cf0dcae1aeb3127774b8c7767c1d84e0f68e"
+    },
+    {
+      "path": "docs/SQUEEZING.md",
+      "parent_path": "docs/SQUEEZING.md",
+      "change": "revised",
+      "parent_sha256": "8d064d1f4d679e8009529928f79c367eb6bed312c33c8bcf4794f046c99df76a",
+      "sha256": "65c5b70e9a31b838b133ffcf6b273aaeef4766b9309336d6e12c961eb8e14474"
+    },
+    {
+      "path": "docs/TESTING.md",
+      "parent_path": "docs/TESTING.md",
+      "change": "unchanged",
+      "parent_sha256": "c9e4c8b072646bfbed9ed270a8e1b06d348faed8fb8c47eb031525dea46da0a5",
+      "sha256": "c9e4c8b072646bfbed9ed270a8e1b06d348faed8fb8c47eb031525dea46da0a5"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "parent_path": "docs/VERIFICATION.md",
+      "change": "unchanged",
+      "parent_sha256": "cdcf84d52083386d83d0dc8c70e3fb3e47ce4b57ec757172f2a714be453f5858",
+      "sha256": "cdcf84d52083386d83d0dc8c70e3fb3e47ce4b57ec757172f2a714be453f5858"
+    },
+    {
+      "path": "docs/WOLFRAM_CHECKS.md",
+      "parent_path": "docs/WOLFRAM_CHECKS.md",
+      "change": "revised",
+      "parent_sha256": "d54a573cbd0fc785250cd069a933992fe83feb7fec6530e2527ce71fabcfd170",
+      "sha256": "c94ee30f412b0964e2045f0b34aa526d7191fd8efc07fc2528058154749d2d91"
+    },
+    {
+      "path": "docs/claims.json",
+      "parent_path": "docs/claims.json",
+      "change": "unchanged",
+      "parent_sha256": "6f3db24ee8d12be5119131c6abd72add33380777384e779f1e1c2eee444e824a",
+      "sha256": "6f3db24ee8d12be5119131c6abd72add33380777384e779f1e1c2eee444e824a"
+    },
+    {
+      "path": "docs/code_commentary.pdf",
+      "parent_path": "docs/code_commentary.pdf",
+      "change": "revised",
+      "parent_sha256": "187fac9c23a7e04005e5d1d715528b1d8dc208cd9f2641b755b7139b35f93a85",
+      "sha256": "a1e3a3c95c9721361f72b07c1c5aecf3fbde582b0eb843dc93778c9069c51a47"
+    },
+    {
+      "path": "docs/code_commentary.tex",
+      "parent_path": "docs/code_commentary.tex",
+      "change": "revised",
+      "parent_sha256": "147fec2a84ed086ccbe4e510865dcdefdb0b4aa26706924b8314d80039e582f9",
+      "sha256": "40b5cf27f97e32713543e4f507124039e0f134d66cfe690731327d70f6cf0e00"
+    },
+    {
+      "path": "docs/code_commentary_template.txt",
+      "parent_path": "docs/code_commentary_template.txt",
+      "change": "revised",
+      "parent_sha256": "8c0d859342d322677228e9212117eee0953a2dd29001336f444212693868107d",
+      "sha256": "4603497dc7aad692248a194b1a3ab8ef8fbb043a7d4b7995605c7a2bd6ca8114"
+    },
+    {
+      "path": "docs/index.html",
+      "parent_path": "docs/index.html",
+      "change": "revised",
+      "parent_sha256": "ef84b28fa9fd94d3e8e9675ae3d889765660be2ced5b85e9067a98ca4dc32bda",
+      "sha256": "2cf32764afda04767885d87ebfe2eab3ff8d2dfe3ba8aad3d4676070ef34c0e9"
+    },
+    {
+      "path": "docs/paperrefs.tex",
+      "parent_path": "docs/paperrefs.tex",
+      "change": "unchanged",
+      "parent_sha256": "48bdb45406ce6f12eabe76a7baa5fca38c61c5e74a1c77e385cdfb3a8802e00d",
+      "sha256": "48bdb45406ce6f12eabe76a7baa5fca38c61c5e74a1c77e385cdfb3a8802e00d"
+    },
+    {
+      "path": "docs/pentagon_changes_2016v2_to_v008.md",
+      "parent_path": "docs/pentagon_changes_2016v2_to_v008.md",
+      "change": "revised",
+      "parent_sha256": "f7fe906fba0c0d9127b58da86c41b192421fe5fa4bf24dd4244c4d813ede44cc",
+      "sha256": "43b4061fbbe15eb2c9e899f909745029e217e6f38d5ea66d9354f1c926d47611"
+    },
+    {
+      "path": "docs/pentagon_changes_2016v2_to_v009.md",
+      "parent_path": null,
+      "change": "added",
+      "parent_sha256": null,
+      "sha256": "8c9aa028fbb00edf99c6d1553100b49774d8fdc358585ae81a6f9855476521d7"
+    },
+    {
+      "path": "docs/pentagon_changes_2016v2_to_v010.md",
+      "parent_path": null,
+      "change": "added",
+      "parent_sha256": null,
+      "sha256": "23e7e0586e3b7ef33c47fd62f6c7e2168fd2c090856b147f908286552dbe69f4"
+    },
+    {
+      "path": "docs/source-map.json",
+      "parent_path": "docs/source-map.json",
+      "change": "revised",
+      "parent_sha256": "07fc275f804fa22008152231cf1e7c4e9242f31ccf918264af02106967fabf65",
+      "sha256": "8c2859fa34ba767cca1d78f7e49f1e92341e9cee9b0fc4060974fb35bb0954a4"
+    },
+    {
+      "path": "docs/wolfram_checks.html",
+      "parent_path": "docs/wolfram_checks.html",
+      "change": "revised",
+      "parent_sha256": "244a604bd0091c3b976c1aa224d49b54dae231788c1b7332b40c8859ed8a5b18",
+      "sha256": "5c1c930aa129ee22cb67053afec9c845e712ef7a732f43d641eb9cef6f7401d7"
+    },
+    {
+      "path": "environment/README.md",
+      "parent_path": "environment/README.md",
+      "change": "unchanged",
+      "parent_sha256": "1e6aceb387cf607e2e5792388b05fe486ebc134ce184c22c454d92190f1310fb",
+      "sha256": "1e6aceb387cf607e2e5792388b05fe486ebc134ce184c22c454d92190f1310fb"
+    },
+    {
+      "path": "environment/dependency-sources.json",
+      "parent_path": "environment/dependency-sources.json",
+      "change": "unchanged",
+      "parent_sha256": "e6a98566353e1817ca46f8c78f1543da0fbdb0e8ca8830dcec43d031d429a036",
+      "sha256": "e6a98566353e1817ca46f8c78f1543da0fbdb0e8ca8830dcec43d031d429a036"
+    },
+    {
+      "path": "environment/freeze.py",
+      "parent_path": "environment/freeze.py",
+      "change": "unchanged",
+      "parent_sha256": "7c70f4e4374135138334152a994f2911aa914a77146012aed056f30b36641f82",
+      "sha256": "7c70f4e4374135138334152a994f2911aa914a77146012aed056f30b36641f82"
+    },
+    {
+      "path": "environment/install.sh",
+      "parent_path": "environment/install.sh",
+      "change": "unchanged",
+      "parent_sha256": "4ab16c3ac4a3499abba4cd97999ba7e552be6b6cce90743fb483dcb9ea43c393",
+      "sha256": "4ab16c3ac4a3499abba4cd97999ba7e552be6b6cce90743fb483dcb9ea43c393"
+    },
+    {
+      "path": "evidence/README.md",
+      "parent_path": "evidence/README.md",
+      "change": "unchanged",
+      "parent_sha256": "5612af397311294f16456fc0f62d2887a34d3fa20ecde61de634f9b0d9a4c7d3",
+      "sha256": "5612af397311294f16456fc0f62d2887a34d3fa20ecde61de634f9b0d9a4c7d3"
+    },
+    {
+      "path": "evidence/timings.json",
+      "parent_path": "evidence/timings.json",
+      "change": "unchanged",
+      "parent_sha256": "61b1660844f09527ca697df8015a1cbf7009b1f0576cbee0b2b2f1db19e1aeda",
+      "sha256": "61b1660844f09527ca697df8015a1cbf7009b1f0576cbee0b2b2f1db19e1aeda"
+    },
+    {
+      "path": "figures/PentagonFigures.wl",
+      "parent_path": "figures/PentagonFigures.wl",
+      "change": "unchanged",
+      "parent_sha256": "f06f4ca9b6b702bf53f7b73a179eeb956fa215a798f9f785909cf471edf82665",
+      "sha256": "f06f4ca9b6b702bf53f7b73a179eeb956fa215a798f9f785909cf471edf82665"
+    },
+    {
+      "path": "figures/README.md",
+      "parent_path": "figures/README.md",
+      "change": "revised",
+      "parent_sha256": "fde8769ca8393325b7fe2457d13cc80429b88db15702cccad7dd5d956b74b973",
+      "sha256": "9de8258be0009d5ca3e10f956b331752d5b3685e1b8c3f45131d12bc1cfe7b09"
+    },
+    {
+      "path": "figures/figure_172-slider.tex",
+      "parent_path": "figures/figure_172-slider.tex",
+      "change": "unchanged",
+      "parent_sha256": "8fd2e13758e65a305918a047a8e9ae9745ed0c2819d499e0c40436191a8f7265",
+      "sha256": "8fd2e13758e65a305918a047a8e9ae9745ed0c2819d499e0c40436191a8f7265"
+    },
+    {
+      "path": "figures/figure_3C-type.tex",
+      "parent_path": "figures/figure_3C-type.tex",
+      "change": "unchanged",
+      "parent_sha256": "2f435481aaf7592b1cfaee35db7cc8141a832a10a26d5d43eeee66a47b0ab4f5",
+      "sha256": "2f435481aaf7592b1cfaee35db7cc8141a832a10a26d5d43eeee66a47b0ab4f5"
+    },
+    {
+      "path": "figures/figure_Gamma.tex",
+      "parent_path": "figures/figure_Gamma.tex",
+      "change": "unchanged",
+      "parent_sha256": "5dfe725d7676f24a82e6dfbd190eaebb829871837ba3f252906da7f9a826d4e7",
+      "sha256": "5dfe725d7676f24a82e6dfbd190eaebb829871837ba3f252906da7f9a826d4e7"
+    },
+    {
+      "path": "figures/figure_Gamma_.tex",
+      "parent_path": "figures/figure_Gamma_.tex",
+      "change": "unchanged",
+      "parent_sha256": "a91722b44a2767fe1d8dc1d47e791f10b774a1aa35d64c2018a95ffb973b00c1",
+      "sha256": "a91722b44a2767fe1d8dc1d47e791f10b774a1aa35d64c2018a95ffb973b00c1"
+    },
+    {
+      "path": "figures/figure_KK2min.tex",
+      "parent_path": "figures/figure_KK2min.tex",
+      "change": "unchanged",
+      "parent_sha256": "67e9a19b026d9584e87c099bba4b52a3eb1a81b1a3c365ec72d1b0894a28276c",
+      "sha256": "67e9a19b026d9584e87c099bba4b52a3eb1a81b1a3c365ec72d1b0894a28276c"
+    },
+    {
+      "path": "figures/figure_KKtriangle.tex",
+      "parent_path": "figures/figure_KKtriangle.tex",
+      "change": "unchanged",
+      "parent_sha256": "98c7c01f6b2af448f69664d9eba470609647aec02c945f9cc72c1ca8ef9a1605",
+      "sha256": "98c7c01f6b2af448f69664d9eba470609647aec02c945f9cc72c1ca8ef9a1605"
+    },
+    {
+      "path": "figures/figure_areta.tex",
+      "parent_path": "figures/figure_areta.tex",
+      "change": "unchanged",
+      "parent_sha256": "eb5a9c46f4ae5411b2336e5cc7e472baaf0531d8babff9b8e4b54806d40640ac",
+      "sha256": "eb5a9c46f4ae5411b2336e5cc7e472baaf0531d8babff9b8e4b54806d40640ac"
+    },
+    {
+      "path": "figures/figure_banana2.tex",
+      "parent_path": "figures/figure_banana2.tex",
+      "change": "unchanged",
+      "parent_sha256": "4a29117ef2d89e39725329f8519801842fe10a9793101029191c20658d1b5356",
+      "sha256": "4a29117ef2d89e39725329f8519801842fe10a9793101029191c20658d1b5356"
+    },
+    {
+      "path": "figures/figure_clover.tex",
+      "parent_path": "figures/figure_clover.tex",
+      "change": "unchanged",
+      "parent_sha256": "fa35e7394cc317da048c636bb1fc3cd76aa4eec3593ebe61089b9e5fc6cae720",
+      "sha256": "fa35e7394cc317da048c636bb1fc3cd76aa4eec3593ebe61089b9e5fc6cae720"
+    },
+    {
+      "path": "figures/figure_cord-L.tex",
+      "parent_path": "figures/figure_cord-L.tex",
+      "change": "unchanged",
+      "parent_sha256": "25cd60983b86d887edda670edfe6abc4b294c3ae3a3c64bbe3ae8ced706251a1",
+      "sha256": "25cd60983b86d887edda670edfe6abc4b294c3ae3a3c64bbe3ae8ced706251a1"
+    },
+    {
+      "path": "figures/figure_cord-T.tex",
+      "parent_path": "figures/figure_cord-T.tex",
+      "change": "unchanged",
+      "parent_sha256": "f5acbcd905440cab64b439b0a8c2f4646d3f4d1ac18f6013a9a86702507246eb",
+      "sha256": "f5acbcd905440cab64b439b0a8c2f4646d3f4d1ac18f6013a9a86702507246eb"
+    },
+    {
+      "path": "figures/figure_cord-delta.tex",
+      "parent_path": "figures/figure_cord-delta.tex",
+      "change": "unchanged",
+      "parent_sha256": "404665a470e4ebf7e471d1ae8514d90ed9d5120f83547bd1bc8eaac10b9db9e8",
+      "sha256": "404665a470e4ebf7e471d1ae8514d90ed9d5120f83547bd1bc8eaac10b9db9e8"
+    },
+    {
+      "path": "figures/figure_cord-pint.tex",
+      "parent_path": "figures/figure_cord-pint.tex",
+      "change": "unchanged",
+      "parent_sha256": "a946442917d859e6018c8b81b4caa588a836fda21dadcc253099b6492c52a384",
+      "sha256": "a946442917d859e6018c8b81b4caa588a836fda21dadcc253099b6492c52a384"
+    },
+    {
+      "path": "figures/figure_cord-pinwheel.tex",
+      "parent_path": "figures/figure_cord-pinwheel.tex",
+      "change": "unchanged",
+      "parent_sha256": "1af9fead4ccf81693771903d34211423eb32a7341038d9ae6d2c716357cb6be3",
+      "sha256": "1af9fead4ccf81693771903d34211423eb32a7341038d9ae6d2c716357cb6be3"
+    },
+    {
+      "path": "figures/figure_delta.tex",
+      "parent_path": "figures/figure_delta.tex",
+      "change": "unchanged",
+      "parent_sha256": "23260edd7b907ea77198b0c2e15a072187e8f5af60ae3f40acfb70c942f8d5bd",
+      "sha256": "23260edd7b907ea77198b0c2e15a072187e8f5af60ae3f40acfb70c942f8d5bd"
+    },
+    {
+      "path": "figures/figure_double-lattice.tex",
+      "parent_path": "figures/figure_double-lattice.tex",
+      "change": "unchanged",
+      "parent_sha256": "2f031de662449b7a48586c4dc59604fcbd743b05065b2d17adf4a068887eb4c2",
+      "sha256": "2f031de662449b7a48586c4dc59604fcbd743b05065b2d17adf4a068887eb4c2"
+    },
+    {
+      "path": "figures/figure_extended.tex",
+      "parent_path": "figures/figure_extended.tex",
+      "change": "unchanged",
+      "parent_sha256": "e28a9e32e62b920235c656ecf86691428f61d7e3fcd582495c7d24bf964a1e05",
+      "sha256": "e28a9e32e62b920235c656ecf86691428f61d7e3fcd582495c7d24bf964a1e05"
+    },
+    {
+      "path": "figures/figure_large.tex",
+      "parent_path": "figures/figure_large.tex",
+      "change": "unchanged",
+      "parent_sha256": "81abbe0f30229f6420cf48a565a79764970195b160e386212700b3f28f64d784",
+      "sha256": "81abbe0f30229f6420cf48a565a79764970195b160e386212700b3f28f64d784"
+    },
+    {
+      "path": "figures/figure_obtuse.tex",
+      "parent_path": "figures/figure_obtuse.tex",
+      "change": "unchanged",
+      "parent_sha256": "be7e34bc6bab9652285f918e9a673b845ef6c047f52afd8270a3858999df9afd",
+      "sha256": "be7e34bc6bab9652285f918e9a673b845ef6c047f52afd8270a3858999df9afd"
+    },
+    {
+      "path": "figures/figure_p-triangle.tex",
+      "parent_path": "figures/figure_p-triangle.tex",
+      "change": "unchanged",
+      "parent_sha256": "3063b4534d9e62dd9c352ba7029c45ebb091f04605d7f389ef05fd86db224956",
+      "sha256": "3063b4534d9e62dd9c352ba7029c45ebb091f04605d7f389ef05fd86db224956"
+    },
+    {
+      "path": "figures/figure_pin1.tex",
+      "parent_path": "figures/figure_pin1.tex",
+      "change": "unchanged",
+      "parent_sha256": "94fb31c4086ad1723a2403decfe8bd0e121a139f905c075e06dd9dc7ab33c11b",
+      "sha256": "94fb31c4086ad1723a2403decfe8bd0e121a139f905c075e06dd9dc7ab33c11b"
+    },
+    {
+      "path": "figures/figure_pseudo-dimer.tex",
+      "parent_path": "figures/figure_pseudo-dimer.tex",
+      "change": "unchanged",
+      "parent_sha256": "f2b2f7f92279ab3136d86b9dca9bd545c5f4fb952cf3eff5b16ff360e38f2eee",
+      "sha256": "f2b2f7f92279ab3136d86b9dca9bd545c5f4fb952cf3eff5b16ff360e38f2eee"
+    },
+    {
+      "path": "figures/figure_receptor.tex",
+      "parent_path": "figures/figure_receptor.tex",
+      "change": "unchanged",
+      "parent_sha256": "72a52ed1fee4a33739e6a86674c2ec0c2f0c9bb533b3bee8a7ad4327d3abbb62",
+      "sha256": "72a52ed1fee4a33739e6a86674c2ec0c2f0c9bb533b3bee8a7ad4327d3abbb62"
+    },
+    {
+      "path": "figures/figure_sep.tex",
+      "parent_path": "figures/figure_sep.tex",
+      "change": "unchanged",
+      "parent_sha256": "ec24e863220bc0987db9cff88fa676581572665842b5e384971b89157a04b730",
+      "sha256": "ec24e863220bc0987db9cff88fa676581572665842b5e384971b89157a04b730"
+    },
+    {
+      "path": "figures/figure_slider.tex",
+      "parent_path": "figures/figure_slider.tex",
+      "change": "unchanged",
+      "parent_sha256": "ee3114a44c858142042e12d055552ea7c1972e3bb940ef64edaf55bdc3ce8eb8",
+      "sha256": "ee3114a44c858142042e12d055552ea7c1972e3bb940ef64edaf55bdc3ce8eb8"
+    },
+    {
+      "path": "figures/figure_subcritical.tex",
+      "parent_path": "figures/figure_subcritical.tex",
+      "change": "unchanged",
+      "parent_sha256": "ab2fcd9fb39e1b89a59c0b4bd50f13bdaf6fad0679d8cba1ed8e844e5b437b4a",
+      "sha256": "ab2fcd9fb39e1b89a59c0b4bd50f13bdaf6fad0679d8cba1ed8e844e5b437b4a"
+    },
+    {
+      "path": "figures/figure_theta.tex",
+      "parent_path": "figures/figure_theta.tex",
+      "change": "unchanged",
+      "parent_sha256": "3db67c987c390c0f9480edc91db8bfb6adcb5f141d05f224c514121c0e207fb5",
+      "sha256": "3db67c987c390c0f9480edc91db8bfb6adcb5f141d05f224c514121c0e207fb5"
+    },
+    {
+      "path": "figures/figure_visual.tex",
+      "parent_path": "figures/figure_visual.tex",
+      "change": "unchanged",
+      "parent_sha256": "b2f6bbe885ff6685a5155d03a00ec0d85e052a9d4560005e024f06c3af86b110",
+      "sha256": "b2f6bbe885ff6685a5155d03a00ec0d85e052a9d4560005e024f06c3af86b110"
+    },
+    {
+      "path": "figures/gallery.bbl",
+      "parent_path": "figures/gallery.bbl",
+      "change": "revised",
+      "parent_sha256": "f65f8407c4bff41d64dc29862b5cee024bc58d2a8c202c4b0b5908add75a97ba",
+      "sha256": "84ebddaf277d5b9f5149d2f3d6b3b71c46365e7c709a61b16236f33eb4fc7031"
+    },
+    {
+      "path": "figures/gallery.pdf",
+      "parent_path": "figures/gallery.pdf",
+      "change": "revised",
+      "parent_sha256": "57a334ebc6c6893650c2ce658f1634e9b0e50aa446a06ca4ce57e780d7e7d632",
+      "sha256": "941ac4f8224a300b7e3931c908c8f2e91c4935dbeb2c98c43450a47ba279916c"
+    },
+    {
+      "path": "figures/gallery.tex",
+      "parent_path": "figures/gallery.tex",
+      "change": "revised",
+      "parent_sha256": "6649dcabe566f405f289a55531129b13f97ea183307285dfb561efa5856adc94",
+      "sha256": "f1d33d8bda282ecde622592f675ddab6bead6cea72e671794ea2a043e6b8c426"
+    },
+    {
+      "path": "figures/manifest.json",
+      "parent_path": "figures/manifest.json",
+      "change": "revised",
+      "parent_sha256": "c232eadd88044eea85ae3f8de2d529d4982cdd873c7217b74d14f2e290400962",
+      "sha256": "e2dff768d1cff50ea39a2ac57ed692b677d93b746c5ea5562be15a83064ab164"
+    },
+    {
+      "path": "figures/paper-figure-macros.tex",
+      "parent_path": "figures/paper-figure-macros.tex",
+      "change": "unchanged",
+      "parent_sha256": "4e767a3b79ec07a19bd639598e9239d14e511eac1f0bc3452d38218180e75e50",
+      "sha256": "4e767a3b79ec07a19bd639598e9239d14e511eac1f0bc3452d38218180e75e50"
+    },
+    {
+      "path": "licenses/HOL-Light-LICENSE.txt",
+      "parent_path": "licenses/HOL-Light-LICENSE.txt",
+      "change": "unchanged",
+      "parent_sha256": "8bb0f37c895ee5bef5bf0d93dae8e16ee5f4c99a2c6854d93b338f0d6aae86eb",
+      "sha256": "8bb0f37c895ee5bef5bf0d93dae8e16ee5f4c99a2c6854d93b338f0d6aae86eb"
+    },
+    {
+      "path": "mathematica/CHECKS.md",
+      "parent_path": "mathematica/CHECKS.md",
+      "change": "unchanged",
+      "parent_sha256": "6f0cb8a213a92afc633c85fcddbcc365c9868b217e4d766ed531f399464acb68",
+      "sha256": "6f0cb8a213a92afc633c85fcddbcc365c9868b217e4d766ed531f399464acb68"
+    },
+    {
+      "path": "mathematica/PentagonChecks.wl",
+      "parent_path": "mathematica/PentagonChecks.wl",
+      "change": "unchanged",
+      "parent_sha256": "4239b50d143d77587b0d9a23ff9513b639640d8097fe2698123671773d855ca9",
+      "sha256": "4239b50d143d77587b0d9a23ff9513b639640d8097fe2698123671773d855ca9"
+    },
+    {
+      "path": "mathematica/README.md",
+      "parent_path": "mathematica/README.md",
+      "change": "unchanged",
+      "parent_sha256": "c5bc1992706eea88d49b4fb49a820e8e4af4d1f32b563c7ca2008cc6a8ec14d4",
+      "sha256": "c5bc1992706eea88d49b4fb49a820e8e4af4d1f32b563c7ca2008cc6a8ec14d4"
+    },
+    {
+      "path": "mathematica/checks_catalog.json",
+      "parent_path": "mathematica/checks_catalog.json",
+      "change": "unchanged",
+      "parent_sha256": "d0f28682e1714cd824c4eafc414fa24539cd0998e0f3b4aa33582aa801dcc4ae",
+      "sha256": "d0f28682e1714cd824c4eafc414fa24539cd0998e0f3b4aa33582aa801dcc4ae"
+    },
+    {
+      "path": "mathematica/expected_checks.json",
+      "parent_path": "mathematica/expected_checks.json",
+      "change": "unchanged",
+      "parent_sha256": "d6aee5608027a6b400ee1703f06d72c13a0518f2b8dad66e6450fe1ccc0e352f",
+      "sha256": "d6aee5608027a6b400ee1703f06d72c13a0518f2b8dad66e6450fe1ccc0e352f"
+    },
+    {
+      "path": "mathematica/run_checks.wls",
+      "parent_path": "mathematica/run_checks.wls",
+      "change": "unchanged",
+      "parent_sha256": "813275c04d2acc132ad194356b4e0493b7f226616b22ec87d8f671f4651741f0",
+      "sha256": "813275c04d2acc132ad194356b4e0493b7f226616b22ec87d8f671f4651741f0"
+    },
+    {
+      "path": "ocaml/autodiff.ml",
+      "parent_path": "ocaml/autodiff.ml",
+      "change": "revised",
+      "parent_sha256": "40dd625dad09f8994159b27b5252627846cdcc9c3299fda634af731f43b34722",
+      "sha256": "25c349ccaa18512d2007cab72448829e037083475f4b5072c5d54e5045cc46d3"
+    },
+    {
+      "path": "ocaml/banana.ml",
+      "parent_path": "ocaml/banana.ml",
+      "change": "revised",
+      "parent_sha256": "9e5369928269d4ce50134c6e41bf9d4a8532030e515353184529d5436fd8bdc2",
+      "sha256": "7414a2d3029d0803812157a541ace4b298fc364a8ef11e2778811587781cd5e8"
+    },
+    {
+      "path": "ocaml/dimer.ml",
+      "parent_path": "ocaml/dimer.ml",
+      "change": "unchanged",
+      "parent_sha256": "5a5b57ecc30f55d634e04b45a3a6316baa6e66d43a78cba853ec5694ea3fa008",
+      "sha256": "5a5b57ecc30f55d634e04b45a3a6316baa6e66d43a78cba853ec5694ea3fa008"
+    },
+    {
+      "path": "ocaml/interval_compat.ml",
+      "parent_path": "ocaml/interval_compat.ml",
+      "change": "unchanged",
+      "parent_sha256": "99d848a1693fe352e8e7973dc01199ae142aac4eba387045bacab7a74d7b092a",
+      "sha256": "99d848a1693fe352e8e7973dc01199ae142aac4eba387045bacab7a74d7b092a"
+    },
+    {
+      "path": "ocaml/jobs.ml",
+      "parent_path": "ocaml/jobs.ml",
+      "change": "unchanged",
+      "parent_sha256": "f2b080fb378ffe7a989faaec3640ebbba3888808fea0ed1dff376472ab4b1d34",
+      "sha256": "f2b080fb378ffe7a989faaec3640ebbba3888808fea0ed1dff376472ab4b1d34"
+    },
+    {
+      "path": "ocaml/lib.ml",
+      "parent_path": "ocaml/lib.ml",
+      "change": "unchanged",
+      "parent_sha256": "b4c88497a02b029c8ffd5f30a0d803b548989416c3f62c99309f690f8a53da89",
+      "sha256": "b4c88497a02b029c8ffd5f30a0d803b548989416c3f62c99309f690f8a53da89"
+    },
+    {
+      "path": "ocaml/loader.ml",
+      "parent_path": "ocaml/loader.ml",
+      "change": "unchanged",
+      "parent_sha256": "9277186fba2483d7a37a0c0f3ff8a6c8a7c7c4a9b3ea3bd9664ca82db1d1c3ac",
+      "sha256": "9277186fba2483d7a37a0c0f3ff8a6c8a7c7c4a9b3ea3bd9664ca82db1d1c3ac"
+    },
+    {
+      "path": "ocaml/meet-in-middle.ml",
+      "parent_path": "ocaml/meet-in-middle.ml",
+      "change": "revised",
+      "parent_sha256": "8c5f2d67f721d6b8471435b8c04e679a93752912711b62122a6476da6a8b220c",
+      "sha256": "b1928f3c4ee0767d72d8529d8527a93dfa265bb82678f62216bffb9447fc85b3"
+    },
+    {
+      "path": "ocaml/mitm-calcs.ml",
+      "parent_path": "ocaml/mitm-calcs.ml",
+      "change": "revised",
+      "parent_sha256": "21132517fd2a6efd8c823518d274313ca90f9857750eb41687ea2e0bf8943445",
+      "sha256": "1d8dbf4eadc90bf9c00d9228fc727205662b05859f7897dd53498f7a594bad1c"
+    },
+    {
+      "path": "ocaml/pent.ml",
+      "parent_path": "ocaml/pent.ml",
+      "change": "unchanged",
+      "parent_sha256": "d8af544a79c6a3141b52af00fa30504ea38b3c8b785a336ab6dc0a76f5b2c69e",
+      "sha256": "d8af544a79c6a3141b52af00fa30504ea38b3c8b785a336ab6dc0a76f5b2c69e"
+    },
+    {
+      "path": "ocaml/pet.ml",
+      "parent_path": "ocaml/pet.ml",
+      "change": "unchanged",
+      "parent_sha256": "17e200cd00c5bf97dd0ea283095049227710812553c5c522a8e7b349c4f470e7",
+      "sha256": "17e200cd00c5bf97dd0ea283095049227710812553c5c522a8e7b349c4f470e7"
+    },
+    {
+      "path": "ocaml/review_jobs.ml",
+      "parent_path": "ocaml/review_jobs.ml",
+      "change": "unchanged",
+      "parent_sha256": "3ed5151873b1aa5e9851282e78d990e94a64ef18560b6da7dd9effe0956545dc",
+      "sha256": "3ed5151873b1aa5e9851282e78d990e94a64ef18560b6da7dd9effe0956545dc"
+    },
+    {
+      "path": "ocaml/squeeze_sign.ml",
+      "parent_path": "ocaml/squeeze_sign.ml",
+      "change": "unchanged",
+      "parent_sha256": "3848767862e9439f183dd91e70c8a8aca095fa83c41c8bcf0df2fffda7bab472",
+      "sha256": "3848767862e9439f183dd91e70c8a8aca095fa83c41c8bcf0df2fffda7bab472"
+    },
+    {
+      "path": "paper/README.md",
+      "parent_path": "paper/README.md",
+      "change": "revised",
+      "parent_sha256": "84943e28a7edea579f908bbcd4abf3b94a7b7d794dd521f9c22583c8906079e4",
+      "sha256": "a1262b6db6fceabc7b76529059125c7866e317435f61fdaf28f4bf3dd9f47208"
+    },
+    {
+      "path": "paper/build.sh",
+      "parent_path": "paper/build.sh",
+      "change": "revised",
+      "parent_sha256": "680a4af0161bf47e6e599ba251a06642751582ec680aa249a3815a00563f67a6",
+      "sha256": "8cce673ca3cbe023297e3aacc53747d8871e2e26c3d7ecf9f9b890a6ab82b6ba"
+    },
+    {
+      "path": "paper/header_v010.bbl",
+      "parent_path": "paper/header_v008.bbl",
+      "change": "renamed and revised",
+      "parent_sha256": "f65f8407c4bff41d64dc29862b5cee024bc58d2a8c202c4b0b5908add75a97ba",
+      "sha256": "205fdc8042d81b74f28451c163599fcadb4a2ac01243b45e9aafd52f87bf608f"
+    },
+    {
+      "path": "paper/header_v010.tex",
+      "parent_path": "paper/header_v008.tex",
+      "change": "renamed and revised",
+      "parent_sha256": "a182b777c8224dc534d24d3b7a2faab3b945629d3f915ca4d745d4f6d7947b60",
+      "sha256": "a162cd3a88b0658beb2590bbf7aaceb207ba03deff0b5892a9ceef115f8f1cdc"
+    },
+    {
+      "path": "paper/label-map.json",
+      "parent_path": "paper/label-map.json",
+      "change": "revised",
+      "parent_sha256": "629ee9879f5f5d3edb1b34d6ff83c5792c7bd511476e7f324bd698b2a4f66026",
+      "sha256": "7013958d3abcd1a1bef9fe2935365a227a66af2886b2674893a8c9d312455ae9"
+    },
+    {
+      "path": "paper/pentagon.bib",
+      "parent_path": "paper/pentagon.bib",
+      "change": "revised",
+      "parent_sha256": "b31f118b3651213933013b384567136f73c509e2d0d2564a381c0623a44bacf0",
+      "sha256": "3c559038374579128efa3c5cdc634e8e448adc0249c2cb8de2699a8ffed7700d"
+    },
+    {
+      "path": "paper/pentagon_v010.pdf",
+      "parent_path": "paper/pentagon_v008.pdf",
+      "change": "renamed and revised",
+      "parent_sha256": "7ef620705f26b76f6fd016c50903dd4a28eb5d832ba7f7df2eec9d038c4a722a",
+      "sha256": "cf588a86f9f78d103e5cd7da022d0a05a9e0018ada85eb2d7a6008aa326a5fbf"
+    },
+    {
+      "path": "paper/pentagon_v010.tex",
+      "parent_path": "paper/pentagon_v008.tex",
+      "change": "renamed and revised",
+      "parent_sha256": "e2ff4bb3d79fe41bd48017be231f3009c953a3221446ddc1f7666eceaf7616be",
+      "sha256": "2c384b40a8bbddc2a1a0a1e93de6edea73a1b5ed4d731813f834115523b21606"
+    },
+    {
+      "path": "provenance/PREPARATION.md",
+      "parent_path": "provenance/PREPARATION.md",
+      "change": "unchanged",
+      "parent_sha256": "cdefee51313813b1fda01c5f10f770ea8128e1139c5b8fbb9d4847934762d6d8",
+      "sha256": "cdefee51313813b1fda01c5f10f770ea8128e1139c5b8fbb9d4847934762d6d8"
+    },
+    {
+      "path": "provenance/README.md",
+      "parent_path": "provenance/README.md",
+      "change": "unchanged",
+      "parent_sha256": "e9d1f0cf10a8debb3ef37491793ebbfc31d6d5b4e6f5a3756cccd127e18e5d32",
+      "sha256": "e9d1f0cf10a8debb3ef37491793ebbfc31d6d5b4e6f5a3756cccd127e18e5d32"
+    },
+    {
+      "path": "provenance/build-checks.json",
+      "parent_path": "provenance/build-checks.json",
+      "change": "unchanged",
+      "parent_sha256": "f38104d69fd94c2cc0a920b79e8ec13b36cd563ae74b35375a050f1ffd311148",
+      "sha256": "f38104d69fd94c2cc0a920b79e8ec13b36cd563ae74b35375a050f1ffd311148"
+    },
+    {
+      "path": "provenance/documentation-link-check.json",
+      "parent_path": "provenance/documentation-link-check.json",
+      "change": "unchanged",
+      "parent_sha256": "3192427202b1f5b475068575fe35699a0cf81d848d0c22a863678c2cfb76f23f",
+      "sha256": "3192427202b1f5b475068575fe35699a0cf81d848d0c22a863678c2cfb76f23f"
+    },
+    {
+      "path": "provenance/exact-identity-checks.json",
+      "parent_path": "provenance/exact-identity-checks.json",
+      "change": "unchanged",
+      "parent_sha256": "080305fb00aefc47f52f3cf4bfdaeecf5864c6d89140cabc1d863870b812491e",
+      "sha256": "080305fb00aefc47f52f3cf4bfdaeecf5864c6d89140cabc1d863870b812491e"
+    },
+    {
+      "path": "provenance/file-changes.json",
+      "parent_path": "provenance/file-changes.json",
+      "change": "unchanged",
+      "parent_sha256": "02ed0900741a7282c8bd7f84735311750cae828f1e8e5cbf9e9de21bbef00508",
+      "sha256": "02ed0900741a7282c8bd7f84735311750cae828f1e8e5cbf9e9de21bbef00508"
+    },
+    {
+      "path": "provenance/input-identities.json",
+      "parent_path": "provenance/input-identities.json",
+      "change": "unchanged",
+      "parent_sha256": "2bf48bb20a0d5c0d1e00b55cb8f4d91751e562b1a7d1ba67f952c18230e525e9",
+      "sha256": "2bf48bb20a0d5c0d1e00b55cb8f4d91751e562b1a7d1ba67f952c18230e525e9"
+    },
+    {
+      "path": "provenance/label-comparison.json",
+      "parent_path": "provenance/label-comparison.json",
+      "change": "unchanged",
+      "parent_sha256": "06ecd6b385fe0ce00832a3c760ae01bff344e8636438d5f2e2846fa6ac87c4d6",
+      "sha256": "06ecd6b385fe0ce00832a3c760ae01bff344e8636438d5f2e2846fa6ac87c4d6"
+    },
+    {
+      "path": "provenance/mathematical-source-equivalence.json",
+      "parent_path": "provenance/mathematical-source-equivalence.json",
+      "change": "unchanged",
+      "parent_sha256": "897052f2bf0e6f5d4f4872c6ead03e253f55bf0d7d9042654a9013e5a825eecb",
+      "sha256": "897052f2bf0e6f5d4f4872c6ead03e253f55bf0d7d9042654a9013e5a825eecb"
+    },
+    {
+      "path": "provenance/modular-controller-tests.txt",
+      "parent_path": "provenance/modular-controller-tests.txt",
+      "change": "unchanged",
+      "parent_sha256": "ac1e2d283465e24f73df5b73b95c30f454fa9aa15e6149c7533070ebca7fff1a",
+      "sha256": "ac1e2d283465e24f73df5b73b95c30f454fa9aa15e6149c7533070ebca7fff1a"
+    },
+    {
+      "path": "provenance/modular-delivery-checks.json",
+      "parent_path": "provenance/modular-delivery-checks.json",
+      "change": "unchanged",
+      "parent_sha256": "5138555936fb3d52d2aa5ee0ae80be703c39db7ebbf778bcbb7428a94cdbb0eb",
+      "sha256": "5138555936fb3d52d2aa5ee0ae80be703c39db7ebbf778bcbb7428a94cdbb0eb"
+    },
+    {
+      "path": "provenance/modular-legacy-report-check.json",
+      "parent_path": "provenance/modular-legacy-report-check.json",
+      "change": "unchanged",
+      "parent_sha256": "c5097c44d84733809e8c440f667249e6cd291b10a8f36540c5fa4d34006ae164",
+      "sha256": "c5097c44d84733809e8c440f667249e6cd291b10a8f36540c5fa4d34006ae164"
+    },
+    {
+      "path": "provenance/modular-preparation.json",
+      "parent_path": "provenance/modular-preparation.json",
+      "change": "unchanged",
+      "parent_sha256": "466295b167f1a8b5aceba1dcce53e92ea576bec00fcd0f1be23d05cddd111536",
+      "sha256": "466295b167f1a8b5aceba1dcce53e92ea576bec00fcd0f1be23d05cddd111536"
+    },
+    {
+      "path": "provenance/modular-preservation.json",
+      "parent_path": "provenance/modular-preservation.json",
+      "change": "unchanged",
+      "parent_sha256": "12087d4a9b4dac1091074c1e77faf79c1af9072e5f297c38bb8b249e999cd575",
+      "sha256": "12087d4a9b4dac1091074c1e77faf79c1af9072e5f297c38bb8b249e999cd575"
+    },
+    {
+      "path": "provenance/modular-reporting.diff",
+      "parent_path": "provenance/modular-reporting.diff",
+      "change": "unchanged",
+      "parent_sha256": "1790927051f258f87af54f9342c69179f6d5cad91b9e3854ee0a963120855a42",
+      "sha256": "1790927051f258f87af54f9342c69179f6d5cad91b9e3854ee0a963120855a42"
+    },
+    {
+      "path": "provenance/paper-preservation.json",
+      "parent_path": "provenance/paper-preservation.json",
+      "change": "unchanged",
+      "parent_sha256": "81c5ddde5117feafd45929b827d14435d5376fe14fa25bb2c26b6eb0d9ac3988",
+      "sha256": "81c5ddde5117feafd45929b827d14435d5376fe14fa25bb2c26b6eb0d9ac3988"
+    },
+    {
+      "path": "provenance/python-tests.txt",
+      "parent_path": "provenance/python-tests.txt",
+      "change": "unchanged",
+      "parent_sha256": "fcb83080b2a1e6e6b910db9f2ac933ddd239ae902ec3d57df4f8ee4bbde11a0e",
+      "sha256": "fcb83080b2a1e6e6b910db9f2ac933ddd239ae902ec3d57df4f8ee4bbde11a0e"
+    },
+    {
+      "path": "provenance/report-compatibility.json",
+      "parent_path": "provenance/report-compatibility.json",
+      "change": "unchanged",
+      "parent_sha256": "b5cbcf79a9030091987d21b5443028a998aa1f8a63d1045379f097ffad0bafba",
+      "sha256": "b5cbcf79a9030091987d21b5443028a998aa1f8a63d1045379f097ffad0bafba"
+    },
+    {
+      "path": "provenance/source_baseline.json",
+      "parent_path": "provenance/source_baseline.json",
+      "change": "unchanged",
+      "parent_sha256": "cffff074f1c6377546aeef02b36a0713d69586a0b2ab44f24a4fed63c437e64a",
+      "sha256": "cffff074f1c6377546aeef02b36a0713d69586a0b2ab44f24a4fed63c437e64a"
+    },
+    {
+      "path": "provenance/v005-file-changes.json",
+      "parent_path": "provenance/v005-file-changes.json",
+      "change": "unchanged",
+      "parent_sha256": "0c3dd736c1beae0f3a140b56cd1199a4b80acced8be99657be942056271046a6",
+      "sha256": "0c3dd736c1beae0f3a140b56cd1199a4b80acced8be99657be942056271046a6"
+    },
+    {
+      "path": "provenance/wolfram-condition-preservation.json",
+      "parent_path": "provenance/wolfram-condition-preservation.json",
+      "change": "unchanged",
+      "parent_sha256": "dd42b3e241997d6f1b576674765894694d9537ad63f556898f7e096b6858b404",
+      "sha256": "dd42b3e241997d6f1b576674765894694d9537ad63f556898f7e096b6858b404"
+    },
+    {
+      "path": "registry.json",
+      "parent_path": "registry.json",
+      "change": "revised",
+      "parent_sha256": "53c1580a94c7616e750b830d9cf6467b99908b1c34b57bc57b189d7f35fcaedb",
+      "sha256": "b57e863b61df3cca6287189b45454ad4eb9ad2f04c8f60bedc3dbec5e462fc48"
+    },
+    {
+      "path": "run.py",
+      "parent_path": "run.py",
+      "change": "unchanged",
+      "parent_sha256": "7f681586841c3cfd5b64ba81a2c30bc2a9ccfe7ffbff39233530f72c6771ee1e",
+      "sha256": "7f681586841c3cfd5b64ba81a2c30bc2a9ccfe7ffbff39233530f72c6771ee1e"
+    },
+    {
+      "path": "runs/README.md",
+      "parent_path": "runs/README.md",
+      "change": "unchanged",
+      "parent_sha256": "ba220409bcc598050ce74e7688b078e031e11355b79a250de2673d8e204eb83f",
+      "sha256": "ba220409bcc598050ce74e7688b078e031e11355b79a250de2673d8e204eb83f"
+    },
+    {
+      "path": "scripts/build_docs.py",
+      "parent_path": "scripts/build_docs.py",
+      "change": "revised",
+      "parent_sha256": "17d5157f37d1408c0b2b88de401d8ddecb1df13d87991760d66beda2f310579b",
+      "sha256": "b915259be91f4511c6345f1de0e14c8b8b8b58737b1cf6e1f6ba6c3cf0d51ee1"
+    },
+    {
+      "path": "scripts/build_index.py",
+      "parent_path": "scripts/build_index.py",
+      "change": "revised",
+      "parent_sha256": "715b5f18d906eb89847bf6e913b034704e310c38a4f28ac4008ffd756dc678bb",
+      "sha256": "b3c80d5610713abf600aaed3726a1474da2d8b5299d8d9a48a9ca31a814ccb12"
+    },
+    {
+      "path": "scripts/check_release.py",
+      "parent_path": "scripts/check_release.py",
+      "change": "unchanged",
+      "parent_sha256": "9e6bf1cd3ee4f1526d18e7f0272bfde64b45915caf711bc65c9636f1392c43ad",
+      "sha256": "9e6bf1cd3ee4f1526d18e7f0272bfde64b45915caf711bc65c9636f1392c43ad"
+    },
+    {
+      "path": "scripts/driver.py",
+      "parent_path": "scripts/driver.py",
+      "change": "revised",
+      "parent_sha256": "101129089eab0cffb1bdb3042ec3f9a35fa834ec2eab61e8855e0ee6eb02d301",
+      "sha256": "f13e2606cfb10b12e15e68702ac9e454eae229c935e8b5d79115fb489cfdfd07"
+    },
+    {
+      "path": "scripts/extract_figures.py",
+      "parent_path": "scripts/extract_figures.py",
+      "change": "revised",
+      "parent_sha256": "ee9ad0861b4fb254cd3256ba5011b9af06f8b2b26bbf79c7c468fcef69740573",
+      "sha256": "6a2f858eabd9844602dffea50d2aa51a2f2ff68029280d949710478861e2cc74"
+    },
+    {
+      "path": "scripts/report_paths.py",
+      "parent_path": "scripts/report_paths.py",
+      "change": "unchanged",
+      "parent_sha256": "6e26c10f9096c7b5d67515445257d1e0297beb5fa383b032f6f647976db7ea18",
+      "sha256": "6e26c10f9096c7b5d67515445257d1e0297beb5fa383b032f6f647976db7ea18"
+    },
+    {
+      "path": "scripts/reporting_upgrade.py",
+      "parent_path": "scripts/reporting_upgrade.py",
+      "change": "unchanged",
+      "parent_sha256": "e2dcdb5a5b5b5a76a311e83a26c854f5ac9962df4c44a9590b4e6f330acc2930",
+      "sha256": "e2dcdb5a5b5b5a76a311e83a26c854f5ac9962df4c44a9590b4e6f330acc2930"
+    },
+    {
+      "path": "scripts/verification.py",
+      "parent_path": "scripts/verification.py",
+      "change": "unchanged",
+      "parent_sha256": "be790e5be7452aa52e58068941f3e7062d56ec7d48f2e1418bba0d1117983229",
+      "sha256": "be790e5be7452aa52e58068941f3e7062d56ec7d48f2e1418bba0d1117983229"
+    },
+    {
+      "path": "scripts/verify_exact_identities.py",
+      "parent_path": "scripts/verify_exact_identities.py",
+      "change": "unchanged",
+      "parent_sha256": "e28a6eda0f7b7d4a1ee369f97d8222b26fba13aec3babdf996a1ee7f3be4e0de",
+      "sha256": "e28a6eda0f7b7d4a1ee369f97d8222b26fba13aec3babdf996a1ee7f3be4e0de"
+    },
+    {
+      "path": "scripts/worker.ml",
+      "parent_path": "scripts/worker.ml",
+      "change": "unchanged",
+      "parent_sha256": "9fb7e8dc7a3ff6a93ac9dbf34191e90412a1beeb66a56681d14524c4c0f16077",
+      "sha256": "9fb7e8dc7a3ff6a93ac9dbf34191e90412a1beeb66a56681d14524c4c0f16077"
+    },
+    {
+      "path": "tests/ocaml/positive_control.ml",
+      "parent_path": "tests/ocaml/positive_control.ml",
+      "change": "unchanged",
+      "parent_sha256": "f7c3ae2e9dfd43f5989d6bf0bc9087c2fd245a02be2b31b7a8499426b2367886",
+      "sha256": "f7c3ae2e9dfd43f5989d6bf0bc9087c2fd245a02be2b31b7a8499426b2367886"
+    },
+    {
+      "path": "tests/ocaml/squeeze_tests.ml",
+      "parent_path": "tests/ocaml/squeeze_tests.ml",
+      "change": "unchanged",
+      "parent_sha256": "222c09dc1455f05335b682768601838494507c5dd027dafa75313c4a53458657",
+      "sha256": "222c09dc1455f05335b682768601838494507c5dd027dafa75313c4a53458657"
+    },
+    {
+      "path": "tests/ocaml/tests.ml",
+      "parent_path": "tests/ocaml/tests.ml",
+      "change": "revised",
+      "parent_sha256": "c02b71f69d7fd54967b67c1fcb4c54a6785bd146e096cd4a0315acf45100a8f5",
+      "sha256": "1ad6efa4a11c0fe8ece8036b6a9dd1e562391a081f642e4636e297cabe11e85a"
+    },
+    {
+      "path": "tests/python/test_confirmation.py",
+      "parent_path": "tests/python/test_confirmation.py",
+      "change": "unchanged",
+      "parent_sha256": "32b57c5eca329762cec07b41f7176daf29084d0862fa8a2ef9873db93093a8af",
+      "sha256": "32b57c5eca329762cec07b41f7176daf29084d0862fa8a2ef9873db93093a8af"
+    },
+    {
+      "path": "tests/python/test_consolidated_release.py",
+      "parent_path": "tests/python/test_consolidated_release.py",
+      "change": "revised",
+      "parent_sha256": "5f382846bae914751ab88f2c38542eaa3a161880591517669ad46653ca31f2bc",
+      "sha256": "bb6db4f45c3d2be757015711307487d66705d6f28fd992a918f7d0ccb2fa01a3"
+    },
+    {
+      "path": "tests/python/test_documentation.py",
+      "parent_path": "tests/python/test_documentation.py",
+      "change": "unchanged",
+      "parent_sha256": "be8547ac75e513bdc31b7fcfaca4d3b4759d65a3785e40f3841b60b92f846161",
+      "sha256": "be8547ac75e513bdc31b7fcfaca4d3b4759d65a3785e40f3841b60b92f846161"
+    },
+    {
+      "path": "tests/python/test_driver.py",
+      "parent_path": "tests/python/test_driver.py",
+      "change": "revised",
+      "parent_sha256": "ecdc610e3b13fb631c2c52769688cbb5885c624db401da92cefff78f98559dd5",
+      "sha256": "e3fbdce56a8e0a3f0fc456b289cb908dab91f81259a26f528d53cafca515db82"
+    },
+    {
+      "path": "tests/python/test_integration.py",
+      "parent_path": "tests/python/test_integration.py",
+      "change": "unchanged",
+      "parent_sha256": "8c6a12a07e73d71f9eeca11349629523f78ec10fa0ca89671b93295824783985",
+      "sha256": "8c6a12a07e73d71f9eeca11349629523f78ec10fa0ca89671b93295824783985"
+    },
+    {
+      "path": "tests/python/test_modular_reporting.py",
+      "parent_path": "tests/python/test_modular_reporting.py",
+      "change": "revised",
+      "parent_sha256": "a58bfea2eeb2511440d002beedf2990ba66d99ebf1344abd2eb4d866e488a595",
+      "sha256": "6d1c6bfec77b2f51e50a00a6e37c0e5028cc01f0def98883363502c8b3c1e068"
+    },
+    {
+      "path": "tests/python/test_release_static.py",
+      "parent_path": "tests/python/test_release_static.py",
+      "change": "revised",
+      "parent_sha256": "f0304025ebd6ba0d3b3b24f764a1af415eb37bf9341c1ba0ed51e9a41d701657",
+      "sha256": "5e2564fb4b770162c6884b168e7bed726561d0f7077527fe3c1116a627ed5d8e"
+    },
+    {
+      "path": "tests/reference/paper_bounds.json",
+      "parent_path": "tests/reference/paper_bounds.json",
+      "change": "unchanged",
+      "parent_sha256": "a7e09afc7b5dc667beecc69dbc4c629dcb0179b04300da1ca887b6a72ec7664e",
+      "sha256": "a7e09afc7b5dc667beecc69dbc4c629dcb0179b04300da1ca887b6a72ec7664e"
+    },
+    {
+      "path": "verification/README.md",
+      "parent_path": "verification/README.md",
+      "change": "revised",
+      "parent_sha256": "f93801708a165bed2ddcd8b1d508d8380ede08de523e436bb07f884b51b71eb2",
+      "sha256": "ce1d4880ad1b48e9accebc53b56f2efddd18c8ceb05ccc3d2265bad16d6df60d"
+    },
+    {
+      "path": "verification/association.json",
+      "parent_path": "verification/association.json",
+      "change": "revised",
+      "parent_sha256": "a0e080864a32a2ed90265654653dd041632933eab4329a86618da363e97f6837",
+      "sha256": "b326bc506d0dc91216b1e95f141d10a0bf9d4e58482e8b97dc1b7591cdb00764"
+    }
+  ]
+}

@@ -13,10 +13,10 @@ def main():
  reg=json.loads((R/'registry.json').read_text());jobs={j['id']:j for j in reg['jobs']}
  entries=json.loads((R/'docs/claims.json').read_text());sm=json.loads((R/'docs/source-map.json').read_text())
  labs=json.loads((R/'paper/label-map.json').read_text())
- md=['# Paper-to-code index — code v005 / manuscript v008','','**Context:** commands below are for Linux/Ubuntu-WSL Bash, at the extracted package root containing `run.py`. Append `--list` to preview without executing.','',
+ md=['# Paper-to-code index — code v006 / manuscript v010','','**Context:** commands below are for Linux/Ubuntu-WSL Bash, at the extracted package root containing `run.py`. Append `--list` to preview without executing.','',
      'The selected jobs establish their encoded terminal exclusions. The paper supplies the reductions and earlier lemmas; a claim selection is not the entire transitive mathematical proof. Use `--all` for the complete proof-job set. Source-specific completion is generated in `verification/CONFIRMATION.md`.','']
- h=page('Pentagon paper-to-code index — v005')
- h+=['<p>Companion to <a href="../paper/pentagon_v008.pdf">the paper</a>. <a href="code_commentary.pdf">Mathematical commentary</a> · <a href="RUNNING.md">Execution guide</a> · <a href="wolfram_checks.html">Wolfram checks</a> · <a href="../verification/CONFIRMATION.md">Generated confirmation</a>.</p>',
+ h=page('Pentagon paper-to-code index — v006')
+ h+=['<p>Companion to <a href="../paper/pentagon_v010.pdf">the paper</a>. <a href="code_commentary.pdf">Mathematical commentary</a> · <a href="RUNNING.md">Execution guide</a> · <a href="wolfram_checks.html">Wolfram checks</a> · <a href="../verification/CONFIRMATION.md">Generated confirmation</a>.</p>',
      '<div class="context"><strong>First-time reader:</strong> find a printed lemma number here, read its assumptions and cases, then inspect the indicated original function. Commands use <strong>Bash at the extracted package root</strong>, not the docs folder or a language prompt. Append <code>--list</code> to preview. A source code is a navigation key, not an additional mathematical hypothesis.</div>',
      '<p>Execution evidence is maintained separately from this fixed mathematical explanation. An absent, interrupted, or mismatched run is never represented as a pass. See <a href="VERIFICATION.md">confirmation rules</a>.</p>',
      '<input id="search" aria-label="Search calculation" placeholder="Search lemma/section number, label, seven-letter code or function">',
@@ -59,8 +59,11 @@ def main():
  for k,v in cat.items():
   line=next((i+1 for i,x in enumerate(wl) if 'record["'+v['prefix']+'"' in x),None)
   if line:v['line']=line
- (R/'mathematica/checks_catalog.json').write_text(json.dumps(cat,indent=2,ensure_ascii=False)+'\n')
- wm=['# Wolfram check catalogue — manuscript v007','','Each record below states **what is tested, why, and how it relates to the paper**. The displayed paper reference identifies context; the logical role distinguishes a paper assertion from an auxiliary identity or finite diagnostic. All constants use circumradius-one normalization.','',
+ catalog_path=R/'mathematica/checks_catalog.json'
+ catalog_text=json.dumps(cat,indent=2,ensure_ascii=False)+'\n'
+ if catalog_path.read_text(encoding='utf-8')!=catalog_text:
+  catalog_path.write_bytes(catalog_text.encode('utf-8'))
+ wm=['# Wolfram check catalogue — 161 assertions','','Each record below states **what is tested, why, and how it relates to the paper**. The displayed paper reference identifies context; the logical role distinguishes a paper assertion from an auxiliary identity or finite diagnostic. All constants use circumradius-one normalization.','',
  '## Notation and scope','','`k=κ=cos(π/5)`, `s=σ=sin(π/5)`, `aK=a_crit`, `amin=1237/1000`, `epsN=aK-amin`, `epsM=1/125`. `triangleArea[a,b,c]` is Heron’s formula; `circleArea[a,b,r]` is the specified obtuse branch with short sides a,b and radius r. `positive[u]` means exact algebraic positivity, not a decimal tolerance.','',
  'Definitions and references are in `mathematica/PentagonChecks.wl`. The `condition` shown is the actual assertion template from that file; loop indices and selected side assignments are explained in each family. EXACT examples remain finite examples unless the assertion is symbolic or bounds a complete cell by a stated monotonicity argument. Numerical diagnostics use a fixed seed, 80 digits by default, and tolerance 10^-40.','',
  'To execute, follow [the package README](../mathematica/README.md). No OCaml run is triggered by this suite. The complete expected set is 161 IDs; a partial section run cannot supply a complete confirmation.','']
@@ -70,6 +73,8 @@ def main():
   wm+=['## '+section+' ('+str(len(exp['by_section'][section]))+' checks)',''];wh+=['<h2>'+E(section)+'</h2>']
   for k in exp['by_section'][section]:
    v=cat[k];ref=v['paper_reference']+' ['+v['label']+']';loc='mathematica/PentagonChecks.wl:'+str(v['line'])
+   if k=='contact.midpointer-length':
+    v=dict(v,scope=v['scope']+' The historical ID denotes the shear identity. Lemma 4.8 has a separate derivation and OCaml test contact.midpointer-lemma-4.8.')
    wm+=['### `'+k+'` — '+v['title'],'',f"**Role:** {v['role']}. **Method:** {v['kind']}. **Paper:** {ref}.",'','**Assertion:** '+v['assertion'],'','**Why:** '+v['why'],'','**Scope:** '+v['scope'],'','**Source:** `'+loc+'`; navigation code `'+v['comment_id']+'`.','', '```wolfram',v['condition'],'```','']
    wh.append('<article id="'+E(k)+'" data-search="'+E(k+' '+v['title']+' '+v['assertion']+' '+ref+' '+v['why'])+'"><h3>'+E(v['title'])+'</h3><p><code>'+E(k)+'</code></p><p><span class="tag">'+E(v['role'])+'</span><span class="tag">'+E(v['kind'])+'</span> '+E(ref)+'</p><p><strong>Assertion:</strong> '+E(v['assertion'])+'</p><p><strong>Why:</strong> '+E(v['why'])+'</p><p><strong>Scope:</strong> '+E(v['scope'])+'</p><details><summary>Exact expression and source</summary><p><a href="../mathematica/PentagonChecks.wl">'+E(loc)+'</a> · '+E(v['comment_id'])+'</p><pre>'+E(v['condition'])+'</pre></details></article>')
  wh += [SEARCH,'</body></html>'];(R/'docs/WOLFRAM_CHECKS.md').write_text('\n'.join(wm));(R/'docs/wolfram_checks.html').write_text('\n'.join(wh))

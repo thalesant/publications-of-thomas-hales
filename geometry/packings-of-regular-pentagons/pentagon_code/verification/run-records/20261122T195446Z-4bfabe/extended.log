@@ -1,0 +1,577 @@
+COMMAND ["/usr/local/bin/opam", "exec", "--switch=pentagon-4.14.4", "--set-switch", "--", "ocaml", "-noinit", "-I", "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml", "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/scripts/worker.ml"]
+PENTAGON RUNTIME: OCaml 4.14.4; stack=16777216 words; CRlibm
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 12, characters 12-26:
+12 |   let (+) = Pervasives.(+);;
+                 ^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 13, characters 12-26:
+13 |   let (-) = Pervasives.(-);;
+                 ^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 182, characters 17-18:
+182 |   | h::t -> p(h) & forall p t;;
+                       ^
+Alert deprecated: Stdlib.&
+Use (&&) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 187, characters 31-32:
+187 |   | (h1::t1,h2::t2) -> p h1 h2 & forall2 p t1 t2
+                                     ^
+Alert deprecated: Stdlib.&
+Use (&&) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 193, characters 17-19:
+193 |   | h::t -> p(h) or exists p t;;
+                       ^^
+Alert deprecated: Stdlib.or
+Use (||) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 247, characters 19-37:
+247 |     | (h::t) -> if Pervasives.compare x h = 0 then n else ind (n + 1) t in
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 257, characters 41-43:
+257 |   | (h::t) -> Pervasives.compare x h = 0 or mem x t;;
+                                               ^^
+Alert deprecated: Stdlib.or
+Use (||) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 257, characters 14-32:
+257 |   | (h::t) -> Pervasives.compare x h = 0 or mem x t;;
+                    ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 272, characters 32-33:
+272 | let set_eq l1 l2 = subset l1 l2 & subset l2 l1;;
+                                      ^
+Alert deprecated: Stdlib.&
+Use (&&) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 280, characters 19-37:
+280 |     (x,y)::t -> if Pervasives.compare x a = 0 then y else assoc a t
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 285, characters 19-37:
+285 |     (x,y)::t -> if Pervasives.compare y a = 0 then x else rev_assoc a t
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 339, characters 25-43:
+339 |                       if Pervasives.compare x y = 0 then t' else
+                               ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 347, characters 38-56:
+347 | let setify s = uniq (sort (fun x y -> Pervasives.compare x y <= 0) s);;
+                                            ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 437, characters 19-37:
+437 |   | (x,y)::t -> if Pervasives.compare x a = 0 then y else assocd a t d;;
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 442, characters 19-37:
+442 |   | (x,y)::t -> if Pervasives.compare y a = 0 then x else rev_assocd a t d;;
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 451, characters 23-24:
+451 |             if h' == h & t' == t then l else h'::t'
+                             ^
+Alert deprecated: Stdlib.&
+Use (&&) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 479, characters 23-41:
+479 | let increasing f x y = Pervasives.compare (f x) (f y) < 0;;
+                             ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 481, characters 23-41:
+481 | let decreasing f x y = Pervasives.compare (f x) (f y) > 0;;
+                             ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 573, characters 26-44:
+573 |       (a,b)::t -> let c = Pervasives.compare x a in
+                                ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 600, characters 18-36:
+600 |           let c = Pervasives.compare x a in
+                        ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 663, characters 23-25:
+663 |     | (h::t) -> eq x h or mem x t
+                             ^^
+Alert deprecated: Stdlib.or
+Use (||) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/pent.ml", lines 601-605, characters 2-39:
+601 | ..let (us,v::vs) = chop_list i xs in
+602 |   let t = (v.low +. v.high) /. 2.0 in
+603 |   let v1 = mk_interval(v.low,t) in
+604 |   let v2 = mk_interval(t,v.high) in
+605 |     (us @ (v1 :: vs)),(us @ (v2 :: vs))..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_, [])
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/pent.ml", lines 652-653, characters 4-18:
+652 | ....let [a;b;x] = abx in
+653 |       onef (a,b,x)...
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/pent.ml", line 414, characters 8-9:
+414 |     let t = (xbeta,t1,s1,s2,a2,t2,t3,a3,xalpha) in
+              ^
+Warning 26 [unused-var]: unused variable t.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/banana.ml", lines 335-338, characters 2-42:
+335 | ..let [xalpha; alpha;  xbeta; beta] = xs in
+336 |   let dAB_triple  = ellthetax_sgn xalpha alpha sgnalpha in
+337 |   let dBC_triple  = ellthetax_sgn xbeta beta sgnbeta in
+338 |   fillout2C dACrange dAB_triple dBC_triple..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/banana.ml", line 16, characters 6-8:
+16 |   let xa = h + sigma in
+           ^^
+Warning 26 [unused-var]: unused variable xa.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 52-59, characters 2-50:
+52 | ..let ([alpha;beta;xa],_) = xs in
+53 |   if outdomfn_pint alpha beta then true
+54 |       else
+55 |       let (dBC,dAC,dAB,xc,xb)= pintedge_extended alpha beta xa in
+56 |       let a = areamin_acute dBC dAC dAB in
+57 |       let inadmissible xc a = xc >> two*sigma || (a >> aK+epsN_I) in
+58 |       inadmissible xc a ||
+59 | 	pint_outdomfn (a,alpha,beta,xa,xb,xc,dBC,dAC,dAB)
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 64-72, characters 2-28:
+64 | ..let ([alpha;beta;xc],_) = xs in
+65 |   if alpha+beta >> pi15 then true
+66 |       else
+67 |       let (d1,d2,d3)= pinwheeledge alpha beta xc in
+68 |       let a = areamin_acute d1 d2 d3 in
+69 |       let inadmissible = (a >> aK+epsN_I) in
+70 |       let one_pinwheelx_constant = 8 // 10 in
+71 |       let outdom = (xc << one_pinwheelx_constant) in
+72 |       inadmissible || outdom
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 77-85, characters 4-28:
+77 | ....let ([alpha;beta;xa],_) = xs in
+78 |     if outdomfn_lj alpha beta then true
+79 |     else
+80 |       let (d1,d2,d3)= ljedge alpha beta xa in
+81 |       let a = areamin_acute d1 d2 d3 in
+82 |       let inadmissible = (a >> aK+epsN_I) in
+83 |       let one_ljx_constant = 9//10 in
+84 |       let outdom = (beta << one_ljx_constant) in
+85 |       inadmissible || outdom
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 90-98, characters 4-28:
+90 | ....let ([alpha;beta;xc],_) = xs in
+91 |     if outdomfn_tj alpha beta then true
+92 |     else
+93 |       let (d1,d2,d3)= tjedge alpha beta xc in
+94 |       let a = areamin_acute d1 d2 d3 in
+95 |       let inadmissible = (a >> aK+epsN_I) in
+96 |       let one_tjx_constant = one in
+97 |       let outdom = (beta >>  one_tjx_constant) in
+98 |       inadmissible || outdom
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 148-170, characters 2-26:
+148 | ..let ([alphaB;betaB;xbetaB;alphaD],
+149 |        ((sB,edgeB,disjointB),(sD,edgeD,disjointD))) = xs in
+150 |   try
+151 | 
+152 |     if disjointB alphaB betaB xbetaB then true
+...
+167 | 	aABC + aADC >> two * aK - eps ||
+168 | 	  (pseudo && pseudodimer) ||
+169 | 	  dimer_outdomfn alphaB betaB xbetaB alphaD
+170 |   with | Unstable -> false..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_::_, ((_, _, _), (_, _, _)))
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 272-287, characters 2-24:
+272 | ..let [xalpha;alpha;xbeta;beta] = xs in
+273 |   try
+274 |   match mk2Ce dACrange xs with
+275 |   | None -> true
+276 |   | Some (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+...
+284 | 	sigmaA << dAB_sinA/dAC ||
+285 | 	  sigmaC << dAB_sinA/dAC ||
+286 | 	  (one/sigmaA + one/sigmaC)*dAB_sinA >> dAC)
+287 |   with Unstable -> false..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/autodiff.ml", lines 299-305, characters 2-26:
+299 | ..let ([alpha';beta;xbeta],_) = xs in
+300 |   if outdomfn_shared_lj1 alpha' beta xbeta then true
+301 |   else
+302 |     try
+303 |         let (_,_,_,xa,_) = shared_lj1edge_extended alpha' beta xbeta in
+304 |         (xa >> sigma)
+305 |     with Unstable -> false..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/autodiff.ml", lines 317-323, characters 4-18:
+317 | ....let ([alpha;xbeta],_) = xs in
+318 |     let beta_t = (pi15,zero) in
+319 |     let alpha_t = (alpha,- one) in
+320 |     let xbeta_t = (xbeta,zero) in
+321 |     let (l1,l2,l3) = shared_lj2edgeD alpha_t beta_t xbeta_t in
+322 |     let (_,a') = area_D l1 l2 l3 in
+323 |       (a' << zero)
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/autodiff.ml", lines 333-350, characters 2-26:
+333 | ..let ([alphaB;betaB;xbetaB;alphaD],
+334 |        ((sB,edgeB,curveB,_),(sD,edgeD,curveD,_))) = xs in
+335 |   try
+336 | 
+337 |     let alphaB_s = curveB alphaB in
+...
+347 |     let aADC = area_D dCD dAC' dAD in
+348 |     let (_,area_derivative) = aABC +^ aADC in
+349 |     area_derivative << zero
+350 |   with | Unstable -> false..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_::_, ((_, _, _, _), (_, _, _, _)))
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/mitm-calcs.ml", lines 35-36, characters 14-39:
+35 | ..............[dAB;thABC;thBAC;dBC;dAC] =
+36 |   fillout5D ((dAB,thABC,thBAC),dBC,dAC)..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/mitm-calcs.ml", lines 38-39, characters 14-47:
+38 | ..............[dAB;thABC;thBAC;dBC;thCBA;dAC] =
+39 |   fillout6D ((dAB,thABC,thBAC),(dBC,thCBA),dAC)..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/mitm-calcs.ml", line 285, characters 6-14:
+285 |   let assertAC = area_I (193//100) (18//10) (two*kappa) >>. cencut ||
+            ^^^^^^^^
+Warning 26 [unused-var]: unused variable assertAC.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/mitm-calcs.ml", line 287, characters 6-14:
+287 |   let assertBC = area_I (18//10) (172//100) (179//100) >>. cencut ||
+            ^^^^^^^^
+Warning 26 [unused-var]: unused variable assertBC.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/review_jobs.ml", lines 25-31, characters 4-43:
+25 | ....let ([alpha;beta;xa],_) = xs in
+26 |     if outdomfn_pint alpha beta then true
+27 |     else
+28 |       let (dBC,dAC,dAB,xc,_) = pintedge_extended alpha beta xa in
+29 |       xc >> two*sigma ||
+30 |       dAB << pintab_dAB_min ||
+31 |       area_I dBC dAC dAB >> pintab_area_min
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/review_jobs.ml", lines 51-56, characters 4-16:
+51 | ....let ([alpha';xbeta],_) = xs in
+52 |     if outdomfn_shared_lj1 alpha' pi15 xbeta then true
+53 |     else
+54 |       let (l1,l2,l3) = Autodiff.shared_lj1edgeD (alpha',- one) (pi15,zero) (xbeta,zero) in
+55 |       let (_,a') = Autodiff.area_D l1 l2 l3 in
+56 |       a' << zero
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_, _)
+PENTAGON JOB START: extended
+Calculation: All unit checks plus deterministic generated geometric and key-cover cases
+Paper: tests:function-contracts
+Source navigation: 
+TEST PASS [CONTRACT] interval.strict-equality-retained (0.000001s)
+TEST PASS [CONTRACT] interval.touching-not-disjoint (0.000001s)
+TEST PASS [CONTRACT] interval.separated-disjoint (0.000000s)
+TEST PASS [EXACT] interval.intersection-singleton (0.000001s)
+TEST PASS [CONTRACT] interval.intersection-empty (0.000001s)
+TEST PASS [CONTRACT] interval.empty-option (0.000001s)
+TEST PASS [CONTRACT] interval.touching-option (0.000001s)
+TEST PASS [EXACT] interval.add-exact (0.000001s)
+TEST PASS [EXACT] interval.multiply-signs (0.000002s)
+TEST PASS [EXACT] interval.divide-dyadic (0.000001s)
+TEST PASS [CONTRACT] interval.denominator-guard (0.000001s)
+TEST PASS [EXACT] interval.sqrt-positive (0.000000s)
+TEST PASS [EXACT] interval.sqrt-partial-domain (0.000000s)
+TEST PASS [CONTRACT] interval.sqrt-recorded-failure (0.000002s)
+TEST PASS [EXACT] interval.sin-zero (0.000001s)
+TEST PASS [EXACT] interval.cos-zero (0.000000s)
+TEST PASS [CONTRACT] interval.sin-critical-point (0.000008s)
+TEST PASS [CONTRACT] interval.cos-critical-point (0.000001s)
+TEST PASS [CONTRACT] interval.sin-full-period (0.000001s)
+TEST PASS [CONTRACT] constants.pythagorean (0.000000s)
+TEST PASS [CONTRACT] constants.phi-identity (0.000001s)
+TEST PASS [CONTRACT] constants.eps-order (0.000000s)
+TEST PASS [CONTRACT] constants.two-epsM-less-epsN (0.000000s)
+TEST PASS [CONTRACT] constants.density-two-formulas (0.000001s)
+TEST PASS [EXACT] area.pythagorean.3-4-5 (0.000002s)
+TEST PASS [EXACT] area.pythagorean.5-12-13 (0.000001s)
+TEST PASS [EXACT] area.pythagorean.8-15-17 (0.000001s)
+TEST PASS [EXACT] area.pythagorean.7-24-25 (0.000001s)
+TEST PASS [CONTRACT] area.permutation (0.000003s)
+TEST PASS [CONTRACT] area.scale-by-two (0.000002s)
+TEST PASS [CONTRACT] angle.right (0.000004s)
+TEST PASS [CONTRACT] cosine-law.right (0.000003s)
+TEST PASS [CONTRACT] split.parent-covered (0.000004s)
+TEST PASS [CONTRACT] split.minimum-width-fails (0.000006s)
+TEST PASS [CONTRACT] recursion-unresolved-never-passes (0.000003s)
+TEST PASS [CONTRACT] recursion-counts-work (0.000001s)
+TEST PASS [CONTRACT] periodize.3.25.3.5 (0.000002s)
+TEST PASS [CONTRACT] periodize.3.75.4.25 (0.000001s)
+TEST PASS [CONTRACT] periodize.-3.75.-3.25 (0.000001s)
+TEST PASS [CONTRACT] periodize.-1.0 (0.000001s)
+TEST PASS [CONTRACT] periodize.0.0 (0.000000s)
+TEST PASS [CONTRACT] periodize.0.2 (0.000000s)
+TEST PASS [EXACT] periodize.full-cover (0.000001s)
+TEST PASS [EXACT] periodize.endpoint (0.000001s)
+TEST PASS [EXACT] getint.unique (0.000001s)
+TEST PASS [CONTRACT] getint.ambiguous (0.000001s)
+TEST PASS [CONTRACT] C014.contact-shared (0.000001s)
+TEST PASS [CONTRACT] C014.contact-other (0.000001s)
+TEST PASS [CONTRACT] C014.short-contact-missing-tie (0.000000s)
+TEST PASS [CONTRACT] C014.contact-1.8 (0.000002s)
+TEST PASS [CONTRACT] C014.other-1.8 (0.000001s)
+TEST PASS [CONTRACT] C014.all-equal (0.000000s)
+TEST PASS [CONTRACT] C014.strictly-off-boundaries (0.000000s)
+TEST PASS [CONTRACT] C014.straddling-1.8 (0.000000s)
+TEST PASS [CONTRACT] C014.touching-length-intervals (0.000000s)
+TEST PASS [CONTRACT] C013.old-new-cap-band (0.000001s)
+TEST PASS [CONTRACT] C013.new-cap-equality (0.000001s)
+TEST PASS [CONTRACT] C013.straddling-cap (0.000010s)
+TEST PASS [CONTRACT] C013.strictly-above-cap (0.000000s)
+TEST PASS [CONTRACT] C013.expanded-still-below-epsN (0.000000s)
+TEST PASS [CONTRACT] mutation.C013-old-cap-detected (0.000000s)
+TEST PASS [CONTRACT] mutation.C014-old-filter-detected (0.000001s)
+TEST PASS [EXACT] AD.cube-value (0.000000s)
+TEST PASS [EXACT] AD.cube-first (0.000000s)
+TEST PASS [EXACT] AD.cube-second (0.000001s)
+TEST PASS [EXACT] AD.reciprocal-value (0.000000s)
+TEST PASS [EXACT] AD.reciprocal-first (0.000000s)
+TEST PASS [EXACT] AD.reciprocal-second (0.000001s)
+TEST PASS [EXACT] AD.sqrt-value (0.000000s)
+TEST PASS [EXACT] AD.sqrt-first (0.000000s)
+TEST PASS [EXACT] AD.sqrt-second (0.000000s)
+TEST PASS [EXACT] AD.sin-at-zero (0.000000s)
+TEST PASS [EXACT] AD.cos-at-zero (0.000001s)
+TEST PASS [DIAGNOSTIC] AD.original.test_addD (0.000003s)
+TEST PASS [DIAGNOSTIC] AD.original.test_multD (0.000003s)
+TEST PASS [DIAGNOSTIC] AD.original.test_sqrtD (0.000002s)
+TEST PASS [DIAGNOSTIC] AD.original.test_sinD (0.000005s)
+TEST PASS [DIAGNOSTIC] AD.original.test_cosD (0.000005s)
+TEST PASS [DIAGNOSTIC] AD.original.test_epsN_D (0.000002s)
+TEST PASS [DIAGNOSTIC] AD.original.test_ups_D (0.000004s)
+TEST PASS [DIAGNOSTIC] AD.original.test_area_D (0.000005s)
+TEST PASS [DIAGNOSTIC] AD.original.test_arcD (0.000005s)
+TEST PASS [DIAGNOSTIC] AD.original.test_lawsinesD (0.000007s)
+TEST PASS [DIAGNOSTIC] AD.original.test_locD (0.000005s)
+TEST PASS [DIAGNOSTIC] AD.original.test_ellD (0.000009s)
+TEST PASS [DIAGNOSTIC] AD.original.test_pinwheeledgeD (0.000062s)
+TEST PASS [DIAGNOSTIC] AD.original.test_ljedgeD (0.000065s)
+TEST PASS [DIAGNOSTIC] AD.original.test_shared_pinwheeledgeD (0.000059s)
+TEST PASS [DIAGNOSTIC] AD.original.test_shared_lj1edgeD (0.000024s)
+TEST PASS [DIAGNOSTIC] AD.original.test_shared_lj2edgeD (0.000057s)
+TEST PASS [DIAGNOSTIC] AD.original.test_shared_tj3edgeD (0.000027s)
+TEST PASS [DIAGNOSTIC] AD.original.test_addD2 (0.000002s)
+TEST PASS [DIAGNOSTIC] AD.original.test_multD2 (0.000004s)
+TEST PASS [DIAGNOSTIC] AD.original.test_sqrtD2 (0.000003s)
+TEST PASS [DIAGNOSTIC] AD.original.test_sinD2 (0.000004s)
+TEST PASS [DIAGNOSTIC] AD.original.test_cosD2 (0.000003s)
+TEST PASS [DIAGNOSTIC] AD.original.test_ups_D2 (0.000005s)
+TEST PASS [DIAGNOSTIC] AD.original.test_area_D2 (0.000007s)
+TEST PASS [DIAGNOSTIC] AD.original.test_arcD2 (0.000006s)
+TEST PASS [DIAGNOSTIC] AD.original.test_lawsinesD2 (0.000005s)
+TEST PASS [DIAGNOSTIC] AD.original.test_locD2 (0.000005s)
+TEST PASS [DIAGNOSTIC] AD.original.test_ellD2 (0.000010s)
+TEST PASS [DIAGNOSTIC] AD.original.test_pinwheeledgeD2 (0.000237s)
+TEST PASS [DIAGNOSTIC] AD.original.test_shared_pinwheeledgeD2 (0.000066s)
+TEST PASS [CONTRACT] Gamma.identity.t=-0.01 (0.000063s)
+TEST PASS [CONTRACT] Gamma.identity.t=-0.005 (0.000060s)
+TEST PASS [CONTRACT] Gamma.identity.t=0 (0.000067s)
+TEST PASS [CONTRACT] Gamma.identity.t=0.005 (0.000061s)
+TEST PASS [CONTRACT] Gamma.identity.t=0.01 (0.000113s)
+TEST PASS [CONTRACT] pair.well-separated (0.000007s)
+TEST PASS [CONTRACT] pair.inscribed-disks-overlap (0.000010s)
+TEST PASS [CONTRACT] pair.exchange-symmetry (0.000012s)
+TEST PASS [CONTRACT] pair.reflection-symmetry (0.000010s)
+TEST PASS [EXACT] pseudo-angle.flush-upper-representative (0.000002s)
+TEST PASS [CONTRACT] pseudo-angle.strict-interior (0.000002s)
+TEST PASS [CONTRACT] contact.midpointer-lemma-4.8 (0.000001s)
+TEST PASS [CONTRACT] banana.empty-midpoint-of-chord (0.000020s)
+TEST PASS [DIAGNOSTIC] banana.contains-forward-contacts (0.000320s)
+TEST PASS [CONTRACT] banana.curve-II-roundtrip (0.000001s)
+TEST PASS [CONTRACT] banana.critical-both-extrema (0.000009s)
+TEST PASS [CONTRACT] danana.critical-both-extrema (0.000038s)
+TEST PASS [DIAGNOSTIC] contact.independent-length.0.1.0.2 (0.000004s)
+TEST PASS [DIAGNOSTIC] contact.independent-length.0.5.0.6 (0.000004s)
+TEST PASS [DIAGNOSTIC] contact.independent-length.0.8.1 (0.000003s)
+TEST PASS [DIAGNOSTIC] contact.independent-length.0.2.0 (0.000002s)
+TEST PASS [DIAGNOSTIC] contact.independent-length.0.6.0.628319 (0.000003s)
+TEST PASS [CONTRACT] contact.reflection.0.2.0.3 (0.000005s)
+TEST PASS [CONTRACT] contact.reflection.0.5.0.7 (0.000004s)
+TEST PASS [CONTRACT] contact.reflection.0.9.1 (0.000004s)
+TEST PASS [DIAGNOSTIC] fillout6D.separated-equilateral (0.000019s)
+TEST PASS [CONTRACT] area.lower-bound-need-not-overlap-point-area (0.000003s)
+ICE-RAY WITNESS AB = [1.7214893236852846, 1.721489323685286]
+ICE-RAY WITNESS AB reference = [1.7214893236852848, 1.7214893236852857]
+ICE-RAY WITNESS BC = [1.6583123951776992, 1.6583123951777006]
+ICE-RAY WITNESS BC reference = [1.6583123951776999, 1.6583123951777001]
+ICE-RAY WITNESS AC = [1.8090169943749392, 1.8090169943749548]
+ICE-RAY WITNESS AC reference = [1.8090169943749472, 1.8090169943749475]
+ICE-RAY WITNESS returned area lower bound = [1.2903580504417203, 1.2903580504417218]
+ICE-RAY WITNESS exact-area enclosure aK = [1.2903580504417245, 1.2903580504417258]
+ICE-RAY WITNESS area evaluated on full side intervals = [1.29035805044171, 1.29035805044174]
+TEST PASS [CONTRACT] fillout2C.ice-ray-witness (0.000119s)
+TEST PASS [CONTRACT] keys.singleton.-1 (0.000001s)
+TEST PASS [CONTRACT] keys.singleton.-0.25 (0.000001s)
+TEST PASS [CONTRACT] keys.singleton.0 (0.000001s)
+TEST PASS [CONTRACT] keys.singleton.0.25 (0.000000s)
+TEST PASS [CONTRACT] keys.singleton.1 (0.000001s)
+TEST PASS [CONTRACT] keys.touching.-1 (0.000001s)
+TEST PASS [CONTRACT] keys.touching.-0.25 (0.000001s)
+TEST PASS [CONTRACT] keys.touching.0 (0.000001s)
+TEST PASS [CONTRACT] keys.touching.0.25 (0.000001s)
+TEST PASS [CONTRACT] keys.touching.1 (0.000000s)
+TEST PASS [CONTRACT] keys.edge-inversion (0.000013s)
+TEST PASS [CONTRACT] keys.periodic-edge (0.000008s)
+TEST PASS [CONTRACT] subdivision.cover (0.000022s)
+TEST PASS [CONTRACT] subdivision.singleton (0.000002s)
+TEST PASS [CONTRACT] hash.minimum-and-collision (0.000004s)
+TEST PASS [CONTRACT] hash.recut-takes-maximum (0.000002s)
+TEST PASS [CONTRACT] hash.absent-key-not-zero (0.000001s)
+TEST PASS [EXACT] MITM.finite.0.5.0.5.0.5.1.5 (0.000008s)
+TEST PASS [EXACT] MITM.finite.0.5.0.5.0.5.2 (0.000006s)
+TEST PASS [EXACT] MITM.finite.1.0.5.0.5.1.5 (0.000004s)
+TEST PASS [EXACT] MITM.finite.0.25.0.5.0.75.1.5 (0.000005s)
+TEST PASS [EXACT] MITM.finite.0.25.0.75.0.75.1.5 (0.000005s)
+TEST PASS [EXACT] MITM.finite.1.1.1.3 (0.000005s)
+TEST PASS [CONTRACT] MITM.unstable-is-not-empty (0.000007s)
+i=0 unstable_splits central=0 peripheral=0
+i=0, w=0.50000, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=1 unstable_splits central=0 peripheral=0
+i=1, w=0.25000, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=2 unstable_splits central=0 peripheral=0
+i=2, w=0.12500, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=3 unstable_splits central=0 peripheral=0
+i=3, w=0.06250, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=4 unstable_splits central=0 peripheral=0
+i=4, w=0.03125, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=5 unstable_splits central=0 peripheral=0
+i=5, w=0.01562, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=6 unstable_splits central=0 peripheral=0
+i=6, w=0.00781, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=7 unstable_splits central=0 peripheral=0
+i=7, w=0.00391, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=8 unstable_splits central=0 peripheral=0
+i=8, w=0.00195, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=9 unstable_splits central=0 peripheral=0
+i=9, w=0.00098, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=10 unstable_splits central=0 peripheral=0
+i=10, w=0.00049, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=11 unstable_splits central=0 peripheral=0
+i=11, w=0.00024, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=12 unstable_splits central=0 peripheral=0
+i=12, w=0.00012, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=13 unstable_splits central=0 peripheral=0
+i=13, w=0.00006, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=14 unstable_splits central=0 peripheral=0
+i=14, w=0.00003, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=15 unstable_splits central=0 peripheral=0
+i=15, w=0.00002, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=16 unstable_splits central=0 peripheral=0
+i=16, w=0.00001, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=17 unstable_splits central=0 peripheral=0
+i=17, w=0.00000, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+i=18 unstable_splits central=0 peripheral=0
+i=18, w=0.00000, length(ccs)=1
+ length(ps)=0 maxkey=0 keysum=0 phash=0
+TEST PASS [CONTRACT] MITM.feasible-does-not-exhaust (0.000255s)
+i=0 unstable_splits central=0 peripheral=0
+TEST PASS [CONTRACT] MITM.impossible-exhausts (0.000007s)
+SAT separated witnesses checked: 1993; seed=2016,2026,13
+TEST PASS [DIAGNOSTIC] generated.pair-SAT-no-false-exclusion (0.050384s)
+TEST PASS [CONTRACT] generated.closed-key-cover (0.002089s)
+TEST PASS [DIAGNOSTIC] generated.nonobtuse-area-lower-bound (0.001965s)
+TEST SUMMARY: total=161; passed=161; failed=0; generated=true
+CPU seconds: 0.057563
+Square-root translations during job: 1
+PENTAGON STACK RETAINED: 16777216
+PENTAGON JOB PASS: extended
+
+PROCESS EXIT: 0
+WALL SECONDS: 1.318

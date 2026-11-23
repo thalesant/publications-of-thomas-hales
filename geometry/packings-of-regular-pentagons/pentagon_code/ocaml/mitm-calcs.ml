@@ -58,8 +58,10 @@ let forall_alpha_pair f (t,t') =
     let s'= Pet.periodize_pent t' in
     forall f (outer pair s s');;
 
+let strictly_large_pseudo_angle alpha = alpha >> pi15 && alpha << pi25;;
+
 let forall_alpha_constraint_pseudo_dimer (th,th') =
-  forall_alpha0 (fun alpha -> alpha >>pi15) (th+th');;
+  forall_alpha0 strictly_large_pseudo_angle (th+th');;
 
 let d_subcrit_shared =
   let _ = area_I (two*kappa) (two*kappa) (21//10) >> aK || failwith "21" in
@@ -198,7 +200,6 @@ let calc_pent3_6D_postcluster() =
     (dAB << dBC) in
   let keyfns = [ckeyfn6AB;ckeyfn6BC] in
   let cfn = (unit_extra,fillfn6,outdomfn,areafn2Ce,keyfns) in
-  let d_subcrit_isosc = merge_I (172//100) (179//100) in
   let d_short = merge_I (two*kappa) (202//100) in
   let dAB_dBC_dAC = (d_subcrit_shared,d_subcrit_shared,d_short) in
   let cencut = (aK + two*epsN_I + epsM_I).high in

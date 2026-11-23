@@ -1,6 +1,6 @@
 # Changes from the 2016 arXiv version to manuscript v008
 
-The baseline is the 60-page arXiv:1602.07220v2 of 13 September 2016, from `arXiv-1602.07220v2.tar.gz`. The revised paper is the [76-page manuscript v008](../paper/pentagon_v008.pdf) of 19 November 2026. The original referee report is `report_Y_on_v2.pdf` from `tex.zip`.
+The baseline is the 60-page arXiv:1602.07220v2 of 13 September 2016, from `arXiv-1602.07220v2.tar.gz`. The revised paper is the 76-page manuscript v008 in release pentagon_code_v005 of 19 November 2026. The original referee report is `report_Y_on_v2.pdf` from `tex.zip`.
 
 The first column follows the 2016 paper. The middle column gives printed pages in v008. **v008** marks changes since v007. Earlier referee requests retain their attribution. Minor wording and spelling edits are omitted.
 

@@ -1,5 +1,5 @@
-% Packings of Regular Pentagons in the Plane -- manuscript v008.
-% Compile header_v008.tex. Previous manuscript: pentagon_v007.tex.
+% Packings of Regular Pentagons in the Plane -- manuscript v010.
+% Compile header_v010.tex. Previous manuscript: pentagon_v009.tex.
 
 \def\area{\op{area}}
 \def\areta{\op{area}^\circ}
@@ -17,7 +17,6 @@
 \def\M{\mathcal M}
 \def\T{\mathcal T}
 \def\PD{\Psi D}
-\def\cong{\equiv}
 \def\r{{\mathbf r}}
 \def\s{{\mathbf s}}
 \def\bl{\ell}
@@ -115,7 +114,8 @@ Before our work, the best known bound on the density of packings of
 regular pentagons was $0.98103$, obtained through the representation
 theory of the group of isometries of the plane \cite{val}.  Our
 research is a continuation of W. Kusner's thesis \cite{Kus}, which
-proves the local optimality of the pentagonal ice-ray.
+proves the local optimality of the pentagonal ice-ray. See also
+Kallus and Kusner on the local optimality of double lattices \cite{KKlocal}.
 
 As far as we know, our methods are adequate for the solution of other
 related problems in geometric optimization.  The limiting factor seems
@@ -342,8 +342,10 @@ computer-assisted lemmas that are stated (without proof) in
 Section~\rif{sec:calc}.  This subsection gives reduction arguments,
 showing how simpler computer calculations can be used to prove the
 lemmas in their stated generality.
-Additionally, all floating point
-approximations marked $\approx$ and all inequality comparisons with a floating-point number have been checked by computer.
+The companion code lists the numerical inequalities checked by the
+supplementary Wolfram Language package. In Case~1 of
+Theorem~\rif{thm:obtuse}, the checks use the quadrilateral areas from
+which the displayed decimal bounds are obtained.
 
 \section{Clusters of Delaunay Triangles}\libel{sec:cluster}
 
@@ -913,7 +915,9 @@ For any finite set $\C$ of triangles, we will call the inequality
 \end{equation}
 the {\it strict main inequality} (for $\C$).
 
-\begin{proof} The maximum density can be obtained as the limit of the
+\begin{proof}
+  We prove the density bound $\area_P/(2a)$ of Lemma~\rif{lemma:main}.
+  The maximum density can be obtained as the limit of the
   densities of a sequence of saturated periodic packings.  Thus, it is
   enough to consider the case when the packing is periodic.  A
   periodic packing descends to a packing on a flat torus
@@ -976,26 +980,28 @@ unique periodic packing that achieves maximal density.
 \end{corollary}
 
 \begin{proof}
-  The set of triangles modulo periods is finite and is given as union
+  A periodic packing of maximal density is saturated. Indeed, if one
+  pentagon could be added, its translates by a sufficiently large
+  multiple of the period lattice could all be added, increasing the
+  density. The set of triangles modulo periods is finite and is a union
   of clusters.  Analyzing the proof of Lemma~\rif{lemma:main}, we see
   that for a periodic packing, the maximum density is achieved exactly
   when each cluster in the packing gives exact equality in the main
   inequality.  The average of $b(T)$ is equal to the average of
   $\area(T)$.  By the theorem, each cluster is an ice-ray dimer pair.
-  Each dimer pair is a kite (a quadrilateral with two pairs of equal-length
-  edges in
-  which equal edges are adjacent).  The partition by
-  Delaunay triangles is edge-to-edge.  This forces the tiling by kites
-  to be edge-to-edge.  To match one kite edge with another, an adjacent
-  kite must be reflected or rotated by 180.  However, since the
-  edges of the kite do not lie along the axes of reflectional symmetry of pentagons,
-  edge reflection fails to preserve
-  the pentagons.  Hence, rotations must be used;
-  all four kites adjacent
-  to a given kite must be rotated by 180 degrees relative to the given
-  kite.  By transitive extension, all kites in the tiling alternate in
-  rotational orientation.  Then the pentagons align in columns in the
-  ice-ray pattern.  This gives global uniqueness, up to isometry.
+  The dimer kites tile edge-to-edge, since the Delaunay triangles do.
+  The two edge lengths of a kite differ, and reflection in the common
+  edge of its two triangles interchanges its two edges of each length.
+  Thus, along a given outer edge, there are two positions for the
+  neighboring kite, according as the endpoints are fixed or exchanged.
+  Reflection in the outer edge fixes both endpoints, but fails to
+  preserve the pentagons there: the edge is not an axis of symmetry
+  of the endpoint pentagons. The half-turn about the edge midpoint
+  exchanges the endpoints and gives the neighboring ice-ray dimer
+  (Figure~\rif{fig:KKtriangle}).
+  Starting with one dimer, this determines its neighbors and then,
+  by connectedness, the whole packing. The ice-ray realizes these
+  choices, giving uniqueness up to isometry.
 \end{proof}
 
 \section{Pentagons in Contact}\libel{sec:contact}
@@ -1409,13 +1415,13 @@ nonconvex pentagon.
 
 This gives the five types $\Delta$, pinwheel, pin-$T$, $LJ$, and $TJ$
 when each pointer meets the relative interior of its receptor edge.
-Every triple contact is a limit of configurations of one of these
-five types. At an endpoint more than one description may apply.
-We give the argument, since the parameter ranges in
-Section~\rif{sec:appendix} include their endpoints.
+At an endpoint more than one description may apply. The parameter
+ranges in Section~\rif{sec:appendix} include these endpoints.
 
 \begin{proof}
-Fix the orientations for the moment. With $A$ fixed, the positions of
+We show that every triple contact is a limit of configurations of one
+of the five types in which each pointer meets the relative interior
+of its receptor edge. Fix the orientations for the moment. With $A$ fixed, the positions of
 $\c_B$ for which $B$ meets $A$ form a convex polygon: it is the set
 of differences of a point of $A$ and a point of $B$ measured from
 $\c_B$. Its boundary gives contact, and its interior gives overlap.
@@ -1656,6 +1662,8 @@ Thus in both lemmas, the minimizing configuration has primary contact.
 \[
 \dx{AB} = \sqrt{(2\kappa)^2 + \sigma^2} \approx 1.72149 > 1.72.
 \] %
+Indeed, the squared distance is $1+3\kappa^2=(17+3\sqrt5)/8$,
+which exceeds $(43/25)^2$ since $\sqrt5>223/100$.
 \end{proof}
 
 % COMPUTATION BVICHFW | lemma:172 | Longest edge of a subcritical triangle
@@ -1996,7 +2004,9 @@ is large along $(T,e)$ then it is not large along $(T',e)$.
   $\area\{T_0,T_1\} > 2\acrit + \epsM$.
 \end{lemma}
 In particular, $\{T_0,T_1\}$ is not a pseudo-dimer.
-\begin{proof} The proof uses computer interval arithmetic. See Section~\rif{sec:large}.
+\begin{proof}
+  The bound $\area\{T_0,T_1\}>2\acrit+\epsM$ of Lemma~\rif{calc:large}
+  follows from the interval calculation in Section~\rif{sec:large}.
 \end{proof}
 
 \begin{corollary}\libel{lemma:large}
@@ -2264,8 +2274,8 @@ following properties:
   of slider type, or a vertex of $A$ is the midpoint of an edge of $B$.
 \item The triangle is long isosceles, with long edges $(\c_A,\c_B)$ and $(\c_A,\c_C)$.
 \item The triangle is subcritical and acute.
-\item Disregarding the second contact, slide $B$ along its contact with
-  $A$ in the direction that decreases the angle at $\c_A$. This slide
+\item Disregarding the second contact, translate $B$ along its contact with
+  $A$ in the direction that decreases the angle at $\c_A$. This translation
   does not shorten the edge between $\c_A$ and $\c_B$.
 \end{enumerate}
 For clarity, orient the triangle as in Figure~\rif{fig:slider}.
@@ -2714,21 +2724,6 @@ $t=0$, their total area is $2\acrit$. Hence
 Since $\sigma>0$, the unique minimum along the portion of
 $\Gamma$ under consideration occurs at $t=0$, the ice-ray
 configuration.
-
-An alternative derivation of area is given by Heron's formula. We give a brief sketch.
-Write \(x=\bar x_\beta\). Along the given curve, the three squared side lengths of one triangle simplify to
-\[
-4\kappa^2+x^2,\qquad
-4\kappa^2+\frac{x^2}{4\kappa^2},\qquad
-(1+\kappa)^2+(\sigma-x)^2.
-\]
-Substitution into Heron's triangle-area formula,
-followed by adding the area of the second triangle with parameter \(2\sigma-x\), gives exactly
-\[
-\area\{T_0,T_1\}
-      =2a_{\rm crit}+\sigma(x-\sigma)^2
-      =2a_{\rm crit}+\sigma t^2.
-\]
 
 This completes the proof of Theorem~\rif{thm:dimer-area}.
 
@@ -3273,8 +3268,10 @@ in contraposition, if $\theta\ge\pi$ or if $d_2 < 2\eta\sin(\theta/2)$,
 then the triangle $T'\ne T$, with $d_3' < d_3$,
 cannot satisfy the constraint $2\kappa\le d_3'$ of a  Delaunay triangle.
 
-\begin{proof} 
-  See Figure~\rif{fig:areta}.  Let $\p$, $\q$, and $\r$ (resp. $\p$,
+\begin{proof}
+  We show that under the hypotheses of Lemma~\rif{lemma:areta},
+  $2\kappa\le d_3'<d_3$ implies $\theta<\pi$ and
+  $2\eta\sin(\theta/2)\le d_2$. See Figure~\rif{fig:areta}.  Let $\p$, $\q$, and $\r$ (resp. $\p$,
   $\q$, and $\r'$) be the vertices of $T$ (resp. $T'$) on a common
   circle, with
 \[
@@ -3525,7 +3522,7 @@ the edges counted by $\tn(T)$ and completes the proof.
    \]
 \end{proof}
 
-\begin{proof}[proof of Theorem~\rif{thm:obtuse}.]
+\begin{proof}[Proof of Theorem~\rif{thm:obtuse}.]
   Let $\C$ be any cluster that contains an obtuse triangle.
   The theorem asserts that the strict main inequality holds for $\C$.
   The proof involves several relatively simple cases.  
@@ -3552,7 +3549,7 @@ By Lemma~\rif{lemma:tb},    this implies that
 \ge \area(\C) -  \epsN\tn(\C) 
 > \acrit \card(\C),
 \]
-which is the strong main inequality.
+which is the strict main inequality.
 
 {\bf Case 1. The triangle $T_0$ is a nonobtuse triangle, $T_1$ is obtuse, and
   $\C=\{T_0,T_1\}$.}  The triangle $T_0$ has a vertex $\v$ that is
@@ -3789,8 +3786,7 @@ In this case, $\tn\le 6$.  Proceeding as before, we get
 \] 
 
 This completes the proof for cases involving a nonobtuse triangle
-$T_0$.  In the remaining cases, we assume that $T_0$ is obtuse.  
-In the remaining cases, every triangle in $\C$ is obtuse.
+$T_0$. In the remaining cases every triangle in $\C$ is obtuse.
 
 {\bf Case 4. The triangle $T_0$ is an obtuse triangle, and
   $\C=\{T_0,T_1\}$.}
@@ -3821,7 +3817,7 @@ First assume that both shorter edges of $T_1$ have length $2\kappa$.
 We have reduced to a one-parameter family of quadrilaterals.  We can
 choose the parameter to be the length $x$ of the diagonal, the common
 edge of $T_1$ and $T_0$.  The parameter $x$ ranges between
-$\kappa\sqrt{8}$ and $x_{\max}\approx 2.9594$, determined by the
+$\kappa\sqrt{8}$ and $x_{\max}=4\kappa\sqrt{1-\kappa^2/4}\approx 2.9595$, determined by the
 condition $\eta(2\kappa,2\kappa,x_{\max}) = 2$.  We check numerically
 that
 \[
@@ -3829,7 +3825,17 @@ that
 \areta(2\kappa,x,2) > 2\acrit + 4 \epsN \ge 2\acrit + \epsN \tn.
 \] 
 
-Next, assume the circumradius of $\eta(T_1)$ reaches $2$, then we
+For the numerical bound, divide this range of $x$ into four equal intervals. Write $a=2\kappa$ in this calculation.
+The first area is $x\sqrt{4a^2-x^2}/4$, decreasing for
+$x\ge a\sqrt2$. By the sine law the second is
+\[
+ \frac{ax}{2}\sin\bigl(\arcsin(a/4)+\arcsin(x/4)\bigr).
+\]
+It increases, since $a^2+x_{\max}^2<16$ keeps the angle sum acute.
+On each interval we thus take the first area at the right endpoint
+and the second at the left endpoint.
+
+Next, assume the circumradius $\eta(T_1)$ reaches $2$. Then we
 have a cocircular quadrilateral that can be treated as in Case 1.  In
 particular, the minimizing cocircular quadrilateral has three edges of
 length $2\kappa$ and circumradius $2$, which has area
@@ -4381,20 +4387,68 @@ They can be distinguished by a boolean variable giving the sign of $h
 \end{scope}
 }
 
-The interval-arithmetic computer code implements a function that generates a configuration
-of two pentagons $(A,B)$ in contact as a function of $\dx{AB}$ and
-$\theta'$, for contact type $B\to A$ and $h\ge0$.  (This function does
-not use extended coordinates.)  Our proof of the pentagonal ice-ray
-conjecture depends on having fast, numerically-stable algorithms for
-computing configurations in terms of these variables on intervals.  It
-is a matter of simple trigonometry to express $\theta$ in terms of
-$\dx{AB}$ and $\theta'$.  However, it is somewhat more work to give
-good interval bounds on $\theta$ as a function of intervals $\dx{AB}$
-and $\theta'$.  The implementation of this function is based on
-detailed information about the image of $(d_{AB},\theta')$ as
-functions on the set of pairs $(A,B)$ with $B\to A$ and $h\ge 0$.  The
-image is a convex region in the plane with a piecewise analytic
-boundary.
+\begin{proof}
+Given a closed rectangle in the $(\theta',\dx{AB})$ plane, we show
+that the computed interval contains $\theta$ for every contact $B\to A$
+with $h\ge0$ represented in the rectangle. If the calculation returns
+an empty result, the rectangle contains no such contact. We first
+determine the four boundary arcs of the contact region and show that
+each nonempty section at constant $\theta'$ is an interval.
+
+Take the center of the pointer as origin and its pointing vertex as
+$(1,0)$. Write $\phi=\alpha-\pi/5$. The center $(X,Y)$ of the
+receptor is obtained by adding to $(1,0)$ the rotation of $(\kappa,h)$
+through $\phi$, where $0\le h\le\sigma$ and $|\phi|\le\pi/5$.
+In this proof write $d=\dx{AB}$ and $t=\theta'$, so that
+$(X,Y)=(d\cos t,d\sin t)$ and $\theta=\pi/5+\phi-t$.
+Since $X-1\ge\kappa^2-\sigma^2>0$, the length of $(X-1,Y)$
+determines $h$, and its direction then determines $\phi$ uniquely.
+Thus the four edges of the parameter rectangle give the boundary.
+On the edges $\phi=-\pi/5$, $h=\sigma$, $\phi=\pi/5$, and $h=0$,
+respectively, their equations are
+\[
+ d\cos(t+\pi/5)=2\kappa,\quad d=2\cos t,\quad
+ d\cos(t-\pi/5)=2\kappa,\quad (X-1)^2+Y^2=\kappa^2 .
+\]
+At fixed $\phi$, $d^2\,\partial t/\partial h=\kappa+\cos\phi>0$.
+On $h=0$ the angle $t$ also increases with $\phi$, since
+$d^2\,\partial t/\partial\phi=\kappa^2+\kappa\cos\phi>0$.
+On $h=\sigma$ we have $t=(\phi+\pi/5)/2$.
+The two boundary paths from $(0,-\pi/5)$ to $(\sigma,\pi/5)$
+in the $(h,\phi)$ rectangle are therefore strictly increasing in $t$.
+This proves the assertion about sections.
+
+On the boundary $\theta$ decreases with $h$ at fixed $\phi$ and
+increases with $\phi$ at fixed $h$. The latter follows from
+$d^2(1-\partial t/\partial\phi)=X>0$.
+In the interior, differentiating $(X,Y)$ gives
+\[
+ \left.\frac{\partial\theta}{\partial d}\right|_t
+ =-\frac{\kappa+\cos\phi}{dh},\qquad
+ \left.\frac{\partial\theta}{\partial t}\right|_d
+ =-\frac{\sin\phi}{h}.
+\]
+An extremum on the part of the chart in the given rectangle must
+therefore occur at a chart vertex, a rectangle corner, a crossing of
+their boundaries, or on a side of constant $d$ where $\phi=0$.
+There the center is $(1+\kappa,h)$, so that $d\cos t=1+\kappa$
+and $0\le t\le\pi/10$. This includes tangencies and the ends of the
+sides; the same argument on a segment covers rectangles of zero width.
+
+The code takes the interval hull of these values. On each boundary
+arc $d$ is monotone in $t$, splitting the circle $h=0$ at $t=0$.
+For a side of constant $t$ it substitutes that angle in the arc
+equation; for a side of constant $d$ it uses the inverse on the same
+arc. The ends of the arcs are included separately. Each coordinate
+range is rounded outwards, and only disjoint closed intervals are
+discarded. At a candidate, the length $r$ of $(X-1,Y)$ lies in
+$[\kappa,1]$, and
+$\phi=\arcsin(Y/r)-\arccos(\kappa/r)$. Intersecting with these
+geometric ranges retains the value at every genuine candidate,
+including a common endpoint. Thus the hull contains both extrema
+whenever the rectangle meets the chart. Reflection gives the other
+sign of $h$.
+\end{proof}
 
 \subsection{Pentagon existence test}\libel{sec:pet}
 
@@ -4425,7 +4479,7 @@ be easily computed from these six coordinates.  For example, to
 compute $\theta_{ACB}$, the angle of pentagon $A$ relative to the edge
 $(\c_A,\c_C)$, we use the relation
 \begin{equation}
-\arc_A + \theta_{ABC} + \theta_{ACB} \cong 0\mod 2\pi/5.
+\arc_A + \theta_{ABC} + \theta_{ACB} \equiv 0\mod 2\pi/5.
 \end{equation}
 where $\arc_A$ is the angle of the triangle at vertex $\c_A$.  
 Similar equations hold for the angles at $\c_B$ and $\c_C$.
@@ -4789,7 +4843,7 @@ $\acrit+\epsN$. By cyclic relabeling the same holds for $x_\alpha$
 and $x_\beta$. In particular we may restrict to $\bar x_\beta<0.8$
 in the shared-edge calculations with area at most $\acrit+\epsN$.
 
-\subsection{Triple contact at a $LJ$-junction type}
+\subsection{Triple contact at an $LJ$-junction type}
 
 We describe a coordinate system on $3C$-triangles of $LJ$-junction
 type.  As indicated in Figure~\rif{fig:cord-L}, we use coordinates
@@ -4861,16 +4915,15 @@ In this case, $(\bar A,\bar B,\bar C)=(B,C,A)$.
 The shared variables are $(\bar x_\beta,\bar\beta)=(x_\gamma,\gamma)$.
 The nonshared variable is $\beta$.  If $\beta > 0.9$ a
 calculation shows\calcref{one\_ljx} that the triangle area is greater
-than $\acrit+\epsN$. Thus, in treating triangles of smaller area than this,
-we may assume
-$\beta\le0.9$.  
-Under the additional assumption $\beta\le0.9$, these coordinates
-are numerically stable.  We
+than $\acrit+\epsN$. Thus $\beta\le0.9$ for every triangle
+required here. The exclusion is made in standard coordinates, before
+the change of variables. It removes the singular end of the shared
+chart and retains the boundary $\beta=0.9$.  We
 compute other lengths and angles by triangulating the $L$-region by
 extending the receptor edge of $A$.
 
 There does not exist a dimer such that one of its triangles
-is a $LJ_3$ configuration with shared edge $B\to A$.
+is an $LJ_3$ configuration with shared edge $B\to A$.
 
 \subsection{Triple contact at a $TJ$-junction type}
 
@@ -4926,8 +4979,9 @@ The nonshared variable is $\bar\alpha=\alpha$.  If $\beta < 1.0$ a
 calculation %
 shows\calcref{one\_tjx} that the triangle area is greater than $\acrit+\epsN$.
 Thus, for a triangle of area at most $\acrit+\epsN$, we may assume $\beta\ge1.0$.
-Under this additional
-assumption, these coordinates are numerically stable.
+The exclusion in standard coordinates removes the singular end of the
+shared chart before the change of variables. The boundary $\beta=1.0$
+is retained.
 We compute other lengths and angles by triangulating the $TJ$-region
 by extending the receptor edge of $A$ and extending the receptor edge
 of $C$.
@@ -5057,7 +5111,7 @@ x_\alpha \le 2\sigma(1/\sin(2\pi/5) - 1) < 0.0605.
 \subsubsection{Pin-$T$-junction type}\libel{sec:one-pintx}
 
 A computer interval-arithmetic calculation
-shows\calcref{one\_pintx} that the longest edge in a pin-$T$ junction is always $B\to C$.  We specialize to
+shows\calcref{one\_pintx} that in a pin-$T$ junction of area at most $\acrit+\epsN$, the edge $B\to C$ is a longest edge.  We specialize to
 pin-$T$ junctions with a shared edge $B\to C$.  We use the standard
 coordinates, with $(\bar x_\beta,\bar\beta)=(x_\alpha,\alpha)$ shared.
 An ice-ray triangle does not have type pin-$T$.
@@ -5555,11 +5609,11 @@ therefore a leg. Thus, if $T_0$ were right, we would have
 \[
 \area\{T_1,T_0\} > \ao + \frac12(2\kappa)(1.72) > 2 \acrit + \epsM.
 \]
-If $B$ satisfies at most one unilateral constraint, it can be translated
-horizontally (with horizontal axis $(\c_A,\c_C)$) in the direction that breaks a
-possible constraint,
-then the translation can be continued vertically to further decrease area until
-at least one unilateral constraint is again met.
+Take $(\c_A,\c_C)$ as horizontal axis. With the orientations
+fixed, translation preserves the angle between the pentagon edges
+along $e$. If at most one constraint is active, first move horizontally
+to release it, keeping the height fixed. Once the constraints are
+strict, a sufficiently short downward translation decreases area.
 A horizontal supporting contact would give height at least
 $2\kappa$ and the already excluded lower bound $\ao+1.72\kappa$
 for the pair area. At any other position satisfying at most one

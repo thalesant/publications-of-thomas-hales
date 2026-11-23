@@ -106,7 +106,7 @@ class SourceBindings(unittest.TestCase):
             p=s[s.index('let '+name):];p=p[:p.index(';;')]
             self.assertIn('pseudo2_boundary_excluded dAB dBC dAC',p)
     def test_c015_independent_candidates(self):
-        s=(ROOT/'ocaml/banana.ml').read_text();self.assertEqual(s.count('(if meets_global_max then [(x_gmax,y_gmax)] else []) @'),2)
+        s=(ROOT/'ocaml/banana.ml').read_text();self.assertIn('map clipped contact_vertices',s);self.assertIn('(if meets_global_max then [(x_gmax,y_gmax)] else []) @',s)
     def test_no_loadtime_proof_search_ad(self):
         s=(ROOT/'ocaml/autodiff.ml').read_text()
         self.assertNotIn('\nmap (recurseD',s);self.assertIn('let twist_claim_lj1 () =',s)

@@ -1,7 +1,7 @@
 {
-  "version": "pentagon_code_v005",
-  "manuscript": "paper/pentagon_v008.tex",
-  "date": "2026-11-19",
+  "version": "pentagon_code_v006",
+  "manuscript": "paper/pentagon_v010.tex",
+  "date": "2026-11-22",
   "compiler": "4.14.4",
   "interval_backend": "Interval_crlibm.I",
   "normal_command": "python3 run.py --all --diagnostics",
@@ -14,7 +14,7 @@
   "scheduling": "longest estimated remaining job first after short prerequisite tests",
   "default_workers": "auto: at most 8, bounded by available CPUs and RAM budget",
   "reporting_revision": 1,
-  "distribution_name": "pentagon_code_v005",
+  "distribution_name": "pentagon_code_v006",
   "wolfram_report_schema": 2,
   "component_contract": "docs/MODULARITY.md"
 }

@@ -141,6 +141,30 @@ let geometry () =
   check "pair.inscribed-disks-overlap" "CONTRACT" (fun () -> not(Pet.pet(m 1.)(m 0.)(m 0.)));
   check "pair.exchange-symmetry" "CONTRACT" (fun () -> Pet.pet(m 1.9)(m 0.2)(m (-0.3)) = Pet.pet(m 1.9)(m (-0.3))(m 0.2));
   check "pair.reflection-symmetry" "CONTRACT" (fun () -> Pet.pet(m 1.9)(m 0.2)(m (-0.3)) = Pet.pet(m 1.9)(m (-0.2))(m 0.3));
+  check "pseudo-angle.flush-upper-representative" "EXACT" (fun () ->
+    let upper = List.filter (fun u -> contains u 1.)
+      (Pet.periodize1 (mk (-0.125) 0.)) in
+    upper <> [] && List.for_all
+      (fun u -> not (strictly_large_pseudo_angle Pent.(u*pi25))) upper);
+  check "pseudo-angle.strict-interior" "CONTRACT" (fun () ->
+    strictly_large_pseudo_angle (m 0.9) &&
+    not (strictly_large_pseudo_angle Pent.pi15) &&
+    not (forall_alpha_constraint_pseudo_dimer (Pent.pi25,Pent.zero)));
+  check "contact.midpointer-lemma-4.8" "CONTRACT" (fun () ->
+    Pent.(Banana.ks >> (172//100)));
+  check "banana.empty-midpoint-of-chord" "CONTRACT" (fun () ->
+    Banana.theta_banana Banana.ks Pent.zero = None);
+  check "banana.contains-forward-contacts" "DIAGNOSTIC" (fun () ->
+    let p = Float.pi /. 5. in
+    let near a = mk (a -. 2.e-12) (a +. 2.e-12) in
+    List.for_all (fun phi -> List.for_all (fun h ->
+      let u = 1. +. cos p *. cos phi -. h *. sin phi in
+      let v = cos p *. sin phi +. h *. cos phi in
+      let t = atan2 v u and d = hypot u v in
+      match Banana.theta_banana (near d) (near t) with
+      | Some a -> overlaps a (near (p +. phi -. t))
+      | None -> false) [0.; 0.13; sin p])
+      [-.p; -0.23; 0.; 0.41; p]);
   check "banana.curve-II-roundtrip" "CONTRACT" (fun () -> contains (Banana.curveIIt (Banana.curveIIth(m 0.1))) 0.1);
   check "banana.critical-both-extrema" "CONTRACT" (fun () ->
     let pts=Banana.critical_points_banana(mk (-0.2) 0.7,mk 1.6 2.1) in
@@ -239,7 +263,7 @@ let mitm () =
   check "hash.recut-takes-maximum" "CONTRACT" (fun () ->
     let h=Hashtbl.create 5 in Hashtbl.add h 1 (m 1.,None);
     Meet.recut h 2. 1; Meet.recut h 3. 1; Meet.recut h 1. 1;
-    Meet.maxcut h [1]=Some 3.);
+    Meet.maxcut h [1]=Some 3. && Hashtbl.length h = 1);
   check "hash.absent-key-not-zero" "CONTRACT" (fun () -> let h=Hashtbl.create 2 in Meet.minarea h [42]=None);
   (* Exhaustive finite fixtures exercise actual central pruning and recut. *)
   List.iter (fun (a,b,c,target) ->

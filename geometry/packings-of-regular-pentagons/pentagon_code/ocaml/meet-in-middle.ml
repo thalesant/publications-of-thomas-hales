@@ -87,9 +87,14 @@ let minarea hash keys =
 let recut phash cut' key =
     match findsome phash key with
     | None -> ()
-    | Some (a,None) -> Hashtbl.add phash key (a,Some cut')
+    | Some (a,None) -> Hashtbl.replace phash key (a,Some cut')
     | Some (a,Some cut) ->
       if cut' >. cut then Hashtbl.replace phash key (a,Some cut');;
+
+(* Job workers run in separate processes. Count extra subdivisions from
+   unresolved interval evaluations separately from ordinary refinement. *)
+let peripheral_unstable_splits = ref 0;;
+let central_unstable_splits = ref 0;;
 
 (* Subdivide the peripheral box and retain its lower area bound and shared-edge keys. An unresolved chart calculation subdivides again; a certified None or outside-domain result eliminates the box. *)
 let mk_one_pericoord initialized width phash fn (pcoord,keys,area) =
@@ -106,7 +111,8 @@ let mk_one_pericoord initialized width phash fn (pcoord,keys,area) =
 		      if (overweight area') || outdomfn fill then []
 		      else let keys' = keyfn width fill in
 			   [(pc,keys',min_I area')])
-    with Unstable -> (let (pc1,pc2) = splitlist (1.0e-4) pc in
+    with Unstable -> (incr peripheral_unstable_splits;
+                      let (pc1,pc2) = splitlist (1.0e-4) pc in
 		      makesome pc1 @ makesome pc2) in
   if overweight area then []
   else
@@ -167,6 +173,7 @@ let  mk_one_cencoord width cluster_areacut some_phash fn (ccoord,cencut) =
 		let cencut' = min cencut' cencut in
 		[(cc,cencut')]))
     with Unstable ->
+      incr central_unstable_splits;
       let (cc1,cc2) = splitlist (1.0e-4) cc in
       makesome cc1 @ makesome cc2 in
   let ccs = subdivide_subwidth width ccoord in
@@ -193,19 +200,21 @@ let report_stats(i,width,pdata,ccs) =
 (* Refine both sides and rebuild matching data at half the key width. Return true only when a required peripheral or the central list is empty. Width exhaustion raises Failure, never true. *)
 let rec mitm_recursion i initialized cluster_areacut width some_pdata cfn ccs =
   let _ = width >> (m (1.0e-6)) || failwith "I'm giving up at small width" in
+  peripheral_unstable_splits := 0;
+  central_unstable_splits := 0;
   let some_pdata',some_phash,empty = match some_pdata with
     | None -> (None,None,false)
     | Some pdata ->
       let pdata' = mk_peridata initialized width pdata in
       let phash = fst pdata in
       (Some pdata',Some phash,(snd (snd pdata')=[])) in
-  if empty then true
+  let next = if empty then [] else mk_cencoord width cluster_areacut some_phash cfn ccs in
+  let _ = report (Printf.sprintf "i=%d unstable_splits central=%d peripheral=%d"
+                    i !central_unstable_splits !peripheral_unstable_splits) in
+  if next = [] then true
   else
-    let ccs = mk_cencoord width cluster_areacut some_phash cfn ccs in
-    if ccs = [] then true
-    else
-      let _ = report_stats (i,width,some_pdata',ccs) in
-      mitm_recursion (succ i) true cluster_areacut (width/two) some_pdata' cfn ccs;;
+    let _ = report_stats (i,width,some_pdata',next) in
+    mitm_recursion (succ i) true cluster_areacut (width/two) some_pdata' cfn next;;
 
 let mk_hashtbl() =
   let tbl = Hashtbl.create 100000 in

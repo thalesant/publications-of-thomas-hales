@@ -1,3 +1,17 @@
+# Manuscript v010 with the confirmed v006 run
+
+The paper identifies the claim at the opening of five proofs. The v010
+manuscript and its compiled label map are associated with the completed
+v006 calculation. The original execution registry and logs retain their
+source identity. See [the change guide](docs/pentagon_changes_2016v2_to_v010.md).
+
+# Manuscript v009 and code v006 — 22 November 2026
+
+See [the v008-to-v009 review guide](docs/pentagon_changes_2016v2_to_v009.md)
+for paper pages, code changes and the status of the verification.
+The 77 required stages, four optional diagnostics and Mathematica component
+are carried forward. The OCaml source inventory changes with this revision.
+
 # Manuscript v008 and code v005 — 19 November 2026
 
 Parent: `pentagon_code_v004_1` at Git commit `29250f012a54cf659010291cef8f907438f4d392`. The package uses the same layout, job names, and run and confirmation commands.

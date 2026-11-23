@@ -213,7 +213,7 @@ class ExactProgram(unittest.TestCase):
     def test_output_is_required_before_get(self):
         s=(ROOT/'mathematica/run_checks.wls').read_text();self.assertLess(s.index('Length[outputs]=!=1'),s.index('Get['))
         self.assertIn('FileExistsQ[out]',s)
-    def test_old_ocaml_inventory_cannot_confirm_v005(self):
+    def test_old_ocaml_inventory_cannot_confirm_v006(self):
         compatibility = v.compatibility_record(ROOT)
         old = compatibility['ocaml_v004_source_inventory']
         current = v.source_inventory(ROOT)

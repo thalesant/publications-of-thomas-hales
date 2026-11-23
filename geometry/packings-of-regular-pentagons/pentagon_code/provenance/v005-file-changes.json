@@ -6,7 +6,7 @@
   "distribution": "pentagon_code_v005",
   "comparison_scope": "Fixed files in the preceding release manifest. The two distribution manifests and generated confirmation records are accounted for separately.",
   "parent_fixed_files": 141,
-  "unchanged_files": 99,
+  "unchanged_files": 98,
   "changed_in_place": [
     ".gitignore",
     "CHANGELOG.md",
@@ -48,6 +48,7 @@
     "verification/association.json"
   ],
   "renamed_and_revised": {
+    "docs/pentagon_changes_2016v2_to_v007.md": "docs/pentagon_changes_2016v2_to_v008.md",
     "paper/header_v007.bbl": "paper/header_v008.bbl",
     "paper/header_v007.tex": "paper/header_v008.tex",
     "paper/pentagon_v007.pdf": "paper/pentagon_v008.pdf",

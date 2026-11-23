@@ -32,7 +32,7 @@ def extract(text):
     return result
 
 def main():
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--manuscript',type=Path,default=ROOT/'paper/pentagon_v008.tex');a=ap.parse_args()
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--manuscript',type=Path,default=ROOT/'paper/pentagon_v010.tex');a=ap.parse_args()
     text=a.manuscript.read_text();items=extract(text);labels=json.loads((ROOT/'paper/label-map.json').read_text());seen=set();manifest=[]
     for label,caption,body,line in items:
         key='fig:'+label

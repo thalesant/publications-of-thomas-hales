@@ -1,0 +1,348 @@
+COMMAND ["/usr/local/bin/opam", "exec", "--switch=pentagon-4.14.4", "--set-switch", "--", "ocaml", "-noinit", "-I", "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml", "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/scripts/worker.ml"]
+PENTAGON RUNTIME: OCaml 4.14.4; stack=16777216 words; CRlibm
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 12, characters 12-26:
+12 |   let (+) = Pervasives.(+);;
+                 ^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 13, characters 12-26:
+13 |   let (-) = Pervasives.(-);;
+                 ^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 182, characters 17-18:
+182 |   | h::t -> p(h) & forall p t;;
+                       ^
+Alert deprecated: Stdlib.&
+Use (&&) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 187, characters 31-32:
+187 |   | (h1::t1,h2::t2) -> p h1 h2 & forall2 p t1 t2
+                                     ^
+Alert deprecated: Stdlib.&
+Use (&&) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 193, characters 17-19:
+193 |   | h::t -> p(h) or exists p t;;
+                       ^^
+Alert deprecated: Stdlib.or
+Use (||) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 247, characters 19-37:
+247 |     | (h::t) -> if Pervasives.compare x h = 0 then n else ind (n + 1) t in
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 257, characters 41-43:
+257 |   | (h::t) -> Pervasives.compare x h = 0 or mem x t;;
+                                               ^^
+Alert deprecated: Stdlib.or
+Use (||) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 257, characters 14-32:
+257 |   | (h::t) -> Pervasives.compare x h = 0 or mem x t;;
+                    ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 272, characters 32-33:
+272 | let set_eq l1 l2 = subset l1 l2 & subset l2 l1;;
+                                      ^
+Alert deprecated: Stdlib.&
+Use (&&) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 280, characters 19-37:
+280 |     (x,y)::t -> if Pervasives.compare x a = 0 then y else assoc a t
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 285, characters 19-37:
+285 |     (x,y)::t -> if Pervasives.compare y a = 0 then x else rev_assoc a t
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 339, characters 25-43:
+339 |                       if Pervasives.compare x y = 0 then t' else
+                               ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 347, characters 38-56:
+347 | let setify s = uniq (sort (fun x y -> Pervasives.compare x y <= 0) s);;
+                                            ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 437, characters 19-37:
+437 |   | (x,y)::t -> if Pervasives.compare x a = 0 then y else assocd a t d;;
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 442, characters 19-37:
+442 |   | (x,y)::t -> if Pervasives.compare y a = 0 then x else rev_assocd a t d;;
+                         ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 451, characters 23-24:
+451 |             if h' == h & t' == t then l else h'::t'
+                             ^
+Alert deprecated: Stdlib.&
+Use (&&) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 479, characters 23-41:
+479 | let increasing f x y = Pervasives.compare (f x) (f y) < 0;;
+                             ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 481, characters 23-41:
+481 | let decreasing f x y = Pervasives.compare (f x) (f y) > 0;;
+                             ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 573, characters 26-44:
+573 |       (a,b)::t -> let c = Pervasives.compare x a in
+                                ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 600, characters 18-36:
+600 |           let c = Pervasives.compare x a in
+                        ^^^^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/lib.ml", line 663, characters 23-25:
+663 |     | (h::t) -> eq x h or mem x t
+                             ^^
+Alert deprecated: Stdlib.or
+Use (||) instead.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/pent.ml", lines 601-605, characters 2-39:
+601 | ..let (us,v::vs) = chop_list i xs in
+602 |   let t = (v.low +. v.high) /. 2.0 in
+603 |   let v1 = mk_interval(v.low,t) in
+604 |   let v2 = mk_interval(t,v.high) in
+605 |     (us @ (v1 :: vs)),(us @ (v2 :: vs))..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_, [])
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/pent.ml", lines 652-653, characters 4-18:
+652 | ....let [a;b;x] = abx in
+653 |       onef (a,b,x)...
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/pent.ml", line 414, characters 8-9:
+414 |     let t = (xbeta,t1,s1,s2,a2,t2,t3,a3,xalpha) in
+              ^
+Warning 26 [unused-var]: unused variable t.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/banana.ml", lines 335-338, characters 2-42:
+335 | ..let [xalpha; alpha;  xbeta; beta] = xs in
+336 |   let dAB_triple  = ellthetax_sgn xalpha alpha sgnalpha in
+337 |   let dBC_triple  = ellthetax_sgn xbeta beta sgnbeta in
+338 |   fillout2C dACrange dAB_triple dBC_triple..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/banana.ml", line 16, characters 6-8:
+16 |   let xa = h + sigma in
+           ^^
+Warning 26 [unused-var]: unused variable xa.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 52-59, characters 2-50:
+52 | ..let ([alpha;beta;xa],_) = xs in
+53 |   if outdomfn_pint alpha beta then true
+54 |       else
+55 |       let (dBC,dAC,dAB,xc,xb)= pintedge_extended alpha beta xa in
+56 |       let a = areamin_acute dBC dAC dAB in
+57 |       let inadmissible xc a = xc >> two*sigma || (a >> aK+epsN_I) in
+58 |       inadmissible xc a ||
+59 | 	pint_outdomfn (a,alpha,beta,xa,xb,xc,dBC,dAC,dAB)
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 64-72, characters 2-28:
+64 | ..let ([alpha;beta;xc],_) = xs in
+65 |   if alpha+beta >> pi15 then true
+66 |       else
+67 |       let (d1,d2,d3)= pinwheeledge alpha beta xc in
+68 |       let a = areamin_acute d1 d2 d3 in
+69 |       let inadmissible = (a >> aK+epsN_I) in
+70 |       let one_pinwheelx_constant = 8 // 10 in
+71 |       let outdom = (xc << one_pinwheelx_constant) in
+72 |       inadmissible || outdom
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 77-85, characters 4-28:
+77 | ....let ([alpha;beta;xa],_) = xs in
+78 |     if outdomfn_lj alpha beta then true
+79 |     else
+80 |       let (d1,d2,d3)= ljedge alpha beta xa in
+81 |       let a = areamin_acute d1 d2 d3 in
+82 |       let inadmissible = (a >> aK+epsN_I) in
+83 |       let one_ljx_constant = 9//10 in
+84 |       let outdom = (beta << one_ljx_constant) in
+85 |       inadmissible || outdom
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 90-98, characters 4-28:
+90 | ....let ([alpha;beta;xc],_) = xs in
+91 |     if outdomfn_tj alpha beta then true
+92 |     else
+93 |       let (d1,d2,d3)= tjedge alpha beta xc in
+94 |       let a = areamin_acute d1 d2 d3 in
+95 |       let inadmissible = (a >> aK+epsN_I) in
+96 |       let one_tjx_constant = one in
+97 |       let outdom = (beta >>  one_tjx_constant) in
+98 |       inadmissible || outdom
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 148-170, characters 2-26:
+148 | ..let ([alphaB;betaB;xbetaB;alphaD],
+149 |        ((sB,edgeB,disjointB),(sD,edgeD,disjointD))) = xs in
+150 |   try
+151 | 
+152 |     if disjointB alphaB betaB xbetaB then true
+...
+167 | 	aABC + aADC >> two * aK - eps ||
+168 | 	  (pseudo && pseudodimer) ||
+169 | 	  dimer_outdomfn alphaB betaB xbetaB alphaD
+170 |   with | Unstable -> false..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_::_, ((_, _, _), (_, _, _)))
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/dimer.ml", lines 272-287, characters 2-24:
+272 | ..let [xalpha;alpha;xbeta;beta] = xs in
+273 |   try
+274 |   match mk2Ce dACrange xs with
+275 |   | None -> true
+276 |   | Some (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+...
+284 | 	sigmaA << dAB_sinA/dAC ||
+285 | 	  sigmaC << dAB_sinA/dAC ||
+286 | 	  (one/sigmaA + one/sigmaC)*dAB_sinA >> dAC)
+287 |   with Unstable -> false..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/autodiff.ml", lines 299-305, characters 2-26:
+299 | ..let ([alpha';beta;xbeta],_) = xs in
+300 |   if outdomfn_shared_lj1 alpha' beta xbeta then true
+301 |   else
+302 |     try
+303 |         let (_,_,_,xa,_) = shared_lj1edge_extended alpha' beta xbeta in
+304 |         (xa >> sigma)
+305 |     with Unstable -> false..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/autodiff.ml", lines 317-323, characters 4-18:
+317 | ....let ([alpha;xbeta],_) = xs in
+318 |     let beta_t = (pi15,zero) in
+319 |     let alpha_t = (alpha,- one) in
+320 |     let xbeta_t = (xbeta,zero) in
+321 |     let (l1,l2,l3) = shared_lj2edgeD alpha_t beta_t xbeta_t in
+322 |     let (_,a') = area_D l1 l2 l3 in
+323 |       (a' << zero)
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/autodiff.ml", lines 333-350, characters 2-26:
+333 | ..let ([alphaB;betaB;xbetaB;alphaD],
+334 |        ((sB,edgeB,curveB,_),(sD,edgeD,curveD,_))) = xs in
+335 |   try
+336 | 
+337 |     let alphaB_s = curveB alphaB in
+...
+347 |     let aADC = area_D dCD dAC' dAD in
+348 |     let (_,area_derivative) = aABC +^ aADC in
+349 |     area_derivative << zero
+350 |   with | Unstable -> false..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_::_, ((_, _, _, _), (_, _, _, _)))
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/mitm-calcs.ml", lines 35-36, characters 14-39:
+35 | ..............[dAB;thABC;thBAC;dBC;dAC] =
+36 |   fillout5D ((dAB,thABC,thBAC),dBC,dAC)..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/mitm-calcs.ml", lines 38-39, characters 14-47:
+38 | ..............[dAB;thABC;thBAC;dBC;thCBA;dAC] =
+39 |   fillout6D ((dAB,thABC,thBAC),(dBC,thCBA),dAC)..
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+_::_::_::_::_::_::_::_
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/mitm-calcs.ml", line 285, characters 6-14:
+285 |   let assertAC = area_I (193//100) (18//10) (two*kappa) >>. cencut ||
+            ^^^^^^^^
+Warning 26 [unused-var]: unused variable assertAC.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/mitm-calcs.ml", line 287, characters 6-14:
+287 |   let assertBC = area_I (18//10) (172//100) (179//100) >>. cencut ||
+            ^^^^^^^^
+Warning 26 [unused-var]: unused variable assertBC.
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/review_jobs.ml", lines 25-31, characters 4-43:
+25 | ....let ([alpha;beta;xa],_) = xs in
+26 |     if outdomfn_pint alpha beta then true
+27 |     else
+28 |       let (dBC,dAC,dAB,xc,_) = pintedge_extended alpha beta xa in
+29 |       xc >> two*sigma ||
+30 |       dAB << pintab_dAB_min ||
+31 |       area_I dBC dAC dAB >> pintab_area_min
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_::_, _)
+File "/home/autonomy/pentagon/pentagon_code_v006/pentagon_code_v006/ocaml/review_jobs.ml", lines 51-56, characters 4-16:
+51 | ....let ([alpha';xbeta],_) = xs in
+52 |     if outdomfn_shared_lj1 alpha' pi15 xbeta then true
+53 |     else
+54 |       let (l1,l2,l3) = Autodiff.shared_lj1edgeD (alpha',- one) (pi15,zero) (xbeta,zero) in
+55 |       let (_,a') = Autodiff.area_D l1 l2 l3 in
+56 |       a' << zero
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(_::_::_::_, _)
+PENTAGON JOB START: onedeltajmin
+Calculation: Exclude Delta-contact triangles of area at most 1.5 on the classified domain.
+Paper: Lemma 4.7 [lemma:delta]; Lemma 4.11 [lemma:a0]; Lemma 4.9 [lemma:172]
+Source navigation: QBQQTVY, QGPVOYX, BVICHFW
+RESULT onedeltajmin: count=49; returned=true
+CPU seconds: 0.003045
+Square-root translations during job: 0
+PENTAGON STACK RETAINED: 16777216
+PENTAGON JOB PASS: onedeltajmin
+
+PROCESS EXIT: 0
+WALL SECONDS: 1.350

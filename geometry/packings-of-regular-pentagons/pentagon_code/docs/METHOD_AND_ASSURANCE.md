@@ -52,8 +52,8 @@ all inverse-domain branches or primitive floating-point behavior.
 ## Evidence types
 
 `evidence/timings.json` contains source-identified prior runtime measurements.
-They determine scheduling order only, never a new pass. The fresh distribution
-contains no old run folders or copied successful checkpoints. The file-level
+They determine scheduling order only, never a new pass. The verified v006 execution is archived in verification/run-records/.
+New runs create their own checkpoints in runs/. The file-level
 integration record establishes preservation of numerical implementation bodies.
 
 `verification/CONFIRMATION.md` is generated from runs of this exact assembled release.

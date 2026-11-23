@@ -1,0 +1,2 @@
+# Keep the exact bytes covered by the release manifests and execution log hashes.
+* -text

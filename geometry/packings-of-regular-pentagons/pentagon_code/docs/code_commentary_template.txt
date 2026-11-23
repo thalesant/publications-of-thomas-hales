@@ -10,7 +10,7 @@
 \definecolor{inkblue}{RGB}{28,57,77}
 \definecolor{codeback}{RGB}{247,248,249}
 \hypersetup{colorlinks=true,linkcolor=inkblue,urlcolor=inkblue,pdftitle={Pentagon packing: a mathematical code commentary}}
-\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\textsc{Pentagon packing}}\fancyhead[R]{\small Code v005 / manuscript v008}\fancyfoot[C]{\thepage}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\textsc{Pentagon packing}}\fancyhead[R]{\small Code v006 / manuscript v010}\fancyfoot[C]{\thepage}
 \setlength{\headheight}{14pt}\setlength{\parskip}{5pt}\setlength{\parindent}{0pt}\setlength{\emergencystretch}{2em}
 \setcounter{tocdepth}{1}\widowpenalty=10000\clubpenalty=10000
 \lstdefinestyle{proofcode}{language=[Objective]Caml,basicstyle=\ttfamily\fontsize{8}{10}\selectfont,
@@ -31,7 +31,7 @@ columns=fullflexible,keepspaces=true,showstringspaces=false,breaklines=true,brea
 \begin{center}
 {\color{inkblue}\Large\bfseries Packings of regular pentagons}\\[5pt]
 {\large A mathematical commentary on the verification code}\\[8pt]
-\code{pentagon_code_v005}\qquad\code{pentagon_v008.tex}\\[5pt]
+\code{pentagon_code_v006}\qquad\code{pentagon_v010.tex}\\[5pt]
 {\small 19 November 2026}
 \end{center}
 \begin{abstract}\noindent
@@ -162,6 +162,25 @@ blanket-translated into successful exclusions. Partial-domain square root is
 the backend's existing behavior and is tested separately. The primitive
 library's enclosure guarantees remain part of the trusted numerical base;
 finite samples do not prove all such guarantees.
+
+For a partially defined primitive the enclosure is required on the
+real arguments of each represented configuration. In \code{iloc} and
+\code{ell_aux} the radicands are squared distances; in \code{area_I}
+the Heron polynomial is sixteen times the squared area. For
+\code{areamin_acute}, a zero lower endpoint merely supplies the trivial
+area lower bound; the separate Heron argument below justifies the
+lower-endpoint evaluation. In \code{iarc} the quotient is a cosine by
+the cosine law. In \code{thetax}, \code{ellxmono_r}, and \code{ilawbeta},
+the quotients are sines or cosines by the contact right triangle or
+the sine law. The arc inverses use the same identities on their assigned
+arcs. The square root in \code{squeeze_calc} is the other leg of a right
+triangle with hypotenuse $2.32$ and leg $2\kappa$.
+Thus restricting a partially overlapping argument interval to the real
+domain retains each admissible value. For \code{sqrtD}, \code{asinD},
+\code{acosD} and their second derivatives, the differentiated formulas
+divide by the square root. The guarded interval division requests
+subdivision whenever its denominator meets the neighborhood of zero.
+Clipping a function value cannot certify a derivative at a singular endpoint.
 
 The original bytecode stack limit, $16{,}777{,}216$ machine words, is restored
 before loading the mathematical source and checked after each job. On the
@@ -307,7 +326,7 @@ not new assumptions. In the first view the inputs are $(\theta',d)$ and the
 output is a range for $\theta$ on the positive-height branch. The negative
 branch is obtained by the stated reflection and period shift.
 
-The five boundary curves have the following inverse expressions. Here $u$
+The four boundary arcs and the interior ridge V have the following expressions. Here $u$
 is the relevant pointer inclination, and each expression is used only on its
 assigned box and branch:
 \begin{center}
@@ -320,39 +339,26 @@ IV & $\cos u+\sqrt{\cos^2u+\kappa^2-1}$\\
 V & $(1+\kappa)/\cos u$\\\bottomrule
 \end{tabular}
 \end{center}
-These follow from the inradius right triangle and cosine law at the limiting
-contact directions. The domain is divided into five ridgeless pieces and a
-sixth piece containing a ridge. \code{find_critical_points} collects corners,
-intersections with the rectangle's vertical and horizontal sides, and the
-appropriate boundary candidates. The ridge piece has its own extremum rule.
-Two global extremal points must be included whenever their intervals meet the
-input rectangle.
+In the positive-height chart, the inclinations at the vertices, crossings
+with the four sides of the input rectangle, admissible rectangle corners,
+and crossings of V with a side of constant distance suffice.
+Appendix~A.3 of the paper derives this from the motion of the center
+on a contact edge. Curve IV is split at zero inclination before inversion.
+The endpoints of both pieces and the ridge are included separately.
 
-@@CODE banana.ml critical_points_banana 22@@
+@@CODE banana.ml critical_points_banana 24@@
 
-C015 makes the two global-point alternatives independent. In the older
-unparenthesized expression, an \code{else} branch could contain the list
-concatenation, so one candidate could be masked by the first condition. The
-new grouping can only add the missing candidate. A deterministic test chooses
-a rectangle meeting both and checks their presence. This is a defensive
-correction to the enclosure calculation, not an established counterexample to
-an old numerical inequality.
+The arc ranges and inverse formulas enclose their exact values.
+Equality passes every intersection test. Saturation of the inverse
+trigonometric argument at either end of $[-1,1]$ extends the formula
+just past a rounded arc endpoint and fixes every genuine value.
+At a candidate the release reconstructs the normal direction from the
+vector from the pointing vertex to the receptor center. An empty
+intersection with its geometric ranges eliminates only that candidate.
 
-C005 separately changes \code{someinter_I}: only certified interval
-disjointness returns \code{None}. An unexpected exception no longer becomes
-an empty intersection. The original catch-all was too broad as an interface
-contract, even though the baseline jobs happened to complete.
+The inverse chart \code{theta'_danana} retains the earlier subdivision
+and candidate routine. It is not called by the proof jobs.
 
-@@CODE banana.ml someinter_I 3@@
-
-\begin{auditnote}
-The trigonometric formulas and their inverse identities are documented and
-sample-tested. A complete universal proof of the ridgeless partition and all
-critical-point assertions is not claimed here. The remaining trust is stated
-explicitly in \code{AUDIT.md}; the added tests include independent witnesses
-and boundary cases, rather than only round trips that might hide mutually
-compensating mistakes.
-\end{auditnote}
 
 \section{Reconstructing a center triangle}
 

@@ -1,4 +1,4 @@
-# Wolfram check catalogue — manuscript v007
+# Wolfram check catalogue — 161 assertions
 
 Each record below states **what is tested, why, and how it relates to the paper**. The displayed paper reference identifies context; the logical role distinguishes a paper assertion from an auxiliary identity or finite diagnostic. All constants use circumradius-one normalization.
 
@@ -2012,7 +2012,7 @@ exactZero[ellx[x,0]^2-(4 k^2+x^2)]
 
 **Why:** Checks the contact specialization used by the shear family.
 
-**Scope:** Exact algebraic evaluation; no floating-point tolerance.
+**Scope:** Exact algebraic evaluation; no floating-point tolerance. The historical ID denotes the shear identity. Lemma 4.8 has a separate derivation and OCaml test contact.midpointer-lemma-4.8.
 
 **Source:** `mathematica/PentagonChecks.wl:188`; navigation code `VNDQIXO`.
 

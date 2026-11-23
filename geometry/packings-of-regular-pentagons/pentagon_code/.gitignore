@@ -17,11 +17,17 @@ verification/wolfram-report.json
 verification/run-records/
 
 # Reader-facing build products shipped in the release, even under broader parent rules.
-!paper/pentagon_v008.pdf
-!paper/header_v008.bbl
+!paper/pentagon_v010.pdf
+!paper/header_v010.bbl
 !figures/gallery.pdf
 !figures/gallery.bbl
 !docs/index.html
 !docs/wolfram_checks.html
 !docs/code_commentary.pdf
 !verification/wolfram-report.json
+
+# Evidence shipped for source-matched, offline confirmation.
+!verification/status.json
+!verification/CONFIRMATION.md
+!verification/run-records/
+!verification/run-records/**

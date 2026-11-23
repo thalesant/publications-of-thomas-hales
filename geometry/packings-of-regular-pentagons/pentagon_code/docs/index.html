@@ -1,5 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pentagon paper-to-code index — v005</title><style>body{max-width:1100px;margin:35px auto;padding:0 22px;font:17px/1.55 system-ui;color:#1e2f3d}h1,h2,h3{color:#193d50}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:9px;border-bottom:1px solid #cbd6dc;text-align:left;vertical-align:top}code,pre{font:13px/1.55 ui-monospace,monospace}pre{background:#f3f5f6;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere}details{margin:12px 0}summary{cursor:pointer;font-weight:600}a{color:#075c87}input{box-sizing:border-box;width:100%;padding:10px;font-size:17px}article{border-top:1px solid #c4d3db;padding:20px 0}.tag{display:inline-block;padding:3px 8px;margin:3px;background:#eaf0f3;font-size:13px}.context{padding:14px;background:#f2f5f7}</style></head><body><h1>Pentagon paper-to-code index — v005</h1>
-<p>Companion to <a href="../paper/pentagon_v008.pdf">the paper</a>. <a href="code_commentary.pdf">Mathematical commentary</a> · <a href="RUNNING.md">Execution guide</a> · <a href="wolfram_checks.html">Wolfram checks</a> · <a href="../verification/CONFIRMATION.md">Generated confirmation</a>.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pentagon paper-to-code index — v006</title><style>body{max-width:1100px;margin:35px auto;padding:0 22px;font:17px/1.55 system-ui;color:#1e2f3d}h1,h2,h3{color:#193d50}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:9px;border-bottom:1px solid #cbd6dc;text-align:left;vertical-align:top}code,pre{font:13px/1.55 ui-monospace,monospace}pre{background:#f3f5f6;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere}details{margin:12px 0}summary{cursor:pointer;font-weight:600}a{color:#075c87}input{box-sizing:border-box;width:100%;padding:10px;font-size:17px}article{border-top:1px solid #c4d3db;padding:20px 0}.tag{display:inline-block;padding:3px 8px;margin:3px;background:#eaf0f3;font-size:13px}.context{padding:14px;background:#f2f5f7}</style></head><body><h1>Pentagon paper-to-code index — v006</h1>
+<p>Companion to <a href="../paper/pentagon_v010.pdf">the paper</a>. <a href="code_commentary.pdf">Mathematical commentary</a> · <a href="RUNNING.md">Execution guide</a> · <a href="wolfram_checks.html">Wolfram checks</a> · <a href="../verification/CONFIRMATION.md">Generated confirmation</a>.</p>
 <div class="context"><strong>First-time reader:</strong> find a printed lemma number here, read its assumptions and cases, then inspect the indicated original function. Commands use <strong>Bash at the extracted package root</strong>, not the docs folder or a language prompt. Append <code>--list</code> to preview. A source code is a navigation key, not an additional mathematical hypothesis.</div>
 <p>Execution evidence is maintained separately from this fixed mathematical explanation. An absent, interrupted, or mismatched run is never represented as a pass. See <a href="VERIFICATION.md">confirmation rules</a>.</p>
 <input id="search" aria-label="Search calculation" placeholder="Search lemma/section number, label, seven-letter code or function">
@@ -67,138 +67,138 @@ python3 run.py --claim lemma:172</pre><p>Add <code>--copy-report windows-downloa
 python3 run.py --claim lemma:a0</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="NKQNXUN" data-search="Lemma 5.1 — Pseudo-dimer shared edge NKQNXUN calc:pseudo1 NKQNXUN mitm_precluster1_case0 mitm_precluster1_case1 mitm_precluster1_case2"><h2>Lemma 5.1 — Pseudo-dimer shared edge</h2><p><span class="tag">NKQNXUN</span> <code>calc:pseudo1</code></p><p>The edge shared by T1 and T0 has length less than 1.8, including the stated relaxation allowing a longest-edge tie.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in Psi D; also the precise weakening of the third defining condition stated in the lemma. Preparation assumes total area &lt;=2*a_crit and reduces the central configuration to double contact or the stated midpointer/slider endpoint.</p><p><strong>Interpretation:</strong> The three central terminal patterns are double contact, midpointer at a length boundary, and slider at a length boundary. Peripheral data retain a longest shared edge. Closed ranges retain the tied-arrow boundary.</p>
 <details><summary>mitm_precluster1_case0 — proof</summary><p>Shared-edge bound: outside-double-contact central triangle, total cutoff 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster1_case0 ()</pre>
-<p>Function <code>precluster1_case0</code>, lines 376–394.</p><pre> 376  let precluster1_case0() =
- 377    let cluster_areacut = two*aK in
- 378    let pdata = reset_peri init2Cps in
- 379  
- 380    let range = merge_I (18//10) (192//100) in
- 381    let fillfn () = mk2Ce range in
- 382    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
- 383      (disjoint_I dAC range || disjoint_I dAB range || disjoint_I dBC (merge_I (two*kappa) (17//10))) in
- 384    let keyfns = [ckeyfn2Ce] in
- 385    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
- 386  
- 387    let cencut = (aK + epsN_I).high in
- 388    let ccs = [(coord2Ce,cencut);] in
- 389    let _ = area_I (18//10) (192//100) (two*kappa) &gt;&gt; aK+epsN_I ||
- 390      failwith &quot;range_check&quot; in
- 391    let _ = area_I (18//10) (18//10) (17//10) &gt;&gt; aK+epsN_I ||
- 392      failwith &quot;range_check&quot; in
- 393    let _ = report &quot;precluster1_case0&quot; in
- 394    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster1_case0</code>, lines 377–395.</p><pre> 377  let precluster1_case0() =
+ 378    let cluster_areacut = two*aK in
+ 379    let pdata = reset_peri init2Cps in
+ 380  
+ 381    let range = merge_I (18//10) (192//100) in
+ 382    let fillfn () = mk2Ce range in
+ 383    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 384      (disjoint_I dAC range || disjoint_I dAB range || disjoint_I dBC (merge_I (two*kappa) (17//10))) in
+ 385    let keyfns = [ckeyfn2Ce] in
+ 386    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 387  
+ 388    let cencut = (aK + epsN_I).high in
+ 389    let ccs = [(coord2Ce,cencut);] in
+ 390    let _ = area_I (18//10) (192//100) (two*kappa) &gt;&gt; aK+epsN_I ||
+ 391      failwith &quot;range_check&quot; in
+ 392    let _ = area_I (18//10) (18//10) (17//10) &gt;&gt; aK+epsN_I ||
+ 393      failwith &quot;range_check&quot; in
+ 394    let _ = report &quot;precluster1_case0&quot; in
+ 395    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster1_case1 — proof</summary><p>Shared-edge bound: midpoint contact at the nonshared length-1.8 endpoint, total cutoff 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster1_case1 ()</pre>
-<p>Function <code>precluster1_case1</code>, lines 400–420.</p><pre> 400  let precluster1_case1() =
- 401    let cluster_areacut = two*aK in
- 402    let pdata = reset_peri init2Cps in
- 403  
- 404    let theta&#x27; = iarc one (18//10) kappa in
- 405    let out_of_theta&#x27; t =
- 406      forall_alpha (fun t -&gt; disjoint_I theta&#x27; (abs_I t)) t in
- 407    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 408  	       (dAC,thACB,thCAB,arcB)) = out_of_theta&#x27; thACB in
- 409  
- 410    let keyfns = [ckeyfnAB] in
- 411    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
- 412  
- 413    let d_18 = (18//10) in
- 414    let d_shared = merge_I (18//10) (192//100) in
- 415    let d_short = merge_I (two*kappa) (17//10) in
- 416    let dAB_dBC_dAC = (d_shared,d_short,d_18) in
- 417    let cencut = (aK + epsN_I).high in
- 418    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 419    let _ = report(&quot;precluster1 case1 midpointer&quot;) in
- 420    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster1_case1</code>, lines 401–421.</p><pre> 401  let precluster1_case1() =
+ 402    let cluster_areacut = two*aK in
+ 403    let pdata = reset_peri init2Cps in
+ 404  
+ 405    let theta&#x27; = iarc one (18//10) kappa in
+ 406    let out_of_theta&#x27; t =
+ 407      forall_alpha (fun t -&gt; disjoint_I theta&#x27; (abs_I t)) t in
+ 408    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 409  	       (dAC,thACB,thCAB,arcB)) = out_of_theta&#x27; thACB in
+ 410  
+ 411    let keyfns = [ckeyfnAB] in
+ 412    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 413  
+ 414    let d_18 = (18//10) in
+ 415    let d_shared = merge_I (18//10) (192//100) in
+ 416    let d_short = merge_I (two*kappa) (17//10) in
+ 417    let dAB_dBC_dAC = (d_shared,d_short,d_18) in
+ 418    let cencut = (aK + epsN_I).high in
+ 419    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 420    let _ = report(&quot;precluster1 case1 midpointer&quot;) in
+ 421    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster1_case2 — proof</summary><p>Shared-edge bound: slider contact with either nonshared length 1.8, total cutoff 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster1_case2 ()</pre>
-<p>Function <code>precluster1_case2</code>, lines 426–447.</p><pre> 426  let precluster1_case2() =
- 427    let cluster_areacut = two*aK in
- 428    let pdata = reset_peri init2Cps in
- 429  
- 430    let notslider1 (t, t&#x27;) = disjoint_I zero (t+t&#x27;) in
- 431    let notslider (t, t&#x27;) =
- 432      forall_alpha_pair notslider1 (t,t&#x27;) in
- 433    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 434  	       (dAC,thACB,thCAB,arcB)) =
- 435      (disjoint_I dAC (18//10) &amp;&amp; disjoint_I dBC (18//10) ||
- 436         notslider (thACB,thCAB)) in
- 437  
- 438    let keyfns = [ckeyfnAB] in
- 439    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
- 440  
- 441    let d_shared = merge_I (18//10) (192//100) in
- 442    let d_full = merge_I (two*kappa) (192//100) in
- 443    let dAB_dBC_dAC = (d_shared,d_full,d_full) in
- 444    let cencut = (aK + epsN_I).high in
- 445    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 446    let _ = report(&quot;precluster1 case2 slider&quot;) in
- 447    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster1_case2</code>, lines 427–448.</p><pre> 427  let precluster1_case2() =
+ 428    let cluster_areacut = two*aK in
+ 429    let pdata = reset_peri init2Cps in
+ 430  
+ 431    let notslider1 (t, t&#x27;) = disjoint_I zero (t+t&#x27;) in
+ 432    let notslider (t, t&#x27;) =
+ 433      forall_alpha_pair notslider1 (t,t&#x27;) in
+ 434    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 435  	       (dAC,thACB,thCAB,arcB)) =
+ 436      (disjoint_I dAC (18//10) &amp;&amp; disjoint_I dBC (18//10) ||
+ 437         notslider (thACB,thCAB)) in
+ 438  
+ 439    let keyfns = [ckeyfnAB] in
+ 440    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 441  
+ 442    let d_shared = merge_I (18//10) (192//100) in
+ 443    let d_full = merge_I (two*kappa) (192//100) in
+ 444    let dAB_dBC_dAC = (d_shared,d_full,d_full) in
+ 445    let cencut = (aK + epsN_I).high in
+ 446    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 447    let _ = report(&quot;precluster1 case2 slider&quot;) in
+ 448    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pseudo1 --list
 python3 run.py --claim calc:pseudo1</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="RWWHLQT" data-search="Lemma 5.2 — Pseudo-dimer egressive edge RWWHLQT calc:pseudo2 RWWHLQT mitm_precluster2_case0 mitm_precluster2_case1 mitm_precluster2_case2"><h2>Lemma 5.2 — Pseudo-dimer egressive edge</h2><p><span class="tag">RWWHLQT</span> <code>calc:pseudo2</code></p><p>The longest (egressive) edge of T0 has length greater than 1.8, including the stated longest-edge-tie relaxation.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in Psi D or the specified tied relaxation; terminal domains from sec:pseudo2. The counterexample has all central edges &lt;=1.8 and total area &lt;=2*a_crit.</p><p><strong>Interpretation:</strong> The central equality filter retains all three equalities and either nonshared length equal to 1.8. In the midpointer and slider code labels, AB is shared and AC is the contact edge. The peripheral is O2C, subcritical, and shared-longest.</p>
 <details><summary>mitm_precluster2_case0 — proof</summary><p>Egressive-edge bound: outside-double-contact central triangle with sides at most 1.8, total cutoff 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster2_case0 ()</pre>
-<p>Function <code>precluster2_case0</code>, lines 464–480.</p><pre> 464  let precluster2_case0() =
- 465    let cluster_areacut = two*aK in
- 466    let pdata = reset_peri init2Cps in
- 467  
- 468    let fillfn () = mk2Ce d_shared_pseudo in
- 469    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 470  		(dAC,thACB,thCAB,arcB)) =
- 471      (disjoint_I dAC d_shared_pseudo || disjoint_I dAB d_shared_pseudo ||
- 472         disjoint_I dBC d_third_pseudo ||
- 473      dAB &lt;&lt; dAC || dAB &lt;&lt; dBC) in
- 474    let keyfns = [ckeyfn2Ce] in
- 475    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
- 476  
- 477    let cencut = (aK + epsN_I).high in
- 478    let ccs = [(coord2Ce,cencut);] in
- 479    let _ = report &quot;precluster2_case0&quot; in
- 480    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster2_case0</code>, lines 465–481.</p><pre> 465  let precluster2_case0() =
+ 466    let cluster_areacut = two*aK in
+ 467    let pdata = reset_peri init2Cps in
+ 468  
+ 469    let fillfn () = mk2Ce d_shared_pseudo in
+ 470    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 471  		(dAC,thACB,thCAB,arcB)) =
+ 472      (disjoint_I dAC d_shared_pseudo || disjoint_I dAB d_shared_pseudo ||
+ 473         disjoint_I dBC d_third_pseudo ||
+ 474      dAB &lt;&lt; dAC || dAB &lt;&lt; dBC) in
+ 475    let keyfns = [ckeyfn2Ce] in
+ 476    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 477  
+ 478    let cencut = (aK + epsN_I).high in
+ 479    let ccs = [(coord2Ce,cencut);] in
+ 480    let _ = report &quot;precluster2_case0&quot; in
+ 481    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster2_case1 — proof</summary><p>Egressive-edge bound: midpoint contact on a shared-edge tie or nonshared length-1.8 boundary, retaining all three equalities.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster2_case1 ()</pre>
-<p>Function <code>precluster2_case1</code>, lines 486–505.</p><pre> 486  let precluster2_case1() =
- 487    let cluster_areacut = two*aK in
- 488    let pdata = reset_peri init2Cps in
- 489  
- 490    let out_of_midpointer dAC thACB =
- 491      forall_alpha (fun t -&gt; disjoint_I kappa (iloc one dAC (abs_I t))) thACB in
- 492    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 493  	       (dAC,thACB,thCAB,arcB)) = out_of_midpointer dAC thACB
- 494      || pseudo2_boundary_excluded dAB dBC dAC
- 495      || (disjoint_I dAB d_shared_pseudo)
- 496      || (disjoint_I dAC d_third_pseudo)
- 497      || (disjoint_I dBC d_third_pseudo) in
- 498    let keyfns = [ckeyfnAB] in
- 499    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
- 500  
- 501    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_third_pseudo) in
- 502    let cencut = (aK + epsN_I).high in
- 503    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 504    let _ = report(&quot;precluster2 case1 midpointer&quot;) in
- 505    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster2_case1</code>, lines 487–506.</p><pre> 487  let precluster2_case1() =
+ 488    let cluster_areacut = two*aK in
+ 489    let pdata = reset_peri init2Cps in
+ 490  
+ 491    let out_of_midpointer dAC thACB =
+ 492      forall_alpha (fun t -&gt; disjoint_I kappa (iloc one dAC (abs_I t))) thACB in
+ 493    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 494  	       (dAC,thACB,thCAB,arcB)) = out_of_midpointer dAC thACB
+ 495      || pseudo2_boundary_excluded dAB dBC dAC
+ 496      || (disjoint_I dAB d_shared_pseudo)
+ 497      || (disjoint_I dAC d_third_pseudo)
+ 498      || (disjoint_I dBC d_third_pseudo) in
+ 499    let keyfns = [ckeyfnAB] in
+ 500    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 501  
+ 502    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_third_pseudo) in
+ 503    let cencut = (aK + epsN_I).high in
+ 504    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 505    let _ = report(&quot;precluster2 case1 midpointer&quot;) in
+ 506    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster2_case2 — proof</summary><p>Egressive-edge bound: slider contact on a shared-edge tie or nonshared length-1.8 boundary, retaining all three equalities.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster2_case2 ()</pre>
-<p>Function <code>precluster2_case2</code>, lines 511–530.</p><pre> 511  let precluster2_case2() =
- 512    let cluster_areacut = two*aK in
- 513    let pdata = reset_peri init2Cps in
- 514  
- 515    let notslider1 (t, t&#x27;) = disjoint_I zero (t+t&#x27;) in
- 516    let notslider (t, t&#x27;) =
- 517      forall_alpha_pair notslider1 (t,t&#x27;) in
- 518    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 519  	       (dAC,thACB,thCAB,arcB)) =
- 520        pseudo2_boundary_excluded dAB dBC dAC
- 521        ||        notslider (thACB,thCAB) in
- 522  
- 523    let keyfns = [ckeyfnAB] in
- 524    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
- 525  
- 526    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_third_pseudo) in
- 527    let cencut = (aK + epsN_I).high in
- 528    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 529    let _ = report(&quot;precluster2 case2 slider&quot;) in
- 530    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster2_case2</code>, lines 512–531.</p><pre> 512  let precluster2_case2() =
+ 513    let cluster_areacut = two*aK in
+ 514    let pdata = reset_peri init2Cps in
+ 515  
+ 516    let notslider1 (t, t&#x27;) = disjoint_I zero (t+t&#x27;) in
+ 517    let notslider (t, t&#x27;) =
+ 518      forall_alpha_pair notslider1 (t,t&#x27;) in
+ 519    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 520  	       (dAC,thACB,thCAB,arcB)) =
+ 521        pseudo2_boundary_excluded dAB dBC dAC
+ 522        ||        notslider (thACB,thCAB) in
+ 523  
+ 524    let keyfns = [ckeyfnAB] in
+ 525    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 526  
+ 527    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_third_pseudo) in
+ 528    let cencut = (aK + epsN_I).high in
+ 529    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 530    let _ = report(&quot;precluster2 case2 slider&quot;) in
+ 531    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pseudo2 --list
 python3 run.py --claim calc:pseudo2</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
@@ -225,32 +225,32 @@ python3 run.py --claim calc:pseudo2</pre><p>Add <code>--copy-report windows-down
  259    ];;</pre>
 </details>
 <details><summary>mitm_precluster4_case0_experimental — proof</summary><p>Pseudo-dimer pair-area bound 2 a_crit - epsilon_M; outside-double-contact peripheral with local AB=AC.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster4_case0_experimental ()</pre>
-<p>Function <code>precluster4_case0_experimental</code>, lines 555–566.</p><pre> 555  let precluster4_case0_experimental() =
- 556    let cluster_areacut = two*aK - epsM_I in
- 557    let pdata = reset_peri init2Cps_isosceles_AB_AC in
- 558    let fillfn () = mk2Ce d_shared_pseudo in
- 559    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
- 560      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 18//10 || disjoint_I dAC d_shared_pseudo) in
- 561    let keyfns = [ckeyfn2Ce] in
- 562    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
- 563    let cencut = (aK + epsN_I - epsM_I).high in
- 564    let ccs = [(coord2Ce,cencut);] in
- 565    let _ = report &quot;precluster4_case0 isosceles Tin AB=AC --experimental&quot; in
- 566    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster4_case0_experimental</code>, lines 556–567.</p><pre> 556  let precluster4_case0_experimental() =
+ 557    let cluster_areacut = two*aK - epsM_I in
+ 558    let pdata = reset_peri init2Cps_isosceles_AB_AC in
+ 559    let fillfn () = mk2Ce d_shared_pseudo in
+ 560    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 561      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 18//10 || disjoint_I dAC d_shared_pseudo) in
+ 562    let keyfns = [ckeyfn2Ce] in
+ 563    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 564    let cencut = (aK + epsN_I - epsM_I).high in
+ 565    let ccs = [(coord2Ce,cencut);] in
+ 566    let _ = report &quot;precluster4_case0 isosceles Tin AB=AC --experimental&quot; in
+ 567    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster4_case1_experimental — proof</summary><p>Pseudo-dimer pair-area bound 2 a_crit - epsilon_M; outside-double-contact peripheral with local BC=AC.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster4_case1_experimental ()</pre>
-<p>Function <code>precluster4_case1_experimental</code>, lines 572–583.</p><pre> 572  let precluster4_case1_experimental() =
- 573    let cluster_areacut = two*aK - epsM_I in
- 574    let pdata = reset_peri init2Cps_isosceles_BC_AC in
- 575    let fillfn () = mk2Ce d_shared_pseudo in
- 576    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
- 577      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 18//10 || disjoint_I dAC d_shared_pseudo) in
- 578    let keyfns = [ckeyfn2Ce] in
- 579    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
- 580    let cencut = (aK + epsN_I - epsM_I).high in
- 581    let ccs = [(coord2Ce,cencut);] in
- 582    let _ = report &quot;precluster4_case1 isosceles Tin BC=AC experimental&quot; in
- 583    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster4_case1_experimental</code>, lines 573–584.</p><pre> 573  let precluster4_case1_experimental() =
+ 574    let cluster_areacut = two*aK - epsM_I in
+ 575    let pdata = reset_peri init2Cps_isosceles_BC_AC in
+ 576    let fillfn () = mk2Ce d_shared_pseudo in
+ 577    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 578      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 18//10 || disjoint_I dAC d_shared_pseudo) in
+ 579    let keyfns = [ckeyfn2Ce] in
+ 580    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 581    let cencut = (aK + epsN_I - epsM_I).high in
+ 582    let ccs = [(coord2Ce,cencut);] in
+ 583    let _ = report &quot;precluster4_case1 isosceles Tin BC=AC experimental&quot; in
+ 584    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>pintab_area — proof</summary><p>Pin-T triangle with d_AB &gt;= 1.72: exclude area &lt;= 1.315.</p><p>Source: <a href="../ocaml/review_jobs.ml">ocaml/review_jobs.ml</a>.</p><pre>pintab_area ()</pre>
 <p>Function <code>pintab_area</code>, lines 34–34.</p><pre>  34  let pintab_area () = recursepairtoeps one_pintab (Dimer.dummybool pintdomain);;</pre>
@@ -272,294 +272,293 @@ python3 run.py --claim calc:pseudo2</pre><p>Add <code>--copy-report windows-down
 python3 run.py --claim calc:pseudo-area</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="JQMRXTH" data-search="Lemma 5.5 — Pseudo-dimer plus egressive neighbor JQMRXTH calc:pseudo-area3 JQMRXTH mitm_precluster6_case1 mitm_precluster6_case2 mitm_precluster6_case3 mitm_precluster6_case4 mitm_precluster6_case5 mitm_precluster6_case6"><h2>Lemma 5.5 — Pseudo-dimer plus egressive neighbor</h2><p><span class="tag">JQMRXTH</span> <code>calc:pseudo-area3</code></p><p>area{T0,T1,T_minus} &gt; 3*a_crit + epsilon_M.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in Psi D; T0 attaches to T_minus; T_minus is nonobtuse (explicit current hypothesis). Preparation reduces both peripherals to O2C and gives six assignments of incoming and egressive central edges.</p><p><strong>Interpretation:</strong> All six ordered incoming/egressive edge assignments are checked. The outgoing peripheral cap is acrit+2 epsilon_M, obtained by subtracting the strict pair bound from the assumed triple-area bound.</p>
 <details><summary>mitm_precluster6_case1 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AB, outgoing edge BC; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case1 ()</pre>
-<p>Function <code>precluster6_case1</code>, lines 600–612.</p><pre> 600  let precluster6_case1() =
- 601    let cluster_areacut = (int 3)*aK + epsM_I in
- 602    let pdata = reset_peri init2Cps_precluster6 in
- 603    let outdomfn _ = false in
- 604    let keyfnT = ckeyfnAB in
- 605    let keyfnS = ckeyfnBC in
- 606    let cfn =
- 607      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
- 608    let dAB_dBC_dAC = (d_shared_pseudo,d_egress,d_third_pseudo) in
- 609    let cencut = (aK + epsN_I).high in
- 610    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 611    let _ = report(&quot;precluster6 case1 AB shared Tin, egress BC&quot;) in
- 612    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster6_case1</code>, lines 601–613.</p><pre> 601  let precluster6_case1() =
+ 602    let cluster_areacut = (int 3)*aK + epsM_I in
+ 603    let pdata = reset_peri init2Cps_precluster6 in
+ 604    let outdomfn _ = false in
+ 605    let keyfnT = ckeyfnAB in
+ 606    let keyfnS = ckeyfnBC in
+ 607    let cfn =
+ 608      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 609    let dAB_dBC_dAC = (d_shared_pseudo,d_egress,d_third_pseudo) in
+ 610    let cencut = (aK + epsN_I).high in
+ 611    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 612    let _ = report(&quot;precluster6 case1 AB shared Tin, egress BC&quot;) in
+ 613    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster6_case2 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AB, outgoing edge AC; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case2 ()</pre>
-<p>Function <code>precluster6_case2</code>, lines 618–630.</p><pre> 618  let precluster6_case2() =
- 619    let cluster_areacut = (int 3)*aK + epsM_I in
- 620    let pdata = reset_peri init2Cps_precluster6 in
- 621    let outdomfn _ = false in
- 622    let keyfnT = ckeyfnAB in
- 623    let keyfnS = ckeyfnAC in
- 624    let cfn =
- 625      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
- 626    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_egress) in
- 627    let cencut = (aK + epsN_I).high in
- 628    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 629    let _ = report(&quot;precluster6 case2 AB shared Tin, egress AC&quot;) in
- 630    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster6_case2</code>, lines 619–631.</p><pre> 619  let precluster6_case2() =
+ 620    let cluster_areacut = (int 3)*aK + epsM_I in
+ 621    let pdata = reset_peri init2Cps_precluster6 in
+ 622    let outdomfn _ = false in
+ 623    let keyfnT = ckeyfnAB in
+ 624    let keyfnS = ckeyfnAC in
+ 625    let cfn =
+ 626      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 627    let dAB_dBC_dAC = (d_shared_pseudo,d_third_pseudo,d_egress) in
+ 628    let cencut = (aK + epsN_I).high in
+ 629    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 630    let _ = report(&quot;precluster6 case2 AB shared Tin, egress AC&quot;) in
+ 631    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster6_case3 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge BC, outgoing edge AB; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case3 ()</pre>
-<p>Function <code>precluster6_case3</code>, lines 636–648.</p><pre> 636  let precluster6_case3() =
- 637    let cluster_areacut = (int 3)*aK + epsM_I in
- 638    let pdata = reset_peri init2Cps_precluster6 in
- 639    let outdomfn _ = false in
- 640    let keyfnT = ckeyfnBC in
- 641    let keyfnS = ckeyfnAB in
- 642    let cfn =
- 643      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
- 644    let dAB_dBC_dAC = (d_egress,d_shared_pseudo,d_third_pseudo) in
- 645    let cencut = (aK + epsN_I).high in
- 646    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 647    let _ = report(&quot;precluster6 case3 BC shared Tin, egress AB&quot;) in
- 648    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster6_case3</code>, lines 637–649.</p><pre> 637  let precluster6_case3() =
+ 638    let cluster_areacut = (int 3)*aK + epsM_I in
+ 639    let pdata = reset_peri init2Cps_precluster6 in
+ 640    let outdomfn _ = false in
+ 641    let keyfnT = ckeyfnBC in
+ 642    let keyfnS = ckeyfnAB in
+ 643    let cfn =
+ 644      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 645    let dAB_dBC_dAC = (d_egress,d_shared_pseudo,d_third_pseudo) in
+ 646    let cencut = (aK + epsN_I).high in
+ 647    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 648    let _ = report(&quot;precluster6 case3 BC shared Tin, egress AB&quot;) in
+ 649    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster6_case4 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge BC, outgoing edge AC; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case4 ()</pre>
-<p>Function <code>precluster6_case4</code>, lines 654–666.</p><pre> 654  let precluster6_case4() =
- 655    let cluster_areacut = (int 3)*aK + epsM_I in
- 656    let pdata = reset_peri init2Cps_precluster6 in
- 657    let outdomfn _ = false in
- 658    let keyfnT = ckeyfnBC in
- 659    let keyfnS = ckeyfnAC in
- 660    let cfn =
- 661      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
- 662    let dAB_dBC_dAC = (d_third_pseudo,d_shared_pseudo,d_egress) in
- 663    let cencut = (aK + epsN_I).high in
- 664    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 665    let _ = report(&quot;precluster6 case4: BC shared Tin, egress AC&quot;) in
- 666    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster6_case4</code>, lines 655–667.</p><pre> 655  let precluster6_case4() =
+ 656    let cluster_areacut = (int 3)*aK + epsM_I in
+ 657    let pdata = reset_peri init2Cps_precluster6 in
+ 658    let outdomfn _ = false in
+ 659    let keyfnT = ckeyfnBC in
+ 660    let keyfnS = ckeyfnAC in
+ 661    let cfn =
+ 662      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 663    let dAB_dBC_dAC = (d_third_pseudo,d_shared_pseudo,d_egress) in
+ 664    let cencut = (aK + epsN_I).high in
+ 665    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 666    let _ = report(&quot;precluster6 case4: BC shared Tin, egress AC&quot;) in
+ 667    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster6_case5 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AC, outgoing edge AB; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case5 ()</pre>
-<p>Function <code>precluster6_case5</code>, lines 672–684.</p><pre> 672  let precluster6_case5() =
- 673    let cluster_areacut = (int 3)*aK + epsM_I in
- 674    let pdata = reset_peri init2Cps_precluster6 in
- 675    let outdomfn _ = false in
- 676    let keyfnT = ckeyfnAC in
- 677    let keyfnS = ckeyfnAB in
- 678    let cfn =
- 679      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
- 680    let dAB_dBC_dAC = (d_egress,d_third_pseudo,d_shared_pseudo) in
- 681    let cencut = (aK + epsN_I).high in
- 682    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 683    let _ = report(&quot;precluster6 case5: AC shared Tin, egress AB&quot;) in
- 684    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster6_case5</code>, lines 673–685.</p><pre> 673  let precluster6_case5() =
+ 674    let cluster_areacut = (int 3)*aK + epsM_I in
+ 675    let pdata = reset_peri init2Cps_precluster6 in
+ 676    let outdomfn _ = false in
+ 677    let keyfnT = ckeyfnAC in
+ 678    let keyfnS = ckeyfnAB in
+ 679    let cfn =
+ 680      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 681    let dAB_dBC_dAC = (d_egress,d_third_pseudo,d_shared_pseudo) in
+ 682    let cencut = (aK + epsN_I).high in
+ 683    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 684    let _ = report(&quot;precluster6 case5: AC shared Tin, egress AB&quot;) in
+ 685    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_precluster6_case6 — proof</summary><p>Three-triangle pseudo-dimer bound 3 a_crit + epsilon_M: incoming edge AC, outgoing edge BC; exceptional peripheral cap a_crit + 2 epsilon_M.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>precluster6_case6 ()</pre>
-<p>Function <code>precluster6_case6</code>, lines 690–702.</p><pre> 690  let precluster6_case6() =
- 691    let cluster_areacut = (int 3)*aK + epsM_I in
- 692    let pdata = reset_peri init2Cps_precluster6 in
- 693    let outdomfn _ = false in
- 694    let keyfnT = ckeyfnAC in
- 695    let keyfnS = ckeyfnBC in
- 696    let cfn =
- 697      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
- 698    let dAB_dBC_dAC = (d_third_pseudo,d_egress,d_shared_pseudo) in
- 699    let cencut = (aK + epsN_I).high in
- 700    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 701    let _ = report(&quot;precluster6 case6: AC shared Tin, egress BC&quot;) in
- 702    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>precluster6_case6</code>, lines 691–703.</p><pre> 691  let precluster6_case6() =
+ 692    let cluster_areacut = (int 3)*aK + epsM_I in
+ 693    let pdata = reset_peri init2Cps_precluster6 in
+ 694    let outdomfn _ = false in
+ 695    let keyfnT = ckeyfnAC in
+ 696    let keyfnS = ckeyfnBC in
+ 697    let cfn =
+ 698      (unit_extra,fillfn5,forall_dom outdomfn,areafn5,[keyfnT;keyfnS]) in
+ 699    let dAB_dBC_dAC = (d_third_pseudo,d_egress,d_shared_pseudo) in
+ 700    let cencut = (aK + epsN_I).high in
+ 701    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 702    let _ = report(&quot;precluster6 case6: AC shared Tin, egress BC&quot;) in
+ 703    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pseudo-area3 --list
 python3 run.py --claim calc:pseudo-area3</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="KUGAKIK" data-search="Lemma 5.10 — No long-isosceles O2C peripheral in a dimer KUGAKIK calc:dimer-isosc KUGAKIK mitm_dimer_isosceles_precluster"><h2>Lemma 5.10 — No long-isosceles O2C peripheral in a dimer</h2><p><span class="tag">KUGAKIK</span> <code>calc:dimer-isosc</code></p><p>In a dimer pair, T1 cannot be both O2C and long isosceles.</p><p><strong>Assumptions and preparation:</strong> (T1,T0) in DP. Negate the conclusion, reduce T0 to O2C, then run the isosceles peripheral case.</p><p><strong>Interpretation:</strong> The shared-edge glue matches an O2C long-isosceles peripheral to an O2C central triangle at pair cutoff 2 acrit. On the closed boundary the peripheral is subcritical and shares a longest edge with the central triangle. The latter has no subcriticality or attachment-tie requirement.</p>
 <details><summary>mitm_dimer_isosceles_precluster — proof</summary><p>Exclude an outside-double-contact long-isosceles subcritical peripheral in a dimer pair with total area at most 2 a_crit.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>dimer_isosceles_precluster ()</pre>
-<p>Function <code>dimer_isosceles_precluster</code>, lines 536–549.</p><pre> 536  let dimer_isosceles_precluster() =
- 537    let cluster_areacut = two*aK in
- 538    let pdata = reset_peri init2Cps_isosceles_AB_AC in
- 539  
- 540    let fillfn () = mk2Ce d_subcrit_shared in
- 541    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 542  		(dAC,thACB,thCAB,arcB)) =
- 543      (dAB &gt;&gt; dAC || dBC &gt;&gt; dAC || disjoint_I dAC d_subcrit_shared) in
- 544    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,[ckeyfn2Ce]) in
- 545  
- 546    let cencut = (aK + epsN_I).high in
- 547    let ccs = [(coord2Ce,cencut);] in
- 548    let _ = report (&quot;dimer with Tin isosceles&quot;) in
- 549    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>dimer_isosceles_precluster</code>, lines 537–550.</p><pre> 537  let dimer_isosceles_precluster() =
+ 538    let cluster_areacut = two*aK in
+ 539    let pdata = reset_peri init2Cps_isosceles_AB_AC in
+ 540  
+ 541    let fillfn () = mk2Ce d_subcrit_shared in
+ 542    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 543  		(dAC,thACB,thCAB,arcB)) =
+ 544      (dAB &gt;&gt; dAC || dBC &gt;&gt; dAC || disjoint_I dAC d_subcrit_shared) in
+ 545    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,[ckeyfn2Ce]) in
+ 546  
+ 547    let cencut = (aK + epsN_I).high in
+ 548    let ccs = [(coord2Ce,cencut);] in
+ 549    let _ = report (&quot;dimer with Tin isosceles&quot;) in
+ 550    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:dimer-isosc --list
 python3 run.py --claim calc:dimer-isosc</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="HUQEJAT" data-search="Lemma 5.11 — Three-triangle cluster bound HUQEJAT calc:pent3 HUQEJAT mitm_calc_pent3_6D_postcluster mitm_calc_pent3AB_postcluster mitm_calc_pent3BC_postcluster mitm_calc_pent3AC_postcluster"><h2>Lemma 5.11 — Three-triangle cluster bound</h2><p><span class="tag">HUQEJAT</span> <code>calc:pent3</code></p><p>area{T0,T1^0,T1^1} &gt; 3*a_crit + epsilon_M.</p><p><strong>Assumptions and preparation:</strong> Three distinct nonobtuse P-triangles; each peripheral attaches to T0 and has area &lt;=a_crit. The two sequential peripheral motions stop at a central contact or a long-isosceles peripheral.</p><p><strong>Interpretation:</strong> Three contact-central charts distinguish the nonshared edge. The fourth chart is the general six-dimensional center with two isosceles peripherals. All four are required; their central cap is acrit+2 epsilon_N+epsilon_M.</p>
 <details><summary>mitm_calc_pent3_6D_postcluster — proof</summary><p>Three-triangle bound 3 a_crit + epsilon_M: unrestricted six-dimensional central chart and two long-isosceles peripherals.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent3_6D_postcluster ()</pre>
-<p>Function <code>calc_pent3_6D_postcluster</code>, lines 192–207.</p><pre> 192  let calc_pent3_6D_postcluster() =
- 193    let cluster_areacut = int 3*aK + epsM_I in
- 194  
- 195    let pdata = reset_peri init2Cps_isosceles_AC in
+<p>Function <code>calc_pent3_6D_postcluster</code>, lines 194–208.</p><pre> 194  let calc_pent3_6D_postcluster() =
+ 195    let cluster_areacut = int 3*aK + epsM_I in
  196  
- 197    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),_) =
- 198      (dAB &lt;&lt; dBC) in
- 199    let keyfns = [ckeyfn6AB;ckeyfn6BC] in
- 200    let cfn = (unit_extra,fillfn6,outdomfn,areafn2Ce,keyfns) in
- 201    let d_subcrit_isosc = merge_I (172//100) (179//100) in
- 202    let d_short = merge_I (two*kappa) (202//100) in
- 203    let dAB_dBC_dAC = (d_subcrit_shared,d_subcrit_shared,d_short) in
- 204    let cencut = (aK + two*epsN_I + epsM_I).high in
- 205    let ccs = [(coord6 dAB_dBC_dAC,cencut);] in
- 206    let _ = report &quot;pent3_6D_postcluster&quot; in
- 207    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+ 197    let pdata = reset_peri init2Cps_isosceles_AC in
+ 198  
+ 199    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),_) =
+ 200      (dAB &lt;&lt; dBC) in
+ 201    let keyfns = [ckeyfn6AB;ckeyfn6BC] in
+ 202    let cfn = (unit_extra,fillfn6,outdomfn,areafn2Ce,keyfns) in
+ 203    let d_short = merge_I (two*kappa) (202//100) in
+ 204    let dAB_dBC_dAC = (d_subcrit_shared,d_subcrit_shared,d_short) in
+ 205    let cencut = (aK + two*epsN_I + epsM_I).high in
+ 206    let ccs = [(coord6 dAB_dBC_dAC,cencut);] in
+ 207    let _ = report &quot;pent3_6D_postcluster&quot; in
+ 208    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_calc_pent3AB_postcluster — proof</summary><p>Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on BC and AC; AB is unshared.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent3AB_postcluster ()</pre>
-<p>Function <code>calc_pent3AB_postcluster</code>, lines 213–227.</p><pre> 213  let calc_pent3AB_postcluster() =
- 214    let cluster_areacut = int 3*aK + epsM_I in
- 215    let pdata = reset_peri init2Cps in
- 216    let outdomfn _ = false in
- 217    let keyfns = [ckeyfnBC; ckeyfnAC] in
- 218    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
- 219    let _ = area_I (172//100) (172//100) (202//100) &gt;&gt;
- 220      (aK + two * epsN_I + epsM_I) || failwith &quot;202&quot; in
- 221    let d_short = merge_I (two*kappa) (202//100) in
- 222  
- 223    let dAB_dBC_dAC = (d_short,d_subcrit_shared,d_subcrit_contact) in
- 224    let cencut = (aK + two*epsN_I + epsM_I).high in
- 225    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 226    let _ = report(&quot;pent3AB&quot;) in
- 227    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent3AB_postcluster</code>, lines 214–228.</p><pre> 214  let calc_pent3AB_postcluster() =
+ 215    let cluster_areacut = int 3*aK + epsM_I in
+ 216    let pdata = reset_peri init2Cps in
+ 217    let outdomfn _ = false in
+ 218    let keyfns = [ckeyfnBC; ckeyfnAC] in
+ 219    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 220    let _ = area_I (172//100) (172//100) (202//100) &gt;&gt;
+ 221      (aK + two * epsN_I + epsM_I) || failwith &quot;202&quot; in
+ 222    let d_short = merge_I (two*kappa) (202//100) in
+ 223  
+ 224    let dAB_dBC_dAC = (d_short,d_subcrit_shared,d_subcrit_contact) in
+ 225    let cencut = (aK + two*epsN_I + epsM_I).high in
+ 226    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 227    let _ = report(&quot;pent3AB&quot;) in
+ 228    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_calc_pent3BC_postcluster — proof</summary><p>Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on AB and AC; BC is unshared.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent3BC_postcluster ()</pre>
-<p>Function <code>calc_pent3BC_postcluster</code>, lines 233–244.</p><pre> 233  let calc_pent3BC_postcluster() =
- 234    let cluster_areacut = int 3*aK + epsM_I in
- 235    let pdata = reset_peri init2Cps in
- 236    let outdomfn _ = false in
- 237    let keyfns = [ckeyfnAB;ckeyfnAC] in
- 238    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
- 239    let d_short = merge_I (two*kappa) (202//100) in
- 240    let dAB_dBC_dAC=(d_subcrit_shared,d_short,d_subcrit_contact) in
- 241    let cencut = (aK + int 2*epsN_I +epsM_I).high in
- 242    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 243    let _ = report(&quot;pent3BC&quot;) in
- 244    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent3BC_postcluster</code>, lines 234–245.</p><pre> 234  let calc_pent3BC_postcluster() =
+ 235    let cluster_areacut = int 3*aK + epsM_I in
+ 236    let pdata = reset_peri init2Cps in
+ 237    let outdomfn _ = false in
+ 238    let keyfns = [ckeyfnAB;ckeyfnAC] in
+ 239    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 240    let d_short = merge_I (two*kappa) (202//100) in
+ 241    let dAB_dBC_dAC=(d_subcrit_shared,d_short,d_subcrit_contact) in
+ 242    let cencut = (aK + int 2*epsN_I +epsM_I).high in
+ 243    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 244    let _ = report(&quot;pent3BC&quot;) in
+ 245    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_calc_pent3AC_postcluster — proof</summary><p>Three-triangle bound 3 a_crit + epsilon_M: contact-central chart with peripherals on AB and BC; AC is unshared.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent3AC_postcluster ()</pre>
-<p>Function <code>calc_pent3AC_postcluster</code>, lines 250–262.</p><pre> 250  let calc_pent3AC_postcluster() =
- 251    let cluster_areacut = int 3*aK +epsM_I in
- 252    let pdata = reset_peri init2Cps in
- 253    let outdomfn _ = false in
- 254    let keyfns = [ckeyfnAB; ckeyfnBC] in
- 255    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
- 256    let d_short = merge_I (two*kappa) (202//100) in
- 257  
- 258    let dAB_dBC_dAC=(d_subcrit_shared,d_subcrit_shared,d_short) in
- 259    let cencut = (aK + int 2*epsN_I + epsM_I).high in
- 260    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 261    let _ = report(&quot;pent3AC&quot;) in
- 262    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent3AC_postcluster</code>, lines 251–263.</p><pre> 251  let calc_pent3AC_postcluster() =
+ 252    let cluster_areacut = int 3*aK +epsM_I in
+ 253    let pdata = reset_peri init2Cps in
+ 254    let outdomfn _ = false in
+ 255    let keyfns = [ckeyfnAB; ckeyfnBC] in
+ 256    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 257    let d_short = merge_I (two*kappa) (202//100) in
+ 258  
+ 259    let dAB_dBC_dAC=(d_subcrit_shared,d_subcrit_shared,d_short) in
+ 260    let cencut = (aK + int 2*epsN_I + epsM_I).high in
+ 261    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 262    let _ = report(&quot;pent3AC&quot;) in
+ 263    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pent3 --list
 python3 run.py --claim calc:pent3</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="QPJDYDB" data-search="Lemma 5.12 — Four-triangle cluster bound QPJDYDB calc:pent4 QPJDYDB mitm_calc_pent4_6D_postcluster"><h2>Lemma 5.12 — Four-triangle cluster bound</h2><p><span class="tag">QPJDYDB</span> <code>calc:pent4</code></p><p>area{T0,T1^0,T1^1,T1^2} &gt; 4*a_crit.</p><p><strong>Assumptions and preparation:</strong> Four distinct nonobtuse P-triangles; three subcritical peripherals attach to T0. Each peripheral is O2C after preparation; central side ordering exploits the stated symmetry.</p><p><strong>Interpretation:</strong> The general six-dimensional central chart has peripheral attachments on all three edges. Its central cap is acrit+3 epsilon_N. Strict symmetry exclusions retain equal sides.</p>
 <details><summary>mitm_calc_pent4_6D_postcluster — proof</summary><p>Four-triangle bound 4 a_crit: six-dimensional central chart and three subcritical outside-double-contact peripherals.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent4_6D_postcluster ()</pre>
-<p>Function <code>calc_pent4_6D_postcluster</code>, lines 174–186.</p><pre> 174  let calc_pent4_6D_postcluster() =
- 175    let cluster_areacut = four*aK in
- 176    let pdata = reset_peri init2Cps in
- 177  
- 178    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
- 179      (dAB &lt;&lt; dBC || dAB &lt;&lt; dAC || dBC &lt;&lt; dAC) in
- 180    let keyfns = [ckeyfn6AB;ckeyfn6BC;ckeyfn6AC] in
- 181    let cfn = (unit_extra,fillfn6,outdomfn,areafn2Ce,keyfns) in
- 182    let dAB_dBC_dAC = (d_subcrit_shared,d_subcrit_shared,d_subcrit_shared) in
- 183    let cencut = (aK + int 3*epsN_I).high in
- 184    let ccs = [(coord6 dAB_dBC_dAC,cencut);] in
- 185    let _ = report &quot;pent4_6D_postcluster_experimental&quot; in
- 186    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent4_6D_postcluster</code>, lines 176–188.</p><pre> 176  let calc_pent4_6D_postcluster() =
+ 177    let cluster_areacut = four*aK in
+ 178    let pdata = reset_peri init2Cps in
+ 179  
+ 180    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 181      (dAB &lt;&lt; dBC || dAB &lt;&lt; dAC || dBC &lt;&lt; dAC) in
+ 182    let keyfns = [ckeyfn6AB;ckeyfn6BC;ckeyfn6AC] in
+ 183    let cfn = (unit_extra,fillfn6,outdomfn,areafn2Ce,keyfns) in
+ 184    let dAB_dBC_dAC = (d_subcrit_shared,d_subcrit_shared,d_subcrit_shared) in
+ 185    let cencut = (aK + int 3*epsN_I).high in
+ 186    let ccs = [(coord6 dAB_dBC_dAC,cencut);] in
+ 187    let _ = report &quot;pent4_6D_postcluster_experimental&quot; in
+ 188    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:pent4 --list
 python3 run.py --claim calc:pent4</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="FHBGHHY" data-search="Lemma 5.14 — Non-large-angle two-triangle estimate FHBGHHY calc:large FHBGHHY mitm_calc_pent2_postcluster_case0 mitm_calc_pent2_postcluster_case1 mitm_calc_pent2_postcluster_case2 mitm_calc_pent2_postcluster_case3 mitm_calc_pent2_postcluster_case4"><h2>Lemma 5.14 — Non-large-angle two-triangle estimate</h2><p><span class="tag">FHBGHHY</span> <code>calc:large</code></p><p>area{T0,T1} &gt; 2*a_crit + epsilon_M under the non-large-angle and nonshared-edge assumptions.</p><p><strong>Assumptions and preparation:</strong> Both P-triangles nonobtuse, area(T1)&lt;=a_crit, T1 attaches to T0. A nonshared edge e of T0 has length &gt;1.8 and the angle along (T0,e) is not large.</p><p><strong>Interpretation:</strong> The paper excludes right triangles by the shared-leg area estimate. The remaining cases are double contact or one contact together with a nonshared length of 1.8.</p>
 <details><summary>mitm_calc_pent2_postcluster_case0 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: outside-double-contact central triangle.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case0 ()</pre>
-<p>Function <code>calc_pent2_postcluster_case0</code>, lines 268–290.</p><pre> 268  let calc_pent2_postcluster_case0() =
- 269    let cluster_areacut = two*aK + epsM_I in
- 270    let pdata = reset_peri init2Cps in
- 271  
- 272    let range = merge_I (172//100) (193//100) in
- 273    let fillfn () = mk2Ce range in
- 274    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
- 275      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 179//100 || disjoint_I dAC range ||
- 276         forall_alpha_constraint_pseudo_dimer (thABC,thBAC)) in
- 277  
- 278    let keyfns = [ckeyfn2Ce] in
- 279    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
- 280  
- 281    let cencut = (aK + epsN_I + epsM_I).high in
- 282    let _ = area_I (172//100) (18//10) (18//10) &gt;&gt;. cencut ||
- 283      failwith &quot;1.8 nonshared bound&quot; in
- 284    let assertAC = area_I (193//100) (18//10) (two*kappa) &gt;&gt;. cencut ||
- 285      failwith &quot;please reset 1.93 bound and rerun&quot; in
- 286    let assertBC = area_I (18//10) (172//100) (179//100) &gt;&gt;. cencut ||
- 287      failwith &quot;please reset 1.79 bound and rerun&quot; in
- 288    let ccs = [(coord2Ce,cencut);] in
- 289    let _ = report &quot;pent2_case0 covers 2C+2C situation&quot; in
- 290    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent2_postcluster_case0</code>, lines 269–291.</p><pre> 269  let calc_pent2_postcluster_case0() =
+ 270    let cluster_areacut = two*aK + epsM_I in
+ 271    let pdata = reset_peri init2Cps in
+ 272  
+ 273    let range = merge_I (172//100) (193//100) in
+ 274    let fillfn () = mk2Ce range in
+ 275    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),(dAC,thACB,thCAB,arcB)) =
+ 276      (dAB &lt;&lt; 18//10 || dBC &gt;&gt; 179//100 || disjoint_I dAC range ||
+ 277         forall_alpha_constraint_pseudo_dimer (thABC,thBAC)) in
+ 278  
+ 279    let keyfns = [ckeyfn2Ce] in
+ 280    let cfn = (unit_extra,fillfn,outdomfn,areafn2Ce,keyfns) in
+ 281  
+ 282    let cencut = (aK + epsN_I + epsM_I).high in
+ 283    let _ = area_I (172//100) (18//10) (18//10) &gt;&gt;. cencut ||
+ 284      failwith &quot;1.8 nonshared bound&quot; in
+ 285    let assertAC = area_I (193//100) (18//10) (two*kappa) &gt;&gt;. cencut ||
+ 286      failwith &quot;please reset 1.93 bound and rerun&quot; in
+ 287    let assertBC = area_I (18//10) (172//100) (179//100) &gt;&gt;. cencut ||
+ 288      failwith &quot;please reset 1.79 bound and rerun&quot; in
+ 289    let ccs = [(coord2Ce,cencut);] in
+ 290    let _ = report &quot;pent2_case0 covers 2C+2C situation&quot; in
+ 291    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_calc_pent2_postcluster_case1 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge AB, distinguished nonshared edge AC at length 1.8, with central contact.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case1 ()</pre>
-<p>Function <code>calc_pent2_postcluster_case1</code>, lines 296–310.</p><pre> 296  let calc_pent2_postcluster_case1() =
- 297    let cluster_areacut = two*aK + epsM_I in
- 298    let pdata = reset_peri init2Cps in
- 299    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 300  		(dAC,thACB,thCAB,arcB)) =
- 301         forall_alpha_constraint_pseudo_dimer (thACB,thCAB) in
- 302  
- 303    let keyfns = [ckeyfnAB] in
- 304    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
- 305    let d_18 = (18//10) in
- 306    let dAB_dBC_dAC=(d_subcrit_shared,d_third_pseudo,d_18) in
- 307    let cencut = (aK + epsN_I + epsM_I).high in
- 308    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 309    let _ = report(&quot;pent2_postcluster_case1:AB shared, AC egressive. &quot;) in
- 310    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent2_postcluster_case1</code>, lines 297–311.</p><pre> 297  let calc_pent2_postcluster_case1() =
+ 298    let cluster_areacut = two*aK + epsM_I in
+ 299    let pdata = reset_peri init2Cps in
+ 300    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 301  		(dAC,thACB,thCAB,arcB)) =
+ 302         forall_alpha_constraint_pseudo_dimer (thACB,thCAB) in
+ 303  
+ 304    let keyfns = [ckeyfnAB] in
+ 305    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 306    let d_18 = (18//10) in
+ 307    let dAB_dBC_dAC=(d_subcrit_shared,d_third_pseudo,d_18) in
+ 308    let cencut = (aK + epsN_I + epsM_I).high in
+ 309    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 310    let _ = report(&quot;pent2_postcluster_case1:AB shared, AC egressive. &quot;) in
+ 311    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_calc_pent2_postcluster_case2 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge AB, distinguished nonshared edge BC at length 1.8, with central contact.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case2 ()</pre>
-<p>Function <code>calc_pent2_postcluster_case2</code>, lines 316–331.</p><pre> 316  let calc_pent2_postcluster_case2() =
- 317    let cluster_areacut = two*aK + epsM_I in
- 318    let pdata = reset_peri init2Cps in
- 319    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 320  	       (dAC,thACB,thCAB,arcB)) =
- 321      forall_alpha_constraint_pseudo_dimer (thBCA,thCBA) in
- 322  
- 323    let keyfns = [ckeyfnAB] in
- 324    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
- 325    let d_18 = (18//10) in
- 326    let d_contact = merge_I (two*kappa) two in
- 327    let dAB_dBC_dAC=(d_subcrit_shared,d_18,d_contact) in
- 328    let cencut = (aK + epsN_I + epsM_I).high in
- 329    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 330    let _ = report(&quot;pent2_postcluster_case2:AB shared, BC egressive. &quot;) in
- 331    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent2_postcluster_case2</code>, lines 317–332.</p><pre> 317  let calc_pent2_postcluster_case2() =
+ 318    let cluster_areacut = two*aK + epsM_I in
+ 319    let pdata = reset_peri init2Cps in
+ 320    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 321  	       (dAC,thACB,thCAB,arcB)) =
+ 322      forall_alpha_constraint_pseudo_dimer (thBCA,thCBA) in
+ 323  
+ 324    let keyfns = [ckeyfnAB] in
+ 325    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 326    let d_18 = (18//10) in
+ 327    let d_contact = merge_I (two*kappa) two in
+ 328    let dAB_dBC_dAC=(d_subcrit_shared,d_18,d_contact) in
+ 329    let cencut = (aK + epsN_I + epsM_I).high in
+ 330    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 331    let _ = report(&quot;pent2_postcluster_case2:AB shared, BC egressive. &quot;) in
+ 332    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_calc_pent2_postcluster_case3 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge BC, distinguished nonshared edge AC at length 1.8, with central contact.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case3 ()</pre>
-<p>Function <code>calc_pent2_postcluster_case3</code>, lines 337–350.</p><pre> 337  let calc_pent2_postcluster_case3() =
- 338    let cluster_areacut = two*aK + epsM_I in
- 339    let pdata = reset_peri init2Cps in
- 340    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 341  	       (dAC,thACB,thCAB,arcB)) =
- 342      forall_alpha_constraint_pseudo_dimer (thACB,thCAB) in
- 343    let keyfns = [ckeyfnBC] in
- 344    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
- 345    let d_18 = (18//10) in
- 346    let dAB_dBC_dAC = (d_third_pseudo,d_subcrit_shared,d_18) in
- 347    let cencut = (aK + epsN_I + epsM_I).high in
- 348    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 349    let _ = report(&quot;pent2_postcluster_case3:BC shared, AC egressive. &quot;) in
- 350    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent2_postcluster_case3</code>, lines 338–351.</p><pre> 338  let calc_pent2_postcluster_case3() =
+ 339    let cluster_areacut = two*aK + epsM_I in
+ 340    let pdata = reset_peri init2Cps in
+ 341    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 342  	       (dAC,thACB,thCAB,arcB)) =
+ 343      forall_alpha_constraint_pseudo_dimer (thACB,thCAB) in
+ 344    let keyfns = [ckeyfnBC] in
+ 345    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 346    let d_18 = (18//10) in
+ 347    let dAB_dBC_dAC = (d_third_pseudo,d_subcrit_shared,d_18) in
+ 348    let cencut = (aK + epsN_I + epsM_I).high in
+ 349    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 350    let _ = report(&quot;pent2_postcluster_case3:BC shared, AC egressive. &quot;) in
+ 351    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>mitm_calc_pent2_postcluster_case4 — proof</summary><p>Non-large-angle pair bound 2 a_crit + epsilon_M: shared edge BC, distinguished nonshared edge AB at length 1.8, with central contact.</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>calc_pent2_postcluster_case4 ()</pre>
-<p>Function <code>calc_pent2_postcluster_case4</code>, lines 356–370.</p><pre> 356  let calc_pent2_postcluster_case4() =
- 357    let cluster_areacut = two*aK + epsM_I in
- 358    let pdata = reset_peri init2Cps in
- 359    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
- 360  	       (dAC,thACB,thCAB,arcB)) =
- 361      forall_alpha_constraint_pseudo_dimer (thABC,thBAC) in
- 362    let keyfns = [ckeyfnBC] in
- 363    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
- 364    let d_18 = (18//10) in
- 365    let d_contact = merge_I (two*kappa) two in
- 366    let dAB_dBC_dAC = (d_18,d_subcrit_shared,d_contact) in
- 367    let cencut = (aK + epsN_I + epsM_I).high in
- 368    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
- 369    let _ = report(&quot;pent2_postcluster_case4:BC shared, AB egressive. &quot;) in
- 370    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>calc_pent2_postcluster_case4</code>, lines 357–371.</p><pre> 357  let calc_pent2_postcluster_case4() =
+ 358    let cluster_areacut = two*aK + epsM_I in
+ 359    let pdata = reset_peri init2Cps in
+ 360    let outdomfn (a,(dAB,thABC,thBAC,arcC),(dBC,thCBA,thBCA,arcA),
+ 361  	       (dAC,thACB,thCAB,arcB)) =
+ 362      forall_alpha_constraint_pseudo_dimer (thABC,thBAC) in
+ 363    let keyfns = [ckeyfnBC] in
+ 364    let cfn = (unit_extra,fillfn5,forall_dom outdomfn,areafn5,keyfns) in
+ 365    let d_18 = (18//10) in
+ 366    let d_contact = merge_I (two*kappa) two in
+ 367    let dAB_dBC_dAC = (d_18,d_subcrit_shared,d_contact) in
+ 368    let cencut = (aK + epsN_I + epsM_I).high in
+ 369    let ccs = [(coord5 dAB_dBC_dAC,cencut);] in
+ 370    let _ = report(&quot;pent2_postcluster_case4:BC shared, AB egressive. &quot;) in
+ 371    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --claim calc:large --list
 python3 run.py --claim calc:large</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
@@ -1003,33 +1002,33 @@ python3 run.py --claim sec:gamma</pre><p>Add <code>--copy-report windows-downloa
 python3 run.py --claim sec:shared</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="diagnostic:central-1237" data-search="MITM central-triangle diagnostic (name contains 1237) diagnostic:central-1237 None None mitm_test1_centralpent_1237"><h2>MITM central-triangle diagnostic (name contains 1237)</h2><p><span class="tag">diagnostic:central-1237</span> <code>Diagnostic</code></p><p>This function uses a 1.2 debug cutoff, despite its name.</p><p><strong>Assumptions and preparation:</strong> The existing central five-dimensional chart and code-defined side ranges.</p><p><strong>Interpretation:</strong> This diagnostic deliberately uses the cutoff 1.2 despite the historical identifier. It does not establish the 1.237 theorem; the primary jobs are listed separately.</p>
 <details><summary>mitm_test1_centralpent_1237 — diagnostic</summary><p>Existing central-chart diagnostic (1.2 debug cutoff, not 1.237)</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>test1_centralpent_1237 ()</pre>
-<p>Function <code>test1_centralpent_1237</code>, lines 144–154.</p><pre> 144  let test1_centralpent_1237() =
- 145    let cluster_areacut = (m 1.2            ) in
- 146    let pdata = None in
- 147    let cencut = cluster_areacut.high in
- 148    let outdomfn _ = false in
- 149    let keyfns = [] in
- 150    let k2 = merge_I (two*kappa) in
- 151    let dAB_dBC_dAC = (k2(21//10),k2(21//10),k2(two)) in
- 152    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
- 153    let ccs = [(coord5(dAB_dBC_dAC),cencut);] in
- 154    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>test1_centralpent_1237</code>, lines 146–156.</p><pre> 146  let test1_centralpent_1237() =
+ 147    let cluster_areacut = (m 1.2            ) in
+ 148    let pdata = None in
+ 149    let cencut = cluster_areacut.high in
+ 150    let outdomfn _ = false in
+ 151    let keyfns = [] in
+ 152    let k2 = merge_I (two*kappa) in
+ 153    let dAB_dBC_dAC = (k2(21//10),k2(21//10),k2(two)) in
+ 154    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 155    let ccs = [(coord5(dAB_dBC_dAC),cencut);] in
+ 156    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job mitm_test1_centralpent_1237 --list
 python3 run.py --job mitm_test1_centralpent_1237</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>
 <article id="diagnostic:central-172" data-search="MITM central-triangle short-edge diagnostic diagnostic:central-172 None None mitm_test1_centralpent_172"><h2>MITM central-triangle short-edge diagnostic</h2><p><span class="tag">diagnostic:central-172</span> <code>Diagnostic</code></p><p>Checks the central chart with every side in [2*kappa,1.72] against aK.</p><p><strong>Assumptions and preparation:</strong> No peripheral data; code-defined five-dimensional chart.</p><p><strong>Interpretation:</strong> An additional central-chart diagnostic with all sides at most 1.72. It supplements, rather than replaces, the primary classified contact calculations.</p>
 <details><summary>mitm_test1_centralpent_172 — diagnostic</summary><p>Existing central-chart diagnostic (1.72 cutoff)</p><p>Source: <a href="../ocaml/mitm-calcs.ml">ocaml/mitm-calcs.ml</a>.</p><pre>test1_centralpent_172 ()</pre>
-<p>Function <code>test1_centralpent_172</code>, lines 158–168.</p><pre> 158  let test1_centralpent_172() =
- 159    let cluster_areacut = aK in
- 160    let pdata = None in
- 161    let cencut = cluster_areacut.high in
- 162    let outdomfn _ = false in
- 163    let keyfns = [] in
- 164    let k2 = merge_I (two*kappa) (172//100) in
- 165    let dAB_dBC_dAC = (k2,k2,k2) in
- 166    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
- 167    let ccs = [(coord5(dAB_dBC_dAC),cencut);] in
- 168    time_mitm cluster_areacut pdata cfn ccs;;</pre>
+<p>Function <code>test1_centralpent_172</code>, lines 160–170.</p><pre> 160  let test1_centralpent_172() =
+ 161    let cluster_areacut = aK in
+ 162    let pdata = None in
+ 163    let cencut = cluster_areacut.high in
+ 164    let outdomfn _ = false in
+ 165    let keyfns = [] in
+ 166    let k2 = merge_I (two*kappa) (172//100) in
+ 167    let dAB_dBC_dAC = (k2,k2,k2) in
+ 168    let cfn = (unit_extra,fillfn5,outdomfn,areafn5,keyfns) in
+ 169    let ccs = [(coord5(dAB_dBC_dAC),cencut);] in
+ 170    time_mitm cluster_areacut pdata cfn ccs;;</pre>
 </details>
 <details><summary>Run this computational association</summary><p>In Linux/Ubuntu-WSL Bash at PACKAGE_ROOT. First command previews; second executes or reuses valid checkpoints.</p><pre>python3 run.py --job mitm_test1_centralpent_172 --list
 python3 run.py --job mitm_test1_centralpent_172</pre><p>Add <code>--copy-report windows-downloads</code> on WSL to copy the report to the discovered Downloads folder.</p></details></article>

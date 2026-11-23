@@ -1,6 +1,6 @@
 {
-  "version": "pentagon_code_v005",
-  "manuscript": "pentagon_v008.tex",
+  "version": "pentagon_code_v006",
+  "manuscript": "pentagon_v009.tex",
   "jobs": [
     {
       "id": "unit",
@@ -3120,7 +3120,7 @@
       "estimated_seconds": 1.146
     }
   ],
-  "printed_number_source": "paper/label-map.json from the header_v008 build",
+  "printed_number_source": "paper/label-map.json from the header_v009 build",
   "selection_note": "Claim and section selectors select listed direct computational associations, plus the function-contract test prerequisite. Analytic reductions and other cited lemmas are not automatically recursed. Use --all for all current proof jobs.",
   "claim_ids": {
     "calc:pseudo1": "NKQNXUN",

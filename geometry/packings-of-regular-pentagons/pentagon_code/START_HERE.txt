@@ -1,6 +1,10 @@
 PENTAGON PACKING — START HERE
-Computational distribution: code v005
-Current manuscript: paper/pentagon_v008.pdf (source: paper/pentagon_v008.tex)
+Computational distribution: code v006
+Current manuscript: paper/pentagon_v010.pdf (source: paper/pentagon_v010.tex)
+
+CHECK THE COMPLETED RUN
+From the package root, run python3 scripts/check_release.py and python3 confirm.py --check.
+The archive contains 77 required passes and four diagnostic passes.
 
 ONE PROJECT, ONE RUNNER, ONE CONFIRMATION
 All additional estimates and the geometric MITM control are integrated. There is
@@ -11,7 +15,8 @@ requirement to run a program from Downloads.
    README.md gives the complete starting procedure.
    docs/index.html maps printed paper statements to their computations.
    docs/code_commentary.pdf explains the geometry behind those computations.
-   CHANGELOG.md describes v008. The compact table in docs/ covers 2016 through v007.
+   For the v010 paper and code changes, read docs/pentagon_changes_2016v2_to_v010.md. For the page-by-page comparison with 2016, see
+   docs/pentagon_changes_2016v2_to_v008.md.
 
 2. ENTER PACKAGE_ROOT
    Use Linux Bash (Ubuntu Bash under WSL on Windows), not PowerShell or an OCaml
@@ -47,8 +52,8 @@ requirement to run a program from Downloads.
    Confirmation never reruns mathematics. Use a previously unused ZIP filename.
    Keep the resulting verified archive; it includes the contributing logs.
 
-No calculation result is supplied as a checkpoint in this fresh distribution.
-The generated verification record, not this fixed guide, reports actual completion.
+The archived execution evidence is in verification/run-records/.
+New runs write their own checkpoints under runs/.
 
 Modular component boundaries and compatibility: docs/MODULARITY.md.
 The pinwheel domain and the manuscript have been revised.

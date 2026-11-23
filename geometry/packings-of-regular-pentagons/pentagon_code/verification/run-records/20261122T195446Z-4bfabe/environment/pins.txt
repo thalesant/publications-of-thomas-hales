@@ -1,0 +1,4 @@
+interval.dev           rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master
+interval_base.dev      rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master
+interval_crlibm.dev    rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master
+interval_intel.dev     rsync  file:///home/autonomy/pentagon/code_v000/ocaml-interval-master

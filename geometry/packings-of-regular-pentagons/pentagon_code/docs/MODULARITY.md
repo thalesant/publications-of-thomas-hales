@@ -67,19 +67,16 @@ Wolfram evidence is `CURRENT_COMPONENT` or `APPROVED_LEGACY_EQUIVALENCE`. The la
 retains the original release/manuscript tags; a manuscript tag is historical metadata,
 not a current dependency. Required OCaml jobs remain **77**, Wolfram checks **161**.
 
-## Running v005 after v004.1
+## Running v006 after v005
 
-Extract v005 in its own directory. The revised pinwheel domain and the two
-additional assertions require fresh OCaml execution. From the directory
-containing run.py, run the following commands in Linux or Ubuntu Bash.
+Extract v006 in a separate directory. The archived v006 execution covers the changed contact-angle enclosure
+and pseudo-dimer guard. From its root, use
 
-```bash
-python3 run.py --all --diagnostics
-python3 confirm.py --check
-```
+    python3 run.py --all --diagnostics
+    python3 confirm.py --check
 
 The supplied Mathematica report retains its original execution identity.
-The package checks that report and the v008 manuscript association separately.
+Confirmation checks that report and the v010 manuscript association separately.
 
 ## Testing boundaries
 

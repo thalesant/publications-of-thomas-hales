@@ -1,4 +1,4 @@
-# Paper-to-code index — code v005 / manuscript v008
+# Paper-to-code index — code v006 / manuscript v010
 
 **Context:** commands below are for Linux/Ubuntu-WSL Bash, at the extracted package root containing `run.py`. Append `--list` to preview without executing.
 

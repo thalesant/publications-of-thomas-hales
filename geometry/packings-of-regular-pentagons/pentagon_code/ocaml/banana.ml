@@ -24,7 +24,9 @@ let theta_hsign lx theta' hsign =
   if hsign then theta_hpos lx theta'
   else pi25 - theta_hpos lx (- theta');;
 
-(* Boundary curves I--V of the positive contact domain, in the (theta-prime,length) plane. Inverse formulas below are used only on their designated boxes; see the commentary's domain table. *)
+(* Direct formulas for boundary arcs I--IV and interior ridge V in the
+   inclination-distance plane. The positive chart below restricts each
+   inverse to its monotone arc. *)
 let curveIt t = acos_I (two*kappa / t) - pi15;;
 
 let curveIIt t = acos_I (t/two);;
@@ -60,26 +62,6 @@ let theta'ks = acos_I (two*kappa/ks);;
 
 let k1s = (sqrt_I (square_I (one+kappa)+square_I sigma));;
 
-let box0 = (merge_I zero (pi110), merge_I (one+kappa) (k1s));;
-
-let box1 = (merge_I (theta'ks - pi15) zero, merge_I ks two);;
-
-let box2 = (merge_I zero (pi110), merge_I  k1s two);;
-
-let box3 = (merge_I zero (pi15 - theta'ks), merge_I ks (one+kappa));;
-
-let box4 = (merge_I (pi15-theta'ks) (pi110),merge_I (two*kappa) (one+kappa));;
-
-let box5 = (merge_I (pi110) (pi15),merge_I (two*kappa) k1s);;
-
-(* Five monotone pieces of the contact domain; box0 is treated separately because it contains a ridge. Each Some pair stores a boundary as length(angle) and angle(length). *)
-let ridgeless_boxes = [
-  (box1,Some(curveIVth,curveIVtneg),Some(curveIth,curveIt));
-  (box2,None,Some(curveIIth,curveIIt));
-  (box3,Some(curveIVth,curveIVtpos),None);
-  (box4,Some(curveIIIth,curveIIIt),None);
-  (box5,Some(curveIIIth,curveIIIt),Some(curveIIth,curveIIt))];;
-
 let restrict_to_box (x,y) (bx,by) =
   let x1 = someinter_I x bx in
   let y1 = someinter_I y by in
@@ -87,19 +69,6 @@ let restrict_to_box (x,y) (bx,by) =
   |None,_ -> None
   |_,None -> None
   |(Some u1),(Some v1) -> Some (u1,v1);;
-
-let max_theta_box0 ridget (x,y) =
-  let lx = min_I y in
-  let th' = ridget lx in
-  if (th' << x) then [min_I x,lx]
-  else if (th' >> x) then [max_I x,lx]
-  else [th',lx];;
-
-let critical_theta_box0 ridget = function
-  | None -> []
-  | Some (x,y) ->
-    let lx = max_I y in
-    [(min_I x,lx);(max_I x,lx)] @ max_theta_box0 ridget (x,y);;
 
 let some_function shift = function
   | None ->
@@ -146,32 +115,76 @@ let critical_points_box (x,y) boxdata =
   | None -> []
   | Some (x,y) -> find_critical_points x y lowerc upperc;;
 
-(* Combine rectangle-boundary/ridge candidates and both possible interior global extrema. The two interior alternatives are independent candidates. *)
-let critical_points_banana (x,y) =
-  let v1 = List.flatten (List.map (critical_points_box (x,y)) ridgeless_boxes) in
-  let x_gmax,y_gmax = (pi15 - theta'ks,ks) in
-  let x_gmin,y_gmin = (zero,two) in
-  let meets_global_max = meet_I x_gmax x && meet_I y_gmax y in
-  let meets_global_min = meet_I x_gmin x && meet_I y_gmin y in
-  let v = v1 @ (critical_theta_box0 curveVt (restrict_to_box (x,y) box0)) in
-  let (xmin,xmax,ymin,ymax) = (min_I x,max_I x,min_I y,max_I y) in
-  let rectangle_boundary_filter = filter (fun (x0,y0) ->
-     meet_I x0 xmin || meet_I x0 xmax || meet_I y0 ymin || meet_I y0 ymax) in
-  (* Both critical points may meet the box. Parentheses make the two
-     independent alternatives explicit; neither masks the other. *)
-  let global_points =
-    (if meets_global_max then [(x_gmax,y_gmax)] else []) @
-    (if meets_global_min then [x_gmin,y_gmin] else []) in
-  let vv = global_points @ rectangle_boundary_filter v in
-  vv;;
+(* Every inverse below is restricted to its monotone arc. Projecting an
+   outward-rounded endpoint onto [-1,1] also defines the formula just
+   beyond its exact endpoint. This can only introduce extra candidates. *)
+let unit_clip x = mk (max (-1.) (min 1. x.low)) (max (-1.) (min 1. x.high));;
 
-(* Hull the receptor-angle values at the retained candidates. None means that the reconstructed contact domain is empty; Unstable requests subdivision. *)
+let arc_acos x = acos_I (unit_clip x);;
+
+let contact_arcs =
+  let t1 = pi15 - theta'ks in
+  let flush l = arc_acos (two*kappa/l) - pi15 in
+  let midpoint l = arc_acos ((one+l*l-kappa*kappa)/(two*l)) in
+  [(merge_I (-t1) zero, merge_I ks two, curveIth, flush);
+   (merge_I zero pi15, merge_I (two*kappa) two, curveIIth,
+    (fun l -> arc_acos (l/two)));
+   (merge_I t1 pi15, merge_I (two*kappa) ks, curveIIIth,
+    (fun l -> - (flush l)));
+   (merge_I (-t1) zero, merge_I ks (one+kappa), curveIVth,
+    (fun l -> - (midpoint l)));
+   (merge_I zero t1, merge_I ks (one+kappa), curveIVth, midpoint)];;
+
+let contact_vertices =
+  let t1 = pi15 - theta'ks in
+  [(-t1,ks); (zero,two); (pi15,two*kappa); (t1,ks);
+   (zero,one+kappa); (pi110,k1s)];;
+
+let critical_points_banana (x,y) =
+  let clipped = restrict_to_box (x,y) in
+  let xmin,xmax,ymin,ymax = min_I x,max_I x,min_I y,max_I y in
+  let on_arc (tx,ly,f,g) =
+    match clipped (tx,ly) with
+    | None -> []
+    | Some (u,v) ->
+       let within = restrict_to_box (u,v) in
+       let vertical t =
+         if meet_I t u then within (t,f t) else None in
+       let horizontal l =
+         if meet_I l v then within (g l,l) else None in
+       selectsome [vertical xmin; vertical xmax;
+                   horizontal ymin; horizontal ymax] in
+  let ridge l =
+    if meet_I l (merge_I (one+kappa) k1s) then
+      restrict_to_box (merge_I zero pi110,y)
+        (arc_acos ((one+kappa)/l),l)
+    else None in
+  let corners = [(xmin,ymin);(xmin,ymax);(xmax,ymin);(xmax,ymax)] in
+  let special = selectsome (map clipped contact_vertices) in
+  let ridge_points = selectsome (map clipped (selectsome [ridge ymin;ridge ymax])) in
+  corners @ special @ ridge_points @ List.flatten (map on_arc contact_arcs);;
+
+(* Invert the centre chart. Tests of the radius and normal direction
+   use closed intersections; each retains every represented contact. *)
+let contact_angle (t,l) =
+  let u = l*cos_I t - one and v = l*sin_I t in
+  match someinter_I (u*u + v*v) (merge_I (kappa*kappa) one) with
+  | None -> None
+  | Some r2 ->
+     let r = sqrt_I r2 in
+     let phi = asin_I (unit_clip (v/r)) - arc_acos (kappa/r) in
+     match someinter_I phi (merge_I (-pi15) pi15) with
+     | None -> None
+     | Some normal -> someinter_I (pi15 + normal - t) (zero2 pi25);;
+
 let theta_banana lx theta' =
-  let v = critical_points_banana (theta',lx) in
-  let theta_values = map (fun (theta',lx) -> theta_hpos lx theta') v in
-  if theta_values = [] then None
-  else
-    Some (end_itlist merge_I theta_values);;
+  match restrict_to_box (theta',lx)
+          (merge_I (theta'ks - pi15) pi15,merge_I (two*kappa) two) with
+  | None -> None
+  | Some rect ->
+     match selectsome (map contact_angle (critical_points_banana rect)) with
+     | [] -> None
+     | values -> Some (end_itlist merge_I values);;
 
 let theta_banana_neg lx theta' =
   match theta_banana lx (- theta') with

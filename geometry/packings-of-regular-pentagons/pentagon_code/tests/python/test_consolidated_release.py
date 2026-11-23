@@ -76,11 +76,11 @@ class Scheduling(unittest.TestCase):
         self.assertNotIn('#require "interval.top"',source)
         self.assertIn('interval_crlibm.1.6',(ROOT/'environment/install.sh').read_text())
     def test_single_current_manuscript(self):
-        self.assertEqual([p.name for p in (ROOT/'paper').glob('pentagon_v*.tex')],['pentagon_v008.tex'])
+        self.assertEqual([p.name for p in (ROOT/'paper').glob('pentagon_v*.tex')],['pentagon_v010.tex'])
         self.assertFalse((ROOT/'supplements').exists())
         self.assertFalse((ROOT/'paper/v007').exists())
         self.assertFalse((ROOT/'docs/v007').exists())
-        self.assertTrue((ROOT/'docs/pentagon_changes_2016v2_to_v007.md').is_file())
+        self.assertTrue((ROOT/'docs/pentagon_changes_2016v2_to_v010.md').is_file())
 
 class ActualParallelController(unittest.TestCase):
     def test_five_processes_longest_first_and_geometric_gate(self):

@@ -115,7 +115,7 @@ let sigmaD = sinD pi15D;;
 
 let aKD = iD aK;;
 
-let ice_ray_nbd = 1 // 100;;
+let ice_ray_nbd = Dimer.ice_ray_nbd;;
 
 let epsN_D = aKD -^ ratD 1237 1000;;
 

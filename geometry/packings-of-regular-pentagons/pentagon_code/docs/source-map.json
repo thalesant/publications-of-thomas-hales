@@ -1190,698 +1190,740 @@
   "banana.ml:curveIt": {
     "file": "ocaml/banana.ml",
     "function": "curveIt",
-    "start": 28,
-    "end": 28
+    "start": 30,
+    "end": 30
   },
   "banana.ml:curveIIt": {
     "file": "ocaml/banana.ml",
     "function": "curveIIt",
-    "start": 30,
-    "end": 30
+    "start": 32,
+    "end": 32
   },
   "banana.ml:curveIIIt": {
     "file": "ocaml/banana.ml",
     "function": "curveIIIt",
-    "start": 32,
-    "end": 32
+    "start": 34,
+    "end": 34
   },
   "banana.ml:curveIVtpos": {
     "file": "ocaml/banana.ml",
     "function": "curveIVtpos",
-    "start": 34,
-    "end": 34
+    "start": 36,
+    "end": 36
   },
   "banana.ml:curveIVtneg": {
     "file": "ocaml/banana.ml",
     "function": "curveIVtneg",
-    "start": 36,
-    "end": 36
+    "start": 38,
+    "end": 38
   },
   "banana.ml:curveVt": {
     "file": "ocaml/banana.ml",
     "function": "curveVt",
-    "start": 38,
-    "end": 38
+    "start": 40,
+    "end": 40
   },
   "banana.ml:curveIth": {
     "file": "ocaml/banana.ml",
     "function": "curveIth",
-    "start": 40,
-    "end": 40
+    "start": 42,
+    "end": 42
   },
   "banana.ml:curveIIth": {
     "file": "ocaml/banana.ml",
     "function": "curveIIth",
-    "start": 42,
-    "end": 42
+    "start": 44,
+    "end": 44
   },
   "banana.ml:curveIIIth": {
     "file": "ocaml/banana.ml",
     "function": "curveIIIth",
-    "start": 44,
-    "end": 44
+    "start": 46,
+    "end": 46
   },
   "banana.ml:curveIVth": {
     "file": "ocaml/banana.ml",
     "function": "curveIVth",
-    "start": 46,
-    "end": 46
+    "start": 48,
+    "end": 48
   },
   "banana.ml:curveVth": {
     "file": "ocaml/banana.ml",
     "function": "curveVth",
-    "start": 48,
-    "end": 48
+    "start": 50,
+    "end": 50
   },
   "banana.ml:square_I": {
     "file": "ocaml/banana.ml",
     "function": "square_I",
-    "start": 50,
-    "end": 50
+    "start": 52,
+    "end": 52
   },
   "banana.ml:someinter_I": {
     "file": "ocaml/banana.ml",
     "function": "someinter_I",
-    "start": 54,
-    "end": 55
+    "start": 56,
+    "end": 57
   },
   "banana.ml:ks": {
     "file": "ocaml/banana.ml",
     "function": "ks",
-    "start": 57,
-    "end": 57
+    "start": 59,
+    "end": 59
   },
   "banana.ml:theta'ks": {
     "file": "ocaml/banana.ml",
     "function": "theta'ks",
-    "start": 59,
-    "end": 59
+    "start": 61,
+    "end": 61
   },
   "banana.ml:k1s": {
     "file": "ocaml/banana.ml",
     "function": "k1s",
-    "start": 61,
-    "end": 61
-  },
-  "banana.ml:box0": {
-    "file": "ocaml/banana.ml",
-    "function": "box0",
     "start": 63,
     "end": 63
-  },
-  "banana.ml:box1": {
-    "file": "ocaml/banana.ml",
-    "function": "box1",
-    "start": 65,
-    "end": 65
-  },
-  "banana.ml:box2": {
-    "file": "ocaml/banana.ml",
-    "function": "box2",
-    "start": 67,
-    "end": 67
-  },
-  "banana.ml:box3": {
-    "file": "ocaml/banana.ml",
-    "function": "box3",
-    "start": 69,
-    "end": 69
-  },
-  "banana.ml:box4": {
-    "file": "ocaml/banana.ml",
-    "function": "box4",
-    "start": 71,
-    "end": 71
-  },
-  "banana.ml:box5": {
-    "file": "ocaml/banana.ml",
-    "function": "box5",
-    "start": 73,
-    "end": 73
-  },
-  "banana.ml:ridgeless_boxes": {
-    "file": "ocaml/banana.ml",
-    "function": "ridgeless_boxes",
-    "start": 76,
-    "end": 81
   },
   "banana.ml:restrict_to_box": {
     "file": "ocaml/banana.ml",
     "function": "restrict_to_box",
-    "start": 83,
-    "end": 89
+    "start": 65,
+    "end": 71
   },
   "banana.ml:x1": {
     "file": "ocaml/banana.ml",
     "function": "x1",
-    "start": 84,
-    "end": 89
+    "start": 66,
+    "end": 71
   },
   "banana.ml:y1": {
     "file": "ocaml/banana.ml",
     "function": "y1",
-    "start": 85,
-    "end": 89
-  },
-  "banana.ml:max_theta_box0": {
-    "file": "ocaml/banana.ml",
-    "function": "max_theta_box0",
-    "start": 91,
-    "end": 96
-  },
-  "banana.ml:lx": {
-    "file": "ocaml/banana.ml",
-    "function": "lx",
-    "start": 92,
-    "end": 96
-  },
-  "banana.ml:th'": {
-    "file": "ocaml/banana.ml",
-    "function": "th'",
-    "start": 93,
-    "end": 96
-  },
-  "banana.ml:critical_theta_box0": {
-    "file": "ocaml/banana.ml",
-    "function": "critical_theta_box0",
-    "start": 98,
-    "end": 102
+    "start": 67,
+    "end": 71
   },
   "banana.ml:some_function": {
     "file": "ocaml/banana.ml",
     "function": "some_function",
-    "start": 104,
-    "end": 107
+    "start": 73,
+    "end": 76
   },
   "banana.ml:find_critical_points": {
     "file": "ocaml/banana.ml",
     "function": "find_critical_points",
-    "start": 110,
-    "end": 131
+    "start": 79,
+    "end": 100
   },
   "banana.ml:left_corner_filter": {
     "file": "ocaml/banana.ml",
     "function": "left_corner_filter",
-    "start": 117,
-    "end": 131
+    "start": 86,
+    "end": 100
   },
   "banana.ml:right_corner_filter": {
     "file": "ocaml/banana.ml",
     "function": "right_corner_filter",
-    "start": 118,
-    "end": 131
+    "start": 87,
+    "end": 100
   },
   "banana.ml:corners": {
     "file": "ocaml/banana.ml",
     "function": "corners",
-    "start": 119,
-    "end": 131
+    "start": 88,
+    "end": 100
   },
   "banana.ml:curve_filter": {
     "file": "ocaml/banana.ml",
     "function": "curve_filter",
-    "start": 121,
-    "end": 131
+    "start": 90,
+    "end": 100
   },
   "banana.ml:curve_points": {
     "file": "ocaml/banana.ml",
     "function": "curve_points",
-    "start": 122,
-    "end": 131
+    "start": 91,
+    "end": 100
   },
   "banana.ml:add_horiz": {
     "file": "ocaml/banana.ml",
     "function": "add_horiz",
-    "start": 125,
-    "end": 131
+    "start": 94,
+    "end": 100
   },
   "banana.ml:horiz_point": {
     "file": "ocaml/banana.ml",
     "function": "horiz_point",
-    "start": 128,
-    "end": 131
+    "start": 97,
+    "end": 100
   },
   "banana.ml:compress": {
     "file": "ocaml/banana.ml",
     "function": "compress",
-    "start": 133,
-    "end": 141
+    "start": 102,
+    "end": 110
   },
   "banana.ml:t": {
     "file": "ocaml/banana.ml",
     "function": "t",
-    "start": 138,
-    "end": 141
+    "start": 107,
+    "end": 110
   },
   "banana.ml:critical_points_box": {
     "file": "ocaml/banana.ml",
     "function": "critical_points_box",
-    "start": 143,
-    "end": 147
+    "start": 112,
+    "end": 116
+  },
+  "banana.ml:unit_clip": {
+    "file": "ocaml/banana.ml",
+    "function": "unit_clip",
+    "start": 121,
+    "end": 121
+  },
+  "banana.ml:arc_acos": {
+    "file": "ocaml/banana.ml",
+    "function": "arc_acos",
+    "start": 123,
+    "end": 123
+  },
+  "banana.ml:contact_arcs": {
+    "file": "ocaml/banana.ml",
+    "function": "contact_arcs",
+    "start": 125,
+    "end": 136
+  },
+  "banana.ml:t1": {
+    "file": "ocaml/banana.ml",
+    "function": "t1",
+    "start": 126,
+    "end": 136
+  },
+  "banana.ml:flush": {
+    "file": "ocaml/banana.ml",
+    "function": "flush",
+    "start": 127,
+    "end": 136
+  },
+  "banana.ml:midpoint": {
+    "file": "ocaml/banana.ml",
+    "function": "midpoint",
+    "start": 128,
+    "end": 136
+  },
+  "banana.ml:contact_vertices": {
+    "file": "ocaml/banana.ml",
+    "function": "contact_vertices",
+    "start": 138,
+    "end": 141
   },
   "banana.ml:critical_points_banana": {
     "file": "ocaml/banana.ml",
     "function": "critical_points_banana",
+    "start": 143,
+    "end": 165
+  },
+  "banana.ml:clipped": {
+    "file": "ocaml/banana.ml",
+    "function": "clipped",
+    "start": 144,
+    "end": 165
+  },
+  "banana.ml:on_arc": {
+    "file": "ocaml/banana.ml",
+    "function": "on_arc",
+    "start": 146,
+    "end": 165
+  },
+  "banana.ml:within": {
+    "file": "ocaml/banana.ml",
+    "function": "within",
     "start": 150,
-    "end": 166
+    "end": 165
   },
-  "banana.ml:v1": {
+  "banana.ml:vertical": {
     "file": "ocaml/banana.ml",
-    "function": "v1",
+    "function": "vertical",
     "start": 151,
-    "end": 166
+    "end": 165
   },
-  "banana.ml:meets_global_max": {
+  "banana.ml:horizontal": {
     "file": "ocaml/banana.ml",
-    "function": "meets_global_max",
-    "start": 154,
-    "end": 166
+    "function": "horizontal",
+    "start": 153,
+    "end": 165
   },
-  "banana.ml:meets_global_min": {
+  "banana.ml:ridge": {
     "file": "ocaml/banana.ml",
-    "function": "meets_global_min",
-    "start": 155,
-    "end": 166
+    "function": "ridge",
+    "start": 157,
+    "end": 165
   },
-  "banana.ml:v": {
+  "banana.ml:special": {
     "file": "ocaml/banana.ml",
-    "function": "v",
-    "start": 156,
-    "end": 166
+    "function": "special",
+    "start": 163,
+    "end": 165
   },
-  "banana.ml:rectangle_boundary_filter": {
+  "banana.ml:ridge_points": {
     "file": "ocaml/banana.ml",
-    "function": "rectangle_boundary_filter",
-    "start": 158,
-    "end": 166
+    "function": "ridge_points",
+    "start": 164,
+    "end": 165
   },
-  "banana.ml:global_points": {
+  "banana.ml:contact_angle": {
     "file": "ocaml/banana.ml",
-    "function": "global_points",
-    "start": 162,
-    "end": 166
-  },
-  "banana.ml:vv": {
-    "file": "ocaml/banana.ml",
-    "function": "vv",
-    "start": 165,
-    "end": 166
-  },
-  "banana.ml:theta_banana": {
-    "file": "ocaml/banana.ml",
-    "function": "theta_banana",
+    "function": "contact_angle",
     "start": 169,
-    "end": 174
+    "end": 178
   },
-  "banana.ml:theta_values": {
+  "banana.ml:u": {
     "file": "ocaml/banana.ml",
-    "function": "theta_values",
-    "start": 171,
-    "end": 174
-  },
-  "banana.ml:theta_banana_neg": {
-    "file": "ocaml/banana.ml",
-    "function": "theta_banana_neg",
-    "start": 176,
-    "end": 179
-  },
-  "banana.ml:theta'_acute": {
-    "file": "ocaml/banana.ml",
-    "function": "theta'_acute",
-    "start": 181,
-    "end": 187
-  },
-  "banana.ml:s": {
-    "file": "ocaml/banana.ml",
-    "function": "s",
-    "start": 182,
-    "end": 187
-  },
-  "banana.ml:x": {
-    "file": "ocaml/banana.ml",
-    "function": "x",
-    "start": 183,
-    "end": 187
+    "function": "u",
+    "start": 170,
+    "end": 178
   },
   "banana.ml:phi": {
     "file": "ocaml/banana.ml",
     "function": "phi",
-    "start": 184,
+    "start": 175,
+    "end": 178
+  },
+  "banana.ml:theta_banana": {
+    "file": "ocaml/banana.ml",
+    "function": "theta_banana",
+    "start": 180,
     "end": 187
+  },
+  "banana.ml:theta_banana_neg": {
+    "file": "ocaml/banana.ml",
+    "function": "theta_banana_neg",
+    "start": 189,
+    "end": 192
+  },
+  "banana.ml:theta'_acute": {
+    "file": "ocaml/banana.ml",
+    "function": "theta'_acute",
+    "start": 194,
+    "end": 200
+  },
+  "banana.ml:s": {
+    "file": "ocaml/banana.ml",
+    "function": "s",
+    "start": 195,
+    "end": 200
+  },
+  "banana.ml:x": {
+    "file": "ocaml/banana.ml",
+    "function": "x",
+    "start": 196,
+    "end": 200
   },
   "banana.ml:alpha'": {
     "file": "ocaml/banana.ml",
     "function": "alpha'",
-    "start": 185,
-    "end": 187
+    "start": 198,
+    "end": 200
   },
   "banana.ml:theta'": {
     "file": "ocaml/banana.ml",
     "function": "theta'",
-    "start": 186,
-    "end": 187
+    "start": 199,
+    "end": 200
   },
   "banana.ml:durveIt": {
     "file": "ocaml/banana.ml",
     "function": "durveIt",
-    "start": 189,
-    "end": 189
+    "start": 202,
+    "end": 202
   },
   "banana.ml:durveIIt": {
     "file": "ocaml/banana.ml",
     "function": "durveIIt",
-    "start": 191,
-    "end": 191
+    "start": 204,
+    "end": 204
   },
   "banana.ml:durveIIIt": {
     "file": "ocaml/banana.ml",
     "function": "durveIIIt",
-    "start": 193,
-    "end": 193
+    "start": 206,
+    "end": 206
   },
   "banana.ml:durveIVtpos": {
     "file": "ocaml/banana.ml",
     "function": "durveIVtpos",
-    "start": 195,
-    "end": 195
+    "start": 208,
+    "end": 208
   },
   "banana.ml:durveIVtneg": {
     "file": "ocaml/banana.ml",
     "function": "durveIVtneg",
-    "start": 197,
-    "end": 197
+    "start": 210,
+    "end": 210
   },
   "banana.ml:durveVt": {
     "file": "ocaml/banana.ml",
     "function": "durveVt",
-    "start": 199,
-    "end": 199
+    "start": 212,
+    "end": 212
   },
   "banana.ml:durveIth": {
     "file": "ocaml/banana.ml",
     "function": "durveIth",
-    "start": 201,
-    "end": 201
+    "start": 214,
+    "end": 214
   },
   "banana.ml:durveIIth": {
     "file": "ocaml/banana.ml",
     "function": "durveIIth",
-    "start": 203,
-    "end": 203
+    "start": 216,
+    "end": 216
   },
   "banana.ml:durveIIIth": {
     "file": "ocaml/banana.ml",
     "function": "durveIIIth",
-    "start": 205,
-    "end": 205
+    "start": 218,
+    "end": 218
   },
   "banana.ml:durveIVth": {
     "file": "ocaml/banana.ml",
     "function": "durveIVth",
-    "start": 207,
-    "end": 207
+    "start": 220,
+    "end": 220
   },
   "banana.ml:durveVth": {
     "file": "ocaml/banana.ml",
     "function": "durveVth",
-    "start": 209,
-    "end": 209
+    "start": 222,
+    "end": 222
   },
   "banana.ml:dox0": {
     "file": "ocaml/banana.ml",
     "function": "dox0",
-    "start": 211,
-    "end": 211
+    "start": 224,
+    "end": 224
   },
   "banana.ml:dox1": {
     "file": "ocaml/banana.ml",
     "function": "dox1",
-    "start": 213,
-    "end": 213
+    "start": 226,
+    "end": 226
   },
   "banana.ml:dox2": {
     "file": "ocaml/banana.ml",
     "function": "dox2",
-    "start": 215,
-    "end": 215
+    "start": 228,
+    "end": 228
   },
   "banana.ml:dox3": {
     "file": "ocaml/banana.ml",
     "function": "dox3",
-    "start": 217,
-    "end": 217
+    "start": 230,
+    "end": 230
   },
   "banana.ml:dox4": {
     "file": "ocaml/banana.ml",
     "function": "dox4",
-    "start": 219,
-    "end": 219
+    "start": 232,
+    "end": 232
   },
   "banana.ml:dox5": {
     "file": "ocaml/banana.ml",
     "function": "dox5",
-    "start": 221,
-    "end": 221
+    "start": 234,
+    "end": 234
   },
   "banana.ml:ridgeless_doxes": {
     "file": "ocaml/banana.ml",
     "function": "ridgeless_doxes",
-    "start": 224,
-    "end": 229
+    "start": 237,
+    "end": 242
   },
   "banana.ml:min_critical_theta_dox_ridge": {
     "file": "ocaml/banana.ml",
     "function": "min_critical_theta_dox_ridge",
-    "start": 231,
-    "end": 236
+    "start": 244,
+    "end": 249
+  },
+  "banana.ml:lx": {
+    "file": "ocaml/banana.ml",
+    "function": "lx",
+    "start": 245,
+    "end": 249
+  },
+  "banana.ml:th'": {
+    "file": "ocaml/banana.ml",
+    "function": "th'",
+    "start": 246,
+    "end": 249
   },
   "banana.ml:critical_theta_dox_ridge": {
     "file": "ocaml/banana.ml",
     "function": "critical_theta_dox_ridge",
-    "start": 238,
-    "end": 242
+    "start": 251,
+    "end": 255
   },
   "banana.ml:critical_points_danana": {
     "file": "ocaml/banana.ml",
     "function": "critical_points_danana",
-    "start": 244,
-    "end": 260
+    "start": 257,
+    "end": 273
+  },
+  "banana.ml:v1": {
+    "file": "ocaml/banana.ml",
+    "function": "v1",
+    "start": 258,
+    "end": 273
+  },
+  "banana.ml:meets_global_max": {
+    "file": "ocaml/banana.ml",
+    "function": "meets_global_max",
+    "start": 261,
+    "end": 273
+  },
+  "banana.ml:meets_global_min": {
+    "file": "ocaml/banana.ml",
+    "function": "meets_global_min",
+    "start": 262,
+    "end": 273
+  },
+  "banana.ml:v": {
+    "file": "ocaml/banana.ml",
+    "function": "v",
+    "start": 263,
+    "end": 273
+  },
+  "banana.ml:rectangle_boundary_filter": {
+    "file": "ocaml/banana.ml",
+    "function": "rectangle_boundary_filter",
+    "start": 265,
+    "end": 273
+  },
+  "banana.ml:global_points": {
+    "file": "ocaml/banana.ml",
+    "function": "global_points",
+    "start": 269,
+    "end": 273
+  },
+  "banana.ml:vv": {
+    "file": "ocaml/banana.ml",
+    "function": "vv",
+    "start": 272,
+    "end": 273
   },
   "banana.ml:theta'_danana": {
     "file": "ocaml/banana.ml",
     "function": "theta'_danana",
-    "start": 262,
-    "end": 265
+    "start": 275,
+    "end": 278
   },
   "banana.ml:theta'_values": {
     "file": "ocaml/banana.ml",
     "function": "theta'_values",
-    "start": 264,
-    "end": 265
+    "start": 277,
+    "end": 278
   },
   "banana.ml:pent_contact": {
     "file": "ocaml/banana.ml",
     "function": "pent_contact",
-    "start": 268,
-    "end": 280
+    "start": 281,
+    "end": 293
   },
   "banana.ml:split": {
     "file": "ocaml/banana.ml",
     "function": "split",
-    "start": 269,
-    "end": 280
+    "start": 282,
+    "end": 293
   },
   "banana.ml:ithetas": {
     "file": "ocaml/banana.ml",
     "function": "ithetas",
-    "start": 270,
-    "end": 280
+    "start": 283,
+    "end": 293
   },
   "banana.ml:ithetas'": {
     "file": "ocaml/banana.ml",
     "function": "ithetas'",
-    "start": 271,
-    "end": 280
+    "start": 284,
+    "end": 293
   },
   "banana.ml:cases": {
     "file": "ocaml/banana.ml",
     "function": "cases",
-    "start": 272,
-    "end": 280
+    "start": 285,
+    "end": 293
   },
   "banana.ml:up0": {
     "file": "ocaml/banana.ml",
     "function": "up0",
-    "start": 273,
-    "end": 280
+    "start": 286,
+    "end": 293
   },
   "banana.ml:cases0": {
     "file": "ocaml/banana.ml",
     "function": "cases0",
-    "start": 274,
-    "end": 280
+    "start": 287,
+    "end": 293
   },
   "banana.ml:p": {
     "file": "ocaml/banana.ml",
     "function": "p",
-    "start": 275,
-    "end": 280
+    "start": 288,
+    "end": 293
   },
   "banana.ml:ell_ofth": {
     "file": "ocaml/banana.ml",
     "function": "ell_ofth",
-    "start": 282,
-    "end": 286
+    "start": 295,
+    "end": 299
   },
   "banana.ml:y": {
     "file": "ocaml/banana.ml",
     "function": "y",
-    "start": 285,
-    "end": 286
+    "start": 298,
+    "end": 299
   },
   "banana.ml:pent_contact2": {
     "file": "ocaml/banana.ml",
     "function": "pent_contact2",
-    "start": 288,
-    "end": 295
+    "start": 301,
+    "end": 308
   },
   "banana.ml:fillout2C": {
     "file": "ocaml/banana.ml",
     "function": "fillout2C",
-    "start": 298,
-    "end": 319
+    "start": 311,
+    "end": 332
   },
   "banana.ml:arcBrange": {
     "file": "ocaml/banana.ml",
     "function": "arcBrange",
-    "start": 300,
-    "end": 319
+    "start": 313,
+    "end": 332
   },
   "banana.ml:prearc": {
     "file": "ocaml/banana.ml",
     "function": "prearc",
-    "start": 301,
-    "end": 319
+    "start": 314,
+    "end": 332
   },
   "banana.ml:k": {
     "file": "ocaml/banana.ml",
     "function": "k",
-    "start": 302,
-    "end": 319
+    "start": 315,
+    "end": 332
   },
   "banana.ml:arcB": {
     "file": "ocaml/banana.ml",
     "function": "arcB",
-    "start": 305,
-    "end": 319
+    "start": 318,
+    "end": 332
   },
   "banana.ml:dAC": {
     "file": "ocaml/banana.ml",
     "function": "dAC",
-    "start": 306,
-    "end": 319
+    "start": 319,
+    "end": 332
   },
   "banana.ml:arcC": {
     "file": "ocaml/banana.ml",
     "function": "arcC",
-    "start": 310,
-    "end": 319
+    "start": 323,
+    "end": 332
   },
   "banana.ml:arcA": {
     "file": "ocaml/banana.ml",
     "function": "arcA",
-    "start": 311,
-    "end": 319
+    "start": 324,
+    "end": 332
   },
   "banana.ml:a": {
     "file": "ocaml/banana.ml",
     "function": "a",
-    "start": 312,
-    "end": 319
+    "start": 325,
+    "end": 332
   },
   "banana.ml:thACB": {
     "file": "ocaml/banana.ml",
     "function": "thACB",
-    "start": 313,
-    "end": 319
+    "start": 326,
+    "end": 332
   },
   "banana.ml:thCAB": {
     "file": "ocaml/banana.ml",
     "function": "thCAB",
-    "start": 314,
-    "end": 319
+    "start": 327,
+    "end": 332
   },
   "banana.ml:mk2C": {
     "file": "ocaml/banana.ml",
     "function": "mk2C",
-    "start": 321,
-    "end": 325
+    "start": 334,
+    "end": 338
   },
   "banana.ml:dAB_triple": {
     "file": "ocaml/banana.ml",
     "function": "dAB_triple",
-    "start": 323,
-    "end": 325
+    "start": 336,
+    "end": 338
   },
   "banana.ml:dBC_triple": {
     "file": "ocaml/banana.ml",
     "function": "dBC_triple",
-    "start": 324,
-    "end": 325
+    "start": 337,
+    "end": 338
   },
   "banana.ml:mk2Ce": {
     "file": "ocaml/banana.ml",
     "function": "mk2Ce",
-    "start": 327,
-    "end": 327
+    "start": 340,
+    "end": 340
   },
   "banana.ml:fillout5D": {
     "file": "ocaml/banana.ml",
     "function": "fillout5D",
-    "start": 330,
-    "end": 349
+    "start": 343,
+    "end": 362
   },
   "banana.ml:thBCA": {
     "file": "ocaml/banana.ml",
     "function": "thBCA",
-    "start": 338,
-    "end": 349
+    "start": 351,
+    "end": 362
   },
   "banana.ml:thACB0": {
     "file": "ocaml/banana.ml",
     "function": "thACB0",
-    "start": 339,
-    "end": 349
+    "start": 352,
+    "end": 362
   },
   "banana.ml:thACB_CAB_pos": {
     "file": "ocaml/banana.ml",
     "function": "thACB_CAB_pos",
-    "start": 340,
-    "end": 349
+    "start": 353,
+    "end": 362
   },
   "banana.ml:thACB_CAB_neg": {
     "file": "ocaml/banana.ml",
     "function": "thACB_CAB_neg",
-    "start": 341,
-    "end": 349
+    "start": 354,
+    "end": 362
   },
   "banana.ml:thACB_CAB": {
     "file": "ocaml/banana.ml",
     "function": "thACB_CAB",
-    "start": 342,
-    "end": 349
+    "start": 355,
+    "end": 362
   },
   "banana.ml:thACB_CAB_CBA": {
     "file": "ocaml/banana.ml",
     "function": "thACB_CAB_CBA",
-    "start": 343,
-    "end": 349
+    "start": 356,
+    "end": 362
   },
   "banana.ml:fillout6D": {
     "file": "ocaml/banana.ml",
     "function": "fillout6D",
-    "start": 352,
-    "end": 365
+    "start": 365,
+    "end": 378
   },
   "dimer.ml:one_iso2C": {
     "file": "ocaml/dimer.ml",
@@ -3317,173 +3359,191 @@
     "start": 87,
     "end": 92
   },
+  "meet-in-middle.ml:peripheral_unstable_splits": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "peripheral_unstable_splits",
+    "start": 96,
+    "end": 96
+  },
+  "meet-in-middle.ml:central_unstable_splits": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "central_unstable_splits",
+    "start": 97,
+    "end": 97
+  },
   "meet-in-middle.ml:mk_one_pericoord": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "mk_one_pericoord",
-    "start": 95,
-    "end": 114
+    "start": 100,
+    "end": 120
   },
   "meet-in-middle.ml:overweight": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "overweight",
-    "start": 98,
-    "end": 114
+    "start": 103,
+    "end": 120
   },
   "meet-in-middle.ml:makesome": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "makesome",
-    "start": 101,
-    "end": 114
+    "start": 106,
+    "end": 120
   },
   "meet-in-middle.ml:pcs": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "pcs",
-    "start": 113,
-    "end": 114
+    "start": 119,
+    "end": 120
   },
   "meet-in-middle.ml:update_one_perihash": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "update_one_perihash",
-    "start": 116,
-    "end": 122
+    "start": 122,
+    "end": 128
   },
   "meet-in-middle.ml:area": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "area",
-    "start": 117,
-    "end": 122
+    "start": 123,
+    "end": 128
   },
   "meet-in-middle.ml:one_key": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "one_key",
-    "start": 118,
-    "end": 122
+    "start": 124,
+    "end": 128
   },
   "meet-in-middle.ml:_": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "_",
-    "start": 121,
-    "end": 122
+    "start": 127,
+    "end": 128
   },
   "meet-in-middle.ml:mk_peridata": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "mk_peridata",
-    "start": 124,
-    "end": 128
+    "start": 130,
+    "end": 134
   },
   "meet-in-middle.ml:ps'": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "ps'",
-    "start": 125,
-    "end": 128
+    "start": 131,
+    "end": 134
   },
   "meet-in-middle.ml:periareas": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "periareas",
-    "start": 130,
-    "end": 140
+    "start": 136,
+    "end": 146
   },
   "meet-in-middle.ml:phash": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "phash",
-    "start": 133,
-    "end": 140
+    "start": 139,
+    "end": 146
   },
   "meet-in-middle.ml:keys'": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "keys'",
-    "start": 134,
-    "end": 140
+    "start": 140,
+    "end": 146
   },
   "meet-in-middle.ml:someperiareas": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "someperiareas",
-    "start": 135,
-    "end": 140
+    "start": 141,
+    "end": 146
   },
   "meet-in-middle.ml:total_periarea": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "total_periarea",
-    "start": 139,
-    "end": 140
+    "start": 145,
+    "end": 146
   },
   "meet-in-middle.ml:perirecut": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "perirecut",
-    "start": 147,
-    "end": 173
+    "start": 153,
+    "end": 180
   },
   "meet-in-middle.ml:gap": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "gap",
-    "start": 161,
-    "end": 173
+    "start": 167,
+    "end": 180
   },
   "meet-in-middle.ml:cencut'": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "cencut'",
-    "start": 166,
-    "end": 173
+    "start": 172,
+    "end": 180
   },
   "meet-in-middle.ml:ccs": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "ccs",
-    "start": 172,
-    "end": 173
+    "start": 179,
+    "end": 180
   },
   "meet-in-middle.ml:mk_cencoord": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "mk_cencoord",
-    "start": 175,
-    "end": 176
+    "start": 182,
+    "end": 183
   },
   "meet-in-middle.ml:report_stats": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "report_stats",
-    "start": 178,
-    "end": 191
+    "start": 185,
+    "end": 198
   },
   "meet-in-middle.ml:s1": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "s1",
-    "start": 179,
-    "end": 191
+    "start": 186,
+    "end": 198
   },
   "meet-in-middle.ml:ls": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "ls",
-    "start": 182,
-    "end": 191
+    "start": 189,
+    "end": 198
   },
   "meet-in-middle.ml:keyss": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "keyss",
-    "start": 186,
-    "end": 191
+    "start": 193,
+    "end": 198
   },
   "meet-in-middle.ml:mitm_recursion": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "mitm_recursion",
-    "start": 194,
-    "end": 208
+    "start": 201,
+    "end": 217
   },
   "meet-in-middle.ml:pdata'": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "pdata'",
-    "start": 199,
-    "end": 208
+    "start": 208,
+    "end": 217
+  },
+  "meet-in-middle.ml:next": {
+    "file": "ocaml/meet-in-middle.ml",
+    "function": "next",
+    "start": 211,
+    "end": 217
   },
   "meet-in-middle.ml:mk_hashtbl": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "mk_hashtbl",
-    "start": 210,
-    "end": 213
+    "start": 219,
+    "end": 222
   },
   "meet-in-middle.ml:tbl": {
     "file": "ocaml/meet-in-middle.ml",
     "function": "tbl",
-    "start": 211,
-    "end": 213
+    "start": 220,
+    "end": 222
   },
   "mitm-calcs.ml:time_mitm": {
     "file": "ocaml/mitm-calcs.ml",
@@ -3617,497 +3677,497 @@
     "start": 58,
     "end": 59
   },
+  "mitm-calcs.ml:strictly_large_pseudo_angle": {
+    "file": "ocaml/mitm-calcs.ml",
+    "function": "strictly_large_pseudo_angle",
+    "start": 61,
+    "end": 61
+  },
   "mitm-calcs.ml:forall_alpha_constraint_pseudo_dimer": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "forall_alpha_constraint_pseudo_dimer",
-    "start": 61,
-    "end": 62
+    "start": 63,
+    "end": 64
   },
   "mitm-calcs.ml:d_subcrit_shared": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_subcrit_shared",
-    "start": 64,
-    "end": 66
+    "start": 66,
+    "end": 68
   },
   "mitm-calcs.ml:_": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "_",
-    "start": 65,
-    "end": 66
+    "start": 67,
+    "end": 68
   },
   "mitm-calcs.ml:d_subcrit_contact": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_subcrit_contact",
-    "start": 68,
-    "end": 69
+    "start": 70,
+    "end": 71
   },
   "mitm-calcs.ml:d_shared_pseudo": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_shared_pseudo",
-    "start": 71,
-    "end": 71
+    "start": 73,
+    "end": 73
   },
   "mitm-calcs.ml:d_egress": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_egress",
-    "start": 73,
-    "end": 76
+    "start": 75,
+    "end": 78
   },
   "mitm-calcs.ml:d_third_pseudo": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_third_pseudo",
-    "start": 78,
-    "end": 78
+    "start": 80,
+    "end": 80
   },
   "mitm-calcs.ml:edge5D_ABs": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "edge5D_ABs",
-    "start": 80,
-    "end": 80
+    "start": 82,
+    "end": 82
   },
   "mitm-calcs.ml:edge5D_BCs": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "edge5D_BCs",
-    "start": 82,
-    "end": 82
+    "start": 84,
+    "end": 84
   },
   "mitm-calcs.ml:edge5D_ACs": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "edge5D_ACs",
-    "start": 84,
-    "end": 84
+    "start": 86,
+    "end": 86
   },
   "mitm-calcs.ml:ckeyfnBC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "ckeyfnBC",
-    "start": 86,
-    "end": 86
+    "start": 88,
+    "end": 88
   },
   "mitm-calcs.ml:ckeyfnAC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "ckeyfnAC",
-    "start": 88,
-    "end": 88
+    "start": 90,
+    "end": 90
   },
   "mitm-calcs.ml:ckeyfnAB": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "ckeyfnAB",
-    "start": 90,
-    "end": 90
+    "start": 92,
+    "end": 92
   },
   "mitm-calcs.ml:ckeyfn2Ce": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "ckeyfn2Ce",
-    "start": 92,
-    "end": 93
+    "start": 94,
+    "end": 95
   },
   "mitm-calcs.ml:ckeyfn6AB": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "ckeyfn6AB",
-    "start": 95,
-    "end": 95
+    "start": 97,
+    "end": 97
   },
   "mitm-calcs.ml:ckeyfn6BC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "ckeyfn6BC",
-    "start": 97,
-    "end": 97
+    "start": 99,
+    "end": 99
   },
   "mitm-calcs.ml:ckeyfn6AC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "ckeyfn6AC",
-    "start": 99,
-    "end": 99
+    "start": 101,
+    "end": 101
   },
   "mitm-calcs.ml:init2Cps": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "init2Cps",
-    "start": 101,
-    "end": 109
+    "start": 103,
+    "end": 111
   },
   "mitm-calcs.ml:fillfn": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "fillfn",
-    "start": 102,
-    "end": 109
+    "start": 104,
+    "end": 111
   },
   "mitm-calcs.ml:outdomfn": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "outdomfn",
-    "start": 103,
-    "end": 109
+    "start": 105,
+    "end": 111
   },
   "mitm-calcs.ml:keyfn": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "keyfn",
-    "start": 105,
-    "end": 109
+    "start": 107,
+    "end": 111
   },
   "mitm-calcs.ml:fn": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "fn",
-    "start": 106,
-    "end": 109
+    "start": 108,
+    "end": 111
   },
   "mitm-calcs.ml:keys": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "keys",
-    "start": 107,
-    "end": 109
+    "start": 109,
+    "end": 111
   },
   "mitm-calcs.ml:area": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "area",
-    "start": 108,
-    "end": 109
+    "start": 110,
+    "end": 111
   },
   "mitm-calcs.ml:init2Cps_isosceles_AB_AC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "init2Cps_isosceles_AB_AC",
-    "start": 111,
-    "end": 118
+    "start": 113,
+    "end": 120
   },
   "mitm-calcs.ml:outdomfn'": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "outdomfn'",
-    "start": 114,
-    "end": 118
+    "start": 116,
+    "end": 120
   },
   "mitm-calcs.ml:init2Cps_isosceles_BC_AC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "init2Cps_isosceles_BC_AC",
-    "start": 120,
-    "end": 127
+    "start": 122,
+    "end": 129
   },
   "mitm-calcs.ml:init2Cps_isosceles_AC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "init2Cps_isosceles_AC",
-    "start": 129,
-    "end": 136
+    "start": 131,
+    "end": 138
   },
   "mitm-calcs.ml:reset_peri": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "reset_peri",
-    "start": 138,
-    "end": 140
+    "start": 140,
+    "end": 142
   },
   "mitm-calcs.ml:test1_centralpent_1237": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "test1_centralpent_1237",
-    "start": 144,
-    "end": 154
+    "start": 146,
+    "end": 156
   },
   "mitm-calcs.ml:cluster_areacut": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "cluster_areacut",
-    "start": 145,
-    "end": 154
+    "start": 147,
+    "end": 156
   },
   "mitm-calcs.ml:pdata": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "pdata",
-    "start": 146,
-    "end": 154
+    "start": 148,
+    "end": 156
   },
   "mitm-calcs.ml:cencut": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "cencut",
-    "start": 147,
-    "end": 154
+    "start": 149,
+    "end": 156
   },
   "mitm-calcs.ml:keyfns": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "keyfns",
-    "start": 149,
-    "end": 154
+    "start": 151,
+    "end": 156
   },
   "mitm-calcs.ml:k2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "k2",
-    "start": 150,
-    "end": 154
+    "start": 152,
+    "end": 156
   },
   "mitm-calcs.ml:dAB_dBC_dAC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "dAB_dBC_dAC",
-    "start": 151,
-    "end": 154
+    "start": 153,
+    "end": 156
   },
   "mitm-calcs.ml:cfn": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "cfn",
-    "start": 152,
-    "end": 154
+    "start": 154,
+    "end": 156
   },
   "mitm-calcs.ml:ccs": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "ccs",
-    "start": 153,
-    "end": 154
+    "start": 155,
+    "end": 156
   },
   "mitm-calcs.ml:test1_centralpent_172": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "test1_centralpent_172",
-    "start": 158,
-    "end": 168
+    "start": 160,
+    "end": 170
   },
   "mitm-calcs.ml:calc_pent4_6D_postcluster": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent4_6D_postcluster",
-    "start": 174,
-    "end": 186
+    "start": 176,
+    "end": 188
   },
   "mitm-calcs.ml:calc_pent3_6D_postcluster": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent3_6D_postcluster",
-    "start": 192,
-    "end": 207
-  },
-  "mitm-calcs.ml:d_subcrit_isosc": {
-    "file": "ocaml/mitm-calcs.ml",
-    "function": "d_subcrit_isosc",
-    "start": 201,
-    "end": 207
+    "start": 194,
+    "end": 208
   },
   "mitm-calcs.ml:d_short": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_short",
-    "start": 202,
-    "end": 207
+    "start": 203,
+    "end": 208
   },
   "mitm-calcs.ml:calc_pent3AB_postcluster": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent3AB_postcluster",
-    "start": 213,
-    "end": 227
+    "start": 214,
+    "end": 228
   },
   "mitm-calcs.ml:calc_pent3BC_postcluster": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent3BC_postcluster",
-    "start": 233,
-    "end": 244
+    "start": 234,
+    "end": 245
   },
   "mitm-calcs.ml:calc_pent3AC_postcluster": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent3AC_postcluster",
-    "start": 250,
-    "end": 262
+    "start": 251,
+    "end": 263
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case0": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case0",
-    "start": 268,
-    "end": 290
+    "start": 269,
+    "end": 291
   },
   "mitm-calcs.ml:range": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "range",
-    "start": 272,
-    "end": 290
+    "start": 273,
+    "end": 291
   },
   "mitm-calcs.ml:assertAC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "assertAC",
-    "start": 284,
-    "end": 290
+    "start": 285,
+    "end": 291
   },
   "mitm-calcs.ml:assertBC": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "assertBC",
-    "start": 286,
-    "end": 290
+    "start": 287,
+    "end": 291
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case1",
-    "start": 296,
-    "end": 310
+    "start": 297,
+    "end": 311
   },
   "mitm-calcs.ml:d_18": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_18",
-    "start": 305,
-    "end": 310
+    "start": 306,
+    "end": 311
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case2",
-    "start": 316,
-    "end": 331
+    "start": 317,
+    "end": 332
   },
   "mitm-calcs.ml:d_contact": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_contact",
-    "start": 326,
-    "end": 331
+    "start": 327,
+    "end": 332
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case3": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case3",
-    "start": 337,
-    "end": 350
+    "start": 338,
+    "end": 351
   },
   "mitm-calcs.ml:calc_pent2_postcluster_case4": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "calc_pent2_postcluster_case4",
-    "start": 356,
-    "end": 370
+    "start": 357,
+    "end": 371
   },
   "mitm-calcs.ml:precluster1_case0": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster1_case0",
-    "start": 376,
-    "end": 394
+    "start": 377,
+    "end": 395
   },
   "mitm-calcs.ml:precluster1_case1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster1_case1",
-    "start": 400,
-    "end": 420
+    "start": 401,
+    "end": 421
   },
   "mitm-calcs.ml:theta'": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "theta'",
-    "start": 404,
-    "end": 420
+    "start": 405,
+    "end": 421
   },
   "mitm-calcs.ml:out_of_theta'": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "out_of_theta'",
-    "start": 405,
-    "end": 420
+    "start": 406,
+    "end": 421
   },
   "mitm-calcs.ml:d_shared": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_shared",
-    "start": 414,
-    "end": 420
+    "start": 415,
+    "end": 421
   },
   "mitm-calcs.ml:precluster1_case2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster1_case2",
-    "start": 426,
-    "end": 447
+    "start": 427,
+    "end": 448
   },
   "mitm-calcs.ml:notslider1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "notslider1",
-    "start": 430,
-    "end": 447
+    "start": 431,
+    "end": 448
   },
   "mitm-calcs.ml:notslider": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "notslider",
-    "start": 431,
-    "end": 447
+    "start": 432,
+    "end": 448
   },
   "mitm-calcs.ml:d_full": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "d_full",
-    "start": 442,
-    "end": 447
+    "start": 443,
+    "end": 448
   },
   "mitm-calcs.ml:pseudo2_boundary_excluded": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "pseudo2_boundary_excluded",
-    "start": 453,
-    "end": 458
+    "start": 454,
+    "end": 459
   },
   "mitm-calcs.ml:precluster2_case0": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster2_case0",
-    "start": 464,
-    "end": 480
+    "start": 465,
+    "end": 481
   },
   "mitm-calcs.ml:precluster2_case1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster2_case1",
-    "start": 486,
-    "end": 505
+    "start": 487,
+    "end": 506
   },
   "mitm-calcs.ml:out_of_midpointer": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "out_of_midpointer",
-    "start": 490,
-    "end": 505
+    "start": 491,
+    "end": 506
   },
   "mitm-calcs.ml:precluster2_case2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster2_case2",
-    "start": 511,
-    "end": 530
+    "start": 512,
+    "end": 531
   },
   "mitm-calcs.ml:dimer_isosceles_precluster": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "dimer_isosceles_precluster",
-    "start": 536,
-    "end": 549
+    "start": 537,
+    "end": 550
   },
   "mitm-calcs.ml:precluster4_case0_experimental": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster4_case0_experimental",
-    "start": 555,
-    "end": 566
+    "start": 556,
+    "end": 567
   },
   "mitm-calcs.ml:precluster4_case1_experimental": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster4_case1_experimental",
-    "start": 572,
-    "end": 583
+    "start": 573,
+    "end": 584
   },
   "mitm-calcs.ml:init2Cps_precluster6": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "init2Cps_precluster6",
-    "start": 587,
-    "end": 594
+    "start": 588,
+    "end": 595
   },
   "mitm-calcs.ml:precluster6_case1": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case1",
-    "start": 600,
-    "end": 612
+    "start": 601,
+    "end": 613
   },
   "mitm-calcs.ml:keyfnT": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "keyfnT",
-    "start": 604,
-    "end": 612
+    "start": 605,
+    "end": 613
   },
   "mitm-calcs.ml:keyfnS": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "keyfnS",
-    "start": 605,
-    "end": 612
+    "start": 606,
+    "end": 613
   },
   "mitm-calcs.ml:precluster6_case2": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case2",
-    "start": 618,
-    "end": 630
+    "start": 619,
+    "end": 631
   },
   "mitm-calcs.ml:precluster6_case3": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case3",
-    "start": 636,
-    "end": 648
+    "start": 637,
+    "end": 649
   },
   "mitm-calcs.ml:precluster6_case4": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case4",
-    "start": 654,
-    "end": 666
+    "start": 655,
+    "end": 667
   },
   "mitm-calcs.ml:precluster6_case5": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case5",
-    "start": 672,
-    "end": 684
+    "start": 673,
+    "end": 685
   },
   "mitm-calcs.ml:precluster6_case6": {
     "file": "ocaml/mitm-calcs.ml",
     "function": "precluster6_case6",
-    "start": 690,
-    "end": 702
+    "start": 691,
+    "end": 703
   },
   "pent.ml:selectsome": {
     "file": "ocaml/pent.ml",
@@ -6429,462 +6489,474 @@
     "file": "tests/ocaml/tests.ml",
     "function": "m",
     "start": 10,
-    "end": 333
+    "end": 357
   },
   "tests.ml:mk": {
     "file": "tests/ocaml/tests.ml",
     "function": "mk",
     "start": 11,
-    "end": 333
+    "end": 357
   },
   "tests.ml:rows": {
     "file": "tests/ocaml/tests.ml",
     "function": "rows",
     "start": 12,
-    "end": 333
+    "end": 357
   },
   "tests.ml:add": {
     "file": "tests/ocaml/tests.ml",
     "function": "add",
     "start": 13,
-    "end": 333
+    "end": 357
   },
   "tests.ml:demand": {
     "file": "tests/ocaml/tests.ml",
     "function": "demand",
     "start": 14,
-    "end": 333
+    "end": 357
   },
   "tests.ml:contains": {
     "file": "tests/ocaml/tests.ml",
     "function": "contains",
     "start": 15,
-    "end": 333
+    "end": 357
   },
   "tests.ml:overlaps": {
     "file": "tests/ocaml/tests.ml",
     "function": "overlaps",
     "start": 16,
-    "end": 333
+    "end": 357
   },
   "tests.ml:valid": {
     "file": "tests/ocaml/tests.ml",
     "function": "valid",
     "start": 17,
-    "end": 333
+    "end": 357
   },
   "tests.ml:both": {
     "file": "tests/ocaml/tests.ml",
     "function": "both",
     "start": 19,
-    "end": 333
+    "end": 357
   },
   "tests.ml:same": {
     "file": "tests/ocaml/tests.ml",
     "function": "same",
     "start": 20,
-    "end": 333
+    "end": 357
   },
   "tests.ml:check": {
     "file": "tests/ocaml/tests.ml",
     "function": "check",
     "start": 21,
-    "end": 333
+    "end": 357
   },
   "tests.ml:raises_unstable": {
     "file": "tests/ocaml/tests.ml",
     "function": "raises_unstable",
     "start": 22,
-    "end": 333
+    "end": 357
   },
   "tests.ml:raises_failure": {
     "file": "tests/ocaml/tests.ml",
     "function": "raises_failure",
     "start": 23,
-    "end": 333
+    "end": 357
   },
   "tests.ml:scalar": {
     "file": "tests/ocaml/tests.ml",
     "function": "scalar",
     "start": 24,
-    "end": 333
+    "end": 357
   },
   "tests.ml:member": {
     "file": "tests/ocaml/tests.ml",
     "function": "member",
     "start": 25,
-    "end": 333
+    "end": 357
   },
   "tests.ml:eps": {
     "file": "tests/ocaml/tests.ml",
     "function": "eps",
     "start": 26,
-    "end": 333
+    "end": 357
   },
   "tests.ml:near": {
     "file": "tests/ocaml/tests.ml",
     "function": "near",
     "start": 27,
-    "end": 333
+    "end": 357
   },
   "tests.ml:core": {
     "file": "tests/ocaml/tests.ml",
     "function": "core",
     "start": 29,
-    "end": 333
+    "end": 357
   },
   "tests.ml:out": {
     "file": "tests/ocaml/tests.ml",
     "function": "out",
     "start": 71,
-    "end": 333
+    "end": 357
   },
   "tests.ml:boundaries": {
     "file": "tests/ocaml/tests.ml",
     "function": "boundaries",
     "start": 79,
-    "end": 333
+    "end": 357
   },
   "tests.ml:edge": {
     "file": "tests/ocaml/tests.ml",
     "function": "edge",
     "start": 91,
-    "end": 333
+    "end": 357
   },
   "tests.ml:fixture": {
     "file": "tests/ocaml/tests.ml",
     "function": "fixture",
     "start": 92,
-    "end": 333
+    "end": 357
   },
   "tests.ml:cap": {
     "file": "tests/ocaml/tests.ml",
     "function": "cap",
     "start": 93,
-    "end": 333
+    "end": 357
   },
   "tests.ml:derivatives": {
     "file": "tests/ocaml/tests.ml",
     "function": "derivatives",
     "start": 104,
-    "end": 333
+    "end": 357
   },
   "tests.ml:open": {
     "file": "tests/ocaml/tests.ml",
     "function": "open",
     "start": 105,
-    "end": 333
+    "end": 357
   },
   "tests.ml:x": {
     "file": "tests/ocaml/tests.ml",
     "function": "x",
     "start": 106,
-    "end": 333
+    "end": 357
   },
   "tests.ml:y": {
     "file": "tests/ocaml/tests.ml",
     "function": "y",
     "start": 107,
-    "end": 333
+    "end": 357
   },
   "tests.ml:xx": {
     "file": "tests/ocaml/tests.ml",
     "function": "xx",
     "start": 127,
-    "end": 333
+    "end": 357
   },
   "tests.ml:xxD": {
     "file": "tests/ocaml/tests.ml",
     "function": "xxD",
     "start": 128,
-    "end": 333
+    "end": 357
   },
   "tests.ml:yyD": {
     "file": "tests/ocaml/tests.ml",
     "function": "yyD",
     "start": 129,
-    "end": 333
+    "end": 357
   },
   "tests.ml:f": {
     "file": "tests/ocaml/tests.ml",
     "function": "f",
     "start": 130,
-    "end": 333
+    "end": 357
   },
   "tests.ml:expected": {
     "file": "tests/ocaml/tests.ml",
     "function": "expected",
     "start": 132,
-    "end": 333
+    "end": 357
   },
   "tests.ml:geometry": {
     "file": "tests/ocaml/tests.ml",
     "function": "geometry",
     "start": 139,
-    "end": 333
+    "end": 357
   },
-  "tests.ml:pts": {
+  "tests.ml:upper": {
     "file": "tests/ocaml/tests.ml",
-    "function": "pts",
-    "start": 146,
-    "end": 333
-  },
-  "tests.ml:has": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "has",
-    "start": 147,
-    "end": 333
-  },
-  "tests.ml:d": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "d",
-    "start": 155,
-    "end": 333
-  },
-  "tests.ml:k": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "k",
-    "start": 156,
-    "end": 333
-  },
-  "tests.ml:h": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "h",
-    "start": 157,
-    "end": 333
-  },
-  "tests.ml:reference": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "reference",
-    "start": 158,
-    "end": 333
-  },
-  "tests.ml:lower": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "lower",
-    "start": 172,
-    "end": 333
-  },
-  "tests.ml:point_area": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "point_area",
-    "start": 173,
-    "end": 333
-  },
-  "tests.ml:show": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "show",
-    "start": 180,
-    "end": 333
-  },
-  "tests.ml:finite": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "finite",
-    "start": 184,
-    "end": 333
-  },
-  "tests.ml:encloses": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "encloses",
-    "start": 185,
-    "end": 333
-  },
-  "tests.ml:e1": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "e1",
-    "start": 186,
-    "end": 333
-  },
-  "tests.ml:e2": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "e2",
-    "start": 187,
-    "end": 333
-  },
-  "tests.ml:expected_ab": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "expected_ab",
-    "start": 191,
-    "end": 333
-  },
-  "tests.ml:expected_bc": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "expected_bc",
-    "start": 192,
-    "end": 333
-  },
-  "tests.ml:expected_ac": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "expected_ac",
-    "start": 193,
-    "end": 333
-  },
-  "tests.ml:full_area": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "full_area",
-    "start": 205,
-    "end": 333
-  },
-  "tests.ml:mitm": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "mitm",
-    "start": 216,
-    "end": 333
-  },
-  "tests.ml:ks": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "ks",
-    "start": 218,
-    "end": 333
-  },
-  "tests.ml:a": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "a",
-    "start": 220,
-    "end": 333
-  },
-  "tests.ml:l": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "l",
-    "start": 223,
-    "end": 333
-  },
-  "tests.ml:boxes": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "boxes",
-    "start": 231,
-    "end": 333
-  },
-  "tests.ml:id": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "id",
-    "start": 246,
-    "end": 333
-  },
-  "tests.ml:fn": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "fn",
-    "start": 250,
-    "end": 333
-  },
-  "tests.ml:survivors": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "survivors",
-    "start": 251,
-    "end": 333
-  },
-  "tests.ml:feasible": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "feasible",
-    "start": 252,
-    "end": 333
-  },
-  "tests.ml:vertices": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "vertices",
-    "start": 270,
-    "end": 333
-  },
-  "tests.ml:dot": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "dot",
-    "start": 271,
-    "end": 333
-  },
-  "tests.ml:separation": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "separation",
-    "start": 272,
-    "end": 333
-  },
-  "tests.ml:best": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "best",
-    "start": 273,
-    "end": 333
-  },
-  "tests.ml:axis": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "axis",
-    "start": 276,
-    "end": 333
-  },
-  "tests.ml:project": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "project",
-    "start": 277,
-    "end": 333
-  },
-  "tests.ml:extended": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "extended",
-    "start": 282,
-    "end": 333
-  },
-  "tests.ml:rng": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "rng",
-    "start": 284,
-    "end": 333
-  },
-  "tests.ml:t": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "t",
-    "start": 287,
-    "end": 333
-  },
-  "tests.ml:u": {
-    "file": "tests/ocaml/tests.ml",
-    "function": "u",
-    "start": 288,
-    "end": 333
+    "function": "upper",
+    "start": 145,
+    "end": 357
   },
   "tests.ml:p": {
     "file": "tests/ocaml/tests.ml",
     "function": "p",
+    "start": 158,
+    "end": 357
+  },
+  "tests.ml:u": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "u",
+    "start": 161,
+    "end": 357
+  },
+  "tests.ml:v": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "v",
+    "start": 162,
+    "end": 357
+  },
+  "tests.ml:t": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "t",
+    "start": 163,
+    "end": 357
+  },
+  "tests.ml:pts": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "pts",
+    "start": 170,
+    "end": 357
+  },
+  "tests.ml:has": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "has",
+    "start": 171,
+    "end": 357
+  },
+  "tests.ml:d": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "d",
+    "start": 179,
+    "end": 357
+  },
+  "tests.ml:k": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "k",
+    "start": 180,
+    "end": 357
+  },
+  "tests.ml:h": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "h",
+    "start": 181,
+    "end": 357
+  },
+  "tests.ml:reference": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "reference",
+    "start": 182,
+    "end": 357
+  },
+  "tests.ml:lower": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "lower",
+    "start": 196,
+    "end": 357
+  },
+  "tests.ml:point_area": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "point_area",
+    "start": 197,
+    "end": 357
+  },
+  "tests.ml:show": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "show",
+    "start": 204,
+    "end": 357
+  },
+  "tests.ml:finite": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "finite",
+    "start": 208,
+    "end": 357
+  },
+  "tests.ml:encloses": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "encloses",
+    "start": 209,
+    "end": 357
+  },
+  "tests.ml:e1": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "e1",
+    "start": 210,
+    "end": 357
+  },
+  "tests.ml:e2": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "e2",
+    "start": 211,
+    "end": 357
+  },
+  "tests.ml:expected_ab": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "expected_ab",
+    "start": 215,
+    "end": 357
+  },
+  "tests.ml:expected_bc": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "expected_bc",
+    "start": 216,
+    "end": 357
+  },
+  "tests.ml:expected_ac": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "expected_ac",
+    "start": 217,
+    "end": 357
+  },
+  "tests.ml:full_area": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "full_area",
+    "start": 229,
+    "end": 357
+  },
+  "tests.ml:mitm": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "mitm",
+    "start": 240,
+    "end": 357
+  },
+  "tests.ml:ks": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "ks",
+    "start": 242,
+    "end": 357
+  },
+  "tests.ml:a": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "a",
+    "start": 244,
+    "end": 357
+  },
+  "tests.ml:l": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "l",
+    "start": 247,
+    "end": 357
+  },
+  "tests.ml:boxes": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "boxes",
+    "start": 255,
+    "end": 357
+  },
+  "tests.ml:id": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "id",
+    "start": 270,
+    "end": 357
+  },
+  "tests.ml:fn": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "fn",
+    "start": 274,
+    "end": 357
+  },
+  "tests.ml:survivors": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "survivors",
+    "start": 275,
+    "end": 357
+  },
+  "tests.ml:feasible": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "feasible",
+    "start": 276,
+    "end": 357
+  },
+  "tests.ml:vertices": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "vertices",
+    "start": 294,
+    "end": 357
+  },
+  "tests.ml:dot": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "dot",
+    "start": 295,
+    "end": 357
+  },
+  "tests.ml:separation": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "separation",
+    "start": 296,
+    "end": 357
+  },
+  "tests.ml:best": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "best",
+    "start": 297,
+    "end": 357
+  },
+  "tests.ml:axis": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "axis",
     "start": 300,
-    "end": 333
+    "end": 357
+  },
+  "tests.ml:project": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "project",
+    "start": 301,
+    "end": 357
+  },
+  "tests.ml:extended": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "extended",
+    "start": 306,
+    "end": 357
+  },
+  "tests.ml:rng": {
+    "file": "tests/ocaml/tests.ml",
+    "function": "rng",
+    "start": 308,
+    "end": 357
   },
   "tests.ml:ks1": {
     "file": "tests/ocaml/tests.ml",
     "function": "ks1",
-    "start": 302,
-    "end": 333
+    "start": 326,
+    "end": 357
   },
   "tests.ml:s": {
     "file": "tests/ocaml/tests.ml",
     "function": "s",
-    "start": 311,
-    "end": 333
+    "start": 335,
+    "end": 357
   },
   "tests.ml:run": {
     "file": "tests/ocaml/tests.ml",
     "function": "run",
-    "start": 317,
-    "end": 333
+    "start": 341,
+    "end": 357
   },
   "tests.ml:cases": {
     "file": "tests/ocaml/tests.ml",
     "function": "cases",
-    "start": 320,
-    "end": 333
+    "start": 344,
+    "end": 357
   },
   "tests.ml:ids": {
     "file": "tests/ocaml/tests.ml",
     "function": "ids",
-    "start": 321,
-    "end": 333
+    "start": 345,
+    "end": 357
   },
   "tests.ml:failures": {
     "file": "tests/ocaml/tests.ml",
     "function": "failures",
-    "start": 324,
-    "end": 333
+    "start": 348,
+    "end": 357
   },
   "tests.ml:start": {
     "file": "tests/ocaml/tests.ml",
     "function": "start",
-    "start": 326,
-    "end": 333
+    "start": 350,
+    "end": 357
   }
 }

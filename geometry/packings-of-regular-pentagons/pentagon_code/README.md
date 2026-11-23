@@ -1,7 +1,7 @@
 # Packings of regular pentagons — verification project
 
-**Current article:** [manuscript v008](paper/pentagon_v008.pdf).  
-**Computational distribution:** code v005 (`pentagon_code_v005`).
+**Current article:** [manuscript v010](paper/pentagon_v010.pdf).  
+**Computational distribution:** code v006 (`pentagon_code_v006`).
 
 This repository contains the paper, its interval-arithmetic calculations, supporting
 Wolfram checks, figure sources, and mathematical documentation. All OCaml calculations,
@@ -22,8 +22,25 @@ Start by reading the paper, then use the [paper-to-code index](docs/index.html)
 (offline HTML) or [Markdown index](docs/CALCULATIONS.md) to find a lemma, section,
 source label, seven-letter computation identifier, or named job. The
 [mathematical commentary](docs/code_commentary.pdf) explains how the geometry
-becomes code. The [2016-to-v007 table](docs/pentagon_changes_2016v2_to_v007.md)
-locates changes for readers familiar with the original article.
+becomes code. The [2016-to-v008 table](docs/pentagon_changes_2016v2_to_v008.md)
+locates changes through v008. The [2016-to-v010 review guide](docs/pentagon_changes_2016v2_to_v010.md) gives the new pages and proof locations.
+
+The archived run passed all 77 required OCaml stages and all four diagnostics.
+To verify the archived logs, the 161-check Mathematica report, and their
+association with v010, run the following from this directory.
+
+```bash
+python3 scripts/check_release.py
+python3 confirm.py --check
+```
+
+The execution registry records the v009 manuscript current when the OCaml
+jobs ran. Its numerical source fingerprint is preserved. The current paper
+and label map are identified by RELEASE.json and verification/association.json.
+The archived environment records OCaml 4.14.4 and local development pins
+for the interval libraries. The published 1.6 source archive in the installer
+is a separate dependency record. Original environment and log files include
+paths from the execution machine.
 
 ## One complete OCaml run
 
@@ -106,13 +123,13 @@ another reader. See [VERIFICATION.md](docs/VERIFICATION.md) for the exact checks
 
 | Location | Purpose |
 |---|---|
-| `paper/` | The current v008 source, PDF, bibliography, compiled label map, and build driver. No older manuscript copies. |
+| `paper/` | The current v010 source, PDF, bibliography, compiled label map, and build driver. No older manuscript copies. |
 | `ocaml/` | The production geometry, interval adapter, search engines, extra contact bounds, loader, and job dispatch. |
 | `tests/` | OCaml contract/positive-control checks, Python controller tests, and reference fixtures. |
 | `mathematica/` | The self-contained Wolfram checking package and its described check catalogue. |
 | `scripts/`, `run.py`, `confirm.py` | Common execution, resource control, documentation generation, and confirmation. |
 | `registry.json` | Complete job list, source calls, paper locators, and scheduling estimates. |
-| `docs/` | Current indices, commentary, guides, and the compact 2016-to-v007 change table. |
+| `docs/` | Current indices, commentary, guides, and the compact 2016-to-v008 change table. |
 | `figures/` | Figure constructions and a gallery for the current paper. |
 | `environment/` | Installation, pinned public dependency identities, and environment archival. |
 | `evidence/` | Source-identified historical timing summaries, used for scheduling, never as new passes. |
@@ -122,9 +139,13 @@ another reader. See [VERIFICATION.md](docs/VERIFICATION.md) for the exact checks
 
 The manuscript and mathematical implementation bodies are not changed by run
 scheduling. The release history is in [CHANGELOG.md](CHANGELOG.md), and exact
-unchanged/moved/changed paths are recorded in [the v005 file comparison](provenance/v005-file-changes.json).
+unchanged/moved/changed paths are recorded in [the v005–v006 file comparison](provenance/v006-file-changes.json).
 License scopes and third-party notices are in [LICENSE.md](LICENSE.md).
 
-## Changes from v004.1
+## Changes from v005
 
-Manuscript v008 treats limiting contacts, gives the fixed-edge reduction and uses Lemma 5.10 at a tie in squeezing. The pinwheel jobs now cover the full angle triangle. Two elementary side bounds are checked at their points of use. The original 77 required stages and four diagnostics are retained. The [release history](CHANGELOG.md) identifies the mathematical changes. The OCaml status is pending a run on these sources.
+Appendix A.3 proves the contact-angle enclosure used by the revised OCaml
+routine. The pseudo-dimer predicate now retains flush angles at both period
+endpoints. The job list is unchanged. All 77 required stages and four
+diagnostics can be rerun with the command above. The previous Mathematica
+report covers all 161 checks on the unchanged component.

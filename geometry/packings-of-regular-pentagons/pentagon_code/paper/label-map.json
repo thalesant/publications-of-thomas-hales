@@ -25,7 +25,7 @@
   },
   "fig:constant": {
     "number": "2.1",
-    "page": "5"
+    "page": "6"
   },
   "fig:KKtriangle": {
     "number": "2.2",
@@ -37,7 +37,7 @@
   },
   "fig:KK2min": {
     "number": "2.4",
-    "page": "6"
+    "page": "7"
   },
   "fig:Gamma": {
     "number": "2.5",
@@ -45,7 +45,7 @@
   },
   "fig:pseudo-dimer": {
     "number": "2.6",
-    "page": "7"
+    "page": "8"
   },
   "fig:obtuse": {
     "number": "2.7",
@@ -77,11 +77,11 @@
   },
   "lemma:main": {
     "number": "2.12",
-    "page": "11"
+    "page": "12"
   },
   "eqn:main": {
     "number": "2.13",
-    "page": "11"
+    "page": "12"
   },
   "eqn:strict-main": {
     "number": "2.14",
@@ -133,11 +133,11 @@
   },
   "fig:pin1": {
     "number": "3.6",
-    "page": "17"
+    "page": "18"
   },
   "sec:area": {
     "number": "4",
-    "page": "19"
+    "page": "20"
   },
   "lemma:21": {
     "number": "4.1",
@@ -149,7 +149,7 @@
   },
   "lemma:primary": {
     "number": "4.5",
-    "page": "20"
+    "page": "21"
   },
   "lemma:primary2": {
     "number": "4.6",
@@ -161,7 +161,7 @@
   },
   "lemma:mid-172": {
     "number": "4.8",
-    "page": "21"
+    "page": "22"
   },
   "lemma:172": {
     "number": "4.9",
@@ -169,7 +169,7 @@
   },
   "fig:172-slider": {
     "number": "4.1",
-    "page": "22"
+    "page": "23"
   },
   "lemma:2C": {
     "number": "4.10",
@@ -181,7 +181,7 @@
   },
   "sec:calc": {
     "number": "5",
-    "page": "23"
+    "page": "24"
   },
   "NKQNXUN": {
     "number": "5.1",
@@ -225,7 +225,7 @@
   },
   "lemma:m2-area": {
     "number": "5.7",
-    "page": "24"
+    "page": "25"
   },
   "KUGAKIK": {
     "number": "5.10",
@@ -253,7 +253,7 @@
   },
   "def:large": {
     "number": "5.13",
-    "page": "25"
+    "page": "26"
   },
   "fig:large": {
     "number": "5.1",
@@ -273,11 +273,11 @@
   },
   "sec:dimer-pair": {
     "number": "6",
-    "page": "26"
+    "page": "27"
   },
   "thm:dimer-area": {
     "number": "6.1",
-    "page": "26"
+    "page": "27"
   },
   "sub:long": {
     "number": "6.1",
@@ -293,11 +293,11 @@
   },
   "sec:squeeze": {
     "number": "6.3",
-    "page": "30"
+    "page": "31"
   },
   "lemma:squeeze-area": {
     "number": "6.5",
-    "page": "31"
+    "page": "32"
   },
   "lemma:dimer-acrit-epsN": {
     "number": "6.6",
@@ -317,11 +317,11 @@
   },
   "fig:Gamma'": {
     "number": "6.2",
-    "page": "34"
+    "page": "35"
   },
   "sec:curve": {
     "number": "6.6",
-    "page": "34"
+    "page": "35"
   },
   "sec:pseudo": {
     "number": "7",
@@ -329,7 +329,7 @@
   },
   "lemma:pd-m2": {
     "number": "7.1",
-    "page": "36"
+    "page": "37"
   },
   "lemma:m1m2": {
     "number": "7.2",
@@ -341,11 +341,11 @@
   },
   "lemma:pd-n2": {
     "number": "7.5",
-    "page": "37"
+    "page": "38"
   },
   "lemma:pd-1": {
     "number": "7.6",
-    "page": "37"
+    "page": "38"
   },
   "lemma:pd-b": {
     "number": "7.7",
@@ -353,11 +353,11 @@
   },
   "sec:dimer-main": {
     "number": "8",
-    "page": "38"
+    "page": "39"
   },
   "thm:dimer": {
     "number": "8.1",
-    "page": "38"
+    "page": "39"
   },
   "lemma:singleton": {
     "number": "8.2",
@@ -373,7 +373,7 @@
   },
   "lemma:m1-dimer": {
     "number": "8.5",
-    "page": "39"
+    "page": "40"
   },
   "lemma:t2b-nonobtuse": {
     "number": "8.6",
@@ -385,11 +385,11 @@
   },
   "lemma:m2b": {
     "number": "8.8",
-    "page": "40"
+    "page": "41"
   },
   "eqn:2-ac": {
     "number": "8.9",
-    "page": "40"
+    "page": "41"
   },
   "lemma:rab-sequence": {
     "number": "8.10",
@@ -409,7 +409,7 @@
   },
   "lemma:no-ao": {
     "number": "8.14",
-    "page": "42"
+    "page": "43"
   },
   "sec:obtuse": {
     "number": "9",
@@ -437,7 +437,7 @@
   },
   "lemma:sequence": {
     "number": "9.5",
-    "page": "44"
+    "page": "45"
   },
   "lemma:c-weak": {
     "number": "9.6",
@@ -457,7 +457,7 @@
   },
   "lemma:obtuse-source": {
     "number": "9.10",
-    "page": "45"
+    "page": "46"
   },
   "lemma:tb": {
     "number": "9.11",
@@ -465,7 +465,7 @@
   },
   "lemma:nonobtuse-radius-area": {
     "number": "9.12",
-    "page": "46"
+    "page": "47"
   },
   "eqn:n": {
     "number": "9.13",
@@ -477,7 +477,7 @@
   },
   "eqn:968": {
     "number": "9.15",
-    "page": "50"
+    "page": "51"
   },
   "sec:nonobtuse": {
     "number": "10",
@@ -489,7 +489,7 @@
   },
   "lemma:2small": {
     "number": "10.2",
-    "page": "52"
+    "page": "53"
   },
   "lemma:n2-0": {
     "number": "10.3",
@@ -501,19 +501,19 @@
   },
   "lemma:4": {
     "number": "10.5",
-    "page": "53"
+    "page": "54"
   },
   "lemma:3": {
     "number": "10.6",
-    "page": "53"
+    "page": "54"
   },
   "lemma:2": {
     "number": "10.7",
-    "page": "54"
+    "page": "55"
   },
   "eqn:2": {
     "number": "10.8",
-    "page": "54"
+    "page": "55"
   },
   "sec:coords": {
     "number": "A",
@@ -529,146 +529,146 @@
   },
   "fig:theta": {
     "number": "A.1",
-    "page": "56"
+    "page": "57"
   },
   "eqn:sym": {
     "number": "A.1",
-    "page": "56"
+    "page": "57"
   },
   "sec:xalpha": {
     "number": "A.2",
-    "page": "56"
-  },
-  "sec:banana": {
-    "number": "A.3",
     "page": "57"
   },
   "fig:extended": {
     "number": "A.2",
     "page": "58"
   },
-  "fig:banana2": {
+  "sec:banana": {
     "number": "A.3",
     "page": "58"
   },
+  "fig:banana2": {
+    "number": "A.3",
+    "page": "59"
+  },
   "sec:pet": {
     "number": "A.4",
-    "page": "58"
+    "page": "60"
   },
   "fig:p-triangle": {
     "number": "A.4",
-    "page": "59"
+    "page": "60"
   },
   "sec:shared": {
     "number": "A.7",
-    "page": "60"
+    "page": "61"
   },
   "eqn:abc": {
     "number": "A.4",
-    "page": "62"
-  },
-  "sec:pinwheel": {
-    "number": "A.9",
-    "page": "62"
+    "page": "63"
   },
   "fig:cord-delta": {
     "number": "A.5",
-    "page": "63"
+    "page": "64"
+  },
+  "sec:pinwheel": {
+    "number": "A.9",
+    "page": "64"
   },
   "fig:cord-pinwheel": {
     "number": "A.6",
-    "page": "63"
+    "page": "64"
   },
   "fig:cord-L": {
     "number": "A.7",
-    "page": "64"
+    "page": "65"
   },
   "sec:one-ljx": {
     "number": "A.10.3",
-    "page": "64"
+    "page": "66"
   },
   "fig:cord-T": {
     "number": "A.8",
-    "page": "65"
+    "page": "66"
   },
   "sec:one-tjx": {
     "number": "A.11.1",
-    "page": "65"
+    "page": "67"
   },
   "sec:pint": {
     "number": "A.12",
-    "page": "66"
+    "page": "67"
   },
   "fig:cord-pint": {
     "number": "A.9",
-    "page": "66"
+    "page": "68"
   },
   "lemma:0605": {
     "number": "A.5",
-    "page": "66"
+    "page": "68"
   },
   "sec:one-pintx": {
     "number": "A.12.1",
-    "page": "67"
+    "page": "68"
   },
   "appendix:cc": {
     "number": "B",
-    "page": "67"
+    "page": "69"
   },
   "sec:auto-diff": {
     "number": "B.2",
-    "page": "68"
+    "page": "69"
   },
   "sec:mitm": {
     "number": "B.3",
-    "page": "68"
+    "page": "70"
   },
   "eqn:assembly": {
     "number": "B.1",
-    "page": "69"
+    "page": "71"
   },
   "sec:calc-prep": {
     "number": "B.4",
-    "page": "70"
+    "page": "71"
   },
   "lemma:peripheral-o2c": {
     "number": "B.2",
-    "page": "70"
+    "page": "72"
   },
   "sec:pseudo1": {
     "number": "B.4.1",
-    "page": "71"
+    "page": "72"
   },
   "sec:pseudo2": {
     "number": "B.4.2",
-    "page": "71"
+    "page": "73"
   },
   "eqn:pseudo2-constraint": {
     "number": "B.3",
-    "page": "72"
+    "page": "73"
   },
   "sec:pseudo-area": {
     "number": "B.4.3",
-    "page": "72"
+    "page": "74"
   },
   "sec:pseudo-area3": {
     "number": "B.4.4",
-    "page": "73"
+    "page": "74"
   },
   "sec:dimer-isosc": {
     "number": "B.4.5",
-    "page": "73"
+    "page": "75"
   },
   "sec:large": {
     "number": "B.4.6",
-    "page": "74"
+    "page": "75"
   },
   "sec:pent3": {
     "number": "B.4.7",
-    "page": "75"
+    "page": "76"
   },
   "sec:pent4": {
     "number": "B.4.8",
-    "page": "75"
+    "page": "77"
   }
 }
